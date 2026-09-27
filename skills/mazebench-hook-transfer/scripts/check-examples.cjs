@@ -22,8 +22,8 @@ function compact(r){return {solution:r.solution,replayPassed:r.replayPassed===tr
 const expectedMoves=[10,30,25,12,12,27,17,17];
 for(const [i,name]of cases.entries()){
  const target=path.join(out,name);build(name,repo,target);
- const script=i<3?'skills/mazebench-hook-transfer/scripts/verify.cjs':i<5?'skills/mazebench-hook-transfer/scripts/verify-structures.cjs':
-  name==='side-reach'?'skills/mazebench-hook-transfer/scripts/verify-contact.cjs':`examples/${name}/verify.cjs`;
+ const script=i<3?'scripts/verify.cjs':i<5?'scripts/verify-structures.cjs':
+  name==='side-reach'?'scripts/verify-contact.cjs':`examples/${name}/verify.cjs`;
  run(script,['--repo',repo,'--out',target,'--cap',String(cap)],name+'.log');
  const r=read(path.join(target,'verification.json'));assert.equal(r.solution.moves,expectedMoves[i]);
  const row={case:name,...compact(r)};assert.equal(row.overall,'passed');report.cases.push(row);
@@ -35,7 +35,7 @@ for(const [i,name]of cases.entries()){
  fs.writeFileSync(path.join(target,'public-evidence.json'),JSON.stringify(evidence,null,2)+'\n');
  console.log(name+': solve, replay, and scoped restrictions passed');
 }
-const side=path.join(out,'side-reach'),sideScript='skills/mazebench-hook-transfer/scripts/verify-contact.cjs';
+const side=path.join(out,'side-reach'),sideScript='scripts/verify-contact.cjs';
 run(sideScript,['--repo',repo,'--out',side,'--cap','300000','--report','contrast.json','--contrast-no-rear'],'side-contrast.log');
 const contrast=read(path.join(side,'contrast.json'));assert.equal(contrast.overall,'passed');
 assert(contrast.checks.some(x=>x.rule==='no_rear'&&x.status==='solved'));

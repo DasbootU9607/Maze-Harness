@@ -2,7 +2,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
 const args=process.argv.slice(2),get=(k,f)=>args.includes(k)?args[args.indexOf(k)+1]:f;
 assert(get('--repo')&&get('--out'),'Use --repo ENGINE --out GENERATED');
 const repo=path.resolve(get('--repo')),out=path.resolve(get('--out'));
-const {D,inspector}=require('../../skills/mazebench-hook-transfer/scripts/contact-events.cjs');
+const {D,inspector}=require('../../scripts/contact-events.cjs');
 const {getGame,getLevelState}=require(path.join(repo,'server/app'));
 global.window={};require(path.join(repo,'public/maze-engine'));require(path.join(repo,'public/maze-solver'));
 const m=JSON.parse(fs.readFileSync(path.join(out,'manifest.json'),'utf8')),c=JSON.parse(fs.readFileSync(path.join(out,'contract.json'),'utf8'));

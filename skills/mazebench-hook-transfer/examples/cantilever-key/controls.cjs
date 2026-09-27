@@ -2,7 +2,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
 const {e,v,D,level,solver,solve,replay,repo,out}=require('./verify.cjs');
 const read=name=>JSON.parse(fs.readFileSync(path.join(out,name),'utf8'));
 const r=read('verification.json');
-const {inspector}=require('../../skills/mazebench-hook-transfer/scripts/contact-events.cjs');
+const {inspector}=require('../../scripts/contact-events.cjs');
 (async()=>{
  const pre=replay({path:r.solution.path.slice(0,r.event.step-1)},e.initialState,null,()=>true).s;
  const action=(s,d='U')=>{const before=v.snap(s),move=e.move(s,...D[d]),after=v.snap(s);return {before,after,move,flags:v.classify(before,after,move,...D[d]),button:e.areOrangeButtonsPressed(s)};};

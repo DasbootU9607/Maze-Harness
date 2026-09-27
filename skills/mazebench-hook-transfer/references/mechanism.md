@@ -50,4 +50,4 @@ All three main routes share `transfer releases tail -> tool retreats -> load shi
 
 Historical recovery check: minimal's `LLL` puts the spine at x2 where x1 is a wall, preventing a return push. Search exhausted 134 states; undoing the last push allowed a 26-input solution. Browser Undo/Reset was checked during development, not exhaustively over all mistakes.
 
-Portable map/spec fixtures live in the distribution's `examples/`; fresh logic regression results are in its `evidence/`. Historical browser observations are distinguished from publication-time engine replays in `docs/validation.md`. “Minimal” means a compact demonstration, not a proof of global minimality.
+Portable map/spec fixtures live in this skill's `examples/`, with recorded results in `evidence/`. [Validation history](validation.md) distinguishes historical browser observations from publication-time engine replays. “Minimal” means a compact demonstration, not a proof of global minimality.
