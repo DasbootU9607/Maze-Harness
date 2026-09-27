@@ -4,7 +4,7 @@ The skill has two types of evidence: development observations from the original 
 
 ## Publication checks
 
-`node scripts/check-examples.cjs --repo ENGINE --out FRESH_OUTPUT` creates eight new local drafts, loads them through official services, runs official searches, and replays solutions with ordinary moves. It retains case-specific validators rather than pretending one predicate covers every shape. The original maps and engine remain unchanged.
+From the skill directory, `node scripts/check-examples.cjs --repo ENGINE --out FRESH_OUTPUT` creates eight new local drafts, loads them through official services, runs official searches, and replays solutions with ordinary moves. It retains case-specific validators rather than pretending one predicate covers every shape. The original maps and engine remain unchanged.
 
 [publication-check.json](../evidence/publication-check.json) records results, solver expansions, paths, controls, official tests, and SHA-256 identities of the engine/parser files used. Per-case summaries in `evidence/` retain key states and events without machine-specific paths or local draft identifiers. Full traces and logs are generated locally by rerunning the command.
 

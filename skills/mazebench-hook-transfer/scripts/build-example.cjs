@@ -1,6 +1,6 @@
 // Reproduce an authored fixture through official services, not a new-design generator.
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
-const {saveDraft}=require('../skills/mazebench-hook-transfer/scripts/draft-io.cjs');
+const {saveDraft}=require('./draft-io.cjs');
 const cases=['minimal','north-store','wide-hook','repair-plate','elevated-bridge','active-docking','side-reach','cantilever-key'];
 function build(name,repo,out){
  assert(cases.includes(name),'Choose a case: '+cases.join(', '));
