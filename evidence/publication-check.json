@@ -1,0 +1,428 @@
+{
+  "scope": "Fresh local drafts; official solves, ordinary move replays, and case-specific restrictions. No browser rerun or model evaluation.",
+  "engine": {
+    "baseline": "07aa03a5c0ee8b4e0b025a52793055e89cb68bfe",
+    "node": "v24.13.0",
+    "files": {
+      "public/maze-engine.js": "c25be363e30186b7435c20361f20542170bdabc9de8c0dad8fa45198e5cab842",
+      "public/maze-solver.js": "be7ecce88b17e2f5cc4894a2fd5c86ba8008cb157406a5728bc8ab110fb3df9d",
+      "games/maze/level_parsing.json": "54cb1bc6d2e545a89abe860e2c84e45ed5fd31b244b828b8424d2693d05b780d",
+      "games/maze/toolbox.json": "c36ac5ee0a6a8e7b69d73613e3dde029afdc84681b146fbdfe75a1c52b81a330"
+    }
+  },
+  "cases": [
+    {
+      "case": "minimal",
+      "solution": {
+        "status": "solved",
+        "moves": 10,
+        "path": "ULDRDDLLLL",
+        "expanded": 78
+      },
+      "replayPassed": true,
+      "checks": [
+        {
+          "rule": "no_hook_motion",
+          "status": "unsolved",
+          "expanded": 35
+        },
+        {
+          "rule": "no_payload_motion",
+          "status": "unsolved",
+          "expanded": 383
+        },
+        {
+          "rule": "no_coupled_motion",
+          "status": "unsolved",
+          "expanded": 383
+        },
+        {
+          "rule": "no_rear_transfer",
+          "status": "unsolved",
+          "expanded": 383
+        }
+      ],
+      "overall": "passed"
+    },
+    {
+      "case": "north-store",
+      "solution": {
+        "status": "solved",
+        "moves": 30,
+        "path": "LLLLLULDDLLDRURRRDDLULDRDDLLLL",
+        "expanded": 2090
+      },
+      "replayPassed": true,
+      "checks": [
+        {
+          "rule": "no_hook_motion",
+          "status": "unsolved",
+          "expanded": 59
+        },
+        {
+          "rule": "no_payload_motion",
+          "status": "unsolved",
+          "expanded": 2121
+        },
+        {
+          "rule": "no_coupled_motion",
+          "status": "unsolved",
+          "expanded": 2121
+        },
+        {
+          "rule": "no_rear_transfer",
+          "status": "unsolved",
+          "expanded": 2121
+        }
+      ],
+      "overall": "passed"
+    },
+    {
+      "case": "wide-hook",
+      "solution": {
+        "status": "solved",
+        "moves": 25,
+        "path": "URURRRRDDLLUDDLRRDDDLLLLL",
+        "expanded": 1142
+      },
+      "replayPassed": true,
+      "checks": [
+        {
+          "rule": "no_hook_motion",
+          "status": "unsolved",
+          "expanded": 80
+        },
+        {
+          "rule": "no_payload_motion",
+          "status": "unsolved",
+          "expanded": 2989
+        },
+        {
+          "rule": "no_coupled_motion",
+          "status": "unsolved",
+          "expanded": 2989
+        },
+        {
+          "rule": "no_rear_transfer",
+          "status": "unsolved",
+          "expanded": 2989
+        }
+      ],
+      "overall": "passed"
+    },
+    {
+      "case": "repair-plate",
+      "solution": {
+        "status": "solved",
+        "moves": 12,
+        "path": "LLLURDRDDRDD",
+        "expanded": 85
+      },
+      "replayPassed": true,
+      "checks": [
+        {
+          "rule": "no_rear_transfer",
+          "status": "unsolved",
+          "expanded": 79,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_floor_fill",
+          "status": "unsolved",
+          "expanded": 64,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_payload_plate",
+          "status": "unsolved",
+          "expanded": 79,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_post_transfer_box_motion",
+          "status": "solved",
+          "expanded": 85,
+          "verdict": "passed",
+          "replayPassed": true
+        }
+      ],
+      "overall": "passed"
+    },
+    {
+      "case": "elevated-bridge",
+      "solution": {
+        "status": "solved",
+        "moves": 12,
+        "path": "ULLLLLURDLLL",
+        "expanded": 20
+      },
+      "replayPassed": true,
+      "checks": [
+        {
+          "rule": "no_rear_transfer",
+          "status": "unsolved",
+          "expanded": 12,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_player_height_change",
+          "status": "unsolved",
+          "expanded": 4,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_lift_lower",
+          "status": "unsolved",
+          "expanded": 8,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_lift_raise",
+          "status": "unsolved",
+          "expanded": 13,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_payload_top_walk",
+          "status": "unsolved",
+          "expanded": 24,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_post_transfer_box_motion",
+          "status": "solved",
+          "expanded": 20,
+          "verdict": "passed",
+          "replayPassed": true
+        }
+      ],
+      "overall": "passed"
+    },
+    {
+      "case": "active-docking",
+      "solution": {
+        "status": "solved",
+        "moves": 27,
+        "path": "RULUUUURRRURRRRDLLURDLLUURU",
+        "expanded": 2205
+      },
+      "replayPassed": true,
+      "checks": [
+        {
+          "rule": "no_rear",
+          "status": "unsolved",
+          "expanded": 2463,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_preparation_before_first_rear",
+          "status": "unsolved",
+          "expanded": 74,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_tool_preparation_before_first_rear",
+          "status": "unsolved",
+          "expanded": 150,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_horizontal_preparation_before_first_rear",
+          "status": "unsolved",
+          "expanded": 600,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_vertical_preparation_before_first_rear",
+          "status": "unsolved",
+          "expanded": 450,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_docking_before_first_rear",
+          "status": "unsolved",
+          "expanded": 2388,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_hook_motion",
+          "status": "unsolved",
+          "expanded": 150,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_lift_lower",
+          "status": "unsolved",
+          "expanded": 1190,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_lift_raise",
+          "status": "unsolved",
+          "expanded": 23980,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_payload_top_walk",
+          "status": "unsolved",
+          "expanded": 46764,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_post_transfer_box_motion",
+          "status": "solved",
+          "expanded": 2097,
+          "verdict": "passed",
+          "endpoint": "gem",
+          "replayPassed": true
+        }
+      ],
+      "overall": "passed"
+    },
+    {
+      "case": "side-reach",
+      "solution": {
+        "status": "solved",
+        "moves": 17,
+        "path": "URUULURRDRUDDDRRR",
+        "expanded": 387
+      },
+      "replayPassed": true,
+      "checks": [
+        {
+          "rule": "no_event",
+          "status": "unsolved",
+          "expanded": 478,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_tool",
+          "status": "unsolved",
+          "expanded": 24,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_target",
+          "status": "unsolved",
+          "expanded": 478,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_independent_preparation",
+          "status": "unsolved",
+          "expanded": 24,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_tool_preparation",
+          "status": "unsolved",
+          "expanded": 24,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_alignment",
+          "status": "unsolved",
+          "expanded": 454,
+          "verdict": "passed"
+        }
+      ],
+      "overall": "passed"
+    },
+    {
+      "case": "cantilever-key",
+      "solution": {
+        "status": "solved",
+        "moves": 17,
+        "path": "URRRRDRUUUUDDDRRR",
+        "expanded": 807
+      },
+      "replayPassed": true,
+      "checks": [
+        {
+          "rule": "no_event",
+          "status": "unsolved",
+          "expanded": 1732,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_tool",
+          "status": "unsolved",
+          "expanded": 48,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_target",
+          "status": "unsolved",
+          "expanded": 1732,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_independent_preparation",
+          "status": "unsolved",
+          "expanded": 48,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_tool_preparation",
+          "status": "unsolved",
+          "expanded": 48,
+          "verdict": "passed"
+        },
+        {
+          "rule": "no_alignment",
+          "status": "unsolved",
+          "expanded": 1633,
+          "verdict": "passed"
+        }
+      ],
+      "overall": "passed"
+    }
+  ],
+  "controls": [
+    {
+      "check": "No implicit prohibition on rear transfer; opt-in side comparison solves and replays",
+      "status": "passed"
+    },
+    {
+      "check": "Side and cantilever cap=1 reports are unknown",
+      "status": "passed"
+    },
+    {
+      "check": "Cantilever local tip function, collinear negative control, deadlock and Undo replay",
+      "status": "passed",
+      "partConclusions": {
+        "tip": "Same terrain, player, target, handle and input support: handle still pushes M2 north but M3 stays and gate stays shut. The tip transmits this contact.",
+        "handle": "Removing the handle removes the directly reachable input and sole pre-event support; the two effects are confounded. This is not a global minimality claim."
+      },
+      "deadlock": {
+        "status": "unsolved",
+        "expanded": 144
+      },
+      "undo": {
+        "status": "solved",
+        "moves": 22,
+        "path": "LURRRUURDLDDRDRUDDDRRR",
+        "expanded": 1189
+      }
+    },
+    {
+      "check": "Side-specific validator rejects an incompatible rear contract",
+      "status": "passed"
+    }
+  ],
+  "officialTests": [
+    {
+      "name": "weightless-push",
+      "status": "passed"
+    },
+    {
+      "name": "maze-solver",
+      "status": "passed"
+    },
+    {
+      "name": "maze-levels-author",
+      "status": "passed"
+    }
+  ],
+  "overall": "passed"
+}

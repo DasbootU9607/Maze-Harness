@@ -1,0 +1,4 @@
+interface:
+  display_name: "MazeBench Hook Mechanisms"
+  short_description: "Derive tool geometry, build puzzles, and verify contact"
+  default_prompt: "Use $mazebench-hook-transfer to design and build a mechanism that requires discovering a tool's purpose, actively transporting it, and docking it to finish. Choose the shape and layout yourself."

@@ -1,0 +1,344 @@
+{
+  "case": "elevated-bridge",
+  "cap": 300000,
+  "solution": {
+    "status": "solved",
+    "moves": 12,
+    "path": "ULLLLLURDLLL",
+    "expanded": 20
+  },
+  "replayPassed": true,
+  "checks": [
+    {
+      "rule": "no_rear_transfer",
+      "status": "unsolved",
+      "expanded": 12,
+      "verdict": "passed"
+    },
+    {
+      "rule": "no_player_height_change",
+      "status": "unsolved",
+      "expanded": 4,
+      "verdict": "passed"
+    },
+    {
+      "rule": "no_lift_lower",
+      "status": "unsolved",
+      "expanded": 8,
+      "verdict": "passed"
+    },
+    {
+      "rule": "no_lift_raise",
+      "status": "unsolved",
+      "expanded": 13,
+      "verdict": "passed"
+    },
+    {
+      "rule": "no_payload_top_walk",
+      "status": "unsolved",
+      "expanded": 24,
+      "verdict": "passed"
+    },
+    {
+      "rule": "no_post_transfer_box_motion",
+      "status": "solved",
+      "expanded": 20,
+      "verdict": "passed",
+      "replayPassed": true
+    }
+  ],
+  "overall": "passed",
+  "initial": [
+    {
+      "i": 0,
+      "type": "weightless_box",
+      "group": "M0",
+      "x": 5,
+      "y": 5,
+      "z": 1,
+      "removed": false
+    },
+    {
+      "i": 1,
+      "type": "weightless_box",
+      "group": "M0",
+      "x": 6,
+      "y": 5,
+      "z": 1,
+      "removed": false
+    },
+    {
+      "i": 2,
+      "type": "gem",
+      "group": "",
+      "x": 4,
+      "y": 6,
+      "z": 2,
+      "removed": false
+    },
+    {
+      "i": 3,
+      "type": "weightless_box",
+      "group": "M0",
+      "x": 5,
+      "y": 6,
+      "z": 1,
+      "removed": false
+    },
+    {
+      "i": 4,
+      "type": "weightless_box",
+      "group": "M0",
+      "x": 5,
+      "y": 7,
+      "z": 1,
+      "removed": false
+    },
+    {
+      "i": 5,
+      "type": "weightless_box",
+      "group": "M1",
+      "x": 6,
+      "y": 7,
+      "z": 1,
+      "removed": false
+    },
+    {
+      "i": 6,
+      "type": "weightless_box",
+      "group": "M0",
+      "x": 5,
+      "y": 8,
+      "z": 1,
+      "removed": false
+    },
+    {
+      "i": 7,
+      "type": "weightless_box",
+      "group": "M0",
+      "x": 6,
+      "y": 8,
+      "z": 1,
+      "removed": false
+    },
+    {
+      "i": 8,
+      "type": "player",
+      "group": "",
+      "x": 11,
+      "y": 9,
+      "z": 0,
+      "removed": false
+    }
+  ],
+  "event": {
+    "step": 7,
+    "d": "U",
+    "before": [
+      {
+        "i": 0,
+        "type": "weightless_box",
+        "group": "M0",
+        "x": 5,
+        "y": 5,
+        "z": 1,
+        "removed": false
+      },
+      {
+        "i": 1,
+        "type": "weightless_box",
+        "group": "M0",
+        "x": 6,
+        "y": 5,
+        "z": 1,
+        "removed": false
+      },
+      {
+        "i": 2,
+        "type": "gem",
+        "group": "",
+        "x": 4,
+        "y": 6,
+        "z": 2,
+        "removed": false
+      },
+      {
+        "i": 3,
+        "type": "weightless_box",
+        "group": "M0",
+        "x": 5,
+        "y": 6,
+        "z": 1,
+        "removed": false
+      },
+      {
+        "i": 4,
+        "type": "weightless_box",
+        "group": "M0",
+        "x": 5,
+        "y": 7,
+        "z": 1,
+        "removed": false
+      },
+      {
+        "i": 5,
+        "type": "weightless_box",
+        "group": "M1",
+        "x": 6,
+        "y": 7,
+        "z": 1,
+        "removed": false
+      },
+      {
+        "i": 6,
+        "type": "weightless_box",
+        "group": "M0",
+        "x": 5,
+        "y": 8,
+        "z": 1,
+        "removed": false
+      },
+      {
+        "i": 7,
+        "type": "weightless_box",
+        "group": "M0",
+        "x": 6,
+        "y": 8,
+        "z": 1,
+        "removed": false
+      },
+      {
+        "i": 8,
+        "type": "player",
+        "group": "",
+        "x": 6,
+        "y": 6,
+        "z": 1,
+        "removed": false
+      }
+    ],
+    "after": [
+      {
+        "i": 0,
+        "type": "weightless_box",
+        "group": "M0",
+        "x": 5,
+        "y": 4,
+        "z": 1,
+        "removed": false
+      },
+      {
+        "i": 1,
+        "type": "weightless_box",
+        "group": "M0",
+        "x": 6,
+        "y": 4,
+        "z": 1,
+        "removed": false
+      },
+      {
+        "i": 2,
+        "type": "gem",
+        "group": "",
+        "x": 4,
+        "y": 6,
+        "z": 2,
+        "removed": false
+      },
+      {
+        "i": 3,
+        "type": "weightless_box",
+        "group": "M0",
+        "x": 5,
+        "y": 5,
+        "z": 1,
+        "removed": false
+      },
+      {
+        "i": 4,
+        "type": "weightless_box",
+        "group": "M0",
+        "x": 5,
+        "y": 6,
+        "z": 1,
+        "removed": false
+      },
+      {
+        "i": 5,
+        "type": "weightless_box",
+        "group": "M1",
+        "x": 6,
+        "y": 6,
+        "z": 1,
+        "removed": false
+      },
+      {
+        "i": 6,
+        "type": "weightless_box",
+        "group": "M0",
+        "x": 5,
+        "y": 7,
+        "z": 1,
+        "removed": false
+      },
+      {
+        "i": 7,
+        "type": "weightless_box",
+        "group": "M0",
+        "x": 6,
+        "y": 7,
+        "z": 1,
+        "removed": false
+      },
+      {
+        "i": 8,
+        "type": "player",
+        "group": "",
+        "x": 6,
+        "y": 5,
+        "z": 1,
+        "removed": false
+      }
+    ],
+    "beforeMechanism": {
+      "buttonsPressed": false,
+      "liftRaised": false,
+      "repairTerrain": null
+    },
+    "afterMechanism": {
+      "buttonsPressed": false,
+      "liftRaised": false,
+      "repairTerrain": null
+    },
+    "flags": {
+      "primary": "M0",
+      "moved": [
+        "M0",
+        "M1"
+      ],
+      "contact": [
+        {
+          "hook": [
+            6,
+            8,
+            1
+          ],
+          "payload": [
+            6,
+            7,
+            1
+          ]
+        }
+      ],
+      "rearTransfer": true,
+      "floorFilled": false,
+      "lowered": false,
+      "raised": false,
+      "heightChanged": false,
+      "payloadPlate": false,
+      "payloadTopWalk": false
+    },
+    "liftToggles": [],
+    "fills": []
+  }
+}
