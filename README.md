@@ -7,6 +7,7 @@ A growing collection of reusable agent skills for designing and building MazeBen
 | Skill | Purpose |
 |---|---|
 | [mazebench-hook-transfer](skills/mazebench-hook-transfer/SKILL.md) | Design and verify puzzles that use object shapes, transport, and docking to transfer force. |
+| [mazebench-boundary-stagger](skills/mazebench-boundary-stagger/SKILL.md) | Design and verify routes opened by offsetting movable groups around fixed boundaries. |
 
 ## Use
 
@@ -14,7 +15,7 @@ Copy the desired folder from `skills/` into your agent's skill directory, or poi
 
 > Use $mazebench-hook-transfer to build a puzzle that requires actively transporting and docking a tool. Choose the shape and layout yourself.
 
-See the skill's [setup and examples](skills/mazebench-hook-transfer/references/usage.md) for requirements and local verification commands.
+Setup and verification: [Hook Transfer](skills/mazebench-hook-transfer/references/usage.md) · [Boundary Stagger](skills/mazebench-boundary-stagger/references/usage.md).
 
 New skills belong in `skills/<skill-name>/`, with an entry in the table above. Keep detailed guidance and supporting files within the relevant skill.
 

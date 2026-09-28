@@ -1,0 +1,51 @@
+{
+  "examples": [
+    {
+      "name": "official-staircase",
+      "solution": {
+        "status": "solved",
+        "moves": 16,
+        "path": "LRRDDLUDLDLLLLUU",
+        "expanded": 50
+      },
+      "replay": true,
+      "firstGoalOpening": 7,
+      "overall": "passed"
+    },
+    {
+      "name": "pocket-shutter",
+      "solution": {
+        "status": "solved",
+        "moves": 17,
+        "path": "LLLRUURDDLLURDDLL",
+        "expanded": 79
+      },
+      "replay": true,
+      "firstGoalOpening": 12,
+      "overall": "passed"
+    },
+    {
+      "name": "twin-tee",
+      "solution": {
+        "status": "solved",
+        "moves": 27,
+        "path": "LLLLURDRRURUULDLLLUURLDDRRU",
+        "expanded": 137
+      },
+      "replay": true,
+      "firstGoalOpening": 21,
+      "overall": "passed"
+    }
+  ],
+  "official": {
+    "room": "level_HxH",
+    "solution": {
+      "status": "solved",
+      "moves": 56,
+      "path": "ULLLLUUUURRRRRRRRDDRRUULUUUURUULLLLLLLULLRRDDLUDLDLLLLUU",
+      "expanded": 2906
+    },
+    "replay": true
+  },
+  "overall": "passed"
+}
