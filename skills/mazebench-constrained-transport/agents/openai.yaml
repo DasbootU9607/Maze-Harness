@@ -1,0 +1,4 @@
+interface:
+  display_name: "MazeBench Constrained Transport"
+  short_description: "Design constrained transport and tool-delivery puzzles"
+  default_prompt: "Use $mazebench-constrained-transport to design and verify a puzzle that requires repositioning helper groups, transporting a rigid tool to a usable pushing stance, and opening a route to the gem. Choose the shapes and layout yourself."

@@ -1,0 +1,25 @@
+{
+  "source": "User-built GxF reconstruction, 2026-09-29; not a fetched copy of the hosted save.",
+  "rawSourceSha256": "b28a39066503d9977a3b129797c1166b3f790d31262bb38ae88342b59b1a947f",
+  "path": "DLLLDDRRRRDLULLLDDDDDDDRRRRUURUURURULLLRRDDLUDDDLDDLLULLUUUUUURRRDRDDRRRULRUULDDRDDLDLLDDLLULLUUUUURRRURDDULLLLDDDDDDRRRRUURUURURULLRDDLDDDRUUUURULLLRRDDLUDDDLDDLLULLUUUUURLDDDDDDRRRRUURUUURRUULDDDDDDRDLLLLLLULDDLLLUUUR",
+  "moves": 219,
+  "expected": {
+    "deliveryStep": 210,
+    "firstTargetMove": 211,
+    "useSteps": [
+      211,
+      212
+    ]
+  },
+  "originalFrozenSearchExpansions": {
+    "M0": 591,
+    "M1": 120,
+    "M2": 2513,
+    "M3": 269966
+  },
+  "originalForbidIndirectTarget": {
+    "status": "unsolved",
+    "expanded": 269966
+  },
+  "limits": "Historical restrictions forbid any indirect target push; the new verifier separately forbids the declared tool-use event. Expansion counts are historical, not assertions across engine versions."
+}
