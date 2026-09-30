@@ -22,6 +22,8 @@ DDLULLLLLLRUULDDLLDRURRRDDLULDRDDDLDLLLLU
 
 This demonstrates docking, rear contact propagation, tool retreat, load side-shift, and passage. It is a verified route, not a universal construction recipe. `weightlessGroupMembers`, `collectWeightlessPushCluster`, and `moveWeightlessCluster` implement the actual group/contact behavior; no welding or persistent attraction is involved.
 
+The later [user reconstruction](reconstruction.md) packages this relationship with swapped group IDs and an explicit passage objective. A replayed 43-input solution in that map avoids target-right entirely. Its first-contact state still needs further object motion, but the recorded sideways load shift is not a universal requirement. Use the [planning guidance](planning-depth.md) to generalize preparation and post-use access rather than a compass sequence.
+
 GxF (`0lzre7ixaq.txt`) supplies a different lateral-arm example; see [side reach](side-reach.md). The external engine supplies the official level files; this package does not redistribute that world or its assets.
 
 ## Conditions specific to `build.cjs`

@@ -32,7 +32,7 @@ node scripts/build-side-reach.cjs --repo ENGINE --out OUTPUT
 node scripts/verify-contact.cjs --repo ENGINE --out OUTPUT --cap 300000
 ```
 
-This skill includes `scripts/build-example.cjs`, `scripts/check-examples.cjs`, and eight portable `examples/` fixtures. See [setup and examples](usage.md). These reproduce regression cases, not new-design completion by themselves; they work from a copied skill directory.
+This skill includes `scripts/build-example.cjs`, `scripts/check-examples.cjs`, and eight authored `examples/` fixtures. See [setup and examples](usage.md). These reproduce regression cases, not new-design completion by themselves; they work from a copied skill directory. The separately saved [GxE reconstruction](reconstruction.md) uses `check-reconstruction.cjs` with its explicit passage goal.
 
 `build-side-reach` implements a north-facing lateral socket. Length, start, socket, workspace, exit row, and role IDs are its parameters, not universal rules. Length 2..4 is an accepted input range, not a solvability guarantee. A different shape family can use a new cells function instead of extending that constructor.
 
@@ -52,3 +52,5 @@ Attach a short table or `contract.json.composition`, not a new framework:
 The integrator must reconcile IDs, space, buttons, gates, and objectives, then verify the complete combined start-to-goal route, mutual obstruction, entry/return, and bypasses. Do not merely concatenate action strings. Opening a new passage can invalidate a previously exhaustive no-event result.
 
 Check the skills actually available for the task before claiming a composition. A user-supplied room fragment or another mechanism skill can consume this interface, subject to whole-puzzle validation. A skill-writing helper is not itself a verified puzzle mechanism.
+
+When available, `mazebench-boundary-stagger` can supply an offset-dependent clearance or stance, and `mazebench-constrained-transport` can supply delivery through helper rearrangement. They are optional authoring methods, not script dependencies. For a challenging combination, share a meaningful spatial requirement between modules; putting three independent demonstrations in sequence does not establish deeper interaction. Verify the combined dependencies and preserved access from the original start.

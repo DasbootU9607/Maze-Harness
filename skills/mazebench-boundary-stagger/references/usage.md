@@ -11,6 +11,8 @@ node scripts/verify.cjs --repo ENGINE --out outputs/pocket --cap 300000
 
 This reproduces a fixture. Available fixtures: `official-staircase`, `pocket-shutter`, `twin-tee`. The builder creates a fresh local draft through official serialization and exports `manifest.json`, `world.json`, `contract.json`, and `level_AxA.txt`. The manifest's play/edit/map routes work on the local server origin. Import `world.json` through official Build. Existing draft manifests refuse overwrite. Official assets are copied locally from the separate checkout; no remote requests or publication occur.
 
+The later [saved HxH reconstruction](reconstruction.md) is a separate reference with void terrain. Import its Build JSON or run `check-reconstruction.cjs` as documented there. It is not an additional fixture accepted by this sealed floor/wall authoring profile.
+
 ## Build a new design
 
 Follow the skill's functional design process. Write a small layout function or a cells specification suited to the intended relationship; do not assume a fixture importer synthesizes new puzzles. The specification is a JSON object containing `title`, `cells` (a complete 16-by-16 token array), `contract`, and optional `scenario`.

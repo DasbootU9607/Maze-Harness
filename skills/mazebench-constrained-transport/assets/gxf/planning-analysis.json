@@ -1,0 +1,290 @@
+{
+  "source": {
+    "kind": "user reconstruction of an official mechanism",
+    "officialRoom": "GXF",
+    "upstreamFile": "0lzre7ixaq.txt",
+    "rawSha256": "b28a39066503d9977a3b129797c1166b3f790d31262bb38ae88342b59b1a947f",
+    "notes": "Existing user GxF reconstruction; hosted save identity is not asserted"
+  },
+  "goal": {
+    "kind": "gem"
+  },
+  "solution": {
+    "status": "solved",
+    "moves": 219,
+    "path": "DLLLDDRRRRDULLLDLDDDDDDRRRRUURUURURULLLRRDDLUDDDDDLLLULLUUUUUURRRDRDDRRRULRUULDDRDDLDDDLLLLULLUUUUURRRURDDULLLLDDDDDDRRRRUURUURURULLRDDLDDDRUUUURULLLRRDDLUDDDDDLLLULLUUUUURLDDDDDDRRRRUURUUURRUULDDDDDDRDLLLLLLULDDLLLUUUR",
+    "expanded": 201650
+  },
+  "statistics": {
+    "inputs": 219,
+    "pushInputs": 42,
+    "walkInputs": 177,
+    "pushRuns": 21,
+    "groups": [
+      "M2",
+      "M0",
+      "M1",
+      "M3"
+    ]
+  },
+  "pushRuns": [
+    {
+      "tag": "M1:D",
+      "first": 11,
+      "last": 11,
+      "count": 1
+    },
+    {
+      "tag": "M2:L",
+      "first": 37,
+      "last": 38,
+      "count": 2
+    },
+    {
+      "tag": "M0+M2:L",
+      "first": 39,
+      "last": 39,
+      "count": 1
+    },
+    {
+      "tag": "M1:U",
+      "first": 45,
+      "last": 45,
+      "count": 1
+    },
+    {
+      "tag": "M1+M2:R",
+      "first": 65,
+      "last": 67,
+      "count": 2
+    },
+    {
+      "tag": "M1+M2:L",
+      "first": 74,
+      "last": 74,
+      "count": 1
+    },
+    {
+      "tag": "M1:D",
+      "first": 79,
+      "last": 80,
+      "count": 2
+    },
+    {
+      "tag": "M0:R",
+      "first": 100,
+      "last": 100,
+      "count": 1
+    },
+    {
+      "tag": "M0+M2:R",
+      "first": 101,
+      "last": 102,
+      "count": 2
+    },
+    {
+      "tag": "M0:D",
+      "first": 105,
+      "last": 105,
+      "count": 1
+    },
+    {
+      "tag": "M0+M1:D",
+      "first": 106,
+      "last": 106,
+      "count": 1
+    },
+    {
+      "tag": "M1:R",
+      "first": 124,
+      "last": 124,
+      "count": 1
+    },
+    {
+      "tag": "M0:U",
+      "first": 126,
+      "last": 126,
+      "count": 1
+    },
+    {
+      "tag": "M2:L",
+      "first": 131,
+      "last": 132,
+      "count": 2
+    },
+    {
+      "tag": "M1:U",
+      "first": 141,
+      "last": 144,
+      "count": 4
+    },
+    {
+      "tag": "M1+M2:L",
+      "first": 147,
+      "last": 149,
+      "count": 3
+    },
+    {
+      "tag": "M0:U",
+      "first": 155,
+      "last": 155,
+      "count": 1
+    },
+    {
+      "tag": "M0+M1+M2:R",
+      "first": 172,
+      "last": 172,
+      "count": 1
+    },
+    {
+      "tag": "M0:D",
+      "first": 195,
+      "last": 200,
+      "count": 6
+    },
+    {
+      "tag": "M0:L",
+      "first": 203,
+      "last": 208,
+      "count": 6
+    },
+    {
+      "tag": "M0+M3:D",
+      "first": 211,
+      "last": 212,
+      "count": 2
+    }
+  ],
+  "restrictions": [
+    {
+      "name": "freeze_M2",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 2513,
+      "verdict": "passed"
+    },
+    {
+      "name": "freeze_M0",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 591,
+      "verdict": "passed"
+    },
+    {
+      "name": "freeze_M1",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 120,
+      "verdict": "passed"
+    },
+    {
+      "name": "freeze_M3",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 269966,
+      "verdict": "passed"
+    },
+    {
+      "name": "forbid_sideTransfer",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 269966,
+      "verdict": "passed"
+    },
+    {
+      "name": "first_contact_positive",
+      "expected": "solved",
+      "status": "solved",
+      "moves": 210,
+      "path": "DLLLDDRRRRDULLLDLDDDDDDRRRRUURUURURULLLRRDDLUDDDDDLLLULLUUUUUURRRDRDDRRRULRUULDDRDDLDDDLLLLULLUUUUURRRURDDULLLLDDDDDDRRRRUURUURURULLRDDLDDDRUUUURULLLRRDDLUDDDDDLLLULLUUUUURLDDDDDDRRRRUURUUURRUULDDDDDDRDLLLLLLUL",
+      "expanded": 187298,
+      "verdict": "passed"
+    },
+    {
+      "name": "first_contact_without_independent_tool_preparation",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 591,
+      "verdict": "passed"
+    }
+  ],
+  "directionTests": [
+    {
+      "name": "forbid_M0U",
+      "status": "unsolved",
+      "expanded": 59651,
+      "interpretation": "This direction is necessary under the stated exclusion"
+    },
+    {
+      "name": "forbid_M0D",
+      "status": "unsolved",
+      "expanded": 49936,
+      "interpretation": "This direction is necessary under the stated exclusion"
+    },
+    {
+      "name": "forbid_M0L",
+      "status": "unsolved",
+      "expanded": 1186,
+      "interpretation": "This direction is necessary under the stated exclusion"
+    },
+    {
+      "name": "forbid_M0R",
+      "status": "unsolved",
+      "expanded": 25213,
+      "interpretation": "This direction is necessary under the stated exclusion"
+    },
+    {
+      "name": "forbid_M1U",
+      "status": "unsolved",
+      "expanded": 2471,
+      "interpretation": "This direction is necessary under the stated exclusion"
+    },
+    {
+      "name": "forbid_M1D",
+      "status": "unsolved",
+      "expanded": 2044,
+      "interpretation": "This direction is necessary under the stated exclusion"
+    },
+    {
+      "name": "forbid_M1L",
+      "status": "unsolved",
+      "expanded": 146039,
+      "interpretation": "This direction is necessary under the stated exclusion"
+    },
+    {
+      "name": "forbid_M1R",
+      "status": "unsolved",
+      "expanded": 5836,
+      "interpretation": "This direction is necessary under the stated exclusion"
+    },
+    {
+      "name": "forbid_M2U",
+      "status": "solved",
+      "moves": 219,
+      "path": "DLLLDDRRRRDULLLDLDDDDDDRRRRUURUURURULLLRRDDLUDDDDDLLLULLUUUUUURRRDRDDRRRULRUULDDRDDLDDDLLLLULLUUUUURRRURDDULLLLDDDDDDRRRRUURUURURULLRDDLDDDRUUUURULLLRRDDLUDDDDDLLLULLUUUUURLDDDDDDRRRRUURUUURRUULDDDDDDRDLLLLLLULDDLLLUUUR",
+      "expanded": 201650,
+      "interpretation": "A replayed route avoids this direction"
+    },
+    {
+      "name": "forbid_M2D",
+      "status": "solved",
+      "moves": 219,
+      "path": "DLLLDDRRRRDULLLDLDDDDDDRRRRUURUURURULLLRRDDLUDDDDDLLLULLUUUUUURRRDRDDRRRULRUULDDRDDLDDDLLLLULLUUUUURRRURDDULLLLDDDDDDRRRRUURUURURULLRDDLDDDRUUUURULLLRRDDLUDDDDDLLLULLUUUUURLDDDDDDRRRRUURUUURRUULDDDDDDRDLLLLLLULDDLLLUUUR",
+      "expanded": 176513,
+      "interpretation": "A replayed route avoids this direction"
+    },
+    {
+      "name": "forbid_M2L",
+      "status": "unsolved",
+      "expanded": 2513,
+      "interpretation": "This direction is necessary under the stated exclusion"
+    },
+    {
+      "name": "forbid_M2R",
+      "status": "unsolved",
+      "expanded": 5836,
+      "interpretation": "This direction is necessary under the stated exclusion"
+    }
+  ],
+  "scope": "Descriptions of design intent are interpretations of verified behavior, not statements obtained from the original author. Input and run counts describe a witness, not minimal planning depth or human difficulty."
+}

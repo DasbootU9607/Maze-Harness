@@ -1,6 +1,6 @@
 ---
 name: mazebench-boundary-stagger
-description: Design, build, and verify MazeBench puzzles in which fixed boundaries and offset movable rigid groups unlock a route. Derive shapes and movement dependencies from the goal; users need not supply shapes, coordinates, or solutions. Includes an official staircase example and different authored shapes. Not for model evaluation.
+description: Design, build, and verify MazeBench puzzles where fixed boundaries and offset rigid groups unlock routes. For challenging rooms, derive connected preparation, stance, clearance, and restoration dependencies from the goal. Choose shapes and coordinates autonomously. For authoring, not model evaluation.
 ---
 
 # Boundary Stagger
@@ -22,6 +22,12 @@ The user supplies a goal and necessary constraints. Choose the shapes, group rol
 
 This is an authoring process, not a universal player action sequence. Reuse evidence sensibly: fixture import is reproduction; changing only coordinates, lengths, or orientation is a parameter variant. A new geometry need not invent new physics. Require changed necessary dependencies or object roles only when structural diversity is requested.
 
+## When the user asks for a challenging room
+
+Read [Planning depth](references/planning-depth.md) before laying out cells. The HxH reconstruction has 26 inputs but only two pushes: its insight is useful, yet a longer approach would add little planning. Develop a connected chain in which preparation changes a later clearance or stance, the dependent operation changes the route, and completion may require restoring access or moving a previously useful blocker. Aim for several necessary decisions, with a concrete reason for every stage.
+
+Before building, write the intended dependencies and the passage or pushing face that must survive each stage. After solving, remove walking from the explanation, test the claimed dependencies, and preserve bypasses as corrections to the design. A one-release demonstration is insufficient evidence for a request for deep planning. Difficulty remains a player-testing question; report structural evidence separately.
+
 ## Evidence and limits
 
 - Separate file facts, rule-based hypotheses, replay observations, and exhaustive restricted-search conclusions. A legal solution, use of the intended mechanism, and necessity are different claims.
@@ -35,6 +41,8 @@ This is an authoring process, not a universal player action sequence. Reuse evid
 
 - [Design and verified rules](references/design.md): functional geometry, alternatives, boundary reasoning, capability limits.
 - [Examples](references/examples.md): official HxH identification, coordinates, traces, two different authored layouts, and a rejected ordering claim.
+- [Saved HxH reconstruction](references/reconstruction.md): the user's source map, replay, restrictions, and distinction from the full official room.
+- [Planning depth](references/planning-depth.md): how to turn a local release into a connected planning problem and review the result.
 - [Usage and validation](references/usage.md): construct custom cells, reproduce fixtures, run the official solver, interpret contracts and reports.
 - [Composition](references/composition.md): inputs, occupied region, outputs, preserved access, and relation to hook-transfer.
 

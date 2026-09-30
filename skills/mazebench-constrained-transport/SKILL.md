@@ -1,6 +1,6 @@
 ---
 name: mazebench-constrained-transport
-description: Autonomously design, build, and verify MazeBench puzzles that require transporting a rigid tool through constrained spaces. Reposition helper groups, use temporary parking and changing pushing stances, then deliver the tool to a contact-transfer or route-opening mechanism. Users need not supply shapes, coordinates, or solutions. For puzzle authoring, not model evaluation.
+description: Design, build, and verify MazeBench puzzles that transport a rigid tool through constrained spaces. For challenging rooms, develop necessary helper rearrangement, temporary parking, return moves, and changing pushing stances before usable delivery. Choose shapes and coordinates autonomously. For authoring, not model evaluation.
 ---
 
 # Constrained Tool Transport
@@ -21,6 +21,12 @@ Work backward from function to the initial layout:
 6. **Solve, replay, and test claims.** Verify the complete route to the gem, record delivery and actual contact events, and run appropriate restrictions for claimed necessary helper motion, tool use, and preparation. Revise collisions, support, stances, or bypasses based on concrete counterexamples.
 
 See [Design and composition](references/design.md). Do not turn the example's two-cell bar, two L shapes, four groups, coordinates, or 219 inputs into universal requirements. Distinguish reproduction, size/orientation variants, and new structures with changed necessary dependencies. Reuse verified relationships when appropriate; require structural diversity only when requested.
+
+## When the user asks for a challenging room
+
+Read [Planning depth](references/planning-depth.md). Design a shared workspace whose useful configuration changes between stages. A helper should release a particular tool translation or pushing face, and the player must retain a way to reach the next one. Include a purposeful complication such as moving away from delivery to enable a later move, recovering temporary parking, or returning a helper for a new role. Avoid turning every helper into an independent obstacle removed once.
+
+State and test the intended dependencies. In the reconstructed GxF, excluding either horizontal direction of either helper prevents completion; tool and M1 also require both vertical directions. This establishes necessary movement in opposing directions, not a unique parking sequence. Deliver evidence of the new room's own dependencies rather than treating this example's route length as a difficulty threshold.
 
 ## Physics and scope
 
@@ -47,6 +53,8 @@ Preserve the user's map, existing artifacts, and engine code. This is an authori
 ## Read as needed
 
 - [User-reconstructed GxF example](references/gxf-case.md): initial layout, 219-input witness, working stance, key transfer, and exact restriction definitions.
+- [Authored Borrowed Bay example](references/borrowed-bay.md): a different tool/helper structure with preparation, contact, recovery, and withdrawal, tested in an independent authoring trial.
 - [Design and composition](references/design.md): autonomous geometry, stage connections, failure diagnosis, and responsibilities of the companion skills.
+- [Planning depth](references/planning-depth.md): changing workspace, temporary retreat, stance preservation, and tests for required return movement.
 - [Verification](references/verification.md): specification fields, supported profile, counterexamples, and result interpretation.
 - `node scripts/check-runtime.cjs --repo REPO`: replay, role remapping, rollback, and unsupported-input checks after script changes.

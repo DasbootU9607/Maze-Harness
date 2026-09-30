@@ -2,6 +2,8 @@
 
 Coordinates are zero-based `(x,y)` room cells; all listed actors are at `z=0`. Actions are world directions: `U` decreases `y`, `D` increases `y`, `L` decreases `x`, `R` increases `x`. Routes below are verified solutions, not claims of shortest solutions. Exact cells and contracts live in [examples](../examples/).
 
+The user's later [saved HxH reconstruction](reconstruction.md) is packaged separately with its own objective, 26-input/two-push witness, and exclusions. Its changed approach and terrain distinguish it from both the full room and sealed extraction below. [Planning depth](planning-depth.md) explains what to reuse when a more involved room is requested.
+
 ## Official HxH and its sealed extraction
 
 The screenshot mechanism is the upper-left region of official room `level_HxH`, file `games/maze/levels/mygl8anih8.txt` in MazeBenchEngine. The upper staircase is `M4`: `(5,1),(4,2),(5,2),(3,3),(4,3),(3,4)`. The lower staircase is `M3`: `(5,3),(6,3),(4,4),(5,4),(3,5),(4,5)`. The gem is `(1,3)`.

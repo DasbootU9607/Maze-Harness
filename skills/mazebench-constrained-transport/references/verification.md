@@ -67,6 +67,14 @@ node scripts/check-runtime.cjs --repo REPO
 
 Restrictions reject only matching legal transitions and restore state with official undo. Counterexamples use ordinary engine replay. The checker does not enumerate every possible working pose or infer unmodeled historical events. For requirements such as A before B or repeated delivery, include phase state in the search state/key, or define an appropriate prefix endpoint explicitly.
 
+## Additional checks for a planning claim
+
+The default verifier does not measure planning depth. If claiming that an object must move away and return, separately exclude its translations in each opposing direction; classify exhaustion, a complete counterexample, or a cap. To claim a particular preparation before use, check the legal first-use boundary with that preparation excluded and include gem access as a bypass. Use a positive control. See [planning depth](planning-depth.md) for interpreting these tests.
+
+`scripts/check-reconstruction.cjs --repo REPO --out FRESH_OUTPUT` implements those direction exclusions and first-contact controls for the fingerprinted GxF reference. Its `case.json` and report expose the exact restrictions. It is not an automatic validator for arbitrary new maps or historical ordering claims.
+
+The normal use contract requires the player to push the tool directly. A helper-to-tool-to-target relay may be a different valid design; this checker cannot certify that mechanism by calling it direct input. Define the actual relay contact chain and an appropriate goal/event check if the design needs it. Do not distort a valid intended mechanism merely to satisfy an inapplicable profile.
+
 ## Interpret results
 
 | Result | Meaning |

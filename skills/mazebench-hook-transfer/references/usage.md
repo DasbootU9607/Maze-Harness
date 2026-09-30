@@ -26,3 +26,5 @@ node scripts/check-examples.cjs --repo ENGINE --out outputs/regression
 ```
 
 This creates eight drafts and runs official searches, ordinary move replays, and case-specific controls. It launches no models or paid evaluation. Outputs remain local. See [validation history](validation.md) for recorded results and limits. Running an example reproduces a known layout; use the skill's design workflow for a new puzzle.
+
+The ninth map in `examples/`, [the saved GxE reconstruction](reconstruction.md), is an attributed reference rather than an authored fixture in that regression command. Import its `world.json` through Build. Run `scripts/check-reconstruction.cjs --repo ENGINE --out NEW_OUTPUT` to check its preserved route, explicit passage endpoint, and exclusions. No gem is added to its source.

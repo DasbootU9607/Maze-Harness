@@ -46,3 +46,27 @@ Original restricted searches separately froze M0, M1, M2, and M3 and exhausted w
 The bundled verifier additionally checks necessity of the declared tool-use event, delivery or gem access with each helper frozen, and independent helper preparation in the witness. The [packaged baseline](../assets/gxf/verification-baseline.json) records 219 inputs, including 43 push inputs and 176 walking inputs; all seven restricted searches exhausted without a solution. Generate fresh results and engine fingerprints with `verify.cjs`; the baseline is not evidence of a new run.
 
 The reusable relationship is that final use constrains tool shape, the working pose constrains delivery, group configurations and player stances constrain transport, and successful delivery enables indirect pushing. This example establishes its specific configuration. Changed shapes, directions, corridors, and starts require revalidation. Input count is neither a design target nor proof of human difficulty.
+
+## Movement in opposing directions
+
+A fresh analysis on 2026-09-30 found another 219-input witness with 42 pushes, 177 walking inputs, and 21 compressed push runs. This differs from the older 43-push witness without invalidating it. Both are solutions, not claimed optima. See [planning-analysis.json](../assets/gxf/planning-analysis.json), [case.json](../assets/gxf/case.json), and the fresh [reference checks](../assets/gxf/reference-check.json).
+
+Excluding each listed direction separately gave these results:
+
+| Group | Directions whose exclusion prevents gem collection | Directions with a replayed complete bypass |
+| --- | --- | --- |
+| Tool M0 | U, D, L, R | None of these four |
+| Helper M1 | U, D, L, R | None of these four |
+| Helper M2 | L, R | U and D |
+
+The exhausted searches establish necessary movement in opposing directions. They do not establish exact return positions, one fixed order, a minimum number of reversals, or human difficulty. The tool is not simply advancing along a corridor while the helpers move aside once: the working space must support changing arrangements and access to different faces. This is the reusable planning relationship.
+
+The fresh route still aligns the tool at input 208, reaches the usable input stance at 210, transfers laterally at 211 and 212, and collects the gem at 219. First-contact checks also confirm that independent tool preparation is required to reach a legal first side-transfer opportunity or the gem, with a positive opportunity control.
+
+Run the self-contained reference audit from this skill's directory:
+
+```text
+node scripts/check-reconstruction.cjs --repo ENGINE --out NEW_OUTPUT --cap 1000000
+```
+
+The command replays the fresh witness and runs nineteen exclusions or controls against the original collect-gem objective. It records engine fingerprints and ordinarily replays every successful counterexample. `--mode replay` checks only the stored witness. It does not mutate the map or supersede the existing new-design verifier. See [planning depth](planning-depth.md) for how to derive different constrained-transport rooms from these observations.

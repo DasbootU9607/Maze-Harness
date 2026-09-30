@@ -1,6 +1,6 @@
 ---
 name: mazebench-hook-transfer
-description: Design, build, and verify MazeBench puzzles using object shapes and contact to transfer force, including active tool transport and docking. Derive geometry from the user's goal without requiring a specified shape or solution.
+description: Design, build, and verify MazeBench puzzles using shape-dependent contact to transfer force. Include active transport, usable docking, and post-use passage planning when a challenging multi-stage room is requested. Derive geometry from the goal without requiring specified shapes or solutions. For authoring, not model evaluation.
 ---
 
 # Hook mechanisms
@@ -20,6 +20,12 @@ An unspecified shape is a design decision, not missing information. Choose the g
 
 These are design decisions, not a fixed player action sequence. Default constructors reproduce examples; size and distance changes are parameter variants. Reuse verified methods where appropriate, and write new layout functions when needed. Require changed causal structure only when structural diversity is requested.
 
+## When the user asks for a challenging room
+
+Read [Planning depth](references/planning-depth.md). Make the contact event an intermediate change with consequences: preparation must enable a usable stance and contact, and the resulting arrangement must support further work toward the objective. Design the before-use and after-use access together. A distant start or repeated identical push does not by itself add a planning stage.
+
+State which decisions depend on earlier object arrangements, then test those claims. GxE demonstrates transport, rear contact, and continued passage work, but its target need not move right in every solution. Generalize the changing constraints, not one witness's compass sequence. If a candidate collapses to a predocked demonstration or has a goal bypass, revise it or narrow the claim.
+
 ## Build and validate
 
 - Use official Toolbox, parser, save services, engine, and solver. Same M ID means one rigid group; distinct IDs identify independent objects. Do not invent pulling, attraction, permanent binding, or object rotation.
@@ -35,6 +41,8 @@ These are design decisions, not a fixed player action sequence. Default construc
 |---|---|
 | Capabilities, constructors, and composition | [Patterns and composition](references/patterns-and-composition.md) |
 | Official rear hook and baseline examples | [Mechanism](references/mechanism.md) |
+| Saved GxE reconstruction, explicit passage goal, and counterexample | [Reconstruction](references/reconstruction.md) |
+| Connected planning before and after contact | [Planning depth](references/planning-depth.md) |
 | Predocked repair and elevated bridge | [Structures](references/structures.md) |
 | Transport and dock before rear transfer | [Active docking](references/active-docking.md) |
 | Lateral transfer and bent-arm geometry | [Side reach](references/side-reach.md) |

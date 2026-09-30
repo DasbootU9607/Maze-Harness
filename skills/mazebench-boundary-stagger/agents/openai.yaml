@@ -1,4 +1,4 @@
 interface:
   display_name: "MazeBench Boundary Stagger"
-  short_description: "Design offset block puzzles around fixed boundaries"
-  default_prompt: "Use $mazebench-boundary-stagger to build a puzzle where the player must offset movable groups around fixed boundaries to open a route to the gem. Choose the shapes and layout yourself, and verify the intended dependencies and bypasses."
+  short_description: "Design puzzles with dependent offsets and pushing stances"
+  default_prompt: "Use $mazebench-boundary-stagger to build a challenging room where preparation, offsets around fixed boundaries, and changing pushing stances form a connected path to the gem. Choose the shapes and layout yourself. Verify the necessary dependencies and bypasses, and explain the planning required."
