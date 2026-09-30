@@ -1,0 +1,554 @@
+{
+  "base": "<LOCAL_ORIGIN>",
+  "draft": "draft-parallax-137fd01b",
+  "start": {
+    "level": "level_AxA",
+    "gems": [],
+    "player": [
+      {
+        "x": 3,
+        "y": 12,
+        "z": 0,
+        "removed": false
+      }
+    ],
+    "actors": [
+      {
+        "type": "gem",
+        "group": null,
+        "x": 5,
+        "y": 10,
+        "z": 2,
+        "removed": false
+      },
+      {
+        "type": "player",
+        "group": null,
+        "x": 3,
+        "y": 12,
+        "z": 0,
+        "removed": false
+      }
+    ],
+    "yaw": 0,
+    "tilt": 0.22
+  },
+  "stages": [
+    {
+      "id": "level_AxA",
+      "path": "RRRRRRULLLLD",
+      "solved": {
+        "level": "level_AxA",
+        "gems": [
+          "level_AxA:gem:5,10,2"
+        ],
+        "player": [
+          {
+            "x": 5,
+            "y": 10,
+            "z": 2,
+            "removed": false
+          }
+        ],
+        "actors": [
+          {
+            "type": "gem",
+            "group": null,
+            "x": 5,
+            "y": 10,
+            "z": 2,
+            "removed": true
+          },
+          {
+            "type": "player",
+            "group": null,
+            "x": 5,
+            "y": 10,
+            "z": 2,
+            "removed": false
+          }
+        ],
+        "yaw": 0,
+        "tilt": 0.22
+      },
+      "exitPath": "URRRRDRRRRRR",
+      "exit": {
+        "level": "level_AxA",
+        "gems": [
+          "level_AxA:gem:5,10,2"
+        ],
+        "player": [
+          {
+            "x": 15,
+            "y": 12,
+            "z": 0,
+            "removed": false
+          }
+        ],
+        "actors": [
+          {
+            "type": "gem",
+            "group": null,
+            "x": 5,
+            "y": 10,
+            "z": 2,
+            "removed": true
+          },
+          {
+            "type": "player",
+            "group": null,
+            "x": 15,
+            "y": 12,
+            "z": 0,
+            "removed": false
+          }
+        ],
+        "yaw": 0,
+        "tilt": 0.7
+      }
+    },
+    {
+      "id": "level_BxA",
+      "path": "RRRRRRUUUUURRRRDLLUULL",
+      "solved": {
+        "level": "level_BxA",
+        "gems": [
+          "level_AxA:gem:5,10,2",
+          "level_BxA:gem:6,8,2"
+        ],
+        "player": [
+          {
+            "x": 6,
+            "y": 8,
+            "z": 2,
+            "removed": false
+          }
+        ],
+        "actors": [
+          {
+            "type": "weightless_box",
+            "group": "M0",
+            "x": 6,
+            "y": 6,
+            "z": 0,
+            "removed": false
+          },
+          {
+            "type": "gem",
+            "group": null,
+            "x": 6,
+            "y": 8,
+            "z": 2,
+            "removed": true
+          },
+          {
+            "type": "weightless_box",
+            "group": "M0",
+            "x": 7,
+            "y": 6,
+            "z": 0,
+            "removed": false
+          },
+          {
+            "type": "player",
+            "group": null,
+            "x": 6,
+            "y": 8,
+            "z": 2,
+            "removed": false
+          }
+        ],
+        "yaw": 1.5707963267948966,
+        "tilt": 1.18
+      },
+      "exitPath": "RRDDRRULLLDDDDDRDDD",
+      "exit": {
+        "level": "level_BxA",
+        "gems": [
+          "level_AxA:gem:5,10,2",
+          "level_BxA:gem:6,8,2"
+        ],
+        "player": [
+          {
+            "x": 8,
+            "y": 15,
+            "z": 0,
+            "removed": false
+          }
+        ],
+        "actors": [
+          {
+            "type": "weightless_box",
+            "group": "M0",
+            "x": 6,
+            "y": 6,
+            "z": 0,
+            "removed": false
+          },
+          {
+            "type": "gem",
+            "group": null,
+            "x": 6,
+            "y": 8,
+            "z": 2,
+            "removed": true
+          },
+          {
+            "type": "weightless_box",
+            "group": "M0",
+            "x": 7,
+            "y": 6,
+            "z": 0,
+            "removed": false
+          },
+          {
+            "type": "player",
+            "group": null,
+            "x": 8,
+            "y": 15,
+            "z": 0,
+            "removed": false
+          }
+        ],
+        "yaw": 0,
+        "tilt": 0.7
+      }
+    },
+    {
+      "id": "level_BxB",
+      "path": "DDLLLLLLDDDDDDDDDDRRUURRUURURUUULL",
+      "solved": {
+        "level": "level_BxB",
+        "gems": [
+          "level_AxA:gem:5,10,2",
+          "level_BxA:gem:6,8,2",
+          "level_BxB:gem:6,4,1"
+        ],
+        "player": [
+          {
+            "x": 6,
+            "y": 4,
+            "z": 1,
+            "removed": false
+          }
+        ],
+        "actors": [
+          {
+            "type": "gem",
+            "group": null,
+            "x": 6,
+            "y": 4,
+            "z": 1,
+            "removed": true
+          },
+          {
+            "type": "orange_button",
+            "group": null,
+            "x": 6,
+            "y": 7,
+            "z": 0,
+            "removed": false
+          },
+          {
+            "type": "weightless_box",
+            "group": "M0",
+            "x": 6,
+            "y": 7,
+            "z": 0,
+            "removed": false
+          },
+          {
+            "type": "player",
+            "group": null,
+            "x": 6,
+            "y": 4,
+            "z": 1,
+            "removed": false
+          }
+        ],
+        "yaw": 0,
+        "tilt": 0.7
+      },
+      "exitPath": "RRDDDDDDDDLLLLLLLL",
+      "exit": {
+        "level": "level_BxB",
+        "gems": [
+          "level_AxA:gem:5,10,2",
+          "level_BxA:gem:6,8,2",
+          "level_BxB:gem:6,4,1"
+        ],
+        "player": [
+          {
+            "x": 0,
+            "y": 12,
+            "z": 0,
+            "removed": false
+          }
+        ],
+        "actors": [
+          {
+            "type": "gem",
+            "group": null,
+            "x": 6,
+            "y": 4,
+            "z": 1,
+            "removed": true
+          },
+          {
+            "type": "orange_button",
+            "group": null,
+            "x": 6,
+            "y": 7,
+            "z": 0,
+            "removed": false
+          },
+          {
+            "type": "weightless_box",
+            "group": "M0",
+            "x": 6,
+            "y": 7,
+            "z": 0,
+            "removed": false
+          },
+          {
+            "type": "player",
+            "group": null,
+            "x": 0,
+            "y": 12,
+            "z": 0,
+            "removed": false
+          }
+        ],
+        "yaw": 0,
+        "tilt": 0.7
+      }
+    },
+    {
+      "id": "level_AxB",
+      "path": "LLLULLLLLUUUURRRULLLULLLDDD",
+      "solved": {
+        "level": "level_AxB",
+        "gems": [
+          "level_AxA:gem:5,10,2",
+          "level_BxA:gem:6,8,2",
+          "level_BxB:gem:6,4,1",
+          "level_AxB:gem:6,8,3"
+        ],
+        "player": [
+          {
+            "x": 6,
+            "y": 8,
+            "z": 3,
+            "removed": false
+          }
+        ],
+        "actors": [
+          {
+            "type": "orange_button",
+            "group": null,
+            "x": 7,
+            "y": 6,
+            "z": 0,
+            "removed": false
+          },
+          {
+            "type": "gem",
+            "group": null,
+            "x": 6,
+            "y": 8,
+            "z": 3,
+            "removed": true
+          },
+          {
+            "type": "weightless_box",
+            "group": "M0",
+            "x": 6,
+            "y": 6,
+            "z": 0,
+            "removed": false
+          },
+          {
+            "type": "weightless_box",
+            "group": "M0",
+            "x": 7,
+            "y": 6,
+            "z": 0,
+            "removed": false
+          },
+          {
+            "type": "player",
+            "group": null,
+            "x": 6,
+            "y": 8,
+            "z": 3,
+            "removed": false
+          }
+        ],
+        "yaw": 1.5707963267948966,
+        "tilt": 1.18
+      },
+      "exitPath": "UUURRRDRRRDLLLDDDDDRRRRRRRR",
+      "exit": {
+        "level": "level_AxB",
+        "gems": [
+          "level_AxA:gem:5,10,2",
+          "level_BxA:gem:6,8,2",
+          "level_BxB:gem:6,4,1",
+          "level_AxB:gem:6,8,3"
+        ],
+        "player": [
+          {
+            "x": 15,
+            "y": 12,
+            "z": 0,
+            "removed": false
+          }
+        ],
+        "actors": [
+          {
+            "type": "orange_button",
+            "group": null,
+            "x": 7,
+            "y": 6,
+            "z": 0,
+            "removed": false
+          },
+          {
+            "type": "gem",
+            "group": null,
+            "x": 6,
+            "y": 8,
+            "z": 3,
+            "removed": true
+          },
+          {
+            "type": "weightless_box",
+            "group": "M0",
+            "x": 6,
+            "y": 6,
+            "z": 0,
+            "removed": false
+          },
+          {
+            "type": "weightless_box",
+            "group": "M0",
+            "x": 7,
+            "y": 6,
+            "z": 0,
+            "removed": false
+          },
+          {
+            "type": "player",
+            "group": null,
+            "x": 15,
+            "y": 12,
+            "z": 0,
+            "removed": false
+          }
+        ],
+        "yaw": 0,
+        "tilt": 0.7
+      }
+    }
+  ],
+  "errors": [],
+  "failed": [],
+  "fourGems": {
+    "level": "level_AxB",
+    "gems": [
+      "level_AxA:gem:5,10,2",
+      "level_BxA:gem:6,8,2",
+      "level_BxB:gem:6,4,1",
+      "level_AxB:gem:6,8,3"
+    ],
+    "player": [
+      {
+        "x": 15,
+        "y": 12,
+        "z": 0,
+        "removed": false
+      }
+    ],
+    "actors": [
+      {
+        "type": "orange_button",
+        "group": null,
+        "x": 7,
+        "y": 6,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "type": "gem",
+        "group": null,
+        "x": 6,
+        "y": 8,
+        "z": 3,
+        "removed": true
+      },
+      {
+        "type": "weightless_box",
+        "group": "M0",
+        "x": 6,
+        "y": 6,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "type": "weightless_box",
+        "group": "M0",
+        "x": 7,
+        "y": 6,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "type": "player",
+        "group": null,
+        "x": 15,
+        "y": 12,
+        "z": 0,
+        "removed": false
+      }
+    ],
+    "yaw": 0,
+    "tilt": 0.7
+  },
+  "returnToFirstRoom": {
+    "level": "level_AxA",
+    "gems": [
+      "level_AxA:gem:5,10,2",
+      "level_BxA:gem:6,8,2",
+      "level_BxB:gem:6,4,1",
+      "level_AxB:gem:6,8,3"
+    ],
+    "player": [
+      {
+        "x": 15,
+        "y": 12,
+        "z": 0,
+        "removed": false
+      }
+    ],
+    "actors": [
+      {
+        "type": "gem",
+        "group": null,
+        "x": 5,
+        "y": 10,
+        "z": 2,
+        "removed": true
+      },
+      {
+        "type": "player",
+        "group": null,
+        "x": 15,
+        "y": 12,
+        "z": 0,
+        "removed": false
+      }
+    ],
+    "yaw": 0,
+    "tilt": 0.7
+  }
+}

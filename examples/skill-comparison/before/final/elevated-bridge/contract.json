@@ -1,0 +1,40 @@
+{
+  "scenario": "elevated-bridge",
+  "hookGroup": "M0",
+  "payloadGroup": "M1",
+  "boxElevation": 1,
+  "actuationStand": [
+    6,
+    6,
+    1
+  ],
+  "liftCell": [
+    7,
+    6
+  ],
+  "bridgeCell": [
+    6,
+    6
+  ],
+  "gemCell": [
+    4,
+    6,
+    2
+  ],
+  "necessary": [
+    "no_rear_transfer",
+    "no_player_height_change",
+    "no_lift_lower",
+    "no_lift_raise",
+    "no_payload_top_walk"
+  ],
+  "permissive": [
+    "no_post_transfer_box_motion"
+  ],
+  "prerequisite": "no_lift_lower",
+  "transferDestination": [
+    6,
+    6,
+    1
+  ]
+}

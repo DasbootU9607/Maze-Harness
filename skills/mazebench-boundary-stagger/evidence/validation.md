@@ -1,6 +1,6 @@
 # Recorded validation
 
-Recorded on 2026-09-28 with Node 24.13.0 and the official MazeBench parser, engine, solver, and local UI. The source baseline is identified in [setup](../references/usage.md). The engine and official room files were not modified. These checks do not launch evaluated models or paid services.
+Recorded with Node 24.13.0 and the official MazeBench parser, engine, solver, and local UI. The source baseline is identified in [setup](../references/usage.md). The engine and official room files were not modified. These checks do not launch evaluated models or paid services.
 
 | Check | Result | Evidence |
 | --- | --- | --- |

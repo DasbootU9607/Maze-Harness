@@ -1,0 +1,6177 @@
+{
+  "draft": "draft-hookx-3416f49899",
+  "cap": 300000,
+  "engine": "official MazeEngine + MazeSolver; ordinary move replay",
+  "warnings": [],
+  "initial": [
+    {
+      "i": 0,
+      "type": "orange_button",
+      "group": "",
+      "x": 10,
+      "y": 5,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 1,
+      "type": "weightless_box",
+      "group": "M3",
+      "x": 10,
+      "y": 6,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 2,
+      "type": "weightless_box",
+      "group": "M2",
+      "x": 3,
+      "y": 10,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 3,
+      "type": "weightless_box",
+      "group": "M2",
+      "x": 4,
+      "y": 10,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 4,
+      "type": "weightless_box",
+      "group": "M2",
+      "x": 5,
+      "y": 10,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 5,
+      "type": "weightless_box",
+      "group": "M2",
+      "x": 6,
+      "y": 10,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 6,
+      "type": "weightless_box",
+      "group": "M2",
+      "x": 3,
+      "y": 11,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 7,
+      "type": "gem",
+      "group": "",
+      "x": 10,
+      "y": 11,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 8,
+      "type": "player",
+      "group": "",
+      "x": 2,
+      "y": 12,
+      "z": 0,
+      "removed": false
+    }
+  ],
+  "initialContactCandidates": [],
+  "initialLegalEvents": [],
+  "checks": [
+    {
+      "rule": "no_event",
+      "method": "Full goal with named transitions deleted",
+      "status": "solved",
+      "moves": 21,
+      "path": "RUUUUULURRRRDDDDDRRRR",
+      "expanded": 1427,
+      "verdict": "failed",
+      "replayPassed": true,
+      "endpoint": "gem"
+    },
+    {
+      "rule": "no_tool",
+      "method": "Full goal with named transitions deleted",
+      "status": "unsolved",
+      "expanded": 49,
+      "verdict": "passed"
+    },
+    {
+      "rule": "no_target",
+      "method": "Full goal with named transitions deleted",
+      "status": "solved",
+      "moves": 21,
+      "path": "RUUUUULURRRRDDDDDRRRR",
+      "expanded": 1427,
+      "verdict": "failed",
+      "replayPassed": true,
+      "endpoint": "gem"
+    },
+    {
+      "rule": "no_independent_preparation",
+      "method": "First-event prefix cut: gem OR legal event boundary; event edges excluded",
+      "status": "unsolved",
+      "expanded": 49,
+      "verdict": "passed"
+    },
+    {
+      "rule": "no_tool_preparation",
+      "method": "First-event prefix cut: gem OR legal event boundary; event edges excluded",
+      "status": "unsolved",
+      "expanded": 49,
+      "verdict": "passed"
+    },
+    {
+      "rule": "no_alignment",
+      "method": "First-event prefix cut: gem OR legal event boundary; event edges excluded",
+      "status": "unsolved",
+      "expanded": 1763,
+      "verdict": "passed"
+    }
+  ],
+  "corePrototype": {
+    "before": [
+      {
+        "i": 0,
+        "type": "orange_button",
+        "group": "",
+        "x": 10,
+        "y": 5,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 1,
+        "type": "weightless_box",
+        "group": "M3",
+        "x": 10,
+        "y": 6,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 2,
+        "type": "weightless_box",
+        "group": "M2",
+        "x": 7,
+        "y": 7,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 3,
+        "type": "weightless_box",
+        "group": "M2",
+        "x": 8,
+        "y": 7,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 4,
+        "type": "weightless_box",
+        "group": "M2",
+        "x": 9,
+        "y": 7,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 5,
+        "type": "weightless_box",
+        "group": "M2",
+        "x": 10,
+        "y": 7,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 6,
+        "type": "weightless_box",
+        "group": "M2",
+        "x": 7,
+        "y": 8,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 7,
+        "type": "gem",
+        "group": "",
+        "x": 10,
+        "y": 11,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 8,
+        "type": "player",
+        "group": "",
+        "x": 7,
+        "y": 9,
+        "z": 0,
+        "removed": false
+      }
+    ],
+    "after": [
+      {
+        "i": 0,
+        "type": "orange_button",
+        "group": "",
+        "x": 10,
+        "y": 5,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 1,
+        "type": "weightless_box",
+        "group": "M3",
+        "x": 10,
+        "y": 5,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 2,
+        "type": "weightless_box",
+        "group": "M2",
+        "x": 7,
+        "y": 6,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 3,
+        "type": "weightless_box",
+        "group": "M2",
+        "x": 8,
+        "y": 6,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 4,
+        "type": "weightless_box",
+        "group": "M2",
+        "x": 9,
+        "y": 6,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 5,
+        "type": "weightless_box",
+        "group": "M2",
+        "x": 10,
+        "y": 6,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 6,
+        "type": "weightless_box",
+        "group": "M2",
+        "x": 7,
+        "y": 7,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 7,
+        "type": "gem",
+        "group": "",
+        "x": 10,
+        "y": 11,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 8,
+        "type": "player",
+        "group": "",
+        "x": 7,
+        "y": 8,
+        "z": 0,
+        "removed": false
+      }
+    ],
+    "result": {
+      "direction": "U",
+      "liftToggles": [],
+      "raisedOrangeWalls": [],
+      "moved": true,
+      "moves": [
+        {
+          "actorIndex": 1,
+          "actorType": "weightless_box",
+          "fromElevation": 0,
+          "fromX": 10,
+          "fromY": 6,
+          "toElevation": 0,
+          "toX": 10,
+          "toY": 5,
+          "iceSlide": false,
+          "fromRemoved": false,
+          "toRemoved": false
+        },
+        {
+          "actorIndex": 2,
+          "actorType": "weightless_box",
+          "fromElevation": 0,
+          "fromX": 7,
+          "fromY": 7,
+          "toElevation": 0,
+          "toX": 7,
+          "toY": 6,
+          "iceSlide": false,
+          "fromRemoved": false,
+          "toRemoved": false
+        },
+        {
+          "actorIndex": 3,
+          "actorType": "weightless_box",
+          "fromElevation": 0,
+          "fromX": 8,
+          "fromY": 7,
+          "toElevation": 0,
+          "toX": 8,
+          "toY": 6,
+          "iceSlide": false,
+          "fromRemoved": false,
+          "toRemoved": false
+        },
+        {
+          "actorIndex": 4,
+          "actorType": "weightless_box",
+          "fromElevation": 0,
+          "fromX": 9,
+          "fromY": 7,
+          "toElevation": 0,
+          "toX": 9,
+          "toY": 6,
+          "iceSlide": false,
+          "fromRemoved": false,
+          "toRemoved": false
+        },
+        {
+          "actorIndex": 5,
+          "actorType": "weightless_box",
+          "fromElevation": 0,
+          "fromX": 10,
+          "fromY": 7,
+          "toElevation": 0,
+          "toX": 10,
+          "toY": 6,
+          "iceSlide": false,
+          "fromRemoved": false,
+          "toRemoved": false
+        },
+        {
+          "actorIndex": 6,
+          "actorType": "weightless_box",
+          "fromElevation": 0,
+          "fromX": 7,
+          "fromY": 8,
+          "toElevation": 0,
+          "toX": 7,
+          "toY": 7,
+          "iceSlide": false,
+          "fromRemoved": false,
+          "toRemoved": false
+        },
+        {
+          "actorIndex": 8,
+          "actorType": "player",
+          "fromX": 7,
+          "fromY": 9,
+          "toX": 7,
+          "toY": 8,
+          "fromElevation": 0,
+          "toElevation": 0,
+          "iceSlide": false,
+          "fromRemoved": false,
+          "toRemoved": false
+        }
+      ],
+      "_jStart": 0,
+      "_jEnd": 21,
+      "_jEpoch": 7
+    },
+    "flags": {
+      "primary": "M2",
+      "inputActor": 6,
+      "moved": [
+        "M3",
+        "M2"
+      ],
+      "contact": [
+        {
+          "toolActor": 5,
+          "targetActor": 1,
+          "tool": [
+            10,
+            7,
+            0
+          ],
+          "target": [
+            10,
+            6,
+            0
+          ],
+          "along": 3,
+          "lateral": -3
+        }
+      ],
+      "coupled": true,
+      "rearTransfer": false,
+      "sideTransfer": true,
+      "event": true,
+      "independent": false,
+      "relativeBefore": [
+        -3,
+        1,
+        0
+      ],
+      "relativeAfter": [
+        -3,
+        1,
+        0
+      ],
+      "candidatesBefore": [
+        {
+          "d": "U",
+          "stand": [
+            8,
+            8,
+            0
+          ],
+          "inputActor": 3,
+          "front": [
+            8,
+            7,
+            0
+          ],
+          "contact": {
+            "toolActor": 5,
+            "targetActor": 1,
+            "tool": [
+              10,
+              7,
+              0
+            ],
+            "target": [
+              10,
+              6,
+              0
+            ]
+          },
+          "along": 2,
+          "lateral": -2
+        },
+        {
+          "d": "U",
+          "stand": [
+            9,
+            8,
+            0
+          ],
+          "inputActor": 4,
+          "front": [
+            9,
+            7,
+            0
+          ],
+          "contact": {
+            "toolActor": 5,
+            "targetActor": 1,
+            "tool": [
+              10,
+              7,
+              0
+            ],
+            "target": [
+              10,
+              6,
+              0
+            ]
+          },
+          "along": 2,
+          "lateral": -1
+        },
+        {
+          "d": "U",
+          "stand": [
+            7,
+            9,
+            0
+          ],
+          "inputActor": 6,
+          "front": [
+            7,
+            8,
+            0
+          ],
+          "contact": {
+            "toolActor": 5,
+            "targetActor": 1,
+            "tool": [
+              10,
+              7,
+              0
+            ],
+            "target": [
+              10,
+              6,
+              0
+            ]
+          },
+          "along": 3,
+          "lateral": -3
+        }
+      ],
+      "candidatesAfter": [
+        {
+          "d": "U",
+          "stand": [
+            8,
+            7,
+            0
+          ],
+          "inputActor": 3,
+          "front": [
+            8,
+            6,
+            0
+          ],
+          "contact": {
+            "toolActor": 5,
+            "targetActor": 1,
+            "tool": [
+              10,
+              6,
+              0
+            ],
+            "target": [
+              10,
+              5,
+              0
+            ]
+          },
+          "along": 2,
+          "lateral": -2
+        },
+        {
+          "d": "U",
+          "stand": [
+            9,
+            7,
+            0
+          ],
+          "inputActor": 4,
+          "front": [
+            9,
+            6,
+            0
+          ],
+          "contact": {
+            "toolActor": 5,
+            "targetActor": 1,
+            "tool": [
+              10,
+              6,
+              0
+            ],
+            "target": [
+              10,
+              5,
+              0
+            ]
+          },
+          "along": 2,
+          "lateral": -1
+        },
+        {
+          "d": "U",
+          "stand": [
+            7,
+            8,
+            0
+          ],
+          "inputActor": 6,
+          "front": [
+            7,
+            7,
+            0
+          ],
+          "contact": {
+            "toolActor": 5,
+            "targetActor": 1,
+            "tool": [
+              10,
+              6,
+              0
+            ],
+            "target": [
+              10,
+              5,
+              0
+            ]
+          },
+          "along": 3,
+          "lateral": -3
+        }
+      ]
+    },
+    "button": true
+  },
+  "solution": {
+    "status": "solved",
+    "moves": 17,
+    "path": "URRRRDRUUUUDDDRRR",
+    "expanded": 807
+  },
+  "trace": [
+    {
+      "step": 1,
+      "d": "U",
+      "before": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 3,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 4,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 5,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 6,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 3,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 2,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 3,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 4,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 5,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 6,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 3,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 2,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "flags": {
+        "primary": null,
+        "inputActor": null,
+        "moved": [],
+        "contact": [],
+        "coupled": false,
+        "rearTransfer": false,
+        "sideTransfer": false,
+        "event": false,
+        "independent": false,
+        "relativeBefore": [
+          -7,
+          4,
+          0
+        ],
+        "relativeAfter": [
+          -7,
+          4,
+          0
+        ],
+        "candidatesBefore": [],
+        "candidatesAfter": []
+      },
+      "buttonsPressed": false
+    },
+    {
+      "step": 2,
+      "d": "R",
+      "before": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 3,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 4,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 5,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 6,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 3,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 2,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 4,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 5,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 6,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 4,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 3,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "flags": {
+        "primary": "M2",
+        "inputActor": 6,
+        "moved": [
+          "M2"
+        ],
+        "contact": [],
+        "coupled": false,
+        "rearTransfer": false,
+        "sideTransfer": false,
+        "event": false,
+        "independent": true,
+        "relativeBefore": [
+          -7,
+          4,
+          0
+        ],
+        "relativeAfter": [
+          -6,
+          4,
+          0
+        ],
+        "candidatesBefore": [],
+        "candidatesAfter": []
+      },
+      "buttonsPressed": false
+    },
+    {
+      "step": 3,
+      "d": "R",
+      "before": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 4,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 5,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 6,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 4,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 3,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 5,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 6,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 5,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 4,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "flags": {
+        "primary": "M2",
+        "inputActor": 6,
+        "moved": [
+          "M2"
+        ],
+        "contact": [],
+        "coupled": false,
+        "rearTransfer": false,
+        "sideTransfer": false,
+        "event": false,
+        "independent": true,
+        "relativeBefore": [
+          -6,
+          4,
+          0
+        ],
+        "relativeAfter": [
+          -5,
+          4,
+          0
+        ],
+        "candidatesBefore": [],
+        "candidatesAfter": []
+      },
+      "buttonsPressed": false
+    },
+    {
+      "step": 4,
+      "d": "R",
+      "before": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 5,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 6,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 5,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 4,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 6,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 6,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 5,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "flags": {
+        "primary": "M2",
+        "inputActor": 6,
+        "moved": [
+          "M2"
+        ],
+        "contact": [],
+        "coupled": false,
+        "rearTransfer": false,
+        "sideTransfer": false,
+        "event": false,
+        "independent": true,
+        "relativeBefore": [
+          -5,
+          4,
+          0
+        ],
+        "relativeAfter": [
+          -4,
+          4,
+          0
+        ],
+        "candidatesBefore": [],
+        "candidatesAfter": []
+      },
+      "buttonsPressed": false
+    },
+    {
+      "step": 5,
+      "d": "R",
+      "before": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 6,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 6,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 5,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 6,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "flags": {
+        "primary": "M2",
+        "inputActor": 6,
+        "moved": [
+          "M2"
+        ],
+        "contact": [],
+        "coupled": false,
+        "rearTransfer": false,
+        "sideTransfer": false,
+        "event": false,
+        "independent": true,
+        "relativeBefore": [
+          -4,
+          4,
+          0
+        ],
+        "relativeAfter": [
+          -3,
+          4,
+          0
+        ],
+        "candidatesBefore": [],
+        "candidatesAfter": []
+      },
+      "buttonsPressed": false
+    },
+    {
+      "step": 6,
+      "d": "D",
+      "before": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 6,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 6,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "flags": {
+        "primary": null,
+        "inputActor": null,
+        "moved": [],
+        "contact": [],
+        "coupled": false,
+        "rearTransfer": false,
+        "sideTransfer": false,
+        "event": false,
+        "independent": false,
+        "relativeBefore": [
+          -3,
+          4,
+          0
+        ],
+        "relativeAfter": [
+          -3,
+          4,
+          0
+        ],
+        "candidatesBefore": [],
+        "candidatesAfter": []
+      },
+      "buttonsPressed": false
+    },
+    {
+      "step": 7,
+      "d": "R",
+      "before": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 6,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 7,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "flags": {
+        "primary": null,
+        "inputActor": null,
+        "moved": [],
+        "contact": [],
+        "coupled": false,
+        "rearTransfer": false,
+        "sideTransfer": false,
+        "event": false,
+        "independent": false,
+        "relativeBefore": [
+          -3,
+          4,
+          0
+        ],
+        "relativeAfter": [
+          -3,
+          4,
+          0
+        ],
+        "candidatesBefore": [],
+        "candidatesAfter": []
+      },
+      "buttonsPressed": false
+    },
+    {
+      "step": 8,
+      "d": "U",
+      "before": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 7,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 7,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "flags": {
+        "primary": "M2",
+        "inputActor": 6,
+        "moved": [
+          "M2"
+        ],
+        "contact": [],
+        "coupled": false,
+        "rearTransfer": false,
+        "sideTransfer": false,
+        "event": false,
+        "independent": true,
+        "relativeBefore": [
+          -3,
+          4,
+          0
+        ],
+        "relativeAfter": [
+          -3,
+          3,
+          0
+        ],
+        "candidatesBefore": [],
+        "candidatesAfter": []
+      },
+      "buttonsPressed": false
+    },
+    {
+      "step": 9,
+      "d": "U",
+      "before": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 7,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 7,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "flags": {
+        "primary": "M2",
+        "inputActor": 6,
+        "moved": [
+          "M2"
+        ],
+        "contact": [],
+        "coupled": false,
+        "rearTransfer": false,
+        "sideTransfer": false,
+        "event": false,
+        "independent": true,
+        "relativeBefore": [
+          -3,
+          3,
+          0
+        ],
+        "relativeAfter": [
+          -3,
+          2,
+          0
+        ],
+        "candidatesBefore": [],
+        "candidatesAfter": []
+      },
+      "buttonsPressed": false
+    },
+    {
+      "step": 10,
+      "d": "U",
+      "before": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 7,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 7,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "flags": {
+        "primary": "M2",
+        "inputActor": 6,
+        "moved": [
+          "M2"
+        ],
+        "contact": [],
+        "coupled": false,
+        "rearTransfer": false,
+        "sideTransfer": false,
+        "event": false,
+        "independent": true,
+        "relativeBefore": [
+          -3,
+          2,
+          0
+        ],
+        "relativeAfter": [
+          -3,
+          1,
+          0
+        ],
+        "candidatesBefore": [],
+        "candidatesAfter": [
+          {
+            "d": "U",
+            "stand": [
+              8,
+              8,
+              0
+            ],
+            "inputActor": 3,
+            "front": [
+              8,
+              7,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                7,
+                0
+              ],
+              "target": [
+                10,
+                6,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -2
+          },
+          {
+            "d": "U",
+            "stand": [
+              9,
+              8,
+              0
+            ],
+            "inputActor": 4,
+            "front": [
+              9,
+              7,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                7,
+                0
+              ],
+              "target": [
+                10,
+                6,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -1
+          },
+          {
+            "d": "U",
+            "stand": [
+              7,
+              9,
+              0
+            ],
+            "inputActor": 6,
+            "front": [
+              7,
+              8,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                7,
+                0
+              ],
+              "target": [
+                10,
+                6,
+                0
+              ]
+            },
+            "along": 3,
+            "lateral": -3
+          }
+        ]
+      },
+      "buttonsPressed": false
+    },
+    {
+      "step": 11,
+      "d": "U",
+      "before": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 7,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 7,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "flags": {
+        "primary": "M2",
+        "inputActor": 6,
+        "moved": [
+          "M3",
+          "M2"
+        ],
+        "contact": [
+          {
+            "toolActor": 5,
+            "targetActor": 1,
+            "tool": [
+              10,
+              7,
+              0
+            ],
+            "target": [
+              10,
+              6,
+              0
+            ],
+            "along": 3,
+            "lateral": -3
+          }
+        ],
+        "coupled": true,
+        "rearTransfer": false,
+        "sideTransfer": true,
+        "event": true,
+        "independent": false,
+        "relativeBefore": [
+          -3,
+          1,
+          0
+        ],
+        "relativeAfter": [
+          -3,
+          1,
+          0
+        ],
+        "candidatesBefore": [
+          {
+            "d": "U",
+            "stand": [
+              8,
+              8,
+              0
+            ],
+            "inputActor": 3,
+            "front": [
+              8,
+              7,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                7,
+                0
+              ],
+              "target": [
+                10,
+                6,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -2
+          },
+          {
+            "d": "U",
+            "stand": [
+              9,
+              8,
+              0
+            ],
+            "inputActor": 4,
+            "front": [
+              9,
+              7,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                7,
+                0
+              ],
+              "target": [
+                10,
+                6,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -1
+          },
+          {
+            "d": "U",
+            "stand": [
+              7,
+              9,
+              0
+            ],
+            "inputActor": 6,
+            "front": [
+              7,
+              8,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                7,
+                0
+              ],
+              "target": [
+                10,
+                6,
+                0
+              ]
+            },
+            "along": 3,
+            "lateral": -3
+          }
+        ],
+        "candidatesAfter": [
+          {
+            "d": "U",
+            "stand": [
+              8,
+              7,
+              0
+            ],
+            "inputActor": 3,
+            "front": [
+              8,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -2
+          },
+          {
+            "d": "U",
+            "stand": [
+              9,
+              7,
+              0
+            ],
+            "inputActor": 4,
+            "front": [
+              9,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -1
+          },
+          {
+            "d": "U",
+            "stand": [
+              7,
+              8,
+              0
+            ],
+            "inputActor": 6,
+            "front": [
+              7,
+              7,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 3,
+            "lateral": -3
+          }
+        ]
+      },
+      "buttonsPressed": true
+    },
+    {
+      "step": 12,
+      "d": "D",
+      "before": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 7,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 7,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "flags": {
+        "primary": null,
+        "inputActor": null,
+        "moved": [],
+        "contact": [],
+        "coupled": false,
+        "rearTransfer": false,
+        "sideTransfer": false,
+        "event": false,
+        "independent": false,
+        "relativeBefore": [
+          -3,
+          1,
+          0
+        ],
+        "relativeAfter": [
+          -3,
+          1,
+          0
+        ],
+        "candidatesBefore": [
+          {
+            "d": "U",
+            "stand": [
+              8,
+              7,
+              0
+            ],
+            "inputActor": 3,
+            "front": [
+              8,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -2
+          },
+          {
+            "d": "U",
+            "stand": [
+              9,
+              7,
+              0
+            ],
+            "inputActor": 4,
+            "front": [
+              9,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -1
+          },
+          {
+            "d": "U",
+            "stand": [
+              7,
+              8,
+              0
+            ],
+            "inputActor": 6,
+            "front": [
+              7,
+              7,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 3,
+            "lateral": -3
+          }
+        ],
+        "candidatesAfter": [
+          {
+            "d": "U",
+            "stand": [
+              8,
+              7,
+              0
+            ],
+            "inputActor": 3,
+            "front": [
+              8,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -2
+          },
+          {
+            "d": "U",
+            "stand": [
+              9,
+              7,
+              0
+            ],
+            "inputActor": 4,
+            "front": [
+              9,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -1
+          },
+          {
+            "d": "U",
+            "stand": [
+              7,
+              8,
+              0
+            ],
+            "inputActor": 6,
+            "front": [
+              7,
+              7,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 3,
+            "lateral": -3
+          }
+        ]
+      },
+      "buttonsPressed": true
+    },
+    {
+      "step": 13,
+      "d": "D",
+      "before": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 7,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 7,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "flags": {
+        "primary": null,
+        "inputActor": null,
+        "moved": [],
+        "contact": [],
+        "coupled": false,
+        "rearTransfer": false,
+        "sideTransfer": false,
+        "event": false,
+        "independent": false,
+        "relativeBefore": [
+          -3,
+          1,
+          0
+        ],
+        "relativeAfter": [
+          -3,
+          1,
+          0
+        ],
+        "candidatesBefore": [
+          {
+            "d": "U",
+            "stand": [
+              8,
+              7,
+              0
+            ],
+            "inputActor": 3,
+            "front": [
+              8,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -2
+          },
+          {
+            "d": "U",
+            "stand": [
+              9,
+              7,
+              0
+            ],
+            "inputActor": 4,
+            "front": [
+              9,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -1
+          },
+          {
+            "d": "U",
+            "stand": [
+              7,
+              8,
+              0
+            ],
+            "inputActor": 6,
+            "front": [
+              7,
+              7,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 3,
+            "lateral": -3
+          }
+        ],
+        "candidatesAfter": [
+          {
+            "d": "U",
+            "stand": [
+              8,
+              7,
+              0
+            ],
+            "inputActor": 3,
+            "front": [
+              8,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -2
+          },
+          {
+            "d": "U",
+            "stand": [
+              9,
+              7,
+              0
+            ],
+            "inputActor": 4,
+            "front": [
+              9,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -1
+          },
+          {
+            "d": "U",
+            "stand": [
+              7,
+              8,
+              0
+            ],
+            "inputActor": 6,
+            "front": [
+              7,
+              7,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 3,
+            "lateral": -3
+          }
+        ]
+      },
+      "buttonsPressed": true
+    },
+    {
+      "step": 14,
+      "d": "D",
+      "before": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 7,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 7,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "flags": {
+        "primary": null,
+        "inputActor": null,
+        "moved": [],
+        "contact": [],
+        "coupled": false,
+        "rearTransfer": false,
+        "sideTransfer": false,
+        "event": false,
+        "independent": false,
+        "relativeBefore": [
+          -3,
+          1,
+          0
+        ],
+        "relativeAfter": [
+          -3,
+          1,
+          0
+        ],
+        "candidatesBefore": [
+          {
+            "d": "U",
+            "stand": [
+              8,
+              7,
+              0
+            ],
+            "inputActor": 3,
+            "front": [
+              8,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -2
+          },
+          {
+            "d": "U",
+            "stand": [
+              9,
+              7,
+              0
+            ],
+            "inputActor": 4,
+            "front": [
+              9,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -1
+          },
+          {
+            "d": "U",
+            "stand": [
+              7,
+              8,
+              0
+            ],
+            "inputActor": 6,
+            "front": [
+              7,
+              7,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 3,
+            "lateral": -3
+          }
+        ],
+        "candidatesAfter": [
+          {
+            "d": "U",
+            "stand": [
+              8,
+              7,
+              0
+            ],
+            "inputActor": 3,
+            "front": [
+              8,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -2
+          },
+          {
+            "d": "U",
+            "stand": [
+              9,
+              7,
+              0
+            ],
+            "inputActor": 4,
+            "front": [
+              9,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -1
+          },
+          {
+            "d": "U",
+            "stand": [
+              7,
+              8,
+              0
+            ],
+            "inputActor": 6,
+            "front": [
+              7,
+              7,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 3,
+            "lateral": -3
+          }
+        ]
+      },
+      "buttonsPressed": true
+    },
+    {
+      "step": 15,
+      "d": "R",
+      "before": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 7,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 8,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "flags": {
+        "primary": null,
+        "inputActor": null,
+        "moved": [],
+        "contact": [],
+        "coupled": false,
+        "rearTransfer": false,
+        "sideTransfer": false,
+        "event": false,
+        "independent": false,
+        "relativeBefore": [
+          -3,
+          1,
+          0
+        ],
+        "relativeAfter": [
+          -3,
+          1,
+          0
+        ],
+        "candidatesBefore": [
+          {
+            "d": "U",
+            "stand": [
+              8,
+              7,
+              0
+            ],
+            "inputActor": 3,
+            "front": [
+              8,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -2
+          },
+          {
+            "d": "U",
+            "stand": [
+              9,
+              7,
+              0
+            ],
+            "inputActor": 4,
+            "front": [
+              9,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -1
+          },
+          {
+            "d": "U",
+            "stand": [
+              7,
+              8,
+              0
+            ],
+            "inputActor": 6,
+            "front": [
+              7,
+              7,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 3,
+            "lateral": -3
+          }
+        ],
+        "candidatesAfter": [
+          {
+            "d": "U",
+            "stand": [
+              8,
+              7,
+              0
+            ],
+            "inputActor": 3,
+            "front": [
+              8,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -2
+          },
+          {
+            "d": "U",
+            "stand": [
+              9,
+              7,
+              0
+            ],
+            "inputActor": 4,
+            "front": [
+              9,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -1
+          },
+          {
+            "d": "U",
+            "stand": [
+              7,
+              8,
+              0
+            ],
+            "inputActor": 6,
+            "front": [
+              7,
+              7,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 3,
+            "lateral": -3
+          }
+        ]
+      },
+      "buttonsPressed": true
+    },
+    {
+      "step": 16,
+      "d": "R",
+      "before": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 8,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 9,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "flags": {
+        "primary": null,
+        "inputActor": null,
+        "moved": [],
+        "contact": [],
+        "coupled": false,
+        "rearTransfer": false,
+        "sideTransfer": false,
+        "event": false,
+        "independent": false,
+        "relativeBefore": [
+          -3,
+          1,
+          0
+        ],
+        "relativeAfter": [
+          -3,
+          1,
+          0
+        ],
+        "candidatesBefore": [
+          {
+            "d": "U",
+            "stand": [
+              8,
+              7,
+              0
+            ],
+            "inputActor": 3,
+            "front": [
+              8,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -2
+          },
+          {
+            "d": "U",
+            "stand": [
+              9,
+              7,
+              0
+            ],
+            "inputActor": 4,
+            "front": [
+              9,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -1
+          },
+          {
+            "d": "U",
+            "stand": [
+              7,
+              8,
+              0
+            ],
+            "inputActor": 6,
+            "front": [
+              7,
+              7,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 3,
+            "lateral": -3
+          }
+        ],
+        "candidatesAfter": [
+          {
+            "d": "U",
+            "stand": [
+              8,
+              7,
+              0
+            ],
+            "inputActor": 3,
+            "front": [
+              8,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -2
+          },
+          {
+            "d": "U",
+            "stand": [
+              9,
+              7,
+              0
+            ],
+            "inputActor": 4,
+            "front": [
+              9,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -1
+          },
+          {
+            "d": "U",
+            "stand": [
+              7,
+              8,
+              0
+            ],
+            "inputActor": 6,
+            "front": [
+              7,
+              7,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 3,
+            "lateral": -3
+          }
+        ]
+      },
+      "buttonsPressed": true
+    },
+    {
+      "step": 17,
+      "d": "R",
+      "before": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 9,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "orange_button",
+          "group": "",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "gem",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": true
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "flags": {
+        "primary": null,
+        "inputActor": null,
+        "moved": [],
+        "contact": [],
+        "coupled": false,
+        "rearTransfer": false,
+        "sideTransfer": false,
+        "event": false,
+        "independent": false,
+        "relativeBefore": [
+          -3,
+          1,
+          0
+        ],
+        "relativeAfter": [
+          -3,
+          1,
+          0
+        ],
+        "candidatesBefore": [
+          {
+            "d": "U",
+            "stand": [
+              8,
+              7,
+              0
+            ],
+            "inputActor": 3,
+            "front": [
+              8,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -2
+          },
+          {
+            "d": "U",
+            "stand": [
+              9,
+              7,
+              0
+            ],
+            "inputActor": 4,
+            "front": [
+              9,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -1
+          },
+          {
+            "d": "U",
+            "stand": [
+              7,
+              8,
+              0
+            ],
+            "inputActor": 6,
+            "front": [
+              7,
+              7,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 3,
+            "lateral": -3
+          }
+        ],
+        "candidatesAfter": [
+          {
+            "d": "U",
+            "stand": [
+              8,
+              7,
+              0
+            ],
+            "inputActor": 3,
+            "front": [
+              8,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -2
+          },
+          {
+            "d": "U",
+            "stand": [
+              9,
+              7,
+              0
+            ],
+            "inputActor": 4,
+            "front": [
+              9,
+              6,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 2,
+            "lateral": -1
+          },
+          {
+            "d": "U",
+            "stand": [
+              7,
+              8,
+              0
+            ],
+            "inputActor": 6,
+            "front": [
+              7,
+              7,
+              0
+            ],
+            "contact": {
+              "toolActor": 5,
+              "targetActor": 1,
+              "tool": [
+                10,
+                6,
+                0
+              ],
+              "target": [
+                10,
+                5,
+                0
+              ]
+            },
+            "along": 3,
+            "lateral": -3
+          }
+        ]
+      },
+      "buttonsPressed": true
+    }
+  ],
+  "replayPassed": true,
+  "event": {
+    "step": 11,
+    "d": "U",
+    "before": [
+      {
+        "i": 0,
+        "type": "orange_button",
+        "group": "",
+        "x": 10,
+        "y": 5,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 1,
+        "type": "weightless_box",
+        "group": "M3",
+        "x": 10,
+        "y": 6,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 2,
+        "type": "weightless_box",
+        "group": "M2",
+        "x": 7,
+        "y": 7,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 3,
+        "type": "weightless_box",
+        "group": "M2",
+        "x": 8,
+        "y": 7,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 4,
+        "type": "weightless_box",
+        "group": "M2",
+        "x": 9,
+        "y": 7,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 5,
+        "type": "weightless_box",
+        "group": "M2",
+        "x": 10,
+        "y": 7,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 6,
+        "type": "weightless_box",
+        "group": "M2",
+        "x": 7,
+        "y": 8,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 7,
+        "type": "gem",
+        "group": "",
+        "x": 10,
+        "y": 11,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 8,
+        "type": "player",
+        "group": "",
+        "x": 7,
+        "y": 9,
+        "z": 0,
+        "removed": false
+      }
+    ],
+    "after": [
+      {
+        "i": 0,
+        "type": "orange_button",
+        "group": "",
+        "x": 10,
+        "y": 5,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 1,
+        "type": "weightless_box",
+        "group": "M3",
+        "x": 10,
+        "y": 5,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 2,
+        "type": "weightless_box",
+        "group": "M2",
+        "x": 7,
+        "y": 6,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 3,
+        "type": "weightless_box",
+        "group": "M2",
+        "x": 8,
+        "y": 6,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 4,
+        "type": "weightless_box",
+        "group": "M2",
+        "x": 9,
+        "y": 6,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 5,
+        "type": "weightless_box",
+        "group": "M2",
+        "x": 10,
+        "y": 6,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 6,
+        "type": "weightless_box",
+        "group": "M2",
+        "x": 7,
+        "y": 7,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 7,
+        "type": "gem",
+        "group": "",
+        "x": 10,
+        "y": 11,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "i": 8,
+        "type": "player",
+        "group": "",
+        "x": 7,
+        "y": 8,
+        "z": 0,
+        "removed": false
+      }
+    ],
+    "flags": {
+      "primary": "M2",
+      "inputActor": 6,
+      "moved": [
+        "M3",
+        "M2"
+      ],
+      "contact": [
+        {
+          "toolActor": 5,
+          "targetActor": 1,
+          "tool": [
+            10,
+            7,
+            0
+          ],
+          "target": [
+            10,
+            6,
+            0
+          ],
+          "along": 3,
+          "lateral": -3
+        }
+      ],
+      "coupled": true,
+      "rearTransfer": false,
+      "sideTransfer": true,
+      "event": true,
+      "independent": false,
+      "relativeBefore": [
+        -3,
+        1,
+        0
+      ],
+      "relativeAfter": [
+        -3,
+        1,
+        0
+      ],
+      "candidatesBefore": [
+        {
+          "d": "U",
+          "stand": [
+            8,
+            8,
+            0
+          ],
+          "inputActor": 3,
+          "front": [
+            8,
+            7,
+            0
+          ],
+          "contact": {
+            "toolActor": 5,
+            "targetActor": 1,
+            "tool": [
+              10,
+              7,
+              0
+            ],
+            "target": [
+              10,
+              6,
+              0
+            ]
+          },
+          "along": 2,
+          "lateral": -2
+        },
+        {
+          "d": "U",
+          "stand": [
+            9,
+            8,
+            0
+          ],
+          "inputActor": 4,
+          "front": [
+            9,
+            7,
+            0
+          ],
+          "contact": {
+            "toolActor": 5,
+            "targetActor": 1,
+            "tool": [
+              10,
+              7,
+              0
+            ],
+            "target": [
+              10,
+              6,
+              0
+            ]
+          },
+          "along": 2,
+          "lateral": -1
+        },
+        {
+          "d": "U",
+          "stand": [
+            7,
+            9,
+            0
+          ],
+          "inputActor": 6,
+          "front": [
+            7,
+            8,
+            0
+          ],
+          "contact": {
+            "toolActor": 5,
+            "targetActor": 1,
+            "tool": [
+              10,
+              7,
+              0
+            ],
+            "target": [
+              10,
+              6,
+              0
+            ]
+          },
+          "along": 3,
+          "lateral": -3
+        }
+      ],
+      "candidatesAfter": [
+        {
+          "d": "U",
+          "stand": [
+            8,
+            7,
+            0
+          ],
+          "inputActor": 3,
+          "front": [
+            8,
+            6,
+            0
+          ],
+          "contact": {
+            "toolActor": 5,
+            "targetActor": 1,
+            "tool": [
+              10,
+              6,
+              0
+            ],
+            "target": [
+              10,
+              5,
+              0
+            ]
+          },
+          "along": 2,
+          "lateral": -2
+        },
+        {
+          "d": "U",
+          "stand": [
+            9,
+            7,
+            0
+          ],
+          "inputActor": 4,
+          "front": [
+            9,
+            6,
+            0
+          ],
+          "contact": {
+            "toolActor": 5,
+            "targetActor": 1,
+            "tool": [
+              10,
+              6,
+              0
+            ],
+            "target": [
+              10,
+              5,
+              0
+            ]
+          },
+          "along": 2,
+          "lateral": -1
+        },
+        {
+          "d": "U",
+          "stand": [
+            7,
+            8,
+            0
+          ],
+          "inputActor": 6,
+          "front": [
+            7,
+            7,
+            0
+          ],
+          "contact": {
+            "toolActor": 5,
+            "targetActor": 1,
+            "tool": [
+              10,
+              6,
+              0
+            ],
+            "target": [
+              10,
+              5,
+              0
+            ]
+          },
+          "along": 3,
+          "lateral": -3
+        }
+      ]
+    },
+    "buttonsPressed": true
+  },
+  "phases": [
+    {
+      "name": "initial-separated",
+      "step": 0,
+      "player": [
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 2,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "tool": [
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 3,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 4,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 5,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 6,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 3,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "target": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "name": "independent-transport",
+      "step": 2,
+      "player": [
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 3,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "tool": [
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 4,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 5,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 6,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 4,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "target": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "name": "alignment-established",
+      "step": 10,
+      "player": [
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 7,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "tool": [
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "target": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "name": "side-transfer",
+      "step": 11,
+      "player": [
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 7,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "tool": [
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "target": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "name": "gem-collected",
+      "step": 17,
+      "player": [
+        {
+          "i": 8,
+          "type": "player",
+          "group": "",
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "tool": [
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 8,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 9,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M2",
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "target": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    }
+  ],
+  "frozenBefore": {
+    "status": "unsolved",
+    "expanded": 51,
+    "verdict": "passed"
+  },
+  "frozenAfter": {
+    "status": "solved",
+    "moves": 6,
+    "path": "DDDRRR",
+    "expanded": 10,
+    "verdict": "passed",
+    "replayPassed": true
+  },
+  "dockedStand": {
+    "status": "found_all",
+    "expanded": 0,
+    "reachable": [
+      {
+        "id": "actuation",
+        "x": 7,
+        "y": 9,
+        "elevation": 0,
+        "moves": 0,
+        "path": ""
+      }
+    ],
+    "unreachable": [],
+    "replayPassed": true
+  },
+  "boundaryPositiveControl": {
+    "status": "solved",
+    "moves": 10,
+    "path": "URRRRDRUUU",
+    "expanded": 680,
+    "replayPassed": true
+  },
+  "directStands": {
+    "status": "exhausted",
+    "expanded": 1970,
+    "reachable": [],
+    "unreachable": [
+      {
+        "id": "north-push-from-south",
+        "x": 10,
+        "y": 7,
+        "elevation": 0
+      },
+      {
+        "id": "south-push-from-north",
+        "x": 10,
+        "y": 5,
+        "elevation": 0
+      },
+      {
+        "id": "east-push-from-west",
+        "x": 9,
+        "y": 6,
+        "elevation": 0
+      },
+      {
+        "id": "west-push-from-east",
+        "x": 11,
+        "y": 6,
+        "elevation": 0
+      }
+    ],
+    "verdict": "passed"
+  },
+  "overall": "failed"
+}

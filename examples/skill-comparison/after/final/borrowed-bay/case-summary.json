@@ -1,0 +1,311 @@
+{
+  "title": "Borrowed Bay: The Returning Keeper",
+  "cellsSha256": "c82cc1c21afc1dfe6629751257d2c181f0b0d8ebcd72e8cd5a8139bc982650fc",
+  "roles": {
+    "tool": "M0",
+    "helpers": [
+      "M1"
+    ],
+    "target": "M3"
+  },
+  "solution": {
+    "status": "solved",
+    "moves": 81,
+    "path": "DDRRULRRUUUULUURDDDDDDLDLLLURRRRRRRLLLLDDRUUUUUDDDDDRRRRUUUULLLUURRUURRRRDDLDDDDD",
+    "expanded": 23316,
+    "milliseconds": 771
+  },
+  "witness": {
+    "deliveryStep": 34,
+    "firstTargetMove": 35,
+    "useSteps": [
+      35
+    ],
+    "pushInputs": 23,
+    "walkingInputs": 58,
+    "runs": [
+      {
+        "key": "M0:L:M0",
+        "count": 1,
+        "firstStep": 6,
+        "lastStep": 6
+      },
+      {
+        "key": "M1:D:M1",
+        "count": 6,
+        "firstStep": 17,
+        "lastStep": 22
+      },
+      {
+        "key": "M0:R:M0",
+        "count": 6,
+        "firstStep": 29,
+        "lastStep": 34
+      },
+      {
+        "key": "M0:R:M0,M3",
+        "count": 1,
+        "firstStep": 35,
+        "lastStep": 35
+      },
+      {
+        "key": "M1:U:M1",
+        "count": 5,
+        "firstStep": 43,
+        "lastStep": 47
+      },
+      {
+        "key": "M0:U:M0",
+        "count": 3,
+        "firstStep": 58,
+        "lastStep": 60
+      },
+      {
+        "key": "M1:L:M1",
+        "count": 1,
+        "firstStep": 63,
+        "lastStep": 63
+      }
+    ]
+  },
+  "formalVerifier": "passed",
+  "formalChecks": [
+    {
+      "name": "freeze_M0",
+      "status": "unsolved",
+      "expanded": 642,
+      "scope": "full gem goal"
+    },
+    {
+      "name": "freeze_M1",
+      "status": "unsolved",
+      "expanded": 1443,
+      "scope": "full gem goal"
+    },
+    {
+      "name": "freeze_M3",
+      "status": "unsolved",
+      "expanded": 10978,
+      "scope": "full gem goal"
+    },
+    {
+      "name": "forbid_tool_use",
+      "status": "unsolved",
+      "expanded": 22096,
+      "scope": "full gem goal"
+    },
+    {
+      "name": "delivery_without_M1",
+      "status": "unsolved",
+      "expanded": 1443,
+      "scope": "declared delivery pose + player stance OR gem; group frozen throughout this prefix"
+    }
+  ],
+  "customChecks": [
+    {
+      "name": "forbid_M0_U",
+      "status": "unsolved",
+      "expanded": 21780,
+      "scope": "full diamond goal"
+    },
+    {
+      "name": "forbid_M0_D",
+      "status": "solved",
+      "expanded": 13070,
+      "moves": 81,
+      "path": "DDRRULRRUUUULUURDDDDDDLDLLLURRRRRRRLLLLDDRUUUUUDDDDDRRRRUUUULLLUURRUURRRRDDLDDDDD",
+      "scope": "full diamond goal"
+    },
+    {
+      "name": "forbid_M0_L",
+      "status": "unsolved",
+      "expanded": 1393,
+      "scope": "full diamond goal"
+    },
+    {
+      "name": "forbid_M0_R",
+      "status": "unsolved",
+      "expanded": 14566,
+      "scope": "full diamond goal"
+    },
+    {
+      "name": "forbid_M1_U",
+      "status": "unsolved",
+      "expanded": 13869,
+      "scope": "full diamond goal"
+    },
+    {
+      "name": "forbid_M1_D",
+      "status": "unsolved",
+      "expanded": 5086,
+      "scope": "full diamond goal"
+    },
+    {
+      "name": "forbid_M1_L",
+      "status": "solved",
+      "expanded": 17545,
+      "moves": 93,
+      "path": "DDRRULRRUUUULUURDDDDDDLDLLLURRRRRRRLLLLDDRUUUUUDDDDDRRRRUUUUDDDDLLLULUUUUULUURRRRRRRRDDLDDDDD",
+      "scope": "full diamond goal"
+    },
+    {
+      "name": "forbid_M1_R",
+      "status": "solved",
+      "expanded": 23316,
+      "moves": 81,
+      "path": "DDRRULRRUUUULUURDDDDDDLDLLLURRRRRRRLLLLDDRUUUUUDDDDDRRRRUUUULLLUURRUURRRRDDLDDDDD",
+      "scope": "full diamond goal"
+    },
+    {
+      "name": "first_use_positive",
+      "status": "solved",
+      "expanded": 6651,
+      "moves": 34,
+      "path": "DDRRUULRRUUULUURDDDDDDLDLLLURRRRRR",
+      "scope": "A legal first declared lateral-use opportunity OR diamond; use transitions excluded throughout prefix"
+    },
+    {
+      "name": "first_use_without_tool_L",
+      "status": "unsolved",
+      "expanded": 1393,
+      "scope": "A legal first declared lateral-use opportunity OR diamond; use transitions excluded throughout prefix"
+    },
+    {
+      "name": "first_use_without_keeper_motion",
+      "status": "unsolved",
+      "expanded": 1443,
+      "scope": "A legal first declared lateral-use opportunity OR diamond; use transitions excluded throughout prefix"
+    },
+    {
+      "name": "first_use_without_keeper_D",
+      "status": "unsolved",
+      "expanded": 5086,
+      "scope": "A legal first declared lateral-use opportunity OR diamond; use transitions excluded throughout prefix"
+    },
+    {
+      "name": "first_use_without_keeper_U",
+      "status": "solved",
+      "expanded": 4825,
+      "moves": 34,
+      "path": "DDRRUULRRUUULUURDDDDDDLDLLLURRRRRR",
+      "scope": "A legal first declared lateral-use opportunity OR diamond; use transitions excluded throughout prefix"
+    },
+    {
+      "name": "keeper_parking_positive",
+      "status": "solved",
+      "expanded": 1299,
+      "moves": 22,
+      "path": "DDRRUULRRUUULUURDDDDDD",
+      "scope": "Keeper minimum y >= 9 OR diamond"
+    },
+    {
+      "name": "keeper_parking_without_tool_L",
+      "status": "unsolved",
+      "expanded": 1393,
+      "scope": "Keeper minimum y >= 9 OR diamond, with every tool L excluded"
+    },
+    {
+      "name": "withdrawal_positive",
+      "status": "solved",
+      "expanded": 18296,
+      "moves": 58,
+      "path": "DDRRUULRRUUULUURDDDDDDLDLLLURRRRRRRLLLLDDRUUUUUDDDDDRRRRUU",
+      "scope": "Target at x12 and elbow top y < 6 OR diamond"
+    },
+    {
+      "name": "withdrawal_without_keeper_U",
+      "status": "unsolved",
+      "expanded": 13869,
+      "scope": "Target at x12 and elbow top y < 6 OR diamond; every keeper U excluded"
+    },
+    {
+      "name": "post_contact_all_groups_frozen",
+      "status": "unsolved",
+      "expanded": 70,
+      "scope": "full diamond goal"
+    },
+    {
+      "name": "post_contact_keeper_frozen",
+      "status": "unsolved",
+      "expanded": 143,
+      "scope": "full diamond goal"
+    },
+    {
+      "name": "post_contact_tool_frozen",
+      "status": "unsolved",
+      "expanded": 765,
+      "scope": "full diamond goal"
+    },
+    {
+      "name": "side_notches_without_tool_L",
+      "status": "solved",
+      "expanded": 40889,
+      "moves": 79,
+      "path": "UURDLDRRURRRUUUDDDDLLLDDRDDRRURRUUULLLRRRDDDDLLLUUULLURRRDRRUULUUUURRRRDDLDDDDD",
+      "scope": "full diamond goal"
+    },
+    {
+      "name": "side_notches_without_keeper_D",
+      "status": "solved",
+      "expanded": 38531,
+      "moves": 77,
+      "path": "UURDLDRRURRRUUUDDDDLLLDDRDDRRURRUUULLLRRRDDDDLLLUUULLURRRDRRULUUUURRRRDLDDDDD",
+      "scope": "full diamond goal"
+    },
+    {
+      "name": "side_notches_without_keeper_U",
+      "status": "solved",
+      "expanded": 42274,
+      "moves": 71,
+      "path": "DDRRULRRUUUULUURDDDDDDLDLLLURRRRUUURRRRDDLUDDLLLURRRDRULUUUURRRRDLDDDDD",
+      "scope": "full diamond goal"
+    },
+    {
+      "name": "all_three_notches_without_tool_L",
+      "status": "solved",
+      "expanded": 51784,
+      "moves": 73,
+      "path": "RRUURRRUUDDDDLLLDDRDDRRURRUUULLLRRRDDDDLLLUUULLURRRDRRUULUUUURRRRDDLDDDDD",
+      "scope": "full diamond goal"
+    },
+    {
+      "name": "all_three_notches_without_keeper_D",
+      "status": "solved",
+      "expanded": 46046,
+      "moves": 71,
+      "path": "RRUURRRUUDDDDLLLDDRDDRRURRUUULLLRRRDDDDLLLUUULLURRRDRRULUUUURRRRDLDDDDD",
+      "scope": "full diamond goal"
+    },
+    {
+      "name": "all_three_notches_without_keeper_U",
+      "status": "solved",
+      "expanded": 54716,
+      "moves": 53,
+      "path": "DDRURULRRUUULUURDDDDDDLLLLURRRRRRRDRULUUUURRRRDLDDDDD",
+      "scope": "full diamond goal"
+    }
+  ],
+  "boundaryChecks": [
+    {
+      "name": "positive",
+      "status": "solved",
+      "moves": 30,
+      "path": "DDRRUULRRUUULUURDDDDDDLDLLLURR",
+      "expanded": 4352,
+      "ordinaryReplay": true
+    },
+    {
+      "name": "without_keeper_D",
+      "status": "unsolved",
+      "expanded": 5086,
+      "ordinaryReplay": false
+    }
+  ],
+  "browser": {
+    "overall": "passed",
+    "frames": 81,
+    "phaseScreenshots": 9,
+    "undoReset": true
+  },
+  "scope": "Authored challenge with verified structural dependencies; human difficulty, shortest path, globally minimal shape, and unique return sequence unproved."
+}

@@ -1,0 +1,68 @@
+{
+  "kind": "assisted authoring smoke trial",
+  "author": "Current coding-agent conversation",
+  "limitations": [
+    "The current conversation participated in skill development and saw prior cases.",
+    "Shared working environment; no fresh-agent or filesystem isolation.",
+    "No no-skill baseline, repeated trials, or model-effectiveness score.",
+    "The latter cases intentionally reuse the new tool core to test additional dependencies and integration.",
+    "No shortest-route, human difficulty, or exhaustive deadlock claim."
+  ],
+  "attempts": {
+    "boundary": 1,
+    "hook": 2,
+    "transport": 5,
+    "combined": 3
+  },
+  "findings": [
+    "Hook prototype 01 permits opposite-direction transfer; valid shape use does not prove the narrower left-transfer claim.",
+    "Transport prototype 01 lets the helper replace the tool; freeze-tool and event checks expose the bypass.",
+    "Transport prototype 02 and combined prototype 01 are unsolved; wall constraints removed needed circulation.",
+    "Transport prototype 03 has a witness with coupled helper motion but no independent helper preparation.",
+    "Transport prototype 04 permits helper-to-tool-to-target actuation; the installed direct-input verifier correctly rejects it.",
+    "Combined prototype 02 allows the carriage to escape its track and replace the tool.",
+    "Combined-map boundary checks require a task-specific adapter; the installed two-group checker is intentionally not applied to four groups.",
+    "UI compatibility: the shared browser checker expects manifest.map; transport manifests omit it. A derived local world-map URL was added to these generated artifacts. Skill sources and snapshots were not modified.",
+    "The first combined wall probe also collided with an unparked tool. The probe now explicitly holds the tool in its parked pose so it measures the declared shuttle/carriage boundary interaction."
+  ],
+  "results": [
+    {
+      "key": "01-boundary",
+      "verification": "passed",
+      "moves": 9,
+      "normalBrowserReplay": true,
+      "undoReset": true,
+      "editorSaveExport": true
+    },
+    {
+      "key": "02-hook",
+      "verification": "passed",
+      "moves": 19,
+      "normalBrowserReplay": true,
+      "undoReset": true,
+      "editorSaveExport": true
+    },
+    {
+      "key": "03-transport",
+      "verification": "passed",
+      "moves": 49,
+      "normalBrowserReplay": true,
+      "undoReset": true,
+      "editorSaveExport": true
+    },
+    {
+      "key": "04-combined",
+      "verification": "passed",
+      "moves": 58,
+      "normalBrowserReplay": true,
+      "undoReset": true,
+      "editorSaveExport": true,
+      "combinedMechanisms": "passed"
+    }
+  ],
+  "actual_read_skill_sha256": {
+    "mazebench-boundary-stagger": "b0d121977026f96ad3aa432709a48fdb9b2ef9064b44c11aff45ca3ae771d0ff",
+    "mazebench-hook-transfer": "a5202e0dc07cce81806478b5e6100700a8f90384f776d1d7a230fa44ef3ba1d4",
+    "mazebench-constrained-transport": "7c25b42e8c027b618b829e8ce57781bbc43b531d296aad39aad8e2dcdccd362c"
+  }
+}

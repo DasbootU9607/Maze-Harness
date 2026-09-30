@@ -2,6 +2,15 @@
 
 A growing collection of reusable agent skills for designing and building MazeBench puzzles.
 
+## Guides and case collection
+
+- [How to use the skills in a coding-agent conversation](docs/using-skills.md)
+- [What to read and how to review the skills manually](docs/reviewing-skills.md)
+- [Before/after versions and their evidence limits](docs/skill-version-comparison.md)
+- [All 38 indexed case records before and after the skill revision](examples/skill-comparison/README.md): 16 earlier finished cases, Borrowed Bay, 17 prototype records, and four attributed reference layouts, representing 33 distinct saved layouts.
+
+The public collection includes portable maps, recorded verification evidence, and failed candidates. It preserves the local archive's case coverage while omitting repeated installations and machine-dependent files.
+
 ## Skills
 
 | Skill | Purpose |

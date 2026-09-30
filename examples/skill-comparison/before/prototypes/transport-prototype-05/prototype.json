@@ -1,0 +1,508 @@
+{
+  "name": "transport-prototype-05",
+  "cells": [
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "G",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "+",
+      "M1",
+      "M1",
+      "M1",
+      "+",
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".",
+      "M2",
+      "M2",
+      "M2",
+      "M2",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      "#",
+      "M2",
+      "M0",
+      ".",
+      ".",
+      "#",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".",
+      "#",
+      "M0",
+      "M0",
+      ".",
+      ".",
+      "p",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "M0",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ]
+  ],
+  "contract": {
+    "profile": "planar-rigid-transport-v1",
+    "roles": {
+      "tool": "M0",
+      "helpers": [
+        "M2"
+      ],
+      "target": "M1"
+    },
+    "delivery": {
+      "toolCells": [
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "playerCell": [
+        7,
+        7
+      ]
+    },
+    "use": {
+      "direction": "L"
+    },
+    "intent": "Authored trial; see design report",
+    "composition": {}
+  },
+  "solution": {
+    "status": "solved",
+    "moves": 49,
+    "path": "LLULDRDDDLLULULULUURRDRRDRDDDLUUURULDLDLLULUURRUU",
+    "expanded": 6571
+  },
+  "pushes": [
+    {
+      "step": 5,
+      "d": "D",
+      "event": {
+        "primary": "M0",
+        "moved": [
+          "M0"
+        ],
+        "contacts": [],
+        "use": false,
+        "independentHelpers": []
+      },
+      "delivered": false
+    },
+    {
+      "step": 21,
+      "d": "R",
+      "event": {
+        "primary": "M2",
+        "moved": [
+          "M2"
+        ],
+        "contacts": [],
+        "use": false,
+        "independentHelpers": [
+          "M2"
+        ]
+      },
+      "delivered": false
+    },
+    {
+      "step": 23,
+      "d": "R",
+      "event": {
+        "primary": "M2",
+        "moved": [
+          "M2"
+        ],
+        "contacts": [],
+        "use": false,
+        "independentHelpers": [
+          "M2"
+        ]
+      },
+      "delivered": false
+    },
+    {
+      "step": 24,
+      "d": "R",
+      "event": {
+        "primary": "M2",
+        "moved": [
+          "M2"
+        ],
+        "contacts": [],
+        "use": false,
+        "independentHelpers": [
+          "M2"
+        ]
+      },
+      "delivered": false
+    },
+    {
+      "step": 31,
+      "d": "U",
+      "event": {
+        "primary": "M0",
+        "moved": [
+          "M0"
+        ],
+        "contacts": [],
+        "use": false,
+        "independentHelpers": []
+      },
+      "delivered": false
+    },
+    {
+      "step": 32,
+      "d": "U",
+      "event": {
+        "primary": "M0",
+        "moved": [
+          "M0"
+        ],
+        "contacts": [],
+        "use": false,
+        "independentHelpers": []
+      },
+      "delivered": false
+    },
+    {
+      "step": 33,
+      "d": "U",
+      "event": {
+        "primary": "M0",
+        "moved": [
+          "M0"
+        ],
+        "contacts": [],
+        "use": false,
+        "independentHelpers": []
+      },
+      "delivered": false
+    },
+    {
+      "step": 35,
+      "d": "U",
+      "event": {
+        "primary": "M2",
+        "moved": [
+          "M2"
+        ],
+        "contacts": [],
+        "use": false,
+        "independentHelpers": [
+          "M2"
+        ]
+      },
+      "delivered": true
+    },
+    {
+      "step": 36,
+      "d": "L",
+      "event": {
+        "primary": "M0",
+        "moved": [
+          "M1",
+          "M0"
+        ],
+        "contacts": [
+          {
+            "tool": [
+              5,
+              5,
+              0
+            ],
+            "target": [
+              4,
+              5,
+              0
+            ]
+          }
+        ],
+        "use": true,
+        "independentHelpers": []
+      },
+      "delivered": false
+    },
+    {
+      "step": 47,
+      "d": "R",
+      "event": {
+        "primary": "M0",
+        "moved": [
+          "M0"
+        ],
+        "contacts": [],
+        "use": false,
+        "independentHelpers": []
+      },
+      "delivered": false
+    }
+  ],
+  "initialAccess": {
+    "alreadyUsable": false,
+    "gemByWalking": false,
+    "visited": 53,
+    "exhausted": true
+  }
+}

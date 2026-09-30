@@ -1,0 +1,144 @@
+{
+  "profile": "planar-boundary-stagger",
+  "pair": [
+    "M0",
+    "M1"
+  ],
+  "classification": "new authored geometry and role arrangement",
+  "directionChecks": [
+    {
+      "name": "no_pocket_west",
+      "group": "M1",
+      "direction": "L"
+    },
+    {
+      "name": "no_shutter_east",
+      "group": "M0",
+      "direction": "R"
+    },
+    {
+      "name": "no_pocket_north",
+      "group": "M1",
+      "direction": "U"
+    }
+  ],
+  "phases": [
+    {
+      "step": 0,
+      "label": "Player enclosed inside the east-facing pocket"
+    },
+    {
+      "step": 3,
+      "label": "Pocket shifted to the west boundary"
+    },
+    {
+      "step": 7,
+      "label": "Ceiling shutter shifted east to clear the pocket footprint"
+    },
+    {
+      "step": 12,
+      "label": "Pocket raised to free the southern route"
+    },
+    {
+      "step": 17,
+      "label": "Gem reached"
+    }
+  ],
+  "preparationChecks": [
+    {
+      "name": "M0 R before first M1 U",
+      "before": {
+        "group": "M1",
+        "direction": "U"
+      },
+      "prepare": {
+        "group": "M0",
+        "direction": "R"
+      }
+    },
+    {
+      "name": "M1 L before first M1 U",
+      "before": {
+        "group": "M1",
+        "direction": "U"
+      },
+      "prepare": {
+        "group": "M1",
+        "direction": "L"
+      }
+    }
+  ],
+  "wallProbes": [
+    {
+      "name": "Same actor arrangement and terrain except the named black-wall cells. Demonstrates the stated attempted push changes legality; does not establish global uniqueness of the shape or boundary.",
+      "walls": [
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          3
+        ]
+      ],
+      "prefix": "LLL",
+      "action": "U",
+      "primary": "M1",
+      "expectedGroups": [
+        "M0",
+        "M1"
+      ]
+    }
+  ],
+  "wallBypasses": [
+    {
+      "name": "Remove the north ceiling strip",
+      "walls": [
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          3
+        ]
+      ],
+      "forbid": "no_shutter_east"
+    }
+  ],
+  "composition": {
+    "preconditions": [
+      "Player and both independent groups at z0 on ordinary floor",
+      "Sealed 7x7 working chamber; preserve wall stops and pushing-space access"
+    ],
+    "region": [
+      3,
+      3,
+      9,
+      9
+    ],
+    "objects": {
+      "M0": "Inverted-U ceiling shutter",
+      "M1": "C-shaped player pocket"
+    },
+    "postconditions": [
+      "Pocket is west and north; bottom route to gem is open"
+    ],
+    "preserve": [
+      "Use the replayed final footprints; no promise of tool reuse after completion",
+      "Keep goal approach and required stance cells clear"
+    ],
+    "sideEffects": [
+      "Reusing IDs joins rigid groups; new entrances or removed boundary walls may bypass the intended preparation"
+    ],
+    "evidence": "verification.json and controls.json"
+  }
+}

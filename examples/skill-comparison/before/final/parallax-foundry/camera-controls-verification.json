@@ -1,0 +1,169 @@
+{
+  "draft": "draft-parallax-137fd01b",
+  "method": "Real S/W/A keys only; no camera setter or state mutation",
+  "initial": {
+    "yaw": 0,
+    "tilt": 0.22,
+    "actors": [
+      {
+        "type": "orange_button",
+        "x": 7,
+        "y": 6,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "type": "gem",
+        "x": 6,
+        "y": 8,
+        "z": 3,
+        "removed": false
+      },
+      {
+        "type": "weightless_box",
+        "x": 6,
+        "y": 9,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "type": "weightless_box",
+        "x": 7,
+        "y": 9,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "type": "player",
+        "x": 15,
+        "y": 12,
+        "z": 0,
+        "removed": false
+      }
+    ]
+  },
+  "lowered": {
+    "yaw": 0,
+    "tilt": 1.5707963267948966,
+    "actors": [
+      {
+        "type": "orange_button",
+        "x": 7,
+        "y": 6,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "type": "gem",
+        "x": 6,
+        "y": 8,
+        "z": 3,
+        "removed": false
+      },
+      {
+        "type": "weightless_box",
+        "x": 6,
+        "y": 9,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "type": "weightless_box",
+        "x": 7,
+        "y": 9,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "type": "player",
+        "x": 15,
+        "y": 12,
+        "z": 0,
+        "removed": false
+      }
+    ]
+  },
+  "raised": {
+    "yaw": 0,
+    "tilt": 0,
+    "actors": [
+      {
+        "type": "orange_button",
+        "x": 7,
+        "y": 6,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "type": "gem",
+        "x": 6,
+        "y": 8,
+        "z": 3,
+        "removed": false
+      },
+      {
+        "type": "weightless_box",
+        "x": 6,
+        "y": 9,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "type": "weightless_box",
+        "x": 7,
+        "y": 9,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "type": "player",
+        "x": 15,
+        "y": 12,
+        "z": 0,
+        "removed": false
+      }
+    ]
+  },
+  "west": {
+    "yaw": -1.5707963267948966,
+    "tilt": 0,
+    "actors": [
+      {
+        "type": "orange_button",
+        "x": 7,
+        "y": 6,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "type": "gem",
+        "x": 6,
+        "y": 8,
+        "z": 3,
+        "removed": false
+      },
+      {
+        "type": "weightless_box",
+        "x": 6,
+        "y": 9,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "type": "weightless_box",
+        "x": 7,
+        "y": 9,
+        "z": 0,
+        "removed": false
+      },
+      {
+        "type": "player",
+        "x": 15,
+        "y": 12,
+        "z": 0,
+        "removed": false
+      }
+    ]
+  },
+  "screenshotAnglesInsideReachableRange": true
+}

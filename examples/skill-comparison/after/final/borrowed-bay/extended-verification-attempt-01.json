@@ -1,0 +1,1287 @@
+{
+  "fingerprints": {
+    "cells": "c82cc1c21afc1dfe6629751257d2c181f0b0d8ebcd72e8cd5a8139bc982650fc",
+    "contract": "15eb285ec1d974a881760e356297910d98470792eee59bf3935aec5d7cef9763",
+    "public/maze-engine.js": "c25be363e30186b7435c20361f20542170bdabc9de8c0dad8fa45198e5cab842",
+    "public/maze-solver.js": "be7ecce88b17e2f5cc4894a2fd5c86ba8008cb157406a5728bc8ab110fb3df9d",
+    "server/maze-levels.js": "9b75ab87efdcaee23a91c442d1bdcc7975f545f3a58ec4403c3fce2fd4a341e0",
+    "games/maze/level_parsing.json": "54cb1bc6d2e545a89abe860e2c84e45ed5fd31b244b828b8424d2693d05b780d"
+  },
+  "cap": 300000,
+  "checks": [
+    {
+      "name": "forbid_M0_U",
+      "scope": "full diamond goal",
+      "status": "unsolved",
+      "expanded": 21780
+    },
+    {
+      "name": "forbid_M0_D",
+      "scope": "full diamond goal",
+      "status": "solved",
+      "moves": 81,
+      "path": "DDRRULRRUUUULUURDDDDDDLDLLLURRRRRRRLLLLDDRUUUUUDDDDDRRRRUUUULLLUURRUURRRRDDLDDDDD",
+      "expanded": 13070,
+      "ordinaryReplay": true,
+      "final": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 12,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 9,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 10,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 11,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 12,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "player",
+          "group": null,
+          "x": 11,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 9,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 12,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 13,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 12,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 14,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 9,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 15,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 16,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 12,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 17,
+          "type": "gem",
+          "group": null,
+          "x": 11,
+          "y": 9,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "name": "forbid_M0_L",
+      "scope": "full diamond goal",
+      "status": "unsolved",
+      "expanded": 1393
+    },
+    {
+      "name": "forbid_M0_R",
+      "scope": "full diamond goal",
+      "status": "unsolved",
+      "expanded": 14566
+    },
+    {
+      "name": "forbid_M1_U",
+      "scope": "full diamond goal",
+      "status": "unsolved",
+      "expanded": 13869
+    },
+    {
+      "name": "forbid_M1_D",
+      "scope": "full diamond goal",
+      "status": "unsolved",
+      "expanded": 5086
+    },
+    {
+      "name": "forbid_M1_L",
+      "scope": "full diamond goal",
+      "status": "solved",
+      "moves": 93,
+      "path": "DDRRULRRUUUULUURDDDDDDLDLLLURRRRRRRLLLLDDRUUUUUDDDDDRRRRUUUUDDDDLLLULUUUUULUURRRRRRRRDDLDDDDD",
+      "expanded": 17545,
+      "ordinaryReplay": true,
+      "final": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 12,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 9,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 10,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 11,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 12,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "player",
+          "group": null,
+          "x": 11,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 9,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 12,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 13,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 12,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 14,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 9,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 15,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 16,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 12,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 17,
+          "type": "gem",
+          "group": null,
+          "x": 11,
+          "y": 9,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "name": "forbid_M1_R",
+      "scope": "full diamond goal",
+      "status": "solved",
+      "moves": 81,
+      "path": "DDRRULRRUUUULUURDDDDDDLDLLLURRRRRRRLLLLDDRUUUUUDDDDDRRRRUUUULLLUURRUURRRRDDLDDDDD",
+      "expanded": 23316,
+      "ordinaryReplay": true,
+      "final": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 12,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 9,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 10,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 11,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 12,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "player",
+          "group": null,
+          "x": 11,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 9,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 12,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 13,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 12,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 14,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 9,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 15,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 16,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 12,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 17,
+          "type": "gem",
+          "group": null,
+          "x": 11,
+          "y": 9,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "name": "first_use_positive",
+      "scope": "A legal first declared lateral-use opportunity OR diamond; use transitions excluded throughout prefix",
+      "status": "solved",
+      "moves": 34,
+      "path": "DDRRUULRRUUULUURDDDDDDLDLLLURRRRRR",
+      "expanded": 6651,
+      "ordinaryReplay": true,
+      "final": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 11,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 9,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 11,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "player",
+          "group": null,
+          "x": 7,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 12,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 13,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 11,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 14,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 15,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 14,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 16,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 11,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 17,
+          "type": "gem",
+          "group": null,
+          "x": 11,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "name": "first_use_without_tool_L",
+      "scope": "A legal first declared lateral-use opportunity OR diamond; use transitions excluded throughout prefix",
+      "status": "unsolved",
+      "expanded": 1393
+    },
+    {
+      "name": "first_use_without_keeper_motion",
+      "scope": "A legal first declared lateral-use opportunity OR diamond; use transitions excluded throughout prefix",
+      "status": "unsolved",
+      "expanded": 1443
+    },
+    {
+      "name": "first_use_without_keeper_D",
+      "scope": "A legal first declared lateral-use opportunity OR diamond; use transitions excluded throughout prefix",
+      "status": "unsolved",
+      "expanded": 5086
+    },
+    {
+      "name": "first_use_without_keeper_U",
+      "scope": "A legal first declared lateral-use opportunity OR diamond; use transitions excluded throughout prefix",
+      "status": "solved",
+      "moves": 34,
+      "path": "DDRRUULRRUUULUURDDDDDDLDLLLURRRRRR",
+      "expanded": 4825,
+      "ordinaryReplay": true,
+      "final": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 11,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 9,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 10,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 11,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "player",
+          "group": null,
+          "x": 7,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 12,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 13,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 11,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 14,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 15,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 14,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 16,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 11,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 17,
+          "type": "gem",
+          "group": null,
+          "x": 11,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "name": "keeper_parking_positive",
+      "scope": "Keeper minimum y >= 9 OR diamond",
+      "status": "solved",
+      "moves": 22,
+      "path": "DDRRUULRRUUULUURDDDDDD",
+      "expanded": 1299,
+      "ordinaryReplay": true,
+      "final": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 11,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 2,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 3,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 11,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "player",
+          "group": null,
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 2,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 12,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 13,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 11,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 14,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 2,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 15,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 14,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 16,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 11,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 17,
+          "type": "gem",
+          "group": null,
+          "x": 11,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "name": "keeper_parking_without_tool_L",
+      "scope": "Keeper minimum y >= 9 OR diamond, with every tool L excluded",
+      "status": "unsolved",
+      "expanded": 1393
+    },
+    {
+      "name": "withdrawal_positive",
+      "scope": "Target at x12 and elbow top y < 6 OR diamond",
+      "status": "solved",
+      "moves": 58,
+      "path": "DDRRUULRRUUULUURDDDDDDLDLLLURRRRRRRLLLLDDRUUUUUDDDDDRRRRUU",
+      "expanded": 18296,
+      "ordinaryReplay": true,
+      "final": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 12,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 9,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 10,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 11,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 12,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "player",
+          "group": null,
+          "x": 9,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 9,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 12,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 13,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 12,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 14,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 9,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 15,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 16,
+          "type": "weightless_box",
+          "group": "M3",
+          "x": 12,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 17,
+          "type": "gem",
+          "group": null,
+          "x": 11,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "name": "withdrawal_without_keeper_U",
+      "scope": "Target at x12 and elbow top y < 6 OR diamond; every keeper U excluded",
+      "status": "unsolved",
+      "expanded": 13869
+    }
+  ],
+  "controls": [],
+  "scope": "Custom checks for this composed room. Official transition exclusions and ordinary replay. This is not the two-group boundary fixture acceptance profile.",
+  "error": "TypeError: Cannot read properties of undefined (reading 'x') (local stack paths omitted)"
+}

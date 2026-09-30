@@ -1,6 +1,6 @@
 # Saved HxH mechanism reconstruction
 
-This is the user's saved reconstruction of the upper mechanism in official HxH, captured on 2026-09-30. Its two groups correspond to the official staircases, renamed M0 and M1. The approach, lower terrain, and other objects differ from the full official room. It is also distinct from this skill's earlier sealed extraction. Do not present it as the unchanged official level.
+This is the user's saved reconstruction of the upper mechanism in official HxH. Its two groups correspond to the official staircases, renamed M0 and M1. The approach, lower terrain, and other objects differ from the full official room. It is also distinct from this skill's earlier sealed extraction. Do not present it as the unchanged official level.
 
 ## Files and objective
 

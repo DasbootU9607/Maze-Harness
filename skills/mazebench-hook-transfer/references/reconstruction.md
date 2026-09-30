@@ -1,6 +1,6 @@
 # Saved GxE rear-hook reconstruction
 
-This user's reconstruction, captured on 2026-09-30, reproduces the official GxE mechanism. Its group IDs are swapped relative to upstream `9hgghfgcsu.txt`, and its north boundary differs. It is not claimed to be a byte-for-byte official level.
+This user's reconstruction reproduces the official GxE mechanism. Its group IDs are swapped relative to upstream `9hgghfgcsu.txt`, and its north boundary differs. It is not claimed to be a byte-for-byte official level.
 
 ## Files and actual objective
 

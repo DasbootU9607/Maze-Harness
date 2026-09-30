@@ -1,6 +1,6 @@
 # Borrowed Bay: The Returning Keeper
 
-This new authored room came from one independent authoring trial using all three revised MazeBench skills on 2026-09-30. The author chose a five-cell elbow tool, a seven-cell helper with a side ear, and a vertical four-cell target. Four earlier candidates exposed a walking bypass, a helper that replaced the tool, an inaccessible pushing face, and unnecessary recovery. The fifth candidate passed. This is evidence of practical use and iterative correction, not a controlled estimate of the skills' improvement or calibrated human difficulty.
+This new authored room came from one independent authoring trial using all three revised MazeBench skills. The author chose a five-cell elbow tool, a seven-cell helper with a side ear, and a vertical four-cell target. Four earlier candidates exposed a walking bypass, a helper that replaced the tool, an inaccessible pushing face, and unnecessary recovery. The fifth candidate passed. This is evidence of practical use and iterative correction, not a controlled estimate of the skills' improvement or calibrated human difficulty.
 
 ![Initial room](../assets/borrowed-bay/initial.jpg)
 

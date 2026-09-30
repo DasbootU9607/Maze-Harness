@@ -1,0 +1,33 @@
+{
+  "case": "north-store",
+  "solution": {
+    "status": "solved",
+    "moves": 30,
+    "path": "LLLLLULDDLLDRURRRDDLULDRDDLLLL",
+    "expanded": 2090
+  },
+  "replayPassed": true,
+  "checks": [
+    {
+      "rule": "no_hook_motion",
+      "status": "unsolved",
+      "expanded": 59
+    },
+    {
+      "rule": "no_payload_motion",
+      "status": "unsolved",
+      "expanded": 2121
+    },
+    {
+      "rule": "no_coupled_motion",
+      "status": "unsolved",
+      "expanded": 2121
+    },
+    {
+      "rule": "no_rear_transfer",
+      "status": "unsolved",
+      "expanded": 2121
+    }
+  ],
+  "overall": "passed"
+}

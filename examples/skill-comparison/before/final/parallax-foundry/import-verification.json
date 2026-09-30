@@ -1,0 +1,7 @@
+{
+  "nativeBuildImport": "failed",
+  "uiMessage": "Something went wrong.",
+  "diagnosis": "Official createLocalWorld directory symlink EPERM on Windows, including outside sandbox. JSON accepted; draft creation failed before level import.",
+  "draftIdsUnchanged": true,
+  "workaround": "Existing materialized draft uses copied official resources and unchanged official level save/import service."
+}

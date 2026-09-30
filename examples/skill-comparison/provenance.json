@@ -1,0 +1,1115 @@
+{
+  "scope": "Source file fingerprints from the local archive, without machine-specific source paths.",
+  "files": [
+    {
+      "path": "before/final/01-boundary/browser.json",
+      "source_sha256": "0166834c72f4dcfce51201a1663e1f77fa2b01fa8a263d1c9d4cb3d899ca1498",
+      "published_sha256": "0166834c72f4dcfce51201a1663e1f77fa2b01fa8a263d1c9d4cb3d899ca1498",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/01-boundary/contract.json",
+      "source_sha256": "a0696514992456b03a3edfa8a1a5a0fef51f9247403e9a1cab8f0a27305e7a7b",
+      "published_sha256": "a0696514992456b03a3edfa8a1a5a0fef51f9247403e9a1cab8f0a27305e7a7b",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/01-boundary/controls.json",
+      "source_sha256": "116aad0590b4082fab17f87aeaa77e55167f0a5fadd658aec225c1415beeb05b",
+      "published_sha256": "116aad0590b4082fab17f87aeaa77e55167f0a5fadd658aec225c1415beeb05b",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/01-boundary/manifest.json",
+      "source_sha256": "694a2ac493c7fc3ef078053d57ce36e91c49f3459a5a2385f7d30be707264dc1",
+      "published_sha256": "694a2ac493c7fc3ef078053d57ce36e91c49f3459a5a2385f7d30be707264dc1",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/01-boundary/spec.json",
+      "source_sha256": "a80e9e602c02a956fded88d2b078ae201e16acb581a5813213875d6240a6dd92",
+      "published_sha256": "2fb4132c7284f2ec66443a6af45fc4d8497cb1183aef090d2b79551bcadfaf39",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/01-boundary/verification.json",
+      "source_sha256": "467b2c2c48022e92522b147216024d89af0df6e4d9abdc0ea7b41f655c9ec42d",
+      "published_sha256": "467b2c2c48022e92522b147216024d89af0df6e4d9abdc0ea7b41f655c9ec42d",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/01-boundary/world.json",
+      "source_sha256": "8bca08cddc997f1961153aad12a13e8ed95a7d6f3ff815c61b4b796219794e57",
+      "published_sha256": "8bca08cddc997f1961153aad12a13e8ed95a7d6f3ff815c61b4b796219794e57",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/01-boundary/level_AxA.txt",
+      "source_sha256": "40e82b0add5c591ffbb958dc237df5206d07a95874564e9751206539a361b57c",
+      "published_sha256": "40e82b0add5c591ffbb958dc237df5206d07a95874564e9751206539a361b57c",
+      "transform": "UTF-8 text; local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/01-boundary/preview.jpg",
+      "source_sha256": "d9571135723e2316733478aca6eafd50a22e3cc387171173f5279e9d59882b9d",
+      "published_sha256": "d9571135723e2316733478aca6eafd50a22e3cc387171173f5279e9d59882b9d",
+      "transform": "none"
+    },
+    {
+      "path": "before/final/02-hook/browser.json",
+      "source_sha256": "56ddbb377b6bf7dd3e39962b9b6d9af48d1d804501df53a0e36e3e05b4658468",
+      "published_sha256": "56ddbb377b6bf7dd3e39962b9b6d9af48d1d804501df53a0e36e3e05b4658468",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/02-hook/contract.json",
+      "source_sha256": "97ceefa2103e9ae750d70177cf97242ba1408e76ea051d576bccfff3260d56d3",
+      "published_sha256": "97ceefa2103e9ae750d70177cf97242ba1408e76ea051d576bccfff3260d56d3",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/02-hook/manifest.json",
+      "source_sha256": "ed420dfd92f6e967202d77c2a57b6923af7581c8f6b40dafad98a53b29463495",
+      "published_sha256": "ed420dfd92f6e967202d77c2a57b6923af7581c8f6b40dafad98a53b29463495",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/02-hook/spec.json",
+      "source_sha256": "f0045426c2cb02256c70760958a6d662c8e0c2bb7de648f254d0530be9282337",
+      "published_sha256": "be977aff69580e87e92fa3bde918c615b1b240f17843a30f8c9bb0d84ff1c59d",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/02-hook/verification.json",
+      "source_sha256": "0391d06ab0b9bf66bdf38adcf1f4ce1eb9f0313aea90b510ead21286329aee4e",
+      "published_sha256": "37511a73e3fdbe0f09aefbf3f0e664122323e43e9db0a964cea5dd78076f1a01",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/02-hook/world.json",
+      "source_sha256": "23a5a02f2900bf43d49dd4a34a2fa23babfe7f939e76b44d627205cb26c7faec",
+      "published_sha256": "23a5a02f2900bf43d49dd4a34a2fa23babfe7f939e76b44d627205cb26c7faec",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/02-hook/level_AxA.txt",
+      "source_sha256": "b0908e74c6e7c74275abd62f131db967d817ccf2da008c23c0b8720bda7ab47b",
+      "published_sha256": "b0908e74c6e7c74275abd62f131db967d817ccf2da008c23c0b8720bda7ab47b",
+      "transform": "UTF-8 text; local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/02-hook/preview.jpg",
+      "source_sha256": "742d32ed38842ff93079f1625bf1908df5b9d9a9441e16d5881d94e98ea001c2",
+      "published_sha256": "742d32ed38842ff93079f1625bf1908df5b9d9a9441e16d5881d94e98ea001c2",
+      "transform": "none"
+    },
+    {
+      "path": "before/final/03-transport/browser.json",
+      "source_sha256": "300044786e8faa5b272ad2977eaf598afcb84209adf06d15f9d901f6847c26c4",
+      "published_sha256": "300044786e8faa5b272ad2977eaf598afcb84209adf06d15f9d901f6847c26c4",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/03-transport/contract.json",
+      "source_sha256": "fffb8ef4dcdb7f4393dc4b44881e45de39aee199ea0eb8bee22ed593efa67361",
+      "published_sha256": "fffb8ef4dcdb7f4393dc4b44881e45de39aee199ea0eb8bee22ed593efa67361",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/03-transport/manifest-before-ui-adapter.json",
+      "source_sha256": "58dca1040ebc9d6aff595dd029f976c99646ec00c2eae22480347d8d9dcafa54",
+      "published_sha256": "1c1a86ca5bd524afdf9a14b48e13499d9cb272e9ab67e676ba5f661024e931e4",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/03-transport/manifest.json",
+      "source_sha256": "263d3e81a13f81c3d937d82cfb55699144a6699ac8e8bc4bfaf7b9461f293598",
+      "published_sha256": "bd5739e57b07c6ac84d6a1c3d43ba86964498d0f165f19da95805105dc049743",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/03-transport/spec.json",
+      "source_sha256": "27a1e9f7b281698dafe4d652e1ad6e7faff45c2aa04df9c07df278c32da8bd56",
+      "published_sha256": "0759af0207d668e0adaf65b7fac453aa2e86ba28c229886bada583d711624418",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/03-transport/verification.json",
+      "source_sha256": "457624e3598b6477414647cef0355e2a02bd85e8e8f94bdb7c84323a4555db49",
+      "published_sha256": "457624e3598b6477414647cef0355e2a02bd85e8e8f94bdb7c84323a4555db49",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/03-transport/world.json",
+      "source_sha256": "f11d68d8fc13241c62425753e4bc747f2f9618045ce4aa5a7ff843c484426363",
+      "published_sha256": "f11d68d8fc13241c62425753e4bc747f2f9618045ce4aa5a7ff843c484426363",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/03-transport/level_AxA.txt",
+      "source_sha256": "47fd32016c7fa6db683ffd0637034d88fd8da117490e592d75b17e04e34d46fa",
+      "published_sha256": "47fd32016c7fa6db683ffd0637034d88fd8da117490e592d75b17e04e34d46fa",
+      "transform": "UTF-8 text; local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/03-transport/preview.jpg",
+      "source_sha256": "7e2498e17e055321bc7778df65c4253a393fec59f3a66da94fef41efc0ff3fc4",
+      "published_sha256": "7e2498e17e055321bc7778df65c4253a393fec59f3a66da94fef41efc0ff3fc4",
+      "transform": "none"
+    },
+    {
+      "path": "before/final/04-combined/browser.json",
+      "source_sha256": "109e469c41753413e7df41bc051d36cf61096bfe95fef912343b7090bd326060",
+      "published_sha256": "109e469c41753413e7df41bc051d36cf61096bfe95fef912343b7090bd326060",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/04-combined/contract.json",
+      "source_sha256": "63beda44e6bb1a7edf15105ce2e2548d583faf0e0fac4172567fe7a1c4ce3eae",
+      "published_sha256": "63beda44e6bb1a7edf15105ce2e2548d583faf0e0fac4172567fe7a1c4ce3eae",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/04-combined/manifest-before-ui-adapter.json",
+      "source_sha256": "c45987587bbb27805751dda9a96d2e0d2d0bac92d8cf1d7b22d8235bc6d4cf19",
+      "published_sha256": "c52b7bb046b4b5f763375180ee9f2d420a1dcfe6f4d538dc4fcc5666417df45d",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/04-combined/manifest.json",
+      "source_sha256": "7aa237af429b56b3243375700c8f83407a59fb6cab141dcc1078909c972d667b",
+      "published_sha256": "f32ef4ccc2f712a98969ab5f36a8a9a7f1d6c457351ec7842dbcc79ce9b4a9fe",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/04-combined/spec.json",
+      "source_sha256": "6a384757ad99e2fa43ac99d6e2136b899a550721f6b14ef457ae73b4adf0e077",
+      "published_sha256": "724677da6676a312a00561ed52057284abfe93ce0280e7004d77bea142e8bdcd",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/04-combined/supplemental-verification.json",
+      "source_sha256": "b103549a22678c7fadf3c6e8ac8eab47d428bca665ebfb964b2059f6a1dd693e",
+      "published_sha256": "4d51d55307a3838bb92b471880d89eff83bf60e91ecdb6080df70d507936f589",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/04-combined/verification.json",
+      "source_sha256": "33435933aad2bb8c3071a65ee2d713a24801a7c08b772874b2a4c0f77ce6361b",
+      "published_sha256": "33435933aad2bb8c3071a65ee2d713a24801a7c08b772874b2a4c0f77ce6361b",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/04-combined/world.json",
+      "source_sha256": "affb90785b2d4296adb4057c0c38c060fd935b4b9540369c87224409c3670117",
+      "published_sha256": "affb90785b2d4296adb4057c0c38c060fd935b4b9540369c87224409c3670117",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/04-combined/level_AxA.txt",
+      "source_sha256": "b3c061ef5673a4bcfc0d47767bbb991f94e804f09e94472c2b8566531224aafa",
+      "published_sha256": "b3c061ef5673a4bcfc0d47767bbb991f94e804f09e94472c2b8566531224aafa",
+      "transform": "UTF-8 text; local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/04-combined/preview.jpg",
+      "source_sha256": "5eaaef17184082c048b38678b889aafb3a273577484cb02833c324634b38a1ed",
+      "published_sha256": "5eaaef17184082c048b38678b889aafb3a273577484cb02833c324634b38a1ed",
+      "transform": "none"
+    },
+    {
+      "path": "before/final/agent-practice/world.json",
+      "source_sha256": "b5f7238b647e45b4ab3f88dea706ff83219f10f7bc3723ebd70203922bfcb124",
+      "published_sha256": "66c5308f034fbfef5758d9275b7f128595f7d3e795f7b9fe7686b5cac648be85",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/agent-practice/preview.png",
+      "source_sha256": "88ee674a5099d3898f4869d23d53ee45fd08ab08238d4993c2d24fa2d655cd1f",
+      "published_sha256": "88ee674a5099d3898f4869d23d53ee45fd08ab08238d4993c2d24fa2d655cd1f",
+      "transform": "none"
+    },
+    {
+      "path": "before/final/parallax-foundry/browser-verification.json",
+      "source_sha256": "e6040838b2f019fa91d1168cf4d8e26e90c3da58116500c716bb60a43de3698b",
+      "published_sha256": "635e4e3a85854af11cd5d1ec940c61a9d3dfcf7a507f044edc6e3e32a1add79e",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/parallax-foundry/camera-controls-verification.json",
+      "source_sha256": "b1f146d66c129e9d9b5d905cd31d96f80980c0efcd51679b5289706360b562b1",
+      "published_sha256": "0a216d5b82cb45977c00bef172fff32b3a12ad284daa1d69fee3e78b015c360a",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/parallax-foundry/delivery-verification.json",
+      "source_sha256": "19d81182763179de2e77fd8e90173a3f0b10688e77a0f74257a5478ac7c4178f",
+      "published_sha256": "995285f8a63da63e612ba574e07c7e2648adee29c1774c327111d7ec8049787a",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/parallax-foundry/dependency-verification.json",
+      "source_sha256": "3d529db24504eb2b7d49d7ba29155162632ce7bbd8038059cb33048ee674d5fd",
+      "published_sha256": "cd5aa1bb97e837f2f84464e761b0a8bd5bc78686949e719c1553889d8c989b37",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/parallax-foundry/format-verification.json",
+      "source_sha256": "c95e3408500011f4949ddd47894d328bd0b53490fd612d3ee900cf198c2dc3e1",
+      "published_sha256": "2a630498b45bda4db815077c1bcfc4420ba1ebe8a61004f7abe97adf1f1889c1",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/parallax-foundry/import-verification.json",
+      "source_sha256": "a4271db24c0fb6cfa160827c64a743c2ce34e852af86c40843b3631cb19f81e8",
+      "published_sha256": "893f7de839922998db789befda19b121ad8656c542c39ac7e637a9cd01ee2611",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/parallax-foundry/local-draft.json",
+      "source_sha256": "f17ca8a3dea145a962b69da720f26ec825840dee95c992bbcd69474cb58cf4ad",
+      "published_sha256": "3c3964835c221138d038a6fe925b195644e640eedb417f6ee9c1b432160be0a8",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/parallax-foundry/quality-verification.json",
+      "source_sha256": "5f531befdb633243693ef84b6d305a841040314991f41b0bdadb7a511ff4adc2",
+      "published_sha256": "0aa67875bd8e5731c672702599a3227bad059292d76caa215e6840524a828bd9",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/parallax-foundry/verification.json",
+      "source_sha256": "23bcca0661deb82a716acccbf327731ec686053b6c074642bc02fea9fe15cc7b",
+      "published_sha256": "27c59e5b4194165dcc7940ffa6b6fd4706ab8a5a8df22a3b459a6bda98185286",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/parallax-foundry/world-export.json",
+      "source_sha256": "75491e409b27c027dc663dbec8b14c33c246e418a603f7c21d728c9e5cbea9f9",
+      "published_sha256": "3c36196499457fffa132b0a7b5d8a1d054b9f2e7e372122bbd1bb6da1ca67a6a",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/parallax-foundry/world.json",
+      "source_sha256": "d283cf825b433f45315bcc840b6cd0e43a234604183de22c1287aa2b16ba2be2",
+      "published_sha256": "041f96ce7043c74dd7a6fb00af182a81db2583e91cc348031be422818f5066e0",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/parallax-foundry/rooms/level_AxA.txt",
+      "source_sha256": "7403321040aa7897a29cf381d943804ce78a44d1b981ecff94eb57d0218a6d88",
+      "published_sha256": "d0f092f02681799b5d74c958647c43097c622bdd94bb0920325cabfb787c70b6",
+      "transform": "UTF-8 room text; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/parallax-foundry/rooms/level_AxB.txt",
+      "source_sha256": "30d07915955d3fb7eec496c1e8bc285aafef96bf573356182df5f8075d4be5a1",
+      "published_sha256": "9cbe05413cbacc14ebed86432a8623de1cbcf859abcbfbba440ca8a3261501fa",
+      "transform": "UTF-8 room text; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/parallax-foundry/rooms/level_BxA.txt",
+      "source_sha256": "7c18e729c4a5a0cdcf898ffbc807c87eb32684b2bca89e2cb0f57b4ec2aabace",
+      "published_sha256": "f623b2edd968eb7e61a6bca72382f5ae6ac6d7b39fe61757e05cc20887b6ad2d",
+      "transform": "UTF-8 room text; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/parallax-foundry/rooms/level_BxB.txt",
+      "source_sha256": "ad1f0fcf36d76b1de40a99356bd4a5011aafb556f68213d76aeff147cc85696c",
+      "published_sha256": "0a1a0b058364867a976f4b174cf947af5ef74f22b8a03fc7fe6ad839619c95ff",
+      "transform": "UTF-8 room text; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/pocket-shutter/contract.json",
+      "source_sha256": "e0c00012b756b08ef4613148a35fa16cabb85185230dd247ff30e12866f35117",
+      "published_sha256": "e0c00012b756b08ef4613148a35fa16cabb85185230dd247ff30e12866f35117",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/pocket-shutter/world.json",
+      "source_sha256": "88bece1aed3d088ec8bc409b91c7bef693c573b8e967d57ecde38ccf96c6c336",
+      "published_sha256": "88bece1aed3d088ec8bc409b91c7bef693c573b8e967d57ecde38ccf96c6c336",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/pocket-shutter/evidence/browser.json",
+      "source_sha256": "66677e1c60391c9846a5ac363966c11295bee14b6d3bb733e1defaa5c8917dad",
+      "published_sha256": "66677e1c60391c9846a5ac363966c11295bee14b6d3bb733e1defaa5c8917dad",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/pocket-shutter/evidence/controls.json",
+      "source_sha256": "a138e53383e1296687b19eade2a4793896b36261e87df9fb4ddd1d2764b58146",
+      "published_sha256": "a138e53383e1296687b19eade2a4793896b36261e87df9fb4ddd1d2764b58146",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/pocket-shutter/evidence/verification.json",
+      "source_sha256": "ffbc0683ad1ca5e574bfeb157dcdf6c92d385f39ad43488ca5b8d6b11ea1fcb3",
+      "published_sha256": "ffbc0683ad1ca5e574bfeb157dcdf6c92d385f39ad43488ca5b8d6b11ea1fcb3",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/pocket-shutter/preview.jpg",
+      "source_sha256": "f6f02b2afbf41aea74bf4f39d744015dffa360e6ffc7945b4859a1565f17e710",
+      "published_sha256": "f6f02b2afbf41aea74bf4f39d744015dffa360e6ffc7945b4859a1565f17e710",
+      "transform": "none"
+    },
+    {
+      "path": "before/final/twin-tee/contract.json",
+      "source_sha256": "1e6a21c4320a759f137c75f062348d9bf6dc099f77db35428f39f97c71c4556e",
+      "published_sha256": "1e6a21c4320a759f137c75f062348d9bf6dc099f77db35428f39f97c71c4556e",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/twin-tee/world.json",
+      "source_sha256": "e29f38bb8fc5026ee9be5c4772b06bec553d29d921567443c1245551cf91e300",
+      "published_sha256": "e29f38bb8fc5026ee9be5c4772b06bec553d29d921567443c1245551cf91e300",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/twin-tee/evidence/browser.json",
+      "source_sha256": "3ab4cfa8a216c64547fdafb8cb6ac56e8c43397c3dd0565d02891205f4d074c7",
+      "published_sha256": "3ab4cfa8a216c64547fdafb8cb6ac56e8c43397c3dd0565d02891205f4d074c7",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/twin-tee/evidence/controls.json",
+      "source_sha256": "764ce2ecf59e2ede11a1f5ddb88815e2fa6d30109c5cc4ed5915457ccf368df1",
+      "published_sha256": "764ce2ecf59e2ede11a1f5ddb88815e2fa6d30109c5cc4ed5915457ccf368df1",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/twin-tee/evidence/verification.json",
+      "source_sha256": "13a5f926ad3eae1840e74682e6bbdacf671db876875dfc3af32c17df68514d3a",
+      "published_sha256": "13a5f926ad3eae1840e74682e6bbdacf671db876875dfc3af32c17df68514d3a",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/twin-tee/preview.jpg",
+      "source_sha256": "e4b7856c7f6cfb0e7883b4bcbfccb2b39c91bb31a7f07be47fd0b7526d755c7d",
+      "published_sha256": "e4b7856c7f6cfb0e7883b4bcbfccb2b39c91bb31a7f07be47fd0b7526d755c7d",
+      "transform": "none"
+    },
+    {
+      "path": "before/final/minimal/evidence.json",
+      "source_sha256": "3650632055dbdab1f17bd9991d886ad04a86fafcd9d6d3646dc5e2c7386e8cd2",
+      "published_sha256": "3650632055dbdab1f17bd9991d886ad04a86fafcd9d6d3646dc5e2c7386e8cd2",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/minimal/publication-check-excerpt.json",
+      "source_sha256": "9db6706853887110d8beed8ccdb6f5f65b38361b8fe72c8346fd14a30557bb98",
+      "published_sha256": "854329a101c1896098dcd7ddb1b981af7a15c2b1772581edef8b422e232262e5",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/minimal/spec.json",
+      "source_sha256": "5630b46d6cd80f511890e47f15b1111bc29077ea4ad983ab169c774da91919d9",
+      "published_sha256": "5630b46d6cd80f511890e47f15b1111bc29077ea4ad983ab169c774da91919d9",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/minimal/world.json",
+      "source_sha256": "6cc6d9b4a32bcaa296b79d215028808e94545fdb40983c88df10baa55173b8b0",
+      "published_sha256": "6cc6d9b4a32bcaa296b79d215028808e94545fdb40983c88df10baa55173b8b0",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/north-store/evidence.json",
+      "source_sha256": "00d7f9898557285bd51b2b780a1d590879d65a28919584f79cdac7699f31a73a",
+      "published_sha256": "00d7f9898557285bd51b2b780a1d590879d65a28919584f79cdac7699f31a73a",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/north-store/publication-check-excerpt.json",
+      "source_sha256": "0651a1de830b29b03b1867b583303981ffc777483bef8ecded035e44210dd8bc",
+      "published_sha256": "149f2777d99c35598fe4d38373a2b95c49ba2ac6649015b04136601b6a9ebb06",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/north-store/spec.json",
+      "source_sha256": "d7f6f11186974b9840735934786417ccdeb1b2ded5c28c219db543c7213eac0d",
+      "published_sha256": "d7f6f11186974b9840735934786417ccdeb1b2ded5c28c219db543c7213eac0d",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/north-store/world.json",
+      "source_sha256": "fb91b37a7cc10e8dc6ca09489e151169192b9d1f3c4b5c1e306af72ed1e2ee5c",
+      "published_sha256": "fb91b37a7cc10e8dc6ca09489e151169192b9d1f3c4b5c1e306af72ed1e2ee5c",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/wide-hook/evidence.json",
+      "source_sha256": "dcc8ca8e78976f20f4f2902f550c47f5de8807ed5e3271b1b9f133342b255fb8",
+      "published_sha256": "dcc8ca8e78976f20f4f2902f550c47f5de8807ed5e3271b1b9f133342b255fb8",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/wide-hook/publication-check-excerpt.json",
+      "source_sha256": "48b8dd7b3bdc602cbdc6ad618edf4f23f7eb8a82315d0f6ef97152775c49f20c",
+      "published_sha256": "8605b75c98d74b925b389ecd3fa972c3103f9b32cb2d83bf2daa672e85331597",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/wide-hook/spec.json",
+      "source_sha256": "711509b250d03a60ec103a6baa97138130ecbb1329a14db6476662788bdf845b",
+      "published_sha256": "711509b250d03a60ec103a6baa97138130ecbb1329a14db6476662788bdf845b",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/wide-hook/world.json",
+      "source_sha256": "8d1d9eb7515c10993d347a16c975945a83c1b1b850db76178fc82edd98e7e16b",
+      "published_sha256": "8d1d9eb7515c10993d347a16c975945a83c1b1b850db76178fc82edd98e7e16b",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/repair-plate/contract.json",
+      "source_sha256": "159e5ca4ef4f91eae90a189369e8deeaa269ec4e2811b4f3321bceb5a39e79c8",
+      "published_sha256": "159e5ca4ef4f91eae90a189369e8deeaa269ec4e2811b4f3321bceb5a39e79c8",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/repair-plate/evidence.json",
+      "source_sha256": "b09fe48cb0b9b2740fe84449aea6afa6f7c2095072a13d492bcd0ef9318f773b",
+      "published_sha256": "b09fe48cb0b9b2740fe84449aea6afa6f7c2095072a13d492bcd0ef9318f773b",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/repair-plate/publication-check-excerpt.json",
+      "source_sha256": "ac3368af089603255cf27f78bb2ae1e9328426c8c04f2895d6c78251c4c4a45c",
+      "published_sha256": "40f41b4429294848dfd9d0e9b4a57ca56daf563a946917906520e2804f206ed3",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/repair-plate/world.json",
+      "source_sha256": "b69b45649adceb618ecafce4bfa78e12c48c2f47ea5c49ae30194115d1744d31",
+      "published_sha256": "b69b45649adceb618ecafce4bfa78e12c48c2f47ea5c49ae30194115d1744d31",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/elevated-bridge/contract.json",
+      "source_sha256": "25f317112bd4368fc1232d741358d85301f6f2dab8df738607a259ff8056f0af",
+      "published_sha256": "25f317112bd4368fc1232d741358d85301f6f2dab8df738607a259ff8056f0af",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/elevated-bridge/evidence.json",
+      "source_sha256": "e165e5d69a27b2c1a2dff56eb157467f31216d688729556355c6ba912f799d2c",
+      "published_sha256": "e165e5d69a27b2c1a2dff56eb157467f31216d688729556355c6ba912f799d2c",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/elevated-bridge/publication-check-excerpt.json",
+      "source_sha256": "2aa3295d464fc821c679e8ad8ab9a8a61e26d551527717461063f8a672f72459",
+      "published_sha256": "d3bfed6be6e2f9af12746d9ffc23f5f09d5bd2c13372fbe62f1ef124408fb54c",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/elevated-bridge/world.json",
+      "source_sha256": "c516d7dc0b42127acdbfac888dd0ac3142d703c6a1bc073b4b7cd22a8f2a942f",
+      "published_sha256": "c516d7dc0b42127acdbfac888dd0ac3142d703c6a1bc073b4b7cd22a8f2a942f",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/active-docking/contract.json",
+      "source_sha256": "ff05ddc4cdf3f0119a09557d2e6cea774f7eef0af0658fde4df49b7fd0a689e8",
+      "published_sha256": "ff05ddc4cdf3f0119a09557d2e6cea774f7eef0af0658fde4df49b7fd0a689e8",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/active-docking/evidence.json",
+      "source_sha256": "6fe7728209e1453fb1ddf6362e5e1b66c46eb19889ac5fad26e94a66760a5f4b",
+      "published_sha256": "6fe7728209e1453fb1ddf6362e5e1b66c46eb19889ac5fad26e94a66760a5f4b",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/active-docking/publication-check-excerpt.json",
+      "source_sha256": "63f2359f87c938f09af1ca194f6f4ab310bdfe9ad5d5b32358b318f23572c9fc",
+      "published_sha256": "2e953e9e9a8b9ad2276cc928b933596303b6f6c035b49d5e53ec360c87795b46",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/active-docking/world.json",
+      "source_sha256": "cb988ee98bccde3e95dc11ad0ba531d776e4435479191756f08d17c569ba4feb",
+      "published_sha256": "cb988ee98bccde3e95dc11ad0ba531d776e4435479191756f08d17c569ba4feb",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/side-reach/contract.json",
+      "source_sha256": "75fa1aed44a3b1cf7fe7f8dbec9d8760937fe10f02c72e1201a139cf7baa98cd",
+      "published_sha256": "75fa1aed44a3b1cf7fe7f8dbec9d8760937fe10f02c72e1201a139cf7baa98cd",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/side-reach/evidence.json",
+      "source_sha256": "f8e5743726166c8c4fdd953a68dbb3f835fce9ab0b1b0794065bd49f4cd4e280",
+      "published_sha256": "f8e5743726166c8c4fdd953a68dbb3f835fce9ab0b1b0794065bd49f4cd4e280",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/side-reach/publication-check-excerpt.json",
+      "source_sha256": "c960787a873b9835fc975066f4363c09251f165a7c84827e546933733321f928",
+      "published_sha256": "c1a65eb04f57edbe5149623a0e4262b2ea5a1212fe7b2a9bd194021a1f98949d",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/side-reach/world.json",
+      "source_sha256": "e3417fc6f8d0dba9069ebc598c28b8e541faa6d0d0708dfebc20336f9cec4093",
+      "published_sha256": "e3417fc6f8d0dba9069ebc598c28b8e541faa6d0d0708dfebc20336f9cec4093",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/cantilever-key/contract.json",
+      "source_sha256": "72ee967570b57182394828995ae711bc0e78dfc78564b423421644a8c879819a",
+      "published_sha256": "72ee967570b57182394828995ae711bc0e78dfc78564b423421644a8c879819a",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/cantilever-key/evidence.json",
+      "source_sha256": "646c17d1a1ebc34d6feb4e43efd275862381060bcf7ef6ed9861eb9b53491e19",
+      "published_sha256": "646c17d1a1ebc34d6feb4e43efd275862381060bcf7ef6ed9861eb9b53491e19",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/cantilever-key/publication-check-excerpt.json",
+      "source_sha256": "3c71dc901fb6c6c01b4ad9964d5402e1297f0e235096a3e5488922ad3c02d820",
+      "published_sha256": "765c5d1dcf3ee86da4d8b23d59e98b30ee27088ad70ddc43332249bb78eaf6d6",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/final/cantilever-key/world.json",
+      "source_sha256": "366525fc5cf39864565f10f5f2c13c33ac7bb70ab643737973e3262380b5644a",
+      "published_sha256": "366525fc5cf39864565f10f5f2c13c33ac7bb70ab643737973e3262380b5644a",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/stagger-prototype-01/checks.json",
+      "source_sha256": "1145245fc4512a4c843623bb2b9348a9cf891bad6ca94f82812a6fb636ee39ae",
+      "published_sha256": "06f4ac124bb19b89236950e9a00fad6c0208ef7fc0fd951453059fa4bb2945b9",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/stagger-prototype-01/prototype.json",
+      "source_sha256": "82fb9e6d5c750aba969a9e6e301ec7d2d49d61f40a2dde93d8936b815227b3e3",
+      "published_sha256": "1585f3695abdf5434c897a642f58b921c64c1a8487f588f258325b66d0600782",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/stagger-prototype-01/world.json",
+      "source_sha256": "eb8113aab6a134cffbde31075238512b6814c44941eb0e61c26de1801d4ff7b0",
+      "published_sha256": "31aa524db8d0e5ca817d4dfe18d22f05d45d9df665c508c24e55e08beeddb982",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/hook-prototype-01/checks.json",
+      "source_sha256": "d3fda69da7612cbe8a2ebecd26fabe3fabde2fb08dd1430ed098541e06878a1f",
+      "published_sha256": "5d57f6d1c8af01f525d27c984e8209a567a9d5c6df54b306b80538ebe00a71a4",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/hook-prototype-01/prototype.json",
+      "source_sha256": "31a64ef3ed4d92478dc1c33e44c2b7e9e632fa230c1e5ae7f0209467d1817576",
+      "published_sha256": "dae2c5607e35b63bcd4fbb5e91c8b7e2f4f796373d615796e68fb12dc4816d79",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/hook-prototype-01/world.json",
+      "source_sha256": "758e37736f183bbb989467ff41b8a692021fa9ff7b1cda2b69d16546081fdc95",
+      "published_sha256": "fa8bae581aaa62348f84c047611a2d99349acfd0b435bc7571efdf0c954d83c6",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/hook-prototype-02/checks.json",
+      "source_sha256": "1e12adafbc06485b5ddf505fc51a73bb8b89311b50b256594acb25e9a9449495",
+      "published_sha256": "b2048a35c0b11dc430d2016f19ccf6a4a112905e7188cb327a3ec1f9ed3c84fb",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/hook-prototype-02/prototype.json",
+      "source_sha256": "39e8794721a0b3e7786757d4333b57aae3868f3c02e425bbfef54e9537159653",
+      "published_sha256": "464530834a441a770ee56e254a14f5fb408ccc7b093fadfb0e54164df3729be9",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/hook-prototype-02/world.json",
+      "source_sha256": "e178215eb34f715ce8ee2dfe50a2a86a34594e41537899f5199c8c9ec313719f",
+      "published_sha256": "f83a80cd17b640caf8083b695866601f4413098c82a11ab58816aa07dba2aea7",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/transport-prototype-01/prototype.json",
+      "source_sha256": "26c3686564344413b09cd9d1dc8782eb228deb11daca21ef178dfae8c9d41a18",
+      "published_sha256": "6a0caf0701923193e2291a80d2a59b0bc312170de42425c8ecff1ee2e6d5eda6",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/transport-prototype-01/world.json",
+      "source_sha256": "fc6621c0ed3a1178526bad7688c99fad8029522741ad3d688b62ee845f790baa",
+      "published_sha256": "90b4beaa11ad44bc523c97741f6c19074c87a6c7d239daf79926bf43c03eee10",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/transport-prototype-02/prototype.json",
+      "source_sha256": "0410c1ab49cbbbc8c2cae9cec7b75c169d469627456d6964218d1e62510b56e8",
+      "published_sha256": "e5bf5455f79e5627f7c273d059dcd1327d7678405c9290a541ba4ff92f3b0ba7",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/transport-prototype-02/world.json",
+      "source_sha256": "6698670fa337474cb11c9069ddfbf3ebeffcb8a28c700f1927dace899f04f05a",
+      "published_sha256": "15ed16a55a059ac07b1172cdc6c189dbfae9b481cb9cf3380f22fc69a47ff240",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/transport-prototype-03/prototype.json",
+      "source_sha256": "47d5cebc82e887c543629cba2bf25966e665b0de7b0002c8b6aec40196b57c27",
+      "published_sha256": "f300ac408b33f281b7f62cb34ddd1212ef461a5a4c32d71eb4dfc2c5eccf419d",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/transport-prototype-03/world.json",
+      "source_sha256": "2716158f4b27c7d72f0c47a16b86cdbc22945239da79e0446f1180b6cf834636",
+      "published_sha256": "f15f236711d3c11d93acb2c3ae974c6b73b0483d7f2652d43398a60bbb2b16a6",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/transport-prototype-04/checks.json",
+      "source_sha256": "fba6104a59cb28515a055d9543958db8a00909841c6dc556e306b94f56d6984b",
+      "published_sha256": "682b35cd1345594065304d7dab5d143e2a1996420c8de1f493244700ea538eb4",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/transport-prototype-04/prototype.json",
+      "source_sha256": "23edbfa424e7e0fc90182668dd3bde0f8eab544285e8bb117dcd584f91e8846d",
+      "published_sha256": "cc65ab55c9362135a80665c97b93fb257e21624a98999da82b41d0713a782c68",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/transport-prototype-04/world.json",
+      "source_sha256": "d8237b0ba5f9351df6d7d37d77955bb3f0bd852fa915fa5fdc90e9fab8c21128",
+      "published_sha256": "2741f0e2f76339128762bd195e4448501cc0259d511d5e03817d6a18b1330084",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/transport-prototype-05/prototype.json",
+      "source_sha256": "42c2af8e742c7d5bd7fd4ed18bef2bfc2ee86e8a2df7647a2ef1775fe90a45ce",
+      "published_sha256": "54f9f4eb7078dbe8ce3662d3160d9875a8e3692015fa5b01ab71d84987c96add",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/transport-prototype-05/world.json",
+      "source_sha256": "6fa2e6cf062e1442635e9798d1aff81694955286e820867a18a387f19e80707a",
+      "published_sha256": "ffa90159013445ff99be7ac88806b39e09f52d2241b7a818ac0deca904c0a29f",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/combined-prototype-01/prototype.json",
+      "source_sha256": "5c5e2a3dfb8f2997f1649efc86f0b500c0ba38dd47010b88200111d857d8f0f4",
+      "published_sha256": "91f6ec5766f756b185ba9d175d17d03995124fd9d53be5db66264563f4f2abc8",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/combined-prototype-01/world.json",
+      "source_sha256": "64de0445a7b82fa243a62d0e13a9549d61505413791654ff156bab274bd783ed",
+      "published_sha256": "b40144e840887525c078454c7d9548b3e441a96ed6d11469375b4e9701bad1f5",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/combined-prototype-02/checks.json",
+      "source_sha256": "05f223d68dae47b61d2d9c300017eff2be843ba44218557528162549ee306130",
+      "published_sha256": "85d91a2365959f063f0661e0eaf64c1774783cacbd32e8d81fa6f429faad0ab2",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/combined-prototype-02/prototype.json",
+      "source_sha256": "8d9ffe72c7f3bd7f132e04c326fe1aa849381cebcd19dbd2a504e2c2f224449b",
+      "published_sha256": "d83b145ec8e8acbbe507fa1147c9e3e5b38582cc3ad8ecdcd88056bb367a75a6",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/combined-prototype-02/world.json",
+      "source_sha256": "88aef0a8c1ab08143bd4040a24127c3cb147805c86e21ce0240a31c4768b87e7",
+      "published_sha256": "966a5e5afcc7958e48740c50cfff18461d258bc85afa9c0fb0a7e73ade89c4f5",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/combined-prototype-03/checks.json",
+      "source_sha256": "fc75e15eecad3e55de7fa3a198c64bcb3ab2246e9b41dd38ab8f52668ef3c23b",
+      "published_sha256": "afe6ad0d9ea57b15773abfea4e895d61c121551ca4807cbee09a9e7868e41510",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/combined-prototype-03/prototype.json",
+      "source_sha256": "d84163c9c4b0cca2b1069c389b8651e084d29451f50f17771f5988abc2920a45",
+      "published_sha256": "dd6dd79c4f0b8f970ad1d08b6c29bbb7fbcbfffd3c606234db2a2b5bdf9499e3",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/combined-prototype-03/world.json",
+      "source_sha256": "2ea35f10161e74462d882ffaab48701798e668d438133bc7d64dfea27fe6da0e",
+      "published_sha256": "6602fca11cffdef8de8ae03287ebab63d8ae77a2a6ec0229a15fe4f6cff61aa8",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/cantilever-key-v1/bypass-verification.json",
+      "source_sha256": "840e75f2d9ed41253e3b1056239231d53a7c9707ad04d022f1ed1ee2b91aa610",
+      "published_sha256": "840e75f2d9ed41253e3b1056239231d53a7c9707ad04d022f1ed1ee2b91aa610",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "before/prototypes/cantilever-key-v1/world.json",
+      "source_sha256": "cecb38cd7b7fedf92e875db99244fcf1fa029557de78f9bc974c5af7e219143c",
+      "published_sha256": "c7adb5a131b3404d1a2c2081b0b733acc09e655b6d508198272d5737a6de237b",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/final/borrowed-bay/boundary-verification.json",
+      "source_sha256": "323b48048a941edfd75b67b5ca88179d123117df63d9c6c9f6da7c1c5e0a013d",
+      "published_sha256": "323b48048a941edfd75b67b5ca88179d123117df63d9c6c9f6da7c1c5e0a013d",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/final/borrowed-bay/browser.json",
+      "source_sha256": "af916a55440e65a5d6410c10ae0b4f61c74b56b35dc85c23d7b7bafe3a07f877",
+      "published_sha256": "a75a8d8172ac05326f36a33df5370c2a57c9b3c88bf17ee7ff7e90e84b8a1fc9",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/final/borrowed-bay/case-summary.json",
+      "source_sha256": "6fc6aef49a5a09934bc18e1d592d11877cc11f07061c601c430f48b29c9ecb2d",
+      "published_sha256": "6fc6aef49a5a09934bc18e1d592d11877cc11f07061c601c430f48b29c9ecb2d",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/final/borrowed-bay/contract.json",
+      "source_sha256": "9eec6728dce6c7e501f3083c31a02c501cbf034a229b4eefbb2908bf83224246",
+      "published_sha256": "9eec6728dce6c7e501f3083c31a02c501cbf034a229b4eefbb2908bf83224246",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/final/borrowed-bay/extended-verification-attempt-01.json",
+      "source_sha256": "92946e6da58332541af17ddf93a5092571fb12a7a3cc8de858320519a6a4c057",
+      "published_sha256": "8afeec7dc19b8e4ec85d78a1c74f03e196ce667721569fafd3e6cf6db5eb83da",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/final/borrowed-bay/extended-verification.json",
+      "source_sha256": "ca0c1f0092495ea3414a9e8f52a071cf42040eff91990717a95fc39b8471deb4",
+      "published_sha256": "ca0c1f0092495ea3414a9e8f52a071cf42040eff91990717a95fc39b8471deb4",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/final/borrowed-bay/manifest.json",
+      "source_sha256": "9c66378630319edae3f13395ddb138529ae7edd48441b07d973ee9151edf4904",
+      "published_sha256": "9c66378630319edae3f13395ddb138529ae7edd48441b07d973ee9151edf4904",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/final/borrowed-bay/spec.json",
+      "source_sha256": "5703aff36d787176ac7f189bd219138e1ed69c28635f54695d8a5923b7e3d19f",
+      "published_sha256": "5703aff36d787176ac7f189bd219138e1ed69c28635f54695d8a5923b7e3d19f",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/final/borrowed-bay/verification.json",
+      "source_sha256": "774d7b2528279032c2a24f14f5952a48120f683d0cf01e69b907cb0c6aed9af9",
+      "published_sha256": "774d7b2528279032c2a24f14f5952a48120f683d0cf01e69b907cb0c6aed9af9",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/final/borrowed-bay/world.json",
+      "source_sha256": "49113e4e3f927790343c1c4cb0e527afce4325a2fbb66b2779acaed76be7c4c2",
+      "published_sha256": "49113e4e3f927790343c1c4cb0e527afce4325a2fbb66b2779acaed76be7c4c2",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/final/borrowed-bay/packaged-audit/browser-baseline.json",
+      "source_sha256": "cd550524cd4677518f5a3b2a4f0c9bc25a82be40144640830d9c3e78821d87bb",
+      "published_sha256": "cd550524cd4677518f5a3b2a4f0c9bc25a82be40144640830d9c3e78821d87bb",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/final/borrowed-bay/packaged-audit/expected.json",
+      "source_sha256": "42c0f93af0e5bd609defda90ef817e9010e752715b9ae986036386a8795f0d9c",
+      "published_sha256": "42c0f93af0e5bd609defda90ef817e9010e752715b9ae986036386a8795f0d9c",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/final/borrowed-bay/packaged-audit/spec.json",
+      "source_sha256": "5703aff36d787176ac7f189bd219138e1ed69c28635f54695d8a5923b7e3d19f",
+      "published_sha256": "5703aff36d787176ac7f189bd219138e1ed69c28635f54695d8a5923b7e3d19f",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/final/borrowed-bay/packaged-audit/verification-baseline.json",
+      "source_sha256": "b886d6ad1104e0860fbf7fb0fbd717d782042324a71d04ef4fade4dd973d64ae",
+      "published_sha256": "b886d6ad1104e0860fbf7fb0fbd717d782042324a71d04ef4fade4dd973d64ae",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/final/borrowed-bay/packaged-audit/witness.json",
+      "source_sha256": "563021f5c6e6a34bd6dfc712adfcb1300bb81981e218c278b9183548cd6c6e74",
+      "published_sha256": "563021f5c6e6a34bd6dfc712adfcb1300bb81981e218c278b9183548cd6c6e74",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/final/borrowed-bay/packaged-audit/world.json",
+      "source_sha256": "49113e4e3f927790343c1c4cb0e527afce4325a2fbb66b2779acaed76be7c4c2",
+      "published_sha256": "49113e4e3f927790343c1c4cb0e527afce4325a2fbb66b2779acaed76be7c4c2",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/final/borrowed-bay/level_AxA.txt",
+      "source_sha256": "249637ad101591b177e95bf43fccd86c8cb9c2c39d0c51ef069a79e7b33a2bca",
+      "published_sha256": "249637ad101591b177e95bf43fccd86c8cb9c2c39d0c51ef069a79e7b33a2bca",
+      "transform": "UTF-8 text; local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/final/borrowed-bay/solution.txt",
+      "source_sha256": "7a5ea6c0a82896226188f1a10d117f06bfd6a0edaf740842198dc346dd6ac0b6",
+      "published_sha256": "7a5ea6c0a82896226188f1a10d117f06bfd6a0edaf740842198dc346dd6ac0b6",
+      "transform": "UTF-8 text; local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/final/borrowed-bay/preview.jpg",
+      "source_sha256": "fd5bb7efd5cc38d42c3356a147add092651baad5578f8eafe53a4095d42e0a7e",
+      "published_sha256": "fd5bb7efd5cc38d42c3356a147add092651baad5578f8eafe53a4095d42e0a7e",
+      "transform": "none"
+    },
+    {
+      "path": "after/prototypes/attempt-01/spec.json",
+      "source_sha256": "43171f9d6e556eaea4bcf88cd411299e0435f4ea105d92b9a6c9cd702f95ba18",
+      "published_sha256": "f051da5d11858a2c7b6aa8b8adbae73689f81d7c482b3df0afcd1eb1be9dfec2",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/prototypes/attempt-01/walking-bypass.json",
+      "source_sha256": "95b6fa832ce64345e6ccfaf12a9552195beac4036ea9cf0808c582f17812897e",
+      "published_sha256": "3aaca1b9d3015d89cfba40bd126161156854345fd57bfe7a46970e9cd8f64ad9",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/prototypes/attempt-01/world.json",
+      "source_sha256": "42f81520487a4627e443837d77a1c6aaa33fe9fb501f40f3c1afd72e7e3b27bc",
+      "published_sha256": "ad064d594f85c7fb01a31818cc875ba4842c2e65e006eebe299e689d0abd3c77",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/prototypes/attempt-02/analysis.json",
+      "source_sha256": "882cb2ccc68280f24319a1e7079dac7716c6c9a66cce30d2fc33ab607145c818",
+      "published_sha256": "2f28e819aa59aa64ce532f3959f681a7256d0aa27b0769e5d257dfb1f3ffc9d8",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/prototypes/attempt-02/spec.json",
+      "source_sha256": "e0371ca532dde3a0e345d9a413698e45d98586d48191a650443f6f6e11202134",
+      "published_sha256": "8595eb7dd561eb0397683d62e80868aa2645dd7e602a68263432aee880dc94e3",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/prototypes/attempt-02/world.json",
+      "source_sha256": "d5f2c1eeb03521166e353b23170dbf6d7c8adf7413dfbec8b54b012df0d18e6c",
+      "published_sha256": "d853acb11c467c9c624ec4bb27b6474ab01c3232aee5fb7037771e034db87236",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/prototypes/attempt-03/analysis.json",
+      "source_sha256": "dc7d5501005058c78f320ba8189bffdf2489f2acf27e3982156dcbcdd19546de",
+      "published_sha256": "d17614616c8db203f36312f56921d9ce73b090a3d569ea688c764784f39f7346",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/prototypes/attempt-03/spec.json",
+      "source_sha256": "99d95983e0b7d90ac884f729adf13a31de58abba248de6403b32c9dc76673589",
+      "published_sha256": "843428e5c6204bb9804ee7321793a61b2a8c930a9251c5fcc4fec330a33adacd",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/prototypes/attempt-03/world.json",
+      "source_sha256": "a23692d49eeff4672aaddd826b574860a894555ab525f88fee343aa080cd0c6a",
+      "published_sha256": "6ebee93bfc9460b804d88e739cc1aae37973a102a760969f5b40a4c0a2448dc3",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/prototypes/attempt-04/analysis.json",
+      "source_sha256": "ba6589b922701da3afca52a93e25890c5e3d0d85d00a02c513654be7cb991e77",
+      "published_sha256": "3962c40a266a400105ee98dc7f0ddce13cad54eef5a58bfd885e719b32daac92",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/prototypes/attempt-04/spec.json",
+      "source_sha256": "071e646716c857ecdd05ba65df923717015267658823d64cf400833cc2227f64",
+      "published_sha256": "9020e2c568a4527020617d0cd4b5d72e8107fdde57b219f0f2368ad5b50756b7",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/prototypes/attempt-04/world.json",
+      "source_sha256": "3ecc8c8f4db380deb9424a3c12ed5659c613f801b15810199d550b5611d08ef2",
+      "published_sha256": "b3f8559bee78643bf83c7e99b4d4ec6c6bffa549a9dd05966ed2f94f5f6047cc",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/prototypes/attempt-05/analysis.json",
+      "source_sha256": "07b6f9e042470fefcb4211b93ee8ed18a89db356635484503237ec70ed3f3441",
+      "published_sha256": "c8a79f362cb4e37c4ef01d89a6ac60589044032bbfc065ea67bcbeb7566a49bc",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/prototypes/attempt-05/spec.json",
+      "source_sha256": "08365c9e99ea62d17576b3dc3a362cf5a1085a9230b99cb0e4acf4e12ffc6a9e",
+      "published_sha256": "4e62cfeaf560229e31a690730e359302bd25a84cf5f87e9890d439de6cd8ad95",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "after/prototypes/attempt-05/world.json",
+      "source_sha256": "9d1e9bd6e80f1cd878faeb5c587da1b1eb0e3cd61ee1003f1eb7c9a49d1ca233",
+      "published_sha256": "6cf303ce057d66e33782286a789b5333bdf76310abaea3d568bb34e5d189c212",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "references/hxh/analysis.json",
+      "source_sha256": "5f639b4800ac38fcf57e824a7b8ac9f7ac5467b95d297dc58b07e4013544c43b",
+      "published_sha256": "5f639b4800ac38fcf57e824a7b8ac9f7ac5467b95d297dc58b07e4013544c43b",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "references/hxh/case.json",
+      "source_sha256": "5c8877038a2b5b0d3cf81c13de7914a57655681f0210a4cd97297d93d08df5f1",
+      "published_sha256": "5c8877038a2b5b0d3cf81c13de7914a57655681f0210a4cd97297d93d08df5f1",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "references/hxh/reference-check.json",
+      "source_sha256": "537c47acbe35c626d6bfe2db436ef503962797671e3b7e040944b35cfec48f8d",
+      "published_sha256": "537c47acbe35c626d6bfe2db436ef503962797671e3b7e040944b35cfec48f8d",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "references/hxh/world.json",
+      "source_sha256": "5d7fbe4fd42c21d38530a70a98cacaa5d7e9b0bcc81d2b4dddeb4c58bbf92171",
+      "published_sha256": "ccb6b41f11a5c1257601af313a2a4cc4d322309aa8e3c3d2ee3c5e781d5e81eb",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "references/hxh/level_AxA.txt",
+      "source_sha256": "6f6393030eb814c639a83d2d3146d88f5fdd24ca9d67bc9eab2958230346c0c8",
+      "published_sha256": "6f6393030eb814c639a83d2d3146d88f5fdd24ca9d67bc9eab2958230346c0c8",
+      "transform": "UTF-8 text; local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "references/gxe/analysis.json",
+      "source_sha256": "0b152b497cdc5e40061077ee6fd6e5090a38f92bc56005476911e0812c2487c7",
+      "published_sha256": "0b152b497cdc5e40061077ee6fd6e5090a38f92bc56005476911e0812c2487c7",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "references/gxe/case.json",
+      "source_sha256": "9c124894a98a32df8a061c529843b610e00f7c2258d40574a2564516a6346fc7",
+      "published_sha256": "9c124894a98a32df8a061c529843b610e00f7c2258d40574a2564516a6346fc7",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "references/gxe/reference-check.json",
+      "source_sha256": "150b1a7a5fe5bf78e58fba2334b2ab2d539c7173f96bdcce6cb502830176bd74",
+      "published_sha256": "150b1a7a5fe5bf78e58fba2334b2ab2d539c7173f96bdcce6cb502830176bd74",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "references/gxe/world.json",
+      "source_sha256": "1108e6ae4ba0e51b64d6d3112dba560128d560417ddb9f17ef7db29c63602de1",
+      "published_sha256": "fbd66f1bfb2bcf1bec86b5d6102f5e739862f62e6fede2c053a1b678e75d7250",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "references/gxe/level_AxA.txt",
+      "source_sha256": "00d6e3a27b73520acf85b44c0bb814ad05ccb02be35a1b2b2d0864c6a7ccf684",
+      "published_sha256": "00d6e3a27b73520acf85b44c0bb814ad05ccb02be35a1b2b2d0864c6a7ccf684",
+      "transform": "UTF-8 text; local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "references/gxf/case.json",
+      "source_sha256": "6250408e2282b570db54fae81807f04f4e92970c28c04ce596a8aaf0caf88bf0",
+      "published_sha256": "6250408e2282b570db54fae81807f04f4e92970c28c04ce596a8aaf0caf88bf0",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "references/gxf/planning-analysis.json",
+      "source_sha256": "9d3fae373cf505d1f635dd9d5d7d5be4c6b3a7e1e25195d865699fa87ce9d1f5",
+      "published_sha256": "9d3fae373cf505d1f635dd9d5d7d5be4c6b3a7e1e25195d865699fa87ce9d1f5",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "references/gxf/reference-check.json",
+      "source_sha256": "e35055651831b7873898a6ffda94ab9c6f1abb5fccd3da80c863ea1ead6657e5",
+      "published_sha256": "e35055651831b7873898a6ffda94ab9c6f1abb5fccd3da80c863ea1ead6657e5",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "references/gxf/spec.json",
+      "source_sha256": "d1845d9043228116cb24caeaf875bf5c2f8c17d7be9f4e9c160abbef938854a8",
+      "published_sha256": "d1845d9043228116cb24caeaf875bf5c2f8c17d7be9f4e9c160abbef938854a8",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "references/gxf/verification-baseline.json",
+      "source_sha256": "5198f37f4e367d4084869cc4deb4de567eaa06e406f0493f039818963ff5fe74",
+      "published_sha256": "d50116887f16eab829dab4d51505d427f881ec05ace6ceb8d1ef6afa3904b370",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "references/gxf/witness.json",
+      "source_sha256": "ce3bffd8ba523630f855186966e00cea95d223e9d14f85dfff714cbd9662a505",
+      "published_sha256": "bc46f2c3cbd2c141ac94b4b87baa4ec2eec678721263a7f168f75c8b93de90ce",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "references/gxf/world.json",
+      "source_sha256": "50ff5bf31bedd250cd9f3c861809a8a0e1b32f5d11ba266c6441db3b56a8dd64",
+      "published_sha256": "d8f98ba1369921580e26daf765dcd39f34e716f16a22a07d5c8270cdc278d116",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "references/gxf/level_AxA.txt",
+      "source_sha256": "b28a39066503d9977a3b129797c1166b3f790d31262bb38ae88342b59b1a947f",
+      "published_sha256": "b28a39066503d9977a3b129797c1166b3f790d31262bb38ae88342b59b1a947f",
+      "transform": "UTF-8 text; local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "references/hxh-sealed-extraction/contract.json",
+      "source_sha256": "83a8a6b06420716ba7f9fa40cb4f420fc4e1f832fe56a7be5526bd3683ba7080",
+      "published_sha256": "354a42650c319b2872dbf7c3271694d84e825c5151de504ee532383efab4176e",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "references/hxh-sealed-extraction/world.json",
+      "source_sha256": "317928c2365fb184535a5c898abf343ba1d757786b1b7c678902edc040902068",
+      "published_sha256": "317928c2365fb184535a5c898abf343ba1d757786b1b7c678902edc040902068",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "references/hxh-sealed-extraction/evidence/browser.json",
+      "source_sha256": "c7b0a059f9da771390140d0c47a2149635f74f84299373d77871144c4ccf35c8",
+      "published_sha256": "c7b0a059f9da771390140d0c47a2149635f74f84299373d77871144c4ccf35c8",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "references/hxh-sealed-extraction/evidence/controls.json",
+      "source_sha256": "4275eb7a6fc4aef6dc05cd2bc006d99cdd6d4b8029dc9939c09e21ee74e48c1c",
+      "published_sha256": "4275eb7a6fc4aef6dc05cd2bc006d99cdd6d4b8029dc9939c09e21ee74e48c1c",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "references/hxh-sealed-extraction/evidence/verification.json",
+      "source_sha256": "8eed1a2eaf011ee73e9a02b371fa229b1f918a15353e8f6d9597135e9f03d37f",
+      "published_sha256": "8eed1a2eaf011ee73e9a02b371fa229b1f918a15353e8f6d9597135e9f03d37f",
+      "transform": "JSON formatting; English display-title translation or local-path normalization when present; nonessential date metadata removed where present; LF line endings"
+    },
+    {
+      "path": "references/hxh-sealed-extraction/preview.jpg",
+      "source_sha256": "268defa7731954b397f8798ad84e6d0684daa0e46e7fe95db230d3c6e0082ad8",
+      "published_sha256": "268defa7731954b397f8798ad84e6d0684daa0e46e7fe95db230d3c6e0082ad8",
+      "transform": "none"
+    }
+  ]
+}

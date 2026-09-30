@@ -1,0 +1,525 @@
+{
+  "name": "combined-prototype-03",
+  "cells": [
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "G",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "+",
+      "M1",
+      "M1",
+      "M1",
+      "+",
+      "#",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".",
+      "M2",
+      "M2",
+      "M2",
+      "M2",
+      ".",
+      "M3",
+      "M3",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      "#",
+      "M2",
+      "M0",
+      ".",
+      ".",
+      ".",
+      "M3",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".",
+      "#",
+      "M0",
+      "M0",
+      ".",
+      "#",
+      "M3",
+      "#",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "M0",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "p",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ]
+  ],
+  "contract": {
+    "profile": "planar-rigid-transport-v1",
+    "roles": {
+      "tool": "M0",
+      "helpers": [
+        "M2",
+        "M3"
+      ],
+      "target": "M1"
+    },
+    "delivery": {
+      "toolCells": [
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "playerCell": [
+        7,
+        7
+      ]
+    },
+    "use": {
+      "direction": "L"
+    },
+    "intent": "Authored trial; see design report",
+    "composition": {}
+  },
+  "solution": {
+    "status": "solved",
+    "moves": 58,
+    "path": "ULUURUURDLDLLDRDDDLLULULULUURRDRRRDDDDLUUURULDLDLLULUURRUU",
+    "expanded": 6384
+  },
+  "pushes": [
+    {
+      "step": 9,
+      "d": "D",
+      "event": {
+        "primary": "M3",
+        "moved": [
+          "M3"
+        ],
+        "contacts": [],
+        "use": false,
+        "independentHelpers": [
+          "M3"
+        ]
+      },
+      "delivered": false
+    },
+    {
+      "step": 14,
+      "d": "D",
+      "event": {
+        "primary": "M0",
+        "moved": [
+          "M0"
+        ],
+        "contacts": [],
+        "use": false,
+        "independentHelpers": []
+      },
+      "delivered": false
+    },
+    {
+      "step": 30,
+      "d": "R",
+      "event": {
+        "primary": "M2",
+        "moved": [
+          "M2"
+        ],
+        "contacts": [],
+        "use": false,
+        "independentHelpers": [
+          "M2"
+        ]
+      },
+      "delivered": false
+    },
+    {
+      "step": 32,
+      "d": "R",
+      "event": {
+        "primary": "M2",
+        "moved": [
+          "M2"
+        ],
+        "contacts": [],
+        "use": false,
+        "independentHelpers": [
+          "M2"
+        ]
+      },
+      "delivered": false
+    },
+    {
+      "step": 33,
+      "d": "R",
+      "event": {
+        "primary": "M2",
+        "moved": [
+          "M2"
+        ],
+        "contacts": [],
+        "use": false,
+        "independentHelpers": [
+          "M2"
+        ]
+      },
+      "delivered": false
+    },
+    {
+      "step": 34,
+      "d": "R",
+      "event": {
+        "primary": "M2",
+        "moved": [
+          "M2"
+        ],
+        "contacts": [],
+        "use": false,
+        "independentHelpers": [
+          "M2"
+        ]
+      },
+      "delivered": false
+    },
+    {
+      "step": 40,
+      "d": "U",
+      "event": {
+        "primary": "M0",
+        "moved": [
+          "M0"
+        ],
+        "contacts": [],
+        "use": false,
+        "independentHelpers": []
+      },
+      "delivered": false
+    },
+    {
+      "step": 41,
+      "d": "U",
+      "event": {
+        "primary": "M0",
+        "moved": [
+          "M0"
+        ],
+        "contacts": [],
+        "use": false,
+        "independentHelpers": []
+      },
+      "delivered": false
+    },
+    {
+      "step": 42,
+      "d": "U",
+      "event": {
+        "primary": "M0",
+        "moved": [
+          "M0"
+        ],
+        "contacts": [],
+        "use": false,
+        "independentHelpers": []
+      },
+      "delivered": false
+    },
+    {
+      "step": 45,
+      "d": "L",
+      "event": {
+        "primary": "M0",
+        "moved": [
+          "M1",
+          "M0"
+        ],
+        "contacts": [
+          {
+            "tool": [
+              5,
+              5,
+              0
+            ],
+            "target": [
+              4,
+              5,
+              0
+            ]
+          }
+        ],
+        "use": true,
+        "independentHelpers": []
+      },
+      "delivered": false
+    },
+    {
+      "step": 56,
+      "d": "R",
+      "event": {
+        "primary": "M0",
+        "moved": [
+          "M0"
+        ],
+        "contacts": [],
+        "use": false,
+        "independentHelpers": []
+      },
+      "delivered": false
+    }
+  ],
+  "initialAccess": {
+    "alreadyUsable": false,
+    "gemByWalking": false,
+    "visited": 46,
+    "exhausted": true
+  }
+}

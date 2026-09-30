@@ -1,0 +1,128 @@
+{
+  "scenario": "02-hook",
+  "errors": [],
+  "failedResponses": [],
+  "frames": [
+    {
+      "step": 1,
+      "d": "L",
+      "actorsMatch": true
+    },
+    {
+      "step": 2,
+      "d": "L",
+      "actorsMatch": true
+    },
+    {
+      "step": 3,
+      "d": "D",
+      "actorsMatch": true
+    },
+    {
+      "step": 4,
+      "d": "D",
+      "actorsMatch": true
+    },
+    {
+      "step": 5,
+      "d": "L",
+      "actorsMatch": true
+    },
+    {
+      "step": 6,
+      "d": "U",
+      "actorsMatch": true
+    },
+    {
+      "step": 7,
+      "d": "U",
+      "actorsMatch": true
+    },
+    {
+      "step": 8,
+      "d": "R",
+      "actorsMatch": true
+    },
+    {
+      "step": 9,
+      "d": "U",
+      "actorsMatch": true
+    },
+    {
+      "step": 10,
+      "d": "L",
+      "actorsMatch": true
+    },
+    {
+      "step": 11,
+      "d": "D",
+      "actorsMatch": true
+    },
+    {
+      "step": 12,
+      "d": "L",
+      "actorsMatch": true
+    },
+    {
+      "step": 13,
+      "d": "L",
+      "actorsMatch": true
+    },
+    {
+      "step": 14,
+      "d": "U",
+      "actorsMatch": true
+    },
+    {
+      "step": 15,
+      "d": "L",
+      "actorsMatch": true
+    },
+    {
+      "step": 16,
+      "d": "U",
+      "actorsMatch": true
+    },
+    {
+      "step": 17,
+      "d": "R",
+      "actorsMatch": true
+    },
+    {
+      "step": 18,
+      "d": "U",
+      "actorsMatch": true
+    },
+    {
+      "step": 19,
+      "d": "U",
+      "actorsMatch": true
+    }
+  ],
+  "views": [
+    {
+      "tag": "step-00",
+      "yaw": 0,
+      "tilt": 0.22
+    },
+    {
+      "tag": "step-07",
+      "yaw": 0,
+      "tilt": 0.22
+    },
+    {
+      "tag": "step-10",
+      "yaw": 0,
+      "tilt": 0.22
+    },
+    {
+      "tag": "step-17",
+      "yaw": 0,
+      "tilt": 0.22
+    }
+  ],
+  "normalPlayReplayPassed": true,
+  "undoResetPassed": true,
+  "editorSaveExportBuildMapPassed": true,
+  "scope": "Normal Play handler in map coordinates, every state compared with official replay; first-push Undo and Reset, editor rendering and unchanged-cells save/export. No exhaustive deadlock or camera-comprehension claim."
+}

@@ -1,0 +1,1413 @@
+{
+  "cap": 300000,
+  "cellsSha256": "c82cc1c21afc1dfe6629751257d2c181f0b0d8ebcd72e8cd5a8139bc982650fc",
+  "checks": [
+    {
+      "name": "positive",
+      "status": "solved",
+      "moves": 30,
+      "path": "DDRRUULRRUUULUURDDDDDDLDLLLURR",
+      "expanded": 4352,
+      "ordinaryReplay": true
+    },
+    {
+      "name": "without_keeper_D",
+      "status": "unsolved",
+      "expanded": 5086,
+      "ordinaryReplay": false
+    }
+  ],
+  "scope": "Specific three-group boundary preparation: whether the elbow advances east of its initial minimum x=3, or the diamond is collected, with all keeper D translations excluded. This avoids counting an R that merely undoes the initial L retreat as eastward progress.",
+  "notchSequence": [
+    {
+      "walls": [
+        [
+          7,
+          5
+        ]
+      ],
+      "rows": [
+        {
+          "step": 1,
+          "moved": true,
+          "before": [
+            {
+              "i": 0,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 5,
+              "y": 3,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 1,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 6,
+              "y": 3,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 2,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 6,
+              "y": 4,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 3,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 6,
+              "y": 5,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 4,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 5,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 5,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 3,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 6,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 4,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 7,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 5,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 8,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 6,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 9,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 10,
+              "type": "player",
+              "group": null,
+              "x": 2,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 11,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 3,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 12,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 6,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 13,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 14,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 3,
+              "y": 8,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 15,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 6,
+              "y": 8,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 16,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 8,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 17,
+              "type": "gem",
+              "group": null,
+              "x": 11,
+              "y": 9,
+              "z": 0,
+              "removed": false
+            }
+          ],
+          "after": [
+            {
+              "i": 0,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 6,
+              "y": 3,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 1,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 3,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 2,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 4,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 3,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 5,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 4,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 5,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 5,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 4,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 6,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 5,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 7,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 6,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 8,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 9,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 10,
+              "type": "player",
+              "group": null,
+              "x": 3,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 11,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 4,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 12,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 13,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 14,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 4,
+              "y": 8,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 15,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 8,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 16,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 8,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 17,
+              "type": "gem",
+              "group": null,
+              "x": 11,
+              "y": 9,
+              "z": 0,
+              "removed": false
+            }
+          ],
+          "event": {
+            "primary": "M0",
+            "moved": [
+              "M1",
+              "M0"
+            ],
+            "contacts": [],
+            "use": false,
+            "independentHelpers": []
+          }
+        },
+        {
+          "step": 2,
+          "moved": false,
+          "before": [
+            {
+              "i": 0,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 6,
+              "y": 3,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 1,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 3,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 2,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 4,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 3,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 5,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 4,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 5,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 5,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 4,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 6,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 5,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 7,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 6,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 8,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 9,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 10,
+              "type": "player",
+              "group": null,
+              "x": 3,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 11,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 4,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 12,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 13,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 14,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 4,
+              "y": 8,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 15,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 8,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 16,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 8,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 17,
+              "type": "gem",
+              "group": null,
+              "x": 11,
+              "y": 9,
+              "z": 0,
+              "removed": false
+            }
+          ],
+          "after": [
+            {
+              "i": 0,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 6,
+              "y": 3,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 1,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 3,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 2,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 4,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 3,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 5,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 4,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 5,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 5,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 4,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 6,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 5,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 7,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 6,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 8,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 9,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 10,
+              "type": "player",
+              "group": null,
+              "x": 3,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 11,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 4,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 12,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 13,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 14,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 4,
+              "y": 8,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 15,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 8,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 16,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 8,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 17,
+              "type": "gem",
+              "group": null,
+              "x": 11,
+              "y": 9,
+              "z": 0,
+              "removed": false
+            }
+          ],
+          "event": {
+            "primary": "M0",
+            "moved": [],
+            "contacts": [],
+            "use": false,
+            "independentHelpers": []
+          }
+        }
+      ]
+    },
+    {
+      "walls": [
+        [
+          7,
+          5
+        ],
+        [
+          8,
+          5
+        ]
+      ],
+      "rows": [
+        {
+          "step": 1,
+          "moved": true,
+          "before": [
+            {
+              "i": 0,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 5,
+              "y": 3,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 1,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 6,
+              "y": 3,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 2,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 6,
+              "y": 4,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 3,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 6,
+              "y": 5,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 4,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 5,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 5,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 3,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 6,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 4,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 7,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 5,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 8,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 6,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 9,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 10,
+              "type": "player",
+              "group": null,
+              "x": 2,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 11,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 3,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 12,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 6,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 13,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 14,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 3,
+              "y": 8,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 15,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 6,
+              "y": 8,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 16,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 8,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 17,
+              "type": "gem",
+              "group": null,
+              "x": 11,
+              "y": 9,
+              "z": 0,
+              "removed": false
+            }
+          ],
+          "after": [
+            {
+              "i": 0,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 6,
+              "y": 3,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 1,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 3,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 2,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 4,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 3,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 5,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 4,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 5,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 5,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 4,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 6,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 5,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 7,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 6,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 8,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 9,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 10,
+              "type": "player",
+              "group": null,
+              "x": 3,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 11,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 4,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 12,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 13,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 14,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 4,
+              "y": 8,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 15,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 8,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 16,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 8,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 17,
+              "type": "gem",
+              "group": null,
+              "x": 11,
+              "y": 9,
+              "z": 0,
+              "removed": false
+            }
+          ],
+          "event": {
+            "primary": "M0",
+            "moved": [
+              "M1",
+              "M0"
+            ],
+            "contacts": [],
+            "use": false,
+            "independentHelpers": []
+          }
+        },
+        {
+          "step": 2,
+          "moved": true,
+          "before": [
+            {
+              "i": 0,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 6,
+              "y": 3,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 1,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 3,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 2,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 4,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 3,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 5,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 4,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 5,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 5,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 4,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 6,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 5,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 7,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 6,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 8,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 9,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 10,
+              "type": "player",
+              "group": null,
+              "x": 3,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 11,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 4,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 12,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 13,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 14,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 4,
+              "y": 8,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 15,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 8,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 16,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 8,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 17,
+              "type": "gem",
+              "group": null,
+              "x": 11,
+              "y": 9,
+              "z": 0,
+              "removed": false
+            }
+          ],
+          "after": [
+            {
+              "i": 0,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 7,
+              "y": 3,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 1,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 8,
+              "y": 3,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 2,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 8,
+              "y": 4,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 3,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 8,
+              "y": 5,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 4,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 5,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 5,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 5,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 6,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 6,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 7,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 7,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 8,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 8,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 9,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 6,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 10,
+              "type": "player",
+              "group": null,
+              "x": 4,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 11,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 5,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 12,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 8,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 13,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 7,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 14,
+              "type": "weightless_box",
+              "group": "M0",
+              "x": 5,
+              "y": 8,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 15,
+              "type": "weightless_box",
+              "group": "M1",
+              "x": 8,
+              "y": 8,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 16,
+              "type": "weightless_box",
+              "group": "M3",
+              "x": 11,
+              "y": 8,
+              "z": 0,
+              "removed": false
+            },
+            {
+              "i": 17,
+              "type": "gem",
+              "group": null,
+              "x": 11,
+              "y": 9,
+              "z": 0,
+              "removed": false
+            }
+          ],
+          "event": {
+            "primary": "M0",
+            "moved": [
+              "M1",
+              "M0"
+            ],
+            "contacts": [],
+            "use": false,
+            "independentHelpers": []
+          }
+        }
+      ]
+    }
+  ],
+  "overall": "passed"
+}

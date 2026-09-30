@@ -1,6 +1,6 @@
 # User-reconstructed GxF example
 
-This fixture is a user-built single-room reconstruction, solved and ordinarily replayed on 2026-09-29. The hosted shared save was not retrieved, so cell-for-cell identity with the online level is not asserted.
+This fixture is a user-built single-room reconstruction, solved and ordinarily replayed. The hosted shared save was not retrieved, so cell-for-cell identity with the online level is not asserted.
 
 [spec.json](../assets/gxf/spec.json) is the runnable input. [witness.json](../assets/gxf/witness.json) preserves the 219-input route, checkpoints, and original layout fingerprint. The original draft remains unchanged; `--example gxf` creates a separate draft.
 
@@ -49,7 +49,7 @@ The reusable relationship is that final use constrains tool shape, the working p
 
 ## Movement in opposing directions
 
-A fresh analysis on 2026-09-30 found another 219-input witness with 42 pushes, 177 walking inputs, and 21 compressed push runs. This differs from the older 43-push witness without invalidating it. Both are solutions, not claimed optima. See [planning-analysis.json](../assets/gxf/planning-analysis.json), [case.json](../assets/gxf/case.json), and the fresh [reference checks](../assets/gxf/reference-check.json).
+A fresh analysis found another 219-input witness with 42 pushes, 177 walking inputs, and 21 compressed push runs. This differs from the older 43-push witness without invalidating it. Both are solutions, not claimed optima. See [planning-analysis.json](../assets/gxf/planning-analysis.json), [case.json](../assets/gxf/case.json), and the fresh [reference checks](../assets/gxf/reference-check.json).
 
 Excluding each listed direction separately gave these results:
 

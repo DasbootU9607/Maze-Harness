@@ -1,0 +1,37 @@
+{
+  "scenario": "repair-plate",
+  "hookGroup": "M0",
+  "payloadGroup": "M1",
+  "boxElevation": 0,
+  "actuationStand": [
+    6,
+    6,
+    0
+  ],
+  "repairCell": [
+    7,
+    6
+  ],
+  "plateCell": [
+    6,
+    6
+  ],
+  "gateCell": [
+    9,
+    9
+  ],
+  "necessary": [
+    "no_rear_transfer",
+    "no_floor_fill",
+    "no_payload_plate"
+  ],
+  "permissive": [
+    "no_post_transfer_box_motion"
+  ],
+  "prerequisite": "no_floor_fill",
+  "transferDestination": [
+    6,
+    6,
+    0
+  ]
+}

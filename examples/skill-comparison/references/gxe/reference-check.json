@@ -1,0 +1,294 @@
+{
+  "source": {
+    "kind": "user reconstruction of an official mechanism",
+    "officialRoom": "GXE",
+    "upstreamFile": "9hgghfgcsu.txt",
+    "rawSha256": "00d6e3a27b73520acf85b44c0bb814ad05ccb02be35a1b2b2d0864c6a7ccf684",
+    "notes": "Roles are renamed relative to upstream; north boundary differs; no gem is added"
+  },
+  "goal": {
+    "kind": "reach",
+    "cell": [
+      2,
+      13,
+      0
+    ]
+  },
+  "cap": 1000000,
+  "fingerprints": {
+    "cells": "4a8704b4849fc25a0ddc5bed0693855cc11dbb1ccaf34cc2e65ecb104727b13c",
+    "public/maze-engine.js": "c25be363e30186b7435c20361f20542170bdabc9de8c0dad8fa45198e5cab842",
+    "public/maze-solver.js": "be7ecce88b17e2f5cc4894a2fd5c86ba8008cb157406a5728bc8ab110fb3df9d",
+    "server/maze-levels.js": "9b75ab87efdcaee23a91c442d1bdcc7975f545f3a58ec4403c3fce2fd4a341e0",
+    "games/maze/level_parsing.json": "54cb1bc6d2e545a89abe860e2c84e45ed5fd31b244b828b8424d2693d05b780d"
+  },
+  "replayPassed": true,
+  "inputs": 41,
+  "pushes": [
+    {
+      "step": 4,
+      "d": "U",
+      "primary": "M1",
+      "moved": [
+        "M1"
+      ],
+      "direction": "U",
+      "contact": false,
+      "offsetChanged": true
+    },
+    {
+      "step": 5,
+      "d": "L",
+      "primary": "M1",
+      "moved": [
+        "M1"
+      ],
+      "direction": "L",
+      "contact": false,
+      "offsetChanged": true
+    },
+    {
+      "step": 6,
+      "d": "L",
+      "primary": "M1",
+      "moved": [
+        "M1"
+      ],
+      "direction": "L",
+      "contact": false,
+      "offsetChanged": true
+    },
+    {
+      "step": 7,
+      "d": "L",
+      "primary": "M1",
+      "moved": [
+        "M1"
+      ],
+      "direction": "L",
+      "contact": false,
+      "offsetChanged": true
+    },
+    {
+      "step": 8,
+      "d": "L",
+      "primary": "M1",
+      "moved": [
+        "M1"
+      ],
+      "direction": "L",
+      "contact": false,
+      "offsetChanged": true
+    },
+    {
+      "step": 9,
+      "d": "L",
+      "primary": "M1",
+      "moved": [
+        "M1"
+      ],
+      "direction": "L",
+      "contact": false,
+      "offsetChanged": true
+    },
+    {
+      "step": 10,
+      "d": "L",
+      "primary": "M1",
+      "moved": [
+        "M1"
+      ],
+      "direction": "L",
+      "contact": false,
+      "offsetChanged": true
+    },
+    {
+      "step": 15,
+      "d": "D",
+      "primary": "M1",
+      "moved": [
+        "M1"
+      ],
+      "direction": "D",
+      "contact": false,
+      "offsetChanged": true
+    },
+    {
+      "step": 16,
+      "d": "D",
+      "primary": "M1",
+      "moved": [
+        "M1"
+      ],
+      "direction": "D",
+      "contact": false,
+      "offsetChanged": true
+    },
+    {
+      "step": 20,
+      "d": "R",
+      "primary": "M1",
+      "moved": [
+        "M1"
+      ],
+      "direction": "R",
+      "contact": false,
+      "offsetChanged": true
+    },
+    {
+      "step": 28,
+      "d": "U",
+      "primary": "M1",
+      "moved": [
+        "M1",
+        "M0"
+      ],
+      "direction": "U",
+      "contact": true,
+      "offsetChanged": false
+    },
+    {
+      "step": 29,
+      "d": "L",
+      "primary": "M1",
+      "moved": [
+        "M1"
+      ],
+      "direction": "L",
+      "contact": false,
+      "offsetChanged": true
+    },
+    {
+      "step": 31,
+      "d": "R",
+      "primary": "M0",
+      "moved": [
+        "M0"
+      ],
+      "direction": "R",
+      "contact": false,
+      "offsetChanged": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "freeze_M1",
+      "kind": "freeze",
+      "group": "M1",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 91,
+      "verdict": "passed"
+    },
+    {
+      "name": "freeze_M0",
+      "kind": "freeze",
+      "group": "M0",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 8652,
+      "verdict": "passed"
+    },
+    {
+      "name": "forbid_rearTransfer",
+      "kind": "contact",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 8652,
+      "verdict": "passed"
+    },
+    {
+      "name": "first_contact_positive",
+      "kind": "contact",
+      "firstContact": true,
+      "expected": "solved",
+      "status": "solved",
+      "moves": 27,
+      "path": "DDLULLLLLLRUULDDLLDRURRRDDL",
+      "expanded": 7984,
+      "verdict": "passed"
+    },
+    {
+      "name": "first_contact_without_independent_tool_preparation",
+      "kind": "independent-tool",
+      "firstContact": true,
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 91,
+      "verdict": "passed"
+    },
+    {
+      "name": "forbid_M1L",
+      "kind": "direction",
+      "group": "M1",
+      "direction": "L",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 3211,
+      "verdict": "passed"
+    },
+    {
+      "name": "forbid_M1R",
+      "kind": "direction",
+      "group": "M1",
+      "direction": "R",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 6172,
+      "verdict": "passed"
+    },
+    {
+      "name": "forbid_M0U",
+      "kind": "direction",
+      "group": "M0",
+      "direction": "U",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 8652,
+      "verdict": "passed"
+    },
+    {
+      "name": "forbid_M0R",
+      "kind": "direction",
+      "group": "M0",
+      "direction": "R",
+      "expected": "solved",
+      "status": "solved",
+      "moves": 43,
+      "path": "DDLULLLLLLRUULDDLLDRURRRDDLUULDDRDDDLDLLLLU",
+      "expanded": 14273,
+      "verdict": "passed"
+    },
+    {
+      "name": "walking_only_after_first_contact",
+      "kind": "all-motion",
+      "startStep": 28,
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 90,
+      "verdict": "passed"
+    },
+    {
+      "name": "freeze_tool_after_first_contact",
+      "kind": "freeze",
+      "group": "M1",
+      "startStep": 28,
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 90,
+      "verdict": "passed"
+    },
+    {
+      "name": "freeze_target_after_first_contact",
+      "kind": "freeze",
+      "group": "M0",
+      "startStep": 28,
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 8090,
+      "verdict": "passed"
+    }
+  ],
+  "overall": "passed",
+  "scope": "Explicit exclusions on this reference and objective. A selected post-contact state is not all possible contact states. No optimality or human-difficulty claim."
+}

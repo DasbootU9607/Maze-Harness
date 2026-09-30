@@ -1,0 +1,144 @@
+{
+  "case": "north-store",
+  "cap": 300000,
+  "solution": {
+    "status": "solved",
+    "moves": 30,
+    "path": "LLLLLULDDLLDRURRRDDLULDRDDLLLL",
+    "expanded": 2090
+  },
+  "replayPassed": true,
+  "checks": [
+    {
+      "rule": "no_hook_motion",
+      "status": "unsolved",
+      "expanded": 59
+    },
+    {
+      "rule": "no_payload_motion",
+      "status": "unsolved",
+      "expanded": 2121
+    },
+    {
+      "rule": "no_coupled_motion",
+      "status": "unsolved",
+      "expanded": 2121
+    },
+    {
+      "rule": "no_rear_transfer",
+      "status": "unsolved",
+      "expanded": 2121
+    }
+  ],
+  "overall": "passed",
+  "initial": [
+    {
+      "i": 0,
+      "type": "weightless_box",
+      "group": "M0",
+      "x": 8,
+      "y": 3,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 1,
+      "type": "weightless_box",
+      "group": "M0",
+      "x": 9,
+      "y": 3,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 2,
+      "type": "player",
+      "group": "",
+      "x": 11,
+      "y": 3,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 3,
+      "type": "weightless_box",
+      "group": "M0",
+      "x": 8,
+      "y": 4,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 4,
+      "type": "weightless_box",
+      "group": "M0",
+      "x": 8,
+      "y": 5,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 5,
+      "type": "weightless_box",
+      "group": "M0",
+      "x": 8,
+      "y": 6,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 6,
+      "type": "weightless_box",
+      "group": "M0",
+      "x": 9,
+      "y": 6,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 7,
+      "type": "weightless_box",
+      "group": "M1",
+      "x": 6,
+      "y": 7,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 8,
+      "type": "weightless_box",
+      "group": "M1",
+      "x": 7,
+      "y": 7,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 9,
+      "type": "gem",
+      "group": "",
+      "x": 2,
+      "y": 8,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 10,
+      "type": "weightless_box",
+      "group": "M1",
+      "x": 7,
+      "y": 8,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 11,
+      "type": "weightless_box",
+      "group": "M1",
+      "x": 7,
+      "y": 9,
+      "z": 0,
+      "removed": false
+    }
+  ]
+}

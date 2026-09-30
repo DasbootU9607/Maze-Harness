@@ -1,0 +1,6282 @@
+{
+  "profile": "planar-boundary-stagger",
+  "pair": [
+    "M0",
+    "M1"
+  ],
+  "cap": 300000,
+  "warnings": [],
+  "initial": [
+    {
+      "i": 0,
+      "type": "weightless_box",
+      "group": "M0",
+      "x": 5,
+      "y": 4,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 1,
+      "type": "weightless_box",
+      "group": "M0",
+      "x": 6,
+      "y": 4,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 2,
+      "type": "weightless_box",
+      "group": "M0",
+      "x": 7,
+      "y": 4,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 3,
+      "type": "weightless_box",
+      "group": "M0",
+      "x": 5,
+      "y": 5,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 4,
+      "type": "weightless_box",
+      "group": "M0",
+      "x": 7,
+      "y": 5,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 5,
+      "type": "weightless_box",
+      "group": "M1",
+      "x": 7,
+      "y": 6,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 6,
+      "type": "weightless_box",
+      "group": "M1",
+      "x": 8,
+      "y": 6,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 7,
+      "type": "weightless_box",
+      "group": "M1",
+      "x": 7,
+      "y": 7,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 8,
+      "type": "player",
+      "group": null,
+      "x": 8,
+      "y": 7,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 9,
+      "type": "gem",
+      "group": null,
+      "x": 4,
+      "y": 8,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 10,
+      "type": "weightless_box",
+      "group": "M1",
+      "x": 7,
+      "y": 8,
+      "z": 0,
+      "removed": false
+    },
+    {
+      "i": 11,
+      "type": "weightless_box",
+      "group": "M1",
+      "x": 8,
+      "y": 8,
+      "z": 0,
+      "removed": false
+    }
+  ],
+  "solution": {
+    "status": "solved",
+    "moves": 17,
+    "path": "LLLRUURDDLLURDDLL",
+    "expanded": 79
+  },
+  "checks": [
+    {
+      "rule": "no_offset",
+      "status": "unsolved",
+      "expanded": 1,
+      "verdict": "passed"
+    },
+    {
+      "rule": "no_boxes",
+      "status": "unsolved",
+      "expanded": 1,
+      "verdict": "passed"
+    },
+    {
+      "rule": "no_M0",
+      "status": "unsolved",
+      "expanded": 29,
+      "verdict": "passed"
+    },
+    {
+      "rule": "no_M1",
+      "status": "unsolved",
+      "expanded": 1,
+      "verdict": "passed"
+    },
+    {
+      "rule": "no_pocket_west",
+      "status": "unsolved",
+      "expanded": 1,
+      "verdict": "passed"
+    },
+    {
+      "rule": "no_shutter_east",
+      "status": "unsolved",
+      "expanded": 63,
+      "verdict": "passed"
+    },
+    {
+      "rule": "no_pocket_north",
+      "status": "unsolved",
+      "expanded": 74,
+      "verdict": "passed"
+    }
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "d": "L",
+      "before": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 7,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 8,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 8,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 7,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 8,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 7,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 7,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "event": {
+        "primary": "M1",
+        "moved": [
+          "M1"
+        ],
+        "directionalContacts": [],
+        "relativeBefore": [
+          2,
+          2,
+          0
+        ],
+        "relativeAfter": [
+          1,
+          2,
+          0
+        ],
+        "offsetChanged": true
+      }
+    },
+    {
+      "step": 2,
+      "d": "L",
+      "before": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 7,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 7,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "event": {
+        "primary": "M1",
+        "moved": [
+          "M1"
+        ],
+        "directionalContacts": [],
+        "relativeBefore": [
+          1,
+          2,
+          0
+        ],
+        "relativeAfter": [
+          0,
+          2,
+          0
+        ],
+        "offsetChanged": true
+      }
+    },
+    {
+      "step": 3,
+      "d": "L",
+      "before": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "event": {
+        "primary": "M1",
+        "moved": [
+          "M1"
+        ],
+        "directionalContacts": [],
+        "relativeBefore": [
+          0,
+          2,
+          0
+        ],
+        "relativeAfter": [
+          -1,
+          2,
+          0
+        ],
+        "offsetChanged": true
+      }
+    },
+    {
+      "step": 4,
+      "d": "R",
+      "before": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "event": {
+        "primary": null,
+        "moved": [],
+        "directionalContacts": [],
+        "relativeBefore": [
+          -1,
+          2,
+          0
+        ],
+        "relativeAfter": [
+          -1,
+          2,
+          0
+        ],
+        "offsetChanged": false
+      }
+    },
+    {
+      "step": 5,
+      "d": "U",
+      "before": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 6,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "event": {
+        "primary": null,
+        "moved": [],
+        "directionalContacts": [
+          {
+            "from": "M1",
+            "fromCell": [
+              5,
+              6,
+              0
+            ],
+            "to": "M0",
+            "toCell": [
+              5,
+              5,
+              0
+            ]
+          }
+        ],
+        "relativeBefore": [
+          -1,
+          2,
+          0
+        ],
+        "relativeAfter": [
+          -1,
+          2,
+          0
+        ],
+        "offsetChanged": false
+      }
+    },
+    {
+      "step": 6,
+      "d": "U",
+      "before": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 6,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "event": {
+        "primary": null,
+        "moved": [],
+        "directionalContacts": [
+          {
+            "from": "M1",
+            "fromCell": [
+              5,
+              6,
+              0
+            ],
+            "to": "M0",
+            "toCell": [
+              5,
+              5,
+              0
+            ]
+          }
+        ],
+        "relativeBefore": [
+          -1,
+          2,
+          0
+        ],
+        "relativeAfter": [
+          -1,
+          2,
+          0
+        ],
+        "offsetChanged": false
+      }
+    },
+    {
+      "step": 7,
+      "d": "R",
+      "before": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 7,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "event": {
+        "primary": "M0",
+        "moved": [
+          "M0"
+        ],
+        "directionalContacts": [],
+        "relativeBefore": [
+          -1,
+          2,
+          0
+        ],
+        "relativeAfter": [
+          -2,
+          2,
+          0
+        ],
+        "offsetChanged": true
+      }
+    },
+    {
+      "step": 8,
+      "d": "D",
+      "before": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 7,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 7,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "event": {
+        "primary": null,
+        "moved": [],
+        "directionalContacts": [],
+        "relativeBefore": [
+          -2,
+          2,
+          0
+        ],
+        "relativeAfter": [
+          -2,
+          2,
+          0
+        ],
+        "offsetChanged": false
+      }
+    },
+    {
+      "step": 9,
+      "d": "D",
+      "before": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 7,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "event": {
+        "primary": null,
+        "moved": [],
+        "directionalContacts": [],
+        "relativeBefore": [
+          -2,
+          2,
+          0
+        ],
+        "relativeAfter": [
+          -2,
+          2,
+          0
+        ],
+        "offsetChanged": false
+      }
+    },
+    {
+      "step": 10,
+      "d": "L",
+      "before": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "event": {
+        "primary": null,
+        "moved": [],
+        "directionalContacts": [],
+        "relativeBefore": [
+          -2,
+          2,
+          0
+        ],
+        "relativeAfter": [
+          -2,
+          2,
+          0
+        ],
+        "offsetChanged": false
+      }
+    },
+    {
+      "step": 11,
+      "d": "L",
+      "before": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "event": {
+        "primary": null,
+        "moved": [],
+        "directionalContacts": [],
+        "relativeBefore": [
+          -2,
+          2,
+          0
+        ],
+        "relativeAfter": [
+          -2,
+          2,
+          0
+        ],
+        "offsetChanged": false
+      }
+    },
+    {
+      "step": 12,
+      "d": "U",
+      "before": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "event": {
+        "primary": "M1",
+        "moved": [
+          "M1"
+        ],
+        "directionalContacts": [],
+        "relativeBefore": [
+          -2,
+          2,
+          0
+        ],
+        "relativeAfter": [
+          -2,
+          1,
+          0
+        ],
+        "offsetChanged": true
+      }
+    },
+    {
+      "step": 13,
+      "d": "R",
+      "before": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 6,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "event": {
+        "primary": null,
+        "moved": [],
+        "directionalContacts": [
+          {
+            "from": "M1",
+            "fromCell": [
+              5,
+              5,
+              0
+            ],
+            "to": "M0",
+            "toCell": [
+              6,
+              5,
+              0
+            ]
+          }
+        ],
+        "relativeBefore": [
+          -2,
+          1,
+          0
+        ],
+        "relativeAfter": [
+          -2,
+          1,
+          0
+        ],
+        "offsetChanged": false
+      }
+    },
+    {
+      "step": 14,
+      "d": "D",
+      "before": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 6,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "event": {
+        "primary": null,
+        "moved": [],
+        "directionalContacts": [],
+        "relativeBefore": [
+          -2,
+          1,
+          0
+        ],
+        "relativeAfter": [
+          -2,
+          1,
+          0
+        ],
+        "offsetChanged": false
+      }
+    },
+    {
+      "step": 15,
+      "d": "D",
+      "before": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 6,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "event": {
+        "primary": null,
+        "moved": [],
+        "directionalContacts": [],
+        "relativeBefore": [
+          -2,
+          1,
+          0
+        ],
+        "relativeAfter": [
+          -2,
+          1,
+          0
+        ],
+        "offsetChanged": false
+      }
+    },
+    {
+      "step": 16,
+      "d": "L",
+      "before": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 6,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "event": {
+        "primary": null,
+        "moved": [],
+        "directionalContacts": [
+          {
+            "from": "M0",
+            "fromCell": [
+              6,
+              5,
+              0
+            ],
+            "to": "M1",
+            "toCell": [
+              5,
+              5,
+              0
+            ]
+          }
+        ],
+        "relativeBefore": [
+          -2,
+          1,
+          0
+        ],
+        "relativeAfter": [
+          -2,
+          1,
+          0
+        ],
+        "offsetChanged": false
+      }
+    },
+    {
+      "step": 17,
+      "d": "L",
+      "before": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": true
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "event": {
+        "primary": null,
+        "moved": [],
+        "directionalContacts": [
+          {
+            "from": "M0",
+            "fromCell": [
+              6,
+              5,
+              0
+            ],
+            "to": "M1",
+            "toCell": [
+              5,
+              5,
+              0
+            ]
+          }
+        ],
+        "relativeBefore": [
+          -2,
+          1,
+          0
+        ],
+        "relativeAfter": [
+          -2,
+          1,
+          0
+        ],
+        "offsetChanged": false
+      }
+    }
+  ],
+  "pushes": [
+    {
+      "step": 1,
+      "d": "L",
+      "event": {
+        "primary": "M1",
+        "moved": [
+          "M1"
+        ],
+        "directionalContacts": [],
+        "relativeBefore": [
+          2,
+          2,
+          0
+        ],
+        "relativeAfter": [
+          1,
+          2,
+          0
+        ],
+        "offsetChanged": true
+      },
+      "before": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 7,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 8,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 8,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 7,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 8,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 7,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 7,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "walkingBefore": {
+        "status": "exhausted",
+        "expanded": 1,
+        "reachable": [
+          [
+            8,
+            7,
+            0
+          ]
+        ],
+        "gemReachable": false
+      },
+      "walkingAfter": {
+        "status": "exhausted",
+        "expanded": 6,
+        "reachable": [
+          [
+            7,
+            7,
+            0
+          ],
+          [
+            8,
+            7,
+            0
+          ],
+          [
+            8,
+            6,
+            0
+          ],
+          [
+            8,
+            8,
+            0
+          ],
+          [
+            8,
+            5,
+            0
+          ],
+          [
+            8,
+            4,
+            0
+          ]
+        ],
+        "gemReachable": false
+      },
+      "newlyReachable": [
+        [
+          7,
+          7,
+          0
+        ],
+        [
+          8,
+          6,
+          0
+        ],
+        [
+          8,
+          8,
+          0
+        ],
+        [
+          8,
+          5,
+          0
+        ],
+        [
+          8,
+          4,
+          0
+        ]
+      ],
+      "lostReachable": []
+    },
+    {
+      "step": 2,
+      "d": "L",
+      "event": {
+        "primary": "M1",
+        "moved": [
+          "M1"
+        ],
+        "directionalContacts": [],
+        "relativeBefore": [
+          1,
+          2,
+          0
+        ],
+        "relativeAfter": [
+          0,
+          2,
+          0
+        ],
+        "offsetChanged": true
+      },
+      "before": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 7,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 7,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 7,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "walkingBefore": {
+        "status": "exhausted",
+        "expanded": 6,
+        "reachable": [
+          [
+            7,
+            7,
+            0
+          ],
+          [
+            8,
+            7,
+            0
+          ],
+          [
+            8,
+            6,
+            0
+          ],
+          [
+            8,
+            8,
+            0
+          ],
+          [
+            8,
+            5,
+            0
+          ],
+          [
+            8,
+            4,
+            0
+          ]
+        ],
+        "gemReachable": false
+      },
+      "walkingAfter": {
+        "status": "exhausted",
+        "expanded": 9,
+        "reachable": [
+          [
+            6,
+            7,
+            0
+          ],
+          [
+            7,
+            7,
+            0
+          ],
+          [
+            7,
+            6,
+            0
+          ],
+          [
+            7,
+            8,
+            0
+          ],
+          [
+            8,
+            7,
+            0
+          ],
+          [
+            8,
+            6,
+            0
+          ],
+          [
+            8,
+            8,
+            0
+          ],
+          [
+            8,
+            5,
+            0
+          ],
+          [
+            8,
+            4,
+            0
+          ]
+        ],
+        "gemReachable": false
+      },
+      "newlyReachable": [
+        [
+          6,
+          7,
+          0
+        ],
+        [
+          7,
+          6,
+          0
+        ],
+        [
+          7,
+          8,
+          0
+        ]
+      ],
+      "lostReachable": []
+    },
+    {
+      "step": 3,
+      "d": "L",
+      "event": {
+        "primary": "M1",
+        "moved": [
+          "M1"
+        ],
+        "directionalContacts": [],
+        "relativeBefore": [
+          0,
+          2,
+          0
+        ],
+        "relativeAfter": [
+          -1,
+          2,
+          0
+        ],
+        "offsetChanged": true
+      },
+      "before": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 6,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "walkingBefore": {
+        "status": "exhausted",
+        "expanded": 9,
+        "reachable": [
+          [
+            6,
+            7,
+            0
+          ],
+          [
+            7,
+            7,
+            0
+          ],
+          [
+            7,
+            6,
+            0
+          ],
+          [
+            7,
+            8,
+            0
+          ],
+          [
+            8,
+            7,
+            0
+          ],
+          [
+            8,
+            6,
+            0
+          ],
+          [
+            8,
+            8,
+            0
+          ],
+          [
+            8,
+            5,
+            0
+          ],
+          [
+            8,
+            4,
+            0
+          ]
+        ],
+        "gemReachable": false
+      },
+      "walkingAfter": {
+        "status": "exhausted",
+        "expanded": 13,
+        "reachable": [
+          [
+            5,
+            7,
+            0
+          ],
+          [
+            6,
+            7,
+            0
+          ],
+          [
+            6,
+            6,
+            0
+          ],
+          [
+            6,
+            8,
+            0
+          ],
+          [
+            7,
+            7,
+            0
+          ],
+          [
+            6,
+            5,
+            0
+          ],
+          [
+            7,
+            6,
+            0
+          ],
+          [
+            7,
+            8,
+            0
+          ],
+          [
+            8,
+            7,
+            0
+          ],
+          [
+            8,
+            6,
+            0
+          ],
+          [
+            8,
+            8,
+            0
+          ],
+          [
+            8,
+            5,
+            0
+          ],
+          [
+            8,
+            4,
+            0
+          ]
+        ],
+        "gemReachable": false
+      },
+      "newlyReachable": [
+        [
+          5,
+          7,
+          0
+        ],
+        [
+          6,
+          6,
+          0
+        ],
+        [
+          6,
+          8,
+          0
+        ],
+        [
+          6,
+          5,
+          0
+        ]
+      ],
+      "lostReachable": []
+    },
+    {
+      "step": 7,
+      "d": "R",
+      "event": {
+        "primary": "M0",
+        "moved": [
+          "M0"
+        ],
+        "directionalContacts": [],
+        "relativeBefore": [
+          -1,
+          2,
+          0
+        ],
+        "relativeAfter": [
+          -2,
+          2,
+          0
+        ],
+        "offsetChanged": true
+      },
+      "before": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 7,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "walkingBefore": {
+        "status": "exhausted",
+        "expanded": 13,
+        "reachable": [
+          [
+            5,
+            7,
+            0
+          ],
+          [
+            6,
+            7,
+            0
+          ],
+          [
+            6,
+            6,
+            0
+          ],
+          [
+            6,
+            8,
+            0
+          ],
+          [
+            7,
+            7,
+            0
+          ],
+          [
+            6,
+            5,
+            0
+          ],
+          [
+            7,
+            6,
+            0
+          ],
+          [
+            7,
+            8,
+            0
+          ],
+          [
+            8,
+            7,
+            0
+          ],
+          [
+            8,
+            6,
+            0
+          ],
+          [
+            8,
+            8,
+            0
+          ],
+          [
+            8,
+            5,
+            0
+          ],
+          [
+            8,
+            4,
+            0
+          ]
+        ],
+        "gemReachable": false
+      },
+      "walkingAfter": {
+        "status": "exhausted",
+        "expanded": 11,
+        "reachable": [
+          [
+            7,
+            5,
+            0
+          ],
+          [
+            7,
+            6,
+            0
+          ],
+          [
+            7,
+            7,
+            0
+          ],
+          [
+            6,
+            6,
+            0
+          ],
+          [
+            8,
+            6,
+            0
+          ],
+          [
+            7,
+            8,
+            0
+          ],
+          [
+            6,
+            7,
+            0
+          ],
+          [
+            8,
+            7,
+            0
+          ],
+          [
+            6,
+            8,
+            0
+          ],
+          [
+            8,
+            8,
+            0
+          ],
+          [
+            5,
+            7,
+            0
+          ]
+        ],
+        "gemReachable": false
+      },
+      "newlyReachable": [
+        [
+          7,
+          5,
+          0
+        ]
+      ],
+      "lostReachable": [
+        [
+          6,
+          5,
+          0
+        ],
+        [
+          8,
+          5,
+          0
+        ],
+        [
+          8,
+          4,
+          0
+        ]
+      ]
+    },
+    {
+      "step": 12,
+      "d": "U",
+      "event": {
+        "primary": "M1",
+        "moved": [
+          "M1"
+        ],
+        "directionalContacts": [],
+        "relativeBefore": [
+          -2,
+          2,
+          0
+        ],
+        "relativeAfter": [
+          -2,
+          1,
+          0
+        ],
+        "offsetChanged": true
+      },
+      "before": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "after": [
+        {
+          "i": 0,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 7,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "x": 8,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 7,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 8,
+          "type": "player",
+          "group": null,
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 9,
+          "type": "gem",
+          "group": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 10,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 4,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "i": 11,
+          "type": "weightless_box",
+          "group": "M1",
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        }
+      ],
+      "walkingBefore": {
+        "status": "exhausted",
+        "expanded": 11,
+        "reachable": [
+          [
+            7,
+            5,
+            0
+          ],
+          [
+            7,
+            6,
+            0
+          ],
+          [
+            7,
+            7,
+            0
+          ],
+          [
+            6,
+            6,
+            0
+          ],
+          [
+            8,
+            6,
+            0
+          ],
+          [
+            7,
+            8,
+            0
+          ],
+          [
+            6,
+            7,
+            0
+          ],
+          [
+            8,
+            7,
+            0
+          ],
+          [
+            6,
+            8,
+            0
+          ],
+          [
+            8,
+            8,
+            0
+          ],
+          [
+            5,
+            7,
+            0
+          ]
+        ],
+        "gemReachable": false
+      },
+      "walkingAfter": {
+        "status": "exhausted",
+        "expanded": 25,
+        "reachable": [
+          [
+            5,
+            6,
+            0
+          ],
+          [
+            6,
+            6,
+            0
+          ],
+          [
+            6,
+            7,
+            0
+          ],
+          [
+            7,
+            6,
+            0
+          ],
+          [
+            6,
+            8,
+            0
+          ],
+          [
+            7,
+            7,
+            0
+          ],
+          [
+            7,
+            5,
+            0
+          ],
+          [
+            8,
+            6,
+            0
+          ],
+          [
+            5,
+            8,
+            0
+          ],
+          [
+            7,
+            8,
+            0
+          ],
+          [
+            8,
+            7,
+            0
+          ],
+          [
+            4,
+            8,
+            0
+          ],
+          [
+            8,
+            8,
+            0
+          ]
+        ],
+        "gemReachable": true
+      },
+      "newlyReachable": [
+        [
+          5,
+          6,
+          0
+        ],
+        [
+          5,
+          8,
+          0
+        ],
+        [
+          4,
+          8,
+          0
+        ]
+      ],
+      "lostReachable": [
+        [
+          5,
+          7,
+          0
+        ]
+      ]
+    }
+  ],
+  "replayPassed": true,
+  "initialWalking": {
+    "status": "exhausted",
+    "expanded": 1,
+    "reachable": [
+      [
+        8,
+        7,
+        0
+      ]
+    ],
+    "gemReachable": false
+  },
+  "firstGoalOpening": 12,
+  "walkingVerdict": "passed",
+  "preparation": [
+    {
+      "name": "M0 R before first M1 U",
+      "before": {
+        "group": "M1",
+        "direction": "U"
+      },
+      "prepare": {
+        "group": "M0",
+        "direction": "R"
+      },
+      "definition": "Goal is gem OR legal first declared motion; event edges excluded. A reached event boundary is not automatically a complete bypass.",
+      "checks": [
+        {
+          "name": "positive_boundary",
+          "status": "solved",
+          "moves": 11,
+          "path": "LLLRUURDDLL",
+          "expanded": 64,
+          "verdict": "passed",
+          "replayPassed": true,
+          "endpoint": "first-group-motion-boundary"
+        },
+        {
+          "name": "without_preparation",
+          "status": "unsolved",
+          "expanded": 63,
+          "verdict": "passed"
+        }
+      ]
+    },
+    {
+      "name": "M1 L before first M1 U",
+      "before": {
+        "group": "M1",
+        "direction": "U"
+      },
+      "prepare": {
+        "group": "M1",
+        "direction": "L"
+      },
+      "definition": "Goal is gem OR legal first declared motion; event edges excluded. A reached event boundary is not automatically a complete bypass.",
+      "checks": [
+        {
+          "name": "positive_boundary",
+          "status": "solved",
+          "moves": 11,
+          "path": "LLLRUURDDLL",
+          "expanded": 64,
+          "verdict": "passed",
+          "replayPassed": true,
+          "endpoint": "first-group-motion-boundary"
+        },
+        {
+          "name": "without_preparation",
+          "status": "unsolved",
+          "expanded": 1,
+          "verdict": "passed"
+        }
+      ]
+    }
+  ],
+  "boundaryEvidence": {
+    "status": "passed",
+    "file": "controls.json",
+    "linkedBypasses": [
+      "Remove the north ceiling strip"
+    ]
+  },
+  "acceptanceScope": "Declared planar contract checks, not an automatic universal classifier of shape quality or human reasoning. Review the functional geometry and intervention side effects.",
+  "firstGoalOpeningScope": "Verified along this replay",
+  "overall": "passed"
+}

@@ -1,0 +1,120 @@
+{
+  "source": {
+    "kind": "user reconstruction of an official mechanism",
+    "officialRoom": "HXH",
+    "upstreamFile": "mygl8anih8.txt",
+    "rawSha256": "6f6393030eb814c639a83d2d3146d88f5fdd24ca9d67bc9eab2958230346c0c8",
+    "notes": "Mechanism region with a different approach and terrain; not the full official HxH room"
+  },
+  "goal": {
+    "kind": "gem"
+  },
+  "cap": 1000000,
+  "fingerprints": {
+    "cells": "fde9e31cefb91e07527c67f39d237c39874d019721df48138c48c7fe852b94fc",
+    "public/maze-engine.js": "c25be363e30186b7435c20361f20542170bdabc9de8c0dad8fa45198e5cab842",
+    "public/maze-solver.js": "be7ecce88b17e2f5cc4894a2fd5c86ba8008cb157406a5728bc8ab110fb3df9d",
+    "server/maze-levels.js": "9b75ab87efdcaee23a91c442d1bdcc7975f545f3a58ec4403c3fce2fd4a341e0",
+    "games/maze/level_parsing.json": "54cb1bc6d2e545a89abe860e2c84e45ed5fd31b244b828b8424d2693d05b780d"
+  },
+  "replayPassed": true,
+  "inputs": 26,
+  "pushes": [
+    {
+      "step": 11,
+      "d": "L",
+      "primary": "M0",
+      "moved": [
+        "M0"
+      ],
+      "direction": "L",
+      "contact": false,
+      "offsetChanged": true
+    },
+    {
+      "step": 19,
+      "d": "U",
+      "primary": "M1",
+      "moved": [
+        "M1"
+      ],
+      "direction": "U",
+      "contact": false,
+      "offsetChanged": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "freeze_M0",
+      "kind": "freeze",
+      "group": "M0",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 61,
+      "verdict": "passed"
+    },
+    {
+      "name": "freeze_M1",
+      "kind": "freeze",
+      "group": "M1",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 124,
+      "verdict": "passed"
+    },
+    {
+      "name": "preserve_relative_offset",
+      "kind": "offset",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 127,
+      "verdict": "passed"
+    },
+    {
+      "name": "forbid_M0L",
+      "kind": "direction",
+      "group": "M0",
+      "direction": "L",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 61,
+      "verdict": "passed"
+    },
+    {
+      "name": "forbid_M0R",
+      "kind": "direction",
+      "group": "M0",
+      "direction": "R",
+      "expected": "solved",
+      "status": "solved",
+      "moves": 26,
+      "path": "UULLLLLLLLLRRDDDLLUDLLLLUU",
+      "expanded": 247,
+      "verdict": "passed"
+    },
+    {
+      "name": "forbid_M1U",
+      "kind": "direction",
+      "group": "M1",
+      "direction": "U",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 190,
+      "verdict": "passed"
+    },
+    {
+      "name": "forbid_M1D",
+      "kind": "direction",
+      "group": "M1",
+      "direction": "D",
+      "expected": "solved",
+      "status": "solved",
+      "moves": 26,
+      "path": "UULLLLLLLLLRRDDDLLUDLLLLUU",
+      "expanded": 247,
+      "verdict": "passed"
+    }
+  ],
+  "overall": "passed",
+  "scope": "Explicit exclusions on this reference and objective. A selected post-contact state is not all possible contact states. No optimality or human-difficulty claim."
+}

@@ -6,4 +6,5 @@ These instructions apply to Maze-Harness.
 - Create a separate branch or pull request only when the user requests one.
 - Synchronize with `origin/main` before committing. Preserve existing work and do not force-push or rewrite published history.
 - Keep public content in English. Exclude credentials, private personal information, and machine-specific paths.
+- Use descriptive names instead of calendar dates in published paths and documentation. Omit authoring dates from static report metadata; preserve license copyright years, version identifiers, and timestamp fields required by runtime APIs.
 - Run checks appropriate to the change before pushing. A repository update does not authorize a package release or deployment.

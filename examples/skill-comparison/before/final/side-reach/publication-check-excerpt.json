@@ -1,0 +1,49 @@
+{
+  "case": "side-reach",
+  "solution": {
+    "status": "solved",
+    "moves": 17,
+    "path": "URUULURRDRUDDDRRR",
+    "expanded": 387
+  },
+  "replayPassed": true,
+  "checks": [
+    {
+      "rule": "no_event",
+      "status": "unsolved",
+      "expanded": 478,
+      "verdict": "passed"
+    },
+    {
+      "rule": "no_tool",
+      "status": "unsolved",
+      "expanded": 24,
+      "verdict": "passed"
+    },
+    {
+      "rule": "no_target",
+      "status": "unsolved",
+      "expanded": 478,
+      "verdict": "passed"
+    },
+    {
+      "rule": "no_independent_preparation",
+      "status": "unsolved",
+      "expanded": 24,
+      "verdict": "passed"
+    },
+    {
+      "rule": "no_tool_preparation",
+      "status": "unsolved",
+      "expanded": 24,
+      "verdict": "passed"
+    },
+    {
+      "rule": "no_alignment",
+      "status": "unsolved",
+      "expanded": 454,
+      "verdict": "passed"
+    }
+  ],
+  "overall": "passed"
+}

@@ -1,0 +1,50 @@
+{
+  "case": "elevated-bridge",
+  "solution": {
+    "status": "solved",
+    "moves": 12,
+    "path": "ULLLLLURDLLL",
+    "expanded": 20
+  },
+  "replayPassed": true,
+  "checks": [
+    {
+      "rule": "no_rear_transfer",
+      "status": "unsolved",
+      "expanded": 12,
+      "verdict": "passed"
+    },
+    {
+      "rule": "no_player_height_change",
+      "status": "unsolved",
+      "expanded": 4,
+      "verdict": "passed"
+    },
+    {
+      "rule": "no_lift_lower",
+      "status": "unsolved",
+      "expanded": 8,
+      "verdict": "passed"
+    },
+    {
+      "rule": "no_lift_raise",
+      "status": "unsolved",
+      "expanded": 13,
+      "verdict": "passed"
+    },
+    {
+      "rule": "no_payload_top_walk",
+      "status": "unsolved",
+      "expanded": 24,
+      "verdict": "passed"
+    },
+    {
+      "rule": "no_post_transfer_box_motion",
+      "status": "solved",
+      "expanded": 20,
+      "verdict": "passed",
+      "replayPassed": true
+    }
+  ],
+  "overall": "passed"
+}

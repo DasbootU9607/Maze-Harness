@@ -1,0 +1,382 @@
+{
+  "title": "Borrowed Bay: The Returning Keeper",
+  "cells": [
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".+M1",
+      ".+M1",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".+M1",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".",
+      "#",
+      ".",
+      ".+M1",
+      "#",
+      "#",
+      ".",
+      "+",
+      ".+M3",
+      ".",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".+M0",
+      ".+M0",
+      ".+M0",
+      ".+M1",
+      ".",
+      ".",
+      ".",
+      "+",
+      ".+M3",
+      ".",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".+p",
+      ".+M0",
+      ".",
+      ".",
+      ".+M1",
+      ".",
+      ".",
+      ".",
+      "+",
+      ".+M3",
+      ".",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".+M0",
+      ".",
+      ".",
+      ".+M1",
+      ".",
+      ".",
+      ".",
+      "#",
+      ".+M3",
+      ".",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      ".",
+      "#",
+      ".+G",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      ".",
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ]
+  ],
+  "contract": {
+    "profile": "planar-rigid-transport-v1",
+    "roles": {
+      "tool": "M0",
+      "helpers": [
+        "M1"
+      ],
+      "target": "M3"
+    },
+    "delivery": {
+      "toolCells": [
+        [
+          8,
+          6
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          10,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "playerCell": [
+        7,
+        8
+      ]
+    },
+    "use": {
+      "direction": "R"
+    },
+    "intent": "The elbow retreats west to release the keeper ear sweep. The keeper parks south, clearing eastward elbow transport around fixed notches. The elbow spans void and moves the goal-lane target east. Keeper recovery reopens the lower route to the elbow withdrawal stance; raising the elbow clears the goal lane.",
+    "composition": {
+      "input": "Player [2,7], elbow M0 in west workshop, keeper M1 in central shaft, target M3 seals the goal lane.",
+      "roles": "M0 is the five-cell elbow; M1 is a six-cell shaft with a west ear; M3 is a vertical four-cell target.",
+      "occupiedRegion": "A 16x16 closed planar room. Keeper parking occupies the lower corridor and shares its swept area with elbow transport.",
+      "output": "Delivery at M0 [[8,6],[9,6],[10,6],[8,7],[8,8]], player [7,8], R transmits via [10,6] to target [11,6].",
+      "preserve": "The west input face after the initial retreat, the keeper recovery face [5,10], the restored lower route to [9,9], and the upper entrance to [11,4].",
+      "sideEffects": "After contact, the elbow itself seals the goal lane; keeper recovery must permit a further elbow move. Exact keeper return to its initial pose is not required.",
+      "evidence": "Ordinary engine replay, per-group and per-direction exclusions, first-use prefixes, local tip control, and linked wall intervention; human difficulty untested."
+    },
+    "phases": [
+      {
+        "step": 0,
+        "label": "Start"
+      },
+      {
+        "step": 6,
+        "label": "Elbow retreats"
+      },
+      {
+        "step": 22,
+        "label": "Keeper parked"
+      },
+      {
+        "step": 34,
+        "label": "Usable delivery"
+      },
+      {
+        "step": 35,
+        "label": "Lateral transfer"
+      },
+      {
+        "step": 47,
+        "label": "Keeper recovery"
+      },
+      {
+        "step": 57,
+        "label": "Withdrawal stance"
+      },
+      {
+        "step": 60,
+        "label": "Elbow withdrawn"
+      },
+      {
+        "step": 81,
+        "label": "Diamond"
+      }
+    ]
+  }
+}

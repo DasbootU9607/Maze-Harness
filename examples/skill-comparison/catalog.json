@@ -1,0 +1,697 @@
+{
+  "counts": {
+    "before_final": 16,
+    "after_final": 1,
+    "prototype_records": 17,
+    "reference_layouts": 4,
+    "case_records": 38,
+    "unique_layouts": 33
+  },
+  "boundary": "The revision based on the three saved official-mechanism reconstructions.",
+  "before_public_commit": "a6ec28592458c0cefed526e209b8de95c4fb8db9",
+  "after_public_commit": "5b547cdee32d5ee529046ff96879f5ed2df874fe",
+  "cases": [
+    {
+      "id": "before/final/01-boundary",
+      "title": "Skill Trial 01 - Offset Latch",
+      "phase": "before",
+      "kind": "authoring trial",
+      "status": "historical checks passed",
+      "note": "A fixed boundary and a relative group offset release the route. Includes the ordinary Play replay and scoped controls.",
+      "rooms": 1,
+      "witness_inputs": 9,
+      "layout_sha256": "ddf5c24656e87a6cb7b29bdf4c3e2920aff844ee8b1d89de050d3a833d83736a",
+      "world": "before/final/01-boundary/world.json",
+      "readme": "before/final/01-boundary/README.md",
+      "derived_from_prototype_cells": false,
+      "preview": "before/final/01-boundary/preview.jpg",
+      "evidence": [
+        "before/final/01-boundary/browser.json",
+        "before/final/01-boundary/verification.json"
+      ]
+    },
+    {
+      "id": "before/final/02-hook",
+      "title": "Skill Trial 02 - Bent Key",
+      "phase": "before",
+      "kind": "authoring trial",
+      "status": "historical checks passed",
+      "note": "Transport and dock a bent key, transfer contact across a void, and clear the subsequent approach.",
+      "rooms": 1,
+      "witness_inputs": 19,
+      "layout_sha256": "fb1a4d01100563c9917d89c6c5a22940fa2b8ad27ea3b923dbeca42b5a8a0474",
+      "world": "before/final/02-hook/world.json",
+      "readme": "before/final/02-hook/README.md",
+      "derived_from_prototype_cells": false,
+      "preview": "before/final/02-hook/preview.jpg",
+      "evidence": [
+        "before/final/02-hook/browser.json",
+        "before/final/02-hook/verification.json"
+      ]
+    },
+    {
+      "id": "before/final/03-transport",
+      "title": "Skill Trial 03 - Parking Bay",
+      "phase": "before",
+      "kind": "authoring trial",
+      "status": "historical checks passed",
+      "note": "A tool and helper share space; temporary parking and reachable pushing faces enable delivery.",
+      "rooms": 1,
+      "witness_inputs": 49,
+      "layout_sha256": "54ffef3850ffc60879d1bdc6b894922ab8dc17a64aa87ea05e16c067c8683c8f",
+      "world": "before/final/03-transport/world.json",
+      "readme": "before/final/03-transport/README.md",
+      "derived_from_prototype_cells": false,
+      "preview": "before/final/03-transport/preview.jpg",
+      "evidence": [
+        "before/final/03-transport/browser.json",
+        "before/final/03-transport/verification.json"
+      ]
+    },
+    {
+      "id": "before/final/04-combined",
+      "title": "Skill Trial 04 - Linked Workshop",
+      "phase": "before",
+      "kind": "authoring trial",
+      "status": "historical checks passed",
+      "note": "Boundary-dependent offsets, tool transport, and contact transfer are connected in one room. Includes supplemental composition checks.",
+      "rooms": 1,
+      "witness_inputs": 58,
+      "layout_sha256": "f1212d230cca288aa4a2911d11065e60381c26e6b037f312b8b4b96f8fdd05e6",
+      "world": "before/final/04-combined/world.json",
+      "readme": "before/final/04-combined/README.md",
+      "derived_from_prototype_cells": false,
+      "preview": "before/final/04-combined/preview.jpg",
+      "evidence": [
+        "before/final/04-combined/browser.json",
+        "before/final/04-combined/supplemental-verification.json",
+        "before/final/04-combined/verification.json"
+      ]
+    },
+    {
+      "id": "before/final/agent-practice",
+      "title": "Agent Practice - Push into Alcove",
+      "phase": "before",
+      "kind": "early practice",
+      "status": "historical witness retained",
+      "note": "A 7-by-5 introductory room. The documented witness is URDRRR. This predates the revision and is not a controlled comparison sample.",
+      "rooms": 1,
+      "witness_inputs": 6,
+      "layout_sha256": "005cf48c8121171c48ec417217d445e3d58dda9f68a51e5ee1070593d64d2644",
+      "world": "before/final/agent-practice/world.json",
+      "readme": "before/final/agent-practice/README.md",
+      "derived_from_prototype_cells": false,
+      "preview": "before/final/agent-practice/preview.png",
+      "evidence": []
+    },
+    {
+      "id": "before/final/parallax-foundry",
+      "title": "Parallax Foundry",
+      "phase": "before",
+      "kind": "early multi-room design",
+      "status": "historical checks passed; import UI limitation",
+      "note": "A four-room authored world. Historical browser evidence covers collecting all four gems and returning to the first room. Native Build Import encountered a Windows symlink EPERM limitation; the existing draft and save/export round trip worked. This predates the three-skill comparison.",
+      "rooms": 4,
+      "witness_inputs": null,
+      "layout_sha256": "aa2328a143fde0346f0a8b72763741f28eac357c007232c40e73ae75f98ce934",
+      "world": "before/final/parallax-foundry/world.json",
+      "readme": "before/final/parallax-foundry/README.md",
+      "derived_from_prototype_cells": false,
+      "evidence": [
+        "before/final/parallax-foundry/browser-verification.json",
+        "before/final/parallax-foundry/camera-controls-verification.json",
+        "before/final/parallax-foundry/delivery-verification.json",
+        "before/final/parallax-foundry/dependency-verification.json",
+        "before/final/parallax-foundry/format-verification.json",
+        "before/final/parallax-foundry/import-verification.json",
+        "before/final/parallax-foundry/quality-verification.json",
+        "before/final/parallax-foundry/verification.json"
+      ]
+    },
+    {
+      "id": "before/final/pocket-shutter",
+      "title": "pocket-shutter",
+      "phase": "before",
+      "kind": "earlier skill example",
+      "status": "historical checks passed",
+      "note": "An authored boundary-stagger fixture, with contract, replay, and scoped controls.",
+      "rooms": 1,
+      "witness_inputs": 17,
+      "layout_sha256": "42915b440d4bbf7d294665fbd8cbae03c823b591788a74ee873f7bfd9ea899a5",
+      "world": "before/final/pocket-shutter/world.json",
+      "readme": "before/final/pocket-shutter/README.md",
+      "derived_from_prototype_cells": false,
+      "preview": "before/final/pocket-shutter/preview.jpg",
+      "evidence": [
+        "before/final/pocket-shutter/evidence/browser.json",
+        "before/final/pocket-shutter/evidence/verification.json"
+      ]
+    },
+    {
+      "id": "before/final/twin-tee",
+      "title": "twin-tee",
+      "phase": "before",
+      "kind": "earlier skill example",
+      "status": "historical checks passed",
+      "note": "An authored boundary-stagger fixture, with contract, replay, and scoped controls.",
+      "rooms": 1,
+      "witness_inputs": 27,
+      "layout_sha256": "bec9fcf3bfd84135262ac7b5a6e09255aae8365fb044ff1d6933d5a641a68257",
+      "world": "before/final/twin-tee/world.json",
+      "readme": "before/final/twin-tee/README.md",
+      "derived_from_prototype_cells": false,
+      "preview": "before/final/twin-tee/preview.jpg",
+      "evidence": [
+        "before/final/twin-tee/evidence/browser.json",
+        "before/final/twin-tee/evidence/verification.json"
+      ]
+    },
+    {
+      "id": "before/final/minimal",
+      "title": "minimal",
+      "phase": "before",
+      "kind": "earlier skill example",
+      "status": "historical checks passed",
+      "note": "Predocked rear-hook baseline. Related parameter variants are not independent design concepts.",
+      "rooms": 1,
+      "witness_inputs": 10,
+      "layout_sha256": "6232e72787996f96ab532528506008f2befcfb7ea31ad9afeb75f71feee7a44f",
+      "world": "before/final/minimal/world.json",
+      "readme": "before/final/minimal/README.md",
+      "derived_from_prototype_cells": false,
+      "evidence": [
+        "before/final/minimal/evidence.json",
+        "before/final/minimal/publication-check-excerpt.json"
+      ]
+    },
+    {
+      "id": "before/final/north-store",
+      "title": "north-store",
+      "phase": "before",
+      "kind": "earlier skill example",
+      "status": "historical checks passed",
+      "note": "A parameter variation on the baseline rear-hook structure.",
+      "rooms": 1,
+      "witness_inputs": 30,
+      "layout_sha256": "243814354baad2c046b53b1cde0ae0de37509c9a2d0a70699818cf397491305f",
+      "world": "before/final/north-store/world.json",
+      "readme": "before/final/north-store/README.md",
+      "derived_from_prototype_cells": false,
+      "evidence": [
+        "before/final/north-store/evidence.json",
+        "before/final/north-store/publication-check-excerpt.json"
+      ]
+    },
+    {
+      "id": "before/final/wide-hook",
+      "title": "wide-hook",
+      "phase": "before",
+      "kind": "earlier skill example",
+      "status": "historical checks passed",
+      "note": "A parameter variation on the baseline rear-hook structure.",
+      "rooms": 1,
+      "witness_inputs": 25,
+      "layout_sha256": "6f9acb98ff3c5502e89b92a57eaae3b3078338a90bd2c85ea94020bef05ed3b2",
+      "world": "before/final/wide-hook/world.json",
+      "readme": "before/final/wide-hook/README.md",
+      "derived_from_prototype_cells": false,
+      "evidence": [
+        "before/final/wide-hook/evidence.json",
+        "before/final/wide-hook/publication-check-excerpt.json"
+      ]
+    },
+    {
+      "id": "before/final/repair-plate",
+      "title": "repair-plate",
+      "phase": "before",
+      "kind": "earlier skill example",
+      "status": "historical checks passed",
+      "note": "A predocked hook combined with a module-repair task.",
+      "rooms": 1,
+      "witness_inputs": 12,
+      "layout_sha256": "7aa3803bc304b69bca267b4bca2b5af1c5ca6f051fd2055c0e105451bcb3d2d6",
+      "world": "before/final/repair-plate/world.json",
+      "readme": "before/final/repair-plate/README.md",
+      "derived_from_prototype_cells": false,
+      "evidence": [
+        "before/final/repair-plate/evidence.json",
+        "before/final/repair-plate/publication-check-excerpt.json"
+      ]
+    },
+    {
+      "id": "before/final/elevated-bridge",
+      "title": "elevated-bridge",
+      "phase": "before",
+      "kind": "earlier skill example",
+      "status": "historical checks passed",
+      "note": "A predocked hook combined with a height and bridge task.",
+      "rooms": 1,
+      "witness_inputs": 12,
+      "layout_sha256": "b73412f01566ea3ec25404f9ab9bcb0da3681d8159da850cfe0c4cf87abe5301",
+      "world": "before/final/elevated-bridge/world.json",
+      "readme": "before/final/elevated-bridge/README.md",
+      "derived_from_prototype_cells": false,
+      "evidence": [
+        "before/final/elevated-bridge/evidence.json",
+        "before/final/elevated-bridge/publication-check-excerpt.json"
+      ]
+    },
+    {
+      "id": "before/final/active-docking",
+      "title": "active-docking",
+      "phase": "before",
+      "kind": "earlier skill example",
+      "status": "historical checks passed",
+      "note": "Transport and dock the tool before building a usable bridge.",
+      "rooms": 1,
+      "witness_inputs": 27,
+      "layout_sha256": "c807b64aab3059b96097c2b293032a9932a843ad4025ecce1ea9e6ac4c98ae8b",
+      "world": "before/final/active-docking/world.json",
+      "readme": "before/final/active-docking/README.md",
+      "derived_from_prototype_cells": false,
+      "evidence": [
+        "before/final/active-docking/evidence.json",
+        "before/final/active-docking/publication-check-excerpt.json"
+      ]
+    },
+    {
+      "id": "before/final/side-reach",
+      "title": "side-reach",
+      "phase": "before",
+      "kind": "earlier skill example",
+      "status": "historical checks passed",
+      "note": "A lateral contact-transfer design with active transport and docking.",
+      "rooms": 1,
+      "witness_inputs": 17,
+      "layout_sha256": "a3c0f6d74f512b989605e5b0dffd1b045df3357b5f8fc0c6a2b5b48120264e0e",
+      "world": "before/final/side-reach/world.json",
+      "readme": "before/final/side-reach/README.md",
+      "derived_from_prototype_cells": false,
+      "evidence": [
+        "before/final/side-reach/evidence.json",
+        "before/final/side-reach/publication-check-excerpt.json"
+      ]
+    },
+    {
+      "id": "before/final/cantilever-key",
+      "title": "cantilever-key",
+      "phase": "before",
+      "kind": "earlier skill example",
+      "status": "historical checks passed",
+      "note": "A lateral contact-transfer design with different useful geometry.",
+      "rooms": 1,
+      "witness_inputs": 17,
+      "layout_sha256": "97f2f67fbe5ef1cf93c6d6ced0118adb4ce0cd1adc4f290d0b071b9a0e0514fa",
+      "world": "before/final/cantilever-key/world.json",
+      "readme": "before/final/cantilever-key/README.md",
+      "derived_from_prototype_cells": false,
+      "evidence": [
+        "before/final/cantilever-key/evidence.json",
+        "before/final/cantilever-key/publication-check-excerpt.json"
+      ]
+    },
+    {
+      "id": "before/prototypes/stagger-prototype-01",
+      "title": "stagger-prototype-01",
+      "phase": "before",
+      "kind": "prototype",
+      "status": "selected as final candidate",
+      "note": "Selected for Offset Latch. This record and the final record have the same grid.",
+      "rooms": 1,
+      "witness_inputs": null,
+      "layout_sha256": "ddf5c24656e87a6cb7b29bdf4c3e2920aff844ee8b1d89de050d3a833d83736a",
+      "world": "before/prototypes/stagger-prototype-01/world.json",
+      "readme": "before/prototypes/stagger-prototype-01/README.md",
+      "derived_from_prototype_cells": true,
+      "evidence": [
+        "before/prototypes/stagger-prototype-01/checks.json"
+      ]
+    },
+    {
+      "id": "before/prototypes/hook-prototype-01",
+      "title": "hook-prototype-01",
+      "phase": "before",
+      "kind": "prototype",
+      "status": "intended dependency bypassed",
+      "note": "Opposite-direction transfer is possible; the narrower claim that transfer must be leftward is not established.",
+      "rooms": 1,
+      "witness_inputs": null,
+      "layout_sha256": "1553f1be1363bb5371bb71ac322c7cd9bd2cf6d48a9ba127136757ef183fb2a5",
+      "world": "before/prototypes/hook-prototype-01/world.json",
+      "readme": "before/prototypes/hook-prototype-01/README.md",
+      "derived_from_prototype_cells": true,
+      "evidence": [
+        "before/prototypes/hook-prototype-01/checks.json"
+      ]
+    },
+    {
+      "id": "before/prototypes/hook-prototype-02",
+      "title": "hook-prototype-02",
+      "phase": "before",
+      "kind": "prototype",
+      "status": "selected as final candidate",
+      "note": "Selected for Bent Key. This record and the final record have the same grid.",
+      "rooms": 1,
+      "witness_inputs": null,
+      "layout_sha256": "fb1a4d01100563c9917d89c6c5a22940fa2b8ad27ea3b923dbeca42b5a8a0474",
+      "world": "before/prototypes/hook-prototype-02/world.json",
+      "readme": "before/prototypes/hook-prototype-02/README.md",
+      "derived_from_prototype_cells": true,
+      "evidence": [
+        "before/prototypes/hook-prototype-02/checks.json"
+      ]
+    },
+    {
+      "id": "before/prototypes/transport-prototype-01",
+      "title": "transport-prototype-01",
+      "phase": "before",
+      "kind": "prototype",
+      "status": "intended dependency bypassed",
+      "note": "The helper can replace the tool. Tool-freeze and event exclusions expose the bypass.",
+      "rooms": 1,
+      "witness_inputs": null,
+      "layout_sha256": "3d3244b8096396663f1691f2f8eadf3ddfa84202c19cd3d3d38b6e84a2e0916e",
+      "world": "before/prototypes/transport-prototype-01/world.json",
+      "readme": "before/prototypes/transport-prototype-01/README.md",
+      "derived_from_prototype_cells": true,
+      "evidence": []
+    },
+    {
+      "id": "before/prototypes/transport-prototype-02",
+      "title": "transport-prototype-02",
+      "phase": "before",
+      "kind": "prototype",
+      "status": "historical search exhausted without a solution",
+      "note": "Wall constraints removed necessary player circulation.",
+      "rooms": 1,
+      "witness_inputs": null,
+      "layout_sha256": "5bffc7f5e2104abea4e3566683107db427f88547ae9fd709b6d69f0e7e0260fa",
+      "world": "before/prototypes/transport-prototype-02/world.json",
+      "readme": "before/prototypes/transport-prototype-02/README.md",
+      "derived_from_prototype_cells": true,
+      "evidence": []
+    },
+    {
+      "id": "before/prototypes/transport-prototype-03",
+      "title": "transport-prototype-03",
+      "phase": "before",
+      "kind": "prototype",
+      "status": "intended design requirement not met",
+      "note": "The witness contains coupled helper motion but lacks the intended independent helper preparation.",
+      "rooms": 1,
+      "witness_inputs": null,
+      "layout_sha256": "f1b29cc465e2dd6f5f74578439328f406a50912a642080962c0c173127d9b424",
+      "world": "before/prototypes/transport-prototype-03/world.json",
+      "readme": "before/prototypes/transport-prototype-03/README.md",
+      "derived_from_prototype_cells": true,
+      "evidence": []
+    },
+    {
+      "id": "before/prototypes/transport-prototype-04",
+      "title": "transport-prototype-04",
+      "phase": "before",
+      "kind": "prototype",
+      "status": "outside the declared verification contract",
+      "note": "A helper-to-tool-to-target relay falls outside the direct-tool-input contract. This is not a claim that the map is unsolvable.",
+      "rooms": 1,
+      "witness_inputs": null,
+      "layout_sha256": "67f4e17798f2485d9c36d0bab0da46fcd1f7e95c9e6800c978346274e6ed5169",
+      "world": "before/prototypes/transport-prototype-04/world.json",
+      "readme": "before/prototypes/transport-prototype-04/README.md",
+      "derived_from_prototype_cells": true,
+      "evidence": [
+        "before/prototypes/transport-prototype-04/checks.json"
+      ]
+    },
+    {
+      "id": "before/prototypes/transport-prototype-05",
+      "title": "transport-prototype-05",
+      "phase": "before",
+      "kind": "prototype",
+      "status": "selected as final candidate",
+      "note": "Selected for Parking Bay. This record and the final record have the same grid.",
+      "rooms": 1,
+      "witness_inputs": null,
+      "layout_sha256": "54ffef3850ffc60879d1bdc6b894922ab8dc17a64aa87ea05e16c067c8683c8f",
+      "world": "before/prototypes/transport-prototype-05/world.json",
+      "readme": "before/prototypes/transport-prototype-05/README.md",
+      "derived_from_prototype_cells": true,
+      "evidence": []
+    },
+    {
+      "id": "before/prototypes/combined-prototype-01",
+      "title": "combined-prototype-01",
+      "phase": "before",
+      "kind": "prototype",
+      "status": "historical search exhausted without a solution",
+      "note": "Added restrictions removed the completing route.",
+      "rooms": 1,
+      "witness_inputs": null,
+      "layout_sha256": "40e7c96a96671475daee976f5b19bf4dacbf232ac54e3a1609ad144d6a927a0e",
+      "world": "before/prototypes/combined-prototype-01/world.json",
+      "readme": "before/prototypes/combined-prototype-01/README.md",
+      "derived_from_prototype_cells": true,
+      "evidence": []
+    },
+    {
+      "id": "before/prototypes/combined-prototype-02",
+      "title": "combined-prototype-02",
+      "phase": "before",
+      "kind": "prototype",
+      "status": "intended dependency bypassed",
+      "note": "The carriage can leave its track and replace the tool.",
+      "rooms": 1,
+      "witness_inputs": null,
+      "layout_sha256": "7244b155311b549f267cbcd8d43fc8cbed28099aa9613d7973da9121f9edd6fc",
+      "world": "before/prototypes/combined-prototype-02/world.json",
+      "readme": "before/prototypes/combined-prototype-02/README.md",
+      "derived_from_prototype_cells": true,
+      "evidence": [
+        "before/prototypes/combined-prototype-02/checks.json"
+      ]
+    },
+    {
+      "id": "before/prototypes/combined-prototype-03",
+      "title": "combined-prototype-03",
+      "phase": "before",
+      "kind": "prototype",
+      "status": "selected as final candidate",
+      "note": "Selected for Linked Workshop. This record and the final record have the same grid.",
+      "rooms": 1,
+      "witness_inputs": null,
+      "layout_sha256": "f1212d230cca288aa4a2911d11065e60381c26e6b037f312b8b4b96f8fdd05e6",
+      "world": "before/prototypes/combined-prototype-03/world.json",
+      "readme": "before/prototypes/combined-prototype-03/README.md",
+      "derived_from_prototype_cells": true,
+      "evidence": [
+        "before/prototypes/combined-prototype-03/checks.json"
+      ]
+    },
+    {
+      "id": "before/prototypes/cantilever-key-v1",
+      "title": "Cantilever Key v1",
+      "phase": "before",
+      "kind": "prototype",
+      "status": "bypass investigation retained",
+      "note": "The first saved Cantilever Key layout and its bypass investigation. The final layout is a separate record.",
+      "rooms": 1,
+      "witness_inputs": null,
+      "layout_sha256": "a6650f16feb4dd170f9864418c60fbbab952feb4c8d2c527e5389a18beec4128",
+      "world": "before/prototypes/cantilever-key-v1/world.json",
+      "readme": "before/prototypes/cantilever-key-v1/README.md",
+      "derived_from_prototype_cells": false,
+      "evidence": [
+        "before/prototypes/cantilever-key-v1/bypass-verification.json"
+      ]
+    },
+    {
+      "id": "after/final/borrowed-bay",
+      "title": "Borrowed Bay: The Returning Keeper",
+      "phase": "after",
+      "kind": "authoring trial",
+      "status": "historical checks passed",
+      "note": "A new composed room from an independent authoring trial using the revised skills: tool retreat, helper parking, delivery, lateral transfer, helper recovery, and tool withdrawal. The witness has 81 inputs and 23 pushes. This is practical-use evidence, not a controlled improvement estimate.",
+      "rooms": 1,
+      "witness_inputs": 81,
+      "layout_sha256": "0181f2f7a6b61a35bd425eef7102587910f04fa0e4472a10cf852708d0113d3c",
+      "world": "after/final/borrowed-bay/world.json",
+      "readme": "after/final/borrowed-bay/README.md",
+      "derived_from_prototype_cells": false,
+      "preview": "after/final/borrowed-bay/preview.jpg",
+      "evidence": [
+        "after/final/borrowed-bay/boundary-verification.json",
+        "after/final/borrowed-bay/browser.json",
+        "after/final/borrowed-bay/case-summary.json",
+        "after/final/borrowed-bay/extended-verification-attempt-01.json",
+        "after/final/borrowed-bay/extended-verification.json",
+        "after/final/borrowed-bay/packaged-audit/browser-baseline.json",
+        "after/final/borrowed-bay/packaged-audit/verification-baseline.json",
+        "after/final/borrowed-bay/verification.json"
+      ]
+    },
+    {
+      "id": "after/prototypes/attempt-01",
+      "title": "Borrowed Bay attempt-01",
+      "phase": "after",
+      "kind": "prototype",
+      "status": "intended dependency bypassed",
+      "note": "Walking alone bypasses the target; fixing every movable group still permits completion.",
+      "rooms": 1,
+      "witness_inputs": null,
+      "layout_sha256": "9f805a89d4101993385d24d2dffb6d2e30f59b8fe2c44052515a2d0cfc5b67a3",
+      "world": "after/prototypes/attempt-01/world.json",
+      "readme": "after/prototypes/attempt-01/README.md",
+      "derived_from_prototype_cells": true,
+      "evidence": []
+    },
+    {
+      "id": "after/prototypes/attempt-02",
+      "title": "Borrowed Bay attempt-02",
+      "phase": "after",
+      "kind": "prototype",
+      "status": "intended dependency bypassed",
+      "note": "The helper can substitute for the tool; the tool-frozen search still solves.",
+      "rooms": 1,
+      "witness_inputs": null,
+      "layout_sha256": "d83435e899f3b25913c6dc684d0b3c3cd1f6000d5d8d9b1e70c7a4019de37f59",
+      "world": "after/prototypes/attempt-02/world.json",
+      "readme": "after/prototypes/attempt-02/README.md",
+      "derived_from_prototype_cells": true,
+      "evidence": [
+        "after/prototypes/attempt-02/analysis.json"
+      ]
+    },
+    {
+      "id": "after/prototypes/attempt-03",
+      "title": "Borrowed Bay attempt-03",
+      "phase": "after",
+      "kind": "prototype",
+      "status": "historical search exhausted without a solution",
+      "note": "The westward retreat leaves no reachable right-pushing stance. The historical search exhausted 11152 states.",
+      "rooms": 1,
+      "witness_inputs": null,
+      "layout_sha256": "0a50c43d449a05cf8fc2ab6c28ac02c59b1735f3252aada875457bf617495e35",
+      "world": "after/prototypes/attempt-03/world.json",
+      "readme": "after/prototypes/attempt-03/README.md",
+      "derived_from_prototype_cells": true,
+      "evidence": [
+        "after/prototypes/attempt-03/analysis.json"
+      ]
+    },
+    {
+      "id": "after/prototypes/attempt-04",
+      "title": "Borrowed Bay attempt-04",
+      "phase": "after",
+      "kind": "prototype",
+      "status": "intended dependency bypassed",
+      "note": "Raising the tool early allows completion without the intended helper recovery.",
+      "rooms": 1,
+      "witness_inputs": null,
+      "layout_sha256": "bcdd27a379e9212e9b7ab2f4b31964a43dee06fc696619b6dd26299c397fee14",
+      "world": "after/prototypes/attempt-04/world.json",
+      "readme": "after/prototypes/attempt-04/README.md",
+      "derived_from_prototype_cells": true,
+      "evidence": [
+        "after/prototypes/attempt-04/analysis.json"
+      ]
+    },
+    {
+      "id": "after/prototypes/attempt-05",
+      "title": "Borrowed Bay attempt-05",
+      "phase": "after",
+      "kind": "prototype",
+      "status": "selected as final candidate",
+      "note": "Selected as the final Borrowed Bay candidate. Consult the final room for the complete formal audit.",
+      "rooms": 1,
+      "witness_inputs": null,
+      "layout_sha256": "0181f2f7a6b61a35bd425eef7102587910f04fa0e4472a10cf852708d0113d3c",
+      "world": "after/prototypes/attempt-05/world.json",
+      "readme": "after/prototypes/attempt-05/README.md",
+      "derived_from_prototype_cells": true,
+      "evidence": [
+        "after/prototypes/attempt-05/analysis.json"
+      ]
+    },
+    {
+      "id": "references/hxh",
+      "title": "HxH mechanism reconstruction",
+      "phase": "references",
+      "kind": "user reconstruction",
+      "status": "historical reference checks passed",
+      "note": "The user reconstruction of the upper official HxH mechanism. The approach, lower terrain, and other objects differ from the complete official room. Goal: collect the gem.",
+      "rooms": 1,
+      "witness_inputs": 26,
+      "layout_sha256": "87a7c4d20709a634955eee23e70e845bf3bd074c1634ff624a4eac40016a6f95",
+      "world": "references/hxh/world.json",
+      "readme": "references/hxh/README.md",
+      "derived_from_prototype_cells": false,
+      "evidence": [
+        "references/hxh/analysis.json",
+        "references/hxh/reference-check.json"
+      ]
+    },
+    {
+      "id": "references/gxe",
+      "title": "GxE mechanism reconstruction",
+      "phase": "references",
+      "kind": "user reconstruction",
+      "status": "historical reference checks passed",
+      "note": "The user reconstruction of official GxE has changed group IDs and north boundary. It has no gem. The explicit goal is to reach the left passage endpoint (2,13,0), with zero-based coordinates.",
+      "rooms": 1,
+      "witness_inputs": 41,
+      "layout_sha256": "287b93b45123183cd088c8a057e7c74c5f99bfe73d54b4e4bc21e77f93ce96ca",
+      "world": "references/gxe/world.json",
+      "readme": "references/gxe/README.md",
+      "derived_from_prototype_cells": false,
+      "evidence": [
+        "references/gxe/analysis.json",
+        "references/gxe/reference-check.json"
+      ]
+    },
+    {
+      "id": "references/gxf",
+      "title": "GxF mechanism reconstruction",
+      "phase": "references",
+      "kind": "user reconstruction",
+      "status": "historical reference checks passed",
+      "note": "The user-reconstructed constrained-transport room from the initial solving request. Goal: collect the gem. A 219-input witness is retained; neither its length nor its exact sequence is a universal design requirement.",
+      "rooms": 1,
+      "witness_inputs": 219,
+      "layout_sha256": "2bfda076a09e1598ad59334c0949510993a41016787d2736ff0e928062a43ed6",
+      "world": "references/gxf/world.json",
+      "readme": "references/gxf/README.md",
+      "derived_from_prototype_cells": false,
+      "evidence": [
+        "references/gxf/planning-analysis.json",
+        "references/gxf/reference-check.json",
+        "references/gxf/verification-baseline.json"
+      ]
+    },
+    {
+      "id": "references/hxh-sealed-extraction",
+      "title": "HxH sealed extraction",
+      "phase": "references",
+      "kind": "mechanism extraction",
+      "status": "historical checks passed",
+      "note": "An earlier sealed extraction of the official HxH mechanism, distinct from the later user reconstruction. It is not the complete official room.",
+      "rooms": 1,
+      "witness_inputs": 16,
+      "layout_sha256": "51a3c08560da6ec7ce4433a7b9cb3ff6e66056b50565220609a86c6ff2a3b67a",
+      "world": "references/hxh-sealed-extraction/world.json",
+      "readme": "references/hxh-sealed-extraction/README.md",
+      "derived_from_prototype_cells": false,
+      "preview": "references/hxh-sealed-extraction/preview.jpg",
+      "evidence": [
+        "references/hxh-sealed-extraction/evidence/browser.json",
+        "references/hxh-sealed-extraction/evidence/verification.json"
+      ]
+    }
+  ],
+  "limits": [
+    "Historical collection, not a controlled A/B evaluation.",
+    "One layout may have both prototype and final records.",
+    "All 38 local indexed case records and their 33 distinct saved layouts are covered.",
+    "The local archive also has 49 draft exports representing 21 layouts; repeated installations and machine-dependent files are omitted here.",
+    "Archived source titles may be translated, and local paths and origins are normalized; room IDs, dimensions, and every cell token are preserved."
+  ]
+}
