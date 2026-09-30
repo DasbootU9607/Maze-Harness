@@ -1,12 +1,6 @@
 # Planning through a changing workspace
 
-Use this guidance for requests for difficult, thoughtful, multi-stage transport. These design lessons are inferred from the reconstructed GxF and official engine behavior; they are not an account obtained from the original author or a human difficulty calibration.
-
-## What GxF adds
-
-The [fresh GxF analysis](gxf-case.md#movement-in-opposing-directions) has 219 inputs, 42 push inputs, and 21 compressed push runs. The stronger evidence is directional: the tool and M1 each need U, D, L, and R somewhere on a successful route; M2 needs L and R. Each direction was excluded in a separate exhausted search. M2's vertical directions are avoidable.
-
-Thus the tool cannot simply advance toward delivery while each helper is cleared once in one direction. Space and pushing faces have to be used in changing arrangements. This does not prove the witness's exact parking places or order, and the original 43-push witness remains valid.
+Use this guidance for requests for difficult, thoughtful, multi-stage transport. Design necessary changes to shared space and pushing access; these criteria are not a human-difficulty calibration.
 
 ## Build purposeful temporary work
 
@@ -21,7 +15,7 @@ Choose a complication that follows from those constraints:
 
 Use only the complications the room needs. A useful initial target is several connected preparation, rearrangement, and delivery stages with at least one temporary move that must be resolved later. A row of independent blockers moved once each is a weak response to a request for deep planning. Show the conflict that requires the extra work, and revise the layout if a bypass eliminates it.
 
-Do not confuse tool alignment with delivery. GxF's recorded tool aligns after input 208, while the player only reaches its input stance after 210. Check the complete footprint, support, next pushing face, and circulation after every substantial arrangement change. A parking pocket without a reachable exit face is a trap, not a planning stage.
+Do not confuse tool alignment with delivery. The tool pose and reachable player input stance must both be established. Check the complete footprint, support, next pushing face, and circulation after every substantial arrangement change. A parking pocket without a reachable exit face is a trap, not a planning stage.
 
 ## Test the claimed depth
 
@@ -31,6 +25,6 @@ Do not confuse tool alignment with delivery. GxF's recorded tool aligns after in
 4. For a claimed prerequisite to first delivery or first use, test that endpoint with the prerequisite forbidden and include the goal as a possible bypass. Use a positive control. An exact delivery pose is narrower than all possible usable poses; disclose that scope.
 5. Recheck the whole room after adding an exit, wall, helper, or neighboring module. A new pushing face can silently bypass the transport problem. Declare direct tool-to-target use versus a relay, and use evidence that matches that contract.
 
-Match the endpoint to real progress. After an initial retreat, a forward push can simply return the tool to its starting pose. Testing the first forward push would not test entry to the next workspace. The authored [Borrowed Bay example](borrowed-bay.md) uses an explicit position threshold and the gem as a bypass; its scoped checker illustrates this distinction, coupled wall controls, and post-contact checks for a three-group room.
+Match the endpoint to real progress. After an initial retreat, a forward push can simply return the tool to its starting pose. Testing the first forward push would not test entry to the next workspace. Use an explicit progress region or position threshold, include the goal as a bypass, and separately test post-contact access when needed.
 
 Record each dependency and its evidence, plus complete counterexample routes and capped searches. Do not rank rooms by input count or expanded states. Human review should ask whether players anticipated future pushing faces, used recoverable parking, and changed their plan when a useful current arrangement conflicted with a later need. Without those observations, claim verified planning constraints and intended difficulty, not proven player difficulty.

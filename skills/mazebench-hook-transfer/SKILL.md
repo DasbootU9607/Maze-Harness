@@ -3,47 +3,40 @@ name: mazebench-hook-transfer
 description: Design, build, and verify MazeBench puzzles using shape-dependent contact to transfer force. Include active transport, usable docking, and post-use passage planning when a challenging multi-stage room is requested. Derive geometry from the goal without requiring specified shapes or solutions. For authoring, not model evaluation.
 ---
 
-# Hook mechanisms
+# Hook Transfer
 
-A **hook** uses shape and relative position to solve a pushing, stance, reachability, or movement-constraint problem. Official pushing transfers force through useful contact between independent objects. A rear hook and a lateral arm are verified approaches; ordinary straight chain pushing alone does not establish shape cooperation.
+Use a rigid tool's shape and relative position to solve a pushing, stance, reachability, or movement-constraint problem. Rear and lateral contact are useful relationships; ordinary straight chain pushing alone does not establish shape-dependent function.
 
 ## Design from the goal
 
-An unspecified shape is a design decision, not missing information. Choose the geometry and layout, explain the functional relationship, then build an actual map. Respect user-specified constraints. Read [function to geometry](references/function-to-geometry.md) for the detailed method:
+Choose the geometry unless the user specifies it. Read [Design](references/design.md) when deriving a new tool:
 
-1. Choose the target change and explain how it enables the objective.
-2. Establish a real restriction on direct operation; check alternate target members, directions, and routes.
-3. Derive player stance P, tool input I, working part C, target contact T, and direction d. Check `I=P+d` and `C+d=T` at their actual elevations.
-4. Connect I and C with useful rigid geometry, openings, support, and full movement clearance. Test the local contact through official moves.
-5. For active docking, add a separated start and feasible independent transport. Preparation must change relative positions and enable usable contact; walking to a predocked tool is insufficient. Verify the player can reach the input stance after docking.
-6. Define the expected event, solve and replay, and search for bypasses. Adjust geometry from actual failures rather than adding unrelated obstacles.
+1. Choose the useful target change and explain how it advances the actual objective.
+2. Establish a real restriction on direct operation. Check alternate target members, pushing directions, and approaches.
+3. Derive player stance P, input member I, working member C, target contact T, and direction d. Require `I=P+d` and `C+d=T` at the actual elevations.
+4. Connect I and C with supported rigid geometry and complete movement clearance. Test the contact through official moves.
+5. For active docking, choose a separated start and feasible independent transport. Preparation must change relative positions; walking to an already usable tool does not establish it. Preserve access to P after docking.
+6. Plan continued work after contact. Define the intended event, solve and replay, then search for bypasses and revise the actual failing relationship.
 
-These are design decisions, not a fixed player action sequence. Default constructors reproduce examples; size and distance changes are parameter variants. Reuse verified methods where appropriate, and write new layout functions when needed. Require changed causal structure only when structural diversity is requested.
+For a challenging room, read [Planning depth](references/planning-depth.md). Design access before and after use together. A tool or helper may occupy space temporarily, but its later movement must remain possible. A longer transport distance alone is not a new planning stage.
 
-## When the user asks for a challenging room
+## Rules and verification
 
-Read [Planning depth](references/planning-depth.md). Make the contact event an intermediate change with consequences: preparation must enable a usable stance and contact, and the resulting arrangement must support further work toward the objective. Design the before-use and after-use access together. A distant start or repeated identical push does not by itself add a planning stage.
+- Use the official Toolbox, parser, save services, engine, and solver. Same M ID means one rigid group; distinct groups interact through contact. Do not invent pulling, attraction, permanent attachment, or object rotation.
+- Prefer planar geometry unless height serves a specific function. Multi-object relays, mixed-height contact, sliding, and repeated tool reuse need compatible observations and checks.
+- Read [Verification](references/verification.md). Separate legal completion, useful contact, contact necessity, preparation necessity, and the local function of a shape part. Joint movement alone proves none of the stronger claims.
+- `contact-events.cjs` observes direct same-elevation unit translations for rear or lateral contact. `verify-contact.cjs` is narrower: it checks active lateral transfer onto a plate with two groups. It is not a universal hook verifier. Other outcomes require a matching scoped checker.
+- Capped searches are unknown. Preserve and replay successful bypasses. Removing a part can change support, stance access, and clearance as well as contact; do not claim global shape minimality from a local edit.
+- Use [Composition](references/composition.md) when integrating other mechanisms, and recheck the complete room.
 
-State which decisions depend on earlier object arrangements, then test those claims. GxE demonstrates transport, rear contact, and continued passage work, but its target need not move right in every solution. Generalize the changing constraints, not one witness's compass sequence. If a candidate collapses to a predocked demonstration or has a goal bypass, revise it or narrow the claim.
+## Build and deliver
 
-## Build and validate
+Author `title`, a complete 16-by-16 `cells` array, and a `contract` with the intended roles and effects. The agent chooses coordinates; the user need not provide a map. Run:
 
-- Use official Toolbox, parser, save services, engine, and solver. Same M ID means one rigid group; distinct IDs identify independent objects. Do not invent pulling, attraction, permanent binding, or object rotation.
-- Prefer planar layouts unless height serves contact, stance, observation, or dependencies. Arbitrary 3D contact, multi-object relays, and repeated tool reuse need separate evidence.
-- Save a fresh draft and preserve existing maps and engine code. See [setup and commands](references/usage.md).
-- Follow [validation rules](references/rules-and-validation.md): report legal solution, intended mechanism use, mechanism necessity, preparation necessity, and key-part function separately. Check actual contacts and task effects, not only joint movement. Adapt case-specific validators to the design.
-- Capped searches are unknown. Local shape controls do not prove global minimality; solving does not prove player insight. Record separation, preparation, docking, use, and completion for active tasks.
-- Provide a [composition interface](references/patterns-and-composition.md) and revalidate combined puzzles. This skill does not run Prime, benchmark models, or paid evaluation.
+```text
+node scripts/build.cjs --repo ENGINE --spec SPEC.json --out NEW_OUTPUT
+```
 
-## Read as needed
+Then apply the checker matching the contract, as documented in [Verification](references/verification.md). Deliver Play/Edit links, Build JSON, a replayed route, contact states, dependency evidence, and unresolved limitations.
 
-| Topic | Reference |
-|---|---|
-| Capabilities, constructors, and composition | [Patterns and composition](references/patterns-and-composition.md) |
-| Official rear hook and baseline examples | [Mechanism](references/mechanism.md) |
-| Saved GxE reconstruction, explicit passage goal, and counterexample | [Reconstruction](references/reconstruction.md) |
-| Connected planning before and after contact | [Planning depth](references/planning-depth.md) |
-| Predocked repair and elevated bridge | [Structures](references/structures.md) |
-| Transport and dock before rear transfer | [Active docking](references/active-docking.md) |
-| Lateral transfer and bent-arm geometry | [Side reach](references/side-reach.md) |
-| Recorded evidence and its limits | [Validation history](references/validation.md) |
+Preserve existing drafts and engine code. This is map authoring: do not launch evaluated models, paid evaluations, or remote publication. Solver correctness and human difficulty are separate questions.

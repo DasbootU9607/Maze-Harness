@@ -6,24 +6,11 @@ Use Node.js and a current MazeBenchEngine checkout, passed through `--repo`. Scr
 
 ## Inputs for a new design
 
-Supply the following JSON structure with actual authored data in place of the abbreviated cells. See `assets/gxf/spec.json` for runnable input. The agent chooses coordinates rather than requiring them from the user.
+Supply JSON with `title`, a complete 16-by-16 official-token `cells` array, and a `contract`. The agent chooses actual coordinates from the requested mechanism.
 
-```json
-{
-  "title": "Your authored transport puzzle",
-  "cells": [["Replace with actual 16-by-16 official tokens"]],
-  "contract": {
-    "profile": "planar-rigid-transport-v1",
-    "roles": {"tool": "M0", "helpers": ["M1", "M2"], "target": "M3"},
-    "delivery": {"toolCells": [[3,11],[4,11]], "playerCell": [4,10]},
-    "use": {"direction": "D"},
-    "intent": "Explain tool use, transport restrictions, and helper functions",
-    "composition": {"preserve": "Describe required passages and pushing stances"}
-  }
-}
-```
+Set `contract.profile` to `planar-rigid-transport-v1`. Declare `roles: {tool, helpers, target}`, `delivery: {toolCells, playerCell}`, and `use: {direction}`. Also supply a nonempty `intent` string and a `composition` object describing functional relationships and preserved access; the validator requires both.
 
-Documentation and reports use **zero-based `[x,y]` coordinates**, with `[0,0]` at the top left. The working pose above belongs only to the GxF example.
+Coordinates are zero-based `[x,y]`, with `[0,0]` at the top left.
 
 - `tool`, `target`, and `helpers` need distinct IDs from M0-M4, with 1-3 helpers. Declare every actual group. Helpers are groups **claimed to require movement before delivery**; do not declare optional decoration as necessary.
 - `delivery.toolCells` is the complete expected tool footprint, preserving its initial shape by translation. `playerCell` is the final pushing stance, adjacent to the tool in `use.direction`.
@@ -32,21 +19,13 @@ Documentation and reports use **zero-based `[x,y]` coordinates**, with `[0,0]` a
 - Accepted cells are `+`, `.`, `#`, `p`, `G`, M0-M4, and `.+#`, `.+p`, `.+G`, `.+M0`-`.+M4`. Scripts do not add floors beneath bare actors; official parsing/loading determines validity. Require an outer wall boundary, connected rigid shapes, one player and gem, and initial actors present at z=0.
 - Multiple layers, movable slopes, gates, ice, hole filling, clones, and room transitions are unsupported. Rejection of unsupported inputs must not be interpreted as broader coverage.
 
-## Build and reproduce
+## Build and verify
 
 Run from the skill root, or use absolute script paths:
 
 ```text
 node scripts/build.cjs --repo REPO --spec SPEC.json --out FRESH_OUTPUT
 node scripts/verify.cjs --repo REPO --out FRESH_OUTPUT --cap 1000000
-```
-
-For explicit reproduction:
-
-```text
-node scripts/build.cjs --repo REPO --example gxf --out FRESH_EXAMPLE_OUTPUT
-node scripts/verify.cjs --repo REPO --out FRESH_EXAMPLE_OUTPUT --cap 1000000
-node scripts/check-runtime.cjs --repo REPO
 ```
 
 `build` refuses an existing output directory, creates a unique `draft-transport-*` draft, and writes `manifest.json`, `world.json`, `contract.json`, and `level_AxA.txt`. Manifest play/edit paths are relative to the local server address. It does not start or publish a remote service. Draft assets use ordinary copies, including on Windows without symlink privileges.
@@ -71,7 +50,7 @@ Restrictions reject only matching legal transitions and restore state with offic
 
 The default verifier does not measure planning depth. If claiming that an object must move away and return, separately exclude its translations in each opposing direction; classify exhaustion, a complete counterexample, or a cap. To claim a particular preparation before use, check the legal first-use boundary with that preparation excluded and include gem access as a bypass. Use a positive control. See [planning depth](planning-depth.md) for interpreting these tests.
 
-`scripts/check-reconstruction.cjs --repo REPO --out FRESH_OUTPUT` implements those direction exclusions and first-contact controls for the fingerprinted GxF reference. Its `case.json` and report expose the exact restrictions. It is not an automatic validator for arbitrary new maps or historical ordering claims.
+For additional claims, implement scoped exclusions or prefix checks using the runtime helpers and official engine. Record the exact endpoint and forbidden transitions; a full-goal group freeze does not establish historical ordering.
 
 The normal use contract requires the player to push the tool directly. A helper-to-tool-to-target relay may be a different valid design; this checker cannot certify that mechanism by calling it direct input. Define the actual relay contact chain and an appropriate goal/event check if the design needs it. Do not distort a valid intended mechanism merely to satisfy an inapplicable profile.
 

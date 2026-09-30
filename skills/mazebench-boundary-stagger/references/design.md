@@ -14,18 +14,11 @@ Use this method when moving independent rigid groups relative to fixed boundarie
 
 These are design decisions, not a universal player action sequence. Two preparations may commute. An unnecessary early restoration may be possible even when a later restoration is useful.
 
-## Geometry choices and evidence
+## Geometry and coverage
 
-| Choice | Current evidence | Check before reuse |
-| --- | --- | --- |
-| Staggered staircases against a roof and notch | Official HxH replay and sealed extraction | Contact disengagement, the full upward footprint, and connection to the gem pocket |
-| Movable enclosure with a separate clearance shutter | Pocket Shutter | Escape from the enclosure, shutter actuation, and clearance of both prongs |
-| Crossbar and stem shapes with temporary goal occupation | Twin Tee Passage | Reachable pushing faces, preparation dependencies, and the eventual goal approach |
-| Other bent, forked, stepped, or unequal rigid shapes | Mechanism-based design candidates; not individually certified | Which parts perform each role; full solve, event evidence, and bypass search |
-| More than two interacting groups or repeated reuse | Possible design work; no general construction guarantee here | New event definitions, group allocation, and full combined-state checks |
-| Heights, slopes, lifts, unsupported spans, or cross-height contact | Outside this skill's current planar verifier | Dedicated official-rule review and a compatible verifier before making claims |
+Derive bent, forked, stepped, or unequal shapes from their useful cells. A recess may admit a pushing stance; a protrusion may reach a blocked lane; a crossbar may temporarily occupy a later route. Check the full shape and the actual sequence of access changes.
 
-Default to ordinary floor at `z=0`. The verified class is not restricted to the two screenshot silhouettes, but the evidence does not justify arbitrary shapes or arbitrary three-dimensional interactions. Independent groups retain separate identities; touching does not bind them permanently. Do not invent pulling, rotation, adhesion, or diagonal movement.
+Default to ordinary floor at z=0. The reusable construction and checker cover the documented two-group planar profile. Extra groups, height, slopes, unsupported spans, or cross-height contact need a compatible verifier. Separate identities remain separate after touching.
 
 ## What counts as evidence
 
@@ -46,4 +39,4 @@ An exhausted restricted search supports only its declared room, goal, and forbid
 - An intended push has no accessible rear stance: provide a functional recess or intermediate offset; an empty destination alone is insufficient.
 - A boundary removal opens an unintended entrance: recheck the complete goal and disclose the changed walking space in controls.
 - Matching group IDs accidentally bind distant pieces: allocate distinct official IDs and update the contract before testing.
-- A push parks a needed face against a wall: search the resulting state, then check official Undo/Reset. The recorded UI checks exercise the first push only; no exhaustive deadlock classification is supplied.
+- A push parks a needed face against a wall: search the resulting state, then check official Undo/Reset. The optional browser helper exercises the first push only; check additional error states when the design requires them.

@@ -1,50 +1,42 @@
 # Maze Harness
 
-A growing collection of reusable agent skills for designing and building MazeBench puzzles.
-
-## Guides and case collection
-
-- [How to use the skills in a coding-agent conversation](docs/using-skills.md)
-- [What to read and how to review the skills manually](docs/reviewing-skills.md)
-- [Before/after versions and their evidence limits](docs/skill-version-comparison.md)
-- [All 38 indexed case records before and after the skill revision](examples/skill-comparison/README.md): 16 earlier finished cases, Borrowed Bay, 17 prototype records, and four attributed reference layouts, representing 33 distinct saved layouts.
-
-The public collection includes portable maps, recorded verification evidence, and failed candidates. It preserves the local archive's case coverage while omitting repeated installations and machine-dependent files.
+Agent skills for designing, building, and verifying MazeBench puzzles.
 
 ## Skills
 
-| Skill | Purpose |
-|---|---|
-| [mazebench-hook-transfer](skills/mazebench-hook-transfer/SKILL.md) | Design and verify puzzles that use object shapes, transport, and docking to transfer force. |
-| [mazebench-boundary-stagger](skills/mazebench-boundary-stagger/SKILL.md) | Design and verify routes opened by offsetting movable groups around fixed boundaries. |
-| [mazebench-constrained-transport](skills/mazebench-constrained-transport/SKILL.md) | Design and verify rigid-tool delivery through constrained spaces, helper preparation, and final contact transfer. |
+| Skill | Use it for |
+| --- | --- |
+| [Boundary Stagger](skills/mazebench-boundary-stagger/SKILL.md) | Fixed boundaries and relative offsets that release a route or pushing position |
+| [Hook Transfer](skills/mazebench-hook-transfer/SKILL.md) | Shape-dependent contact, usable docking, and movement transferred between objects |
+| [Constrained Transport](skills/mazebench-constrained-transport/SKILL.md) | Tool delivery through shared space, helper rearrangement, and changing pushing positions |
+
+Use one skill for a focused mechanism or combine them for a connected, multi-stage room.
+
+## Install
+
+Copy each desired directory from `skills/` into your coding agent's configured skill directory. Keep the entire directory together: its instructions reference the included documentation and scripts. Alternatively, ask the agent to read the relevant `SKILL.md` directly from a checkout of this repository.
+
+The skills need a separate [MazeBenchEngine](https://github.com/mazebench/MazeBenchEngine) checkout, Node.js, the engine's dependencies, and write access to its local drafts. Pass that checkout explicitly as `--repo`; the engine and game assets are not bundled here.
 
 ## Use
 
-Copy the desired folder from `skills/` into your agent's skill directory, or point the agent directly at its `SKILL.md`. Each skill keeps its instructions, scripts, references, and examples together.
+Give the authoring request to the coding agent:
 
-> Use $mazebench-hook-transfer to build a puzzle that requires actively transporting and docking a tool. Choose the shape and layout yourself.
+```text
+Use $mazebench-constrained-transport to design a new room where collecting
+the gem requires helper rearrangement, temporary parking, and usable tool
+delivery. Choose the geometry. Build a new draft, replay a complete solution,
+test the dependencies you claim, and provide Play/Edit links and the map.
+```
 
-For a room intended to require substantial planning:
+For a combined room, name all three skills. The agent constructs an authored specification and uses the supplied helpers; the browser is for editing and playing the result. Detailed input contracts and verification limits are linked from each `SKILL.md`.
 
-> Use the three MazeBench skills to design a challenging new room. Choose the shapes and layout. Make preparation, object rearrangement, usable delivery, and completion depend on each other. Verify the actual objective and the dependencies you claim. Explain what remains uncertain about human difficulty.
+Builders create fresh local drafts. Verification checks supported mechanics and declared restrictions; it does not measure human difficulty. These skills are for map authoring, not benchmark model evaluation.
 
-The skills distinguish necessary planning relationships from long walking routes. Their `planning-depth.md` references guide harder requests; compact mechanism demonstrations remain valid for simpler requests. A solver verifies rules and declared exclusions, not how difficult people will find a room.
+## Package structure
 
-## Reconstructed reference cases
+Each skill contains `SKILL.md`, agent metadata in `agents/`, focused guidance in `references/`, and reusable helpers in `scripts/`. Development maps, solved routes, screenshots, and test-run archives are kept outside the distribution.
 
-| Reference | Preserved source and analysis | Main reusable lesson |
-| --- | --- | --- |
-| HxH | [Boundary reconstruction](skills/mazebench-boundary-stagger/references/reconstruction.md) | An offset changes a boundary-blocked contact chain and releases a route |
-| GxE | [Hook reconstruction](skills/mazebench-hook-transfer/references/reconstruction.md) | Prepare usable rear contact, then plan continued passage work |
-| GxF | [Transport reconstruction](skills/mazebench-constrained-transport/references/gxf-case.md) | Reconfigure shared space and pushing faces before operable delivery |
-
-These are user reconstructions of official mechanisms, with provenance and differences recorded. Each skill includes `scripts/check-reconstruction.cjs` to replay its saved witness and rerun explicit exclusions using a separate MazeBenchEngine checkout. GxE uses a passage endpoint because its source has no gem. Case reports retain successful bypasses as evidence against overbroad claims.
-
-An independent authoring trial also produced [Borrowed Bay](skills/mazebench-constrained-transport/references/borrowed-bay.md), a new room with connected preparation, lateral transfer, helper recovery, and tool withdrawal. Its portable map, scoped audit, and recorded browser checks are included. One successful trial after revisions establishes practical use, not a measured human difficulty level or a controlled improvement rate.
-
-Setup and verification: [Hook Transfer](skills/mazebench-hook-transfer/references/usage.md) · [Boundary Stagger](skills/mazebench-boundary-stagger/references/usage.md) · [Constrained Transport](skills/mazebench-constrained-transport/references/verification.md).
-
-New skills belong in `skills/<skill-name>/`, with an entry in the table above. Keep detailed guidance and supporting files within the relevant skill.
+The helpers were developed against engine baseline `07aa03a5c0ee8b4e0b025a52793055e89cb68bfe` with Node 24.13.0. Review engine interfaces and revalidate generated maps when changing that dependency. Each checker documents its supported profile and reports capped searches as unknown.
 
 [MIT License](LICENSE) · [Third-party notices](THIRD_PARTY_NOTICES.md)

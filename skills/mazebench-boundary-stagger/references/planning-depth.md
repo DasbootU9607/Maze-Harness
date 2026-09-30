@@ -2,18 +2,16 @@
 
 Use this guidance when the requested room should require thought and several connected operations. A compact mechanism demonstration can have a different scope. These are design heuristics inferred from maps and engine behavior, not statements from the original author or a validated human difficulty scale.
 
-## What HxH teaches
+## Extend the dependency, not the approach
 
-The [saved reconstruction](reconstruction.md) requires an offset and motion of both groups, but its 26-input witness contains only two pushes. The important discovery is that apparently coupled shapes are independent: shifting the upper group changes the contact chain, so the lower group can rise despite the roof. The player's access around the shapes connects those moves to the gem.
-
-Keep that relationship while changing geometry. Copying the staircase silhouette preserves an example; extending the approach preserves its short dependency chain. To create a deeper room, give the release a necessary prerequisite or consequence involving the same limited space.
+A relative offset can disengage a contact chain and release another group despite a fixed boundary. That spatial insight may need only a few pushes. Lengthening the walk to those pushes does not deepen the dependency. Give the release a necessary prerequisite or consequence involving the same limited space.
 
 ## Design a chain of useful changes
 
 Before drawing cells, write a short dependency sketch. For each intended edge, name the blocking cell or inaccessible stance, the preparation that changes it, and the later action it enables. Useful options include:
 
 - **Prepare a stance:** another displacement exposes the correct face of the boundary-constrained group. The player must be able to reach it after preparing it.
-- **Borrow a passage:** a useful intermediate position occupies the eventual route or goal; a later operation makes restoring access possible. [Twin Tee Passage](examples.md#twin-tee-passage) has verified necessary motions in opposing directions.
+- **Borrow a passage:** a useful intermediate position occupies the eventual route or goal; a later operation makes restoring access possible. Test whether movement in opposing directions is actually necessary.
 - **Reuse clearance:** the bay needed for one group's offset is later needed by another group or by the player. Check both occupancy and access through each arrangement.
 
 Choose an option because of the goal, not to add an arbitrary phase quota. For a substantial room, start with preparation, dependent operation, and completion as three functional stages, and make at least one stage constrain a later choice. If removing walking leaves only one independent release and a final approach, treat it as a demonstration and deepen it before claiming the requested planning depth.

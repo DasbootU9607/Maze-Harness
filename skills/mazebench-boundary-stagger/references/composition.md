@@ -1,6 +1,6 @@
 # Combining a boundary-stagger mechanism
 
-Publish a small mechanism contract alongside each map. Use actual object IDs and coordinates chosen for that task; do not make the example IDs or directions global requirements.
+Publish a small mechanism contract alongside each map. Use actual object IDs and coordinates chosen for that task; derive IDs and directions from the actual layout.
 
 | Interface field | What to record |
 | --- | --- |
@@ -12,11 +12,11 @@ Publish a small mechanism contract alongside each map. Use actual object IDs and
 | Side effects | Temporarily covered goals, blocked return paths, movement into adjacent regions, newly available bypasses, and ID collisions |
 | Evidence | Official solve/replay plus event, restricted-search, boundary, and recovery records appropriate to the claims |
 
-The example contracts in [examples](../examples/) expose these fields. Their postconditions describe recorded successful states; they do not promise that every solution ends in the same arrangement or that every displaced object remains reusable.
+Postconditions describe a reachable useful arrangement; they do not imply that every solution ends in the same pose or preserves every object for reuse.
 
 ## With the existing hook-transfer skill
 
-The companion [mazebench-hook-transfer](../../mazebench-hook-transfer/SKILL.md) builds shape-dependent contact transfer. A boundary-stagger mechanism may open a pushing stance or transport lane needed by a hook mechanism; a hook mechanism may reposition an obstruction before boundary staggering becomes possible. This is a composition opportunity, not an already validated combined level.
+The optional companion skill `mazebench-hook-transfer` builds shape-dependent contact transfer. A boundary-stagger mechanism may open a pushing stance or transport lane needed by a hook mechanism; a hook mechanism may reposition an obstruction before boundary staggering becomes possible. This is a composition opportunity, not an already validated combined level.
 
 Keep the two event definitions distinct. Boundary staggering can succeed by moving groups independently to change clearance; it does not require a hook. Shared movement does not by itself establish the hook skill's shape-dependent function. If the same pair performs both roles, record the separate events and the transition between their required states.
 

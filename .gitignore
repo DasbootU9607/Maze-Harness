@@ -6,6 +6,12 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
+# Development material is not part of the skill distribution
+examples/
+evidence/
+reports/
+*.zip
+
 # Local credentials and editor state
 .env
 .env.*

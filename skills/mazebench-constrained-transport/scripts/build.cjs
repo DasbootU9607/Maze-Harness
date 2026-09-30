@@ -1,7 +1,7 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
 const {args,read,validate,load,services,digest}=require('./runtime.cjs');
-function build(repo,out,spec,source='custom'){
+function build(repo,out,spec){
   repo=path.resolve(repo);out=path.resolve(out);validate(spec);
   assert(!fs.existsSync(out),'Use a fresh output directory; existing artifacts are preserved');
   load(repo,spec.cells);
@@ -22,18 +22,16 @@ function build(repo,out,spec,source='custom'){
   const game=worlds.replaceLocalWorldFromEditorState(id,editor),world=worlds.editorStateForGame(game);
   assert.deepEqual(world.levels[0].cells,spec.cells,'Official save/load changed the cells');
   fs.mkdirSync(out,{recursive:true});
-  const manifest={skill:'mazebench-constrained-transport',source,id,title:spec.title,directory:path.relative(repo,dir).replaceAll('\\','/'),cellsSha256:digest(spec.cells),play:`/play/${id}/level_AxA`,edit:`/author/${id}/level_AxA`};
+  const manifest={skill:'mazebench-constrained-transport',source:'custom',id,title:spec.title,directory:path.relative(repo,dir).replaceAll('\\','/'),cellsSha256:digest(spec.cells),play:`/play/${id}/level_AxA`,edit:`/author/${id}/level_AxA`};
   for(const [name,value]of Object.entries({'manifest.json':manifest,'world.json':world,'contract.json':spec.contract}))write(path.join(out,name),value);
   fs.copyFileSync(path.join(dir,'levels/level_AxA.txt'),path.join(out,'level_AxA.txt'));
   return manifest;
 }
 if(require.main===module){
   try{
-    const a=args();assert(a.repo&&a.out,'Use --repo REPO --out NEW_OUTPUT and --spec FILE or --example gxf');
-    assert(!!a.spec!==!!a.example,'Choose exactly one input');
-    assert(!a.example||a.example==='gxf','Only --example gxf is bundled');
-    const spec=read(a.spec?path.resolve(a.spec):path.join(__dirname,'../assets/gxf/spec.json'));
-    console.log(JSON.stringify(build(a.repo,a.out,spec,a.example?'example:gxf':'custom'),null,2));
+    const a=args();assert(a.repo&&a.out&&a.spec,'Use --repo REPO --spec FILE --out NEW_OUTPUT');
+    const spec=read(path.resolve(a.spec));
+    console.log(JSON.stringify(build(a.repo,a.out,spec),null,2));
   }catch(e){console.error(e.stack);process.exitCode=1;}
 }
 module.exports={build};

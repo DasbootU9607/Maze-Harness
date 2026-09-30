@@ -17,7 +17,7 @@ function saveDraft(repo,out,{title,cells,scenario,contract}){
  const id='draft-hookx-'+crypto.randomBytes(5).toString('hex'),dir=path.join(gamesDir,id);
  assert(!fs.existsSync(dir));fs.mkdirSync(path.join(dir,'levels'),{recursive:true});fs.mkdirSync(path.join(dir,'previews'));
  for(const file of ['level_parsing.json','toolbox.json'])fs.copyFileSync(path.join(gamesDir,'maze',file),path.join(dir,file));
- // This Windows installation does not allow the stock directory symlinks.
+ // Ordinary copies avoid requiring directory-symlink privileges.
  for(const asset of ['images','assets_3d'])fs.cpSync(path.join(gamesDir,'maze',asset),path.join(dir,asset),{recursive:true});
  fs.writeFileSync(path.join(dir,'world_parsing.json'),JSON.stringify({rules:{world_size:[1,1],level_size:[16,16],camera_view:[16,16]}},null,2));
  fs.writeFileSync(path.join(dir,'world_map.json'),'{"levels":{}}');
