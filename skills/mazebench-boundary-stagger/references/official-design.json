@@ -1,0 +1,899 @@
+{
+  "title": "HxH official full reference",
+  "cells": [
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#"
+    ],
+    [
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "M4",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      "M4",
+      "M4",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      "G",
+      ".",
+      "M4",
+      "M4",
+      "M3",
+      "M3",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      "M4",
+      "M3",
+      "M3",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "+",
+      "+",
+      "+",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      "M3",
+      "M3",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "+",
+      ".",
+      ".",
+      "#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      ".",
+      ".+#",
+      ".+#"
+    ],
+    [
+      ".+#",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      ".",
+      ".+#",
+      ".+#"
+    ],
+    [
+      ".+#",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+M2",
+      "+M2",
+      "+M2",
+      "+",
+      "+",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      "M0",
+      "M0",
+      "M0",
+      "M0",
+      ".",
+      ".",
+      ".",
+      ".",
+      "M2",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      "M0",
+      "M0",
+      "M0",
+      "M0",
+      ".+#",
+      "+",
+      "+",
+      "+",
+      "+M2",
+      "+",
+      "+",
+      ".",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      ".",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "M1",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+p",
+      ".",
+      "M1",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#"
+    ]
+  ],
+  "contract": {
+    "mode": "complex",
+    "profile": "planar-boundary-preparation-v2",
+    "goal": {
+      "kind": "gem"
+    },
+    "members": {
+      "M4": [
+        [
+          5,
+          1,
+          0
+        ],
+        [
+          4,
+          2,
+          0
+        ],
+        [
+          5,
+          2,
+          0
+        ],
+        [
+          3,
+          3,
+          0
+        ],
+        [
+          4,
+          3,
+          0
+        ],
+        [
+          3,
+          4,
+          0
+        ]
+      ],
+      "M3": [
+        [
+          5,
+          3,
+          0
+        ],
+        [
+          6,
+          3,
+          0
+        ],
+        [
+          4,
+          4,
+          0
+        ],
+        [
+          5,
+          4,
+          0
+        ],
+        [
+          3,
+          5,
+          0
+        ],
+        [
+          4,
+          5,
+          0
+        ]
+      ],
+      "M2": [
+        [
+          8,
+          8,
+          0
+        ],
+        [
+          9,
+          8,
+          0
+        ],
+        [
+          10,
+          8,
+          0
+        ],
+        [
+          9,
+          9,
+          0
+        ],
+        [
+          9,
+          10,
+          0
+        ]
+      ],
+      "M0": [
+        [
+          1,
+          9,
+          0
+        ],
+        [
+          2,
+          9,
+          0
+        ],
+        [
+          3,
+          9,
+          0
+        ],
+        [
+          4,
+          9,
+          0
+        ],
+        [
+          1,
+          10,
+          0
+        ],
+        [
+          2,
+          10,
+          0
+        ],
+        [
+          3,
+          10,
+          0
+        ],
+        [
+          4,
+          10,
+          0
+        ]
+      ],
+      "M1": [
+        [
+          10,
+          13,
+          0
+        ],
+        [
+          10,
+          14,
+          0
+        ]
+      ]
+    },
+    "roles": {
+      "M4": "upper",
+      "M3": "lower",
+      "M0": "approach-M0",
+      "M1": "approach-M1",
+      "M2": "approach-M2"
+    },
+    "allowRemoval": [
+      "M4",
+      "M3",
+      "M2",
+      "M0",
+      "M1"
+    ],
+    "necessaryRoles": [
+      "M0",
+      "M2",
+      "M4",
+      "M3"
+    ],
+    "optionalRoles": [
+      "M1"
+    ],
+    "readReceipt": {
+      "path": "references/official-case.md",
+      "sha256": "cf2f7135694300cd7e9181d376d1aa1627cbee89a7e8590c0fef55152bbf1ceb",
+      "readBeforeLayout": true
+    },
+    "inherited": [
+      "Preparation that makes the upper mechanism operable.",
+      "Reconfiguration of the same approach group in opposing directions.",
+      "Whole-group contact blocked by a fixed boundary.",
+      "Independent offset releases the constrained move, but does not yet permit walking-only completion."
+    ],
+    "changes": [
+      "Official reference reproduction; coordinates and shapes unchanged."
+    ],
+    "spatial": {
+      "boundaries": [
+        [
+          5,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ]
+      ],
+      "voids": [
+        [
+          11,
+          4,
+          0
+        ],
+        [
+          12,
+          4,
+          0
+        ],
+        [
+          13,
+          4,
+          0
+        ],
+        [
+          12,
+          5,
+          0
+        ],
+        [
+          6,
+          6,
+          0
+        ],
+        [
+          7,
+          6,
+          0
+        ],
+        [
+          8,
+          6,
+          0
+        ],
+        [
+          9,
+          6,
+          0
+        ],
+        [
+          10,
+          6,
+          0
+        ],
+        [
+          11,
+          6,
+          0
+        ],
+        [
+          12,
+          6,
+          0
+        ],
+        [
+          1,
+          7,
+          0
+        ],
+        [
+          2,
+          7,
+          0
+        ],
+        [
+          3,
+          7,
+          0
+        ],
+        [
+          4,
+          7,
+          0
+        ],
+        [
+          5,
+          7,
+          0
+        ],
+        [
+          6,
+          7,
+          0
+        ],
+        [
+          7,
+          7,
+          0
+        ],
+        [
+          8,
+          7,
+          0
+        ],
+        [
+          9,
+          7,
+          0
+        ],
+        [
+          10,
+          7,
+          0
+        ],
+        [
+          11,
+          7,
+          0
+        ],
+        [
+          12,
+          7,
+          0
+        ],
+        [
+          1,
+          8,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          3,
+          8,
+          0
+        ],
+        [
+          4,
+          8,
+          0
+        ],
+        [
+          5,
+          8,
+          0
+        ],
+        [
+          6,
+          8,
+          0
+        ],
+        [
+          7,
+          8,
+          0
+        ],
+        [
+          8,
+          8,
+          0
+        ],
+        [
+          9,
+          8,
+          0
+        ],
+        [
+          10,
+          8,
+          0
+        ],
+        [
+          11,
+          8,
+          0
+        ],
+        [
+          12,
+          8,
+          0
+        ],
+        [
+          6,
+          10,
+          0
+        ],
+        [
+          7,
+          10,
+          0
+        ],
+        [
+          8,
+          10,
+          0
+        ],
+        [
+          9,
+          10,
+          0
+        ],
+        [
+          10,
+          10,
+          0
+        ],
+        [
+          11,
+          10,
+          0
+        ],
+        [
+          6,
+          11,
+          0
+        ],
+        [
+          7,
+          11,
+          0
+        ],
+        [
+          8,
+          11,
+          0
+        ],
+        [
+          9,
+          11,
+          0
+        ],
+        [
+          10,
+          11,
+          0
+        ],
+        [
+          11,
+          11,
+          0
+        ]
+      ],
+      "support": "Ordinary official support; overhanging members are not independently supported. All retained members and whole-group removal are observed.",
+      "blocked": [
+        {
+          "group": "M3",
+          "direction": "U",
+          "stance": [
+            6,
+            4,
+            0
+          ],
+          "keyStep": 40,
+          "destinations": [
+            [
+              5,
+              0,
+              0
+            ]
+          ],
+          "reason": "M3 touches M4; M4 roof member (5,1) would enter roof (5,0). Upper shift stance (6,2) inaccessible before approach work."
+        }
+      ],
+      "reserved": [
+        {
+          "cell": [
+            14,
+            9,
+            0
+          ],
+          "function": "M2 opposite pushing face before upper access"
+        },
+        {
+          "cell": [
+            6,
+            2,
+            0
+          ],
+          "function": "M4 shift input face"
+        },
+        {
+          "cell": [
+            6,
+            4,
+            0
+          ],
+          "function": "M3 dependent raise face"
+        }
+      ]
+    },
+    "events": {
+      "removeApproach": {
+        "kind": "remove",
+        "group": "M0"
+      },
+      "approachRight": {
+        "kind": "move",
+        "group": "M2",
+        "direction": "R"
+      },
+      "approachLeft": {
+        "kind": "move",
+        "group": "M2",
+        "direction": "L"
+      },
+      "shift": {
+        "kind": "move",
+        "group": "M4",
+        "direction": "L"
+      },
+      "raise": {
+        "kind": "move",
+        "group": "M3",
+        "direction": "U"
+      },
+      "offset": {
+        "kind": "offset"
+      }
+    },
+    "stages": [
+      {
+        "name": "支撑丧失开启接近区",
+        "event": "removeApproach",
+        "conflict": "八格 M0 封接近区",
+        "effect": "官方离场开放通道"
+      },
+      {
+        "name": "中部换位与再调整",
+        "event": "approachLeft",
+        "conflict": "M2 全轮廓和净空限制上方接近",
+        "effect": "从另一推动面重新配置 M2"
+      },
+      {
+        "name": "边界错位",
+        "event": "shift",
+        "conflict": "屋顶阻止下方接触簇",
+        "effect": "独立错位切断受限接触"
+      },
+      {
+        "name": "错位后开路",
+        "event": "raise",
+        "conflict": "下方阶梯仍封宝石路线",
+        "effect": "下方整体上移开放目标通路"
+      }
+    ],
+    "dependencies": [
+      {
+        "prepare": "removeApproach",
+        "before": "shift",
+        "conflict": "不离场不能取得上方操作机会"
+      },
+      {
+        "prepare": "approachRight",
+        "before": "shift",
+        "conflict": "中部右侧换面净空"
+      },
+      {
+        "prepare": "approachLeft",
+        "before": "shift",
+        "conflict": "同一中部物体再调整才能取得上方机会"
+      },
+      {
+        "prepare": "shift",
+        "before": "raise",
+        "conflict": "屋顶约束通过接触簇传播"
+      },
+      {
+        "prepare": "raise",
+        "before": "goal",
+        "conflict": "错位仍未开出宝石通路"
+      }
+    ],
+    "mechanism": {
+      "kind": "boundary",
+      "pair": [
+        "M4",
+        "M3"
+      ]
+    },
+    "releaseEvent": "shift",
+    "preparationEvents": [
+      "removeApproach",
+      "approachRight",
+      "approachLeft"
+    ],
+    "boundaryControls": [
+      {
+        "name": "roof",
+        "prefix": "ULLLLUUUURRRRRRRRDDRRUULUUUURUULLLLLLLUL",
+        "stance": [
+          6,
+          4,
+          0
+        ],
+        "direction": "U",
+        "group": "M3",
+        "walls": [
+          [
+            5,
+            0,
+            0
+          ]
+        ],
+        "forbid": "shift"
+      }
+    ]
+  },
+  "witness": "ULLLLUUUURRRRRRRRDDRRUULUUUURUULLLLLLLULLRRDDLUDLDLLLLUU"
+}

@@ -1,0 +1,723 @@
+{
+  "source": "games/maze/levels/mygl8anih8.txt",
+  "goal": {
+    "kind": "gem"
+  },
+  "engine": {
+    "repo": "<MazeBenchEngine checkout>",
+    "commit": "0ac96b8a2648db09f375989cd7bc33699222c1e6",
+    "fingerprints": {
+      "public/maze-engine.js": "c25be363e30186b7435c20361f20542170bdabc9de8c0dad8fa45198e5cab842",
+      "public/maze-solver.js": "be7ecce88b17e2f5cc4894a2fd5c86ba8008cb157406a5728bc8ab110fb3df9d",
+      "server/maze-levels.js": "9b75ab87efdcaee23a91c442d1bdcc7975f545f3a58ec4403c3fce2fd4a341e0",
+      "games/maze/level_parsing.json": "54cb1bc6d2e545a89abe860e2c84e45ed5fd31b244b828b8424d2693d05b780d"
+    }
+  },
+  "cap": 1000000,
+  "scope": "Official full HxH, original initial state, gem objective, ordinary engine transitions; each restriction tested separately. No unique order or optimum claim.",
+  "checks": [
+    {
+      "name": "freeze_M0",
+      "endpoint": "gem",
+      "status": "unsolved",
+      "expanded": 30,
+      "replayPassed": false
+    },
+    {
+      "name": "freeze_M2",
+      "endpoint": "gem",
+      "status": "unsolved",
+      "expanded": 116,
+      "replayPassed": false
+    },
+    {
+      "name": "freeze_M1_positive_control",
+      "endpoint": "gem",
+      "status": "solved",
+      "moves": 56,
+      "path": "ULLLLUUUURRRRRRRRDDRRUULUUUURUUULLLLLLLLLRRDDDLLUDLLLLUU",
+      "expanded": 3611,
+      "replayPassed": true
+    },
+    {
+      "name": "forbid_M0U",
+      "endpoint": "gem",
+      "status": "unsolved",
+      "expanded": 30,
+      "replayPassed": false
+    },
+    {
+      "name": "forbid_M2R",
+      "endpoint": "gem",
+      "status": "unsolved",
+      "expanded": 117,
+      "replayPassed": false
+    },
+    {
+      "name": "forbid_M2L",
+      "endpoint": "gem",
+      "status": "unsolved",
+      "expanded": 1054,
+      "replayPassed": false
+    },
+    {
+      "name": "forbid_M2U",
+      "endpoint": "gem",
+      "status": "solved",
+      "moves": 58,
+      "path": "ULLLLUUUURRRRRRRRDDRRUULLRUUUURUUULLLLLLLLLRRDDDLLUDLLLLUU",
+      "expanded": 6881,
+      "replayPassed": true
+    },
+    {
+      "name": "forbid_M0_removal",
+      "endpoint": "gem",
+      "status": "unsolved",
+      "expanded": 64,
+      "replayPassed": false
+    },
+    {
+      "name": "forbid_M2_removal",
+      "endpoint": "gem",
+      "status": "solved",
+      "moves": 58,
+      "path": "ULLLLUUUURRRRRRRRDDRRUULLRUUUURUUULLLLLLLLLRRDDDLLUDLLLLUU",
+      "expanded": 14916,
+      "replayPassed": true
+    },
+    {
+      "name": "forbid_M4L",
+      "endpoint": "gem",
+      "status": "unsolved",
+      "expanded": 27294,
+      "replayPassed": false
+    },
+    {
+      "name": "forbid_M3U",
+      "endpoint": "gem",
+      "status": "unsolved",
+      "expanded": 82944,
+      "replayPassed": false
+    },
+    {
+      "name": "first_M4L_positive",
+      "prefix": [
+        "M4",
+        "L"
+      ],
+      "endpoint": "gem OR first declared group-direction opportunity",
+      "status": "solved",
+      "moves": 38,
+      "path": "ULLLLUUUURRRRRRRRDDRRUULUUUURUULLLLLLL",
+      "expanded": 1130,
+      "replayPassed": true
+    },
+    {
+      "name": "first_M4L_without_M0_removal",
+      "prefix": [
+        "M4",
+        "L"
+      ],
+      "endpoint": "gem OR first declared group-direction opportunity",
+      "status": "unsolved",
+      "expanded": 64,
+      "replayPassed": false
+    },
+    {
+      "name": "first_M4L_without_M2R",
+      "prefix": [
+        "M4",
+        "L"
+      ],
+      "endpoint": "gem OR first declared group-direction opportunity",
+      "status": "unsolved",
+      "expanded": 117,
+      "replayPassed": false
+    },
+    {
+      "name": "first_M4L_without_M2L",
+      "prefix": [
+        "M4",
+        "L"
+      ],
+      "endpoint": "gem OR first declared group-direction opportunity",
+      "status": "unsolved",
+      "expanded": 1054,
+      "replayPassed": false
+    },
+    {
+      "name": "first_M3U_positive",
+      "prefix": [
+        "M3",
+        "U"
+      ],
+      "endpoint": "gem OR first declared group-direction opportunity",
+      "status": "solved",
+      "moves": 46,
+      "path": "ULLLLUUUURRRRRRRRDDRRUULUUUURUUULLLLLLLLLRRDDL",
+      "expanded": 3636,
+      "replayPassed": true
+    },
+    {
+      "name": "first_M3U_without_M4L",
+      "prefix": [
+        "M3",
+        "U"
+      ],
+      "endpoint": "gem OR first declared group-direction opportunity",
+      "status": "unsolved",
+      "expanded": 27294,
+      "replayPassed": false
+    }
+  ],
+  "comparison": {
+    "tokenDifferences": 113,
+    "initialRolesIdentical": true
+  },
+  "reconstruction": {
+    "goal": {
+      "kind": "gem"
+    },
+    "scope": "Explicit exclusions on this reference and objective. A selected post-contact state is not all possible contact states. No optimality or human-difficulty claim.",
+    "checks": [
+      {
+        "name": "freeze_M0",
+        "kind": "freeze",
+        "group": "M0",
+        "expected": "unsolved",
+        "status": "unsolved",
+        "expanded": 61,
+        "verdict": "passed"
+      },
+      {
+        "name": "freeze_M1",
+        "kind": "freeze",
+        "group": "M1",
+        "expected": "unsolved",
+        "status": "unsolved",
+        "expanded": 124,
+        "verdict": "passed"
+      },
+      {
+        "name": "preserve_relative_offset",
+        "kind": "offset",
+        "expected": "unsolved",
+        "status": "unsolved",
+        "expanded": 127,
+        "verdict": "passed"
+      },
+      {
+        "name": "forbid_M0L",
+        "kind": "direction",
+        "group": "M0",
+        "direction": "L",
+        "expected": "unsolved",
+        "status": "unsolved",
+        "expanded": 61,
+        "verdict": "passed"
+      },
+      {
+        "name": "forbid_M0R",
+        "kind": "direction",
+        "group": "M0",
+        "direction": "R",
+        "expected": "solved",
+        "status": "solved",
+        "moves": 26,
+        "path": "UULLLLLLLLLRRDDDLLUDLLLLUU",
+        "expanded": 247,
+        "verdict": "passed"
+      },
+      {
+        "name": "forbid_M1U",
+        "kind": "direction",
+        "group": "M1",
+        "direction": "U",
+        "expected": "unsolved",
+        "status": "unsolved",
+        "expanded": 190,
+        "verdict": "passed"
+      },
+      {
+        "name": "forbid_M1D",
+        "kind": "direction",
+        "group": "M1",
+        "direction": "D",
+        "expected": "solved",
+        "status": "solved",
+        "moves": 26,
+        "path": "UULLLLLLLLLRRDDDLLUDLLLLUU",
+        "expanded": 247,
+        "verdict": "passed"
+      }
+    ]
+  },
+  "necessary": {
+    "M0": [
+      "U"
+    ],
+    "M2": [
+      "L",
+      "R"
+    ],
+    "M4": [
+      "L"
+    ],
+    "M3": [
+      "U"
+    ]
+  },
+  "avoidable": {
+    "M2": [
+      "U"
+    ]
+  },
+  "limitations": [
+    "M2 upward motion and removal are choices of this witness, not necessary.",
+    "Do not require motion of all five original groups.",
+    "Current paired checker excludes full-room voids, additional groups and removal."
+  ],
+  "candidateComplexBaseline": {
+    "goal": {
+      "kind": "gem"
+    },
+    "mode": "fresh ordinary replay plus exhaustive frozen-component/history exclusions on the unchanged official map",
+    "overall": "passed",
+    "fingerprints": {
+      "cells": "c011f32929161bcddbe8daeccbbbfce23f6d11fcd8e68705dd4b06bd3ae209f3",
+      "contract": "3df4af2ea552b2e0e38c3b87ce24b20c3c305ed5e64d54a3c496db3be0c77cce",
+      "case": "2ac2ba6b0a8c438785865ddb29e83d4d45d616ed40652d751193f0ff76e51c8d",
+      "public/maze-engine.js": "c25be363e30186b7435c20361f20542170bdabc9de8c0dad8fa45198e5cab842",
+      "public/maze-solver.js": "be7ecce88b17e2f5cc4894a2fd5c86ba8008cb157406a5728bc8ab110fb3df9d",
+      "server/maze-levels.js": "9b75ab87efdcaee23a91c442d1bdcc7975f545f3a58ec4403c3fce2fd4a341e0",
+      "games/maze/level_parsing.json": "54cb1bc6d2e545a89abe860e2c84e45ed5fd31b244b828b8424d2693d05b780d"
+    },
+    "checks": [
+      {
+        "name": "blocked_M3_U_step_40",
+        "verdict": "passed",
+        "scope": "Ordinary blocked action at declared reachable stance",
+        "stance": [
+          6,
+          4,
+          0
+        ],
+        "reachable": true
+      },
+      {
+        "name": "initial_frozen_walking",
+        "status": "unsolved",
+        "expected": "unsolved",
+        "expanded": 1,
+        "walkExpanded": 30,
+        "verdict": "passed"
+      },
+      {
+        "name": "freeze_M0",
+        "status": "unsolved",
+        "expected": "unsolved",
+        "expanded": 1,
+        "walkExpanded": 30,
+        "verdict": "passed"
+      },
+      {
+        "name": "freeze_M2",
+        "status": "unsolved",
+        "expected": "unsolved",
+        "expanded": 3,
+        "walkExpanded": 106,
+        "verdict": "passed"
+      },
+      {
+        "name": "freeze_M4",
+        "status": "unsolved",
+        "expected": "unsolved",
+        "expanded": 302,
+        "walkExpanded": 21484,
+        "verdict": "passed"
+      },
+      {
+        "name": "freeze_M3",
+        "status": "unsolved",
+        "expected": "unsolved",
+        "expanded": 602,
+        "walkExpanded": 43244,
+        "verdict": "passed"
+      },
+      {
+        "name": "optional_freeze_M1",
+        "status": "solved",
+        "expected": "solved",
+        "expanded": 19,
+        "walkExpanded": 1063,
+        "verdict": "passed",
+        "path": "ULLLLUUUURRRRRRRRDDRRULLURUUUURUUULLLLLLLLLRRDDLUDDLLLLLUU",
+        "replayPassed": true
+      },
+      {
+        "name": "forbid_mechanism",
+        "status": "unsolved",
+        "expected": "unsolved",
+        "expanded": 602,
+        "walkExpanded": 43754,
+        "verdict": "passed"
+      },
+      {
+        "name": "prefix_positive_removeApproach_to_shift",
+        "status": "solved",
+        "expected": "solved",
+        "expanded": 10,
+        "walkExpanded": 432,
+        "verdict": "passed",
+        "path": "ULLLLUUUURRRRRRRRDDRRULLURUUUURUULLLLLLL",
+        "replayPassed": true
+      },
+      {
+        "name": "prefix_without_removeApproach_to_shift",
+        "status": "unsolved",
+        "expected": "unsolved",
+        "expanded": 2,
+        "walkExpanded": 64,
+        "verdict": "passed"
+      },
+      {
+        "name": "prefix_positive_approachRight_to_shift",
+        "status": "solved",
+        "expected": "solved",
+        "expanded": 10,
+        "walkExpanded": 432,
+        "verdict": "passed",
+        "path": "ULLLLUUUURRRRRRRRDDRRULLURUUUURUULLLLLLL",
+        "replayPassed": true
+      },
+      {
+        "name": "prefix_without_approachRight_to_shift",
+        "status": "unsolved",
+        "expected": "unsolved",
+        "expanded": 3,
+        "walkExpanded": 106,
+        "verdict": "passed"
+      },
+      {
+        "name": "prefix_positive_approachLeft_to_shift",
+        "status": "solved",
+        "expected": "solved",
+        "expanded": 10,
+        "walkExpanded": 432,
+        "verdict": "passed",
+        "path": "ULLLLUUUURRRRRRRRDDRRULLURUUUURUULLLLLLL",
+        "replayPassed": true
+      },
+      {
+        "name": "prefix_without_approachLeft_to_shift",
+        "status": "unsolved",
+        "expected": "unsolved",
+        "expanded": 16,
+        "walkExpanded": 818,
+        "verdict": "passed"
+      },
+      {
+        "name": "prefix_positive_shift_to_raise",
+        "status": "solved",
+        "expected": "solved",
+        "expanded": 17,
+        "walkExpanded": 788,
+        "verdict": "passed",
+        "path": "ULLLLUUUURRRRRRRRDDRRULLURUUUURUUULLLLLLLLLRRDDL",
+        "replayPassed": true
+      },
+      {
+        "name": "prefix_without_shift_to_raise",
+        "status": "unsolved",
+        "expected": "unsolved",
+        "expanded": 302,
+        "walkExpanded": 21484,
+        "verdict": "passed"
+      },
+      {
+        "name": "prefix_positive_raise_to_goal",
+        "status": "solved",
+        "expected": "solved",
+        "expanded": 30,
+        "walkExpanded": 1710,
+        "verdict": "passed",
+        "path": "ULLLLUUUURRRRRRRRDDRRULLURUUUURUUULLLLLLLLLRRDDLUDDLLLLLUU",
+        "replayPassed": true
+      },
+      {
+        "name": "prefix_without_raise_to_goal",
+        "status": "unsolved",
+        "expected": "unsolved",
+        "expanded": 902,
+        "walkExpanded": 65514,
+        "verdict": "passed"
+      },
+      {
+        "name": "at_most_one_push_then_walk",
+        "status": "unsolved",
+        "expected": "unsolved",
+        "expanded": 2,
+        "walkExpanded": 64,
+        "verdict": "passed"
+      },
+      {
+        "name": "one_same_direction_translation_process",
+        "status": "unsolved",
+        "expected": "unsolved",
+        "expanded": 3,
+        "walkExpanded": 106,
+        "verdict": "passed",
+        "scope": "All rigid-object motions in one compass direction, even when the moving cluster changes. Walking is unrestricted."
+      },
+      {
+        "name": "first_mechanism_then_walking_only_all_histories",
+        "status": "unsolved",
+        "expected": "unsolved",
+        "expanded": 772,
+        "walkExpanded": 60215,
+        "verdict": "passed"
+      },
+      {
+        "name": "matched_boundary_roof",
+        "status": "solved",
+        "expected": "solved",
+        "expanded": 16,
+        "walkExpanded": 801,
+        "verdict": "passed",
+        "path": "ULLLLUUUURRRRRRRRDDRRULLURUUUURUULLLLDLLLLUDDLLLLUUL",
+        "replayPassed": true,
+        "scope": "Only these walls, this ordinary prefix, matched stance, and excluded preparation. Walking side effects are recorded; no global shape uniqueness claim."
+      }
+    ],
+    "firstTransfer": null,
+    "postScope": "Selected per-group freeze results stay selected-state claims. The history test rules out successful walking-only continuation after any first qualifying use; it does not prove all contact states solvable or require both specific objects universally."
+  },
+  "publishedComplexBaseline": {
+    "profile": "planar-boundary-preparation-v2",
+    "fingerprints": {
+      "cells": "c011f32929161bcddbe8daeccbbbfce23f6d11fcd8e68705dd4b06bd3ae209f3",
+      "contract": "5f9bd97e58d79166c4f64a0839764d1a11e5cd884f14135f58c2f34382a0acd3",
+      "case": "cf2f7135694300cd7e9181d376d1aa1627cbee89a7e8590c0fef55152bbf1ceb",
+      "public/maze-engine.js": "c25be363e30186b7435c20361f20542170bdabc9de8c0dad8fa45198e5cab842",
+      "public/maze-solver.js": "be7ecce88b17e2f5cc4894a2fd5c86ba8008cb157406a5728bc8ab110fb3df9d",
+      "server/maze-levels.js": "9b75ab87efdcaee23a91c442d1bdcc7975f545f3a58ec4403c3fce2fd4a341e0",
+      "games/maze/level_parsing.json": "54cb1bc6d2e545a89abe860e2c84e45ed5fd31b244b828b8424d2693d05b780d"
+    },
+    "overall": "passed",
+    "scope": "Author self-test; ordinary official physics; exhaustive restricted push-state graph, frozen walking components; no human-difficulty or independent-author claim.",
+    "classification": "complex-structurally-verified",
+    "replayPassed": true,
+    "officialSolution": {
+      "status": "solved",
+      "path": "ULLLLUUUURRRRRRRRDDRRUULUUUURUUULLLLLLLLLRRDDDLLUDLLLLUU",
+      "expanded": 12926,
+      "moves": 56,
+      "replayPassed": true
+    },
+    "stageWitnesses": [
+      {
+        "name": "支撑丧失开启接近区",
+        "event": "removeApproach",
+        "step": 9,
+        "conflict": "八格 M0 封接近区",
+        "effect": "官方离场开放通道"
+      },
+      {
+        "name": "中部换位与再调整",
+        "event": "approachLeft",
+        "step": 24,
+        "conflict": "M2 全轮廓和净空限制上方接近",
+        "effect": "从另一推动面重新配置 M2"
+      },
+      {
+        "name": "边界错位",
+        "event": "shift",
+        "step": 41,
+        "conflict": "屋顶阻止下方接触簇",
+        "effect": "独立错位切断受限接触"
+      },
+      {
+        "name": "错位后开路",
+        "event": "raise",
+        "step": 47,
+        "conflict": "下方阶梯仍封宝石路线",
+        "effect": "下方整体上移开放目标通路"
+      }
+    ],
+    "checks": [
+      {
+        "name": "blocked_M3_U_step_40",
+        "verdict": "passed",
+        "scope": "Ordinary blocked action at declared reachable stance"
+      },
+      {
+        "name": "initial_frozen_walking",
+        "expected": "unsolved",
+        "status": "unsolved",
+        "verdict": "passed",
+        "expanded": 1
+      },
+      {
+        "name": "freeze_M0",
+        "expected": "unsolved",
+        "status": "unsolved",
+        "verdict": "passed",
+        "expanded": 1
+      },
+      {
+        "name": "freeze_M2",
+        "expected": "unsolved",
+        "status": "unsolved",
+        "verdict": "passed",
+        "expanded": 3
+      },
+      {
+        "name": "freeze_M4",
+        "expected": "unsolved",
+        "status": "unsolved",
+        "verdict": "passed",
+        "expanded": 302
+      },
+      {
+        "name": "freeze_M3",
+        "expected": "unsolved",
+        "status": "unsolved",
+        "verdict": "passed",
+        "expanded": 602
+      },
+      {
+        "name": "optional_freeze_M1",
+        "expected": "solved",
+        "status": "solved",
+        "verdict": "passed",
+        "expanded": 19,
+        "path": "ULLLLUUUURRRRRRRRDDRRULLURUUUURUUULLLLLLLLLRRDDLUDDLLLLLUU",
+        "replayPassed": true,
+        "endpoint": "real-goal"
+      },
+      {
+        "name": "forbid_mechanism",
+        "expected": "unsolved",
+        "status": "unsolved",
+        "verdict": "passed",
+        "expanded": 602
+      },
+      {
+        "name": "prefix_positive_removeApproach_to_shift",
+        "expected": "solved",
+        "status": "solved",
+        "verdict": "passed",
+        "expanded": 10,
+        "path": "ULLLLUUUURRRRRRRRDDRRULLURUUUURUULLLLLLL",
+        "replayPassed": true,
+        "endpoint": "first-legal-opportunity"
+      },
+      {
+        "name": "prefix_without_removeApproach_to_shift",
+        "expected": "unsolved",
+        "status": "unsolved",
+        "verdict": "passed",
+        "expanded": 2
+      },
+      {
+        "name": "prefix_positive_approachRight_to_shift",
+        "expected": "solved",
+        "status": "solved",
+        "verdict": "passed",
+        "expanded": 10,
+        "path": "ULLLLUUUURRRRRRRRDDRRULLURUUUURUULLLLLLL",
+        "replayPassed": true,
+        "endpoint": "first-legal-opportunity"
+      },
+      {
+        "name": "prefix_without_approachRight_to_shift",
+        "expected": "unsolved",
+        "status": "unsolved",
+        "verdict": "passed",
+        "expanded": 3
+      },
+      {
+        "name": "prefix_positive_approachLeft_to_shift",
+        "expected": "solved",
+        "status": "solved",
+        "verdict": "passed",
+        "expanded": 10,
+        "path": "ULLLLUUUURRRRRRRRDDRRULLURUUUURUULLLLLLL",
+        "replayPassed": true,
+        "endpoint": "first-legal-opportunity"
+      },
+      {
+        "name": "prefix_without_approachLeft_to_shift",
+        "expected": "unsolved",
+        "status": "unsolved",
+        "verdict": "passed",
+        "expanded": 16
+      },
+      {
+        "name": "prefix_positive_shift_to_raise",
+        "expected": "solved",
+        "status": "solved",
+        "verdict": "passed",
+        "expanded": 17,
+        "path": "ULLLLUUUURRRRRRRRDDRRULLURUUUURUUULLLLLLLLLRRDDL",
+        "replayPassed": true,
+        "endpoint": "first-legal-opportunity"
+      },
+      {
+        "name": "prefix_without_shift_to_raise",
+        "expected": "unsolved",
+        "status": "unsolved",
+        "verdict": "passed",
+        "expanded": 302
+      },
+      {
+        "name": "prefix_positive_raise_to_goal",
+        "expected": "solved",
+        "status": "solved",
+        "verdict": "passed",
+        "expanded": 30,
+        "path": "ULLLLUUUURRRRRRRRDDRRULLURUUUURUUULLLLLLLLLRRDDLUDDLLLLLUU",
+        "replayPassed": true,
+        "endpoint": "real-goal"
+      },
+      {
+        "name": "prefix_without_raise_to_goal",
+        "expected": "unsolved",
+        "status": "unsolved",
+        "verdict": "passed",
+        "expanded": 902
+      },
+      {
+        "name": "at_most_one_push_then_walk",
+        "expected": "unsolved",
+        "status": "unsolved",
+        "verdict": "passed",
+        "expanded": 2
+      },
+      {
+        "name": "one_same_direction_translation_process",
+        "expected": "unsolved",
+        "status": "unsolved",
+        "verdict": "passed",
+        "expanded": 3
+      },
+      {
+        "name": "first_mechanism_then_walking_only_all_histories",
+        "expected": "unsolved",
+        "status": "unsolved",
+        "verdict": "passed",
+        "expanded": 772
+      },
+      {
+        "name": "matched_boundary_roof",
+        "expected": "solved",
+        "status": "solved",
+        "verdict": "passed",
+        "expanded": 16,
+        "path": "ULLLLUUUURRRRRRRRDDRRULLURUUUURUULLLLDLLLLUDDLLLLUUL",
+        "replayPassed": true,
+        "scope": "Only these walls, this ordinary prefix, matched stance, and excluded preparation. Walking side effects are recorded; no global shape uniqueness claim."
+      }
+    ]
+  }
+}

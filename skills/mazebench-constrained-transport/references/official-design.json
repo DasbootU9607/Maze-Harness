@@ -1,0 +1,622 @@
+{
+  "title": "GxF official full reference",
+  "cells": [
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      ".",
+      ".",
+      "p",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "."
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "M2",
+      "M2",
+      ".+#",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      ".",
+      "M0",
+      "M0",
+      "M1",
+      "M1",
+      "M2",
+      ".",
+      ".+#",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      ".+#",
+      ".",
+      ".+#",
+      "M1",
+      ".",
+      ".",
+      ".",
+      ".+#",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      ".",
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      ".+#",
+      ".",
+      ".",
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".+#",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".",
+      "G",
+      "+",
+      ".",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".+#",
+      ".+#",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      "+",
+      ".",
+      ".",
+      ".",
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".",
+      ".+#",
+      "+",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      "M3",
+      "M3",
+      "M3",
+      ".",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#"
+    ]
+  ],
+  "contract": {
+    "mode": "complex",
+    "profile": "planar-transport-depth-v2",
+    "goal": {
+      "kind": "gem"
+    },
+    "members": {
+      "M2": [
+        [
+          10,
+          4,
+          0
+        ],
+        [
+          11,
+          4,
+          0
+        ],
+        [
+          10,
+          5,
+          0
+        ]
+      ],
+      "M0": [
+        [
+          6,
+          5,
+          0
+        ],
+        [
+          7,
+          5,
+          0
+        ]
+      ],
+      "M1": [
+        [
+          8,
+          5,
+          0
+        ],
+        [
+          9,
+          5,
+          0
+        ],
+        [
+          8,
+          6,
+          0
+        ]
+      ],
+      "M3": [
+        [
+          1,
+          12,
+          0
+        ],
+        [
+          2,
+          12,
+          0
+        ],
+        [
+          3,
+          12,
+          0
+        ]
+      ]
+    },
+    "roles": {
+      "M0": "tool",
+      "M1": "helper-1",
+      "M2": "helper-2",
+      "M3": "target"
+    },
+    "allowRemoval": [
+      "M2",
+      "M0",
+      "M1",
+      "M3"
+    ],
+    "necessaryRoles": [
+      "M0",
+      "M1",
+      "M2",
+      "M3"
+    ],
+    "optionalRoles": [],
+    "readReceipt": {
+      "path": "references/official-case.md",
+      "sha256": "314e44acc7ae7255c304137c69d1650b8c0db096ef3b7a5cf252e22bf5c84823",
+      "readBeforeLayout": true
+    },
+    "inherited": [
+      "Shared workspace whose useful helper configurations change.",
+      "Complete tool footprint, recoverable pushing faces and support.",
+      "Purposeful retreat, recovery or repeated helper roles before operable delivery.",
+      "Supported input and offset contact across void."
+    ],
+    "changes": [
+      "Official reference reproduction; coordinates and shapes unchanged."
+    ],
+    "spatial": {
+      "boundaries": [
+        [
+          2,
+          11,
+          0
+        ],
+        [
+          12,
+          4,
+          0
+        ],
+        [
+          7,
+          6,
+          0
+        ]
+      ],
+      "voids": [
+        [
+          3,
+          9,
+          0
+        ],
+        [
+          3,
+          10,
+          0
+        ],
+        [
+          3,
+          11,
+          0
+        ]
+      ],
+      "support": "Ordinary official support; overhanging members are not independently supported. All retained members and whole-group removal are observed.",
+      "blocked": [
+        {
+          "group": "M3",
+          "direction": "D",
+          "stance": [
+            3,
+            11,
+            0
+          ],
+          "keyStep": 0,
+          "destinations": [
+            [
+              3,
+              13,
+              0
+            ]
+          ],
+          "reason": "Direct input above target endpoint is void; side tool input must be (4,10) while full tool reaches (3,11)/(4,11)."
+        },
+        {
+          "group": "M0",
+          "direction": "R",
+          "stance": [
+            5,
+            5,
+            0
+          ],
+          "keyStep": 0,
+          "destinations": [
+            [
+              12,
+              4,
+              0
+            ]
+          ],
+          "reason": "Tool contacts both full helper footprints; M2 end (11,4) would enter wall (12,4). Helpers must reconfigure the shared cluster."
+        }
+      ],
+      "reserved": [
+        {
+          "cell": [
+            9,
+            10,
+            0
+          ],
+          "function": "Tool/helper upward recovery input in selected 106 configuration"
+        },
+        {
+          "cell": [
+            9,
+            7,
+            0
+          ],
+          "function": "Tool upward face in selected 149 configuration"
+        },
+        {
+          "cell": [
+            4,
+            10,
+            0
+          ],
+          "function": "Operable side delivery stance, full tool and target must also match"
+        }
+      ]
+    },
+    "events": {
+      "prep": {
+        "kind": "independent-tool"
+      },
+      "contact": {
+        "kind": "contact"
+      },
+      "postWork": {
+        "kind": "all-motion"
+      },
+      "helperDown": {
+        "kind": "move",
+        "group": "M1",
+        "direction": "D"
+      },
+      "helperUp": {
+        "kind": "move",
+        "group": "M1",
+        "direction": "U"
+      },
+      "toolUp": {
+        "kind": "move",
+        "group": "M0",
+        "direction": "U"
+      }
+    },
+    "stages": [
+      {
+        "name": "助手改变共享空间配置",
+        "event": "helperDown",
+        "conflict": "L 助手轮廓与工具争用中部净空",
+        "effect": "改变可用推动面并保留之后的助手恢复"
+      },
+      {
+        "name": "工具回升重取通道",
+        "event": "toolUp",
+        "conflict": "当前工具/助手配置无法直接进入可用交付",
+        "effect": "工具退出已有向下进度，重排后重新取得下一工作空间"
+      },
+      {
+        "name": "可用交付与侧向传力",
+        "event": "contact",
+        "conflict": "空洞禁止直接目标站位",
+        "effect": "全工具、目标和玩家共同达到可操作状态并通过真实侧接触改变目标"
+      }
+    ],
+    "dependencies": [
+      {
+        "prepare": "prep",
+        "before": "contact",
+        "conflict": "初态接触机会不可达，必须独立运输"
+      },
+      {
+        "prepare": "contact",
+        "before": "goal",
+        "conflict": "不存在完整的传力绕过解"
+      },
+      {
+        "prepare": "postWork",
+        "before": "goal",
+        "conflict": "首次接触仍未开放冻结行走目标",
+        "after": "contact"
+      },
+      {
+        "prepare": "helperDown",
+        "before": "contact",
+        "conflict": "助手完整轮廓改变共享区"
+      },
+      {
+        "prepare": "toolUp",
+        "before": "contact",
+        "conflict": "工具必须回升重新取得交付净空"
+      }
+    ],
+    "mechanism": {
+      "kind": "side",
+      "tool": "M0",
+      "target": "M3"
+    },
+    "opposingDirections": [
+      {
+        "group": "M0",
+        "directions": [
+          "U",
+          "D"
+        ],
+        "before": "contact"
+      },
+      {
+        "group": "M1",
+        "directions": [
+          "U",
+          "D"
+        ],
+        "before": "contact"
+      },
+      {
+        "group": "M1",
+        "directions": [
+          "L",
+          "R"
+        ],
+        "before": "contact"
+      },
+      {
+        "group": "M2",
+        "directions": [
+          "L",
+          "R"
+        ],
+        "before": "contact"
+      }
+    ],
+    "reuse": [
+      {
+        "first": "helperDown",
+        "return": "helperUp",
+        "before": "contact",
+        "conflict": "同一助手在共享空间中的南向停放与北向恢复",
+        "progress": "首次可执行真实侧向交付，目标也作为绕过终点；不是首次撤退撤销"
+      }
+    ]
+  },
+  "witness": "DLLLDDRRRRDULLLDLDDDDDDRRRRUURUURURULLLRRDDLUDDDDDLLLULLUUUUUURRRDRDDRRRULRUULDDRDDLDDDLLLLULLUUUUURRRURDDULLLLDDDDDDRRRRUURUURURULLRDDLDDDRUUUURULLLRRDDLUDDDDDLLLULLUUUUURLDDDDDDRRRRUURUUURRUULDDDDDDRDLLLLLLULDDLLLUUUR"
+}

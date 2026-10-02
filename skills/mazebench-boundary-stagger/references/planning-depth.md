@@ -1,5 +1,7 @@
 # Planning beyond one release
 
+默认复杂模式布局前必须读取本文件、[official-case.md](official-case.md) 和 [complex-validation.md](complex-validation.md)，并实际执行新接口。旧示例只是其声明范围的证据。
+
 Use this guidance when the requested room should require thought and several connected operations. A compact mechanism demonstration can have a different scope. These are design heuristics inferred from maps and engine behavior, not statements from the original author or a validated human difficulty scale.
 
 ## Extend the dependency, not the approach

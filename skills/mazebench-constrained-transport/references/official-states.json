@@ -1,0 +1,10252 @@
+{
+  "engine": {
+    "repo": "<MazeBenchEngine checkout>",
+    "commit": "0ac96b8a2648db09f375989cd7bc33699222c1e6",
+    "fingerprints": {
+      "public/maze-engine.js": "c25be363e30186b7435c20361f20542170bdabc9de8c0dad8fa45198e5cab842",
+      "public/maze-solver.js": "be7ecce88b17e2f5cc4894a2fd5c86ba8008cb157406a5728bc8ab110fb3df9d",
+      "server/maze-levels.js": "9b75ab87efdcaee23a91c442d1bdcc7975f545f3a58ec4403c3fce2fd4a341e0",
+      "games/maze/level_parsing.json": "54cb1bc6d2e545a89abe860e2c84e45ed5fd31b244b828b8424d2693d05b780d"
+    }
+  },
+  "initial": {
+    "player": {
+      "i": 0,
+      "type": "player",
+      "group": null,
+      "x": 7,
+      "y": 1,
+      "z": 0,
+      "removed": false
+    },
+    "groups": {
+      "M2": [
+        [
+          10,
+          4,
+          0
+        ],
+        [
+          11,
+          4,
+          0
+        ],
+        [
+          10,
+          5,
+          0
+        ]
+      ],
+      "M0": [
+        [
+          6,
+          5,
+          0
+        ],
+        [
+          7,
+          5,
+          0
+        ]
+      ],
+      "M1": [
+        [
+          8,
+          5,
+          0
+        ],
+        [
+          9,
+          5,
+          0
+        ],
+        [
+          8,
+          6,
+          0
+        ]
+      ],
+      "M3": [
+        [
+          1,
+          12,
+          0
+        ],
+        [
+          2,
+          12,
+          0
+        ],
+        [
+          3,
+          12,
+          0
+        ]
+      ]
+    },
+    "gems": [
+      {
+        "i": 9,
+        "type": "gem",
+        "group": null,
+        "x": 2,
+        "y": 9,
+        "z": 0,
+        "removed": false
+      }
+    ]
+  },
+  "goal": {
+    "kind": "gem"
+  },
+  "witness": "DLLLDDRRRRDULLLDLDDDDDDRRRRUURUURURULLLRRDDLUDDDDDLLLULLUUUUUURRRDRDDRRRULRUULDDRDDLDDDLLLLULLUUUUURRRURDDULLLLDDDDDDRRRRUURUURURULLRDDLDDDRUUUURULLLRRDDLUDDDDDLLLULLUUUUURLDDDDDDRRRRUURUUURRUULDDDDDDRDLLLLLLULDDLLLUUUR",
+  "encoding": "Absolute x,y,z; frozen walkingReachable; every pushProbe is an ordinary move at a reachable stance.",
+  "states": [
+    {
+      "step": 0,
+      "player": [
+        7,
+        1,
+        0
+      ],
+      "groups": {
+        "M2": [
+          [
+            10,
+            4,
+            0
+          ],
+          [
+            11,
+            4,
+            0
+          ],
+          [
+            10,
+            5,
+            0
+          ]
+        ],
+        "M0": [
+          [
+            6,
+            5,
+            0
+          ],
+          [
+            7,
+            5,
+            0
+          ]
+        ],
+        "M1": [
+          [
+            8,
+            5,
+            0
+          ],
+          [
+            9,
+            5,
+            0
+          ],
+          [
+            8,
+            6,
+            0
+          ]
+        ],
+        "M3": [
+          [
+            1,
+            12,
+            0
+          ],
+          [
+            2,
+            12,
+            0
+          ],
+          [
+            3,
+            12,
+            0
+          ]
+        ]
+      },
+      "removedGroups": [],
+      "walkingReachable": [
+        [
+          7,
+          1,
+          0
+        ],
+        [
+          7,
+          2,
+          0
+        ],
+        [
+          6,
+          1,
+          0
+        ],
+        [
+          8,
+          1,
+          0
+        ],
+        [
+          6,
+          2,
+          0
+        ],
+        [
+          8,
+          2,
+          0
+        ],
+        [
+          5,
+          1,
+          0
+        ],
+        [
+          9,
+          1,
+          0
+        ],
+        [
+          5,
+          2,
+          0
+        ],
+        [
+          9,
+          2,
+          0
+        ],
+        [
+          4,
+          1,
+          0
+        ],
+        [
+          10,
+          1,
+          0
+        ],
+        [
+          4,
+          2,
+          0
+        ],
+        [
+          10,
+          2,
+          0
+        ],
+        [
+          11,
+          1,
+          0
+        ],
+        [
+          4,
+          3,
+          0
+        ],
+        [
+          11,
+          2,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          4,
+          4,
+          0
+        ],
+        [
+          12,
+          2,
+          0
+        ],
+        [
+          13,
+          1,
+          0
+        ],
+        [
+          4,
+          5,
+          0
+        ],
+        [
+          5,
+          4,
+          0
+        ],
+        [
+          13,
+          2,
+          0
+        ],
+        [
+          14,
+          1,
+          0
+        ],
+        [
+          4,
+          6,
+          0
+        ],
+        [
+          5,
+          5,
+          0
+        ],
+        [
+          6,
+          4,
+          0
+        ],
+        [
+          13,
+          3,
+          0
+        ],
+        [
+          14,
+          2,
+          0
+        ],
+        [
+          15,
+          1,
+          0
+        ],
+        [
+          4,
+          7,
+          0
+        ],
+        [
+          7,
+          4,
+          0
+        ],
+        [
+          13,
+          4,
+          0
+        ],
+        [
+          14,
+          3,
+          0
+        ],
+        [
+          4,
+          8,
+          0
+        ],
+        [
+          5,
+          7,
+          0
+        ],
+        [
+          8,
+          4,
+          0
+        ],
+        [
+          13,
+          5,
+          0
+        ],
+        [
+          14,
+          4,
+          0
+        ],
+        [
+          4,
+          9,
+          0
+        ],
+        [
+          9,
+          4,
+          0
+        ],
+        [
+          13,
+          6,
+          0
+        ],
+        [
+          14,
+          5,
+          0
+        ],
+        [
+          4,
+          10,
+          0
+        ],
+        [
+          13,
+          7,
+          0
+        ],
+        [
+          14,
+          6,
+          0
+        ],
+        [
+          4,
+          11,
+          0
+        ],
+        [
+          5,
+          10,
+          0
+        ],
+        [
+          13,
+          8,
+          0
+        ],
+        [
+          14,
+          7,
+          0
+        ],
+        [
+          4,
+          12,
+          0
+        ],
+        [
+          5,
+          11,
+          0
+        ],
+        [
+          6,
+          10,
+          0
+        ],
+        [
+          13,
+          9,
+          0
+        ],
+        [
+          14,
+          8,
+          0
+        ],
+        [
+          4,
+          13,
+          0
+        ],
+        [
+          6,
+          11,
+          0
+        ],
+        [
+          13,
+          10,
+          0
+        ],
+        [
+          14,
+          9,
+          0
+        ],
+        [
+          4,
+          14,
+          0
+        ],
+        [
+          3,
+          13,
+          0
+        ],
+        [
+          5,
+          13,
+          0
+        ],
+        [
+          7,
+          11,
+          0
+        ],
+        [
+          13,
+          11,
+          0
+        ],
+        [
+          14,
+          10,
+          0
+        ],
+        [
+          3,
+          14,
+          0
+        ],
+        [
+          5,
+          14,
+          0
+        ],
+        [
+          2,
+          13,
+          0
+        ],
+        [
+          6,
+          13,
+          0
+        ],
+        [
+          8,
+          11,
+          0
+        ],
+        [
+          13,
+          12,
+          0
+        ],
+        [
+          14,
+          11,
+          0
+        ],
+        [
+          2,
+          14,
+          0
+        ],
+        [
+          6,
+          14,
+          0
+        ],
+        [
+          1,
+          13,
+          0
+        ],
+        [
+          7,
+          13,
+          0
+        ],
+        [
+          8,
+          10,
+          0
+        ],
+        [
+          9,
+          11,
+          0
+        ],
+        [
+          13,
+          13,
+          0
+        ],
+        [
+          14,
+          12,
+          0
+        ],
+        [
+          1,
+          14,
+          0
+        ],
+        [
+          7,
+          14,
+          0
+        ],
+        [
+          8,
+          13,
+          0
+        ],
+        [
+          8,
+          9,
+          0
+        ],
+        [
+          9,
+          10,
+          0
+        ],
+        [
+          10,
+          11,
+          0
+        ],
+        [
+          13,
+          14,
+          0
+        ],
+        [
+          12,
+          13,
+          0
+        ],
+        [
+          14,
+          13,
+          0
+        ],
+        [
+          8,
+          14,
+          0
+        ],
+        [
+          9,
+          13,
+          0
+        ],
+        [
+          9,
+          9,
+          0
+        ],
+        [
+          10,
+          10,
+          0
+        ],
+        [
+          11,
+          11,
+          0
+        ],
+        [
+          12,
+          14,
+          0
+        ],
+        [
+          14,
+          14,
+          0
+        ],
+        [
+          11,
+          13,
+          0
+        ],
+        [
+          9,
+          14,
+          0
+        ],
+        [
+          10,
+          13,
+          0
+        ],
+        [
+          9,
+          8,
+          0
+        ],
+        [
+          10,
+          9,
+          0
+        ],
+        [
+          11,
+          10,
+          0
+        ],
+        [
+          11,
+          14,
+          0
+        ],
+        [
+          10,
+          14,
+          0
+        ],
+        [
+          9,
+          7,
+          0
+        ],
+        [
+          10,
+          8,
+          0
+        ],
+        [
+          9,
+          6,
+          0
+        ],
+        [
+          8,
+          7,
+          0
+        ],
+        [
+          10,
+          7,
+          0
+        ],
+        [
+          11,
+          8,
+          0
+        ],
+        [
+          10,
+          6,
+          0
+        ],
+        [
+          7,
+          7,
+          0
+        ],
+        [
+          11,
+          7,
+          0
+        ],
+        [
+          11,
+          6,
+          0
+        ],
+        [
+          7,
+          8,
+          0
+        ],
+        [
+          11,
+          5,
+          0
+        ],
+        [
+          6,
+          8,
+          0
+        ]
+      ],
+      "walkingOnlyGoal": false,
+      "pushProbes": [
+        {
+          "stance": [
+            5,
+            5,
+            0
+          ],
+          "direction": "R",
+          "primary": "M0",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0",
+            "M1",
+            "M2"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M2",
+              "from": [
+                11,
+                4,
+                0
+              ],
+              "destination": [
+                12,
+                4,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            6,
+            4,
+            0
+          ],
+          "direction": "D",
+          "primary": "M0",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M0",
+              "from": [
+                7,
+                5,
+                0
+              ],
+              "destination": [
+                7,
+                6,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            7,
+            4,
+            0
+          ],
+          "direction": "D",
+          "primary": "M0",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M0",
+              "from": [
+                7,
+                5,
+                0
+              ],
+              "destination": [
+                7,
+                6,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            8,
+            4,
+            0
+          ],
+          "direction": "D",
+          "primary": "M1",
+          "engineMoved": true,
+          "moved": [
+            "M1"
+          ],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M1"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            9,
+            4,
+            0
+          ],
+          "direction": "D",
+          "primary": "M1",
+          "engineMoved": true,
+          "moved": [
+            "M1"
+          ],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M1"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            9,
+            4,
+            0
+          ],
+          "direction": "R",
+          "primary": "M2",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M2"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M2",
+              "from": [
+                11,
+                4,
+                0
+              ],
+              "destination": [
+                12,
+                4,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            4,
+            12,
+            0
+          ],
+          "direction": "L",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                1,
+                12,
+                0
+              ],
+              "destination": [
+                0,
+                12,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            3,
+            13,
+            0
+          ],
+          "direction": "U",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                2,
+                12,
+                0
+              ],
+              "destination": [
+                2,
+                11,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            2,
+            13,
+            0
+          ],
+          "direction": "U",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                2,
+                12,
+                0
+              ],
+              "destination": [
+                2,
+                11,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            1,
+            13,
+            0
+          ],
+          "direction": "U",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                2,
+                12,
+                0
+              ],
+              "destination": [
+                2,
+                11,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            9,
+            6,
+            0
+          ],
+          "direction": "U",
+          "primary": "M1",
+          "engineMoved": true,
+          "moved": [
+            "M1"
+          ],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M1"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            9,
+            6,
+            0
+          ],
+          "direction": "L",
+          "primary": "M1",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M1",
+            "M0"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M1",
+              "from": [
+                8,
+                6,
+                0
+              ],
+              "destination": [
+                7,
+                6,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            8,
+            7,
+            0
+          ],
+          "direction": "U",
+          "primary": "M1",
+          "engineMoved": true,
+          "moved": [
+            "M1"
+          ],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M1"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            10,
+            6,
+            0
+          ],
+          "direction": "U",
+          "primary": "M2",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M2"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M2",
+              "from": [
+                10,
+                4,
+                0
+              ],
+              "destination": [
+                10,
+                3,
+                0
+              ]
+            },
+            {
+              "group": "M2",
+              "from": [
+                11,
+                4,
+                0
+              ],
+              "destination": [
+                11,
+                3,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            11,
+            5,
+            0
+          ],
+          "direction": "U",
+          "primary": "M2",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M2"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M2",
+              "from": [
+                10,
+                4,
+                0
+              ],
+              "destination": [
+                10,
+                3,
+                0
+              ]
+            },
+            {
+              "group": "M2",
+              "from": [
+                11,
+                4,
+                0
+              ],
+              "destination": [
+                11,
+                3,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            11,
+            5,
+            0
+          ],
+          "direction": "L",
+          "primary": "M2",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M2",
+            "M1",
+            "M0"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M1",
+              "from": [
+                8,
+                6,
+                0
+              ],
+              "destination": [
+                7,
+                6,
+                0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 45,
+      "player": [
+        9,
+        6,
+        0
+      ],
+      "groups": {
+        "M2": [
+          [
+            7,
+            4,
+            0
+          ],
+          [
+            8,
+            4,
+            0
+          ],
+          [
+            7,
+            5,
+            0
+          ]
+        ],
+        "M0": [
+          [
+            5,
+            5,
+            0
+          ],
+          [
+            6,
+            5,
+            0
+          ]
+        ],
+        "M1": [
+          [
+            8,
+            5,
+            0
+          ],
+          [
+            9,
+            5,
+            0
+          ],
+          [
+            8,
+            6,
+            0
+          ]
+        ],
+        "M3": [
+          [
+            1,
+            12,
+            0
+          ],
+          [
+            2,
+            12,
+            0
+          ],
+          [
+            3,
+            12,
+            0
+          ]
+        ]
+      },
+      "removedGroups": [],
+      "walkingReachable": [
+        [
+          9,
+          6,
+          0
+        ],
+        [
+          9,
+          7,
+          0
+        ],
+        [
+          10,
+          6,
+          0
+        ],
+        [
+          9,
+          8,
+          0
+        ],
+        [
+          8,
+          7,
+          0
+        ],
+        [
+          10,
+          7,
+          0
+        ],
+        [
+          10,
+          5,
+          0
+        ],
+        [
+          11,
+          6,
+          0
+        ],
+        [
+          9,
+          9,
+          0
+        ],
+        [
+          10,
+          8,
+          0
+        ],
+        [
+          7,
+          7,
+          0
+        ],
+        [
+          11,
+          7,
+          0
+        ],
+        [
+          10,
+          4,
+          0
+        ],
+        [
+          11,
+          5,
+          0
+        ],
+        [
+          9,
+          10,
+          0
+        ],
+        [
+          8,
+          9,
+          0
+        ],
+        [
+          10,
+          9,
+          0
+        ],
+        [
+          11,
+          8,
+          0
+        ],
+        [
+          7,
+          8,
+          0
+        ],
+        [
+          9,
+          4,
+          0
+        ],
+        [
+          11,
+          4,
+          0
+        ],
+        [
+          9,
+          11,
+          0
+        ],
+        [
+          8,
+          10,
+          0
+        ],
+        [
+          10,
+          10,
+          0
+        ],
+        [
+          6,
+          8,
+          0
+        ],
+        [
+          8,
+          11,
+          0
+        ],
+        [
+          10,
+          11,
+          0
+        ],
+        [
+          11,
+          10,
+          0
+        ],
+        [
+          7,
+          11,
+          0
+        ],
+        [
+          11,
+          11,
+          0
+        ],
+        [
+          6,
+          11,
+          0
+        ],
+        [
+          6,
+          10,
+          0
+        ],
+        [
+          5,
+          11,
+          0
+        ],
+        [
+          5,
+          10,
+          0
+        ],
+        [
+          4,
+          11,
+          0
+        ],
+        [
+          4,
+          10,
+          0
+        ],
+        [
+          4,
+          12,
+          0
+        ],
+        [
+          4,
+          9,
+          0
+        ],
+        [
+          4,
+          13,
+          0
+        ],
+        [
+          4,
+          8,
+          0
+        ],
+        [
+          4,
+          14,
+          0
+        ],
+        [
+          3,
+          13,
+          0
+        ],
+        [
+          5,
+          13,
+          0
+        ],
+        [
+          4,
+          7,
+          0
+        ],
+        [
+          3,
+          14,
+          0
+        ],
+        [
+          5,
+          14,
+          0
+        ],
+        [
+          2,
+          13,
+          0
+        ],
+        [
+          6,
+          13,
+          0
+        ],
+        [
+          4,
+          6,
+          0
+        ],
+        [
+          5,
+          7,
+          0
+        ],
+        [
+          2,
+          14,
+          0
+        ],
+        [
+          6,
+          14,
+          0
+        ],
+        [
+          1,
+          13,
+          0
+        ],
+        [
+          7,
+          13,
+          0
+        ],
+        [
+          4,
+          5,
+          0
+        ],
+        [
+          1,
+          14,
+          0
+        ],
+        [
+          7,
+          14,
+          0
+        ],
+        [
+          8,
+          13,
+          0
+        ],
+        [
+          4,
+          4,
+          0
+        ],
+        [
+          8,
+          14,
+          0
+        ],
+        [
+          9,
+          13,
+          0
+        ],
+        [
+          4,
+          3,
+          0
+        ],
+        [
+          5,
+          4,
+          0
+        ],
+        [
+          9,
+          14,
+          0
+        ],
+        [
+          10,
+          13,
+          0
+        ],
+        [
+          4,
+          2,
+          0
+        ],
+        [
+          6,
+          4,
+          0
+        ],
+        [
+          10,
+          14,
+          0
+        ],
+        [
+          11,
+          13,
+          0
+        ],
+        [
+          4,
+          1,
+          0
+        ],
+        [
+          5,
+          2,
+          0
+        ],
+        [
+          11,
+          14,
+          0
+        ],
+        [
+          12,
+          13,
+          0
+        ],
+        [
+          5,
+          1,
+          0
+        ],
+        [
+          6,
+          2,
+          0
+        ],
+        [
+          12,
+          14,
+          0
+        ],
+        [
+          13,
+          13,
+          0
+        ],
+        [
+          6,
+          1,
+          0
+        ],
+        [
+          7,
+          2,
+          0
+        ],
+        [
+          13,
+          14,
+          0
+        ],
+        [
+          13,
+          12,
+          0
+        ],
+        [
+          14,
+          13,
+          0
+        ],
+        [
+          7,
+          1,
+          0
+        ],
+        [
+          8,
+          2,
+          0
+        ],
+        [
+          14,
+          14,
+          0
+        ],
+        [
+          13,
+          11,
+          0
+        ],
+        [
+          14,
+          12,
+          0
+        ],
+        [
+          8,
+          1,
+          0
+        ],
+        [
+          9,
+          2,
+          0
+        ],
+        [
+          13,
+          10,
+          0
+        ],
+        [
+          14,
+          11,
+          0
+        ],
+        [
+          9,
+          1,
+          0
+        ],
+        [
+          10,
+          2,
+          0
+        ],
+        [
+          13,
+          9,
+          0
+        ],
+        [
+          14,
+          10,
+          0
+        ],
+        [
+          10,
+          1,
+          0
+        ],
+        [
+          11,
+          2,
+          0
+        ],
+        [
+          13,
+          8,
+          0
+        ],
+        [
+          14,
+          9,
+          0
+        ],
+        [
+          11,
+          1,
+          0
+        ],
+        [
+          12,
+          2,
+          0
+        ],
+        [
+          13,
+          7,
+          0
+        ],
+        [
+          14,
+          8,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          13,
+          2,
+          0
+        ],
+        [
+          13,
+          6,
+          0
+        ],
+        [
+          14,
+          7,
+          0
+        ],
+        [
+          13,
+          1,
+          0
+        ],
+        [
+          13,
+          3,
+          0
+        ],
+        [
+          14,
+          2,
+          0
+        ],
+        [
+          13,
+          5,
+          0
+        ],
+        [
+          14,
+          6,
+          0
+        ],
+        [
+          14,
+          1,
+          0
+        ],
+        [
+          13,
+          4,
+          0
+        ],
+        [
+          14,
+          3,
+          0
+        ],
+        [
+          14,
+          5,
+          0
+        ],
+        [
+          15,
+          1,
+          0
+        ],
+        [
+          14,
+          4,
+          0
+        ]
+      ],
+      "walkingOnlyGoal": false,
+      "pushProbes": [
+        {
+          "stance": [
+            9,
+            6,
+            0
+          ],
+          "direction": "U",
+          "primary": "M1",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M1",
+            "M2"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M2",
+              "from": [
+                7,
+                4,
+                0
+              ],
+              "destination": [
+                7,
+                3,
+                0
+              ]
+            },
+            {
+              "group": "M2",
+              "from": [
+                8,
+                4,
+                0
+              ],
+              "destination": [
+                8,
+                3,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            9,
+            6,
+            0
+          ],
+          "direction": "L",
+          "primary": "M1",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M1",
+            "M2",
+            "M0"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M1",
+              "from": [
+                8,
+                6,
+                0
+              ],
+              "destination": [
+                7,
+                6,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            8,
+            7,
+            0
+          ],
+          "direction": "U",
+          "primary": "M1",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M1",
+            "M2"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M2",
+              "from": [
+                7,
+                4,
+                0
+              ],
+              "destination": [
+                7,
+                3,
+                0
+              ]
+            },
+            {
+              "group": "M2",
+              "from": [
+                8,
+                4,
+                0
+              ],
+              "destination": [
+                8,
+                3,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            10,
+            5,
+            0
+          ],
+          "direction": "L",
+          "primary": "M1",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M1",
+            "M2",
+            "M0"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M1",
+              "from": [
+                8,
+                6,
+                0
+              ],
+              "destination": [
+                7,
+                6,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            9,
+            4,
+            0
+          ],
+          "direction": "D",
+          "primary": "M1",
+          "engineMoved": true,
+          "moved": [
+            "M1"
+          ],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M1"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            9,
+            4,
+            0
+          ],
+          "direction": "L",
+          "primary": "M2",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M0"
+          ],
+          "contacts": [
+            {
+              "from": "M2",
+              "to": "M0",
+              "workingCell": [
+                7,
+                5,
+                0
+              ],
+              "targetCell": [
+                6,
+                5,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M2",
+            "M0"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            4,
+            12,
+            0
+          ],
+          "direction": "L",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                1,
+                12,
+                0
+              ],
+              "destination": [
+                0,
+                12,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            3,
+            13,
+            0
+          ],
+          "direction": "U",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                2,
+                12,
+                0
+              ],
+              "destination": [
+                2,
+                11,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            2,
+            13,
+            0
+          ],
+          "direction": "U",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                2,
+                12,
+                0
+              ],
+              "destination": [
+                2,
+                11,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            1,
+            13,
+            0
+          ],
+          "direction": "U",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                2,
+                12,
+                0
+              ],
+              "destination": [
+                2,
+                11,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            4,
+            5,
+            0
+          ],
+          "direction": "R",
+          "primary": "M0",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M0",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M0",
+              "to": "M2",
+              "workingCell": [
+                6,
+                5,
+                0
+              ],
+              "targetCell": [
+                7,
+                5,
+                0
+              ]
+            },
+            {
+              "from": "M2",
+              "to": "M1",
+              "workingCell": [
+                7,
+                5,
+                0
+              ],
+              "targetCell": [
+                8,
+                5,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M0",
+            "M2",
+            "M1"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            5,
+            4,
+            0
+          ],
+          "direction": "D",
+          "primary": "M0",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M0",
+              "from": [
+                5,
+                5,
+                0
+              ],
+              "destination": [
+                5,
+                6,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            6,
+            4,
+            0
+          ],
+          "direction": "D",
+          "primary": "M0",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M0",
+              "from": [
+                5,
+                5,
+                0
+              ],
+              "destination": [
+                5,
+                6,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            6,
+            4,
+            0
+          ],
+          "direction": "R",
+          "primary": "M2",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M2",
+              "to": "M1",
+              "workingCell": [
+                7,
+                5,
+                0
+              ],
+              "targetCell": [
+                8,
+                5,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M2",
+            "M1"
+          ],
+          "wallDestinations": []
+        }
+      ]
+    },
+    {
+      "step": 106,
+      "player": [
+        8,
+        6,
+        0
+      ],
+      "groups": {
+        "M2": [
+          [
+            10,
+            4,
+            0
+          ],
+          [
+            11,
+            4,
+            0
+          ],
+          [
+            10,
+            5,
+            0
+          ]
+        ],
+        "M0": [
+          [
+            8,
+            7,
+            0
+          ],
+          [
+            9,
+            7,
+            0
+          ]
+        ],
+        "M1": [
+          [
+            9,
+            8,
+            0
+          ],
+          [
+            10,
+            8,
+            0
+          ],
+          [
+            9,
+            9,
+            0
+          ]
+        ],
+        "M3": [
+          [
+            1,
+            12,
+            0
+          ],
+          [
+            2,
+            12,
+            0
+          ],
+          [
+            3,
+            12,
+            0
+          ]
+        ]
+      },
+      "removedGroups": [],
+      "walkingReachable": [
+        [
+          8,
+          6,
+          0
+        ],
+        [
+          8,
+          5,
+          0
+        ],
+        [
+          9,
+          6,
+          0
+        ],
+        [
+          8,
+          4,
+          0
+        ],
+        [
+          7,
+          5,
+          0
+        ],
+        [
+          9,
+          5,
+          0
+        ],
+        [
+          10,
+          6,
+          0
+        ],
+        [
+          7,
+          4,
+          0
+        ],
+        [
+          9,
+          4,
+          0
+        ],
+        [
+          6,
+          5,
+          0
+        ],
+        [
+          10,
+          7,
+          0
+        ],
+        [
+          11,
+          6,
+          0
+        ],
+        [
+          6,
+          4,
+          0
+        ],
+        [
+          6,
+          6,
+          0
+        ],
+        [
+          5,
+          5,
+          0
+        ],
+        [
+          11,
+          7,
+          0
+        ],
+        [
+          11,
+          5,
+          0
+        ],
+        [
+          5,
+          4,
+          0
+        ],
+        [
+          4,
+          5,
+          0
+        ],
+        [
+          11,
+          8,
+          0
+        ],
+        [
+          4,
+          4,
+          0
+        ],
+        [
+          4,
+          6,
+          0
+        ],
+        [
+          4,
+          3,
+          0
+        ],
+        [
+          4,
+          7,
+          0
+        ],
+        [
+          4,
+          2,
+          0
+        ],
+        [
+          4,
+          8,
+          0
+        ],
+        [
+          5,
+          7,
+          0
+        ],
+        [
+          4,
+          1,
+          0
+        ],
+        [
+          5,
+          2,
+          0
+        ],
+        [
+          4,
+          9,
+          0
+        ],
+        [
+          5,
+          1,
+          0
+        ],
+        [
+          6,
+          2,
+          0
+        ],
+        [
+          4,
+          10,
+          0
+        ],
+        [
+          6,
+          1,
+          0
+        ],
+        [
+          7,
+          2,
+          0
+        ],
+        [
+          4,
+          11,
+          0
+        ],
+        [
+          5,
+          10,
+          0
+        ],
+        [
+          7,
+          1,
+          0
+        ],
+        [
+          8,
+          2,
+          0
+        ],
+        [
+          4,
+          12,
+          0
+        ],
+        [
+          5,
+          11,
+          0
+        ],
+        [
+          6,
+          10,
+          0
+        ],
+        [
+          8,
+          1,
+          0
+        ],
+        [
+          9,
+          2,
+          0
+        ],
+        [
+          4,
+          13,
+          0
+        ],
+        [
+          6,
+          11,
+          0
+        ],
+        [
+          9,
+          1,
+          0
+        ],
+        [
+          10,
+          2,
+          0
+        ],
+        [
+          4,
+          14,
+          0
+        ],
+        [
+          3,
+          13,
+          0
+        ],
+        [
+          5,
+          13,
+          0
+        ],
+        [
+          7,
+          11,
+          0
+        ],
+        [
+          10,
+          1,
+          0
+        ],
+        [
+          11,
+          2,
+          0
+        ],
+        [
+          3,
+          14,
+          0
+        ],
+        [
+          5,
+          14,
+          0
+        ],
+        [
+          2,
+          13,
+          0
+        ],
+        [
+          6,
+          13,
+          0
+        ],
+        [
+          8,
+          11,
+          0
+        ],
+        [
+          11,
+          1,
+          0
+        ],
+        [
+          12,
+          2,
+          0
+        ],
+        [
+          2,
+          14,
+          0
+        ],
+        [
+          6,
+          14,
+          0
+        ],
+        [
+          1,
+          13,
+          0
+        ],
+        [
+          7,
+          13,
+          0
+        ],
+        [
+          8,
+          10,
+          0
+        ],
+        [
+          9,
+          11,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          13,
+          2,
+          0
+        ],
+        [
+          1,
+          14,
+          0
+        ],
+        [
+          7,
+          14,
+          0
+        ],
+        [
+          8,
+          13,
+          0
+        ],
+        [
+          8,
+          9,
+          0
+        ],
+        [
+          9,
+          10,
+          0
+        ],
+        [
+          10,
+          11,
+          0
+        ],
+        [
+          13,
+          1,
+          0
+        ],
+        [
+          13,
+          3,
+          0
+        ],
+        [
+          14,
+          2,
+          0
+        ],
+        [
+          8,
+          14,
+          0
+        ],
+        [
+          9,
+          13,
+          0
+        ],
+        [
+          10,
+          10,
+          0
+        ],
+        [
+          11,
+          11,
+          0
+        ],
+        [
+          14,
+          1,
+          0
+        ],
+        [
+          13,
+          4,
+          0
+        ],
+        [
+          14,
+          3,
+          0
+        ],
+        [
+          9,
+          14,
+          0
+        ],
+        [
+          10,
+          13,
+          0
+        ],
+        [
+          10,
+          9,
+          0
+        ],
+        [
+          11,
+          10,
+          0
+        ],
+        [
+          15,
+          1,
+          0
+        ],
+        [
+          13,
+          5,
+          0
+        ],
+        [
+          14,
+          4,
+          0
+        ],
+        [
+          10,
+          14,
+          0
+        ],
+        [
+          11,
+          13,
+          0
+        ],
+        [
+          13,
+          6,
+          0
+        ],
+        [
+          14,
+          5,
+          0
+        ],
+        [
+          11,
+          14,
+          0
+        ],
+        [
+          12,
+          13,
+          0
+        ],
+        [
+          13,
+          7,
+          0
+        ],
+        [
+          14,
+          6,
+          0
+        ],
+        [
+          12,
+          14,
+          0
+        ],
+        [
+          13,
+          13,
+          0
+        ],
+        [
+          13,
+          8,
+          0
+        ],
+        [
+          14,
+          7,
+          0
+        ],
+        [
+          13,
+          14,
+          0
+        ],
+        [
+          13,
+          12,
+          0
+        ],
+        [
+          14,
+          13,
+          0
+        ],
+        [
+          13,
+          9,
+          0
+        ],
+        [
+          14,
+          8,
+          0
+        ],
+        [
+          14,
+          14,
+          0
+        ],
+        [
+          13,
+          11,
+          0
+        ],
+        [
+          14,
+          12,
+          0
+        ],
+        [
+          13,
+          10,
+          0
+        ],
+        [
+          14,
+          9,
+          0
+        ],
+        [
+          14,
+          11,
+          0
+        ],
+        [
+          14,
+          10,
+          0
+        ]
+      ],
+      "walkingOnlyGoal": false,
+      "pushProbes": [
+        {
+          "stance": [
+            8,
+            6,
+            0
+          ],
+          "direction": "D",
+          "primary": "M0",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0",
+            "M1"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M0",
+              "from": [
+                8,
+                7,
+                0
+              ],
+              "destination": [
+                8,
+                8,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            9,
+            6,
+            0
+          ],
+          "direction": "D",
+          "primary": "M0",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0",
+            "M1"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M0",
+              "from": [
+                8,
+                7,
+                0
+              ],
+              "destination": [
+                8,
+                8,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            9,
+            5,
+            0
+          ],
+          "direction": "R",
+          "primary": "M2",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M2"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M2",
+              "from": [
+                11,
+                4,
+                0
+              ],
+              "destination": [
+                12,
+                4,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            10,
+            6,
+            0
+          ],
+          "direction": "U",
+          "primary": "M2",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M2"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M2",
+              "from": [
+                10,
+                4,
+                0
+              ],
+              "destination": [
+                10,
+                3,
+                0
+              ]
+            },
+            {
+              "group": "M2",
+              "from": [
+                11,
+                4,
+                0
+              ],
+              "destination": [
+                11,
+                3,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            9,
+            4,
+            0
+          ],
+          "direction": "R",
+          "primary": "M2",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M2"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M2",
+              "from": [
+                11,
+                4,
+                0
+              ],
+              "destination": [
+                12,
+                4,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            10,
+            7,
+            0
+          ],
+          "direction": "D",
+          "primary": "M1",
+          "engineMoved": true,
+          "moved": [
+            "M1"
+          ],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M1"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            10,
+            7,
+            0
+          ],
+          "direction": "L",
+          "primary": "M0",
+          "engineMoved": true,
+          "moved": [
+            "M0"
+          ],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            11,
+            5,
+            0
+          ],
+          "direction": "U",
+          "primary": "M2",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M2"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M2",
+              "from": [
+                10,
+                4,
+                0
+              ],
+              "destination": [
+                10,
+                3,
+                0
+              ]
+            },
+            {
+              "group": "M2",
+              "from": [
+                11,
+                4,
+                0
+              ],
+              "destination": [
+                11,
+                3,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            11,
+            5,
+            0
+          ],
+          "direction": "L",
+          "primary": "M2",
+          "engineMoved": true,
+          "moved": [
+            "M2"
+          ],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M2"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            11,
+            8,
+            0
+          ],
+          "direction": "L",
+          "primary": "M1",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M1"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M1",
+              "from": [
+                9,
+                8,
+                0
+              ],
+              "destination": [
+                8,
+                8,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            4,
+            12,
+            0
+          ],
+          "direction": "L",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                1,
+                12,
+                0
+              ],
+              "destination": [
+                0,
+                12,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            3,
+            13,
+            0
+          ],
+          "direction": "U",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                2,
+                12,
+                0
+              ],
+              "destination": [
+                2,
+                11,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            2,
+            13,
+            0
+          ],
+          "direction": "U",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                2,
+                12,
+                0
+              ],
+              "destination": [
+                2,
+                11,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            1,
+            13,
+            0
+          ],
+          "direction": "U",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                2,
+                12,
+                0
+              ],
+              "destination": [
+                2,
+                11,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            8,
+            9,
+            0
+          ],
+          "direction": "R",
+          "primary": "M1",
+          "engineMoved": true,
+          "moved": [
+            "M1"
+          ],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M1"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            9,
+            10,
+            0
+          ],
+          "direction": "U",
+          "primary": "M1",
+          "engineMoved": true,
+          "moved": [
+            "M0",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M1",
+              "to": "M0",
+              "workingCell": [
+                9,
+                8,
+                0
+              ],
+              "targetCell": [
+                9,
+                7,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M1",
+            "M0"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            10,
+            9,
+            0
+          ],
+          "direction": "U",
+          "primary": "M1",
+          "engineMoved": true,
+          "moved": [
+            "M0",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M1",
+              "to": "M0",
+              "workingCell": [
+                9,
+                8,
+                0
+              ],
+              "targetCell": [
+                9,
+                7,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M1",
+            "M0"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            10,
+            9,
+            0
+          ],
+          "direction": "L",
+          "primary": "M1",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M1"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M1",
+              "from": [
+                9,
+                8,
+                0
+              ],
+              "destination": [
+                8,
+                8,
+                0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 149,
+      "player": [
+        8,
+        5,
+        0
+      ],
+      "groups": {
+        "M2": [
+          [
+            5,
+            4,
+            0
+          ],
+          [
+            6,
+            4,
+            0
+          ],
+          [
+            5,
+            5,
+            0
+          ]
+        ],
+        "M0": [
+          [
+            8,
+            6,
+            0
+          ],
+          [
+            9,
+            6,
+            0
+          ]
+        ],
+        "M1": [
+          [
+            7,
+            4,
+            0
+          ],
+          [
+            8,
+            4,
+            0
+          ],
+          [
+            7,
+            5,
+            0
+          ]
+        ],
+        "M3": [
+          [
+            1,
+            12,
+            0
+          ],
+          [
+            2,
+            12,
+            0
+          ],
+          [
+            3,
+            12,
+            0
+          ]
+        ]
+      },
+      "removedGroups": [],
+      "walkingReachable": [
+        [
+          8,
+          5,
+          0
+        ],
+        [
+          9,
+          5,
+          0
+        ],
+        [
+          9,
+          4,
+          0
+        ],
+        [
+          10,
+          5,
+          0
+        ],
+        [
+          10,
+          4,
+          0
+        ],
+        [
+          10,
+          6,
+          0
+        ],
+        [
+          11,
+          5,
+          0
+        ],
+        [
+          11,
+          4,
+          0
+        ],
+        [
+          10,
+          7,
+          0
+        ],
+        [
+          11,
+          6,
+          0
+        ],
+        [
+          10,
+          8,
+          0
+        ],
+        [
+          9,
+          7,
+          0
+        ],
+        [
+          11,
+          7,
+          0
+        ],
+        [
+          10,
+          9,
+          0
+        ],
+        [
+          9,
+          8,
+          0
+        ],
+        [
+          11,
+          8,
+          0
+        ],
+        [
+          8,
+          7,
+          0
+        ],
+        [
+          10,
+          10,
+          0
+        ],
+        [
+          9,
+          9,
+          0
+        ],
+        [
+          7,
+          7,
+          0
+        ],
+        [
+          10,
+          11,
+          0
+        ],
+        [
+          9,
+          10,
+          0
+        ],
+        [
+          11,
+          10,
+          0
+        ],
+        [
+          8,
+          9,
+          0
+        ],
+        [
+          7,
+          8,
+          0
+        ],
+        [
+          9,
+          11,
+          0
+        ],
+        [
+          11,
+          11,
+          0
+        ],
+        [
+          8,
+          10,
+          0
+        ],
+        [
+          6,
+          8,
+          0
+        ],
+        [
+          8,
+          11,
+          0
+        ],
+        [
+          7,
+          11,
+          0
+        ],
+        [
+          6,
+          11,
+          0
+        ],
+        [
+          6,
+          10,
+          0
+        ],
+        [
+          5,
+          11,
+          0
+        ],
+        [
+          5,
+          10,
+          0
+        ],
+        [
+          4,
+          11,
+          0
+        ],
+        [
+          4,
+          10,
+          0
+        ],
+        [
+          4,
+          12,
+          0
+        ],
+        [
+          4,
+          9,
+          0
+        ],
+        [
+          4,
+          13,
+          0
+        ],
+        [
+          4,
+          8,
+          0
+        ],
+        [
+          4,
+          14,
+          0
+        ],
+        [
+          3,
+          13,
+          0
+        ],
+        [
+          5,
+          13,
+          0
+        ],
+        [
+          4,
+          7,
+          0
+        ],
+        [
+          3,
+          14,
+          0
+        ],
+        [
+          5,
+          14,
+          0
+        ],
+        [
+          2,
+          13,
+          0
+        ],
+        [
+          6,
+          13,
+          0
+        ],
+        [
+          4,
+          6,
+          0
+        ],
+        [
+          5,
+          7,
+          0
+        ],
+        [
+          2,
+          14,
+          0
+        ],
+        [
+          6,
+          14,
+          0
+        ],
+        [
+          1,
+          13,
+          0
+        ],
+        [
+          7,
+          13,
+          0
+        ],
+        [
+          4,
+          5,
+          0
+        ],
+        [
+          1,
+          14,
+          0
+        ],
+        [
+          7,
+          14,
+          0
+        ],
+        [
+          8,
+          13,
+          0
+        ],
+        [
+          4,
+          4,
+          0
+        ],
+        [
+          8,
+          14,
+          0
+        ],
+        [
+          9,
+          13,
+          0
+        ],
+        [
+          4,
+          3,
+          0
+        ],
+        [
+          9,
+          14,
+          0
+        ],
+        [
+          10,
+          13,
+          0
+        ],
+        [
+          4,
+          2,
+          0
+        ],
+        [
+          10,
+          14,
+          0
+        ],
+        [
+          11,
+          13,
+          0
+        ],
+        [
+          4,
+          1,
+          0
+        ],
+        [
+          5,
+          2,
+          0
+        ],
+        [
+          11,
+          14,
+          0
+        ],
+        [
+          12,
+          13,
+          0
+        ],
+        [
+          5,
+          1,
+          0
+        ],
+        [
+          6,
+          2,
+          0
+        ],
+        [
+          12,
+          14,
+          0
+        ],
+        [
+          13,
+          13,
+          0
+        ],
+        [
+          6,
+          1,
+          0
+        ],
+        [
+          7,
+          2,
+          0
+        ],
+        [
+          13,
+          14,
+          0
+        ],
+        [
+          13,
+          12,
+          0
+        ],
+        [
+          14,
+          13,
+          0
+        ],
+        [
+          7,
+          1,
+          0
+        ],
+        [
+          8,
+          2,
+          0
+        ],
+        [
+          14,
+          14,
+          0
+        ],
+        [
+          13,
+          11,
+          0
+        ],
+        [
+          14,
+          12,
+          0
+        ],
+        [
+          8,
+          1,
+          0
+        ],
+        [
+          9,
+          2,
+          0
+        ],
+        [
+          13,
+          10,
+          0
+        ],
+        [
+          14,
+          11,
+          0
+        ],
+        [
+          9,
+          1,
+          0
+        ],
+        [
+          10,
+          2,
+          0
+        ],
+        [
+          13,
+          9,
+          0
+        ],
+        [
+          14,
+          10,
+          0
+        ],
+        [
+          10,
+          1,
+          0
+        ],
+        [
+          11,
+          2,
+          0
+        ],
+        [
+          13,
+          8,
+          0
+        ],
+        [
+          14,
+          9,
+          0
+        ],
+        [
+          11,
+          1,
+          0
+        ],
+        [
+          12,
+          2,
+          0
+        ],
+        [
+          13,
+          7,
+          0
+        ],
+        [
+          14,
+          8,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          13,
+          2,
+          0
+        ],
+        [
+          13,
+          6,
+          0
+        ],
+        [
+          14,
+          7,
+          0
+        ],
+        [
+          13,
+          1,
+          0
+        ],
+        [
+          13,
+          3,
+          0
+        ],
+        [
+          14,
+          2,
+          0
+        ],
+        [
+          13,
+          5,
+          0
+        ],
+        [
+          14,
+          6,
+          0
+        ],
+        [
+          14,
+          1,
+          0
+        ],
+        [
+          13,
+          4,
+          0
+        ],
+        [
+          14,
+          3,
+          0
+        ],
+        [
+          14,
+          5,
+          0
+        ],
+        [
+          15,
+          1,
+          0
+        ],
+        [
+          14,
+          4,
+          0
+        ]
+      ],
+      "walkingOnlyGoal": false,
+      "pushProbes": [
+        {
+          "stance": [
+            8,
+            5,
+            0
+          ],
+          "direction": "U",
+          "primary": "M1",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M1"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M1",
+              "from": [
+                7,
+                4,
+                0
+              ],
+              "destination": [
+                7,
+                3,
+                0
+              ]
+            },
+            {
+              "group": "M1",
+              "from": [
+                8,
+                4,
+                0
+              ],
+              "destination": [
+                8,
+                3,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            8,
+            5,
+            0
+          ],
+          "direction": "D",
+          "primary": "M0",
+          "engineMoved": true,
+          "moved": [
+            "M0"
+          ],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            8,
+            5,
+            0
+          ],
+          "direction": "L",
+          "primary": "M1",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M1",
+              "to": "M2",
+              "workingCell": [
+                7,
+                4,
+                0
+              ],
+              "targetCell": [
+                6,
+                4,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M1",
+            "M2"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            9,
+            5,
+            0
+          ],
+          "direction": "D",
+          "primary": "M0",
+          "engineMoved": true,
+          "moved": [
+            "M0"
+          ],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            9,
+            4,
+            0
+          ],
+          "direction": "L",
+          "primary": "M1",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M1",
+              "to": "M2",
+              "workingCell": [
+                7,
+                4,
+                0
+              ],
+              "targetCell": [
+                6,
+                4,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M1",
+            "M2"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            10,
+            6,
+            0
+          ],
+          "direction": "L",
+          "primary": "M0",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M0",
+              "from": [
+                8,
+                6,
+                0
+              ],
+              "destination": [
+                7,
+                6,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            9,
+            7,
+            0
+          ],
+          "direction": "U",
+          "primary": "M0",
+          "engineMoved": true,
+          "moved": [
+            "M0"
+          ],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            8,
+            7,
+            0
+          ],
+          "direction": "U",
+          "primary": "M0",
+          "engineMoved": true,
+          "moved": [
+            "M0"
+          ],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            4,
+            12,
+            0
+          ],
+          "direction": "L",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                1,
+                12,
+                0
+              ],
+              "destination": [
+                0,
+                12,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            3,
+            13,
+            0
+          ],
+          "direction": "U",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                2,
+                12,
+                0
+              ],
+              "destination": [
+                2,
+                11,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            2,
+            13,
+            0
+          ],
+          "direction": "U",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                2,
+                12,
+                0
+              ],
+              "destination": [
+                2,
+                11,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            1,
+            13,
+            0
+          ],
+          "direction": "U",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                2,
+                12,
+                0
+              ],
+              "destination": [
+                2,
+                11,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            4,
+            5,
+            0
+          ],
+          "direction": "R",
+          "primary": "M2",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M2",
+              "to": "M1",
+              "workingCell": [
+                6,
+                4,
+                0
+              ],
+              "targetCell": [
+                7,
+                4,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M2",
+            "M1"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            4,
+            4,
+            0
+          ],
+          "direction": "R",
+          "primary": "M2",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M2",
+              "to": "M1",
+              "workingCell": [
+                6,
+                4,
+                0
+              ],
+              "targetCell": [
+                7,
+                4,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M2",
+            "M1"
+          ],
+          "wallDestinations": []
+        }
+      ]
+    },
+    {
+      "step": 172,
+      "player": [
+        5,
+        5,
+        0
+      ],
+      "groups": {
+        "M2": [
+          [
+            6,
+            4,
+            0
+          ],
+          [
+            7,
+            4,
+            0
+          ],
+          [
+            6,
+            5,
+            0
+          ]
+        ],
+        "M0": [
+          [
+            9,
+            5,
+            0
+          ],
+          [
+            10,
+            5,
+            0
+          ]
+        ],
+        "M1": [
+          [
+            8,
+            4,
+            0
+          ],
+          [
+            9,
+            4,
+            0
+          ],
+          [
+            8,
+            5,
+            0
+          ]
+        ],
+        "M3": [
+          [
+            1,
+            12,
+            0
+          ],
+          [
+            2,
+            12,
+            0
+          ],
+          [
+            3,
+            12,
+            0
+          ]
+        ]
+      },
+      "removedGroups": [],
+      "walkingReachable": [
+        [
+          5,
+          5,
+          0
+        ],
+        [
+          5,
+          4,
+          0
+        ],
+        [
+          4,
+          5,
+          0
+        ],
+        [
+          4,
+          4,
+          0
+        ],
+        [
+          4,
+          6,
+          0
+        ],
+        [
+          4,
+          3,
+          0
+        ],
+        [
+          4,
+          7,
+          0
+        ],
+        [
+          4,
+          2,
+          0
+        ],
+        [
+          4,
+          8,
+          0
+        ],
+        [
+          5,
+          7,
+          0
+        ],
+        [
+          4,
+          1,
+          0
+        ],
+        [
+          5,
+          2,
+          0
+        ],
+        [
+          4,
+          9,
+          0
+        ],
+        [
+          5,
+          1,
+          0
+        ],
+        [
+          6,
+          2,
+          0
+        ],
+        [
+          4,
+          10,
+          0
+        ],
+        [
+          6,
+          1,
+          0
+        ],
+        [
+          7,
+          2,
+          0
+        ],
+        [
+          4,
+          11,
+          0
+        ],
+        [
+          5,
+          10,
+          0
+        ],
+        [
+          7,
+          1,
+          0
+        ],
+        [
+          8,
+          2,
+          0
+        ],
+        [
+          4,
+          12,
+          0
+        ],
+        [
+          5,
+          11,
+          0
+        ],
+        [
+          6,
+          10,
+          0
+        ],
+        [
+          8,
+          1,
+          0
+        ],
+        [
+          9,
+          2,
+          0
+        ],
+        [
+          4,
+          13,
+          0
+        ],
+        [
+          6,
+          11,
+          0
+        ],
+        [
+          9,
+          1,
+          0
+        ],
+        [
+          10,
+          2,
+          0
+        ],
+        [
+          4,
+          14,
+          0
+        ],
+        [
+          3,
+          13,
+          0
+        ],
+        [
+          5,
+          13,
+          0
+        ],
+        [
+          7,
+          11,
+          0
+        ],
+        [
+          10,
+          1,
+          0
+        ],
+        [
+          11,
+          2,
+          0
+        ],
+        [
+          3,
+          14,
+          0
+        ],
+        [
+          5,
+          14,
+          0
+        ],
+        [
+          2,
+          13,
+          0
+        ],
+        [
+          6,
+          13,
+          0
+        ],
+        [
+          8,
+          11,
+          0
+        ],
+        [
+          11,
+          1,
+          0
+        ],
+        [
+          12,
+          2,
+          0
+        ],
+        [
+          2,
+          14,
+          0
+        ],
+        [
+          6,
+          14,
+          0
+        ],
+        [
+          1,
+          13,
+          0
+        ],
+        [
+          7,
+          13,
+          0
+        ],
+        [
+          8,
+          10,
+          0
+        ],
+        [
+          9,
+          11,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          13,
+          2,
+          0
+        ],
+        [
+          1,
+          14,
+          0
+        ],
+        [
+          7,
+          14,
+          0
+        ],
+        [
+          8,
+          13,
+          0
+        ],
+        [
+          8,
+          9,
+          0
+        ],
+        [
+          9,
+          10,
+          0
+        ],
+        [
+          10,
+          11,
+          0
+        ],
+        [
+          13,
+          1,
+          0
+        ],
+        [
+          13,
+          3,
+          0
+        ],
+        [
+          14,
+          2,
+          0
+        ],
+        [
+          8,
+          14,
+          0
+        ],
+        [
+          9,
+          13,
+          0
+        ],
+        [
+          9,
+          9,
+          0
+        ],
+        [
+          10,
+          10,
+          0
+        ],
+        [
+          11,
+          11,
+          0
+        ],
+        [
+          14,
+          1,
+          0
+        ],
+        [
+          13,
+          4,
+          0
+        ],
+        [
+          14,
+          3,
+          0
+        ],
+        [
+          9,
+          14,
+          0
+        ],
+        [
+          10,
+          13,
+          0
+        ],
+        [
+          9,
+          8,
+          0
+        ],
+        [
+          10,
+          9,
+          0
+        ],
+        [
+          11,
+          10,
+          0
+        ],
+        [
+          15,
+          1,
+          0
+        ],
+        [
+          13,
+          5,
+          0
+        ],
+        [
+          14,
+          4,
+          0
+        ],
+        [
+          10,
+          14,
+          0
+        ],
+        [
+          11,
+          13,
+          0
+        ],
+        [
+          9,
+          7,
+          0
+        ],
+        [
+          10,
+          8,
+          0
+        ],
+        [
+          13,
+          6,
+          0
+        ],
+        [
+          14,
+          5,
+          0
+        ],
+        [
+          11,
+          14,
+          0
+        ],
+        [
+          12,
+          13,
+          0
+        ],
+        [
+          9,
+          6,
+          0
+        ],
+        [
+          8,
+          7,
+          0
+        ],
+        [
+          10,
+          7,
+          0
+        ],
+        [
+          11,
+          8,
+          0
+        ],
+        [
+          13,
+          7,
+          0
+        ],
+        [
+          14,
+          6,
+          0
+        ],
+        [
+          12,
+          14,
+          0
+        ],
+        [
+          13,
+          13,
+          0
+        ],
+        [
+          8,
+          6,
+          0
+        ],
+        [
+          10,
+          6,
+          0
+        ],
+        [
+          7,
+          7,
+          0
+        ],
+        [
+          11,
+          7,
+          0
+        ],
+        [
+          13,
+          8,
+          0
+        ],
+        [
+          14,
+          7,
+          0
+        ],
+        [
+          13,
+          14,
+          0
+        ],
+        [
+          13,
+          12,
+          0
+        ],
+        [
+          14,
+          13,
+          0
+        ],
+        [
+          11,
+          6,
+          0
+        ],
+        [
+          7,
+          8,
+          0
+        ],
+        [
+          13,
+          9,
+          0
+        ],
+        [
+          14,
+          8,
+          0
+        ],
+        [
+          14,
+          14,
+          0
+        ],
+        [
+          13,
+          11,
+          0
+        ],
+        [
+          14,
+          12,
+          0
+        ],
+        [
+          11,
+          5,
+          0
+        ],
+        [
+          6,
+          8,
+          0
+        ],
+        [
+          13,
+          10,
+          0
+        ],
+        [
+          14,
+          9,
+          0
+        ],
+        [
+          14,
+          11,
+          0
+        ],
+        [
+          11,
+          4,
+          0
+        ],
+        [
+          14,
+          10,
+          0
+        ],
+        [
+          10,
+          4,
+          0
+        ]
+      ],
+      "walkingOnlyGoal": false,
+      "pushProbes": [
+        {
+          "stance": [
+            5,
+            5,
+            0
+          ],
+          "direction": "R",
+          "primary": "M2",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M0",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M2",
+              "to": "M1",
+              "workingCell": [
+                7,
+                4,
+                0
+              ],
+              "targetCell": [
+                8,
+                4,
+                0
+              ]
+            },
+            {
+              "from": "M1",
+              "to": "M0",
+              "workingCell": [
+                8,
+                5,
+                0
+              ],
+              "targetCell": [
+                9,
+                5,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M2",
+            "M1",
+            "M0"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            5,
+            4,
+            0
+          ],
+          "direction": "R",
+          "primary": "M2",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M0",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M2",
+              "to": "M1",
+              "workingCell": [
+                7,
+                4,
+                0
+              ],
+              "targetCell": [
+                8,
+                4,
+                0
+              ]
+            },
+            {
+              "from": "M1",
+              "to": "M0",
+              "workingCell": [
+                8,
+                5,
+                0
+              ],
+              "targetCell": [
+                9,
+                5,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M2",
+            "M1",
+            "M0"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            4,
+            12,
+            0
+          ],
+          "direction": "L",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                1,
+                12,
+                0
+              ],
+              "destination": [
+                0,
+                12,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            3,
+            13,
+            0
+          ],
+          "direction": "U",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                2,
+                12,
+                0
+              ],
+              "destination": [
+                2,
+                11,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            2,
+            13,
+            0
+          ],
+          "direction": "U",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                2,
+                12,
+                0
+              ],
+              "destination": [
+                2,
+                11,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            1,
+            13,
+            0
+          ],
+          "direction": "U",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                2,
+                12,
+                0
+              ],
+              "destination": [
+                2,
+                11,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            9,
+            6,
+            0
+          ],
+          "direction": "U",
+          "primary": "M0",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0",
+            "M1"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M1",
+              "from": [
+                8,
+                4,
+                0
+              ],
+              "destination": [
+                8,
+                3,
+                0
+              ]
+            },
+            {
+              "group": "M1",
+              "from": [
+                9,
+                4,
+                0
+              ],
+              "destination": [
+                9,
+                3,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            8,
+            6,
+            0
+          ],
+          "direction": "U",
+          "primary": "M1",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M1"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M1",
+              "from": [
+                8,
+                4,
+                0
+              ],
+              "destination": [
+                8,
+                3,
+                0
+              ]
+            },
+            {
+              "group": "M1",
+              "from": [
+                9,
+                4,
+                0
+              ],
+              "destination": [
+                9,
+                3,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            10,
+            6,
+            0
+          ],
+          "direction": "U",
+          "primary": "M0",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0",
+            "M1"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M1",
+              "from": [
+                8,
+                4,
+                0
+              ],
+              "destination": [
+                8,
+                3,
+                0
+              ]
+            },
+            {
+              "group": "M1",
+              "from": [
+                9,
+                4,
+                0
+              ],
+              "destination": [
+                9,
+                3,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            11,
+            5,
+            0
+          ],
+          "direction": "L",
+          "primary": "M0",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M0",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M0",
+              "to": "M1",
+              "workingCell": [
+                9,
+                5,
+                0
+              ],
+              "targetCell": [
+                8,
+                5,
+                0
+              ]
+            },
+            {
+              "from": "M1",
+              "to": "M2",
+              "workingCell": [
+                8,
+                4,
+                0
+              ],
+              "targetCell": [
+                7,
+                4,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M0",
+            "M1",
+            "M2"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            10,
+            4,
+            0
+          ],
+          "direction": "D",
+          "primary": "M0",
+          "engineMoved": true,
+          "moved": [
+            "M0"
+          ],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            10,
+            4,
+            0
+          ],
+          "direction": "L",
+          "primary": "M1",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M1",
+              "to": "M2",
+              "workingCell": [
+                8,
+                4,
+                0
+              ],
+              "targetCell": [
+                7,
+                4,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M1",
+            "M2"
+          ],
+          "wallDestinations": []
+        }
+      ]
+    },
+    {
+      "step": 208,
+      "player": [
+        5,
+        11,
+        0
+      ],
+      "groups": {
+        "M2": [
+          [
+            6,
+            4,
+            0
+          ],
+          [
+            7,
+            4,
+            0
+          ],
+          [
+            6,
+            5,
+            0
+          ]
+        ],
+        "M0": [
+          [
+            3,
+            11,
+            0
+          ],
+          [
+            4,
+            11,
+            0
+          ]
+        ],
+        "M1": [
+          [
+            8,
+            4,
+            0
+          ],
+          [
+            9,
+            4,
+            0
+          ],
+          [
+            8,
+            5,
+            0
+          ]
+        ],
+        "M3": [
+          [
+            1,
+            12,
+            0
+          ],
+          [
+            2,
+            12,
+            0
+          ],
+          [
+            3,
+            12,
+            0
+          ]
+        ]
+      },
+      "removedGroups": [],
+      "walkingReachable": [
+        [
+          5,
+          11,
+          0
+        ],
+        [
+          5,
+          10,
+          0
+        ],
+        [
+          6,
+          11,
+          0
+        ],
+        [
+          4,
+          10,
+          0
+        ],
+        [
+          6,
+          10,
+          0
+        ],
+        [
+          7,
+          11,
+          0
+        ],
+        [
+          4,
+          9,
+          0
+        ],
+        [
+          8,
+          11,
+          0
+        ],
+        [
+          4,
+          8,
+          0
+        ],
+        [
+          8,
+          10,
+          0
+        ],
+        [
+          9,
+          11,
+          0
+        ],
+        [
+          4,
+          7,
+          0
+        ],
+        [
+          8,
+          9,
+          0
+        ],
+        [
+          9,
+          10,
+          0
+        ],
+        [
+          10,
+          11,
+          0
+        ],
+        [
+          4,
+          6,
+          0
+        ],
+        [
+          5,
+          7,
+          0
+        ],
+        [
+          9,
+          9,
+          0
+        ],
+        [
+          10,
+          10,
+          0
+        ],
+        [
+          11,
+          11,
+          0
+        ],
+        [
+          4,
+          5,
+          0
+        ],
+        [
+          9,
+          8,
+          0
+        ],
+        [
+          10,
+          9,
+          0
+        ],
+        [
+          11,
+          10,
+          0
+        ],
+        [
+          4,
+          4,
+          0
+        ],
+        [
+          5,
+          5,
+          0
+        ],
+        [
+          9,
+          7,
+          0
+        ],
+        [
+          10,
+          8,
+          0
+        ],
+        [
+          4,
+          3,
+          0
+        ],
+        [
+          5,
+          4,
+          0
+        ],
+        [
+          9,
+          6,
+          0
+        ],
+        [
+          8,
+          7,
+          0
+        ],
+        [
+          10,
+          7,
+          0
+        ],
+        [
+          11,
+          8,
+          0
+        ],
+        [
+          4,
+          2,
+          0
+        ],
+        [
+          9,
+          5,
+          0
+        ],
+        [
+          8,
+          6,
+          0
+        ],
+        [
+          10,
+          6,
+          0
+        ],
+        [
+          7,
+          7,
+          0
+        ],
+        [
+          11,
+          7,
+          0
+        ],
+        [
+          4,
+          1,
+          0
+        ],
+        [
+          5,
+          2,
+          0
+        ],
+        [
+          10,
+          5,
+          0
+        ],
+        [
+          11,
+          6,
+          0
+        ],
+        [
+          7,
+          8,
+          0
+        ],
+        [
+          5,
+          1,
+          0
+        ],
+        [
+          6,
+          2,
+          0
+        ],
+        [
+          10,
+          4,
+          0
+        ],
+        [
+          11,
+          5,
+          0
+        ],
+        [
+          6,
+          8,
+          0
+        ],
+        [
+          6,
+          1,
+          0
+        ],
+        [
+          7,
+          2,
+          0
+        ],
+        [
+          11,
+          4,
+          0
+        ],
+        [
+          7,
+          1,
+          0
+        ],
+        [
+          8,
+          2,
+          0
+        ],
+        [
+          8,
+          1,
+          0
+        ],
+        [
+          9,
+          2,
+          0
+        ],
+        [
+          9,
+          1,
+          0
+        ],
+        [
+          10,
+          2,
+          0
+        ],
+        [
+          10,
+          1,
+          0
+        ],
+        [
+          11,
+          2,
+          0
+        ],
+        [
+          11,
+          1,
+          0
+        ],
+        [
+          12,
+          2,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          13,
+          2,
+          0
+        ],
+        [
+          13,
+          1,
+          0
+        ],
+        [
+          13,
+          3,
+          0
+        ],
+        [
+          14,
+          2,
+          0
+        ],
+        [
+          14,
+          1,
+          0
+        ],
+        [
+          13,
+          4,
+          0
+        ],
+        [
+          14,
+          3,
+          0
+        ],
+        [
+          15,
+          1,
+          0
+        ],
+        [
+          13,
+          5,
+          0
+        ],
+        [
+          14,
+          4,
+          0
+        ],
+        [
+          13,
+          6,
+          0
+        ],
+        [
+          14,
+          5,
+          0
+        ],
+        [
+          13,
+          7,
+          0
+        ],
+        [
+          14,
+          6,
+          0
+        ],
+        [
+          13,
+          8,
+          0
+        ],
+        [
+          14,
+          7,
+          0
+        ],
+        [
+          13,
+          9,
+          0
+        ],
+        [
+          14,
+          8,
+          0
+        ],
+        [
+          13,
+          10,
+          0
+        ],
+        [
+          14,
+          9,
+          0
+        ],
+        [
+          13,
+          11,
+          0
+        ],
+        [
+          14,
+          10,
+          0
+        ],
+        [
+          13,
+          12,
+          0
+        ],
+        [
+          14,
+          11,
+          0
+        ],
+        [
+          13,
+          13,
+          0
+        ],
+        [
+          14,
+          12,
+          0
+        ],
+        [
+          13,
+          14,
+          0
+        ],
+        [
+          12,
+          13,
+          0
+        ],
+        [
+          14,
+          13,
+          0
+        ],
+        [
+          12,
+          14,
+          0
+        ],
+        [
+          14,
+          14,
+          0
+        ],
+        [
+          11,
+          13,
+          0
+        ],
+        [
+          11,
+          14,
+          0
+        ],
+        [
+          10,
+          13,
+          0
+        ],
+        [
+          10,
+          14,
+          0
+        ],
+        [
+          9,
+          13,
+          0
+        ],
+        [
+          9,
+          14,
+          0
+        ],
+        [
+          8,
+          13,
+          0
+        ],
+        [
+          8,
+          14,
+          0
+        ],
+        [
+          7,
+          13,
+          0
+        ],
+        [
+          7,
+          14,
+          0
+        ],
+        [
+          6,
+          13,
+          0
+        ],
+        [
+          6,
+          14,
+          0
+        ],
+        [
+          5,
+          13,
+          0
+        ],
+        [
+          5,
+          14,
+          0
+        ],
+        [
+          4,
+          13,
+          0
+        ],
+        [
+          4,
+          14,
+          0
+        ],
+        [
+          4,
+          12,
+          0
+        ],
+        [
+          3,
+          13,
+          0
+        ],
+        [
+          3,
+          14,
+          0
+        ],
+        [
+          2,
+          13,
+          0
+        ],
+        [
+          2,
+          14,
+          0
+        ],
+        [
+          1,
+          13,
+          0
+        ],
+        [
+          1,
+          14,
+          0
+        ]
+      ],
+      "walkingOnlyGoal": false,
+      "pushProbes": [
+        {
+          "stance": [
+            5,
+            11,
+            0
+          ],
+          "direction": "L",
+          "primary": "M0",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M0",
+              "from": [
+                3,
+                11,
+                0
+              ],
+              "destination": [
+                2,
+                11,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            4,
+            10,
+            0
+          ],
+          "direction": "D",
+          "primary": "M0",
+          "engineMoved": true,
+          "moved": [
+            "M0",
+            "M3"
+          ],
+          "contacts": [
+            {
+              "from": "M0",
+              "to": "M3",
+              "workingCell": [
+                3,
+                11,
+                0
+              ],
+              "targetCell": [
+                3,
+                12,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M0",
+            "M3"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            5,
+            5,
+            0
+          ],
+          "direction": "R",
+          "primary": "M2",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M2",
+              "to": "M1",
+              "workingCell": [
+                7,
+                4,
+                0
+              ],
+              "targetCell": [
+                8,
+                4,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M2",
+            "M1"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            5,
+            4,
+            0
+          ],
+          "direction": "R",
+          "primary": "M2",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M2",
+              "to": "M1",
+              "workingCell": [
+                7,
+                4,
+                0
+              ],
+              "targetCell": [
+                8,
+                4,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M2",
+            "M1"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            9,
+            5,
+            0
+          ],
+          "direction": "U",
+          "primary": "M1",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M1"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M1",
+              "from": [
+                8,
+                4,
+                0
+              ],
+              "destination": [
+                8,
+                3,
+                0
+              ]
+            },
+            {
+              "group": "M1",
+              "from": [
+                9,
+                4,
+                0
+              ],
+              "destination": [
+                9,
+                3,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            9,
+            5,
+            0
+          ],
+          "direction": "L",
+          "primary": "M1",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M1",
+              "to": "M2",
+              "workingCell": [
+                8,
+                4,
+                0
+              ],
+              "targetCell": [
+                7,
+                4,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M1",
+            "M2"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            8,
+            6,
+            0
+          ],
+          "direction": "U",
+          "primary": "M1",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M1"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M1",
+              "from": [
+                8,
+                4,
+                0
+              ],
+              "destination": [
+                8,
+                3,
+                0
+              ]
+            },
+            {
+              "group": "M1",
+              "from": [
+                9,
+                4,
+                0
+              ],
+              "destination": [
+                9,
+                3,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            10,
+            4,
+            0
+          ],
+          "direction": "L",
+          "primary": "M1",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M1",
+              "to": "M2",
+              "workingCell": [
+                8,
+                4,
+                0
+              ],
+              "targetCell": [
+                7,
+                4,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M1",
+            "M2"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            4,
+            12,
+            0
+          ],
+          "direction": "U",
+          "primary": "M0",
+          "engineMoved": true,
+          "moved": [
+            "M0"
+          ],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            4,
+            12,
+            0
+          ],
+          "direction": "L",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                1,
+                12,
+                0
+              ],
+              "destination": [
+                0,
+                12,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            3,
+            13,
+            0
+          ],
+          "direction": "U",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3",
+            "M0"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                2,
+                12,
+                0
+              ],
+              "destination": [
+                2,
+                11,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            2,
+            13,
+            0
+          ],
+          "direction": "U",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3",
+            "M0"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                2,
+                12,
+                0
+              ],
+              "destination": [
+                2,
+                11,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            1,
+            13,
+            0
+          ],
+          "direction": "U",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3",
+            "M0"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                2,
+                12,
+                0
+              ],
+              "destination": [
+                2,
+                11,
+                0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 210,
+      "player": [
+        4,
+        10,
+        0
+      ],
+      "groups": {
+        "M2": [
+          [
+            6,
+            4,
+            0
+          ],
+          [
+            7,
+            4,
+            0
+          ],
+          [
+            6,
+            5,
+            0
+          ]
+        ],
+        "M0": [
+          [
+            3,
+            11,
+            0
+          ],
+          [
+            4,
+            11,
+            0
+          ]
+        ],
+        "M1": [
+          [
+            8,
+            4,
+            0
+          ],
+          [
+            9,
+            4,
+            0
+          ],
+          [
+            8,
+            5,
+            0
+          ]
+        ],
+        "M3": [
+          [
+            1,
+            12,
+            0
+          ],
+          [
+            2,
+            12,
+            0
+          ],
+          [
+            3,
+            12,
+            0
+          ]
+        ]
+      },
+      "removedGroups": [],
+      "walkingReachable": [
+        [
+          4,
+          10,
+          0
+        ],
+        [
+          4,
+          9,
+          0
+        ],
+        [
+          5,
+          10,
+          0
+        ],
+        [
+          4,
+          8,
+          0
+        ],
+        [
+          5,
+          11,
+          0
+        ],
+        [
+          6,
+          10,
+          0
+        ],
+        [
+          4,
+          7,
+          0
+        ],
+        [
+          6,
+          11,
+          0
+        ],
+        [
+          4,
+          6,
+          0
+        ],
+        [
+          5,
+          7,
+          0
+        ],
+        [
+          7,
+          11,
+          0
+        ],
+        [
+          4,
+          5,
+          0
+        ],
+        [
+          8,
+          11,
+          0
+        ],
+        [
+          4,
+          4,
+          0
+        ],
+        [
+          5,
+          5,
+          0
+        ],
+        [
+          8,
+          10,
+          0
+        ],
+        [
+          9,
+          11,
+          0
+        ],
+        [
+          4,
+          3,
+          0
+        ],
+        [
+          5,
+          4,
+          0
+        ],
+        [
+          8,
+          9,
+          0
+        ],
+        [
+          9,
+          10,
+          0
+        ],
+        [
+          10,
+          11,
+          0
+        ],
+        [
+          4,
+          2,
+          0
+        ],
+        [
+          9,
+          9,
+          0
+        ],
+        [
+          10,
+          10,
+          0
+        ],
+        [
+          11,
+          11,
+          0
+        ],
+        [
+          4,
+          1,
+          0
+        ],
+        [
+          5,
+          2,
+          0
+        ],
+        [
+          9,
+          8,
+          0
+        ],
+        [
+          10,
+          9,
+          0
+        ],
+        [
+          11,
+          10,
+          0
+        ],
+        [
+          5,
+          1,
+          0
+        ],
+        [
+          6,
+          2,
+          0
+        ],
+        [
+          9,
+          7,
+          0
+        ],
+        [
+          10,
+          8,
+          0
+        ],
+        [
+          6,
+          1,
+          0
+        ],
+        [
+          7,
+          2,
+          0
+        ],
+        [
+          9,
+          6,
+          0
+        ],
+        [
+          8,
+          7,
+          0
+        ],
+        [
+          10,
+          7,
+          0
+        ],
+        [
+          11,
+          8,
+          0
+        ],
+        [
+          7,
+          1,
+          0
+        ],
+        [
+          8,
+          2,
+          0
+        ],
+        [
+          9,
+          5,
+          0
+        ],
+        [
+          8,
+          6,
+          0
+        ],
+        [
+          10,
+          6,
+          0
+        ],
+        [
+          7,
+          7,
+          0
+        ],
+        [
+          11,
+          7,
+          0
+        ],
+        [
+          8,
+          1,
+          0
+        ],
+        [
+          9,
+          2,
+          0
+        ],
+        [
+          10,
+          5,
+          0
+        ],
+        [
+          11,
+          6,
+          0
+        ],
+        [
+          7,
+          8,
+          0
+        ],
+        [
+          9,
+          1,
+          0
+        ],
+        [
+          10,
+          2,
+          0
+        ],
+        [
+          10,
+          4,
+          0
+        ],
+        [
+          11,
+          5,
+          0
+        ],
+        [
+          6,
+          8,
+          0
+        ],
+        [
+          10,
+          1,
+          0
+        ],
+        [
+          11,
+          2,
+          0
+        ],
+        [
+          11,
+          4,
+          0
+        ],
+        [
+          11,
+          1,
+          0
+        ],
+        [
+          12,
+          2,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          13,
+          2,
+          0
+        ],
+        [
+          13,
+          1,
+          0
+        ],
+        [
+          13,
+          3,
+          0
+        ],
+        [
+          14,
+          2,
+          0
+        ],
+        [
+          14,
+          1,
+          0
+        ],
+        [
+          13,
+          4,
+          0
+        ],
+        [
+          14,
+          3,
+          0
+        ],
+        [
+          15,
+          1,
+          0
+        ],
+        [
+          13,
+          5,
+          0
+        ],
+        [
+          14,
+          4,
+          0
+        ],
+        [
+          13,
+          6,
+          0
+        ],
+        [
+          14,
+          5,
+          0
+        ],
+        [
+          13,
+          7,
+          0
+        ],
+        [
+          14,
+          6,
+          0
+        ],
+        [
+          13,
+          8,
+          0
+        ],
+        [
+          14,
+          7,
+          0
+        ],
+        [
+          13,
+          9,
+          0
+        ],
+        [
+          14,
+          8,
+          0
+        ],
+        [
+          13,
+          10,
+          0
+        ],
+        [
+          14,
+          9,
+          0
+        ],
+        [
+          13,
+          11,
+          0
+        ],
+        [
+          14,
+          10,
+          0
+        ],
+        [
+          13,
+          12,
+          0
+        ],
+        [
+          14,
+          11,
+          0
+        ],
+        [
+          13,
+          13,
+          0
+        ],
+        [
+          14,
+          12,
+          0
+        ],
+        [
+          13,
+          14,
+          0
+        ],
+        [
+          12,
+          13,
+          0
+        ],
+        [
+          14,
+          13,
+          0
+        ],
+        [
+          12,
+          14,
+          0
+        ],
+        [
+          14,
+          14,
+          0
+        ],
+        [
+          11,
+          13,
+          0
+        ],
+        [
+          11,
+          14,
+          0
+        ],
+        [
+          10,
+          13,
+          0
+        ],
+        [
+          10,
+          14,
+          0
+        ],
+        [
+          9,
+          13,
+          0
+        ],
+        [
+          9,
+          14,
+          0
+        ],
+        [
+          8,
+          13,
+          0
+        ],
+        [
+          8,
+          14,
+          0
+        ],
+        [
+          7,
+          13,
+          0
+        ],
+        [
+          7,
+          14,
+          0
+        ],
+        [
+          6,
+          13,
+          0
+        ],
+        [
+          6,
+          14,
+          0
+        ],
+        [
+          5,
+          13,
+          0
+        ],
+        [
+          5,
+          14,
+          0
+        ],
+        [
+          4,
+          13,
+          0
+        ],
+        [
+          4,
+          14,
+          0
+        ],
+        [
+          4,
+          12,
+          0
+        ],
+        [
+          3,
+          13,
+          0
+        ],
+        [
+          3,
+          14,
+          0
+        ],
+        [
+          2,
+          13,
+          0
+        ],
+        [
+          2,
+          14,
+          0
+        ],
+        [
+          1,
+          13,
+          0
+        ],
+        [
+          1,
+          14,
+          0
+        ]
+      ],
+      "walkingOnlyGoal": false,
+      "pushProbes": [
+        {
+          "stance": [
+            4,
+            10,
+            0
+          ],
+          "direction": "D",
+          "primary": "M0",
+          "engineMoved": true,
+          "moved": [
+            "M0",
+            "M3"
+          ],
+          "contacts": [
+            {
+              "from": "M0",
+              "to": "M3",
+              "workingCell": [
+                3,
+                11,
+                0
+              ],
+              "targetCell": [
+                3,
+                12,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M0",
+            "M3"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            5,
+            11,
+            0
+          ],
+          "direction": "L",
+          "primary": "M0",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M0",
+              "from": [
+                3,
+                11,
+                0
+              ],
+              "destination": [
+                2,
+                11,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            5,
+            5,
+            0
+          ],
+          "direction": "R",
+          "primary": "M2",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M2",
+              "to": "M1",
+              "workingCell": [
+                7,
+                4,
+                0
+              ],
+              "targetCell": [
+                8,
+                4,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M2",
+            "M1"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            5,
+            4,
+            0
+          ],
+          "direction": "R",
+          "primary": "M2",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M2",
+              "to": "M1",
+              "workingCell": [
+                7,
+                4,
+                0
+              ],
+              "targetCell": [
+                8,
+                4,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M2",
+            "M1"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            9,
+            5,
+            0
+          ],
+          "direction": "U",
+          "primary": "M1",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M1"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M1",
+              "from": [
+                8,
+                4,
+                0
+              ],
+              "destination": [
+                8,
+                3,
+                0
+              ]
+            },
+            {
+              "group": "M1",
+              "from": [
+                9,
+                4,
+                0
+              ],
+              "destination": [
+                9,
+                3,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            9,
+            5,
+            0
+          ],
+          "direction": "L",
+          "primary": "M1",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M1",
+              "to": "M2",
+              "workingCell": [
+                8,
+                4,
+                0
+              ],
+              "targetCell": [
+                7,
+                4,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M1",
+            "M2"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            8,
+            6,
+            0
+          ],
+          "direction": "U",
+          "primary": "M1",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M1"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M1",
+              "from": [
+                8,
+                4,
+                0
+              ],
+              "destination": [
+                8,
+                3,
+                0
+              ]
+            },
+            {
+              "group": "M1",
+              "from": [
+                9,
+                4,
+                0
+              ],
+              "destination": [
+                9,
+                3,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            10,
+            4,
+            0
+          ],
+          "direction": "L",
+          "primary": "M1",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M1",
+              "to": "M2",
+              "workingCell": [
+                8,
+                4,
+                0
+              ],
+              "targetCell": [
+                7,
+                4,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M1",
+            "M2"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            4,
+            12,
+            0
+          ],
+          "direction": "U",
+          "primary": "M0",
+          "engineMoved": true,
+          "moved": [
+            "M0"
+          ],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            4,
+            12,
+            0
+          ],
+          "direction": "L",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                1,
+                12,
+                0
+              ],
+              "destination": [
+                0,
+                12,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            3,
+            13,
+            0
+          ],
+          "direction": "U",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3",
+            "M0"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                2,
+                12,
+                0
+              ],
+              "destination": [
+                2,
+                11,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            2,
+            13,
+            0
+          ],
+          "direction": "U",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3",
+            "M0"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                2,
+                12,
+                0
+              ],
+              "destination": [
+                2,
+                11,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            1,
+            13,
+            0
+          ],
+          "direction": "U",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3",
+            "M0"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                2,
+                12,
+                0
+              ],
+              "destination": [
+                2,
+                11,
+                0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 211,
+      "player": [
+        4,
+        11,
+        0
+      ],
+      "groups": {
+        "M2": [
+          [
+            6,
+            4,
+            0
+          ],
+          [
+            7,
+            4,
+            0
+          ],
+          [
+            6,
+            5,
+            0
+          ]
+        ],
+        "M0": [
+          [
+            3,
+            12,
+            0
+          ],
+          [
+            4,
+            12,
+            0
+          ]
+        ],
+        "M1": [
+          [
+            8,
+            4,
+            0
+          ],
+          [
+            9,
+            4,
+            0
+          ],
+          [
+            8,
+            5,
+            0
+          ]
+        ],
+        "M3": [
+          [
+            1,
+            13,
+            0
+          ],
+          [
+            2,
+            13,
+            0
+          ],
+          [
+            3,
+            13,
+            0
+          ]
+        ]
+      },
+      "removedGroups": [],
+      "walkingReachable": [
+        [
+          4,
+          11,
+          0
+        ],
+        [
+          4,
+          10,
+          0
+        ],
+        [
+          5,
+          11,
+          0
+        ],
+        [
+          4,
+          9,
+          0
+        ],
+        [
+          5,
+          10,
+          0
+        ],
+        [
+          6,
+          11,
+          0
+        ],
+        [
+          4,
+          8,
+          0
+        ],
+        [
+          6,
+          10,
+          0
+        ],
+        [
+          7,
+          11,
+          0
+        ],
+        [
+          4,
+          7,
+          0
+        ],
+        [
+          8,
+          11,
+          0
+        ],
+        [
+          4,
+          6,
+          0
+        ],
+        [
+          5,
+          7,
+          0
+        ],
+        [
+          8,
+          10,
+          0
+        ],
+        [
+          9,
+          11,
+          0
+        ],
+        [
+          4,
+          5,
+          0
+        ],
+        [
+          8,
+          9,
+          0
+        ],
+        [
+          9,
+          10,
+          0
+        ],
+        [
+          10,
+          11,
+          0
+        ],
+        [
+          4,
+          4,
+          0
+        ],
+        [
+          5,
+          5,
+          0
+        ],
+        [
+          9,
+          9,
+          0
+        ],
+        [
+          10,
+          10,
+          0
+        ],
+        [
+          11,
+          11,
+          0
+        ],
+        [
+          4,
+          3,
+          0
+        ],
+        [
+          5,
+          4,
+          0
+        ],
+        [
+          9,
+          8,
+          0
+        ],
+        [
+          10,
+          9,
+          0
+        ],
+        [
+          11,
+          10,
+          0
+        ],
+        [
+          4,
+          2,
+          0
+        ],
+        [
+          9,
+          7,
+          0
+        ],
+        [
+          10,
+          8,
+          0
+        ],
+        [
+          4,
+          1,
+          0
+        ],
+        [
+          5,
+          2,
+          0
+        ],
+        [
+          9,
+          6,
+          0
+        ],
+        [
+          8,
+          7,
+          0
+        ],
+        [
+          10,
+          7,
+          0
+        ],
+        [
+          11,
+          8,
+          0
+        ],
+        [
+          5,
+          1,
+          0
+        ],
+        [
+          6,
+          2,
+          0
+        ],
+        [
+          9,
+          5,
+          0
+        ],
+        [
+          8,
+          6,
+          0
+        ],
+        [
+          10,
+          6,
+          0
+        ],
+        [
+          7,
+          7,
+          0
+        ],
+        [
+          11,
+          7,
+          0
+        ],
+        [
+          6,
+          1,
+          0
+        ],
+        [
+          7,
+          2,
+          0
+        ],
+        [
+          10,
+          5,
+          0
+        ],
+        [
+          11,
+          6,
+          0
+        ],
+        [
+          7,
+          8,
+          0
+        ],
+        [
+          7,
+          1,
+          0
+        ],
+        [
+          8,
+          2,
+          0
+        ],
+        [
+          10,
+          4,
+          0
+        ],
+        [
+          11,
+          5,
+          0
+        ],
+        [
+          6,
+          8,
+          0
+        ],
+        [
+          8,
+          1,
+          0
+        ],
+        [
+          9,
+          2,
+          0
+        ],
+        [
+          11,
+          4,
+          0
+        ],
+        [
+          9,
+          1,
+          0
+        ],
+        [
+          10,
+          2,
+          0
+        ],
+        [
+          10,
+          1,
+          0
+        ],
+        [
+          11,
+          2,
+          0
+        ],
+        [
+          11,
+          1,
+          0
+        ],
+        [
+          12,
+          2,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          13,
+          2,
+          0
+        ],
+        [
+          13,
+          1,
+          0
+        ],
+        [
+          13,
+          3,
+          0
+        ],
+        [
+          14,
+          2,
+          0
+        ],
+        [
+          14,
+          1,
+          0
+        ],
+        [
+          13,
+          4,
+          0
+        ],
+        [
+          14,
+          3,
+          0
+        ],
+        [
+          15,
+          1,
+          0
+        ],
+        [
+          13,
+          5,
+          0
+        ],
+        [
+          14,
+          4,
+          0
+        ],
+        [
+          13,
+          6,
+          0
+        ],
+        [
+          14,
+          5,
+          0
+        ],
+        [
+          13,
+          7,
+          0
+        ],
+        [
+          14,
+          6,
+          0
+        ],
+        [
+          13,
+          8,
+          0
+        ],
+        [
+          14,
+          7,
+          0
+        ],
+        [
+          13,
+          9,
+          0
+        ],
+        [
+          14,
+          8,
+          0
+        ],
+        [
+          13,
+          10,
+          0
+        ],
+        [
+          14,
+          9,
+          0
+        ],
+        [
+          13,
+          11,
+          0
+        ],
+        [
+          14,
+          10,
+          0
+        ],
+        [
+          13,
+          12,
+          0
+        ],
+        [
+          14,
+          11,
+          0
+        ],
+        [
+          13,
+          13,
+          0
+        ],
+        [
+          14,
+          12,
+          0
+        ],
+        [
+          13,
+          14,
+          0
+        ],
+        [
+          12,
+          13,
+          0
+        ],
+        [
+          14,
+          13,
+          0
+        ],
+        [
+          12,
+          14,
+          0
+        ],
+        [
+          14,
+          14,
+          0
+        ],
+        [
+          11,
+          13,
+          0
+        ],
+        [
+          11,
+          14,
+          0
+        ],
+        [
+          10,
+          13,
+          0
+        ],
+        [
+          10,
+          14,
+          0
+        ],
+        [
+          9,
+          13,
+          0
+        ],
+        [
+          9,
+          14,
+          0
+        ],
+        [
+          8,
+          13,
+          0
+        ],
+        [
+          8,
+          14,
+          0
+        ],
+        [
+          7,
+          13,
+          0
+        ],
+        [
+          7,
+          14,
+          0
+        ],
+        [
+          6,
+          13,
+          0
+        ],
+        [
+          6,
+          14,
+          0
+        ],
+        [
+          5,
+          13,
+          0
+        ],
+        [
+          5,
+          14,
+          0
+        ],
+        [
+          4,
+          13,
+          0
+        ],
+        [
+          4,
+          14,
+          0
+        ],
+        [
+          3,
+          14,
+          0
+        ],
+        [
+          2,
+          14,
+          0
+        ],
+        [
+          1,
+          14,
+          0
+        ]
+      ],
+      "walkingOnlyGoal": false,
+      "pushProbes": [
+        {
+          "stance": [
+            4,
+            11,
+            0
+          ],
+          "direction": "D",
+          "primary": "M0",
+          "engineMoved": true,
+          "moved": [
+            "M0",
+            "M3"
+          ],
+          "contacts": [
+            {
+              "from": "M0",
+              "to": "M3",
+              "workingCell": [
+                3,
+                12,
+                0
+              ],
+              "targetCell": [
+                3,
+                13,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M0",
+            "M3"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            5,
+            5,
+            0
+          ],
+          "direction": "R",
+          "primary": "M2",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M2",
+              "to": "M1",
+              "workingCell": [
+                7,
+                4,
+                0
+              ],
+              "targetCell": [
+                8,
+                4,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M2",
+            "M1"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            5,
+            4,
+            0
+          ],
+          "direction": "R",
+          "primary": "M2",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M2",
+              "to": "M1",
+              "workingCell": [
+                7,
+                4,
+                0
+              ],
+              "targetCell": [
+                8,
+                4,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M2",
+            "M1"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            9,
+            5,
+            0
+          ],
+          "direction": "U",
+          "primary": "M1",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M1"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M1",
+              "from": [
+                8,
+                4,
+                0
+              ],
+              "destination": [
+                8,
+                3,
+                0
+              ]
+            },
+            {
+              "group": "M1",
+              "from": [
+                9,
+                4,
+                0
+              ],
+              "destination": [
+                9,
+                3,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            9,
+            5,
+            0
+          ],
+          "direction": "L",
+          "primary": "M1",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M1",
+              "to": "M2",
+              "workingCell": [
+                8,
+                4,
+                0
+              ],
+              "targetCell": [
+                7,
+                4,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M1",
+            "M2"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            8,
+            6,
+            0
+          ],
+          "direction": "U",
+          "primary": "M1",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M1"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M1",
+              "from": [
+                8,
+                4,
+                0
+              ],
+              "destination": [
+                8,
+                3,
+                0
+              ]
+            },
+            {
+              "group": "M1",
+              "from": [
+                9,
+                4,
+                0
+              ],
+              "destination": [
+                9,
+                3,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            10,
+            4,
+            0
+          ],
+          "direction": "L",
+          "primary": "M1",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M1",
+              "to": "M2",
+              "workingCell": [
+                8,
+                4,
+                0
+              ],
+              "targetCell": [
+                7,
+                4,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M1",
+            "M2"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            4,
+            13,
+            0
+          ],
+          "direction": "U",
+          "primary": "M0",
+          "engineMoved": true,
+          "moved": [
+            "M0"
+          ],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            4,
+            13,
+            0
+          ],
+          "direction": "L",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                1,
+                13,
+                0
+              ],
+              "destination": [
+                0,
+                13,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            3,
+            14,
+            0
+          ],
+          "direction": "U",
+          "primary": "M3",
+          "engineMoved": true,
+          "moved": [
+            "M0",
+            "M3"
+          ],
+          "contacts": [
+            {
+              "from": "M3",
+              "to": "M0",
+              "workingCell": [
+                3,
+                13,
+                0
+              ],
+              "targetCell": [
+                3,
+                12,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M3",
+            "M0"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            2,
+            14,
+            0
+          ],
+          "direction": "U",
+          "primary": "M3",
+          "engineMoved": true,
+          "moved": [
+            "M0",
+            "M3"
+          ],
+          "contacts": [
+            {
+              "from": "M3",
+              "to": "M0",
+              "workingCell": [
+                3,
+                13,
+                0
+              ],
+              "targetCell": [
+                3,
+                12,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M3",
+            "M0"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            1,
+            14,
+            0
+          ],
+          "direction": "U",
+          "primary": "M3",
+          "engineMoved": true,
+          "moved": [
+            "M0",
+            "M3"
+          ],
+          "contacts": [
+            {
+              "from": "M3",
+              "to": "M0",
+              "workingCell": [
+                3,
+                13,
+                0
+              ],
+              "targetCell": [
+                3,
+                12,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M3",
+            "M0"
+          ],
+          "wallDestinations": []
+        }
+      ]
+    },
+    {
+      "step": 212,
+      "player": [
+        4,
+        12,
+        0
+      ],
+      "groups": {
+        "M2": [
+          [
+            6,
+            4,
+            0
+          ],
+          [
+            7,
+            4,
+            0
+          ],
+          [
+            6,
+            5,
+            0
+          ]
+        ],
+        "M0": [
+          [
+            3,
+            13,
+            0
+          ],
+          [
+            4,
+            13,
+            0
+          ]
+        ],
+        "M1": [
+          [
+            8,
+            4,
+            0
+          ],
+          [
+            9,
+            4,
+            0
+          ],
+          [
+            8,
+            5,
+            0
+          ]
+        ],
+        "M3": [
+          [
+            1,
+            14,
+            0
+          ],
+          [
+            2,
+            14,
+            0
+          ],
+          [
+            3,
+            14,
+            0
+          ]
+        ]
+      },
+      "removedGroups": [],
+      "walkingReachable": [
+        [
+          4,
+          12,
+          0
+        ],
+        [
+          4,
+          11,
+          0
+        ],
+        [
+          3,
+          12,
+          0
+        ],
+        [
+          4,
+          10,
+          0
+        ],
+        [
+          5,
+          11,
+          0
+        ],
+        [
+          2,
+          12,
+          0
+        ],
+        [
+          4,
+          9,
+          0
+        ],
+        [
+          5,
+          10,
+          0
+        ],
+        [
+          6,
+          11,
+          0
+        ],
+        [
+          2,
+          13,
+          0
+        ],
+        [
+          1,
+          12,
+          0
+        ],
+        [
+          4,
+          8,
+          0
+        ],
+        [
+          6,
+          10,
+          0
+        ],
+        [
+          7,
+          11,
+          0
+        ],
+        [
+          1,
+          13,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          4,
+          7,
+          0
+        ],
+        [
+          8,
+          11,
+          0
+        ],
+        [
+          1,
+          10,
+          0
+        ],
+        [
+          4,
+          6,
+          0
+        ],
+        [
+          5,
+          7,
+          0
+        ],
+        [
+          8,
+          10,
+          0
+        ],
+        [
+          9,
+          11,
+          0
+        ],
+        [
+          1,
+          9,
+          0
+        ],
+        [
+          2,
+          10,
+          0
+        ],
+        [
+          4,
+          5,
+          0
+        ],
+        [
+          8,
+          9,
+          0
+        ],
+        [
+          9,
+          10,
+          0
+        ],
+        [
+          10,
+          11,
+          0
+        ],
+        [
+          2,
+          9,
+          0
+        ],
+        [
+          4,
+          4,
+          0
+        ],
+        [
+          5,
+          5,
+          0
+        ],
+        [
+          9,
+          9,
+          0
+        ],
+        [
+          10,
+          10,
+          0
+        ],
+        [
+          11,
+          11,
+          0
+        ],
+        [
+          4,
+          3,
+          0
+        ],
+        [
+          5,
+          4,
+          0
+        ],
+        [
+          9,
+          8,
+          0
+        ],
+        [
+          10,
+          9,
+          0
+        ],
+        [
+          11,
+          10,
+          0
+        ],
+        [
+          4,
+          2,
+          0
+        ],
+        [
+          9,
+          7,
+          0
+        ],
+        [
+          10,
+          8,
+          0
+        ],
+        [
+          4,
+          1,
+          0
+        ],
+        [
+          5,
+          2,
+          0
+        ],
+        [
+          9,
+          6,
+          0
+        ],
+        [
+          8,
+          7,
+          0
+        ],
+        [
+          10,
+          7,
+          0
+        ],
+        [
+          11,
+          8,
+          0
+        ],
+        [
+          5,
+          1,
+          0
+        ],
+        [
+          6,
+          2,
+          0
+        ],
+        [
+          9,
+          5,
+          0
+        ],
+        [
+          8,
+          6,
+          0
+        ],
+        [
+          10,
+          6,
+          0
+        ],
+        [
+          7,
+          7,
+          0
+        ],
+        [
+          11,
+          7,
+          0
+        ],
+        [
+          6,
+          1,
+          0
+        ],
+        [
+          7,
+          2,
+          0
+        ],
+        [
+          10,
+          5,
+          0
+        ],
+        [
+          11,
+          6,
+          0
+        ],
+        [
+          7,
+          8,
+          0
+        ],
+        [
+          7,
+          1,
+          0
+        ],
+        [
+          8,
+          2,
+          0
+        ],
+        [
+          10,
+          4,
+          0
+        ],
+        [
+          11,
+          5,
+          0
+        ],
+        [
+          6,
+          8,
+          0
+        ],
+        [
+          8,
+          1,
+          0
+        ],
+        [
+          9,
+          2,
+          0
+        ],
+        [
+          11,
+          4,
+          0
+        ],
+        [
+          9,
+          1,
+          0
+        ],
+        [
+          10,
+          2,
+          0
+        ],
+        [
+          10,
+          1,
+          0
+        ],
+        [
+          11,
+          2,
+          0
+        ],
+        [
+          11,
+          1,
+          0
+        ],
+        [
+          12,
+          2,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          13,
+          2,
+          0
+        ],
+        [
+          13,
+          1,
+          0
+        ],
+        [
+          13,
+          3,
+          0
+        ],
+        [
+          14,
+          2,
+          0
+        ],
+        [
+          14,
+          1,
+          0
+        ],
+        [
+          13,
+          4,
+          0
+        ],
+        [
+          14,
+          3,
+          0
+        ],
+        [
+          15,
+          1,
+          0
+        ],
+        [
+          13,
+          5,
+          0
+        ],
+        [
+          14,
+          4,
+          0
+        ],
+        [
+          13,
+          6,
+          0
+        ],
+        [
+          14,
+          5,
+          0
+        ],
+        [
+          13,
+          7,
+          0
+        ],
+        [
+          14,
+          6,
+          0
+        ],
+        [
+          13,
+          8,
+          0
+        ],
+        [
+          14,
+          7,
+          0
+        ],
+        [
+          13,
+          9,
+          0
+        ],
+        [
+          14,
+          8,
+          0
+        ],
+        [
+          13,
+          10,
+          0
+        ],
+        [
+          14,
+          9,
+          0
+        ],
+        [
+          13,
+          11,
+          0
+        ],
+        [
+          14,
+          10,
+          0
+        ],
+        [
+          13,
+          12,
+          0
+        ],
+        [
+          14,
+          11,
+          0
+        ],
+        [
+          13,
+          13,
+          0
+        ],
+        [
+          14,
+          12,
+          0
+        ],
+        [
+          13,
+          14,
+          0
+        ],
+        [
+          12,
+          13,
+          0
+        ],
+        [
+          14,
+          13,
+          0
+        ],
+        [
+          12,
+          14,
+          0
+        ],
+        [
+          14,
+          14,
+          0
+        ],
+        [
+          11,
+          13,
+          0
+        ],
+        [
+          11,
+          14,
+          0
+        ],
+        [
+          10,
+          13,
+          0
+        ],
+        [
+          10,
+          14,
+          0
+        ],
+        [
+          9,
+          13,
+          0
+        ],
+        [
+          9,
+          14,
+          0
+        ],
+        [
+          8,
+          13,
+          0
+        ],
+        [
+          8,
+          14,
+          0
+        ],
+        [
+          7,
+          13,
+          0
+        ],
+        [
+          7,
+          14,
+          0
+        ],
+        [
+          6,
+          13,
+          0
+        ],
+        [
+          6,
+          14,
+          0
+        ],
+        [
+          5,
+          13,
+          0
+        ],
+        [
+          5,
+          14,
+          0
+        ],
+        [
+          4,
+          14,
+          0
+        ]
+      ],
+      "walkingOnlyGoal": true,
+      "pushProbes": [
+        {
+          "stance": [
+            4,
+            12,
+            0
+          ],
+          "direction": "D",
+          "primary": "M0",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0",
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                1,
+                14,
+                0
+              ],
+              "destination": [
+                1,
+                15,
+                0
+              ]
+            },
+            {
+              "group": "M3",
+              "from": [
+                2,
+                14,
+                0
+              ],
+              "destination": [
+                2,
+                15,
+                0
+              ]
+            },
+            {
+              "group": "M3",
+              "from": [
+                3,
+                14,
+                0
+              ],
+              "destination": [
+                3,
+                15,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            3,
+            12,
+            0
+          ],
+          "direction": "D",
+          "primary": "M0",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0",
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                1,
+                14,
+                0
+              ],
+              "destination": [
+                1,
+                15,
+                0
+              ]
+            },
+            {
+              "group": "M3",
+              "from": [
+                2,
+                14,
+                0
+              ],
+              "destination": [
+                2,
+                15,
+                0
+              ]
+            },
+            {
+              "group": "M3",
+              "from": [
+                3,
+                14,
+                0
+              ],
+              "destination": [
+                3,
+                15,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            2,
+            13,
+            0
+          ],
+          "direction": "D",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                1,
+                14,
+                0
+              ],
+              "destination": [
+                1,
+                15,
+                0
+              ]
+            },
+            {
+              "group": "M3",
+              "from": [
+                2,
+                14,
+                0
+              ],
+              "destination": [
+                2,
+                15,
+                0
+              ]
+            },
+            {
+              "group": "M3",
+              "from": [
+                3,
+                14,
+                0
+              ],
+              "destination": [
+                3,
+                15,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            2,
+            13,
+            0
+          ],
+          "direction": "R",
+          "primary": "M0",
+          "engineMoved": true,
+          "moved": [
+            "M0"
+          ],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            1,
+            13,
+            0
+          ],
+          "direction": "D",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                1,
+                14,
+                0
+              ],
+              "destination": [
+                1,
+                15,
+                0
+              ]
+            },
+            {
+              "group": "M3",
+              "from": [
+                2,
+                14,
+                0
+              ],
+              "destination": [
+                2,
+                15,
+                0
+              ]
+            },
+            {
+              "group": "M3",
+              "from": [
+                3,
+                14,
+                0
+              ],
+              "destination": [
+                3,
+                15,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            5,
+            5,
+            0
+          ],
+          "direction": "R",
+          "primary": "M2",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M2",
+              "to": "M1",
+              "workingCell": [
+                7,
+                4,
+                0
+              ],
+              "targetCell": [
+                8,
+                4,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M2",
+            "M1"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            5,
+            4,
+            0
+          ],
+          "direction": "R",
+          "primary": "M2",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M2",
+              "to": "M1",
+              "workingCell": [
+                7,
+                4,
+                0
+              ],
+              "targetCell": [
+                8,
+                4,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M2",
+            "M1"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            9,
+            5,
+            0
+          ],
+          "direction": "U",
+          "primary": "M1",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M1"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M1",
+              "from": [
+                8,
+                4,
+                0
+              ],
+              "destination": [
+                8,
+                3,
+                0
+              ]
+            },
+            {
+              "group": "M1",
+              "from": [
+                9,
+                4,
+                0
+              ],
+              "destination": [
+                9,
+                3,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            9,
+            5,
+            0
+          ],
+          "direction": "L",
+          "primary": "M1",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M1",
+              "to": "M2",
+              "workingCell": [
+                8,
+                4,
+                0
+              ],
+              "targetCell": [
+                7,
+                4,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M1",
+            "M2"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            8,
+            6,
+            0
+          ],
+          "direction": "U",
+          "primary": "M1",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M1"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M1",
+              "from": [
+                8,
+                4,
+                0
+              ],
+              "destination": [
+                8,
+                3,
+                0
+              ]
+            },
+            {
+              "group": "M1",
+              "from": [
+                9,
+                4,
+                0
+              ],
+              "destination": [
+                9,
+                3,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "stance": [
+            10,
+            4,
+            0
+          ],
+          "direction": "L",
+          "primary": "M1",
+          "engineMoved": true,
+          "moved": [
+            "M2",
+            "M1"
+          ],
+          "contacts": [
+            {
+              "from": "M1",
+              "to": "M2",
+              "workingCell": [
+                8,
+                4,
+                0
+              ],
+              "targetCell": [
+                7,
+                4,
+                0
+              ]
+            }
+          ],
+          "geometricContactCluster": [
+            "M1",
+            "M2"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            5,
+            13,
+            0
+          ],
+          "direction": "L",
+          "primary": "M0",
+          "engineMoved": true,
+          "moved": [
+            "M0"
+          ],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            4,
+            14,
+            0
+          ],
+          "direction": "U",
+          "primary": "M0",
+          "engineMoved": true,
+          "moved": [
+            "M0"
+          ],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M0"
+          ],
+          "wallDestinations": []
+        },
+        {
+          "stance": [
+            4,
+            14,
+            0
+          ],
+          "direction": "L",
+          "primary": "M3",
+          "engineMoved": false,
+          "moved": [],
+          "contacts": [],
+          "geometricContactCluster": [
+            "M3"
+          ],
+          "wallDestinations": [
+            {
+              "group": "M3",
+              "from": [
+                1,
+                14,
+                0
+              ],
+              "destination": [
+                0,
+                14,
+                0
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
