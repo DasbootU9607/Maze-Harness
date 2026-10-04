@@ -1,0 +1,10784 @@
+{
+  "source": {
+    "kind": "user-authored local case",
+    "draft": "draft-depth-f46419b887",
+    "engine_commit": "0ac96b8a2648db09f375989cd7bc33699222c1e6",
+    "map_sha256": "d95611963f45420573cf662f7eba9b494f8622203505627cebf1f425f3e3b296"
+  },
+  "coordinates": "Zero-based x/y, U decreases y, z=0",
+  "objective": {
+    "kind": "gem-and-return",
+    "cell": [
+      15,
+      1,
+      0
+    ]
+  },
+  "initial": [
+    {
+      "i": 0,
+      "type": "player",
+      "group": null,
+      "cell": [
+        15,
+        1,
+        0
+      ],
+      "removed": false
+    },
+    {
+      "i": 1,
+      "type": "weightless_box",
+      "group": "M0",
+      "cell": [
+        8,
+        5,
+        0
+      ],
+      "removed": false
+    },
+    {
+      "i": 2,
+      "type": "weightless_box",
+      "group": "M0",
+      "cell": [
+        7,
+        6,
+        0
+      ],
+      "removed": false
+    },
+    {
+      "i": 3,
+      "type": "weightless_box",
+      "group": "M0",
+      "cell": [
+        8,
+        6,
+        0
+      ],
+      "removed": false
+    },
+    {
+      "i": 4,
+      "type": "weightless_box",
+      "group": "M0",
+      "cell": [
+        9,
+        6,
+        0
+      ],
+      "removed": false
+    },
+    {
+      "i": 5,
+      "type": "weightless_box",
+      "group": "M0",
+      "cell": [
+        8,
+        7,
+        0
+      ],
+      "removed": false
+    },
+    {
+      "i": 6,
+      "type": "gem",
+      "group": null,
+      "cell": [
+        12,
+        8,
+        0
+      ],
+      "removed": false
+    }
+  ],
+  "states": [
+    {
+      "step": 0,
+      "actors": [
+        {
+          "i": 0,
+          "type": "player",
+          "group": null,
+          "cell": [
+            15,
+            1,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            5,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            6,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            6,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            9,
+            6,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "gem",
+          "group": null,
+          "cell": [
+            12,
+            8,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "center": [
+        8,
+        6,
+        0
+      ],
+      "precedingInput": null,
+      "event": null,
+      "frozenStops": {
+        "status": "exhausted",
+        "expanded": 29,
+        "positions": [
+          [
+            15,
+            1,
+            0
+          ],
+          [
+            10,
+            1,
+            0
+          ],
+          [
+            10,
+            10,
+            0
+          ],
+          [
+            1,
+            10,
+            0
+          ],
+          [
+            14,
+            10,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            13,
+            0
+          ],
+          [
+            14,
+            6,
+            0
+          ],
+          [
+            14,
+            14,
+            0
+          ],
+          [
+            3,
+            13,
+            0
+          ],
+          [
+            10,
+            6,
+            0
+          ],
+          [
+            13,
+            14,
+            0
+          ],
+          [
+            3,
+            3,
+            0
+          ],
+          [
+            3,
+            14,
+            0
+          ],
+          [
+            13,
+            13,
+            0
+          ],
+          [
+            1,
+            3,
+            0
+          ],
+          [
+            14,
+            3,
+            0
+          ],
+          [
+            2,
+            14,
+            0
+          ],
+          [
+            9,
+            13,
+            0
+          ],
+          [
+            14,
+            13,
+            0
+          ],
+          [
+            14,
+            1,
+            0
+          ],
+          [
+            2,
+            13,
+            0
+          ],
+          [
+            9,
+            14,
+            0
+          ],
+          [
+            6,
+            14,
+            0
+          ],
+          [
+            6,
+            1,
+            0
+          ],
+          [
+            3,
+            1,
+            0
+          ],
+          [
+            7,
+            1,
+            0
+          ],
+          [
+            7,
+            5,
+            0
+          ],
+          [
+            1,
+            5,
+            0
+          ]
+        ],
+        "gemReachable": false,
+        "goalReachable": false
+      }
+    },
+    {
+      "step": 13,
+      "actors": [
+        {
+          "i": 0,
+          "type": "player",
+          "group": null,
+          "cell": [
+            7,
+            9,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            9,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            9,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "gem",
+          "group": null,
+          "cell": [
+            12,
+            8,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "center": [
+        8,
+        10,
+        0
+      ],
+      "precedingInput": "D",
+      "event": {
+        "direction": "D",
+        "motion": true,
+        "delta": [
+          0,
+          4,
+          0
+        ],
+        "centerBefore": [
+          8,
+          6,
+          0
+        ],
+        "centerAfter": [
+          8,
+          10,
+          0
+        ],
+        "playerBefore": [
+          7,
+          5,
+          0
+        ],
+        "playerAfter": [
+          7,
+          9,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          7,
+          10,
+          0
+        ],
+        "path": [
+          {
+            "x": 7,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 7,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 9,
+            "elevation": 0
+          }
+        ],
+        "distance": 4,
+        "blockers": [
+          {
+            "member": [
+              9,
+              10,
+              0
+            ],
+            "target": [
+              9,
+              11,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      },
+      "frozenStops": {
+        "status": "exhausted",
+        "expanded": 28,
+        "positions": [
+          [
+            7,
+            9,
+            0
+          ],
+          [
+            7,
+            1,
+            0
+          ],
+          [
+            1,
+            9,
+            0
+          ],
+          [
+            3,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            13,
+            0
+          ],
+          [
+            3,
+            13,
+            0
+          ],
+          [
+            3,
+            3,
+            0
+          ],
+          [
+            3,
+            14,
+            0
+          ],
+          [
+            1,
+            3,
+            0
+          ],
+          [
+            14,
+            3,
+            0
+          ],
+          [
+            2,
+            14,
+            0
+          ],
+          [
+            14,
+            1,
+            0
+          ],
+          [
+            2,
+            13,
+            0
+          ],
+          [
+            10,
+            1,
+            0
+          ],
+          [
+            15,
+            1,
+            0
+          ],
+          [
+            10,
+            10,
+            0
+          ],
+          [
+            14,
+            10,
+            0
+          ],
+          [
+            14,
+            6,
+            0
+          ],
+          [
+            14,
+            14,
+            0
+          ],
+          [
+            1,
+            6,
+            0
+          ],
+          [
+            13,
+            14,
+            0
+          ],
+          [
+            13,
+            13,
+            0
+          ],
+          [
+            9,
+            13,
+            0
+          ],
+          [
+            14,
+            13,
+            0
+          ],
+          [
+            9,
+            14,
+            0
+          ],
+          [
+            6,
+            14,
+            0
+          ],
+          [
+            6,
+            1,
+            0
+          ]
+        ],
+        "gemReachable": false,
+        "goalReachable": false
+      }
+    },
+    {
+      "step": 22,
+      "actors": [
+        {
+          "i": 0,
+          "type": "player",
+          "group": null,
+          "cell": [
+            4,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            9,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            1,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "gem",
+          "group": null,
+          "cell": [
+            12,
+            8,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "center": [
+        2,
+        10,
+        0
+      ],
+      "precedingInput": "L",
+      "event": {
+        "direction": "L",
+        "motion": true,
+        "delta": [
+          -6,
+          0,
+          0
+        ],
+        "centerBefore": [
+          8,
+          10,
+          0
+        ],
+        "centerAfter": [
+          2,
+          10,
+          0
+        ],
+        "playerBefore": [
+          10,
+          10,
+          0
+        ],
+        "playerAfter": [
+          4,
+          10,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          3,
+          10,
+          0
+        ],
+        "path": [
+          {
+            "x": 10,
+            "y": 10,
+            "elevation": 0
+          },
+          {
+            "x": 9,
+            "y": 10,
+            "elevation": 0
+          },
+          {
+            "x": 8,
+            "y": 10,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 10,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 10,
+            "elevation": 0
+          },
+          {
+            "x": 5,
+            "y": 10,
+            "elevation": 0
+          },
+          {
+            "x": 4,
+            "y": 10,
+            "elevation": 0
+          }
+        ],
+        "distance": 6,
+        "blockers": [
+          {
+            "member": [
+              1,
+              10,
+              0
+            ],
+            "target": [
+              0,
+              10,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      },
+      "frozenStops": {
+        "status": "exhausted",
+        "expanded": 38,
+        "positions": [
+          [
+            4,
+            10,
+            0
+          ],
+          [
+            4,
+            1,
+            0
+          ],
+          [
+            4,
+            12,
+            0
+          ],
+          [
+            14,
+            10,
+            0
+          ],
+          [
+            3,
+            1,
+            0
+          ],
+          [
+            7,
+            1,
+            0
+          ],
+          [
+            3,
+            12,
+            0
+          ],
+          [
+            8,
+            12,
+            0
+          ],
+          [
+            14,
+            6,
+            0
+          ],
+          [
+            14,
+            14,
+            0
+          ],
+          [
+            7,
+            14,
+            0
+          ],
+          [
+            3,
+            11,
+            0
+          ],
+          [
+            3,
+            14,
+            0
+          ],
+          [
+            8,
+            2,
+            0
+          ],
+          [
+            1,
+            6,
+            0
+          ],
+          [
+            13,
+            14,
+            0
+          ],
+          [
+            6,
+            14,
+            0
+          ],
+          [
+            9,
+            14,
+            0
+          ],
+          [
+            8,
+            11,
+            0
+          ],
+          [
+            2,
+            14,
+            0
+          ],
+          [
+            4,
+            2,
+            0
+          ],
+          [
+            11,
+            2,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            9,
+            0
+          ],
+          [
+            13,
+            13,
+            0
+          ],
+          [
+            6,
+            1,
+            0
+          ],
+          [
+            9,
+            13,
+            0
+          ],
+          [
+            2,
+            13,
+            0
+          ],
+          [
+            11,
+            1,
+            0
+          ],
+          [
+            11,
+            11,
+            0
+          ],
+          [
+            14,
+            13,
+            0
+          ],
+          [
+            1,
+            13,
+            0
+          ],
+          [
+            3,
+            13,
+            0
+          ],
+          [
+            10,
+            1,
+            0
+          ],
+          [
+            15,
+            1,
+            0
+          ],
+          [
+            14,
+            11,
+            0
+          ],
+          [
+            1,
+            11,
+            0
+          ],
+          [
+            10,
+            10,
+            0
+          ]
+        ],
+        "gemReachable": false,
+        "goalReachable": false
+      }
+    },
+    {
+      "step": 30,
+      "actors": [
+        {
+          "i": 0,
+          "type": "player",
+          "group": null,
+          "cell": [
+            7,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            9,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            9,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "gem",
+          "group": null,
+          "cell": [
+            12,
+            8,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "center": [
+        8,
+        10,
+        0
+      ],
+      "precedingInput": "R",
+      "event": {
+        "direction": "R",
+        "motion": true,
+        "delta": [
+          6,
+          0,
+          0
+        ],
+        "centerBefore": [
+          2,
+          10,
+          0
+        ],
+        "centerAfter": [
+          8,
+          10,
+          0
+        ],
+        "playerBefore": [
+          1,
+          11,
+          0
+        ],
+        "playerAfter": [
+          7,
+          11,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          8,
+          11,
+          0
+        ],
+        "path": [
+          {
+            "x": 1,
+            "y": 11,
+            "elevation": 0
+          },
+          {
+            "x": 2,
+            "y": 11,
+            "elevation": 0
+          },
+          {
+            "x": 3,
+            "y": 11,
+            "elevation": 0
+          },
+          {
+            "x": 4,
+            "y": 11,
+            "elevation": 0
+          },
+          {
+            "x": 5,
+            "y": 11,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 11,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 11,
+            "elevation": 0
+          }
+        ],
+        "distance": 6,
+        "blockers": [
+          {
+            "member": [
+              8,
+              11,
+              0
+            ],
+            "target": [
+              9,
+              11,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      },
+      "frozenStops": {
+        "status": "exhausted",
+        "expanded": 31,
+        "positions": [
+          [
+            7,
+            11,
+            0
+          ],
+          [
+            7,
+            14,
+            0
+          ],
+          [
+            1,
+            11,
+            0
+          ],
+          [
+            6,
+            14,
+            0
+          ],
+          [
+            9,
+            14,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            13,
+            0
+          ],
+          [
+            6,
+            1,
+            0
+          ],
+          [
+            9,
+            13,
+            0
+          ],
+          [
+            3,
+            13,
+            0
+          ],
+          [
+            3,
+            1,
+            0
+          ],
+          [
+            7,
+            1,
+            0
+          ],
+          [
+            14,
+            13,
+            0
+          ],
+          [
+            3,
+            3,
+            0
+          ],
+          [
+            3,
+            14,
+            0
+          ],
+          [
+            7,
+            9,
+            0
+          ],
+          [
+            14,
+            6,
+            0
+          ],
+          [
+            14,
+            14,
+            0
+          ],
+          [
+            1,
+            3,
+            0
+          ],
+          [
+            14,
+            3,
+            0
+          ],
+          [
+            2,
+            14,
+            0
+          ],
+          [
+            1,
+            9,
+            0
+          ],
+          [
+            1,
+            6,
+            0
+          ],
+          [
+            13,
+            14,
+            0
+          ],
+          [
+            14,
+            1,
+            0
+          ],
+          [
+            2,
+            13,
+            0
+          ],
+          [
+            13,
+            13,
+            0
+          ],
+          [
+            10,
+            1,
+            0
+          ],
+          [
+            15,
+            1,
+            0
+          ],
+          [
+            10,
+            10,
+            0
+          ],
+          [
+            14,
+            10,
+            0
+          ]
+        ],
+        "gemReachable": false,
+        "goalReachable": false
+      }
+    },
+    {
+      "step": 31,
+      "actors": [
+        {
+          "i": 0,
+          "type": "player",
+          "group": null,
+          "cell": [
+            7,
+            4,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            2,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            9,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            4,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "gem",
+          "group": null,
+          "cell": [
+            12,
+            8,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "center": [
+        8,
+        3,
+        0
+      ],
+      "precedingInput": "U",
+      "event": {
+        "direction": "U",
+        "motion": true,
+        "delta": [
+          0,
+          -7,
+          0
+        ],
+        "centerBefore": [
+          8,
+          10,
+          0
+        ],
+        "centerAfter": [
+          8,
+          3,
+          0
+        ],
+        "playerBefore": [
+          7,
+          11,
+          0
+        ],
+        "playerAfter": [
+          7,
+          4,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          7,
+          3,
+          0
+        ],
+        "path": [
+          {
+            "x": 7,
+            "y": 11,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 10,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 9,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 7,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 4,
+            "elevation": 0
+          }
+        ],
+        "distance": 7,
+        "blockers": [
+          {
+            "member": [
+              8,
+              2,
+              0
+            ],
+            "target": [
+              8,
+              1,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      },
+      "frozenStops": {
+        "status": "exhausted",
+        "expanded": 45,
+        "positions": [
+          [
+            7,
+            4,
+            0
+          ],
+          [
+            7,
+            14,
+            0
+          ],
+          [
+            1,
+            4,
+            0
+          ],
+          [
+            6,
+            14,
+            0
+          ],
+          [
+            9,
+            14,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            13,
+            0
+          ],
+          [
+            6,
+            1,
+            0
+          ],
+          [
+            9,
+            13,
+            0
+          ],
+          [
+            3,
+            13,
+            0
+          ],
+          [
+            3,
+            1,
+            0
+          ],
+          [
+            7,
+            1,
+            0
+          ],
+          [
+            14,
+            13,
+            0
+          ],
+          [
+            3,
+            3,
+            0
+          ],
+          [
+            3,
+            14,
+            0
+          ],
+          [
+            7,
+            2,
+            0
+          ],
+          [
+            14,
+            6,
+            0
+          ],
+          [
+            14,
+            14,
+            0
+          ],
+          [
+            1,
+            3,
+            0
+          ],
+          [
+            6,
+            3,
+            0
+          ],
+          [
+            2,
+            14,
+            0
+          ],
+          [
+            4,
+            2,
+            0
+          ],
+          [
+            1,
+            6,
+            0
+          ],
+          [
+            13,
+            14,
+            0
+          ],
+          [
+            2,
+            13,
+            0
+          ],
+          [
+            4,
+            1,
+            0
+          ],
+          [
+            4,
+            12,
+            0
+          ],
+          [
+            13,
+            13,
+            0
+          ],
+          [
+            3,
+            12,
+            0
+          ],
+          [
+            8,
+            12,
+            0
+          ],
+          [
+            8,
+            5,
+            0
+          ],
+          [
+            1,
+            5,
+            0
+          ],
+          [
+            13,
+            5,
+            0
+          ],
+          [
+            13,
+            3,
+            0
+          ],
+          [
+            13,
+            7,
+            0
+          ],
+          [
+            10,
+            3,
+            0
+          ],
+          [
+            14,
+            3,
+            0
+          ],
+          [
+            1,
+            7,
+            0
+          ],
+          [
+            14,
+            7,
+            0
+          ],
+          [
+            10,
+            1,
+            0
+          ],
+          [
+            10,
+            10,
+            0
+          ],
+          [
+            14,
+            1,
+            0
+          ],
+          [
+            15,
+            1,
+            0
+          ],
+          [
+            1,
+            10,
+            0
+          ],
+          [
+            14,
+            10,
+            0
+          ]
+        ],
+        "gemReachable": false,
+        "goalReachable": false
+      }
+    },
+    {
+      "step": 111,
+      "actors": [
+        {
+          "i": 0,
+          "type": "player",
+          "group": null,
+          "cell": [
+            11,
+            5,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            4,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            4,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            13,
+            4,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            5,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "gem",
+          "group": null,
+          "cell": [
+            12,
+            8,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "center": [
+        12,
+        4,
+        0
+      ],
+      "precedingInput": "R",
+      "event": {
+        "direction": "R",
+        "motion": true,
+        "delta": [
+          10,
+          0,
+          0
+        ],
+        "centerBefore": [
+          2,
+          4,
+          0
+        ],
+        "centerAfter": [
+          12,
+          4,
+          0
+        ],
+        "playerBefore": [
+          1,
+          5,
+          0
+        ],
+        "playerAfter": [
+          11,
+          5,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          12,
+          5,
+          0
+        ],
+        "path": [
+          {
+            "x": 1,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 2,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 3,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 4,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 8,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 9,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 10,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 11,
+            "y": 5,
+            "elevation": 0
+          }
+        ],
+        "distance": 10,
+        "blockers": [
+          {
+            "member": [
+              13,
+              4,
+              0
+            ],
+            "target": [
+              14,
+              4,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      },
+      "frozenStops": {
+        "status": "exhausted",
+        "expanded": 32,
+        "positions": [
+          [
+            11,
+            5,
+            0
+          ],
+          [
+            11,
+            11,
+            0
+          ],
+          [
+            1,
+            5,
+            0
+          ],
+          [
+            14,
+            11,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            13,
+            0
+          ],
+          [
+            14,
+            6,
+            0
+          ],
+          [
+            14,
+            14,
+            0
+          ],
+          [
+            3,
+            13,
+            0
+          ],
+          [
+            1,
+            6,
+            0
+          ],
+          [
+            13,
+            14,
+            0
+          ],
+          [
+            3,
+            3,
+            0
+          ],
+          [
+            3,
+            14,
+            0
+          ],
+          [
+            13,
+            13,
+            0
+          ],
+          [
+            1,
+            3,
+            0
+          ],
+          [
+            11,
+            3,
+            0
+          ],
+          [
+            2,
+            14,
+            0
+          ],
+          [
+            9,
+            13,
+            0
+          ],
+          [
+            14,
+            13,
+            0
+          ],
+          [
+            11,
+            1,
+            0
+          ],
+          [
+            2,
+            13,
+            0
+          ],
+          [
+            9,
+            14,
+            0
+          ],
+          [
+            10,
+            1,
+            0
+          ],
+          [
+            15,
+            1,
+            0
+          ],
+          [
+            6,
+            14,
+            0
+          ],
+          [
+            10,
+            10,
+            0
+          ],
+          [
+            6,
+            1,
+            0
+          ],
+          [
+            1,
+            10,
+            0
+          ],
+          [
+            14,
+            10,
+            0
+          ],
+          [
+            3,
+            1,
+            0
+          ],
+          [
+            7,
+            1,
+            0
+          ],
+          [
+            7,
+            14,
+            0
+          ]
+        ],
+        "gemReachable": false,
+        "goalReachable": false
+      }
+    },
+    {
+      "step": 117,
+      "actors": [
+        {
+          "i": 0,
+          "type": "player",
+          "group": null,
+          "cell": [
+            11,
+            6,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            6,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            13,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            8,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "gem",
+          "group": null,
+          "cell": [
+            12,
+            8,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "center": [
+        12,
+        7,
+        0
+      ],
+      "precedingInput": "D",
+      "event": {
+        "direction": "D",
+        "motion": true,
+        "delta": [
+          0,
+          3,
+          0
+        ],
+        "centerBefore": [
+          12,
+          4,
+          0
+        ],
+        "centerAfter": [
+          12,
+          7,
+          0
+        ],
+        "playerBefore": [
+          11,
+          3,
+          0
+        ],
+        "playerAfter": [
+          11,
+          6,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          11,
+          7,
+          0
+        ],
+        "path": [
+          {
+            "x": 11,
+            "y": 3,
+            "elevation": 0
+          },
+          {
+            "x": 11,
+            "y": 4,
+            "elevation": 0
+          },
+          {
+            "x": 11,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 11,
+            "y": 6,
+            "elevation": 0
+          }
+        ],
+        "distance": 3,
+        "blockers": [
+          {
+            "member": [
+              13,
+              7,
+              0
+            ],
+            "target": [
+              13,
+              8,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      },
+      "frozenStops": {
+        "status": "exhausted",
+        "expanded": 32,
+        "positions": [
+          [
+            11,
+            6,
+            0
+          ],
+          [
+            11,
+            1,
+            0
+          ],
+          [
+            1,
+            6,
+            0
+          ],
+          [
+            10,
+            1,
+            0
+          ],
+          [
+            15,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            13,
+            0
+          ],
+          [
+            10,
+            10,
+            0
+          ],
+          [
+            3,
+            13,
+            0
+          ],
+          [
+            1,
+            10,
+            0
+          ],
+          [
+            14,
+            10,
+            0
+          ],
+          [
+            3,
+            3,
+            0
+          ],
+          [
+            3,
+            14,
+            0
+          ],
+          [
+            14,
+            6,
+            0
+          ],
+          [
+            14,
+            14,
+            0
+          ],
+          [
+            1,
+            3,
+            0
+          ],
+          [
+            14,
+            3,
+            0
+          ],
+          [
+            2,
+            14,
+            0
+          ],
+          [
+            13,
+            6,
+            0
+          ],
+          [
+            13,
+            14,
+            0
+          ],
+          [
+            14,
+            1,
+            0
+          ],
+          [
+            2,
+            13,
+            0
+          ],
+          [
+            13,
+            3,
+            0
+          ],
+          [
+            13,
+            13,
+            0
+          ],
+          [
+            9,
+            13,
+            0
+          ],
+          [
+            14,
+            13,
+            0
+          ],
+          [
+            9,
+            14,
+            0
+          ],
+          [
+            6,
+            14,
+            0
+          ],
+          [
+            6,
+            1,
+            0
+          ],
+          [
+            3,
+            1,
+            0
+          ],
+          [
+            7,
+            1,
+            0
+          ],
+          [
+            7,
+            14,
+            0
+          ]
+        ],
+        "gemReachable": false,
+        "goalReachable": false
+      }
+    },
+    {
+      "step": 124,
+      "actors": [
+        {
+          "i": 0,
+          "type": "player",
+          "group": null,
+          "cell": [
+            3,
+            6,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            6,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            1,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            8,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "gem",
+          "group": null,
+          "cell": [
+            12,
+            8,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "center": [
+        2,
+        7,
+        0
+      ],
+      "precedingInput": "L",
+      "event": {
+        "direction": "L",
+        "motion": true,
+        "delta": [
+          -10,
+          0,
+          0
+        ],
+        "centerBefore": [
+          12,
+          7,
+          0
+        ],
+        "centerAfter": [
+          2,
+          7,
+          0
+        ],
+        "playerBefore": [
+          13,
+          6,
+          0
+        ],
+        "playerAfter": [
+          3,
+          6,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          2,
+          6,
+          0
+        ],
+        "path": [
+          {
+            "x": 13,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 12,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 11,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 10,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 9,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 8,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 5,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 3,
+            "y": 6,
+            "elevation": 0
+          }
+        ],
+        "distance": 10,
+        "blockers": [
+          {
+            "member": [
+              1,
+              7,
+              0
+            ],
+            "target": [
+              0,
+              7,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      },
+      "frozenStops": {
+        "status": "exhausted",
+        "expanded": 65,
+        "positions": [
+          [
+            3,
+            6,
+            0
+          ],
+          [
+            3,
+            3,
+            0
+          ],
+          [
+            14,
+            6,
+            0
+          ],
+          [
+            1,
+            3,
+            0
+          ],
+          [
+            14,
+            3,
+            0
+          ],
+          [
+            14,
+            14,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            6,
+            0
+          ],
+          [
+            14,
+            1,
+            0
+          ],
+          [
+            13,
+            14,
+            0
+          ],
+          [
+            10,
+            1,
+            0
+          ],
+          [
+            15,
+            1,
+            0
+          ],
+          [
+            13,
+            13,
+            0
+          ],
+          [
+            10,
+            10,
+            0
+          ],
+          [
+            9,
+            13,
+            0
+          ],
+          [
+            14,
+            13,
+            0
+          ],
+          [
+            1,
+            10,
+            0
+          ],
+          [
+            14,
+            10,
+            0
+          ],
+          [
+            9,
+            14,
+            0
+          ],
+          [
+            1,
+            8,
+            0
+          ],
+          [
+            1,
+            13,
+            0
+          ],
+          [
+            6,
+            14,
+            0
+          ],
+          [
+            3,
+            13,
+            0
+          ],
+          [
+            6,
+            1,
+            0
+          ],
+          [
+            3,
+            8,
+            0
+          ],
+          [
+            3,
+            14,
+            0
+          ],
+          [
+            3,
+            1,
+            0
+          ],
+          [
+            7,
+            1,
+            0
+          ],
+          [
+            12,
+            8,
+            0
+          ],
+          [
+            2,
+            14,
+            0
+          ],
+          [
+            7,
+            14,
+            0
+          ],
+          [
+            12,
+            3,
+            0
+          ],
+          [
+            12,
+            13,
+            0
+          ],
+          [
+            2,
+            13,
+            0
+          ]
+        ],
+        "gemReachable": true,
+        "goalReachable": true,
+        "goalPath": "URULDLDRURURUR"
+      }
+    },
+    {
+      "step": 133,
+      "actors": [
+        {
+          "i": 0,
+          "type": "player",
+          "group": null,
+          "cell": [
+            3,
+            8,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            6,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            1,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            8,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "gem",
+          "group": null,
+          "cell": [
+            12,
+            8,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "center": [
+        2,
+        7,
+        0
+      ],
+      "precedingInput": "U",
+      "event": {
+        "direction": "U",
+        "motion": false,
+        "delta": [
+          0,
+          0,
+          0
+        ],
+        "centerBefore": [
+          2,
+          7,
+          0
+        ],
+        "centerAfter": [
+          2,
+          7,
+          0
+        ],
+        "playerBefore": [
+          3,
+          13,
+          0
+        ],
+        "playerAfter": [
+          3,
+          8,
+          0
+        ],
+        "crossBrake": true,
+        "brakingMember": [
+          3,
+          7,
+          0
+        ],
+        "path": [
+          {
+            "x": 3,
+            "y": 13,
+            "elevation": 0
+          },
+          {
+            "x": 3,
+            "y": 12,
+            "elevation": 0
+          },
+          {
+            "x": 3,
+            "y": 11,
+            "elevation": 0
+          },
+          {
+            "x": 3,
+            "y": 10,
+            "elevation": 0
+          },
+          {
+            "x": 3,
+            "y": 9,
+            "elevation": 0
+          },
+          {
+            "x": 3,
+            "y": 8,
+            "elevation": 0
+          }
+        ],
+        "distance": 5,
+        "blockers": [],
+        "gem": false
+      },
+      "frozenStops": {
+        "status": "exhausted",
+        "expanded": 41,
+        "positions": [
+          [
+            3,
+            8,
+            0
+          ],
+          [
+            3,
+            14,
+            0
+          ],
+          [
+            12,
+            8,
+            0
+          ],
+          [
+            2,
+            14,
+            0
+          ],
+          [
+            12,
+            3,
+            0
+          ],
+          [
+            12,
+            13,
+            0
+          ],
+          [
+            2,
+            13,
+            0
+          ],
+          [
+            1,
+            3,
+            0
+          ],
+          [
+            14,
+            3,
+            0
+          ],
+          [
+            9,
+            13,
+            0
+          ],
+          [
+            14,
+            13,
+            0
+          ],
+          [
+            1,
+            13,
+            0
+          ],
+          [
+            3,
+            13,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            6,
+            0
+          ],
+          [
+            14,
+            1,
+            0
+          ],
+          [
+            9,
+            14,
+            0
+          ],
+          [
+            14,
+            6,
+            0
+          ],
+          [
+            14,
+            14,
+            0
+          ],
+          [
+            1,
+            8,
+            0
+          ],
+          [
+            10,
+            1,
+            0
+          ],
+          [
+            15,
+            1,
+            0
+          ],
+          [
+            6,
+            14,
+            0
+          ],
+          [
+            3,
+            6,
+            0
+          ],
+          [
+            13,
+            14,
+            0
+          ],
+          [
+            10,
+            10,
+            0
+          ],
+          [
+            6,
+            1,
+            0
+          ],
+          [
+            3,
+            3,
+            0
+          ],
+          [
+            13,
+            13,
+            0
+          ],
+          [
+            1,
+            10,
+            0
+          ],
+          [
+            14,
+            10,
+            0
+          ],
+          [
+            3,
+            1,
+            0
+          ],
+          [
+            7,
+            1,
+            0
+          ],
+          [
+            7,
+            14,
+            0
+          ]
+        ],
+        "gemReachable": true,
+        "goalReachable": true,
+        "goalPath": "RURUR"
+      }
+    },
+    {
+      "step": 134,
+      "actors": [
+        {
+          "i": 0,
+          "type": "player",
+          "group": null,
+          "cell": [
+            12,
+            8,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            6,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            1,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            8,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "gem",
+          "group": null,
+          "cell": [
+            12,
+            8,
+            0
+          ],
+          "removed": true
+        }
+      ],
+      "center": [
+        2,
+        7,
+        0
+      ],
+      "precedingInput": "R",
+      "event": {
+        "direction": "R",
+        "motion": false,
+        "delta": [
+          0,
+          0,
+          0
+        ],
+        "centerBefore": [
+          2,
+          7,
+          0
+        ],
+        "centerAfter": [
+          2,
+          7,
+          0
+        ],
+        "playerBefore": [
+          3,
+          8,
+          0
+        ],
+        "playerAfter": [
+          12,
+          8,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": null,
+        "path": [
+          {
+            "x": 3,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 4,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 5,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 8,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 9,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 10,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 11,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 12,
+            "y": 8,
+            "elevation": 0
+          }
+        ],
+        "distance": 9,
+        "blockers": [],
+        "gem": true
+      },
+      "frozenStops": {
+        "status": "exhausted",
+        "expanded": 34,
+        "positions": [
+          [
+            12,
+            8,
+            0
+          ],
+          [
+            12,
+            3,
+            0
+          ],
+          [
+            12,
+            13,
+            0
+          ],
+          [
+            3,
+            8,
+            0
+          ],
+          [
+            1,
+            3,
+            0
+          ],
+          [
+            14,
+            3,
+            0
+          ],
+          [
+            9,
+            13,
+            0
+          ],
+          [
+            14,
+            13,
+            0
+          ],
+          [
+            3,
+            14,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            6,
+            0
+          ],
+          [
+            14,
+            1,
+            0
+          ],
+          [
+            9,
+            14,
+            0
+          ],
+          [
+            14,
+            6,
+            0
+          ],
+          [
+            14,
+            14,
+            0
+          ],
+          [
+            2,
+            14,
+            0
+          ],
+          [
+            10,
+            1,
+            0
+          ],
+          [
+            15,
+            1,
+            0
+          ],
+          [
+            6,
+            14,
+            0
+          ],
+          [
+            3,
+            6,
+            0
+          ],
+          [
+            13,
+            14,
+            0
+          ],
+          [
+            2,
+            13,
+            0
+          ],
+          [
+            10,
+            10,
+            0
+          ],
+          [
+            6,
+            1,
+            0
+          ],
+          [
+            3,
+            3,
+            0
+          ],
+          [
+            13,
+            13,
+            0
+          ],
+          [
+            1,
+            13,
+            0
+          ],
+          [
+            3,
+            13,
+            0
+          ],
+          [
+            1,
+            10,
+            0
+          ],
+          [
+            14,
+            10,
+            0
+          ],
+          [
+            3,
+            1,
+            0
+          ],
+          [
+            7,
+            1,
+            0
+          ],
+          [
+            1,
+            8,
+            0
+          ],
+          [
+            7,
+            14,
+            0
+          ]
+        ],
+        "gemReachable": true,
+        "goalReachable": true,
+        "goalPath": "URUR"
+      }
+    },
+    {
+      "step": 138,
+      "actors": [
+        {
+          "i": 0,
+          "type": "player",
+          "group": null,
+          "cell": [
+            15,
+            1,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            6,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            1,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            8,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 6,
+          "type": "gem",
+          "group": null,
+          "cell": [
+            12,
+            8,
+            0
+          ],
+          "removed": true
+        }
+      ],
+      "center": [
+        2,
+        7,
+        0
+      ],
+      "precedingInput": "R",
+      "event": {
+        "direction": "R",
+        "motion": false,
+        "delta": [
+          0,
+          0,
+          0
+        ],
+        "centerBefore": [
+          2,
+          7,
+          0
+        ],
+        "centerAfter": [
+          2,
+          7,
+          0
+        ],
+        "playerBefore": [
+          14,
+          1,
+          0
+        ],
+        "playerAfter": [
+          15,
+          1,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": null,
+        "path": [
+          {
+            "x": 14,
+            "y": 1,
+            "elevation": 0
+          },
+          {
+            "x": 15,
+            "y": 1,
+            "elevation": 0
+          }
+        ],
+        "distance": 1,
+        "blockers": [],
+        "gem": false
+      },
+      "frozenStops": {
+        "status": "exhausted",
+        "expanded": 34,
+        "positions": [
+          [
+            15,
+            1,
+            0
+          ],
+          [
+            10,
+            1,
+            0
+          ],
+          [
+            10,
+            10,
+            0
+          ],
+          [
+            1,
+            10,
+            0
+          ],
+          [
+            14,
+            10,
+            0
+          ],
+          [
+            1,
+            8,
+            0
+          ],
+          [
+            1,
+            13,
+            0
+          ],
+          [
+            14,
+            6,
+            0
+          ],
+          [
+            14,
+            14,
+            0
+          ],
+          [
+            3,
+            13,
+            0
+          ],
+          [
+            3,
+            6,
+            0
+          ],
+          [
+            13,
+            14,
+            0
+          ],
+          [
+            3,
+            8,
+            0
+          ],
+          [
+            3,
+            14,
+            0
+          ],
+          [
+            3,
+            3,
+            0
+          ],
+          [
+            13,
+            13,
+            0
+          ],
+          [
+            12,
+            8,
+            0
+          ],
+          [
+            2,
+            14,
+            0
+          ],
+          [
+            1,
+            3,
+            0
+          ],
+          [
+            14,
+            3,
+            0
+          ],
+          [
+            9,
+            13,
+            0
+          ],
+          [
+            14,
+            13,
+            0
+          ],
+          [
+            12,
+            3,
+            0
+          ],
+          [
+            12,
+            13,
+            0
+          ],
+          [
+            2,
+            13,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            6,
+            0
+          ],
+          [
+            14,
+            1,
+            0
+          ],
+          [
+            9,
+            14,
+            0
+          ],
+          [
+            6,
+            14,
+            0
+          ],
+          [
+            6,
+            1,
+            0
+          ],
+          [
+            3,
+            1,
+            0
+          ],
+          [
+            7,
+            1,
+            0
+          ],
+          [
+            7,
+            14,
+            0
+          ]
+        ],
+        "gemReachable": true,
+        "goalReachable": true,
+        "goalPath": ""
+      }
+    }
+  ],
+  "motions": [
+    {
+      "step": 13,
+      "direction": "D",
+      "fullBefore": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            5,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            6,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            6,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            9,
+            6,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            7,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "fullAfter": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            9,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            9,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            11,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "event": {
+        "direction": "D",
+        "motion": true,
+        "delta": [
+          0,
+          4,
+          0
+        ],
+        "centerBefore": [
+          8,
+          6,
+          0
+        ],
+        "centerAfter": [
+          8,
+          10,
+          0
+        ],
+        "playerBefore": [
+          7,
+          5,
+          0
+        ],
+        "playerAfter": [
+          7,
+          9,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          7,
+          10,
+          0
+        ],
+        "path": [
+          {
+            "x": 7,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 7,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 9,
+            "elevation": 0
+          }
+        ],
+        "distance": 4,
+        "blockers": [
+          {
+            "member": [
+              9,
+              10,
+              0
+            ],
+            "target": [
+              9,
+              11,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      }
+    },
+    {
+      "step": 22,
+      "direction": "L",
+      "fullBefore": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            9,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            9,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            11,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "fullAfter": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            9,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            1,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            11,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "event": {
+        "direction": "L",
+        "motion": true,
+        "delta": [
+          -6,
+          0,
+          0
+        ],
+        "centerBefore": [
+          8,
+          10,
+          0
+        ],
+        "centerAfter": [
+          2,
+          10,
+          0
+        ],
+        "playerBefore": [
+          10,
+          10,
+          0
+        ],
+        "playerAfter": [
+          4,
+          10,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          3,
+          10,
+          0
+        ],
+        "path": [
+          {
+            "x": 10,
+            "y": 10,
+            "elevation": 0
+          },
+          {
+            "x": 9,
+            "y": 10,
+            "elevation": 0
+          },
+          {
+            "x": 8,
+            "y": 10,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 10,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 10,
+            "elevation": 0
+          },
+          {
+            "x": 5,
+            "y": 10,
+            "elevation": 0
+          },
+          {
+            "x": 4,
+            "y": 10,
+            "elevation": 0
+          }
+        ],
+        "distance": 6,
+        "blockers": [
+          {
+            "member": [
+              1,
+              10,
+              0
+            ],
+            "target": [
+              0,
+              10,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      }
+    },
+    {
+      "step": 30,
+      "direction": "R",
+      "fullBefore": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            9,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            1,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            11,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "fullAfter": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            9,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            9,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            11,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "event": {
+        "direction": "R",
+        "motion": true,
+        "delta": [
+          6,
+          0,
+          0
+        ],
+        "centerBefore": [
+          2,
+          10,
+          0
+        ],
+        "centerAfter": [
+          8,
+          10,
+          0
+        ],
+        "playerBefore": [
+          1,
+          11,
+          0
+        ],
+        "playerAfter": [
+          7,
+          11,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          8,
+          11,
+          0
+        ],
+        "path": [
+          {
+            "x": 1,
+            "y": 11,
+            "elevation": 0
+          },
+          {
+            "x": 2,
+            "y": 11,
+            "elevation": 0
+          },
+          {
+            "x": 3,
+            "y": 11,
+            "elevation": 0
+          },
+          {
+            "x": 4,
+            "y": 11,
+            "elevation": 0
+          },
+          {
+            "x": 5,
+            "y": 11,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 11,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 11,
+            "elevation": 0
+          }
+        ],
+        "distance": 6,
+        "blockers": [
+          {
+            "member": [
+              8,
+              11,
+              0
+            ],
+            "target": [
+              9,
+              11,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      }
+    },
+    {
+      "step": 31,
+      "direction": "U",
+      "fullBefore": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            9,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            9,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            11,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "fullAfter": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            2,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            9,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            4,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "event": {
+        "direction": "U",
+        "motion": true,
+        "delta": [
+          0,
+          -7,
+          0
+        ],
+        "centerBefore": [
+          8,
+          10,
+          0
+        ],
+        "centerAfter": [
+          8,
+          3,
+          0
+        ],
+        "playerBefore": [
+          7,
+          11,
+          0
+        ],
+        "playerAfter": [
+          7,
+          4,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          7,
+          3,
+          0
+        ],
+        "path": [
+          {
+            "x": 7,
+            "y": 11,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 10,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 9,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 7,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 4,
+            "elevation": 0
+          }
+        ],
+        "distance": 7,
+        "blockers": [
+          {
+            "member": [
+              8,
+              2,
+              0
+            ],
+            "target": [
+              8,
+              1,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      }
+    },
+    {
+      "step": 37,
+      "direction": "R",
+      "fullBefore": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            2,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            9,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            4,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "fullAfter": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            2,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            10,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            4,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "event": {
+        "direction": "R",
+        "motion": true,
+        "delta": [
+          3,
+          0,
+          0
+        ],
+        "centerBefore": [
+          8,
+          3,
+          0
+        ],
+        "centerAfter": [
+          11,
+          3,
+          0
+        ],
+        "playerBefore": [
+          7,
+          2,
+          0
+        ],
+        "playerAfter": [
+          10,
+          2,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          11,
+          2,
+          0
+        ],
+        "path": [
+          {
+            "x": 7,
+            "y": 2,
+            "elevation": 0
+          },
+          {
+            "x": 8,
+            "y": 2,
+            "elevation": 0
+          },
+          {
+            "x": 9,
+            "y": 2,
+            "elevation": 0
+          },
+          {
+            "x": 10,
+            "y": 2,
+            "elevation": 0
+          }
+        ],
+        "distance": 3,
+        "blockers": [
+          {
+            "member": [
+              11,
+              2,
+              0
+            ],
+            "target": [
+              12,
+              2,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      }
+    },
+    {
+      "step": 38,
+      "direction": "D",
+      "fullBefore": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            2,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            10,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            4,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "fullAfter": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            9,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            10,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            11,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "event": {
+        "direction": "D",
+        "motion": true,
+        "delta": [
+          0,
+          7,
+          0
+        ],
+        "centerBefore": [
+          11,
+          3,
+          0
+        ],
+        "centerAfter": [
+          11,
+          10,
+          0
+        ],
+        "playerBefore": [
+          10,
+          2,
+          0
+        ],
+        "playerAfter": [
+          10,
+          9,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          10,
+          10,
+          0
+        ],
+        "path": [
+          {
+            "x": 10,
+            "y": 2,
+            "elevation": 0
+          },
+          {
+            "x": 10,
+            "y": 3,
+            "elevation": 0
+          },
+          {
+            "x": 10,
+            "y": 4,
+            "elevation": 0
+          },
+          {
+            "x": 10,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 10,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 10,
+            "y": 7,
+            "elevation": 0
+          },
+          {
+            "x": 10,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 10,
+            "y": 9,
+            "elevation": 0
+          }
+        ],
+        "distance": 7,
+        "blockers": [
+          {
+            "member": [
+              10,
+              10,
+              0
+            ],
+            "target": [
+              10,
+              11,
+              0
+            ],
+            "token": ".+#"
+          },
+          {
+            "member": [
+              11,
+              11,
+              0
+            ],
+            "target": [
+              11,
+              12,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      }
+    },
+    {
+      "step": 39,
+      "direction": "R",
+      "fullBefore": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            9,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            10,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            11,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "fullAfter": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            13,
+            9,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            13,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            14,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            13,
+            11,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "event": {
+        "direction": "R",
+        "motion": true,
+        "delta": [
+          2,
+          0,
+          0
+        ],
+        "centerBefore": [
+          11,
+          10,
+          0
+        ],
+        "centerAfter": [
+          13,
+          10,
+          0
+        ],
+        "playerBefore": [
+          10,
+          9,
+          0
+        ],
+        "playerAfter": [
+          12,
+          9,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          13,
+          9,
+          0
+        ],
+        "path": [
+          {
+            "x": 10,
+            "y": 9,
+            "elevation": 0
+          },
+          {
+            "x": 11,
+            "y": 9,
+            "elevation": 0
+          },
+          {
+            "x": 12,
+            "y": 9,
+            "elevation": 0
+          }
+        ],
+        "distance": 2,
+        "blockers": [
+          {
+            "member": [
+              14,
+              10,
+              0
+            ],
+            "target": [
+              15,
+              10,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      }
+    },
+    {
+      "step": 51,
+      "direction": "L",
+      "fullBefore": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            13,
+            9,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            13,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            14,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            13,
+            11,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "fullAfter": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            9,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            10,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            11,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "event": {
+        "direction": "L",
+        "motion": true,
+        "delta": [
+          -2,
+          0,
+          0
+        ],
+        "centerBefore": [
+          13,
+          10,
+          0
+        ],
+        "centerAfter": [
+          11,
+          10,
+          0
+        ],
+        "playerBefore": [
+          14,
+          11,
+          0
+        ],
+        "playerAfter": [
+          12,
+          11,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          11,
+          11,
+          0
+        ],
+        "path": [
+          {
+            "x": 14,
+            "y": 11,
+            "elevation": 0
+          },
+          {
+            "x": 13,
+            "y": 11,
+            "elevation": 0
+          },
+          {
+            "x": 12,
+            "y": 11,
+            "elevation": 0
+          }
+        ],
+        "distance": 2,
+        "blockers": [
+          {
+            "member": [
+              11,
+              11,
+              0
+            ],
+            "target": [
+              10,
+              11,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      }
+    },
+    {
+      "step": 52,
+      "direction": "U",
+      "fullBefore": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            9,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            10,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            11,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "fullAfter": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            2,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            10,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            4,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "event": {
+        "direction": "U",
+        "motion": true,
+        "delta": [
+          0,
+          -7,
+          0
+        ],
+        "centerBefore": [
+          11,
+          10,
+          0
+        ],
+        "centerAfter": [
+          11,
+          3,
+          0
+        ],
+        "playerBefore": [
+          12,
+          11,
+          0
+        ],
+        "playerAfter": [
+          12,
+          4,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          12,
+          3,
+          0
+        ],
+        "path": [
+          {
+            "x": 12,
+            "y": 11,
+            "elevation": 0
+          },
+          {
+            "x": 12,
+            "y": 10,
+            "elevation": 0
+          },
+          {
+            "x": 12,
+            "y": 9,
+            "elevation": 0
+          },
+          {
+            "x": 12,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 12,
+            "y": 7,
+            "elevation": 0
+          },
+          {
+            "x": 12,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 12,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 12,
+            "y": 4,
+            "elevation": 0
+          }
+        ],
+        "distance": 7,
+        "blockers": [
+          {
+            "member": [
+              12,
+              3,
+              0
+            ],
+            "target": [
+              12,
+              2,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      }
+    },
+    {
+      "step": 53,
+      "direction": "L",
+      "fullBefore": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            2,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            10,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            4,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "fullAfter": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            4,
+            2,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            4,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            5,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            4,
+            4,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "event": {
+        "direction": "L",
+        "motion": true,
+        "delta": [
+          -7,
+          0,
+          0
+        ],
+        "centerBefore": [
+          11,
+          3,
+          0
+        ],
+        "centerAfter": [
+          4,
+          3,
+          0
+        ],
+        "playerBefore": [
+          12,
+          4,
+          0
+        ],
+        "playerAfter": [
+          5,
+          4,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          4,
+          4,
+          0
+        ],
+        "path": [
+          {
+            "x": 12,
+            "y": 4,
+            "elevation": 0
+          },
+          {
+            "x": 11,
+            "y": 4,
+            "elevation": 0
+          },
+          {
+            "x": 10,
+            "y": 4,
+            "elevation": 0
+          },
+          {
+            "x": 9,
+            "y": 4,
+            "elevation": 0
+          },
+          {
+            "x": 8,
+            "y": 4,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 4,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 4,
+            "elevation": 0
+          },
+          {
+            "x": 5,
+            "y": 4,
+            "elevation": 0
+          }
+        ],
+        "distance": 7,
+        "blockers": [
+          {
+            "member": [
+              4,
+              2,
+              0
+            ],
+            "target": [
+              3,
+              2,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      }
+    },
+    {
+      "step": 58,
+      "direction": "D",
+      "fullBefore": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            4,
+            2,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            4,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            5,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            4,
+            4,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "fullAfter": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            4,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            4,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            5,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            4,
+            12,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "event": {
+        "direction": "D",
+        "motion": true,
+        "delta": [
+          0,
+          8,
+          0
+        ],
+        "centerBefore": [
+          4,
+          3,
+          0
+        ],
+        "centerAfter": [
+          4,
+          11,
+          0
+        ],
+        "playerBefore": [
+          5,
+          2,
+          0
+        ],
+        "playerAfter": [
+          5,
+          10,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          5,
+          11,
+          0
+        ],
+        "path": [
+          {
+            "x": 5,
+            "y": 2,
+            "elevation": 0
+          },
+          {
+            "x": 5,
+            "y": 3,
+            "elevation": 0
+          },
+          {
+            "x": 5,
+            "y": 4,
+            "elevation": 0
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 5,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 5,
+            "y": 7,
+            "elevation": 0
+          },
+          {
+            "x": 5,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 5,
+            "y": 9,
+            "elevation": 0
+          },
+          {
+            "x": 5,
+            "y": 10,
+            "elevation": 0
+          }
+        ],
+        "distance": 8,
+        "blockers": [
+          {
+            "member": [
+              4,
+              12,
+              0
+            ],
+            "target": [
+              4,
+              13,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      }
+    },
+    {
+      "step": 65,
+      "direction": "R",
+      "fullBefore": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            4,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            4,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            5,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            4,
+            12,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "fullAfter": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            6,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            12,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "event": {
+        "direction": "R",
+        "motion": true,
+        "delta": [
+          3,
+          0,
+          0
+        ],
+        "centerBefore": [
+          4,
+          11,
+          0
+        ],
+        "centerAfter": [
+          7,
+          11,
+          0
+        ],
+        "playerBefore": [
+          3,
+          12,
+          0
+        ],
+        "playerAfter": [
+          6,
+          12,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          7,
+          12,
+          0
+        ],
+        "path": [
+          {
+            "x": 3,
+            "y": 12,
+            "elevation": 0
+          },
+          {
+            "x": 4,
+            "y": 12,
+            "elevation": 0
+          },
+          {
+            "x": 5,
+            "y": 12,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 12,
+            "elevation": 0
+          }
+        ],
+        "distance": 3,
+        "blockers": [
+          {
+            "member": [
+              8,
+              11,
+              0
+            ],
+            "target": [
+              9,
+              11,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      }
+    },
+    {
+      "step": 73,
+      "direction": "D",
+      "fullBefore": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            6,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            12,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "fullAfter": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            6,
+            12,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            12,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            12,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            13,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "event": {
+        "direction": "D",
+        "motion": true,
+        "delta": [
+          0,
+          1,
+          0
+        ],
+        "centerBefore": [
+          7,
+          11,
+          0
+        ],
+        "centerAfter": [
+          7,
+          12,
+          0
+        ],
+        "playerBefore": [
+          8,
+          10,
+          0
+        ],
+        "playerAfter": [
+          8,
+          11,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          8,
+          12,
+          0
+        ],
+        "path": [
+          {
+            "x": 8,
+            "y": 10,
+            "elevation": 0
+          },
+          {
+            "x": 8,
+            "y": 11,
+            "elevation": 0
+          }
+        ],
+        "distance": 1,
+        "blockers": [
+          {
+            "member": [
+              8,
+              12,
+              0
+            ],
+            "target": [
+              8,
+              13,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      }
+    },
+    {
+      "step": 74,
+      "direction": "L",
+      "fullBefore": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            6,
+            12,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            12,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            8,
+            12,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            13,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "fullAfter": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            6,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            5,
+            12,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            6,
+            12,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            12,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            6,
+            13,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "event": {
+        "direction": "L",
+        "motion": true,
+        "delta": [
+          -1,
+          0,
+          0
+        ],
+        "centerBefore": [
+          7,
+          12,
+          0
+        ],
+        "centerAfter": [
+          6,
+          12,
+          0
+        ],
+        "playerBefore": [
+          8,
+          11,
+          0
+        ],
+        "playerAfter": [
+          7,
+          11,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          6,
+          11,
+          0
+        ],
+        "path": [
+          {
+            "x": 8,
+            "y": 11,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 11,
+            "elevation": 0
+          }
+        ],
+        "distance": 1,
+        "blockers": [
+          {
+            "member": [
+              6,
+              13,
+              0
+            ],
+            "target": [
+              5,
+              13,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      }
+    },
+    {
+      "step": 86,
+      "direction": "U",
+      "fullBefore": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            6,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            5,
+            12,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            6,
+            12,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            12,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            6,
+            13,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "fullAfter": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            6,
+            1,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            5,
+            2,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            6,
+            2,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            2,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            6,
+            3,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "event": {
+        "direction": "U",
+        "motion": true,
+        "delta": [
+          0,
+          -10,
+          0
+        ],
+        "centerBefore": [
+          6,
+          12,
+          0
+        ],
+        "centerAfter": [
+          6,
+          2,
+          0
+        ],
+        "playerBefore": [
+          6,
+          14,
+          0
+        ],
+        "playerAfter": [
+          6,
+          4,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          6,
+          3,
+          0
+        ],
+        "path": [
+          {
+            "x": 6,
+            "y": 14,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 13,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 12,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 11,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 10,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 9,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 7,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 4,
+            "elevation": 0
+          }
+        ],
+        "distance": 10,
+        "blockers": [
+          {
+            "member": [
+              6,
+              1,
+              0
+            ],
+            "target": [
+              6,
+              0,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      }
+    },
+    {
+      "step": 95,
+      "direction": "L",
+      "fullBefore": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            6,
+            1,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            5,
+            2,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            6,
+            2,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            7,
+            2,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            6,
+            3,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "fullAfter": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            5,
+            1,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            4,
+            2,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            5,
+            2,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            6,
+            2,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            5,
+            3,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "event": {
+        "direction": "L",
+        "motion": true,
+        "delta": [
+          -1,
+          0,
+          0
+        ],
+        "centerBefore": [
+          6,
+          2,
+          0
+        ],
+        "centerAfter": [
+          5,
+          2,
+          0
+        ],
+        "playerBefore": [
+          8,
+          2,
+          0
+        ],
+        "playerAfter": [
+          7,
+          2,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          6,
+          2,
+          0
+        ],
+        "path": [
+          {
+            "x": 8,
+            "y": 2,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 2,
+            "elevation": 0
+          }
+        ],
+        "distance": 1,
+        "blockers": [
+          {
+            "member": [
+              4,
+              2,
+              0
+            ],
+            "target": [
+              3,
+              2,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      }
+    },
+    {
+      "step": 98,
+      "direction": "D",
+      "fullBefore": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            5,
+            1,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            4,
+            2,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            5,
+            2,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            6,
+            2,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            5,
+            3,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "fullAfter": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            5,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            4,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            5,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            6,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            5,
+            12,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "event": {
+        "direction": "D",
+        "motion": true,
+        "delta": [
+          0,
+          9,
+          0
+        ],
+        "centerBefore": [
+          5,
+          2,
+          0
+        ],
+        "centerAfter": [
+          5,
+          11,
+          0
+        ],
+        "playerBefore": [
+          6,
+          1,
+          0
+        ],
+        "playerAfter": [
+          6,
+          10,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          6,
+          11,
+          0
+        ],
+        "path": [
+          {
+            "x": 6,
+            "y": 1,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 2,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 3,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 4,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 7,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 9,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 10,
+            "elevation": 0
+          }
+        ],
+        "distance": 9,
+        "blockers": [
+          {
+            "member": [
+              5,
+              12,
+              0
+            ],
+            "target": [
+              5,
+              13,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      }
+    },
+    {
+      "step": 104,
+      "direction": "L",
+      "fullBefore": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            5,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            4,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            5,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            6,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            5,
+            12,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "fullAfter": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            4,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            12,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "event": {
+        "direction": "L",
+        "motion": true,
+        "delta": [
+          -2,
+          0,
+          0
+        ],
+        "centerBefore": [
+          5,
+          11,
+          0
+        ],
+        "centerAfter": [
+          3,
+          11,
+          0
+        ],
+        "playerBefore": [
+          6,
+          12,
+          0
+        ],
+        "playerAfter": [
+          4,
+          12,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          3,
+          12,
+          0
+        ],
+        "path": [
+          {
+            "x": 6,
+            "y": 12,
+            "elevation": 0
+          },
+          {
+            "x": 5,
+            "y": 12,
+            "elevation": 0
+          },
+          {
+            "x": 4,
+            "y": 12,
+            "elevation": 0
+          }
+        ],
+        "distance": 2,
+        "blockers": [
+          {
+            "member": [
+              3,
+              12,
+              0
+            ],
+            "target": [
+              2,
+              12,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      }
+    },
+    {
+      "step": 105,
+      "direction": "U",
+      "fullBefore": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            10,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            4,
+            11,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            12,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "fullAfter": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            4,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            4,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            4,
+            4,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            5,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "event": {
+        "direction": "U",
+        "motion": true,
+        "delta": [
+          0,
+          -7,
+          0
+        ],
+        "centerBefore": [
+          3,
+          11,
+          0
+        ],
+        "centerAfter": [
+          3,
+          4,
+          0
+        ],
+        "playerBefore": [
+          4,
+          12,
+          0
+        ],
+        "playerAfter": [
+          4,
+          5,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          4,
+          4,
+          0
+        ],
+        "path": [
+          {
+            "x": 4,
+            "y": 12,
+            "elevation": 0
+          },
+          {
+            "x": 4,
+            "y": 11,
+            "elevation": 0
+          },
+          {
+            "x": 4,
+            "y": 10,
+            "elevation": 0
+          },
+          {
+            "x": 4,
+            "y": 9,
+            "elevation": 0
+          },
+          {
+            "x": 4,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 4,
+            "y": 7,
+            "elevation": 0
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 4,
+            "y": 5,
+            "elevation": 0
+          }
+        ],
+        "distance": 7,
+        "blockers": [
+          {
+            "member": [
+              3,
+              3,
+              0
+            ],
+            "target": [
+              3,
+              2,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      }
+    },
+    {
+      "step": 106,
+      "direction": "L",
+      "fullBefore": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            4,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            4,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            4,
+            4,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            5,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "fullAfter": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            1,
+            4,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            4,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            4,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            5,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "event": {
+        "direction": "L",
+        "motion": true,
+        "delta": [
+          -1,
+          0,
+          0
+        ],
+        "centerBefore": [
+          3,
+          4,
+          0
+        ],
+        "centerAfter": [
+          2,
+          4,
+          0
+        ],
+        "playerBefore": [
+          4,
+          5,
+          0
+        ],
+        "playerAfter": [
+          3,
+          5,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          2,
+          5,
+          0
+        ],
+        "path": [
+          {
+            "x": 4,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 3,
+            "y": 5,
+            "elevation": 0
+          }
+        ],
+        "distance": 1,
+        "blockers": [
+          {
+            "member": [
+              1,
+              4,
+              0
+            ],
+            "target": [
+              0,
+              4,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      }
+    },
+    {
+      "step": 111,
+      "direction": "R",
+      "fullBefore": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            1,
+            4,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            4,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            4,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            5,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "fullAfter": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            4,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            4,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            13,
+            4,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            5,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "event": {
+        "direction": "R",
+        "motion": true,
+        "delta": [
+          10,
+          0,
+          0
+        ],
+        "centerBefore": [
+          2,
+          4,
+          0
+        ],
+        "centerAfter": [
+          12,
+          4,
+          0
+        ],
+        "playerBefore": [
+          1,
+          5,
+          0
+        ],
+        "playerAfter": [
+          11,
+          5,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          12,
+          5,
+          0
+        ],
+        "path": [
+          {
+            "x": 1,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 2,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 3,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 4,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 8,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 9,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 10,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 11,
+            "y": 5,
+            "elevation": 0
+          }
+        ],
+        "distance": 10,
+        "blockers": [
+          {
+            "member": [
+              13,
+              4,
+              0
+            ],
+            "target": [
+              14,
+              4,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      }
+    },
+    {
+      "step": 117,
+      "direction": "D",
+      "fullBefore": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            3,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            4,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            4,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            13,
+            4,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            5,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "fullAfter": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            6,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            13,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            8,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "event": {
+        "direction": "D",
+        "motion": true,
+        "delta": [
+          0,
+          3,
+          0
+        ],
+        "centerBefore": [
+          12,
+          4,
+          0
+        ],
+        "centerAfter": [
+          12,
+          7,
+          0
+        ],
+        "playerBefore": [
+          11,
+          3,
+          0
+        ],
+        "playerAfter": [
+          11,
+          6,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          11,
+          7,
+          0
+        ],
+        "path": [
+          {
+            "x": 11,
+            "y": 3,
+            "elevation": 0
+          },
+          {
+            "x": 11,
+            "y": 4,
+            "elevation": 0
+          },
+          {
+            "x": 11,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 11,
+            "y": 6,
+            "elevation": 0
+          }
+        ],
+        "distance": 3,
+        "blockers": [
+          {
+            "member": [
+              13,
+              7,
+              0
+            ],
+            "target": [
+              13,
+              8,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      }
+    },
+    {
+      "step": 124,
+      "direction": "L",
+      "fullBefore": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            6,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            11,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            13,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            12,
+            8,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "fullAfter": [
+        {
+          "i": 1,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            6,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 2,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            1,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 3,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 4,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            3,
+            7,
+            0
+          ],
+          "removed": false
+        },
+        {
+          "i": 5,
+          "type": "weightless_box",
+          "group": "M0",
+          "cell": [
+            2,
+            8,
+            0
+          ],
+          "removed": false
+        }
+      ],
+      "event": {
+        "direction": "L",
+        "motion": true,
+        "delta": [
+          -10,
+          0,
+          0
+        ],
+        "centerBefore": [
+          12,
+          7,
+          0
+        ],
+        "centerAfter": [
+          2,
+          7,
+          0
+        ],
+        "playerBefore": [
+          13,
+          6,
+          0
+        ],
+        "playerAfter": [
+          3,
+          6,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          2,
+          6,
+          0
+        ],
+        "path": [
+          {
+            "x": 13,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 12,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 11,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 10,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 9,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 8,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 5,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 3,
+            "y": 6,
+            "elevation": 0
+          }
+        ],
+        "distance": 10,
+        "blockers": [
+          {
+            "member": [
+              1,
+              7,
+              0
+            ],
+            "target": [
+              0,
+              7,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      }
+    }
+  ],
+  "stages": [
+    {
+      "name": "right-docking",
+      "event": "right-dock",
+      "keyStep": 111,
+      "nextStand": [
+        11,
+        3,
+        0
+      ],
+      "nextDirection": "D",
+      "nextEvent": {
+        "direction": "D",
+        "motion": true,
+        "delta": [
+          0,
+          3,
+          0
+        ],
+        "centerBefore": [
+          12,
+          4,
+          0
+        ],
+        "centerAfter": [
+          12,
+          7,
+          0
+        ],
+        "playerBefore": [
+          11,
+          3,
+          0
+        ],
+        "playerAfter": [
+          11,
+          6,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          11,
+          7,
+          0
+        ],
+        "path": [
+          {
+            "x": 11,
+            "y": 3,
+            "elevation": 0
+          },
+          {
+            "x": 11,
+            "y": 4,
+            "elevation": 0
+          },
+          {
+            "x": 11,
+            "y": 5,
+            "elevation": 0
+          },
+          {
+            "x": 11,
+            "y": 6,
+            "elevation": 0
+          }
+        ],
+        "distance": 3,
+        "blockers": [
+          {
+            "member": [
+              13,
+              7,
+              0
+            ],
+            "target": [
+              13,
+              8,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      },
+      "conflict": "The later down-alignment pushing opportunity cannot be reached without the full right-docked pose.",
+      "effect": "Right arm stops at wall (14,4); the frozen stop graph supplies stance (11,3).",
+      "row": {
+        "step": 111,
+        "direction": "R",
+        "before": [
+          {
+            "i": 0,
+            "type": "player",
+            "group": null,
+            "cell": [
+              1,
+              5,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 1,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              2,
+              3,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 2,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              1,
+              4,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 3,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              2,
+              4,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 4,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              3,
+              4,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 5,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              2,
+              5,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 6,
+            "type": "gem",
+            "group": null,
+            "cell": [
+              12,
+              8,
+              0
+            ],
+            "removed": false
+          }
+        ],
+        "after": [
+          {
+            "i": 0,
+            "type": "player",
+            "group": null,
+            "cell": [
+              11,
+              5,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 1,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              12,
+              3,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 2,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              11,
+              4,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 3,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              12,
+              4,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 4,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              13,
+              4,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 5,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              12,
+              5,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 6,
+            "type": "gem",
+            "group": null,
+            "cell": [
+              12,
+              8,
+              0
+            ],
+            "removed": false
+          }
+        ],
+        "event": {
+          "direction": "R",
+          "motion": true,
+          "delta": [
+            10,
+            0,
+            0
+          ],
+          "centerBefore": [
+            2,
+            4,
+            0
+          ],
+          "centerAfter": [
+            12,
+            4,
+            0
+          ],
+          "playerBefore": [
+            1,
+            5,
+            0
+          ],
+          "playerAfter": [
+            11,
+            5,
+            0
+          ],
+          "crossBrake": false,
+          "brakingMember": [
+            12,
+            5,
+            0
+          ],
+          "path": [
+            {
+              "x": 1,
+              "y": 5,
+              "elevation": 0
+            },
+            {
+              "x": 2,
+              "y": 5,
+              "elevation": 0
+            },
+            {
+              "x": 3,
+              "y": 5,
+              "elevation": 0
+            },
+            {
+              "x": 4,
+              "y": 5,
+              "elevation": 0
+            },
+            {
+              "x": 5,
+              "y": 5,
+              "elevation": 0
+            },
+            {
+              "x": 6,
+              "y": 5,
+              "elevation": 0
+            },
+            {
+              "x": 7,
+              "y": 5,
+              "elevation": 0
+            },
+            {
+              "x": 8,
+              "y": 5,
+              "elevation": 0
+            },
+            {
+              "x": 9,
+              "y": 5,
+              "elevation": 0
+            },
+            {
+              "x": 10,
+              "y": 5,
+              "elevation": 0
+            },
+            {
+              "x": 11,
+              "y": 5,
+              "elevation": 0
+            }
+          ],
+          "distance": 10,
+          "blockers": [
+            {
+              "member": [
+                13,
+                4,
+                0
+              ],
+              "target": [
+                14,
+                4,
+                0
+              ],
+              "token": ".+#"
+            }
+          ],
+          "gem": false
+        }
+      },
+      "beforeStops": {
+        "label": "before",
+        "status": "exhausted",
+        "expanded": 33,
+        "reachable": [
+          [
+            1,
+            5,
+            0
+          ],
+          [
+            1,
+            13,
+            0
+          ],
+          [
+            3,
+            13,
+            0
+          ],
+          [
+            3,
+            5,
+            0
+          ],
+          [
+            3,
+            14,
+            0
+          ],
+          [
+            13,
+            5,
+            0
+          ],
+          [
+            2,
+            14,
+            0
+          ],
+          [
+            13,
+            3,
+            0
+          ],
+          [
+            13,
+            7,
+            0
+          ],
+          [
+            2,
+            13,
+            0
+          ],
+          [
+            3,
+            3,
+            0
+          ],
+          [
+            14,
+            3,
+            0
+          ],
+          [
+            1,
+            7,
+            0
+          ],
+          [
+            14,
+            7,
+            0
+          ],
+          [
+            14,
+            1,
+            0
+          ],
+          [
+            14,
+            6,
+            0
+          ],
+          [
+            14,
+            14,
+            0
+          ],
+          [
+            10,
+            1,
+            0
+          ],
+          [
+            15,
+            1,
+            0
+          ],
+          [
+            1,
+            6,
+            0
+          ],
+          [
+            13,
+            14,
+            0
+          ],
+          [
+            10,
+            10,
+            0
+          ],
+          [
+            13,
+            13,
+            0
+          ],
+          [
+            1,
+            10,
+            0
+          ],
+          [
+            14,
+            10,
+            0
+          ],
+          [
+            9,
+            13,
+            0
+          ],
+          [
+            14,
+            13,
+            0
+          ],
+          [
+            9,
+            14,
+            0
+          ],
+          [
+            6,
+            14,
+            0
+          ],
+          [
+            6,
+            1,
+            0
+          ],
+          [
+            3,
+            1,
+            0
+          ],
+          [
+            7,
+            1,
+            0
+          ],
+          [
+            7,
+            14,
+            0
+          ]
+        ],
+        "gemReachable": false,
+        "goalReachable": false
+      },
+      "afterStops": {
+        "label": "after",
+        "status": "exhausted",
+        "expanded": 32,
+        "reachable": [
+          [
+            11,
+            5,
+            0
+          ],
+          [
+            11,
+            11,
+            0
+          ],
+          [
+            1,
+            5,
+            0
+          ],
+          [
+            14,
+            11,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            13,
+            0
+          ],
+          [
+            14,
+            6,
+            0
+          ],
+          [
+            14,
+            14,
+            0
+          ],
+          [
+            3,
+            13,
+            0
+          ],
+          [
+            1,
+            6,
+            0
+          ],
+          [
+            13,
+            14,
+            0
+          ],
+          [
+            3,
+            3,
+            0
+          ],
+          [
+            3,
+            14,
+            0
+          ],
+          [
+            13,
+            13,
+            0
+          ],
+          [
+            1,
+            3,
+            0
+          ],
+          [
+            11,
+            3,
+            0
+          ],
+          [
+            2,
+            14,
+            0
+          ],
+          [
+            9,
+            13,
+            0
+          ],
+          [
+            14,
+            13,
+            0
+          ],
+          [
+            11,
+            1,
+            0
+          ],
+          [
+            2,
+            13,
+            0
+          ],
+          [
+            9,
+            14,
+            0
+          ],
+          [
+            10,
+            1,
+            0
+          ],
+          [
+            15,
+            1,
+            0
+          ],
+          [
+            6,
+            14,
+            0
+          ],
+          [
+            10,
+            10,
+            0
+          ],
+          [
+            6,
+            1,
+            0
+          ],
+          [
+            1,
+            10,
+            0
+          ],
+          [
+            14,
+            10,
+            0
+          ],
+          [
+            3,
+            1,
+            0
+          ],
+          [
+            7,
+            1,
+            0
+          ],
+          [
+            7,
+            14,
+            0
+          ]
+        ],
+        "gemReachable": false,
+        "goalReachable": false
+      },
+      "newlyReachable": [
+        [
+          11,
+          5,
+          0
+        ],
+        [
+          11,
+          11,
+          0
+        ],
+        [
+          14,
+          11,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          11,
+          3,
+          0
+        ],
+        [
+          11,
+          1,
+          0
+        ]
+      ],
+      "lostReachable": [
+        [
+          3,
+          5,
+          0
+        ],
+        [
+          13,
+          5,
+          0
+        ],
+        [
+          13,
+          3,
+          0
+        ],
+        [
+          13,
+          7,
+          0
+        ],
+        [
+          14,
+          3,
+          0
+        ],
+        [
+          1,
+          7,
+          0
+        ],
+        [
+          14,
+          7,
+          0
+        ],
+        [
+          14,
+          1,
+          0
+        ]
+      ],
+      "stanceReachable": true,
+      "stancePath": "LDRUR",
+      "verdict": "passed"
+    },
+    {
+      "name": "vertical-alignment",
+      "event": "down-align",
+      "keyStep": 117,
+      "nextStand": [
+        13,
+        6,
+        0
+      ],
+      "nextDirection": "L",
+      "nextEvent": {
+        "direction": "L",
+        "motion": true,
+        "delta": [
+          -10,
+          0,
+          0
+        ],
+        "centerBefore": [
+          12,
+          7,
+          0
+        ],
+        "centerAfter": [
+          2,
+          7,
+          0
+        ],
+        "playerBefore": [
+          13,
+          6,
+          0
+        ],
+        "playerAfter": [
+          3,
+          6,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": [
+          2,
+          6,
+          0
+        ],
+        "path": [
+          {
+            "x": 13,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 12,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 11,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 10,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 9,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 8,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 5,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "elevation": 0
+          },
+          {
+            "x": 3,
+            "y": 6,
+            "elevation": 0
+          }
+        ],
+        "distance": 10,
+        "blockers": [
+          {
+            "member": [
+              1,
+              7,
+              0
+            ],
+            "target": [
+              0,
+              7,
+              0
+            ],
+            "token": ".+#"
+          }
+        ],
+        "gem": false
+      },
+      "conflict": "The later clear-ray opportunity is inaccessible without dropping the full cross to its aligned pose.",
+      "effect": "Right arm stops at (13,8); bottom arm reaches the gem row and stance (13,6) becomes usable.",
+      "row": {
+        "step": 117,
+        "direction": "D",
+        "before": [
+          {
+            "i": 0,
+            "type": "player",
+            "group": null,
+            "cell": [
+              11,
+              3,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 1,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              12,
+              3,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 2,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              11,
+              4,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 3,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              12,
+              4,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 4,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              13,
+              4,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 5,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              12,
+              5,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 6,
+            "type": "gem",
+            "group": null,
+            "cell": [
+              12,
+              8,
+              0
+            ],
+            "removed": false
+          }
+        ],
+        "after": [
+          {
+            "i": 0,
+            "type": "player",
+            "group": null,
+            "cell": [
+              11,
+              6,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 1,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              12,
+              6,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 2,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              11,
+              7,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 3,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              12,
+              7,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 4,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              13,
+              7,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 5,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              12,
+              8,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 6,
+            "type": "gem",
+            "group": null,
+            "cell": [
+              12,
+              8,
+              0
+            ],
+            "removed": false
+          }
+        ],
+        "event": {
+          "direction": "D",
+          "motion": true,
+          "delta": [
+            0,
+            3,
+            0
+          ],
+          "centerBefore": [
+            12,
+            4,
+            0
+          ],
+          "centerAfter": [
+            12,
+            7,
+            0
+          ],
+          "playerBefore": [
+            11,
+            3,
+            0
+          ],
+          "playerAfter": [
+            11,
+            6,
+            0
+          ],
+          "crossBrake": false,
+          "brakingMember": [
+            11,
+            7,
+            0
+          ],
+          "path": [
+            {
+              "x": 11,
+              "y": 3,
+              "elevation": 0
+            },
+            {
+              "x": 11,
+              "y": 4,
+              "elevation": 0
+            },
+            {
+              "x": 11,
+              "y": 5,
+              "elevation": 0
+            },
+            {
+              "x": 11,
+              "y": 6,
+              "elevation": 0
+            }
+          ],
+          "distance": 3,
+          "blockers": [
+            {
+              "member": [
+                13,
+                7,
+                0
+              ],
+              "target": [
+                13,
+                8,
+                0
+              ],
+              "token": ".+#"
+            }
+          ],
+          "gem": false
+        }
+      },
+      "beforeStops": {
+        "label": "before",
+        "status": "exhausted",
+        "expanded": 28,
+        "reachable": [
+          [
+            11,
+            3,
+            0
+          ],
+          [
+            11,
+            1,
+            0
+          ],
+          [
+            1,
+            3,
+            0
+          ],
+          [
+            10,
+            1,
+            0
+          ],
+          [
+            15,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            13,
+            0
+          ],
+          [
+            10,
+            10,
+            0
+          ],
+          [
+            3,
+            13,
+            0
+          ],
+          [
+            1,
+            10,
+            0
+          ],
+          [
+            14,
+            10,
+            0
+          ],
+          [
+            3,
+            3,
+            0
+          ],
+          [
+            3,
+            14,
+            0
+          ],
+          [
+            14,
+            6,
+            0
+          ],
+          [
+            14,
+            14,
+            0
+          ],
+          [
+            2,
+            14,
+            0
+          ],
+          [
+            1,
+            6,
+            0
+          ],
+          [
+            13,
+            14,
+            0
+          ],
+          [
+            2,
+            13,
+            0
+          ],
+          [
+            13,
+            13,
+            0
+          ],
+          [
+            9,
+            13,
+            0
+          ],
+          [
+            14,
+            13,
+            0
+          ],
+          [
+            9,
+            14,
+            0
+          ],
+          [
+            6,
+            14,
+            0
+          ],
+          [
+            6,
+            1,
+            0
+          ],
+          [
+            3,
+            1,
+            0
+          ],
+          [
+            7,
+            1,
+            0
+          ],
+          [
+            7,
+            14,
+            0
+          ]
+        ],
+        "gemReachable": false,
+        "goalReachable": false
+      },
+      "afterStops": {
+        "label": "after",
+        "status": "exhausted",
+        "expanded": 32,
+        "reachable": [
+          [
+            11,
+            6,
+            0
+          ],
+          [
+            11,
+            1,
+            0
+          ],
+          [
+            1,
+            6,
+            0
+          ],
+          [
+            10,
+            1,
+            0
+          ],
+          [
+            15,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            13,
+            0
+          ],
+          [
+            10,
+            10,
+            0
+          ],
+          [
+            3,
+            13,
+            0
+          ],
+          [
+            1,
+            10,
+            0
+          ],
+          [
+            14,
+            10,
+            0
+          ],
+          [
+            3,
+            3,
+            0
+          ],
+          [
+            3,
+            14,
+            0
+          ],
+          [
+            14,
+            6,
+            0
+          ],
+          [
+            14,
+            14,
+            0
+          ],
+          [
+            1,
+            3,
+            0
+          ],
+          [
+            14,
+            3,
+            0
+          ],
+          [
+            2,
+            14,
+            0
+          ],
+          [
+            13,
+            6,
+            0
+          ],
+          [
+            13,
+            14,
+            0
+          ],
+          [
+            14,
+            1,
+            0
+          ],
+          [
+            2,
+            13,
+            0
+          ],
+          [
+            13,
+            3,
+            0
+          ],
+          [
+            13,
+            13,
+            0
+          ],
+          [
+            9,
+            13,
+            0
+          ],
+          [
+            14,
+            13,
+            0
+          ],
+          [
+            9,
+            14,
+            0
+          ],
+          [
+            6,
+            14,
+            0
+          ],
+          [
+            6,
+            1,
+            0
+          ],
+          [
+            3,
+            1,
+            0
+          ],
+          [
+            7,
+            1,
+            0
+          ],
+          [
+            7,
+            14,
+            0
+          ]
+        ],
+        "gemReachable": false,
+        "goalReachable": false
+      },
+      "newlyReachable": [
+        [
+          11,
+          6,
+          0
+        ],
+        [
+          14,
+          3,
+          0
+        ],
+        [
+          13,
+          6,
+          0
+        ],
+        [
+          14,
+          1,
+          0
+        ],
+        [
+          13,
+          3,
+          0
+        ]
+      ],
+      "lostReachable": [
+        [
+          11,
+          3,
+          0
+        ]
+      ],
+      "stanceReachable": true,
+      "stancePath": "ULDRUL",
+      "verdict": "passed"
+    },
+    {
+      "name": "clear-and-brake",
+      "event": "clear-ray",
+      "keyStep": 124,
+      "nextStand": [
+        3,
+        8,
+        0
+      ],
+      "nextDirection": "R",
+      "nextEvent": {
+        "direction": "R",
+        "motion": false,
+        "delta": [
+          0,
+          0,
+          0
+        ],
+        "centerBefore": [
+          2,
+          7,
+          0
+        ],
+        "centerAfter": [
+          2,
+          7,
+          0
+        ],
+        "playerBefore": [
+          3,
+          8,
+          0
+        ],
+        "playerAfter": [
+          12,
+          8,
+          0
+        ],
+        "crossBrake": false,
+        "brakingMember": null,
+        "path": [
+          {
+            "x": 3,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 4,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 5,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 6,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 7,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 8,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 9,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 10,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 11,
+            "y": 8,
+            "elevation": 0
+          },
+          {
+            "x": 12,
+            "y": 8,
+            "elevation": 0
+          }
+        ],
+        "distance": 9,
+        "blockers": [],
+        "gem": true
+      },
+      "conflict": "The bottom arm obstructs the useful ray, while clearing without a retained brake loses the turn.",
+      "effect": "Move to the left wall; clear y=8 and retain right-arm stop (3,7) above turning cell (3,8).",
+      "row": {
+        "step": 124,
+        "direction": "L",
+        "before": [
+          {
+            "i": 0,
+            "type": "player",
+            "group": null,
+            "cell": [
+              13,
+              6,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 1,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              12,
+              6,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 2,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              11,
+              7,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 3,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              12,
+              7,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 4,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              13,
+              7,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 5,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              12,
+              8,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 6,
+            "type": "gem",
+            "group": null,
+            "cell": [
+              12,
+              8,
+              0
+            ],
+            "removed": false
+          }
+        ],
+        "after": [
+          {
+            "i": 0,
+            "type": "player",
+            "group": null,
+            "cell": [
+              3,
+              6,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 1,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              2,
+              6,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 2,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              1,
+              7,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 3,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              2,
+              7,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 4,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              3,
+              7,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 5,
+            "type": "weightless_box",
+            "group": "M0",
+            "cell": [
+              2,
+              8,
+              0
+            ],
+            "removed": false
+          },
+          {
+            "i": 6,
+            "type": "gem",
+            "group": null,
+            "cell": [
+              12,
+              8,
+              0
+            ],
+            "removed": false
+          }
+        ],
+        "event": {
+          "direction": "L",
+          "motion": true,
+          "delta": [
+            -10,
+            0,
+            0
+          ],
+          "centerBefore": [
+            12,
+            7,
+            0
+          ],
+          "centerAfter": [
+            2,
+            7,
+            0
+          ],
+          "playerBefore": [
+            13,
+            6,
+            0
+          ],
+          "playerAfter": [
+            3,
+            6,
+            0
+          ],
+          "crossBrake": false,
+          "brakingMember": [
+            2,
+            6,
+            0
+          ],
+          "path": [
+            {
+              "x": 13,
+              "y": 6,
+              "elevation": 0
+            },
+            {
+              "x": 12,
+              "y": 6,
+              "elevation": 0
+            },
+            {
+              "x": 11,
+              "y": 6,
+              "elevation": 0
+            },
+            {
+              "x": 10,
+              "y": 6,
+              "elevation": 0
+            },
+            {
+              "x": 9,
+              "y": 6,
+              "elevation": 0
+            },
+            {
+              "x": 8,
+              "y": 6,
+              "elevation": 0
+            },
+            {
+              "x": 7,
+              "y": 6,
+              "elevation": 0
+            },
+            {
+              "x": 6,
+              "y": 6,
+              "elevation": 0
+            },
+            {
+              "x": 5,
+              "y": 6,
+              "elevation": 0
+            },
+            {
+              "x": 4,
+              "y": 6,
+              "elevation": 0
+            },
+            {
+              "x": 3,
+              "y": 6,
+              "elevation": 0
+            }
+          ],
+          "distance": 10,
+          "blockers": [
+            {
+              "member": [
+                1,
+                7,
+                0
+              ],
+              "target": [
+                0,
+                7,
+                0
+              ],
+              "token": ".+#"
+            }
+          ],
+          "gem": false
+        }
+      },
+      "beforeStops": {
+        "label": "before",
+        "status": "exhausted",
+        "expanded": 29,
+        "reachable": [
+          [
+            13,
+            6,
+            0
+          ],
+          [
+            13,
+            3,
+            0
+          ],
+          [
+            14,
+            6,
+            0
+          ],
+          [
+            1,
+            3,
+            0
+          ],
+          [
+            14,
+            3,
+            0
+          ],
+          [
+            14,
+            14,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            13,
+            0
+          ],
+          [
+            14,
+            1,
+            0
+          ],
+          [
+            13,
+            14,
+            0
+          ],
+          [
+            3,
+            13,
+            0
+          ],
+          [
+            10,
+            1,
+            0
+          ],
+          [
+            15,
+            1,
+            0
+          ],
+          [
+            13,
+            13,
+            0
+          ],
+          [
+            3,
+            3,
+            0
+          ],
+          [
+            3,
+            14,
+            0
+          ],
+          [
+            10,
+            10,
+            0
+          ],
+          [
+            9,
+            13,
+            0
+          ],
+          [
+            14,
+            13,
+            0
+          ],
+          [
+            2,
+            14,
+            0
+          ],
+          [
+            1,
+            10,
+            0
+          ],
+          [
+            14,
+            10,
+            0
+          ],
+          [
+            9,
+            14,
+            0
+          ],
+          [
+            2,
+            13,
+            0
+          ],
+          [
+            6,
+            14,
+            0
+          ],
+          [
+            6,
+            1,
+            0
+          ],
+          [
+            3,
+            1,
+            0
+          ],
+          [
+            7,
+            1,
+            0
+          ],
+          [
+            7,
+            14,
+            0
+          ]
+        ],
+        "gemReachable": false,
+        "goalReachable": false
+      },
+      "afterStops": {
+        "label": "after",
+        "status": "exhausted",
+        "expanded": 65,
+        "reachable": [
+          [
+            3,
+            6,
+            0
+          ],
+          [
+            3,
+            3,
+            0
+          ],
+          [
+            14,
+            6,
+            0
+          ],
+          [
+            1,
+            3,
+            0
+          ],
+          [
+            14,
+            3,
+            0
+          ],
+          [
+            14,
+            14,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            6,
+            0
+          ],
+          [
+            14,
+            1,
+            0
+          ],
+          [
+            13,
+            14,
+            0
+          ],
+          [
+            10,
+            1,
+            0
+          ],
+          [
+            15,
+            1,
+            0
+          ],
+          [
+            13,
+            13,
+            0
+          ],
+          [
+            10,
+            10,
+            0
+          ],
+          [
+            9,
+            13,
+            0
+          ],
+          [
+            14,
+            13,
+            0
+          ],
+          [
+            1,
+            10,
+            0
+          ],
+          [
+            14,
+            10,
+            0
+          ],
+          [
+            9,
+            14,
+            0
+          ],
+          [
+            1,
+            8,
+            0
+          ],
+          [
+            1,
+            13,
+            0
+          ],
+          [
+            6,
+            14,
+            0
+          ],
+          [
+            3,
+            13,
+            0
+          ],
+          [
+            6,
+            1,
+            0
+          ],
+          [
+            3,
+            8,
+            0
+          ],
+          [
+            3,
+            14,
+            0
+          ],
+          [
+            3,
+            1,
+            0
+          ],
+          [
+            7,
+            1,
+            0
+          ],
+          [
+            12,
+            8,
+            0
+          ],
+          [
+            2,
+            14,
+            0
+          ],
+          [
+            7,
+            14,
+            0
+          ],
+          [
+            12,
+            3,
+            0
+          ],
+          [
+            12,
+            13,
+            0
+          ],
+          [
+            2,
+            13,
+            0
+          ]
+        ],
+        "gemReachable": true,
+        "goalReachable": true,
+        "goalPath": "URULDLDRURURUR"
+      },
+      "newlyReachable": [
+        [
+          3,
+          6,
+          0
+        ],
+        [
+          1,
+          6,
+          0
+        ],
+        [
+          1,
+          8,
+          0
+        ],
+        [
+          3,
+          8,
+          0
+        ],
+        [
+          12,
+          8,
+          0
+        ],
+        [
+          12,
+          3,
+          0
+        ],
+        [
+          12,
+          13,
+          0
+        ]
+      ],
+      "lostReachable": [
+        [
+          13,
+          6,
+          0
+        ],
+        [
+          13,
+          3,
+          0
+        ]
+      ],
+      "stanceReachable": true,
+      "stancePath": "URULDLDRU",
+      "verdict": "passed"
+    }
+  ]
+}

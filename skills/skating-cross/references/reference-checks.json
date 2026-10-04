@@ -1,0 +1,819 @@
+{
+  "source": {
+    "kind": "user-authored local case",
+    "draft": "draft-depth-f46419b887",
+    "engine_commit": "0ac96b8a2648db09f375989cd7bc33699222c1e6",
+    "map_sha256": "d95611963f45420573cf662f7eba9b494f8622203505627cebf1f425f3e3b296"
+  },
+  "fingerprints": {
+    "cells": "df74af843f20f11cf99ed1712556903a87feddf416aaaf86fd48bda7a9780b65",
+    "contract": "f989f21af2a3456c5a969c85c2c9d0a9e30b8b3caa6327054acce14ef4c37204",
+    "reference": "8b795fbdb7785f01cfded88c1076e620bedb83bcc128906630f6848621a936a6",
+    "public/maze-engine.js": "c25be363e30186b7435c20361f20542170bdabc9de8c0dad8fa45198e5cab842",
+    "public/maze-solver.js": "be7ecce88b17e2f5cc4894a2fd5c86ba8008cb157406a5728bc8ab110fb3df9d",
+    "server/maze-levels.js": "9b75ab87efdcaee23a91c442d1bdcc7975f545f3a58ec4403c3fce2fd4a341e0",
+    "games/maze/level_parsing.json": "54cb1bc6d2e545a89abe860e2c84e45ed5fd31b244b828b8424d2693d05b780d"
+  },
+  "goal": {
+    "kind": "gem-and-return",
+    "cell": [
+      15,
+      1,
+      0
+    ]
+  },
+  "overall": "passed",
+  "classification": "complex-structurally-verified",
+  "solution": {
+    "name": "complete_objective",
+    "expected": "solved",
+    "status": "solved",
+    "path": "LDRDLULDLURDDLDRURULDLDLDLULURUDLURDRDRURULDRDRDRULULDRULDRULDRURLURULDLDLRURDRDLULDLULDRURDRULULDURDLULULRDLURLDRURDULDRULLURULDLDRURURUR",
+    "expanded": 931,
+    "cap": 300000,
+    "discovered": 944,
+    "replayPassed": true,
+    "scope": "Full initial-state objective",
+    "verdict": "passed"
+  },
+  "officialSolution": {
+    "status": "solved",
+    "path": "LDRDLULDLURDDLDRURULDLDLDLULURUDLURDRDRURULDRDRDRULULDRULDRULDRURLURULDLDLRURDRDLULDLULDRURDRULULDURDLULULRDLURLDRURDULDRULLURULDLDRURURUR",
+    "expanded": 954,
+    "replayPassed": true
+  },
+  "ordinaryReplayPassed": true,
+  "inputs": 138,
+  "groupMotions": 23,
+  "gemStep": 134,
+  "checks": [
+    {
+      "name": "complete_objective",
+      "expected": "solved",
+      "status": "solved",
+      "path": "LDRDLULDLURDDLDRURULDLDLDLULURUDLURDRDRURULDRDRDRULULDRULDRULDRURLURULDLDLRURDRDLULDLULDRURDRULULDURDLULULRDLURLDRURDULDRULLURULDLDRURURUR",
+      "expanded": 931,
+      "cap": 300000,
+      "discovered": 944,
+      "replayPassed": true,
+      "scope": "Full initial-state objective",
+      "verdict": "passed"
+    },
+    {
+      "name": "official_solver_positive",
+      "expected": "solved",
+      "status": "solved",
+      "path": "LDRDLULDLURDDLDRURULDLDLDLULURUDLURDRDRURULDRDRDRULULDRULDRULDRURLURULDLDLRURDRDLULDLULDRURDRULULDURDLULULRDLURLDRURDULDRULLURULDLDRURURUR",
+      "expanded": 954,
+      "replayPassed": true,
+      "verdict": "passed"
+    },
+    {
+      "name": "freeze_cross",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 29,
+      "cap": 300000,
+      "discovered": 29,
+      "scope": "Full initial-state objective",
+      "verdict": "passed"
+    },
+    {
+      "name": "forbid_static_cross_brake",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 26,
+      "cap": 300000,
+      "discovered": 26,
+      "scope": "Full initial-state objective",
+      "verdict": "passed"
+    },
+    {
+      "name": "forbid_cross_motion_U",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 167,
+      "cap": 300000,
+      "discovered": 167,
+      "scope": "Full initial-state objective",
+      "verdict": "passed"
+    },
+    {
+      "name": "forbid_cross_motion_D",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 141,
+      "cap": 300000,
+      "discovered": 141,
+      "scope": "Full initial-state objective",
+      "verdict": "passed"
+    },
+    {
+      "name": "forbid_cross_motion_L",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 87,
+      "cap": 300000,
+      "discovered": 87,
+      "scope": "Full initial-state objective",
+      "verdict": "passed"
+    },
+    {
+      "name": "forbid_cross_motion_R",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 174,
+      "cap": 300000,
+      "discovered": 174,
+      "scope": "Full initial-state objective",
+      "verdict": "passed"
+    },
+    {
+      "name": "at_most_1_cross_motions",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 123,
+      "cap": 300000,
+      "discovered": 123,
+      "scope": "Full initial-state objective",
+      "verdict": "passed"
+    },
+    {
+      "name": "at_most_2_cross_motions",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 270,
+      "cap": 300000,
+      "discovered": 270,
+      "scope": "Full initial-state objective",
+      "verdict": "passed"
+    },
+    {
+      "name": "at_most_3_cross_motions",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 410,
+      "cap": 300000,
+      "discovered": 410,
+      "scope": "Full initial-state objective",
+      "verdict": "passed"
+    },
+    {
+      "name": "single_direction_cross_motion",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 123,
+      "cap": 300000,
+      "discovered": 123,
+      "scope": "Full initial-state objective",
+      "verdict": "passed"
+    },
+    {
+      "name": "first_cross_motion_then_frozen",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 123,
+      "cap": 300000,
+      "discovered": 123,
+      "scope": "Full initial-state objective",
+      "verdict": "passed"
+    },
+    {
+      "name": "dependency_1_positive",
+      "expected": "solved",
+      "status": "solved",
+      "path": "LDRDLULDLURDDLDRURULD",
+      "expanded": 157,
+      "cap": 300000,
+      "discovered": 158,
+      "replayPassed": true,
+      "scope": {
+        "kind": "First ordinary-event opportunity or real goal",
+        "prepare": "lower-dock",
+        "before": "west-park",
+        "conflict": "West-parking opportunity lacks its lower preparation pose.",
+        "effect": "Lower docking supplies the approach and horizontal cross lane.",
+        "history": "All initial histories before the first before event"
+      },
+      "verdict": "passed"
+    },
+    {
+      "name": "dependency_1_without_preparation",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 141,
+      "cap": 300000,
+      "discovered": 141,
+      "scope": {
+        "kind": "First ordinary-event opportunity or real goal",
+        "prepare": "lower-dock",
+        "before": "west-park",
+        "conflict": "West-parking opportunity lacks its lower preparation pose.",
+        "effect": "Lower docking supplies the approach and horizontal cross lane.",
+        "history": "All initial histories before the first before event"
+      },
+      "verdict": "passed"
+    },
+    {
+      "name": "dependency_2_positive",
+      "expected": "solved",
+      "status": "solved",
+      "path": "LDRDLULDLURDDLDRURULDLDLDLULUR",
+      "expanded": 232,
+      "cap": 300000,
+      "discovered": 242,
+      "replayPassed": true,
+      "scope": {
+        "kind": "First ordinary-event opportunity or real goal",
+        "prepare": "lower-dock",
+        "before": "north-dock",
+        "after": "west-park",
+        "conflict": "After western parking, northbound transport needs the lower pose restored.",
+        "effect": "Re-enter lower docking after parking and regain usable northbound input.",
+        "history": "All initial histories that reached after; earlier before events remain legal"
+      },
+      "verdict": "passed"
+    },
+    {
+      "name": "dependency_2_without_preparation",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 250,
+      "cap": 300000,
+      "discovered": 250,
+      "scope": {
+        "kind": "First ordinary-event opportunity or real goal",
+        "prepare": "lower-dock",
+        "before": "north-dock",
+        "after": "west-park",
+        "conflict": "After western parking, northbound transport needs the lower pose restored.",
+        "effect": "Re-enter lower docking after parking and regain usable northbound input.",
+        "history": "All initial histories that reached after; earlier before events remain legal"
+      },
+      "verdict": "passed"
+    },
+    {
+      "name": "dependency_3_positive",
+      "expected": "solved",
+      "status": "solved",
+      "path": "LDRDLULDLURDDLDRURULDLDLDLULURUDLURDRDRURULDRDRDRULULDRULDRULDRURLURULDLDLRURDRDLULDLULDRURDRULULDURDLULULRDLURLDRUR",
+      "expanded": 821,
+      "cap": 300000,
+      "discovered": 826,
+      "replayPassed": true,
+      "scope": {
+        "kind": "First ordinary-event opportunity or real goal",
+        "prepare": "right-dock",
+        "before": "down-align",
+        "conflict": "Down-alignment input and clearance require right docking first.",
+        "effect": "Full right pose supplies the next pushing side.",
+        "history": "All initial histories before the first before event"
+      },
+      "verdict": "passed"
+    },
+    {
+      "name": "dependency_3_without_preparation",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 810,
+      "cap": 300000,
+      "discovered": 810,
+      "scope": {
+        "kind": "First ordinary-event opportunity or real goal",
+        "prepare": "right-dock",
+        "before": "down-align",
+        "conflict": "Down-alignment input and clearance require right docking first.",
+        "effect": "Full right pose supplies the next pushing side.",
+        "history": "All initial histories before the first before event"
+      },
+      "verdict": "passed"
+    },
+    {
+      "name": "dependency_4_positive",
+      "expected": "solved",
+      "status": "solved",
+      "path": "LDRDLULDLURDDLDRURULDLDLDLULURUDLURDRDRURULDRDRDRULULDRULDRULDRURLURULDLDLRURDRDLULDLULDRURDRULULDURDLULULRDLURLDRURDULDRUL",
+      "expanded": 860,
+      "cap": 300000,
+      "discovered": 864,
+      "replayPassed": true,
+      "scope": {
+        "kind": "First ordinary-event opportunity or real goal",
+        "prepare": "down-align",
+        "before": "clear-ray",
+        "conflict": "Clearing the useful ray requires the aligned vertical pose first.",
+        "effect": "Downward docking enables the next lateral reset.",
+        "history": "All initial histories before the first before event"
+      },
+      "verdict": "passed"
+    },
+    {
+      "name": "dependency_4_without_preparation",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 842,
+      "cap": 300000,
+      "discovered": 842,
+      "scope": {
+        "kind": "First ordinary-event opportunity or real goal",
+        "prepare": "down-align",
+        "before": "clear-ray",
+        "conflict": "Clearing the useful ray requires the aligned vertical pose first.",
+        "effect": "Downward docking enables the next lateral reset.",
+        "history": "All initial histories before the first before event"
+      },
+      "verdict": "passed"
+    },
+    {
+      "name": "dependency_5_positive",
+      "expected": "solved",
+      "status": "solved",
+      "path": "LDRDLULDLURDDLDRURULDLDLDLULURUDLURDRDRURULDRDRDRULULDRULDRULDRURLURULDLDLRURDRDLULDLULDRURDRULULDURDLULULRDLURLDRURDULDRULLURULDLDRURURUR",
+      "expanded": 931,
+      "cap": 300000,
+      "discovered": 944,
+      "replayPassed": true,
+      "scope": {
+        "kind": "First ordinary-event opportunity or real goal",
+        "prepare": "clear-ray",
+        "before": "goal",
+        "conflict": "Gem-and-doorway completion needs the cleared ray with its retained brake.",
+        "effect": "Collect the gem and keep the exit route.",
+        "history": "All initial histories before the first before event"
+      },
+      "verdict": "passed"
+    },
+    {
+      "name": "dependency_5_without_preparation",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 874,
+      "cap": 300000,
+      "discovered": 874,
+      "scope": {
+        "kind": "First ordinary-event opportunity or real goal",
+        "prepare": "clear-ray",
+        "before": "goal",
+        "conflict": "Gem-and-doorway completion needs the cleared ray with its retained brake.",
+        "effect": "Collect the gem and keep the exit route.",
+        "history": "All initial histories before the first before event"
+      },
+      "verdict": "passed"
+    },
+    {
+      "name": "stage_right-docking",
+      "verdict": "passed",
+      "scope": "Selected witness state: stopping access and ordinary next input"
+    },
+    {
+      "name": "stage_vertical-alignment",
+      "verdict": "passed",
+      "scope": "Selected witness state: stopping access and ordinary next input"
+    },
+    {
+      "name": "stage_clear-and-brake",
+      "verdict": "passed",
+      "scope": "Selected witness state: stopping access and ordinary next input"
+    },
+    {
+      "name": "selected_13_cross_frozen",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 28,
+      "cap": 300000,
+      "discovered": 28,
+      "scope": "Selected witness state only",
+      "verdict": "passed"
+    },
+    {
+      "name": "selected_22_cross_frozen",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 38,
+      "cap": 300000,
+      "discovered": 38,
+      "scope": "Selected witness state only",
+      "verdict": "passed"
+    },
+    {
+      "name": "selected_111_cross_frozen",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 32,
+      "cap": 300000,
+      "discovered": 32,
+      "scope": "Selected witness state only",
+      "verdict": "passed"
+    },
+    {
+      "name": "selected_117_cross_frozen",
+      "expected": "unsolved",
+      "status": "unsolved",
+      "expanded": 32,
+      "cap": 300000,
+      "discovered": 32,
+      "scope": "Selected witness state only",
+      "verdict": "passed"
+    }
+  ],
+  "rejectedDirectionalOrderClaims": [
+    {
+      "prepare": "D",
+      "before": "L",
+      "positive": {
+        "status": "solved",
+        "path": "LDRUL",
+        "expanded": 10,
+        "cap": 100000,
+        "discovered": 14
+      },
+      "withoutPreparation": {
+        "status": "solved",
+        "path": "LDRUL",
+        "expanded": 10,
+        "cap": 100000,
+        "discovered": 14
+      },
+      "conclusion": "Not a necessary compass order; a prefix opportunity is not automatically a full completion."
+    },
+    {
+      "prepare": "L",
+      "before": "R",
+      "positive": {
+        "status": "solved",
+        "path": "LDRDLULDLURD",
+        "expanded": 65,
+        "cap": 100000,
+        "discovered": 73
+      },
+      "withoutPreparation": {
+        "status": "solved",
+        "path": "LDRDLULDLURD",
+        "expanded": 27,
+        "cap": 100000,
+        "discovered": 28
+      },
+      "conclusion": "Not a necessary compass order; a prefix opportunity is not automatically a full completion."
+    },
+    {
+      "prepare": "R",
+      "before": "U",
+      "positive": {
+        "status": "solved",
+        "path": "LDRULLDLU",
+        "expanded": 33,
+        "cap": 100000,
+        "discovered": 40
+      },
+      "withoutPreparation": {
+        "status": "solved",
+        "path": "LDRULLDLU",
+        "expanded": 33,
+        "cap": 100000,
+        "discovered": 40
+      },
+      "conclusion": "Not a necessary compass order; a prefix opportunity is not automatically a full completion."
+    },
+    {
+      "prepare": "D",
+      "before": "U",
+      "positive": {
+        "status": "solved",
+        "path": "LDRULLDLU",
+        "expanded": 33,
+        "cap": 100000,
+        "discovered": 40
+      },
+      "withoutPreparation": {
+        "status": "solved",
+        "path": "LDRULLDLU",
+        "expanded": 33,
+        "cap": 100000,
+        "discovered": 40
+      },
+      "conclusion": "Not a necessary compass order; a prefix opportunity is not automatically a full completion."
+    }
+  ],
+  "poseNecessity": [
+    {
+      "center": [
+        8,
+        10,
+        0
+      ],
+      "status": "unsolved",
+      "expanded": 141,
+      "scope": "Full objective with transitions entering this center pose excluded."
+    },
+    {
+      "center": [
+        2,
+        10,
+        0
+      ],
+      "status": "unsolved",
+      "expanded": 169,
+      "scope": "Full objective with transitions entering this center pose excluded."
+    },
+    {
+      "center": [
+        8,
+        10,
+        0
+      ],
+      "status": "unsolved",
+      "expanded": 141,
+      "scope": "Full objective with transitions entering this center pose excluded."
+    },
+    {
+      "center": [
+        8,
+        3,
+        0
+      ],
+      "status": "unsolved",
+      "expanded": 210,
+      "scope": "Full objective with transitions entering this center pose excluded."
+    },
+    {
+      "center": [
+        11,
+        3,
+        0
+      ],
+      "status": "unsolved",
+      "expanded": 284,
+      "scope": "Full objective with transitions entering this center pose excluded."
+    },
+    {
+      "center": [
+        11,
+        10,
+        0
+      ],
+      "status": "unsolved",
+      "expanded": 322,
+      "scope": "Full objective with transitions entering this center pose excluded."
+    },
+    {
+      "center": [
+        13,
+        10,
+        0
+      ],
+      "status": "unsolved",
+      "expanded": 336,
+      "scope": "Full objective with transitions entering this center pose excluded."
+    },
+    {
+      "center": [
+        11,
+        10,
+        0
+      ],
+      "status": "unsolved",
+      "expanded": 322,
+      "scope": "Full objective with transitions entering this center pose excluded."
+    },
+    {
+      "center": [
+        11,
+        3,
+        0
+      ],
+      "status": "unsolved",
+      "expanded": 284,
+      "scope": "Full objective with transitions entering this center pose excluded."
+    },
+    {
+      "center": [
+        4,
+        3,
+        0
+      ],
+      "status": "unsolved",
+      "expanded": 366,
+      "scope": "Full objective with transitions entering this center pose excluded."
+    },
+    {
+      "center": [
+        4,
+        11,
+        0
+      ],
+      "status": "unsolved",
+      "expanded": 411,
+      "scope": "Full objective with transitions entering this center pose excluded."
+    },
+    {
+      "center": [
+        7,
+        11,
+        0
+      ],
+      "status": "unsolved",
+      "expanded": 476,
+      "scope": "Full objective with transitions entering this center pose excluded."
+    },
+    {
+      "center": [
+        7,
+        12,
+        0
+      ],
+      "status": "unsolved",
+      "expanded": 533,
+      "scope": "Full objective with transitions entering this center pose excluded."
+    },
+    {
+      "center": [
+        6,
+        12,
+        0
+      ],
+      "status": "unsolved",
+      "expanded": 573,
+      "scope": "Full objective with transitions entering this center pose excluded."
+    },
+    {
+      "center": [
+        6,
+        2,
+        0
+      ],
+      "status": "unsolved",
+      "expanded": 611,
+      "scope": "Full objective with transitions entering this center pose excluded."
+    },
+    {
+      "center": [
+        5,
+        2,
+        0
+      ],
+      "status": "unsolved",
+      "expanded": 653,
+      "scope": "Full objective with transitions entering this center pose excluded."
+    },
+    {
+      "center": [
+        5,
+        11,
+        0
+      ],
+      "status": "unsolved",
+      "expanded": 691,
+      "scope": "Full objective with transitions entering this center pose excluded."
+    },
+    {
+      "center": [
+        3,
+        11,
+        0
+      ],
+      "status": "unsolved",
+      "expanded": 694,
+      "scope": "Full objective with transitions entering this center pose excluded."
+    },
+    {
+      "center": [
+        3,
+        4,
+        0
+      ],
+      "status": "unsolved",
+      "expanded": 727,
+      "scope": "Full objective with transitions entering this center pose excluded."
+    },
+    {
+      "center": [
+        2,
+        4,
+        0
+      ],
+      "status": "unsolved",
+      "expanded": 771,
+      "scope": "Full objective with transitions entering this center pose excluded."
+    },
+    {
+      "center": [
+        12,
+        4,
+        0
+      ],
+      "status": "unsolved",
+      "expanded": 810,
+      "scope": "Full objective with transitions entering this center pose excluded."
+    },
+    {
+      "center": [
+        12,
+        7,
+        0
+      ],
+      "status": "unsolved",
+      "expanded": 842,
+      "scope": "Full objective with transitions entering this center pose excluded."
+    },
+    {
+      "center": [
+        2,
+        7,
+        0
+      ],
+      "status": "unsolved",
+      "expanded": 874,
+      "scope": "Full objective with transitions entering this center pose excluded."
+    }
+  ],
+  "selfTestControls": [
+    {
+      "name": "horizontal-reflection",
+      "expected": "passed",
+      "overall": "passed",
+      "checks": 30,
+      "legalCompletion": "solved",
+      "inputs": 138,
+      "counterexamples": []
+    },
+    {
+      "name": "quarter-turn",
+      "expected": "passed",
+      "overall": "passed",
+      "checks": 30,
+      "legalCompletion": "solved",
+      "inputs": 138,
+      "counterexamples": []
+    },
+    {
+      "name": "solvable-easy-bypass",
+      "expected": "failed",
+      "overall": "failed",
+      "checks": 4,
+      "legalCompletion": "solved",
+      "inputs": 9,
+      "counterexamples": [
+        {
+          "name": "freeze_cross",
+          "status": "solved",
+          "verdict": "failed",
+          "path": "LDLDRURUR"
+        },
+        {
+          "name": "forbid_static_cross_brake",
+          "status": "solved",
+          "verdict": "failed",
+          "path": "LDLDRURUR"
+        }
+      ]
+    },
+    {
+      "name": "false-directional-order",
+      "expected": "failed",
+      "overall": "failed",
+      "checks": 32,
+      "legalCompletion": "solved",
+      "inputs": 138,
+      "counterexamples": [
+        {
+          "name": "dependency_6_without_preparation",
+          "status": "solved",
+          "verdict": "failed",
+          "path": "LDRUL"
+        }
+      ]
+    },
+    {
+      "name": "capped-search",
+      "expected": "unknown",
+      "overall": "unknown",
+      "checks": 30,
+      "legalCompletion": "capped",
+      "inputs": 138,
+      "counterexamples": []
+    },
+    {
+      "name": "unsupported-missing-arm",
+      "expected": "unknown",
+      "overall": "unknown",
+      "checks": 0,
+      "counterexamples": [],
+      "error": "AssertionError [ERR_ASSERTION]: All four arms are required in this profile"
+    }
+  ],
+  "ordinaryUndo": true,
+  "unsupportedEdgeIsDeath": true,
+  "limits": "Structural author-side checks only; no human-difficulty or independent-author-improvement claim.",
+  "browserValidation": {
+    "errors": [],
+    "failedResponses": [],
+    "inputs": 138,
+    "overall": "passed",
+    "eachOrdinaryPlayStateMatched": true,
+    "firstPushUndo": true,
+    "gemCollected": true,
+    "returnedToDoorway": true,
+    "sourcePreserved": true,
+    "saveExportsMatch": true
+  }
+}
