@@ -3,20 +3,19 @@ name: mazebench-hook-transfer
 description: Design, build, and structurally verify MazeBench shape-dependent contact puzzles. Default to independent transport, usable docking, true member contact, and continued passage work, with full GxE case evidence. For authoring, not model evaluation.
 ---
 
-# Hook Transfer
+# MazeBench Hook Transfer
 
 Use a rigid tool's shape and relative position to solve a pushing, stance, reachability, or movement-constraint problem. Rear and lateral contact are useful relationships; ordinary straight chain pushing alone does not establish shape-dependent function.
 
-## 构建前必读与默认复杂模式
+## Required reading and default complex mode
 
-使用本 skill 构建或迭代关卡前，必须读取 [官方案例与机制分析](references/official-case.md)，并检查其中用于本次构建的关键状态和空间关系。先列出本次设计继承的必要机制、前置条件、阶段依赖与可变部分，再进入形状选择、坐标布局和地图生成。不能只依据 SKILL.md 中的抽象摘要完成构建。默认按多步推理要求构建，不能仅靠一次错位、一次释放或一次接触后只走路通关。
+Before building or iterating on a level, read the [complete official case and mechanism analysis](references/official-case.md) and inspect the key states and spatial relationships that the new design will inherit. Identify necessary mechanisms, prerequisites, stage dependencies, and variable elements before choosing shapes, coordinates, or a layout. The abstract summary in this entrypoint is insufficient. Default authoring requires connected planning beyond a single offset, release, or contact followed only by walking.
 
-由本 skill 流程负责读取对应内部案例；只读取当前使用的案例，不默认加载另外两个。相同版本已实际读过可复用，文件名/链接/摘要不算已读。构建记录注明路径、内容指纹和继承关系；读取记录不能代替机制必要性和绕过检查。
+Read the case belonging to the skill in use; other cases are needed only when their mechanisms are being combined. A previously read, unchanged version may be reused. A filename, link, or summary is not a reading record. Record the path, content fingerprint, and inherited relationships; reading does not replace necessity or bypass checks.
 
-默认采用复杂房间模式，布局前还必须读取 [planning-depth](references/planning-depth.md) 和 [复杂合同及验证接口](references/complex-validation.md)。先建立精简设计合同，再布局。至少三个相互依赖的有效功能阶段；走路、同向重复推、独立障碍各移开一次和无作用往返不计。合同须覆盖全部成员与高度、固定边界/空洞/支撑、各阶段可达区、完整阻挡目的地/站位、解除动作、需恢复的空间、关键输入/接触与后续工作。每个变化注明原功能由新图何处承担。
+Before laying out a default complex room, also read [Planning depth](references/planning-depth.md) and the [contract and verification interfaces](references/complex-validation.md), then establish a concise design contract. Include at least three interdependent functional stages. Walking, repeated pushes in one direction, separately clearing unrelated obstacles, and returns without a functional effect do not count. Declare all members and elevations, fixed boundaries, voids and support, stage access regions, complete blocked destinations and stances, releasing actions, recovery space, key inputs and contacts, and subsequent work. Identify where the new geometry carries each inherited function.
 
-复杂模式使用 `scripts/build-complex.cjs` 和 `scripts/verify-complex.cjs`。它与旧基础 profile 分开；旧 `build.cjs`/`verify.cjs` 和固定 fixtures 继续验证原有范围，通过不能作为默认复杂房间验收。明确要求局部演示/复现时可用旧流程，并标注其分类。复杂模式证据缺失、未支持输入或搜索上限为 unknown，不能通过。
-
+Complex mode uses `scripts/build-complex.cjs` and `scripts/verify-complex.cjs`. The basic entrypoints and fixed fixtures retain their existing profiles; passing them does not certify a default complex room. Use the basic workflow for an explicitly requested local demonstration or reproduction and label its mode accurately. Missing evidence, unsupported inputs, and capped searches are unknown and cannot pass.
 
 ## Design from the goal
 
@@ -50,7 +49,6 @@ node scripts/verify-complex.cjs --repo ENGINE --spec SPEC.json --out NEW_CHECK_O
 ```
 
 Use the following basic workflow only for an explicitly requested compact mechanism demonstration or a supported legacy profile. Label that result accordingly; a basic pass does not certify default complex authoring.
-
 
 Author `title`, a complete 16-by-16 `cells` array, and a `contract` with the intended roles and effects. The agent chooses coordinates; the user need not provide a map. Run:
 

@@ -1,4 +1,4 @@
 interface:
-  display_name: "MazeBench Hook Mechanisms"
+  display_name: "MazeBench Hook Transfer"
   short_description: "Design tool puzzles with planning before and after contact"
   default_prompt: "Use $mazebench-hook-transfer to build a challenging room that requires discovering a tool's purpose, preparing usable contact, and planning how to complete the goal after use. Choose the shapes and layout yourself. Verify the contact, preparation, and continued-access dependencies you claim."

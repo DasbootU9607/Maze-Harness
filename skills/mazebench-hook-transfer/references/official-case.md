@@ -1,32 +1,32 @@
-# GxE 官方案例与机制分析
+# GxE official case and mechanism analysis
 
-此入口为完整原图分析。构建前读取本文及本次用到的关键状态，不能用摘要替代。构造逻辑由地图/代码/普通回放推断，没有原作者口述或人的难度实验。坐标从零开始，U 减 y，全体初态 z=0。
+Read this complete-map analysis and the key states relevant to the proposed design before construction; a summary does not replace it. Mechanism interpretations come from the map, code, and ordinary replay, without an account from the original author or human difficulty experiments. Coordinates are zero-based, U decreases y, and every initial elevation is z=0.
 
-原始路径：`games/maze/levels/9hgghfgcsu.txt`，MazeBenchEngine 提交 `0ac96b8a2648db09f375989cd7bc33699222c1e6`。引擎声明 MIT；保留原地图字节及已安装 skill 的来源说明，无额外作者归属断言。未经修改的 [官方原图副本](official-world-map.txt) SHA256：`4c2a18742e7949e815a620aa6c1cff8f79ed2ff8aa93801b0d63261238caa1df`。
+Original source: `games/maze/levels/9hgghfgcsu.txt`, MazeBenchEngine commit `0ac96b8a2648db09f375989cd7bc33699222c1e6`. The engine is MIT-licensed; preserve the original map bytes and applicable source notices without adding unsupported authorship claims. The unmodified [official map](official-world-map.txt) has SHA256 `4c2a18742e7949e815a620aa6c1cff8f79ed2ff8aa93801b0d63261238caa1df`.
 
-官方图没有宝石，调查目标是玩家到达 (2,13,0)，起点 (13,7,0)。任何空宝石 isSolved 结果都不能代替此目标。M0 是六格 C 工具，M1 是五格弯尾目标，完整成员列于下面。目标尾部 (8,14) 被 (7,14)/(9,14) 墙夹住，底边阻止下移；x=4..6,y=11 的空洞限制直接上推站位。工具顶部输入臂、左侧连接体、后方工作臂和内部开口共同建立输入和目标后方接触。
+The official map has no gem. The analyzed objective is to reach (2,13,0), starting at (13,7,0); a gem-free `isSolved` result does not establish that reach objective. M0 is a six-cell C-shaped tool and M1 a five-cell target with a bent tail. Target member (8,14) is between walls at (7,14) and (9,14), and the bottom edge prevents downward movement. Voids at x=4..6,y=11 restrict stances for direct upward pushes. The tool's upper input arm, left connector, rear working arm, and inner opening create the input and rear target contact.
 
-初态冻结行走区 76 格，工具可独立移动。记录解输入 4–20 上、左、下、右运送完整 C，20 时工具为 (6,9),(7,9),(6,10),(6,11),(6,12),(7,12)，行走区 79 格，可绕入工具内部 (7,10)。27 玩家才到此输入站位。此时向右推工具会使目标尾部目的地撞 (9,14)；向下推目标会撞 (8,15)。站位不是凭对齐推断，JSON 记录冻结行走及普通动作探查。
+The initial frozen-object walking region has 76 positions, and the tool can move independently. Witness inputs 4-20 transport the complete C upward, left, down, and right. At input 20 its members are (6,9),(7,9),(6,10),(6,11),(6,12),(7,12); 79 walking positions include access to the interior at (7,10). The player reaches that input stance at input 27. Pushing the tool right would send the target tail into (9,14), and pushing the target down would hit (8,15). The JSON records frozen walking and ordinary-action probes rather than inferring stances from alignment.
 
-28 的 U 输入：P=(7,10,0)、I=(7,9,0)、C=(7,12,0)、T=(7,11,0)、d=U。I=P+d，C+d=T，T 位于玩家推动方向后方，真实成员接触且两组完整平移。目标尾部从 (8,14) 移到 (8,13)，限制解除；此时行走区 76 格，目标仍不可仅步行到达。29 将工具左退、31 将目标右移是记录解的完成选择，之后行走区 112 格才通到终点。
+Input 28 is U, with P=(7,10,0), I=(7,9,0), C=(7,12,0), T=(7,11,0), and d=U. I=P+d and C+d=T; T is behind the player relative to the pushing direction. Actual member contact translates both complete groups. The target tail moves from (8,14) to (8,13), releasing the restriction. The walking region now has 76 positions, and walking alone still cannot reach the objective. The witness chooses a tool retreat left at input 29 and a target move right at input 31; its resulting 112-position region reaches the goal.
 
-工具、目标、真实后方传力、首次接触前的独立工具准备必要。工具 L/R 和目标 U 分别必要；禁止目标 R 仍有 43 输入完整解，必须保留该反例，不能要求唯一“工具左退后目标右移”。输入 28 状态只走路、冻结工具、冻结目标均无解。这是选定状态的结论，原检查未枚举所有首次接触。候选 verifier 单独提供扩展历史搜索：搜索是否存在任何完整解，在首次真实接触后不再操作物体；若耗尽可排除此类完成路径，若返回路径应普通回放并修正设计。对工具/目标各自的全状态必要性要另行启用检查，不继承选定状态结论。
+The tool, target, actual rear transfer, and independent tool preparation before first contact are necessary. Tool-L, tool-R, and target-U are individually necessary. Forbidding target-R still yields a complete 43-input solution, so do not require a unique tool-left-then-target-right order. At the selected input-28 state, walking alone, freezing the tool, or freezing the target prevents completion. The original checks did not enumerate every first-contact history. The complex verifier separately searches for any complete route needing no further object operation after first contact. An exhausted search excludes that class; returned routes must be replayed and used to revise the design. Global post-contact necessity of each group requires its own enabled check.
 
-旧用户重建把 M0/M1 互换并封闭北边界；核心初始轮廓相同，文本有 28 token 差异，不能称原图完全相同。最小 predocked hook 等是人工 authored fixtures，用于基础机制/退化回归；active-docking/side-reach 等各有专用观察器，不自动覆盖本案例。
+The earlier user reconstruction swapped M0/M1 and closed the northern boundary. Its core initial footprints match, but its text differs by 28 tokens and is not the original map. Minimal pre-docked hooks are authored fixtures for basic mechanisms and degenerate-solution regression. Active-docking and side-reach profiles have their own observers and do not automatically cover this case.
 
-新图必须保持：直接操作受地形/尾部边界限制；完整工具独立运输；玩家进入真正可用输入；后臂接触释放目标尾部；接触后再配置与目标有关的通道。真实 P/I/C/T 必须从普通动作前状态提取，共同运动不足以证明钩。允许变坐标、外部布局与经验证的局部形状，不能删除输入臂/工作臂/连接体/开口/支撑/退出站位的功能。不要求相同指南针顺序，更不要求目标右移。
+New designs inherit terrain and tail boundaries that restrict direct operation, independent transport of the complete tool, access to a usable input, rear-arm contact releasing the target tail, and further configuration of the objective route after contact. Extract P/I/C/T from the ordinary pre-action state; joint motion alone does not establish hook transfer. Coordinates, external layout, and verified local shapes may vary while preserving input-arm, working-arm, connector, opening, support, and retreat-stance functions. Neither the compass order nor a rightward target move is required.
 
-## 全部初始刚体成员
+## Complete initial rigid-group members
 
-| ID | 功能角色 | 全体成员 (x,y,z) |
+| ID | Functional role | Complete members (x,y,z) |
 | --- | --- | --- |
 | M0 | tool | (11,8,0) (12,8,0) (11,9,0) (11,10,0) (11,11,0) (12,11,0) |
 | M1 | target | (7,11,0) (8,11,0) (8,12,0) (8,13,0) (8,14,0) |
 
-## 内部证据入口与使用范围
+## Evidence and scope
 
-[关键状态](official-states.json) 保存初态、完整成员、选定时刻的绝对姿态、支撑丧失后的离场标记、冻结行走区域及可达站位推动探查；[精简检查](official-checks.json) 保留限制结果、成功绕过路径、原图/重建差异及反例；[可运行原图合同](official-design.json) 可直接交给新版 verifier。全部引用位于本 skill 内，无需外部绝对研究路径。
+[Key states](official-states.json) preserve the initial state, complete members, selected absolute poses, removal flags after support loss, frozen-object walking regions, and reachable-stance push probes. [Concise checks](official-checks.json) retain restriction results, successful bypasses, differences between original and reconstructed maps, and counterexamples. The [runnable original-map contract](official-design.json) works with the complex verifier. All references are local to this package.
 
-原检查各自在 1,000,000 状态上限内完成，返回路径均普通回放；旧结果只是对应地图及指定目标的证据，不能迁移为新图的搜索结论。首次机会前缀包含真实目标作为绕过，并禁止事件本身，正向对照可达。方向排除不证明唯一顺序或精确返回；输入 28 等单状态结论不能扩大。新图的初态、首次事件历史、往返和接触后冻结检查须重跑；上限、异常、未支持输入为 unknown。
+The original checks completed within a 1,000,000-state cap each, and returned routes were replayed with ordinary moves. Those results apply only to their maps and specified goals. First-opportunity prefix checks include the real goal as a bypass endpoint, forbid the event itself, and have reachable positive controls. Direction restrictions establish neither a unique order nor an exact return. A selected-state result does not apply to every history. Rerun initial-state, first-event history, return, and post-contact freeze checks for new maps. Caps, exceptions, and unsupported inputs are unknown.
 
-至少三个相互依赖且改变物体/接触/支撑/推动条件的功能阶段是本次用户的验收下限，不是官方难度定义。保留项和可变项须写入 [复杂合同与执行接口](complex-validation.md)。绝对坐标、经验证不改变功能的尺寸和外部布局可变；每处形状/边界变化要指出新几何承担的旧功能，并重新检查全轮廓、支撑、站位、阶段依赖及绕过。读取记录不等于必要性证明。
+Default authoring requires at least three interdependent stages that change object, contact, support, or pushing conditions; this is an authoring requirement, not an official definition of difficulty. Record inherited and variable elements in the [contract and verification interfaces](complex-validation.md). Coordinates, verified dimensions, and external layout may vary. For each shape or boundary change, identify the new geometry carrying the old function and recheck complete footprints, support, stances, stage dependencies, and bypasses. A reading record does not prove necessity.

@@ -70,7 +70,7 @@ function validate(spec, root) {
   assert(c.spatial && same(c.spatial.walls, walls) && same(c.spatial.ice, ice), 'Declare complete fixed wall and ice footprints');
   assert(c.inherited?.length && Array.isArray(c.changes), 'Record inherited functions and changes');
   const receipt = c.readReceipt;
-  assert(receipt?.path === 'references/reference-case.md' && receipt.readBeforeLayout === true);
+  assert(receipt?.path === 'references/user-case.md' && receipt.readBeforeLayout === true);
   assert.equal(receipt.sha256, hash(fs.readFileSync(path.join(root, receipt.path))), 'Reference reading receipt is stale');
   for (const [name, event] of Object.entries(c.events || {})) {
     assert(/^[a-z0-9_-]+$/i.test(name));

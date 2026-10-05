@@ -1,24 +1,24 @@
-# HxH 官方案例与机制分析
+# HxH official case and mechanism analysis
 
-此入口为完整原图分析。构建前读取本文及本次用到的关键状态，不能用摘要替代。构造逻辑由地图/代码/普通回放推断，没有原作者口述或人的难度实验。坐标从零开始，U 减 y，全体初态 z=0。
+Read this complete-map analysis and the key states relevant to the proposed design before construction; a summary does not replace it. Mechanism interpretations come from the map, code, and ordinary replay, without an account from the original author or human difficulty experiments. Coordinates are zero-based, U decreases y, and every initial elevation is z=0.
 
-原始路径：`games/maze/levels/mygl8anih8.txt`，MazeBenchEngine 提交 `0ac96b8a2648db09f375989cd7bc33699222c1e6`。引擎声明 MIT；保留原地图字节及已安装 skill 的来源说明，无额外作者归属断言。未经修改的 [官方原图副本](official-world-map.txt) SHA256：`b02c9a4bfd089d9c4b1df350ad8b254d06b3ce42e91f11af8c587f0e420b5df7`。
+Original source: `games/maze/levels/mygl8anih8.txt`, MazeBenchEngine commit `0ac96b8a2648db09f375989cd7bc33699222c1e6`. The engine is MIT-licensed; preserve the original map bytes and applicable source notices without adding unsupported authorship claims. The unmodified [official map](official-world-map.txt) has SHA256 `b02c9a4bfd089d9c4b1df350ad8b254d06b3ce42e91f11af8c587f0e420b5df7`.
 
-目标是取得 (1,3,0) 宝石，玩家从 (8,14,0) 出发。原图含五组，M0 为八格接近阻挡物，M2 为五格中部换位物；M4 是上方阶梯，M3 是下方阶梯。M1 为两格旁支，本目标允许冻结它。所有初始成员逐格列于下面，不能只设计中心轨迹。
+The objective is to collect the gem at (1,3,0), starting at (8,14,0). The original map has five groups. M0 is an eight-cell approach blocker, M2 a five-cell central repositioning object, M4 the upper staircase, and M3 the lower staircase. M1 is a two-cell side branch that may remain frozen for this objective. The table below lists every initial member; a center trajectory is insufficient.
 
-初态仅 30 个冻结物体行走位置可达；可从 (4,11,0) 等位置向上推 M0。输入 8–9 将 M0 推入支撑丧失状态，引擎合法移除整组。这不是脚本删除物体。输入 14–17 把 M2 右移，从右侧可达推动面 (14,9,0) 等处再左移。禁止 M0 离场、M2 右移或左移，各自都无法达到首次有效 M4-L 机会或宝石，正向对照可达。它们与上方操作具有前缀依赖，不能从已经可操作的两组局部状态起步。
+Initially only 30 frozen-object walking positions are reachable. M0 can be pushed upward from positions such as (4,11,0). Inputs 8-9 cause loss of support and legal whole-group removal by the engine. Inputs 14-17 move M2 right, then left from reachable pushing faces on its right, including (14,9,0). Forbidding M0 removal, M2-R, or M2-L prevents the first usable M4-L opportunity and the gem; positive controls can reach them. These are preparation dependencies for the upper operation, so starting from an already operable two-group configuration omits necessary work.
 
-输入 40 玩家到 (6,2,0)，冻结行走区为 109 格。另一个可达站位 (6,4,0) 的 M3-U 推动失败：M3 的 (5,3)、(4,4) 接触 M4，M4 的 (5,1) 目的地 (5,0) 是屋顶墙。输入 41 独立左移 M4，切断屋顶约束的接触簇；凹口 (2,2) 阻止继续任意左移。此时有 111 个行走位置，但宝石仍不可仅步行到达。输入 47 再上移完整 M3，开放南侧绕入宝石的路线。空洞和底部开口同时约束接近区、支撑和返回推动面，完整地形见原图副本，具体支撑由引擎判定。
+At input 40 the player is at (6,2,0), with 109 frozen-object walking positions. An M3-U push from another reachable stance, (6,4,0), fails: M3 members (5,3) and (4,4) contact M4, whose member at (5,1) would move into the roof wall at (5,0). Input 41 independently moves M4 left, breaking the roof-constrained contact cluster. The recess at (2,2) limits further leftward motion. There are now 111 walking positions, but walking alone still cannot collect the gem. Input 47 moves the complete M3 upward and opens the southern approach. Voids and the bottom opening jointly constrain approach, support, and return pushing faces. The original map preserves all terrain; the engine decides support.
 
-必要结论：M0-U、M0 离场、M2-R、M2-L、M4-L、M3-U；M0、M2、M4、M3 是必要角色。反例：冻结 M1 仍有完整解；禁止 M2-U 或 M2 离场均有 58 输入解。这些普通回放路径保存在精简检查中。方向分别必要不确定相互唯一顺序，更不要求复制 witness 中 M2-U 离场。
+Necessary changes include M0-U, M0 removal, M2-R, M2-L, M4-L, and M3-U. M0, M2, M4, and M3 are necessary roles. Freezing M1 still permits a complete solution. Forbidding M2-U or M2 removal each permits a 58-input solution. Preserve these ordinary replay counterexamples. Individually necessary directions do not imply a unique order or require the witness's M2-U removal.
 
-旧用户重建只保留上方两组，将 M4/M3 改名 M0/M1，起点 (14,4,0)，改变接近地形；26 输入仅两推。official-staircase 是另一个封闭局部 extraction。两者都是机制正例和复杂模式反例；它们不是完整官方 HxH。上述局部重建和人工 fixture 只用于基础机制及回归；不能替代本文件的完整官方原图分析。
+The earlier user reconstruction retained only the two upper groups, renamed M4/M3 to M0/M1, started at (14,4,0), and changed the approach terrain; its 26 inputs contain only two pushes. The historical fixture named `official-staircase` is another enclosed local excerpt. Both establish a basic mechanism and provide negative controls for complex mode; neither is the complete official HxH map. Local reconstructions and authored fixtures do not replace the complete case.
 
-新图必须保持：前置空间改变使上方推动面可达；同一中部角色在不同配置中再次工作；固定边界阻止完整接触簇；独立错位后仍有第二组操作。允许替代准备区结构，但要说明支撑丧失/离场由何种功能代替，并重做首次机会和墙干预检查。新版 planar-boundary-preparation-v2 支持 2–5 组、地面/墙/空洞、官方整组合法离场；旧 paired profile 保持两组、无空洞、无离场。
+New designs inherit preparation that makes upper pushing faces reachable, reuse of the same central role in different configurations, a fixed boundary blocking the complete contact cluster, and a second group operation after independent offset. Preparation geometry may vary, but identify the function replacing support loss/removal and rerun first-opportunity and wall-intervention checks. The `planar-boundary-preparation-v2` profile supports two to five groups, floor, walls, voids, and legal whole-group removal. The legacy paired profile has two groups, no voids, and no removal.
 
-## 全部初始刚体成员
+## Complete initial rigid-group members
 
-| ID | 功能角色 | 全体成员 (x,y,z) |
+| ID | Functional role | Complete members (x,y,z) |
 | --- | --- | --- |
 | M4 | upper | (5,1,0) (4,2,0) (5,2,0) (3,3,0) (4,3,0) (3,4,0) |
 | M3 | lower | (5,3,0) (6,3,0) (4,4,0) (5,4,0) (3,5,0) (4,5,0) |
@@ -26,10 +26,10 @@
 | M0 | approach-M0 | (1,9,0) (2,9,0) (3,9,0) (4,9,0) (1,10,0) (2,10,0) (3,10,0) (4,10,0) |
 | M1 | approach-M1 | (10,13,0) (10,14,0) |
 
-## 内部证据入口与使用范围
+## Evidence and scope
 
-[关键状态](official-states.json) 保存初态、完整成员、选定时刻的绝对姿态、支撑丧失后的离场标记、冻结行走区域及可达站位推动探查；[精简检查](official-checks.json) 保留限制结果、成功绕过路径、原图/重建差异及反例；[可运行原图合同](official-design.json) 可直接交给新版 verifier。全部引用位于本 skill 内，无需外部绝对研究路径。
+[Key states](official-states.json) preserve the initial state, complete members, selected absolute poses, removal flags after support loss, frozen-object walking regions, and reachable-stance push probes. [Concise checks](official-checks.json) retain restriction results, successful bypasses, differences between original and reconstructed maps, and counterexamples. The [runnable original-map contract](official-design.json) works with the complex verifier. All references are local to this package.
 
-原检查各自在 1,000,000 状态上限内完成，返回路径均普通回放；旧结果只是对应地图及指定目标的证据，不能迁移为新图的搜索结论。首次机会前缀包含真实目标作为绕过，并禁止事件本身，正向对照可达。方向排除不证明唯一顺序或精确返回；输入 28 等单状态结论不能扩大。新图的初态、首次事件历史、往返和接触后冻结检查须重跑；上限、异常、未支持输入为 unknown。
+The original checks completed within a 1,000,000-state cap each, and returned routes were replayed with ordinary moves. Those results apply only to their maps and specified goals. First-opportunity prefix checks include the real goal as a bypass endpoint, forbid the event itself, and have reachable positive controls. Direction restrictions establish neither a unique order nor an exact return. A selected-state result does not apply to every history. Rerun initial-state, first-event history, return, and post-contact freeze checks for new maps. Caps, exceptions, and unsupported inputs are unknown.
 
-至少三个相互依赖且改变物体/接触/支撑/推动条件的功能阶段是本次用户的验收下限，不是官方难度定义。保留项和可变项须写入 [复杂合同与执行接口](complex-validation.md)。绝对坐标、经验证不改变功能的尺寸和外部布局可变；每处形状/边界变化要指出新几何承担的旧功能，并重新检查全轮廓、支撑、站位、阶段依赖及绕过。读取记录不等于必要性证明。
+Default authoring requires at least three interdependent stages that change object, contact, support, or pushing conditions; this is an authoring requirement, not an official definition of difficulty. Record inherited and variable elements in the [contract and verification interfaces](complex-validation.md). Coordinates, verified dimensions, and external layout may vary. For each shape or boundary change, identify the new geometry carrying the old function and recheck complete footprints, support, stances, stage dependencies, and bypasses. A reading record does not prove necessity.

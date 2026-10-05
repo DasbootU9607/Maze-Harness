@@ -582,25 +582,25 @@
     },
     "stageWitnesses": [
       {
-        "name": "独立运输与可用站位",
+        "name": "Independent transport and usable stance",
         "event": "prep",
         "step": 4,
-        "conflict": "完整工具不能从初态仅步行到工作状态",
-        "effect": "改变完整姿态并保留输入和支撑"
+        "conflict": "Walking alone cannot bring the complete tool from its initial pose to a working configuration",
+        "effect": "Change the complete pose while preserving input access and support"
       },
       {
-        "name": "真实接触",
+        "name": "Actual contact",
         "event": "contact",
         "step": 28,
-        "conflict": "直接目标操作受空洞和边界限制",
-        "effect": "由工具成员跨偏置/后方接触传力"
+        "conflict": "Voids and boundaries restrict direct target operation",
+        "effect": "A tool member transfers force through offset or rear contact"
       },
       {
-        "name": "接触后重新开路",
+        "name": "Reopening the route after contact",
         "event": "postWork",
         "step": 29,
-        "conflict": "接触后的配置仍阻止目标路线",
-        "effect": "继续物体工作取得目标通路"
+        "conflict": "The configuration after contact still blocks the goal route",
+        "effect": "Further object work opens the goal route"
       }
     ],
     "checks": [
@@ -746,5 +746,12 @@
         "scope": "Selected witness state only"
       }
     ]
+  },
+  "packagedDesign": {
+    "path": "references/official-design.json",
+    "cells": "8d4599086d4741f503e9dea8c8ae66cddc0adb43bb8abbb6facf7864397f7a6a",
+    "contract": "7c0981f4f9a2141dc8dc6f56c47aa036fb1ef9d2a19e399333ce01e3827d9fed",
+    "case": "822752c60bb3d624836be57925df7f661aac0d0239e925baa67d6cc2ddc4e4c0",
+    "scope": "Current package metadata after naming and language normalization; historical verification fingerprints remain unchanged."
   }
 }

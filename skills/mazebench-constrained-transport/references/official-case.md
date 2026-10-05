@@ -1,34 +1,34 @@
-# GxF 官方案例与机制分析
+# GxF official case and mechanism analysis
 
-此入口为完整原图分析。构建前读取本文及本次用到的关键状态，不能用摘要替代。构造逻辑由地图/代码/普通回放推断，没有原作者口述或人的难度实验。坐标从零开始，U 减 y，全体初态 z=0。
+Read this complete-map analysis and the key states relevant to the proposed design before construction; a summary does not replace it. Mechanism interpretations come from the map, code, and ordinary replay, without an account from the original author or human difficulty experiments. Coordinates are zero-based, U decreases y, and every initial elevation is z=0.
 
-原始路径：`games/maze/levels/0lzre7ixaq.txt`，MazeBenchEngine 提交 `0ac96b8a2648db09f375989cd7bc33699222c1e6`。引擎声明 MIT；保留原地图字节及已安装 skill 的来源说明，无额外作者归属断言。未经修改的 [官方原图副本](official-world-map.txt) SHA256：`493020c70b983b3a93fa4df871eb118c5fb8a0621f8ab09111b6d3653433ef33`。
+Original source: `games/maze/levels/0lzre7ixaq.txt`, MazeBenchEngine commit `0ac96b8a2648db09f375989cd7bc33699222c1e6`. The engine is MIT-licensed; preserve the original map bytes and applicable source notices without adding unsupported authorship claims. The unmodified [official map](official-world-map.txt) has SHA256 `493020c70b983b3a93fa4df871eb118c5fb8a0621f8ab09111b6d3653433ef33`.
 
-目标是取得 (2,9,0) 宝石，玩家起点 (7,1,0)。M0 是 (6,5,0)、(7,5,0) 的两格工具；M1/M2 是两个三格 L 助手，M3 是三格横向目标。完整成员列于下面。M0 的输入端和工作端在不同列；助手的耳部、工具全宽和玩家推动面争用中部净空，绝非工具中心有一条路径就够。
+The objective is to collect the gem at (2,9,0), starting at (7,1,0). M0 is a two-cell tool at (6,5,0),(7,5,0), M1/M2 are three-cell L helpers, and M3 is a three-cell horizontal target. The table below lists all members. The tool's input and working ends occupy different columns. Helper ears, complete tool width, and player pushing faces compete for central clearance; a path for the tool center is insufficient.
 
-初态冻结物体行走区 118 格，可向上或下推动 M1，但工具尚不能交付。记录解输入 11 将 M1 下移；37–39 将 M2 左移，后一次接触带动 M0；45 将 M1 上移回初始区域。106 时工具为 (8,7)/(9,7)，M1 为 (9,8)/(10,8)/(9,9)，站位 (9,10) 的上推动作可带动 M0/M1。工具在 126、155 向上退出原来的向下进度，149 时两助手在顶部重新占据工作区，172 的向右接触链重新配置向下通道。各阶段可达区域与全部合法推动面见状态 JSON；有几何净空同时还需玩家能换面。
+The initial frozen-object walking region has 118 positions. M1 can be pushed up or down, but the tool cannot yet be delivered. Witness input 11 moves M1 down; inputs 37-39 move M2 left, with the last move also contacting M0; input 45 returns M1 upward to its original region. At input 106 the tool is at (8,7)/(9,7), M1 at (9,8)/(10,8)/(9,9), and an upward push from (9,10) can move M0/M1. At inputs 126 and 155 the tool rises out of earlier downward progress. At input 149 both helpers reoccupy the upper workspace, and the rightward contact chain at input 172 reconfigures the downward passage. The state JSON records stage access and all legal pushing faces; clearance alone does not establish access to a different pushing side.
 
-空洞 (3,9),(3,10),(3,11) 阻止玩家直接在工作端上方推动目标。输入 208 工具对齐到 (3,11),(4,11)，210 玩家才到 (4,10)。可用交付是全工具姿态、目标姿态、玩家站位与下一合法动作的联合条件；不能以对齐中心充当交付。输入 211、212 玩家向下推工具右端，左端从空洞偏置接触目标，两次侧向传力后才开放宝石路线。P=(4,10,0)、I=(4,11,0)、C=(3,11,0)、T=(3,12,0)、d=D；I=P+d、C+d=T；工作端虽在空洞，其余部分提供引擎所需支撑。
+Voids at (3,9),(3,10),(3,11) prevent direct player access above the working target end. Input 208 aligns the tool at (3,11),(4,11), but the player reaches (4,10) only at input 210. Usable delivery combines complete tool and target poses, player stance, and the next legal action. Inputs 211 and 212 push the tool's right end down; its left end makes offset contact across the void. Two lateral transfers open the gem route. P=(4,10,0), I=(4,11,0), C=(3,11,0), T=(3,12,0), d=D, with I=P+d and C+d=T. Other members provide the engine's required support despite the working end overhanging the void.
 
-原图四组分别冻结都无解；禁止真实侧向传力无解；禁止独立工具准备不能到达首次有效接触机会或目标，正向对照可达。M0/M1 的 U,D,L,R 分别必要；M2 的 L,R 必要而 U,D 可避免。方向必要证明两向运动，不能据此声称唯一顺序或必须回到某格。新合同可声明某种有序复用或宽松复用，必须重新搜索，不能把 witness 顺序当事实。
+Freezing each of the four groups prevents completion. Forbidding actual lateral transfer also fails. Without independent tool preparation, neither the first usable contact opportunity nor the goal is reachable; the positive control reaches them. M0/M1 each require U,D,L,R; M2 requires L,R but can avoid U,D. Necessary directions establish opposite-direction motion, not a unique order or an exact return cell. A new contract may declare ordered or looser reuse only after its own search; witness order is not a proof.
 
-旧用户重建是另一个来源明确的保存布局；(15,1) 将原图地面封成墙，其他文本差异含等价 token。旧 43 推 witness 与本次 42 推 witness 都合法，不能混用输入时刻。原图/重建均 219 输入不是新图配额。Borrowed Bay 是人工 authored fixture，另有独立角色与恢复逻辑；不等同官方图。
+The earlier user reconstruction is a separately sourced saved layout: it changes floor at (15,1) to a wall, and other textual differences include equivalent tokens. Its 43-push witness and the original map's 42-push witness are both legal; do not mix input indices. Both use 219 inputs, which is not a quota for new maps. Borrowed Bay is an authored fixture with separate role and recovery logic, not the official map.
 
-新图必须保持：完整工具/助手争用空间；助手改变配置；有用途的退出、回升、恢复或同一助手再次承担作用；玩家换推动面并取得可用交付；跨空洞的偏置接触。新 verifier 要求声明相反方向运动与复用，分别在真实进度机会或目标前排除它们，不能只测试第一次向前或一段无作用撤退撤销。不强制两个 L、四组、全部方向、219 输入或原坐标。可改变形状和布局，保留其输入端、偏置工作端、全轮廓净空、可恢复推动面功能。
+New designs inherit complete tool/helper competition for space, helper reconfiguration, purposeful retreat, rising, restoration or helper reuse, access to changing pushing faces and usable delivery, and offset contact across a void. Declare opposite-direction motion and reuse, then restrict them before real progress opportunities or the goal. The first forward move or an ineffective retreat reversal is insufficient. The design need not retain two L shapes, four groups, all directions, 219 inputs, or the original coordinates. Preserve input-end, offset working-end, full-footprint clearance, and recoverable pushing-face functions when changing shapes and layout.
 
-## 全部初始刚体成员
+## Complete initial rigid-group members
 
-| ID | 功能角色 | 全体成员 (x,y,z) |
+| ID | Functional role | Complete members (x,y,z) |
 | --- | --- | --- |
 | M2 | helper-2 | (10,4,0) (11,4,0) (10,5,0) |
 | M0 | tool | (6,5,0) (7,5,0) |
 | M1 | helper-1 | (8,5,0) (9,5,0) (8,6,0) |
 | M3 | target | (1,12,0) (2,12,0) (3,12,0) |
 
-## 内部证据入口与使用范围
+## Evidence and scope
 
-[关键状态](official-states.json) 保存初态、完整成员、选定时刻的绝对姿态、支撑丧失后的离场标记、冻结行走区域及可达站位推动探查；[精简检查](official-checks.json) 保留限制结果、成功绕过路径、原图/重建差异及反例；[可运行原图合同](official-design.json) 可直接交给新版 verifier。全部引用位于本 skill 内，无需外部绝对研究路径。
+[Key states](official-states.json) preserve the initial state, complete members, selected absolute poses, removal flags after support loss, frozen-object walking regions, and reachable-stance push probes. [Concise checks](official-checks.json) retain restriction results, successful bypasses, differences between original and reconstructed maps, and counterexamples. The [runnable original-map contract](official-design.json) works with the complex verifier. All references are local to this package.
 
-原检查各自在 1,000,000 状态上限内完成，返回路径均普通回放；旧结果只是对应地图及指定目标的证据，不能迁移为新图的搜索结论。首次机会前缀包含真实目标作为绕过，并禁止事件本身，正向对照可达。方向排除不证明唯一顺序或精确返回；输入 28 等单状态结论不能扩大。新图的初态、首次事件历史、往返和接触后冻结检查须重跑；上限、异常、未支持输入为 unknown。
+The original checks completed within a 1,000,000-state cap each, and returned routes were replayed with ordinary moves. Those results apply only to their maps and specified goals. First-opportunity prefix checks include the real goal as a bypass endpoint, forbid the event itself, and have reachable positive controls. Direction restrictions establish neither a unique order nor an exact return. A selected-state result does not apply to every history. Rerun initial-state, first-event history, return, and post-contact freeze checks for new maps. Caps, exceptions, and unsupported inputs are unknown.
 
-至少三个相互依赖且改变物体/接触/支撑/推动条件的功能阶段是本次用户的验收下限，不是官方难度定义。保留项和可变项须写入 [复杂合同与执行接口](complex-validation.md)。绝对坐标、经验证不改变功能的尺寸和外部布局可变；每处形状/边界变化要指出新几何承担的旧功能，并重新检查全轮廓、支撑、站位、阶段依赖及绕过。读取记录不等于必要性证明。
+Default authoring requires at least three interdependent stages that change object, contact, support, or pushing conditions; this is an authoring requirement, not an official definition of difficulty. Record inherited and variable elements in the [contract and verification interfaces](complex-validation.md). Coordinates, verified dimensions, and external layout may vary. For each shape or boundary change, identify the new geometry carrying the old function and recheck complete footprints, support, stances, stage dependencies, and bypasses. A reading record does not prove necessity.

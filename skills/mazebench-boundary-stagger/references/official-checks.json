@@ -516,32 +516,32 @@
     },
     "stageWitnesses": [
       {
-        "name": "支撑丧失开启接近区",
+        "name": "Loss of support opens the approach",
         "event": "removeApproach",
         "step": 9,
-        "conflict": "八格 M0 封接近区",
-        "effect": "官方离场开放通道"
+        "conflict": "The eight-cell M0 blocks the approach",
+        "effect": "Legal engine removal opens the passage"
       },
       {
-        "name": "中部换位与再调整",
+        "name": "Central repositioning and readjustment",
         "event": "approachLeft",
         "step": 24,
-        "conflict": "M2 全轮廓和净空限制上方接近",
-        "effect": "从另一推动面重新配置 M2"
+        "conflict": "The complete M2 footprint and clearance restrict the upper approach",
+        "effect": "Reconfigure M2 from a different pushing face"
       },
       {
-        "name": "边界错位",
+        "name": "Boundary offset",
         "event": "shift",
         "step": 41,
-        "conflict": "屋顶阻止下方接触簇",
-        "effect": "独立错位切断受限接触"
+        "conflict": "The roof blocks the lower contact cluster",
+        "effect": "Independent offset breaks the constrained contact"
       },
       {
-        "name": "错位后开路",
+        "name": "Opening the route after offset",
         "event": "raise",
         "step": 47,
-        "conflict": "下方阶梯仍封宝石路线",
-        "effect": "下方整体上移开放目标通路"
+        "conflict": "The lower staircase still blocks the gem route",
+        "effect": "Upward translation of the complete lower group opens the goal route"
       }
     ],
     "checks": [
@@ -719,5 +719,12 @@
         "scope": "Only these walls, this ordinary prefix, matched stance, and excluded preparation. Walking side effects are recorded; no global shape uniqueness claim."
       }
     ]
+  },
+  "packagedDesign": {
+    "path": "references/official-design.json",
+    "cells": "c011f32929161bcddbe8daeccbbbfce23f6d11fcd8e68705dd4b06bd3ae209f3",
+    "contract": "958c5807109b2b8f424924db88fcdcfa40a11cff59c0a5a60d8c19ae8817a680",
+    "case": "847c8371af72e06d29a78f22cf87d2f152a8ce50bf99b85b708ccbcd8f13be82",
+    "scope": "Current package metadata after naming and language normalization; historical verification fingerprints remain unchanged."
   }
 }

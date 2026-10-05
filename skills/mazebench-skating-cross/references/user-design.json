@@ -1,5 +1,5 @@
 {
-  "title": "skating cross — user reference",
+  "title": "MazeBench Skating Cross user case",
   "scenario": "user-reference",
   "cells": [
     [
@@ -294,7 +294,7 @@
   "witness": "LDRDLULDLURDDLDRURULDLDLDLULURUDLURDRDRURULDRDRDRULULDRULDRULDRURLURULDLDLRURDRDLULDLULDRURDRULULDURDLULULRDLURLDRURDULDRULLURULDLDRURURUR",
   "source": {
     "kind": "user-authored local case",
-    "map": "references/reference-world-map.txt",
+    "map": "references/user-world-map.txt",
     "engine_commit": "0ac96b8a2648db09f375989cd7bc33699222c1e6",
     "map_sha256": "d95611963f45420573cf662f7eba9b494f8622203505627cebf1f425f3e3b296"
   },
@@ -343,8 +343,8 @@
       ]
     },
     "readReceipt": {
-      "path": "references/reference-case.md",
-      "sha256": "0121bffe2afa8b07712df0324a72a858e89d52ba0db8ddf0670d970d10a78149",
+      "path": "references/user-case.md",
+      "sha256": "4507c2f52c7014549f0b5358559580286ba49442826b27dd65e11dbb81aede83",
       "readBeforeLayout": true
     },
     "inherited": [

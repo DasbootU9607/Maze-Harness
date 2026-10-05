@@ -1,15 +1,15 @@
 ---
-name: skating-cross
+name: mazebench-skating-cross
 description: Design, build, and verify MazeBench ice puzzles in which a rigid cross creates stopping points, enables changing pushing sides, and opens a gem route with a return to the doorway. Derive connected stages from the included user-authored case. For map authoring, not model evaluation.
 ---
 
-# skating cross
+# MazeBench Skating Cross
 
 Use a movable rigid cross to change stopping points and pushing stances on ice. All four arms participate in whole-group sliding collisions and can provide braking surfaces for the player. Moving the cross opens some routes and closes others. The complete objective includes collecting the gem and returning to the declared doorway cell.
 
 ## Required reading and default complex mode
 
-Before building or iterating on a level with this skill, read the [complete reference case and mechanism analysis](references/reference-case.md) and inspect the [key states](references/reference-states.json) relevant to the functions you intend to inherit. Identify necessary mechanisms, preparatory stops, stances for changing pushing sides, stage dependencies and variable elements before choosing shapes, coordinates or a layout. This entrypoint summary alone is insufficient for construction. A previously read, unchanged version may be reused; record its path, content fingerprint and inherited relationships. A reading record does not replace necessity checks.
+Before building or iterating on a level with this skill, read the [complete reference case and mechanism analysis](references/user-case.md) and inspect the [key states](references/user-states.json) relevant to the functions you intend to inherit. Identify necessary mechanisms, preparatory stops, stances for changing pushing sides, stage dependencies and variable elements before choosing shapes, coordinates or a layout. This entrypoint summary alone is insufficient for construction. A previously read, unchanged version may be reused; record its path, content fingerprint and inherited relationships. A reading record does not replace necessity checks.
 
 The included case is a complete map created by the user in the local editor. Preserve its original map and provenance, and describe it as the "user reference case" rather than an upstream official level. The confirmed objective is to collect the gem and return to the starting doorway; entering an adjacent room is not required.
 
@@ -37,7 +37,7 @@ Choose coordinates autonomously when a new map is needed; do not require the use
 
 ## Build and deliver
 
-Use [reference-design.json](references/reference-design.json) to learn the contract format, then write your own `title`, complete 16x16 `cells`, objective and spatial relationships. New layouts require updated poses, stages and evidence; do not reuse the reference map's search conclusions.
+Use [user-design.json](references/user-design.json) to learn the contract format, then write your own `title`, complete 16x16 `cells`, objective and spatial relationships. New layouts require updated poses, stages and evidence; do not reuse the reference map's search conclusions.
 
 ```text
 node scripts/build.cjs --repo ENGINE --spec SPEC.json --out NEW_BUILD_OUTPUT

@@ -1,7 +1,7 @@
 {
   "source": {
     "kind": "user-authored local case",
-    "map": "references/reference-world-map.txt",
+    "map": "references/user-world-map.txt",
     "engine_commit": "0ac96b8a2648db09f375989cd7bc33699222c1e6",
     "map_sha256": "d95611963f45420573cf662f7eba9b494f8622203505627cebf1f425f3e3b296"
   },
@@ -815,5 +815,12 @@
     "returnedToDoorway": true,
     "sourcePreserved": true,
     "saveExportsMatch": true
+  },
+  "packagedDesign": {
+    "path": "references/user-design.json",
+    "cells": "df74af843f20f11cf99ed1712556903a87feddf416aaaf86fd48bda7a9780b65",
+    "contract": "364cee10b7512e34a4ee7c3088f5a0999330579ebb031aa8fab48478c5173d03",
+    "case": "4507c2f52c7014549f0b5358559580286ba49442826b27dd65e11dbb81aede83",
+    "scope": "Current package metadata after naming and language normalization; historical verification fingerprints remain unchanged."
   }
 }

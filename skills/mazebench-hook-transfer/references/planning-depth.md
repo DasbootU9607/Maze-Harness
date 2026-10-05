@@ -1,6 +1,6 @@
 # Planning before and after contact
 
-默认复杂模式布局前必须读取本文件、[official-case.md](official-case.md) 和 [complex-validation.md](complex-validation.md)，并实际执行新接口。旧示例只是其声明范围的证据。
+Before laying out a default complex room, read this file, the [complete official case](official-case.md), and the [contract and verification interfaces](complex-validation.md), then use the complex entrypoints. Earlier examples provide evidence only within their declared scope.
 
 For default complex authoring, make recognition, preparation, usable contact, and continued access depend on one another. These are design criteria, not a calibrated human-difficulty scale.
 

@@ -7,7 +7,7 @@ node scripts/build.cjs --repo ENGINE --spec SPEC.json --out NEW_BUILD_OUTPUT
 node scripts/verify.cjs --repo ENGINE --spec SPEC.json --out NEW_CHECK_OUTPUT --cap 300000
 ```
 
-[reference-design.json](reference-design.json) is runnable. New geometry needs its own contract/evidence. The builder uses official serialization and writes Build JSON, map, spec, contract and manifest routes; building does not certify the design. Verification writes `verification.json`, retains counterexamples and exits nonzero for failed/unknown.
+[user-design.json](user-design.json) is runnable. New geometry needs its own contract/evidence. The builder uses official serialization and writes Build JSON, map, spec, contract and manifest routes; building does not certify the design. Verification writes `verification.json`, retains counterexamples and exits nonzero for failed/unknown.
 
 | Field | Meaning |
 | --- | --- |

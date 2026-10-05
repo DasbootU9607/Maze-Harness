@@ -1,6 +1,6 @@
 # Planning through a changing workspace
 
-默认复杂模式布局前必须读取本文件、[official-case.md](official-case.md) 和 [complex-validation.md](complex-validation.md)，并实际执行新接口。旧示例只是其声明范围的证据。
+Before laying out a default complex room, read this file, the [complete official case](official-case.md), and the [contract and verification interfaces](complex-validation.md), then use the complex entrypoints. Earlier examples provide evidence only within their declared scope.
 
 Use this guidance for requests for difficult, thoughtful, multi-stage transport. Design necessary changes to shared space and pushing access; these criteria are not a human-difficulty calibration.
 

@@ -1,0 +1,17 @@
+name: Check skill conventions
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+
+jobs:
+  check-skills:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check names, English text, links, and provenance
+        run: node scripts/check-skills.cjs

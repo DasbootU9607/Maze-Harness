@@ -833,25 +833,25 @@
     },
     "stageWitnesses": [
       {
-        "name": "助手改变共享空间配置",
+        "name": "Helper reconfiguration of shared space",
         "event": "helperDown",
         "step": 11,
-        "conflict": "L 助手轮廓与工具争用中部净空",
-        "effect": "改变可用推动面并保留之后的助手恢复"
+        "conflict": "The L helper footprint and tool compete for central clearance",
+        "effect": "Change usable pushing faces while preserving later helper restoration"
       },
       {
-        "name": "工具回升重取通道",
+        "name": "Tool ascent to regain the passage",
         "event": "toolUp",
         "step": 126,
-        "conflict": "当前工具/助手配置无法直接进入可用交付",
-        "effect": "工具退出已有向下进度，重排后重新取得下一工作空间"
+        "conflict": "The current tool/helper configuration cannot directly reach usable delivery",
+        "effect": "The tool retreats from earlier downward progress and regains the next workspace after reconfiguration"
       },
       {
-        "name": "可用交付与侧向传力",
+        "name": "Usable delivery and lateral force transfer",
         "event": "contact",
         "step": 211,
-        "conflict": "空洞禁止直接目标站位",
-        "effect": "全工具、目标和玩家共同达到可操作状态并通过真实侧接触改变目标"
+        "conflict": "The void prevents a direct target stance",
+        "effect": "The complete tool, target, and player reach a usable configuration and actual lateral contact changes the target"
       }
     ],
     "checks": [
@@ -1094,5 +1094,12 @@
         "expanded": 5
       }
     ]
+  },
+  "packagedDesign": {
+    "path": "references/official-design.json",
+    "cells": "4a7ca34578d364d1666672b094b4e9fe452474b89dcd7fe8fc4b4d74fbb73819",
+    "contract": "412101dd371823efed145de132b69c2342c524f9b47e97ab8a88463ef6bb1b8d",
+    "case": "f1eccdfe55dfa1b64cb5cdfb0b10a5f4458cdd7ec1eb720d0317eaae148de075",
+    "scope": "Current package metadata after naming and language normalization; historical verification fingerprints remain unchanged."
   }
 }
