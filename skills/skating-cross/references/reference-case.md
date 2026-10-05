@@ -1,47 +1,47 @@
-# skating cross 用户参考案例与机制分析
+# skating cross user reference case and mechanism analysis
 
-这是用户在给定空白地图上构造的案例。用户确认的目标是收集宝石后返回右上方起点出口，不要求跨入邻室。机制与必要性来自官方引擎普通动作、求解和限制搜索；阶段命名是作者分析，不假定这是用户口述的唯一解法。
+The user constructed this case on a supplied blank map. The confirmed objective is to collect the gem and return to the starting doorway in the upper-right corner; entering a neighboring room is not required. Mechanism and necessity claims come from ordinary moves in the official engine, solver results and restricted searches. Stage names are authoring analysis, not a claim that the user described a unique solution.
 
-## 来源与初态
+## Provenance and initial state
 
-本地源 `games/draft-depth-f46419b887/levels/level_AxA.txt`，2026-10-03 加入宝石后保存。引擎版本 `0ac96b8a2648db09f375989cd7bc33699222c1e6`。[保留原图字节](reference-world-map.txt) SHA256：`d95611963f45420573cf662f7eba9b494f8622203505627cebf1f425f3e3b296`。这不是上游官方关卡；引擎和适用素材许可按仓库通知保留。
+The bundled [original map bytes](reference-world-map.txt) preserve the user reference case, including the gem. Map SHA256: `d95611963f45420573cf662f7eba9b494f8622203505627cebf1f425f3e3b296`. Engine baseline: `0ac96b8a2648db09f375989cd7bc33699222c1e6`. This is not an upstream official level. Retain applicable engine and asset licenses as described in the repository notices.
 
-坐标从零开始，U 减 y，全部 z=0。P=(15,1,0)，宝石=(12,8,0)，完成格=(15,1,0)。唯一开放边界格是起点。单房间从出口继续向外输入会坠落，验证在拿到宝石后到达该格时结束。
+Coordinates are zero-based; U decreases y, and every position has z=0. P=(15,1,0), gem=(12,8,0), and completion cell=(15,1,0). The starting cell is the only open boundary cell. In the single-room profile, continuing outward from the doorway causes a fall, so verification ends when the player reaches that cell after collecting the gem.
 
-M0 五格十字：中心 (8,6)，上臂 (8,5)，左臂 (7,6)，右臂 (9,6)，下臂 (8,7)。完整成员、全部墙和冰面见 [可运行合同](reference-design.json)。没有改写用户地图。
+M0 is a five-cell cross: center (8,6), upper arm (8,5), left arm (7,6), right arm (9,6), and lower arm (8,7). The [runnable contract](reference-design.json) records every member, wall and ice cell. The user reference map is unchanged.
 
-## 滑行、停靠与复用
+## Sliding, braking and reuse
 
-玩家不能在冰面上任意逐格走或中途转向。滑向刚体但没有初始相邻推动机会时，会在成员前停止；下一输入才可能从停点推动。任意十字臂前方遇墙都可能限制整组的滑行距离。角色和刚体的每个输入可移动多格。
+The player cannot walk arbitrarily one cell at a time or turn during a slide on ice. When sliding toward the cross without an initially adjacent pushing opportunity, the player stops before a member; a subsequent input may push from that stop. A wall ahead of any arm can limit the whole group's sliding distance. Both player and cross may travel multiple cells per input.
 
-初态冻结 M0 时有 29 个可停状态/位置，不能拿到宝石或完成返回。完整 BFS 路线有 138 个方向输入、23 次 M0 平移，第 134 输入收集宝石，第 138 输入返回出口。独立官方求解器也针对完整目标求解并普通回放。输入数不是人的难度或唯一解法声明。
+Freezing M0 in its initial pose yields 29 reachable stopping states/positions and permits neither gem collection nor the complete return objective. The complete BFS route uses 138 directional inputs and 23 M0 translations; input 134 collects the gem, and input 138 returns to the doorway. The independent official solver also solves the complete objective, and its route is replayed with ordinary moves. These counts do not establish human difficulty or a unique solution.
 
-前段包含临时停放与反向复用。输入 13/22/30/31 的十字中心依次为 (8,10)/(2,10)/(8,10)/(8,3)。到过西侧停放事件之后，必须恢复中心 (8,10) 的姿态，才能得到通向 (8,3) 的真实推动机会或完整目标；检查包含历史状态和正向对照。不能推断“必须先 D 再 L 再 R 再 U”：方向级机会搜索找到不按这些顺序的前缀反例，已保留回放。
+The early route includes temporary parking and reuse in the opposite direction. After inputs 13, 22, 30 and 31, the cross centers are (8,10), (2,10), (8,10) and (8,3), respectively. For histories that have reached the western parking event, restoring the center to (8,10) is necessary to reach a genuine pushing opportunity toward (8,3) or the complete objective. The checks include history and positive controls. This does not imply a required D, L, R, U sequence: searches for direction-level opportunities found prefix counterexamples with other orders, which are preserved and replayed.
 
-## 连通的末段功能链
+## Connected final functional chain
 
-| 输入 | 十字中心与全体成员 (z=0) | 真实输入与停止原因 | 后续功能 |
+| Input | Cross center and complete members (z=0) | Actual input and stopping cause | Subsequent function |
 | --- | --- | --- | --- |
-| 111 R | (12,4)；(12,3),(11,4),(12,4),(13,4),(12,5) | P=(1,5)，推动下臂；右臂 (13,4) 的下一格 (14,4) 为墙 | 能停到 D 输入站位 (11,3)，准备竖向对齐 |
-| 117 D | (12,7)；(12,6),(11,7),(12,7),(13,7),(12,8) | P=(11,3)，推动左臂；右臂 (13,7) 的下一格 (13,8) 为墙 | 下臂对齐宝石行，能绕到 L 输入站位 (13,6) |
-| 124 L | (2,7)；(2,6),(1,7),(2,7),(3,7),(2,8) | P=(13,6)，推动上臂；左臂 (1,7) 的下一格 (0,7) 为墙 | 清空宝石行，右臂 (3,7) 留下 (3,8) 的上滑停点 |
+| 111 R | (12,4); (12,3),(11,4),(12,4),(13,4),(12,5) | P=(1,5) pushes the lower arm; the next cell (14,4) beyond the right arm (13,4) is a wall | Makes the D stance (11,3) reachable as a stop, preparing vertical alignment |
+| 117 D | (12,7); (12,6),(11,7),(12,7),(13,7),(12,8) | P=(11,3) pushes the left arm; the next cell (13,8) beyond the right arm (13,7) is a wall | Aligns the lower arm with the gem row and permits access to the L stance (13,6) |
+| 124 L | (2,7); (2,6),(1,7),(2,7),(3,7),(2,8) | P=(13,6) pushes the upper arm; the next cell (0,7) beyond the left arm (1,7) is a wall | Clears the gem row while the right arm (3,7) retains the upward-slide stop at (3,8) |
 
-第 133 输入 U 让玩家停在 (3,8)，实际制动成员是 (3,7)。第 134 输入 R 沿 y=8 到 (12,8)，被 (13,8) 墙截住并收集宝石。随后 U、R、U、R 经 (12,3)、(14,3)、(14,1) 返回 (15,1)。取宝石后冻结 M0 仍可返回；本例不声称取宝石后必须继续推动。
+Input 133, U, stops the player at (3,8), braked by the member at (3,7). Input 134, R, follows y=8 to (12,8), where the wall at (13,8) stops the player as the gem is collected. Subsequent U, R, U, R inputs visit (12,3), (14,3) and (14,1), then return to (15,1). Freezing M0 after gem collection still allows the return; this case does not claim that further pushing is necessary after collection.
 
-三阶段改变同一个十字的作用：靠右姿态解锁下移，下移姿态解锁向左重置，重置同时清空宝石行并提供转向停点。禁止进入 (12,4) 时，不存在首次可执行的 (12,7) 事件或完整目标；禁止 (12,7) 时，不存在首次可执行的 (2,7) 事件或完整目标。正向对照均可达，机会都通过真实普通输入检查，不以输入数冒充功能。
+These three stages change the function of the same cross: the rightward pose unlocks downward movement, the lowered pose unlocks the leftward reset, and the reset both clears the gem row and supplies a turning stop. Forbidding entry into center (12,4) prevents the first executable event toward (12,7) and the complete objective. Forbidding (12,7) prevents the first executable event toward (2,7) and the complete objective. Positive controls reach both opportunities, which are checked through actual ordinary inputs. Input counts do not substitute for functional evidence.
 
-## 证据范围
+## Evidence scope
 
-[精简检查](reference-checks.json) 与 [关键状态](reference-states.json) 保存路线、限制结果、完整成员、停点、输入、触墙成员和反例。普通回放每一步检查成员完整平移、高度与玩家存活。冰面停点图保持方向性并保留收集状态，不按无向行走区折叠。
+[Concise checks](reference-checks.json) and [key states](reference-states.json) preserve routes, restriction results, complete members, stops, inputs, wall-contact members and counterexamples. Ordinary replay checks complete rigid translation, height and player survival at every step. Ice stopping graphs preserve directionality and gem state rather than collapsing into undirected walking regions.
 
-- 冻结十字、禁止长滑行后由静止十字制动、禁止某一方向平移，分别穷尽后无完整解。这些是原图结论，不自动成为新图要求。
-- 最多一次、两次、三次刚体运动，以及首次推动后只滑行，都无完整解；同向运动到底也不成立。计数是退化检查，不能独立证明功能阶段。
-- 前置关系有正向对照和限制准备的前缀搜索，终点为完整目标或真实下一事件机会。机会不等于完成；反例均回放。
-- 禁止记录中的姿态入口会阻断完整目标，但不证明唯一顺序或全局形状最小性。重复姿态有较早可达路径，方向级顺序反例须保留。
-- 选定状态的冻结结论只适用于该状态。新图必须重跑依赖、停靠、恢复、出口和形状功能；上限与未支持物理为 unknown。
+- Freezing the cross, forbidding a long slide braked by a stationary cross, or forbidding translation in each tested direction produces exhausted searches with no complete solution. These conclusions belong to the reference map and are not automatic requirements for new maps.
+- Allowing at most one, two or three rigid-group moves, or freezing the group after its first move, does not permit completion. Restricting all group motion to one direction also fails. Counts check for degenerate solutions; they do not independently prove functional stages.
+- Preparation relationships have positive controls and prefix searches that restrict preparation, ending at the complete objective or a genuine next-event opportunity. An opportunity is not completion; counterexamples are replayed.
+- Forbidding entry into recorded poses blocks the complete objective, but does not prove a unique order or global shape minimality. Repeated poses can have earlier reachable paths; retain counterexamples to directional ordering claims.
+- A freeze result at a selected state applies only to that state. New maps must rerun dependency, braking, restoration, doorway and shape-function checks. Search caps and unsupported physics are unknown.
 
-## 继承项与可变项
+## Inherited functions and variable elements
 
-继承冰面真实停点、完整轮廓限制滑行、成员承担不同输入/制动面、临时停放后换侧与恢复、连通姿态准备链、清空目标路线同时保留转向停点、完整返回目标。
+Inherit genuine ice stopping points, sliding limits imposed by the complete footprint, distinct input/braking surfaces supplied by members, changes of pushing side and restoration after temporary parking, a connected pose-preparation chain, clearance of the objective route with a turning stop retained, and the complete return objective.
 
-可变坐标、方向、外部布局、经验证的臂长、对应挡墙/停点、阶段数量与路线。不要求同一 138 输入路径或 23 次运动。每个改动指明哪个新成员、边界、停点和站位承接原功能，再运行检查。
+Coordinates, directions, surrounding layout, verified arm lengths, corresponding walls/stops, stage count and route may vary. Neither the same 138-input route nor 23 group moves is required. For each change, identify the new member, boundary, stop and stance that carry the inherited function, then run the checks.

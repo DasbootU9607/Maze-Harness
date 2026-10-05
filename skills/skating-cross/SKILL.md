@@ -5,45 +5,45 @@ description: Design, build, and verify MazeBench ice puzzles in which a rigid cr
 
 # skating cross
 
-用可移动十字刚体改写冰面上的停点和推动站位。四个臂既参与整组滑行碰撞，也能给玩家提供停靠面；移动会同时打开一些路线、关闭另一些路线。完成目标包括收集宝石后返回指定出口格。
+Use a movable rigid cross to change stopping points and pushing stances on ice. All four arms participate in whole-group sliding collisions and can provide braking surfaces for the player. Moving the cross opens some routes and closes others. The complete objective includes collecting the gem and returning to the declared doorway cell.
 
-## 构建前必读与默认复杂模式
+## Required reading and default complex mode
 
-使用本 skill 构建或迭代关卡前，必须读取 [完整案例与机制分析](references/reference-case.md)，并检查本次要继承的 [关键状态](references/reference-states.json)。先列出必要机制、前置停点、换侧站位、阶段依赖与可变部分，再选择形状、坐标和布局。不能只依据此入口的摘要完成构建。相同版本已实际读过可复用；记录路径、内容指纹与继承关系，读取记录不能代替必要性检查。
+Before building or iterating on a level with this skill, read the [complete reference case and mechanism analysis](references/reference-case.md) and inspect the [key states](references/reference-states.json) relevant to the functions you intend to inherit. Identify necessary mechanisms, preparatory stops, stances for changing pushing sides, stage dependencies and variable elements before choosing shapes, coordinates or a layout. This entrypoint summary alone is insufficient for construction. A previously read, unchanged version may be reused; record its path, content fingerprint and inherited relationships. A reading record does not replace necessity checks.
 
-本案例是用户在本地编辑器构造的完整参考图。保留原图与来源，称“用户参考案例”，不归为上游官方关卡。用户明确的目标是拿到宝石后返回起点出口，不要求跨入相邻房间。
+The included case is a complete map created by the user in the local editor. Preserve its original map and provenance, and describe it as the "user reference case" rather than an upstream official level. The confirmed objective is to collect the gem and return to the starting doorway; entering an adjacent room is not required.
 
-默认构建至少三个相互依赖的有效功能阶段。布局前读取 [Planning depth](references/planning-depth.md) 和 [合同与验证接口](references/complex-validation.md)，建立精简设计合同。阶段必须改变可停位置、可用推动面、整组滑行约束或目标路线；长距离滑行、同向重复推动、单纯走路和无功能往返不计。明确要求原图复现或紧凑演示时可采用相应模式并如实标注。
+By default, build at least three interdependent functional stages. Before laying out the map, read [Planning depth](references/planning-depth.md) and the [contract and verification interfaces](references/complex-validation.md), then establish a concise design contract. A stage must change stopping positions, usable pushing surfaces, whole-group sliding constraints or the objective route. Long slides, repeated pushes in one direction, walking alone and returns without a functional effect do not count. When the user explicitly requests a reproduction or compact demonstration, use the corresponding mode and label it accurately.
 
-## 从目标推导布局
+## Derive the layout from the objective
 
-需要新图时自主选择坐标，不要求用户预先给出形状或答案。读取 [Design](references/design.md)：
+Choose coordinates autonomously when a new map is needed; do not require the user to supply shapes or a solution in advance. Read [Design](references/design.md):
 
-1. 固定宝石与出口的真实完成条件，确认初始冰面停点图不能完成目标。
-2. 从最后一次转向倒推：玩家在哪停下、哪个十字成员提供停靠面、下一输入如何经过宝石，以及拿到宝石后如何返回出口。
-3. 建立可达的推动面。用完整轮廓确定滑行终点，指出实际触墙的成员与边界，不能只看中心或接触臂。
-4. 倒推前置停放、换侧和恢复。一个姿态可能解锁新推动侧、封闭旧停点；保留后续进入与退出路线。
-5. 设置需要准备的初态。四臂可变长、位置可变，保持连接、完整支撑、整组净空与各臂功能；通过官方动作确认。
-6. 记录冻结刚体停点图、可执行的下一次推动、完整阻挡位置和解除动作。搜索声称必要的阶段的绕过，普通回放成功反例。
+1. Establish the complete gem-and-doorway objective and confirm that the initial stopping graph with the cross frozen cannot complete it.
+2. Work backward from the final turn: where the player stops, which cross member provides the braking surface, how the next input passes through the gem, and how the player returns to the doorway afterward.
+3. Establish reachable pushing surfaces. Use the complete footprint to determine sliding endpoints and identify the actual member and boundary causing each collision; inspecting only the center or contacted arm is insufficient.
+4. Derive preparatory parking, changes of pushing side and restoration. A pose may unlock a new pushing side while closing an old stop; preserve later entry and retreat routes.
+5. Create an initial state that requires preparation. Arm lengths and positions may vary, provided the cross remains connected, fully supported and clear throughout whole-group travel, with concrete functions for its arms. Confirm these properties through official moves.
+6. Record stopping graphs with the cross frozen, executable next pushes, complete blocking positions and the moves that clear them. Search for bypasses of stages claimed to be necessary, and replay successful counterexamples with ordinary moves.
 
-## 规则与证据
+## Rules and evidence
 
-- 使用官方 Toolbox、解析器、保存服务、引擎和求解器。同一 M ID 的成员是一组刚体；不添加拉动、自由旋转或逐格制动规则。
-- 冰面一次输入可跨多格；经过某格不等于能在那里停下、转向或推动。停点关系有方向性，不能套用非冰面关卡的无向行走区合并。
-- 读取 [Verification](references/verification.md)。分开报告合法完成、刚体运动必要性、停靠必要性、前置姿态依赖、局部臂功能和出口恢复。收集宝石不等于完成返回目标。
-- 当前脚本支持一个平面十字刚体、一名玩家、一颗宝石，以及地面/冰面/固定墙，四臂长度可变。混合高度、多组传力、斜坡、机关、真实跨房间须使用兼容观察器；当前 profile 返回 unsupported/unknown。
-- 耗尽搜索才支持“此限制下无解”；上限、异常和未支持输入是 unknown。选定状态结论不得扩大到所有历史，禁止某方向也不证明唯一顺序。保留并回放反例。
-- 按 [Composition](references/composition.md) 与其他机制结合，重新验证组合后的目标与停点。
+- Use the official Toolbox, parser, save services, engine and solver. Members sharing an M ID form one rigid group; do not add pulling, free rotation or one-cell braking rules.
+- One input on ice may cross multiple cells. Passing through a cell does not mean the player can stop, turn or push there. Stopping relationships are directed; do not merge them into undirected walking regions as in non-ice levels.
+- Read [Verification](references/verification.md). Report legal completion, motion necessity, braking necessity, preparation dependencies, local arm functions and doorway restoration separately. Collecting the gem alone does not complete the return objective.
+- The current scripts support one planar rigid cross, one player, one gem, and floor, ice and fixed walls, with variable arm lengths. Mixed heights, multiple-group force transfer, slopes, devices and actual room crossings require compatible observers; the current profile reports unsupported/unknown for them.
+- Only an exhausted search supports "no solution under this restriction." Search caps, exceptions and unsupported inputs are unknown. Do not extend selected-state conclusions to all histories, or infer a unique order from a direction restriction. Preserve and replay counterexamples.
+- Follow [Composition](references/composition.md) when combining mechanisms, and verify the complete objective and stopping relationships again.
 
-## 构建与交付
+## Build and deliver
 
-以 [reference-design.json](references/reference-design.json) 学习合同格式，再编写自己的 `title`、完整 16×16 `cells`、目标和空间关系。新布局必须更新姿态、阶段与证据，不能沿用参考图的搜索结论。
+Use [reference-design.json](references/reference-design.json) to learn the contract format, then write your own `title`, complete 16x16 `cells`, objective and spatial relationships. New layouts require updated poses, stages and evidence; do not reuse the reference map's search conclusions.
 
 ```text
 node scripts/build.cjs --repo ENGINE --spec SPEC.json --out NEW_BUILD_OUTPUT
 node scripts/verify.cjs --repo ENGINE --spec SPEC.json --out NEW_CHECK_OUTPUT --cap 300000
 ```
 
-输出使用新目录，保留已有地图。交付 Play/Edit 链接、Build JSON、完整回放路线、关键姿态/停点/推动站位、作用说明与有范围的检查结果。浏览器实际游玩和保存导出需另行检查。
+Use new output directories and preserve existing maps. Deliver Play/Edit links, Build JSON, a complete replay route, key poses, stopping points and pushing stances, explanations of their functions, and scoped verification results. Actual browser play and save/export require separate checks.
 
-保持引擎代码和用户案例不变。本 skill 用于作者构造关卡，不启动被评测模型、付费评测或远程发布。输入数不是人的难度分数。
+Keep engine code and the user reference map unchanged. This skill is for level authoring; it does not launch evaluated models, paid evaluations or remote publication. Input counts are not human-difficulty scores.
