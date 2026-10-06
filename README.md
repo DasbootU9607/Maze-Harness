@@ -11,7 +11,7 @@ Agent skills for designing, building, and verifying MazeBench puzzles.
 | [MazeBench Constrained Transport](skills/mazebench-constrained-transport/SKILL.md) | Tool delivery through shared space, helper rearrangement, and changing pushing positions |
 | [MazeBench Skating Cross](skills/mazebench-skating-cross/SKILL.md) | Directed ice stopping, reusable cross poses, changing pushing sides, and collecting a gem before returning to the doorway |
 
-New authoring defaults to connected, multi-stage rooms. Before choosing shapes or coordinates, the skill reads its corresponding full case, records inherited spatial relationships, and builds an executable design contract. The first three skills use upstream official levels; Skating Cross uses the user's authored reference map. Compact mechanism demonstrations remain available when explicitly requested.
+New authoring defaults to connected, multi-stage rooms. Before choosing shapes or coordinates, new authoring reads the skill's extracted mechanism logic and derives roles, player stances/contact, rigid shape/support/clearance, and then layout. It maps each inherited relationship to concrete authored geometry and builds an executable contract. Full cases remain available for evidence questions, maintenance, reproduction, and regression; they are not new-map templates. The first three skills use upstream official levels; Skating Cross uses the user's authored reference map. Compact mechanism demonstrations remain available when explicitly requested.
 
 ## Install
 
@@ -30,7 +30,7 @@ delivery. Choose the geometry. Build a new draft, replay a complete solution,
 test the dependencies you claim, and provide Play/Edit links and the map.
 ```
 
-For a combined room, name the skills whose mechanisms you need. The agent constructs an authored specification and uses the supplied helpers; the browser is for editing and playing the result. Each `SKILL.md` routes to its mandatory case analysis, planning guidance, and complex validation interface. At least three dependent functional stages are required; walking, repeated pushes in one direction, and unrelated blockers do not count. The checks reject missing evidence and report capped or unsupported searches as unknown. Ice needs the Skating Cross observer; the other skills' unit-translation profiles do not certify sliding.
+For a combined room, name the skills whose mechanisms you need. The agent constructs an authored specification and uses the supplied helpers; the browser is for editing and playing the result. Each `SKILL.md` routes first to mechanism logic, then planning guidance, an empty design scaffold, and the complex validation interface. New receipts fingerprint mechanism logic; legacy case receipts remain supported. Reading records establish document version consistency, not understanding or necessity. At least three dependent functional stages are required; walking, repeated pushes in one direction, and unrelated blockers do not count. The checks reject missing evidence and report capped or unsupported searches as unknown. Ice needs the Skating Cross observer; the other skills' unit-translation profiles do not certify sliding.
 
 Builders create fresh local drafts. Verification checks supported mechanics and declared restrictions; it does not measure human difficulty. These skills are for map authoring, not benchmark model evaluation.
 
@@ -51,3 +51,5 @@ Follow [AGENTS.md](AGENTS.md) when adding or editing a skill. Skill IDs use `maz
 All maintained documentation, metadata, comments, and explanatory strings are in English. Run `node scripts/check-skills.cjs` before completing an edit; GitHub Actions runs the same naming, language, link, provenance, and fingerprint checks. Original source-map bytes and historical verification results remain preserved; current package fingerprints are recorded separately.
 
 The Skating Cross checker accepted the complete user case and two symmetry controls (reflection and quarter-turn), rejected a solvable easy bypass and a false directional dependency, and returned unknown for capped and unsupported-shape controls. Its complete objective includes the post-gem return to the doorway; its ordinary-move search preserves directed stopping and checks full rigid footprints. See its `user-checks.json` for scoped evidence.
+
+`node scripts/test-read-records.cjs` checks current legacy/new reading formats, stale-version rejection, local receipt paths, and authored anchor membership. Pass `--repo ENGINE --out NEW_OUTPUT` to also replay all complete packaged case routes through a separate official engine checkout. Format acceptance alone does not prove the declared functional explanations or human difficulty.

@@ -22,11 +22,14 @@ These rules apply when creating or updating skills in this repository. Follow ex
 
 - Preserve original maps, coordinates, mechanics, goals, replay routes, counterexamples, search results, and scope when editing wording or names. Record source paths, engine commits, and map SHA256 values in case documentation.
 - Refresh a runnable design's `readReceipt` after its case document changes. Preserve historical report fingerprints; record the current packaged design separately in `packagedDesign` with `cells`, `contract`, and `case` SHA256 values. Do not claim old checks were rerun merely because wording changed.
+- New authoring reads extracted `references/mechanism-logic.md` before geometry and records that document's current version. Maintainers analyze complete cases; reproductions may retain current case receipts. Receipts establish version consistency, not reading, understanding, or necessity. Keep complete case designs as regression evidence and new-map scaffolds free of case cells, coordinates, events, and routes.
 - Retain applicable license text and copyright notices for adapted material. Add a separate third-party notice only when it contains necessary information not already preserved in the package license or case provenance. Generated drafts carry the licensing requirements of resources copied from the separate engine installation.
 - Preserve scope and uncertainty: legal completion, mechanism necessity, preparation dependencies, and human difficulty are separate claims. Search caps, exceptions, and unsupported profiles remain unknown.
 
 ## Required checks
 
 Run `node scripts/check-skills.cjs` from the repository root before completing any skill edit. It checks names, language, encodings, metadata, local links, case families, map hashes, reading receipts, and current package fingerprints. The same command runs in GitHub Actions.
+
+Run `node scripts/test-read-records.cjs` for reading/contract changes. Add `--repo ENGINE --out NEW_OUTPUT` for complete original-route replay through the separate official engine. Format acceptance does not establish the migrated declarations or physical stage semantics; affected gameplay claims still need their scoped verifier.
 
 For helper or behavior changes, also run the affected helper and replay or verify the relevant case using a separate MazeBenchEngine checkout and fresh output directories. For wording and naming changes, check that the original maps and mechanical JSON fields are unchanged and replay the existing complete routes. Report what was checked and any limits; do not launch paid evaluations or publish generated game content without authorization.

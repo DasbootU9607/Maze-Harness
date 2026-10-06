@@ -1,5 +1,8 @@
 # Goal-derived cross geometry
 
+Read [Mechanism logic](mechanism-logic.md) first for new layouts. Derive user goal -> roles and relations -> player stance/contact -> shape, connection, support, and clearance -> layout -> full-goal verification. Explain this map's realization of each chosen inherited relation; source shapes and coordinates are regression evidence, not starting geometry.
+
+
 Start with collecting the gem and arriving alive at the declared doorway. The doorway is an in-room cell, not a removed player or a nonexistent neighbor transition.
 
 Derive the final arrival ray and its turning stop. Identify the member that brakes the incoming slide and the wall or floor transition ending the outgoing slide. Intermediate transit cells are not stopping cells; gem collection can occur in transit, so inspect actual move records.

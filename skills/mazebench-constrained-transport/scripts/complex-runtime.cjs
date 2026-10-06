@@ -3,6 +3,7 @@
 // Push-state BFS merges only states in the same frozen-object walking component.
 // History is stored on analyzer nodes and in keys, never in engine state/snapshots.
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
+const {checkReadRecord}=require('./read-record.cjs');
 const D={U:[0,-1],D:[0,1],L:[-1,0],R:[1,0]};
 const read=f=>JSON.parse(fs.readFileSync(f,'utf8')),hash=x=>crypto.createHash('sha256').update(typeof x==='string'||Buffer.isBuffer(x)?x:JSON.stringify(x)).digest('hex');
 function load(repo,cells){
@@ -111,9 +112,26 @@ function validate(spec,root){
  assert(same(voids,c.spatial.voids),'Declare every void, including void beneath an overhanging member');
  assert(Array.isArray(c.spatial.blocked)&&c.spatial.blocked.length&&c.spatial.blocked.every(b=>b.reason&&b.stance?.length===3&&D[b.direction]),'Declare concrete blocked stance/destination relationships');
  assert(Array.isArray(c.spatial.reserved)&&c.spatial.reserved.length&&c.spatial.reserved.every(r=>r.cell?.length===3&&r.function),'Declare concrete next/recovery stances');
- assert(c.inherited?.length>=3&&c.changes?.length&&c.readReceipt?.readBeforeLayout===true);
- const caseFile=path.resolve(root,'references/official-case.md');
- assert.equal(c.readReceipt.path,'references/official-case.md');assert.equal(c.readReceipt.sha256,hash(fs.readFileSync(caseFile)),'Case receipt refers to a different version');
+ assert(c.inherited?.length>=3&&c.changes?.length);
+ const record=checkReadRecord(spec,root,'references/official-case.md');
+ if(record.kind==='mechanism'){
+  const coordinate=p=>p?.length===3&&p.every(Number.isInteger)&&p[0]>=0&&p[0]<16&&p[1]>=0&&p[1]<16&&p[2]===0;
+  assert(new Set(c.stages.map(s=>s.event)).size===c.stages.length,'New stages need distinct functional events');
+  const links=new Map(),link=(a,b)=>{(links.get(a)||links.set(a,new Set()).get(a)).add(b);(links.get(b)||links.set(b,new Set()).get(b)).add(a);};
+  for(const d of c.dependencies){link(d.prepare,d.before);if(d.after){link(d.after,d.prepare);link(d.after,d.before);}}
+  const reached=new Set(),todo=[c.stages[0].event];
+  while(todo.length){const n=todo.pop();if(reached.has(n))continue;reached.add(n);todo.push(...(links.get(n)||[]));}
+  assert(c.stages.every(s=>reached.has(s.event)),'New stages must form one dependency component');
+  for(const s of c.stages){
+   assert(Number.isInteger(s.keyStep)&&s.keyStep>0&&coordinate(s.nextStand),'New stages need a witness input and next reachable stance');
+   if(s.nextEvent)assert(c.events[s.nextEvent]&&D[s.nextDirection],'Declare the next ordinary input');
+  }
+  for(const b of c.spatial.blocked){
+   assert(points[b.group]&&Number.isInteger(b.keyStep)&&b.keyStep>=0&&coordinate(b.stance));
+   assert(['stance','push'].includes(b.restriction),'Distinguish inaccessible stance from blocked push');
+   if(b.restriction==='push')assert(b.destinations?.length&&b.destinations.every(coordinate),'Name blocked cluster destinations');
+  }
+ }
  return spec;
 }
 function walking(e,o,start){

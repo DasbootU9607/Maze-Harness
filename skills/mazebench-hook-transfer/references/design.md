@@ -1,5 +1,8 @@
 # From function to contact geometry
 
+Read [Mechanism logic](mechanism-logic.md) first for new layouts. Derive user goal -> roles and relations -> player stance/contact -> shape, connection, support, and clearance -> layout -> full-goal verification. Explain this map's realization of each chosen inherited relation; source shapes and coordinates are regression evidence, not starting geometry.
+
+
 Begin with the change needed at the target, then derive the tool that makes it possible. Shapes and coordinates are design variables unless supplied by the user.
 
 ## Specify the working relationship

@@ -1,0 +1,40 @@
+{
+  "title": "",
+  "cells": [],
+  "contract": {
+    "profile": "planar-transport-depth-v2",
+    "mode": "complex",
+    "goal": {
+      "kind": "gem"
+    },
+    "members": {},
+    "roles": {},
+    "allowRemoval": [],
+    "necessaryRoles": [],
+    "optionalRoles": [],
+    "readReceipt": {
+      "path": "references/mechanism-logic.md",
+      "sha256": "",
+      "readBeforeLayout": true
+    },
+    "inherited": [],
+    "changes": [],
+    "spatial": {
+      "boundaries": [],
+      "voids": [],
+      "support": "",
+      "blocked": [],
+      "reserved": []
+    },
+    "events": {},
+    "stages": [],
+    "dependencies": [],
+    "mechanism": {
+      "kind": "",
+      "tool": "",
+      "target": ""
+    },
+    "opposingDirections": [],
+    "reuse": []
+  }
+}

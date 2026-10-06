@@ -1,5 +1,8 @@
 # From a blocked route to useful geometry
 
+Read [Mechanism logic](mechanism-logic.md) first for new layouts. Derive user goal -> roles and relations -> player stance/contact -> shape, connection, support, and clearance -> layout -> full-goal verification. Explain this map's realization of each chosen inherited relation; source shapes and coordinates are regression evidence, not starting geometry.
+
+
 Use this method when moving independent rigid groups relative to fixed boundaries should change a route, a pushing stance, or another group's movement clearance. The desired dependency comes first; the shapes are design decisions. User-specified geometry is a task constraint, not a permanent skill rule.
 
 ## Design process

@@ -107,6 +107,19 @@ function checkRepository(root) {
       skill + ': update the README table title and link');
     check(fs.existsSync(path.join(directory, 'LICENSE')), skill + ': retain the standalone package license');
     const references = path.join(directory, 'references');
+    const mechanismPath = path.join(references, 'mechanism-logic.md');
+    const mechanism = textFiles.get(mechanismPath) || '';
+    check([...mechanism.matchAll(/^### ([a-z0-9-]+)$/gm)].length >= 3,
+      skill + ': include extracted mechanism relations with stable IDs');
+    const template = jsonFiles.get(path.join(references, 'design-template.json'));
+    check(template?.title === '' && Array.isArray(template.cells) && template.cells.length === 0 &&
+      !Object.hasOwn(template, 'witness') && Object.keys(template.contract?.events || {}).length === 0 &&
+      template.contract?.stages?.length === 0 && template.contract?.dependencies?.length === 0,
+      skill + ': new-map scaffold must not contain case geometry, events, stages, or a replay route');
+    const templateReceipt = template?.contract?.readReceipt;
+    check(templateReceipt?.path === 'references/mechanism-logic.md' && templateReceipt.sha256 === '' &&
+      templateReceipt.readBeforeLayout === true,
+      skill + ': leave the mechanism version receipt to be filled after reading');
     const families = sourceTypes.filter(source => fs.existsSync(path.join(references, source + '-case.md')));
     check(families.length > 0, skill + ': include a case with explicit source provenance');
     for (const source of families) {

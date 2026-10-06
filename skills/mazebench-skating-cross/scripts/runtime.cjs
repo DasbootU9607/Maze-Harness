@@ -5,6 +5,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
+const { checkReadRecord } = require('./read-record.cjs');
 const D = { U: [0, -1], D: [0, 1], L: [-1, 0], R: [1, 0] };
 const read = file => JSON.parse(fs.readFileSync(file, 'utf8'));
 const hash = value => crypto.createHash('sha256').update(Buffer.isBuffer(value) || typeof value === 'string' ? value : JSON.stringify(value)).digest('hex');
@@ -69,9 +70,7 @@ function validate(spec, root) {
   assert(gx >= 0 && gx < 16 && gy >= 0 && gy < 16 && !spec.cells[gy][gx].split('+').includes('#'));
   assert(c.spatial && same(c.spatial.walls, walls) && same(c.spatial.ice, ice), 'Declare complete fixed wall and ice footprints');
   assert(c.inherited?.length && Array.isArray(c.changes), 'Record inherited functions and changes');
-  const receipt = c.readReceipt;
-  assert(receipt?.path === 'references/user-case.md' && receipt.readBeforeLayout === true);
-  assert.equal(receipt.sha256, hash(fs.readFileSync(path.join(root, receipt.path))), 'Reference reading receipt is stale');
+  checkReadRecord(spec, root, 'references/user-case.md');
   for (const [name, event] of Object.entries(c.events || {})) {
     assert(/^[a-z0-9_-]+$/i.test(name));
     assert(['motion', 'cross-brake', 'gem'].includes(event.kind), 'Unsupported event kind');

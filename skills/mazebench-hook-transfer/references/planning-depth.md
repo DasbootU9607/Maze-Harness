@@ -1,6 +1,6 @@
 # Planning before and after contact
 
-Before laying out a default complex room, read this file, the [complete official case](official-case.md), and the [contract and verification interfaces](complex-validation.md), then use the complex entrypoints. Earlier examples provide evidence only within their declared scope.
+Before laying out a default complex room, read [Mechanism logic](mechanism-logic.md), this file, and the [contract and verification interfaces](complex-validation.md), then use the complex entrypoints. Earlier examples provide evidence only within their declared scope.
 
 For default complex authoring, make recognition, preparation, usable contact, and continued access depend on one another. These are design criteria, not a calibrated human-difficulty scale.
 

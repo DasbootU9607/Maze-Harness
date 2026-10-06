@@ -1,5 +1,8 @@
 # Deriving transport from tool use
 
+Read [Mechanism logic](mechanism-logic.md) first for new layouts. Derive user goal -> roles and relations -> player stance/contact -> shape, connection, support, and clearance -> layout -> full-goal verification. Explain this map's realization of each chosen inherited relation; source shapes and coordinates are regression evidence, not starting geometry.
+
+
 ## Minimal design record
 
 Record the following relationships before assigning cells; a fixed silhouette is unnecessary:

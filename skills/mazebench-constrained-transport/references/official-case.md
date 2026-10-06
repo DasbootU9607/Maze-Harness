@@ -1,6 +1,6 @@
 # GxF official case and mechanism analysis
 
-Read this complete-map analysis and the key states relevant to the proposed design before construction; a summary does not replace it. Mechanism interpretations come from the map, code, and ordinary replay, without an account from the original author or human difficulty experiments. Coordinates are zero-based, U decreases y, and every initial elevation is z=0.
+This complete analysis is required when maintaining the skill or reproducing the case. New authoring first reads [Mechanism logic](mechanism-logic.md), then consults this case and its states/checks for detailed evidence or physics questions. Mechanism interpretations come from the map, code, and ordinary replay, without an account from the original author or human difficulty experiments. Coordinates are zero-based, U decreases y, and every initial elevation is z=0.
 
 Original source: `games/maze/levels/0lzre7ixaq.txt`, MazeBenchEngine commit `0ac96b8a2648db09f375989cd7bc33699222c1e6`. The engine is MIT-licensed; preserve the original map bytes and applicable source notices without adding unsupported authorship claims. The unmodified [official map](official-world-map.txt) has SHA256 `493020c70b983b3a93fa4df871eb118c5fb8a0621f8ab09111b6d3653433ef33`.
 

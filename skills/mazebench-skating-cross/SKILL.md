@@ -1,6 +1,6 @@
 ---
 name: mazebench-skating-cross
-description: Design, build, and verify MazeBench ice puzzles in which a rigid cross creates stopping points, enables changing pushing sides, and opens a gem route with a return to the doorway. Derive connected stages from the included user-authored case. For map authoring, not model evaluation.
+description: Design, build, and verify MazeBench ice puzzles in which a rigid cross creates stopping points, enables changing pushing sides, and opens a gem route with a return to the doorway. Derive connected stages from extracted user-case logic. For map authoring, not model evaluation.
 ---
 
 # MazeBench Skating Cross
@@ -9,13 +9,17 @@ Use a movable rigid cross to change stopping points and pushing stances on ice. 
 
 ## Required reading and default complex mode
 
-Before building or iterating on a level with this skill, read the [complete reference case and mechanism analysis](references/user-case.md) and inspect the [key states](references/user-states.json) relevant to the functions you intend to inherit. Identify necessary mechanisms, preparatory stops, stances for changing pushing sides, stage dependencies and variable elements before choosing shapes, coordinates or a layout. This entrypoint summary alone is insufficient for construction. A previously read, unchanged version may be reused; record its path, content fingerprint and inherited relationships. A reading record does not replace necessity checks.
+For new maps, first read [Mechanism logic](references/mechanism-logic.md). Extract the functional roles, real input/contact relationships, movement preconditions, structural functions, and causal dependencies before choosing shapes or coordinates. Read [the complete user case](references/user-case.md) and its states/checks when evidence or physics details need confirmation. Skill creation or maintenance requires full case analysis; reproductions retain the complete case workflow. Read other cases only when combining their mechanisms.
+
+Record the mechanism document path, SHA256, and `readBeforeLayout: true` in the new contract. An unchanged previously read version may be reused. The receipt checks document version consistency; it cannot prove reading, timing, understanding, or mechanism necessity. For each inherited relation, identify this map's actual members, boundaries, passages, and stances as described in [the contract interface](references/complex-validation.md).
 
 The included case is a complete map created by the user in the local editor. Preserve its original map and provenance, and describe it as the "user reference case" rather than an upstream official level. The confirmed objective is to collect the gem and return to the starting doorway; entering an adjacent room is not required.
 
 By default, build at least three interdependent functional stages. Before laying out the map, read [Planning depth](references/planning-depth.md) and the [contract and verification interfaces](references/complex-validation.md), then establish a concise design contract. A stage must change stopping positions, usable pushing surfaces, whole-group sliding constraints or the objective route. Long slides, repeated pushes in one direction, walking alone and returns without a functional effect do not count. When the user explicitly requests a reproduction or compact demonstration, use the corresponding mode and label it accurately.
 
 ## Derive the layout from the objective
+
+Derive the map in this order: user goal -> functional roles and relationships -> player stances and real contact -> rigid shape, connection, support, and clearance -> layout -> complete-goal verification. Re-derive the spatial implementation without changing core physics. New mechanisms are optional; translation, reflection, renaming, or one added cell alone does not establish substantive variation.
 
 Choose coordinates autonomously when a new map is needed; do not require the user to supply shapes or a solution in advance. Read [Design](references/design.md):
 
@@ -37,7 +41,7 @@ Choose coordinates autonomously when a new map is needed; do not require the use
 
 ## Build and deliver
 
-Use [user-design.json](references/user-design.json) to learn the contract format, then write your own `title`, complete 16x16 `cells`, objective and spatial relationships. New layouts require updated poses, stages and evidence; do not reuse the reference map's search conclusions.
+Start new maps with [design-template.json](references/design-template.json), an intentionally incomplete contract with no case cells, coordinates, event poses, or route. Fill it from the requested goal and [Mechanism logic](references/mechanism-logic.md). Keep [user-design.json](references/user-design.json) for reproduction and regression; its spatial implementation is not the authoring template.
 
 ```text
 node scripts/build.cjs --repo ENGINE --spec SPEC.json --out NEW_BUILD_OUTPUT

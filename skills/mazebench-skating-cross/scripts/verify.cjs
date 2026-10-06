@@ -1,13 +1,15 @@
 'use strict';
 const fs = require('node:fs'), path = require('node:path'), assert = require('node:assert/strict');
 const { D, read, hash, same, load, validate, observer, search, replay, stopping } = require('./runtime.cjs');
+const { checkReadRecord } = require('./read-record.cjs');
 async function verify(repo, spec, cap = 300000) {
   const report = { profile: spec.contract?.profile, cap, checks: [], failures: [], stages: [] };
   try {
     assert(Number.isInteger(cap) && cap > 0);
     const c = validate(spec, path.resolve(__dirname, '..'));
     const { engine: e, solver } = load(repo, spec.cells), o = observer(e, spec);
-    report.fingerprints = { cells: hash(spec.cells), contract: hash(c), reference: c.readReceipt.sha256 };
+    report.readRecord = checkReadRecord(spec, path.resolve(__dirname, '..'), 'references/user-case.md');
+    report.fingerprints = { cells: hash(spec.cells), contract: hash(c), reference: report.readRecord.sha256, [report.readRecord.kind]: report.readRecord.sha256 };
     for (const file of ['public/maze-engine.js', 'public/maze-solver.js', 'server/maze-levels.js', 'games/maze/level_parsing.json'])
       report.fingerprints[file] = hash(fs.readFileSync(path.join(repo, file)));
     report.initial = o.snap(e.initialState);

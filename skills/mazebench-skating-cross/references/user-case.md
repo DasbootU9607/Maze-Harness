@@ -1,5 +1,7 @@
 # Skating Cross user case and mechanism analysis
 
+Maintainers and reproductions analyze this complete case. New authoring first reads [Mechanism logic](mechanism-logic.md), returning here for evidence or physics questions.
+
 The user constructed this case on a supplied blank map. The confirmed objective is to collect the gem and return to the starting doorway in the upper-right corner; entering a neighboring room is not required. Mechanism and necessity claims come from ordinary moves in the official engine, solver results and restricted searches. Stage names are authoring analysis, not a claim that the user described a unique solution.
 
 ## Provenance and initial state

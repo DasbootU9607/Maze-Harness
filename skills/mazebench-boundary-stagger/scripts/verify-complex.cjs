@@ -1,6 +1,7 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {D,read,hash,load,observe,validate,walking,search,replay}=require('./complex-runtime.cjs');
+const {checkReadRecord}=require('./read-record.cjs');
 async function verify(repo,spec,root,cap=1000000){
  const report={profile:spec.contract?.profile,cap,checks:[],failures:[],scope:'Author self-test; ordinary official physics; exhaustive restricted push-state graph, frozen walking components; no human-difficulty or independent-author claim.'};
  try{
@@ -8,10 +9,11 @@ async function verify(repo,spec,root,cap=1000000){
   validate(spec,root);const c=spec.contract,cells=spec.cells,{engine:e,solver}=load(repo,cells),o=observe(e,c);
   const initial=o.snap(e.initialState);assert(Object.keys(c.members).every(g=>o.group(initial,g).every(p=>p.z===0&&!p.removed)));
   assert(sameMembers(initial,c.members));
-  report.fingerprints={cells:hash(cells),contract:hash(c),case:hash(fs.readFileSync(path.join(root,'references/official-case.md')))};
+  report.readRecord=checkReadRecord(spec,root,'references/official-case.md');
+  report.fingerprints={cells:hash(cells),contract:hash(c),[report.readRecord.kind]:report.readRecord.sha256};
   for(const f of ['public/maze-engine.js','public/maze-solver.js','server/maze-levels.js','games/maze/level_parsing.json'])report.fingerprints[f]=hash(fs.readFileSync(path.join(repo,f)));
   const m=v=>v.moved.length>0,match=(name,v)=>o.matches(v,c.events[name]);
-  const ready=(s,name)=>Object.entries(D).some(([d,delta])=>{const q=e.cloneState(s),a=o.snap(s),r=e.move(q,...delta);return r.moved&&match(name,o.event(a,o.snap(q),d));});
+  const ready=(s,name)=>Object.entries(D).some(([d,delta])=>{const q=e.cloneState(s),a=o.snap(s),r=e.move(q,...delta);if(!r.moved)return false;const b=o.snap(q);if(!b.some(p=>p.type==='player'&&!p.removed))return false;o.intact(a,b);return match(name,o.event(a,b,d));});
   const endpoint=name=>name==='goal'?o.goal:s=>o.goal(s)||ready(s,name);
   async function check(name,want,options={}){
    let r;try{
@@ -33,14 +35,34 @@ async function verify(repo,spec,root,cap=1000000){
    assert(Number.isInteger(b.keyStep)&&b.keyStep>=0&&b.keyStep<=sequence.length,'Unavailable blocked-state prefix');
    const start=replay(e,o,sequence.slice(0,b.keyStep),{end:()=>true}).state,w=walking(e,o,start);
    const stand=w.queue.find(n=>{const p=o.snap(n.state).find(p=>p.type==='player');return JSON.stringify([p.x,p.y,p.z])===JSON.stringify(b.stance);});
-   let blocked=true,event=null;
-   if(stand){const q=e.cloneState(stand.state),a=o.snap(q),r=e.move(q,...D[b.direction]);event=o.event(a,o.snap(q),b.direction);blocked=!r.moved;}
+   let blocked=true,event=null,destinations=[];
+   if(stand){const q=e.cloneState(stand.state),a=o.snap(q),r=e.move(q,...D[b.direction]);event=o.event(a,o.snap(q),b.direction);blocked=!r.moved;
+    if(report.readRecord.kind==='mechanism'&&b.restriction==='push'){
+     assert.equal(event.primary,b.group,'Declared blocked push has no actual input member');
+     const cluster=new Set([b.group]);let changed=true;
+     while(changed){changed=false;for(const contact of event.contacts)if(cluster.has(contact.from)&&!cluster.has(contact.to)){cluster.add(contact.to);changed=true;}}
+     const [dx,dy]=D[b.direction];destinations=[...cluster].flatMap(g=>o.group(a,g).map(p=>({group:g,member:[p.x,p.y,p.z],destination:[p.x+dx,p.y+dy,p.z]})));
+     assert(b.destinations.every(p=>destinations.some(q=>JSON.stringify(q.destination)===JSON.stringify(p))),'Blocked destination is outside the real full push cluster');
+    }
+   }
+   if(report.readRecord.kind==='mechanism')blocked=b.restriction==='stance'?!stand:!!stand&&blocked;
    report.checks.push({name:'blocked_'+b.group+'_'+b.direction+'_step_'+b.keyStep,stance:b.stance,reachable:!!stand,ordinaryEvent:event,
+    restriction:b.restriction||'legacy-blocked-or-inaccessible',destinations,
     scope:stand?'Ordinary blocked action at declared reachable stance':'Declared stance not reachable with rigid objects frozen at this witness state',verdict:blocked?'passed':'failed'});
   }
   if(sequence){const q=replay(e,o,sequence);report.replayPassed=true;report.witness=sequence;report.pushes=q.rows.filter(r=>r.event.moved.length);
-   report.stageWitnesses=c.stages.map(s=>({name:s.name,event:s.event,step:q.rows.find(r=>match(s.event,r.event)&&(!s.after||r.step>(q.rows.find(t=>match(s.after,t.event))?.step??Infinity)))?.step??null,conflict:s.conflict,effect:s.effect}));
+   report.stageWitnesses=c.stages.map(s=>({name:s.name,event:s.event,step:report.readRecord.kind==='mechanism'?s.keyStep:q.rows.find(r=>match(s.event,r.event)&&(!s.after||r.step>(q.rows.find(t=>match(s.after,t.event))?.step??Infinity)))?.step??null,conflict:s.conflict,effect:s.effect}));
    if(report.stageWitnesses.some(s=>s.step===null))report.failures.push('Witness omits declared functional stage');
+   if(report.readRecord.kind==='mechanism')for(const stage of c.stages){
+    const row=q.rows[stage.keyStep-1];assert(row&&match(stage.event,row.event),'Declared stage input does not match the witness');
+    if(stage.after)assert(q.rows.some(r=>r.step<stage.keyStep&&match(stage.after,r.event)),'Stage precedes its declared history');
+    const state=replay(e,o,sequence.slice(0,stage.keyStep),{end:()=>true}).state,w=walking(e,o,state);
+    const stand=w.queue.find(n=>{const p=o.snap(n.state).find(p=>p.type==='player');return JSON.stringify([p.x,p.y,p.z])===JSON.stringify(stage.nextStand);});
+    let nextEvent=null;
+    if(stand&&stage.nextEvent){const s=e.cloneState(stand.state),a=o.snap(s),r=e.move(s,...D[stage.nextDirection]);if(r.moved){const b=o.snap(s);o.intact(a,b);nextEvent=o.event(a,b,stage.nextDirection);}}
+    report.checks.push({name:'stage_access_'+stage.name,step:stage.keyStep,stance:stage.nextStand,stanceReachable:!!stand,stancePath:stand?.path,nextEvent,
+     scope:'Selected ordinary witness state: frozen-object access and declared next ordinary input',verdict:stand&&(!stage.nextEvent||nextEvent&&match(stage.nextEvent,nextEvent))?'passed':'failed'});
+   }
    const state=e.cloneState(e.initialState);report.walkingSnapshots=[];
    for(const row of [{step:0,event:{moved:[]}},...q.rows]){
     if(row.step)e.move(state,...D[row.d]);if(row.step&&!row.event.moved.length)continue;
@@ -56,10 +78,10 @@ async function verify(repo,spec,root,cap=1000000){
   assert(use,'Declare the actual mechanism event');
   await check('forbid_mechanism','unsolved',{cut:v=>match(use,v)});
   for(const d of c.dependencies){
-   const stop=v=>d.before!=='goal'&&match(d.before,v),end=endpoint(d.before);
+   const stop=(v,h)=>d.before!=='goal'&&match(d.before,v)&&(!d.after||h.after),end=endpoint(d.before);
    const extra=d.after?{history:{after:false},update:(h,v)=>({after:h.after||match(d.after,v)}),endHistory:h=>h.after}:{};
    await check('prefix_positive_'+d.prepare+'_to_'+d.before,'solved',{...extra,cut:stop,end});
-   await check('prefix_without_'+d.prepare+'_to_'+d.before,'unsolved',{...extra,cut:(v,h)=>stop(v)||match(d.prepare,v)&&(!d.after||h.after),end});
+   await check('prefix_without_'+d.prepare+'_to_'+d.before,'unsolved',{...extra,cut:(v,h)=>stop(v,h)||match(d.prepare,v)&&(!d.after||h.after),end});
   }
   for(const r of c.opposingDirections||[])for(const direction of r.directions){
    await check('opposing_'+r.group+'_'+direction+'_before_'+r.before,'unsolved',{

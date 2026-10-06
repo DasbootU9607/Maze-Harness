@@ -1,6 +1,6 @@
 ---
 name: mazebench-constrained-transport
-description: Design, build, and structurally verify MazeBench tool transport puzzles. Default to shared workspace changes, purposeful recovery, repeated helper roles, and usable delivery, with full GxF case evidence. For authoring, not model evaluation.
+description: Design, build, and structurally verify MazeBench tool transport puzzles. Default to shared workspace changes, purposeful recovery, repeated helper roles, and usable delivery, with transferable GxF mechanism logic. For authoring, not model evaluation.
 ---
 
 # MazeBench Constrained Transport
@@ -9,15 +9,17 @@ Build puzzles where a tool has a concrete purpose and reaching an operable worki
 
 ## Required reading and default complex mode
 
-Before building or iterating on a level, read the [complete official case and mechanism analysis](references/official-case.md) and inspect the key states and spatial relationships that the new design will inherit. Identify necessary mechanisms, prerequisites, stage dependencies, and variable elements before choosing shapes, coordinates, or a layout. The abstract summary in this entrypoint is insufficient. Default authoring requires connected planning beyond a single offset, release, or contact followed only by walking.
+For new maps, first read [Mechanism logic](references/mechanism-logic.md). Extract the functional roles, real input/contact relationships, movement preconditions, structural functions, and causal dependencies before choosing shapes or coordinates. Read [the complete official case](references/official-case.md) and its states/checks when evidence or physics details need confirmation. Skill creation or maintenance requires full case analysis; reproductions retain the complete case workflow. Read other cases only when combining their mechanisms.
 
-Read the case belonging to the skill in use; other cases are needed only when their mechanisms are being combined. A previously read, unchanged version may be reused. A filename, link, or summary is not a reading record. Record the path, content fingerprint, and inherited relationships; reading does not replace necessity or bypass checks.
+Record the mechanism document path, SHA256, and `readBeforeLayout: true` in the new contract. An unchanged previously read version may be reused. The receipt checks document version consistency; it cannot prove reading, timing, understanding, or mechanism necessity. For each inherited relation, identify this map's actual members, boundaries, passages, and stances as described in [the contract interface](references/complex-validation.md).
 
 Before laying out a default complex room, also read [Planning depth](references/planning-depth.md) and the [contract and verification interfaces](references/complex-validation.md), then establish a concise design contract. Include at least three interdependent functional stages. Walking, repeated pushes in one direction, separately clearing unrelated obstacles, and returns without a functional effect do not count. Declare all members and elevations, fixed boundaries, voids and support, stage access regions, complete blocked destinations and stances, releasing actions, recovery space, key inputs and contacts, and subsequent work. Identify where the new geometry carries each inherited function.
 
 Complex mode uses `scripts/build-complex.cjs` and `scripts/verify-complex.cjs`. The basic entrypoints and fixed fixtures retain their existing profiles; passing them does not certify a default complex room. Use the basic workflow for an explicitly requested local demonstration or reproduction and label its mode accurately. Missing evidence, unsupported inputs, and capped searches are unknown and cannot pass.
 
 ## Work backward from use
+
+Derive the map in this order: user goal -> functional roles and relationships -> player stances and real contact -> rigid shape, connection, support, and clearance -> layout -> complete-goal verification. Re-derive the spatial implementation without changing core physics. New mechanisms are optional; translation, reflection, renaming, or one added cell alone does not establish substantive variation.
 
 The user supplies a goal and necessary constraints. Choose the tool, helpers, route, parking areas, player start, and gem position. Unspecified shapes and coordinates are design variables.
 
@@ -40,7 +42,7 @@ Read [Design and composition](references/design.md) for stage interfaces and fai
 
 ## Build and deliver
 
-Default new authoring uses the complex contract and entrypoints in [Complex validation](references/complex-validation.md). Use [official-design.json](references/official-design.json) as a runnable schema example, then author the new geometry and its own evidence:
+Default new authoring uses the complex contract and entrypoints in [Complex validation](references/complex-validation.md). Start new maps with [design-template.json](references/design-template.json), an intentionally incomplete contract with no case cells, coordinates, event poses, or route. Fill it from the requested goal and [Mechanism logic](references/mechanism-logic.md). Keep [official-design.json](references/official-design.json) for reproduction and regression; its spatial implementation is not the authoring template. Run:
 
 ```text
 node scripts/build-complex.cjs --repo ENGINE --spec SPEC.json --out NEW_BUILD_OUTPUT
