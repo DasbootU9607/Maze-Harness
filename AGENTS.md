@@ -2,6 +2,13 @@
 
 These rules apply when creating or updating skills in this repository. Follow explicit user instructions when they override a convention.
 
+## Git workflow
+
+- Commit and push routine changes directly to `main` after the relevant checks pass.
+- Create a separate branch or pull request only when the user explicitly requests one. This replaces any inherited branch-first or mandatory pull-request workflow for this repository.
+- Synchronize with `origin/main` before committing. Preserve existing work and published history; do not force-push or rewrite remote commits.
+- A repository update does not authorize a package release or deployment.
+
 ## Names and source provenance
 
 - Use `skills/mazebench-<mechanism>/` with lowercase ASCII letters, digits, and single hyphens; keep the complete name under 64 characters. The folder name and frontmatter `name` must match.
