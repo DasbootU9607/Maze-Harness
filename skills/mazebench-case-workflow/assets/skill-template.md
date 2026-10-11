@@ -7,7 +7,7 @@ description: "[TODO: Describe this mechanism, its authoring use and supported sc
 
 [TODO: Define the functional mechanism and complete objective derived from the synthesis.]
 
-Official source rooms: {{ROOMS}}.
+Reference cases: {{ROOMS}}. Preserve each case's official, user or authored provenance.
 
 ## Required reading and modes
 
@@ -20,6 +20,10 @@ Official source rooms: {{ROOMS}}.
 ## Motion rules and evidence
 
 [TODO: State pinned official rules, supported profile, distinct evidence strengths and the treatment of unsupported/capped checks.]
+
+## Reference library and difficulty
+
+[TODO: Link the catalog and difficulty guide. Select compatible references by intended relation, objective and requested relative level. Label provisional ratings and preserve the distinction between reference tier and authoring mode. Route later additions through the case workflow.]
 
 ## Build, verify and deliver
 

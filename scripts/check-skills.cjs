@@ -78,7 +78,9 @@ function checkRepository(root) {
         check(conventionalNames.has(part) || /^[a-z0-9]+(?:-[a-z0-9]+)*(?:\.[a-z0-9]+)?$/.test(part),
           relative(file) + ': use lowercase hyphen-separated resource names');
       }
-      check(!/^(?:reference|upstream)-/.test(path.basename(file)),
+      // Library/catalog resources describe a collection, not a case's provenance.
+      const libraryResource = ['reference-catalog.json', 'reference-library.md', 'reference-library.cjs'].includes(path.basename(file));
+      check(libraryResource || !/^(?:reference|upstream)-/.test(path.basename(file)),
         relative(file) + ': use official-, user-, or authored- for case provenance');
     }
     const entrypoint = textFiles.get(path.join(directory, 'SKILL.md')) || '';
@@ -109,7 +111,8 @@ function checkRepository(root) {
     // Keep this exception explicit so ordinary mechanisms retain every evidence check.
     if (skill === 'mazebench-case-workflow') {
       for (const resource of [
-        'scripts/workflow.cjs', 'references/workflow.md', 'references/analysis-guide.md',
+        'scripts/workflow.cjs', 'scripts/reference-library.cjs', 'references/workflow.md', 'references/analysis-guide.md',
+        'references/reference-library.md', 'assets/variant-template.md', 'assets/difficulty-template.md',
         'references/package-format.md', 'references/existing-patterns.md',
         'assets/case-analysis.md', 'assets/synthesis.md', 'assets/skill-template.md',
         'assets/mechanism-template.md', 'assets/case-template.md', 'assets/design-template.json'
@@ -138,6 +141,24 @@ function checkRepository(root) {
     const families = fs.readdirSync(references).filter(name => /^(?:official|user|authored)(?:-[a-z0-9]+)*-case\.md$/.test(name))
       .map(name => name.slice(0, -'-case.md'.length));
     check(families.length > 0, skill + ': include a case with explicit source provenance');
+    const catalog = jsonFiles.get(path.join(references, 'reference-catalog.json'));
+    if (catalog) {
+      const { catalogIssues } = require('../skills/mazebench-case-workflow/scripts/reference-library.cjs');
+      for (const issue of catalogIssues(catalog)) errors.push(skill + ': ' + issue);
+      check(catalog.targetSkill === skill, skill + ': catalog target differs from package name');
+      check(fs.existsSync(path.join(references, 'difficulty.md')), skill + ': add a difficulty guide for the reference catalog');
+      const relationIds = new Set([...mechanism.matchAll(/^### ([a-z0-9-]+)$/gm)].map(match => match[1]));
+      const entries = Array.isArray(catalog.references) ? catalog.references.filter(item => item && typeof item === 'object') : [];
+      check(families.every(family => entries.some(item => item.family === family)), skill + ': catalog must retain every packaged case, including explicitly unranked references');
+      for (const item of entries) {
+        check(families.includes(item.family), skill + ': catalog refers to an unpackaged case family');
+        check(Array.isArray(item.relations) && item.relations.every(id => relationIds.has(id)), skill + ': catalog references an undefined mechanism relation');
+        if (!families.includes(item.family)) continue;
+        const map = path.join(references, item.family + '-world-map.txt');
+        check(fs.existsSync(map) && hash(fs.readFileSync(map)) === item.mapSha256, skill + ': stale catalog map fingerprint');
+        check((textFiles.get(path.join(references, item.family + '-case.md')) || '').includes(item.engineCommit), skill + ': catalog engine commit differs from case evidence');
+      }
+    }
     for (const source of families) {
       const names = ['case.md', 'world-map.txt', 'design.json', 'states.json', 'checks.json'];
       for (const suffix of names) check(fs.existsSync(path.join(references, source + '-' + suffix)),

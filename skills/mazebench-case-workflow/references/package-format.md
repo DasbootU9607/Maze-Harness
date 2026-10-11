@@ -11,6 +11,8 @@ mazebench-mechanism/
   agents/openai.yaml
   references/
     mechanism-logic.md
+    reference-catalog.json
+    difficulty.md
     design.md
     verification.md
     design-template.json
@@ -27,7 +29,7 @@ mazebench-mechanism/
   scripts/                    only implemented, reusable helpers
 ```
 
-The scaffold creates the entrypoint, metadata, license, empty new-map contract, mechanism template, and original case maps/case-document templates. It deliberately creates no fake design, state, verification result or engine wrapper. Add those from actual analysis and execution. For an extension, preserve existing case families and stable IDs; the primary case need not be renamed to add another.
+The scaffold creates the entrypoint, metadata, license, empty new-map contract, mechanism template, reference catalog, difficulty-guide template, and source-qualified official/user/authored maps and case templates. It deliberately creates no fake design, state, verification result or engine wrapper. Add those from actual analysis and execution. For an extension, preserve existing case families and stable IDs; the primary case need not be renamed to add another. Follow [Reference library and difficulty](reference-library.md) to merge references and assign relative tiers.
 
 Use lower-hyphen skill/resource names, matching folder and YAML name, `MazeBench <Mechanism>` H1/UI/README title, and an invocation prompt containing `$mazebench-<mechanism>`. The description should trigger on the mechanism and authoring purpose. UI strings are quoted; the short description is 25-64 characters. Keep normal automatic discovery enabled unless the user explicitly requests otherwise. In Maze Harness, maintained documentation/metadata/comments are English, UTF-8 without BOM, LF with a final newline, and JSON uses two spaces. Converse in the user's language. Preserve original evidence bytes and applicable notices.
 
@@ -40,6 +42,8 @@ Use [the entrypoint template](../assets/skill-template.md) and adapt its instruc
 3. Design order and functional stages; choose unspecified geometry autonomously.
 4. Source-backed motion rules, supported physics/profile, and distinct claim strengths.
 5. Actual build/verify commands and deliverables, with fresh output locations and known limits.
+
+Include reference selection through `reference-catalog.json` and `difficulty.md`: shared relation IDs, provenance/parent, relative tier, grading basis, comparison rationale and limits. Difficulty labels belong in the catalog/guide, so regrading metadata does not automatically change official case analysis or imply a new replay. User variants retain `user-*` families and actual parent/change provenance.
 
 Keep the entrypoint concise. Put case evidence in case documents, transferable relations in `mechanism-logic.md`, layout derivation/composition in `design.md`, and executable contract/search/observer details in `verification.md`. Additional planning/complex-validation references are appropriate when the implementation needs them. Do not promise a script until it exists and has been run.
 
@@ -66,6 +70,7 @@ Private human-input records guide the synthesis. Distribute a concise mechanism 
 Before calling the skill complete:
 
 - Check names, language, encodings, links, metadata, case families, source hashes, current receipts and fingerprints. Run `node scripts/check-skills.cjs` in Maze Harness; use the available skill-creator validator for the entrypoint.
+- For reference-library updates, check unique stable IDs/families, valid acyclic parents, source kinds, mapped relation IDs, local case/map fingerprints and defined levels. Every placement needs an explicit basis and rationale; unranked entries need a reason. Review changed neighbor comparisons and rubric meanings. These checks do not certify human difficulty.
 - For reading/contract changes in Maze Harness, run `node scripts/test-read-records.cjs`; optionally add `--repo ENGINE --out NEW_OUTPUT` for the full existing official replays. Run affected helpers with fresh outputs for code/observer changes. Unsupported physics must fail as unknown, not pass.
 - Replay each affected official case to its complete objective using ordinary official actions, or reuse a clearly identified matching regression only when the change does not affect it. Keep source and derivative results distinct.
 - Test claims whose truth the new or changed skill relies on. A legal witness plus an exhausted compatible exclusion supports a scoped dependency; a cap is unknown. Test solvable bypass controls so the observer cannot certify mechanism-free solutions.

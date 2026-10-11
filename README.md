@@ -6,7 +6,7 @@ Agent skills for designing, building, and verifying MazeBench puzzles.
 
 | Skill | Original room | Use it for |
 | --- | --- | --- |
-| [MazeBench Case Workflow](skills/mazebench-case-workflow/SKILL.md) | User-selected official cases | Collect human logic per case, analyze source/replay evidence, integrate mechanisms, and create or extend a standardized skill |
+| [MazeBench Case Workflow](skills/mazebench-case-workflow/SKILL.md) | Official cases and supplied variants | Collect core logic, analyze evidence, maintain related references and difficulty tiers, and create or extend a standardized skill |
 | [MazeBench Boundary Stagger](skills/mazebench-boundary-stagger/SKILL.md) | HxH | Fixed boundaries and relative offsets that release a route or pushing position |
 | [MazeBench Hook Transfer](skills/mazebench-hook-transfer/SKILL.md) | GxE; FxE | Shape-dependent contact, usable docking, and movement transferred between objects |
 | [MazeBench Constrained Transport](skills/mazebench-constrained-transport/SKILL.md) | GxF | Tool delivery through shared space, helper rearrangement, and changing pushing positions |
@@ -31,6 +31,8 @@ Use $mazebench-case-workflow to build a skill from official room HxH.
 For each introduced case, the agent first asks for the human's core operating logic, unless that input is already available. A short natural-language explanation is sufficient. It then pins the original map, analyzes initial states and motion rules, replays the full objective, extracts and integrates causal relations, writes the package, and checks the implemented scope. Additional cases get separate human-input records. The helper detects missing input and stale analysis/synthesis versions; it does not certify human authorship or gameplay truth. Source capture may continue while input is pending. Working records remain private and outside distributed skills.
 
 The Case Workflow supplies templates and a resumable `workflow.cjs` helper. Its scaffold is explicitly unfinished; the agent must supply actual evidence and compatible helpers before installation. Run `node scripts/test-case-workflow.cjs` for its source-capture, input-gate, stale-record and scaffold regressions. The four mechanism skills below retain their existing gameplay profiles.
+
+Later additions can be similar official cases or user-supplied variants. The workflow preserves their provenance, parent/change records, shared mechanism relations and stable case families in `reference-catalog.json`. A difficulty guide compares skill-relative levels using explicit human assignments, provisional structural estimates or actual playtest evidence; ties and unranked cases are allowed. Baseline catalog imports support incremental merges without replacing the original cases. New variants require their own replay and mechanism checks; neither the parent's proofs nor its difficulty automatically transfer. The existing four skills have not been retroactively assigned ratings by this workflow update.
 
 Give the authoring request to the coding agent:
 

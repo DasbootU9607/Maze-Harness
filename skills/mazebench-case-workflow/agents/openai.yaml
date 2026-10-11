@@ -1,4 +1,4 @@
 interface:
   display_name: "MazeBench Case Workflow"
-  short_description: "Turn official cases into reusable authoring skills"
-  default_prompt: "Use $mazebench-case-workflow to create or extend a MazeBench mechanism skill from official rooms, asking for my core logic for each new case before integrating the evidence."
+  short_description: "Build skills with graded official and variant references"
+  default_prompt: "Use $mazebench-case-workflow to create or extend a MazeBench skill with related official cases or my variants, collecting core logic for each addition and maintaining an evidence-aware difficulty ladder."

@@ -12,6 +12,10 @@
 
 {{Define the real endpoint and distinguish it from the engine's default solved predicate.}}
 
+## Reference lineage and mechanism fit
+
+{{Identify official/user/authored provenance, parent reference if any, retained relation IDs and deliberate changes. Compare a variant to its parent; identify corroboration, optional realization, graded variant or a changed mechanism.}}
+
 ## Motion rules and source evidence
 
 {{Table: condition | official transition | prohibited inference | pinned code path/function and state evidence. Cover every mechanic actually used.}}
@@ -39,3 +43,7 @@
 ## Open issues and integration decision
 
 {{Resolve material conflicts with the human focus. Mark necessary-case results, witness choices and unknowns separately. State what can be integrated and what remains incomplete.}}
+
+## Structural difficulty observations
+
+{{Record evidence about preparation depth, input/stop access, full-body constraints, coordination/reuse, recovery and inference demands. Compare compatible references and note confounds. Put the mutable tier assignment in the catalog/guide, not in this analysis.}}

@@ -20,6 +20,10 @@
 
 {{Derive goal -> roles -> stances/contact -> full geometry/support/clearance -> layout -> whole-goal checks. Specify complex/compact/reproduction scope and failure recovery.}}
 
+## Reference library and difficulty ladder
+
+{{Record baseline version and new/updated cases, stable families, lineage, common relation IDs, relative tiers, rating bases and neighbor comparisons. Preserve unchanged entries; explain revised rubric/placements and unranked cases. Define reference selection for the generated skill without copying case geometry.}}
+
 ## Package and verification plan
 
 {{Map relations to instructions, reference files, empty contracts, actual helpers, original-case replays, causal controls and a new authored realization if claiming transfer.}}

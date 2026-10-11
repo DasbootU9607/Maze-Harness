@@ -2,6 +2,8 @@
 
 Complete one analysis per human-supplied case before synthesis. The [case template](../assets/case-analysis.md) fixes the record structure; the analysis below determines its substance.
 
+For human or agent-authored variants, preserve their actual source, parent and changes; verify the child independently using the official engine. Analyze retained functions and new bypasses before treating it as another realization of the same skill. After analysis, use [the reference-library rubric](reference-library.md) to place it provisionally or with actual user/playtest evidence. Its tier is distinct from mechanism necessity and does not inherit from the parent.
+
 ## 1. Source identity and initial conditions
 
 Resolve the room ID through `games/maze/world_map.json`, then preserve the complete original level file. Record the engine commit, parser/configuration version, original path, map-byte SHA256, coordinate axes and units. Determine whether the case is the unmodified official room, a reconstruction, a saved state, or a cropped demonstration. Maintain separate provenance for derivatives. Do not silently change walls, terrain, group IDs, omitted groups, or player positions to simplify analysis.
