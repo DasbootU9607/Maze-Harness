@@ -105,6 +105,22 @@ function checkRepository(root) {
     check(readme.includes('[' + title + '](skills/' + skill + '/SKILL.md)'),
       skill + ': update the README table title and link');
     check(fs.existsSync(path.join(directory, 'LICENSE')), skill + ': retain the standalone package license');
+    // The case-to-skill workflow is an authoring tool, not a gameplay mechanism.
+    // Keep this exception explicit so ordinary mechanisms retain every evidence check.
+    if (skill === 'mazebench-case-workflow') {
+      for (const resource of [
+        'scripts/workflow.cjs', 'references/workflow.md', 'references/analysis-guide.md',
+        'references/package-format.md', 'references/existing-patterns.md',
+        'assets/case-analysis.md', 'assets/synthesis.md', 'assets/skill-template.md',
+        'assets/mechanism-template.md', 'assets/case-template.md', 'assets/design-template.json'
+      ]) check(fs.existsSync(path.join(directory, resource)), skill + ': missing workflow resource ' + resource);
+      const scaffold = jsonFiles.get(path.join(directory, 'assets/design-template.json'));
+      check(scaffold?.title === '' && scaffold.cells?.length === 0 && !Object.hasOwn(scaffold, 'witness') &&
+        scaffold.contract?.stages?.length === 0 && scaffold.contract?.dependencies?.length === 0 &&
+        Object.keys(scaffold.contract?.events || {}).length === 0 && scaffold.contract?.readReceipt?.sha256 === '',
+        skill + ': keep the generated new-map scaffold empty');
+      continue;
+    }
     const references = path.join(directory, 'references');
     const mechanismPath = path.join(references, 'mechanism-logic.md');
     const mechanism = textFiles.get(mechanismPath) || '';

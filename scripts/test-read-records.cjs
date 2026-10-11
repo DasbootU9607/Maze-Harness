@@ -16,6 +16,8 @@ function test(name, run) { run(); passed++; rows.push({ name, verdict: 'passed' 
 
 async function main() {
   for (const name of fs.readdirSync(path.join(repo, 'skills'))) {
+    // Workflow record gates have their own regression suite, without game fixtures.
+    if (name === 'mazebench-case-workflow') continue;
     const root = path.join(repo, 'skills', name), skating = name.endsWith('skating-cross');
     const casePath = 'references/official-case.md';
     const legacy = read(path.join(root, 'references', 'official-design.json'));

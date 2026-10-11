@@ -1,5 +1,7 @@
 # Skill authoring conventions
 
+For creating or extending a mechanism skill from official cases, use `skills/mazebench-case-workflow/SKILL.md`. Each newly introduced case requires the human's own core operating logic before case-specific extraction and synthesis; reuse relevant explicit input already supplied. The workflow package itself uses templates and record-gate tests rather than invented gameplay cases. Run `node scripts/test-case-workflow.cjs` when changing its helper or record behavior. All mechanism skills retain the source, reading, contract and gameplay checks below.
+
 These rules apply when creating or updating skills in this repository. Follow explicit user instructions when they override a convention.
 
 ## Git workflow

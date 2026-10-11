@@ -17,3 +17,5 @@ jobs:
         run: node scripts/check-skills.cjs
       - name: Check reading versions and contract compatibility
         run: node scripts/test-read-records.cjs
+      - name: Check case workflow input gates and scaffolding
+        run: node scripts/test-case-workflow.cjs

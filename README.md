@@ -6,6 +6,7 @@ Agent skills for designing, building, and verifying MazeBench puzzles.
 
 | Skill | Original room | Use it for |
 | --- | --- | --- |
+| [MazeBench Case Workflow](skills/mazebench-case-workflow/SKILL.md) | User-selected official cases | Collect human logic per case, analyze source/replay evidence, integrate mechanisms, and create or extend a standardized skill |
 | [MazeBench Boundary Stagger](skills/mazebench-boundary-stagger/SKILL.md) | HxH | Fixed boundaries and relative offsets that release a route or pushing position |
 | [MazeBench Hook Transfer](skills/mazebench-hook-transfer/SKILL.md) | GxE; FxE | Shape-dependent contact, usable docking, and movement transferred between objects |
 | [MazeBench Constrained Transport](skills/mazebench-constrained-transport/SKILL.md) | GxF | Tool delivery through shared space, helper rearrangement, and changing pushing positions |
@@ -20,6 +21,16 @@ Copy each desired directory from `skills/` into your coding agent's configured s
 The skills need a separate [MazeBenchEngine](https://github.com/mazebench/MazeBenchEngine) checkout, Node.js, the engine's dependencies, and write access to its local drafts. Pass that checkout explicitly as `--repo`; the engine and game assets are not bundled here.
 
 ## Use
+
+To create a new mechanism skill or add an official case to an existing one:
+
+```text
+Use $mazebench-case-workflow to build a skill from official room HxH.
+```
+
+For each introduced case, the agent first asks for the human's core operating logic, unless that input is already available. A short natural-language explanation is sufficient. It then pins the original map, analyzes initial states and motion rules, replays the full objective, extracts and integrates causal relations, writes the package, and checks the implemented scope. Additional cases get separate human-input records. The helper detects missing input and stale analysis/synthesis versions; it does not certify human authorship or gameplay truth. Source capture may continue while input is pending. Working records remain private and outside distributed skills.
+
+The Case Workflow supplies templates and a resumable `workflow.cjs` helper. Its scaffold is explicitly unfinished; the agent must supply actual evidence and compatible helpers before installation. Run `node scripts/test-case-workflow.cjs` for its source-capture, input-gate, stale-record and scaffold regressions. The four mechanism skills below retain their existing gameplay profiles.
 
 Give the authoring request to the coding agent:
 
