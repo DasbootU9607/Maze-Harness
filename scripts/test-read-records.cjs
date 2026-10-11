@@ -17,8 +17,8 @@ function test(name, run) { run(); passed++; rows.push({ name, verdict: 'passed' 
 async function main() {
   for (const name of fs.readdirSync(path.join(repo, 'skills'))) {
     const root = path.join(repo, 'skills', name), skating = name.endsWith('skating-cross');
-    const casePath = 'references/' + (skating ? 'user' : 'official') + '-case.md';
-    const legacy = read(path.join(root, 'references', (skating ? 'user' : 'official') + '-design.json'));
+    const casePath = 'references/official-case.md';
+    const legacy = read(path.join(root, 'references', 'official-design.json'));
     const runtime = require(path.join(root, 'scripts', skating ? 'runtime.cjs' : 'complex-runtime.cjs'));
     const { checkReadRecord } = require(path.join(root, 'scripts/read-record.cjs'));
     test(name + ': legacy reproduction contract', () => runtime.validate(legacy, root));
@@ -62,7 +62,7 @@ async function main() {
     const template = read(path.join(root, 'references/design-template.json'));
     test(name + ': blank scaffold cannot certify a map', () => assert.throws(() => runtime.validate(template, root)));
     if (engineRepo) {
-      checkOrigin(root, legacy, skating ? 'user' : 'official');
+      checkOrigin(root, legacy, 'official');
       const { engine: e } = runtime.load(engineRepo, legacy.cells);
       const o = skating ? runtime.observer(e, legacy) : runtime.observe(e, legacy.contract);
       test(name + ': complete original ordinary replay', () => runtime.replay(e, o, legacy.witness));

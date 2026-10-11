@@ -1,14 +1,15 @@
 {
   "source": {
-    "kind": "user-authored local case",
-    "map": "references/user-world-map.txt",
+    "kind": "official JxG room",
+    "map": "references/official-world-map.txt",
     "engine_commit": "0ac96b8a2648db09f375989cd7bc33699222c1e6",
-    "map_sha256": "d95611963f45420573cf662f7eba9b494f8622203505627cebf1f425f3e3b296"
+    "map_sha256": "f8d3bb11617bbd5a08560c0997ca66c0e2a6806f93302542fc338f0da7a2fdd8"
   },
   "fingerprints": {
-    "cells": "df74af843f20f11cf99ed1712556903a87feddf416aaaf86fd48bda7a9780b65",
-    "contract": "5ff1de7d17f350fca4e1d50c98aa193c80ec512199ecd52b7ad2cd4e175dc76b",
-    "reference": "0121bffe2afa8b07712df0324a72a858e89d52ba0db8ddf0670d970d10a78149",
+    "cells": "6aeec2195e81265107c2b733d2c7b3c6d7be4d812a7da69931d273913fcc72df",
+    "contract": "4fbf10937fa86fd3a0c7fc5be5ea70f0b40351453fd3df49162abdfc8c56869e",
+    "reference": "8a6c19d78ed91886ac77b8612a0f74eaf668d7d8d573a0b5341a426106235a4d",
+    "case": "8a6c19d78ed91886ac77b8612a0f74eaf668d7d8d573a0b5341a426106235a4d",
     "public/maze-engine.js": "c25be363e30186b7435c20361f20542170bdabc9de8c0dad8fa45198e5cab842",
     "public/maze-solver.js": "be7ecce88b17e2f5cc4894a2fd5c86ba8008cb157406a5728bc8ab110fb3df9d",
     "server/maze-levels.js": "9b75ab87efdcaee23a91c442d1bdcc7975f545f3a58ec4403c3fce2fd4a341e0",
@@ -726,101 +727,114 @@
       "scope": "Full objective with transitions entering this center pose excluded."
     }
   ],
-  "selfTestControls": [
-    {
-      "name": "horizontal-reflection",
-      "expected": "passed",
-      "overall": "passed",
-      "checks": 30,
-      "legalCompletion": "solved",
-      "inputs": 138,
-      "counterexamples": []
-    },
-    {
-      "name": "quarter-turn",
-      "expected": "passed",
-      "overall": "passed",
-      "checks": 30,
-      "legalCompletion": "solved",
-      "inputs": 138,
-      "counterexamples": []
-    },
-    {
-      "name": "solvable-easy-bypass",
-      "expected": "failed",
-      "overall": "failed",
-      "checks": 4,
-      "legalCompletion": "solved",
-      "inputs": 9,
-      "counterexamples": [
-        {
-          "name": "freeze_cross",
-          "status": "solved",
-          "verdict": "failed",
-          "path": "LDLDRURUR"
-        },
-        {
-          "name": "forbid_static_cross_brake",
-          "status": "solved",
-          "verdict": "failed",
-          "path": "LDLDRURUR"
-        }
-      ]
-    },
-    {
-      "name": "false-directional-order",
-      "expected": "failed",
-      "overall": "failed",
-      "checks": 32,
-      "legalCompletion": "solved",
-      "inputs": 138,
-      "counterexamples": [
-        {
-          "name": "dependency_6_without_preparation",
-          "status": "solved",
-          "verdict": "failed",
-          "path": "LDRUL"
-        }
-      ]
-    },
-    {
-      "name": "capped-search",
-      "expected": "unknown",
-      "overall": "unknown",
-      "checks": 30,
-      "legalCompletion": "capped",
-      "inputs": 138,
-      "counterexamples": []
-    },
-    {
-      "name": "unsupported-missing-arm",
-      "expected": "unknown",
-      "overall": "unknown",
-      "checks": 0,
-      "counterexamples": [],
-      "error": "AssertionError [ERR_ASSERTION]: All four arms are required in this profile"
-    }
-  ],
-  "ordinaryUndo": true,
-  "unsupportedEdgeIsDeath": true,
   "limits": "Structural author-side checks only; no human-difficulty or independent-author-improvement claim.",
-  "browserValidation": {
-    "errors": [],
-    "failedResponses": [],
-    "inputs": 138,
-    "overall": "passed",
-    "eachOrdinaryPlayStateMatched": true,
-    "firstPushUndo": true,
-    "gemCollected": true,
-    "returnedToDoorway": true,
-    "sourcePreserved": true,
-    "saveExportsMatch": true
-  },
   "packagedDesign": {
-    "path": "references/user-design.json",
-    "cells": "df74af843f20f11cf99ed1712556903a87feddf416aaaf86fd48bda7a9780b65",
-    "contract": "922199485a1ed6e21fba9e42a397469a2a78fd9378f428f30031498312f29469",
-    "case": "57880c8f6cf7373027cfb319a388e5cbeebe67480073b8ee01a24c7c19984433",
-    "scope": "Current packaged design after source-room documentation; historical verification fingerprints are unchanged."
+    "path": "references/official-design.json",
+    "cells": "6aeec2195e81265107c2b733d2c7b3c6d7be4d812a7da69931d273913fcc72df",
+    "contract": "4fbf10937fa86fd3a0c7fc5be5ea70f0b40351453fd3df49162abdfc8c56869e",
+    "case": "8a6c19d78ed91886ac77b8612a0f74eaf668d7d8d573a0b5341a426106235a4d",
+    "scope": "Current packaged official JxG design, verified with the complete route, scoped restrictions, pose exclusions and stopping states. Earlier evidence retains its original fingerprints in historicalEvidence."
+  },
+  "historicalEvidence": {
+    "scope": "Preserved earlier checker-control and browser/save results with their original serialization fingerprints. These controls and browser/save checks were not rerun for this source-file update.",
+    "fingerprints": {
+      "cells": "df74af843f20f11cf99ed1712556903a87feddf416aaaf86fd48bda7a9780b65",
+      "contract": "5ff1de7d17f350fca4e1d50c98aa193c80ec512199ecd52b7ad2cd4e175dc76b",
+      "reference": "0121bffe2afa8b07712df0324a72a858e89d52ba0db8ddf0670d970d10a78149",
+      "public/maze-engine.js": "c25be363e30186b7435c20361f20542170bdabc9de8c0dad8fa45198e5cab842",
+      "public/maze-solver.js": "be7ecce88b17e2f5cc4894a2fd5c86ba8008cb157406a5728bc8ab110fb3df9d",
+      "server/maze-levels.js": "9b75ab87efdcaee23a91c442d1bdcc7975f545f3a58ec4403c3fce2fd4a341e0",
+      "games/maze/level_parsing.json": "54cb1bc6d2e545a89abe860e2c84e45ed5fd31b244b828b8424d2693d05b780d"
+    },
+    "map_sha256": "d95611963f45420573cf662f7eba9b494f8622203505627cebf1f425f3e3b296",
+    "selfTestControls": [
+      {
+        "name": "horizontal-reflection",
+        "expected": "passed",
+        "overall": "passed",
+        "checks": 30,
+        "legalCompletion": "solved",
+        "inputs": 138,
+        "counterexamples": []
+      },
+      {
+        "name": "quarter-turn",
+        "expected": "passed",
+        "overall": "passed",
+        "checks": 30,
+        "legalCompletion": "solved",
+        "inputs": 138,
+        "counterexamples": []
+      },
+      {
+        "name": "solvable-easy-bypass",
+        "expected": "failed",
+        "overall": "failed",
+        "checks": 4,
+        "legalCompletion": "solved",
+        "inputs": 9,
+        "counterexamples": [
+          {
+            "name": "freeze_cross",
+            "status": "solved",
+            "verdict": "failed",
+            "path": "LDLDRURUR"
+          },
+          {
+            "name": "forbid_static_cross_brake",
+            "status": "solved",
+            "verdict": "failed",
+            "path": "LDLDRURUR"
+          }
+        ]
+      },
+      {
+        "name": "false-directional-order",
+        "expected": "failed",
+        "overall": "failed",
+        "checks": 32,
+        "legalCompletion": "solved",
+        "inputs": 138,
+        "counterexamples": [
+          {
+            "name": "dependency_6_without_preparation",
+            "status": "solved",
+            "verdict": "failed",
+            "path": "LDRUL"
+          }
+        ]
+      },
+      {
+        "name": "capped-search",
+        "expected": "unknown",
+        "overall": "unknown",
+        "checks": 30,
+        "legalCompletion": "capped",
+        "inputs": 138,
+        "counterexamples": []
+      },
+      {
+        "name": "unsupported-missing-arm",
+        "expected": "unknown",
+        "overall": "unknown",
+        "checks": 0,
+        "counterexamples": [],
+        "error": "AssertionError [ERR_ASSERTION]: All four arms are required in this profile"
+      }
+    ],
+    "ordinaryUndo": true,
+    "unsupportedEdgeIsDeath": true,
+    "browserValidation": {
+      "errors": [],
+      "failedResponses": [],
+      "inputs": 138,
+      "overall": "passed",
+      "eachOrdinaryPlayStateMatched": true,
+      "firstPushUndo": true,
+      "gemCollected": true,
+      "returnedToDoorway": true,
+      "sourcePreserved": true,
+      "saveExportsMatch": true
+    }
   }
 }

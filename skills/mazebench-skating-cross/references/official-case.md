@@ -1,16 +1,16 @@
-# JxG Skating Cross user reference case and mechanism analysis
+# JxG Skating Cross official reference case and mechanism analysis
 
 Maintainers and reproductions analyze this complete case. New authoring first reads [Mechanism logic](mechanism-logic.md), returning here for evidence or physics questions.
 
-The user constructed this case on a supplied blank map. The confirmed objective is to collect the gem and return to the starting doorway in the upper-right corner; entering a neighboring room is not required. Mechanism and necessity claims come from ordinary moves in the official engine, solver results and restricted searches. Stage names are authoring analysis, not a claim that the user described a unique solution.
+This case is official room JxG. The confirmed objective is to collect the gem and return to the starting doorway in the upper-right corner; entering a neighboring room is not required. Mechanism and necessity claims come from ordinary moves in the official engine, solver results and restricted searches. Stage names are authoring analysis; they do not imply a unique solution.
 
 ## Provenance and initial state
 
-The bundled [original map bytes](user-world-map.txt) preserve the user reference case, including the gem. Map SHA256: `d95611963f45420573cf662f7eba9b494f8622203505627cebf1f425f3e3b296`. Engine baseline: `0ac96b8a2648db09f375989cd7bc33699222c1e6`. The original room is **JxG**, indexed as `games/maze/levels/eaxixyrjgf.txt` by `games/maze/world_map.json`. Its upstream SHA256 is `f8d3bb11617bbd5a08560c0997ca66c0e2a6806f93302542fc338f0da7a2fdd8`. The packaged map is a user-provided reconstruction of that room: all 83 differences are wall-underlay tokens (`.+#` here, `i+#` upstream); every other cell token, including player, cross and gem, matches. Preserve this user version and its scoped historical checks; they are not automatically checks of the unmodified upstream bytes. When redistributing generated drafts, retain the applicable engine and asset licenses and notices from the separate engine installation.
+The bundled [original map bytes](official-world-map.txt) preserve the complete official **JxG** room, indexed as `games/maze/levels/eaxixyrjgf.txt` by `games/maze/world_map.json`. Map SHA256: `f8d3bb11617bbd5a08560c0997ca66c0e2a6806f93302542fc338f0da7a2fdd8`. Engine baseline: `0ac96b8a2648db09f375989cd7bc33699222c1e6`. When redistributing generated drafts, retain the applicable engine and asset licenses and notices from the separate engine installation.
 
 Coordinates are zero-based; U decreases y, and every position has z=0. P=(15,1,0), gem=(12,8,0), and completion cell=(15,1,0). The starting cell is the only open boundary cell. In the single-room profile, continuing outward from the doorway causes a fall, so verification ends when the player reaches that cell after collecting the gem.
 
-M0 is a five-cell cross: center (8,6), upper arm (8,5), left arm (7,6), right arm (9,6), and lower arm (8,7). The [runnable contract](user-design.json) records every member, wall and ice cell. The user reference map is unchanged.
+M0 is a five-cell cross: center (8,6), upper arm (8,5), left arm (7,6), right arm (9,6), and lower arm (8,7). The [runnable contract](official-design.json) records every member, wall and ice cell. The official reference map is unchanged.
 
 ## Sliding, braking and reuse
 
@@ -34,7 +34,7 @@ These three stages change the function of the same cross: the rightward pose unl
 
 ## Evidence scope
 
-[Concise checks](user-checks.json) and [key states](user-states.json) preserve routes, restriction results, complete members, stops, inputs, wall-contact members and counterexamples. Ordinary replay checks complete rigid translation, height and player survival at every step. Ice stopping graphs preserve directionality and gem state rather than collapsing into undirected walking regions.
+[Concise checks](official-checks.json) and [key states](official-states.json) preserve routes, restriction results, complete members, stops, inputs, wall-contact members and counterexamples. Ordinary replay checks complete rigid translation, height and player survival at every step. Ice stopping graphs preserve directionality and gem state rather than collapsing into undirected walking regions. The packaged official map has fresh complete-route, restriction, pose and stopping-state checks. Earlier checker controls and browser/save checks are retained separately as historical evidence; browser/save validation was not rerun for this packaging update.
 
 - Freezing the cross, forbidding a long slide braked by a stationary cross, or forbidding translation in each tested direction produces exhausted searches with no complete solution. These conclusions belong to the reference map and are not automatic requirements for new maps.
 - Allowing at most one, two or three rigid-group moves, or freezing the group after its first move, does not permit completion. Restricting all group motion to one direction also fails. Counts check for degenerate solutions; they do not independently prove functional stages.

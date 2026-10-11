@@ -8,7 +8,7 @@ async function verify(repo, spec, cap = 300000) {
     assert(Number.isInteger(cap) && cap > 0);
     const c = validate(spec, path.resolve(__dirname, '..'));
     const { engine: e, solver } = load(repo, spec.cells), o = observer(e, spec);
-    report.readRecord = checkReadRecord(spec, path.resolve(__dirname, '..'), 'references/user-case.md');
+    report.readRecord = checkReadRecord(spec, path.resolve(__dirname, '..'), 'references/official-case.md');
     report.fingerprints = { cells: hash(spec.cells), contract: hash(c), reference: report.readRecord.sha256, [report.readRecord.kind]: report.readRecord.sha256 };
     for (const file of ['public/maze-engine.js', 'public/maze-solver.js', 'server/maze-levels.js', 'games/maze/level_parsing.json'])
       report.fingerprints[file] = hash(fs.readFileSync(path.join(repo, file)));

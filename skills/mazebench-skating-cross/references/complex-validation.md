@@ -7,7 +7,7 @@ node scripts/build.cjs --repo ENGINE --spec SPEC.json --out NEW_BUILD_OUTPUT
 node scripts/verify.cjs --repo ENGINE --spec SPEC.json --out NEW_CHECK_OUTPUT --cap 300000
 ```
 
-For new maps read [Mechanism logic](mechanism-logic.md) and use [design-template.json](design-template.json). The intentionally incomplete scaffold must be filled from the goal. [user-design.json](user-design.json) remains a runnable reproduction/regression contract. New geometry needs its own contract/evidence. The builder uses official serialization and writes Build JSON, map, spec, contract and manifest routes; building does not certify the design. Verification writes `verification.json`, retains counterexamples and exits nonzero for failed/unknown.
+For new maps read [Mechanism logic](mechanism-logic.md) and use [design-template.json](design-template.json). The intentionally incomplete scaffold must be filled from the goal. [official-design.json](official-design.json) remains a runnable reproduction/regression contract. New geometry needs its own contract/evidence. The builder uses official serialization and writes Build JSON, map, spec, contract and manifest routes; building does not certify the design. Verification writes `verification.json`, retains counterexamples and exits nonzero for failed/unknown.
 
 | Field | Meaning |
 | --- | --- |
@@ -17,7 +17,7 @@ For new maps read [Mechanism logic](mechanism-logic.md) and use [design-template
 | `group`, `members`, `center` | One M0..M4; all initial members in row order, z=0; center and four contiguous nonempty arms |
 | `goal` | `{kind:"gem-and-return",cell:[x,y,0]}`; one player, one gem |
 | `spatial.walls`, `spatial.ice` | Complete fixed footprints in row order, including ice under actors |
-| `readReceipt` | New maps: `references/mechanism-logic.md`, current SHA256, `readBeforeLayout:true`; legacy reproductions may retain the current `references/user-case.md` receipt |
+| `readReceipt` | New maps: `references/mechanism-logic.md`, current SHA256, `readBeforeLayout:true`; legacy reproductions may retain the current `references/official-case.md` receipt |
 | `inherited`, `changes` | Preserved functions and their new geometry |
 | `events` | Named `kind:motion`, `cross-brake` or `gem`; optional `direction` and `centerAfter` |
 | `dependencies` | `prepare`, `before` (`goal` or event), `conflict`, `effect`; optional `after` history event |

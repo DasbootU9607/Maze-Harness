@@ -9,9 +9,9 @@ Agent skills for designing, building, and verifying MazeBench puzzles.
 | [MazeBench Boundary Stagger](skills/mazebench-boundary-stagger/SKILL.md) | HxH | Fixed boundaries and relative offsets that release a route or pushing position |
 | [MazeBench Hook Transfer](skills/mazebench-hook-transfer/SKILL.md) | GxE; FxE | Shape-dependent contact, usable docking, and movement transferred between objects |
 | [MazeBench Constrained Transport](skills/mazebench-constrained-transport/SKILL.md) | GxF | Tool delivery through shared space, helper rearrangement, and changing pushing positions |
-| [MazeBench Skating Cross](skills/mazebench-skating-cross/SKILL.md) | JxG (user reconstruction) | Directed ice stopping, reusable cross poses, changing pushing sides, and collecting a gem before returning to the doorway |
+| [MazeBench Skating Cross](skills/mazebench-skating-cross/SKILL.md) | JxG | Directed ice stopping, reusable cross poses, changing pushing sides, and collecting a gem before returning to the doorway |
 
-New authoring defaults to connected, multi-stage rooms. Before choosing shapes or coordinates, new authoring reads the skill's extracted mechanism logic and derives roles, player stances/contact, rigid shape/support/clearance, and then layout. It maps each inherited relationship to concrete authored geometry and builds an executable contract. Full cases remain available for evidence questions, maintenance, reproduction, and regression; they are not new-map templates. The first three skills use upstream official levels; Skating Cross preserves the user's reconstruction of official room JxG, with the source differences documented in its case. Compact mechanism demonstrations remain available when explicitly requested.
+New authoring defaults to connected, multi-stage rooms. Before choosing shapes or coordinates, new authoring reads the skill's extracted mechanism logic and derives roles, player stances/contact, rigid shape/support/clearance, and then layout. It maps each inherited relationship to concrete authored geometry and builds an executable contract. Full cases remain available for evidence questions, maintenance, reproduction, and regression; they are not new-map templates. All four skills use complete upstream official rooms, with each original room identified in its case. Compact mechanism demonstrations remain available when explicitly requested.
 
 ## Install
 
@@ -36,7 +36,7 @@ Builders create fresh local drafts. Verification checks supported mechanics and 
 
 ## Package structure
 
-Each skill contains `SKILL.md`, agent metadata in `agents/`, focused guidance in `references/`, and reusable helpers in `scripts/`. The references include four unmodified official room maps (HxH, GxE, FxE, GxF) and one user-provided Skating Cross reconstruction of JxG, selected key states, scoped restriction results, and runnable design contracts. Development drafts, screenshots, complete extraction traces, and test-run archives stay outside the distribution.
+Each skill contains `SKILL.md`, agent metadata in `agents/`, focused guidance in `references/`, and reusable helpers in `scripts/`. The references include five unmodified official room maps (HxH, GxE, FxE, GxF, JxG), selected key states, scoped restriction results, and runnable design contracts. Development drafts, screenshots, complete extraction traces, and test-run archives stay outside the distribution.
 
 The legacy helpers retain their existing profiles. The complex entrypoints and official case evidence were validated against engine commit `0ac96b8a2648db09f375989cd7bc33699222c1e6`; earlier basic helpers used baseline `07aa03a5c0ee8b4e0b025a52793055e89cb68bfe` with Node 24.13.0. Review engine interfaces and revalidate generated maps when changing that dependency. Each checker documents its supported profile and reports capped searches as unknown.
 
@@ -52,6 +52,6 @@ Follow [AGENTS.md](AGENTS.md) when adding or editing a skill. Skill IDs use `maz
 
 All maintained documentation, metadata, comments, and explanatory strings are in English. Run `node scripts/check-skills.cjs` before completing an edit; GitHub Actions runs the same naming, language, link, provenance, and fingerprint checks. Original source-map bytes and historical verification results remain preserved; current package fingerprints are recorded separately.
 
-The Skating Cross checker accepted the complete user case and two symmetry controls (reflection and quarter-turn), rejected a solvable easy bypass and a false directional dependency, and returned unknown for capped and unsupported-shape controls. Its complete objective includes the post-gem return to the doorway; its ordinary-move search preserves directed stopping and checks full rigid footprints. See its `user-checks.json` for scoped evidence.
+The Skating Cross checker accepts the complete official JxG case. Historical checker controls accepted reflection and quarter-turn variants, rejected a solvable easy bypass and a false directional dependency, and returned unknown for capped and unsupported-shape controls. Its complete objective includes the post-gem return to the doorway; its ordinary-move search preserves directed stopping and checks full rigid footprints. See its `official-checks.json` for scoped evidence.
 
 `node scripts/test-read-records.cjs` checks current legacy/new reading formats, stale-version rejection, local receipt paths, and authored anchor membership. Pass `--repo ENGINE --out NEW_OUTPUT` to also replay all complete packaged case routes through a separate official engine checkout. Format acceptance alone does not prove the declared functional explanations or human difficulty.

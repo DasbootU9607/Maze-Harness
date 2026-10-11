@@ -70,7 +70,7 @@ function validate(spec, root) {
   assert(gx >= 0 && gx < 16 && gy >= 0 && gy < 16 && !spec.cells[gy][gx].split('+').includes('#'));
   assert(c.spatial && same(c.spatial.walls, walls) && same(c.spatial.ice, ice), 'Declare complete fixed wall and ice footprints');
   assert(c.inherited?.length && Array.isArray(c.changes), 'Record inherited functions and changes');
-  checkReadRecord(spec, root, 'references/user-case.md');
+  checkReadRecord(spec, root, 'references/official-case.md');
   for (const [name, event] of Object.entries(c.events || {})) {
     assert(/^[a-z0-9_-]+$/i.test(name));
     assert(['motion', 'cross-brake', 'gem'].includes(event.kind), 'Unsupported event kind');
