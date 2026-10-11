@@ -1,0 +1,503 @@
+{
+  "source": "games/maze/levels/5ufa4nkpse.txt",
+  "originRoom": {
+    "id": "FxE",
+    "worldMap": "games/maze/world_map.json",
+    "level": "games/maze/levels/5ufa4nkpse.txt",
+    "relationship": "unmodified-official"
+  },
+  "goal": {
+    "kind": "gem"
+  },
+  "cap": 5000,
+  "scope": "Unmodified FxE, gem objective. Ordinary replay and bounded exclusions. Each exhausted restriction applies only to its named endpoint and history; capped searches are unknown. No unique route, optimality, shape minimality, or human-difficulty claim.",
+  "fingerprints": {
+    "cells": "fc11dc0ec1765031d0a69ee5ce8ba65d42f8547e5466b74ac0a6ac3588869e94",
+    "contract": "aa622eccd65188fd77ddbfa793cc26b59767c2dcdb4bce812d2eb5b866ec50f7",
+    "case": "14a4365990769ce03f6c6766899390bc8a7acaca2c726e799abc06e5c7963dc9",
+    "public/maze-engine.js": "c25be363e30186b7435c20361f20542170bdabc9de8c0dad8fa45198e5cab842",
+    "public/maze-solver.js": "be7ecce88b17e2f5cc4894a2fd5c86ba8008cb157406a5728bc8ab110fb3df9d",
+    "server/maze-levels.js": "9b75ab87efdcaee23a91c442d1bdcc7975f545f3a58ec4403c3fce2fd4a341e0",
+    "games/maze/level_parsing.json": "54cb1bc6d2e545a89abe860e2c84e45ed5fd31b244b828b8424d2693d05b780d"
+  },
+  "solution": {
+    "status": "solved",
+    "path": "DLLLLLLLLLULDDDDDUULLLDRDRUUUUUDDRUURRRRRRRULLDLURULUULDDDDDRDDDLUUULURUUDRRUULULDRDDDLUUUUDDDDLLLLLDDRUULUUUUUULURRRRRLLLLDDDDDDDRRRRUURRRRRRRUULULU",
+    "inputs": 149,
+    "replayPassed": true,
+    "method": "Concatenated ordinary prefixes from scoped official searches; replayed from the original initial state."
+  },
+  "checks": [
+    {
+      "name": "initial_frozen_walking",
+      "status": "unsolved",
+      "expanded": 1,
+      "walkExpanded": 107,
+      "scope": "All histories from the original initial state",
+      "expected": "unsolved",
+      "verdict": "passed"
+    },
+    {
+      "name": "freeze_M2",
+      "status": "capped",
+      "expanded": 5000,
+      "walkExpanded": 557423,
+      "cap": 5000,
+      "scope": "All histories from the original initial state",
+      "expected": "unsolved",
+      "verdict": "unknown"
+    },
+    {
+      "name": "freeze_M3",
+      "status": "capped",
+      "expanded": 5000,
+      "walkExpanded": 552724,
+      "cap": 5000,
+      "scope": "All histories from the original initial state",
+      "expected": "unsolved",
+      "verdict": "unknown"
+    },
+    {
+      "name": "freeze_M1",
+      "status": "unsolved",
+      "expanded": 2,
+      "walkExpanded": 215,
+      "scope": "All histories from the original initial state",
+      "expected": "unsolved",
+      "verdict": "passed"
+    },
+    {
+      "name": "freeze_M0",
+      "status": "unsolved",
+      "expanded": 197,
+      "walkExpanded": 21354,
+      "scope": "All histories from the original initial state",
+      "expected": "unsolved",
+      "verdict": "passed"
+    },
+    {
+      "name": "forbid_contact",
+      "status": "unsolved",
+      "expanded": 197,
+      "walkExpanded": 21354,
+      "scope": "All histories from the original initial state",
+      "expected": "unsolved",
+      "verdict": "passed"
+    },
+    {
+      "name": "forbid_corridor",
+      "status": "capped",
+      "expanded": 5000,
+      "walkExpanded": 552724,
+      "cap": 5000,
+      "scope": "All histories from the original initial state",
+      "expected": "unsolved",
+      "verdict": "unknown"
+    },
+    {
+      "name": "forbid_delivery",
+      "status": "capped",
+      "expanded": 5000,
+      "walkExpanded": 552724,
+      "cap": 5000,
+      "scope": "All histories from the original initial state",
+      "expected": "unsolved",
+      "verdict": "unknown"
+    },
+    {
+      "name": "positive_prep_to_contact",
+      "status": "solved",
+      "path": "DLLLLLLLLLULDDDDDUULLLDRDR",
+      "expanded": 190,
+      "walkExpanded": 20582,
+      "history": {},
+      "replayPassed": true,
+      "endpoint": "legal-contact-opportunity",
+      "scope": "All histories from the original initial state",
+      "expected": "solved",
+      "verdict": "passed"
+    },
+    {
+      "name": "without_prep_to_contact",
+      "status": "unsolved",
+      "expanded": 2,
+      "walkExpanded": 215,
+      "scope": "All histories from the original initial state",
+      "expected": "unsolved",
+      "verdict": "passed"
+    },
+    {
+      "name": "positive_contact_to_corridor",
+      "status": "solved",
+      "path": "DLLLLLLLLLULDDDDDUULLLDRDRUUUUUDDRUURRRRRRRULLDLURULUUL",
+      "expanded": 4983,
+      "walkExpanded": 550711,
+      "history": {},
+      "replayPassed": true,
+      "endpoint": "legal-contact-opportunity",
+      "scope": "All histories from the original initial state",
+      "expected": "solved",
+      "verdict": "passed"
+    },
+    {
+      "name": "without_contact_to_corridor",
+      "status": "unsolved",
+      "expanded": 197,
+      "walkExpanded": 21354,
+      "scope": "All histories from the original initial state",
+      "expected": "unsolved",
+      "verdict": "passed"
+    },
+    {
+      "name": "positive_corridor_to_delivery",
+      "status": "capped",
+      "expanded": 5000,
+      "walkExpanded": 552724,
+      "cap": 5000,
+      "scope": "All histories from the original initial state",
+      "expected": "solved",
+      "verdict": "unknown"
+    },
+    {
+      "name": "without_corridor_to_delivery",
+      "status": "capped",
+      "expanded": 5000,
+      "walkExpanded": 552724,
+      "cap": 5000,
+      "scope": "All histories from the original initial state",
+      "expected": "unsolved",
+      "verdict": "unknown"
+    },
+    {
+      "name": "first_contact_then_walking_only",
+      "status": "unsolved",
+      "expanded": 199,
+      "walkExpanded": 21559,
+      "scope": "All histories from the original initial state",
+      "expected": "unsolved",
+      "verdict": "passed"
+    },
+    {
+      "name": "selected_27_walking_only",
+      "status": "unsolved",
+      "expanded": 1,
+      "walkExpanded": 102,
+      "scope": "Selected witness state after input 27 only",
+      "expected": "unsolved",
+      "verdict": "passed"
+    },
+    {
+      "name": "selected_56_walking_only",
+      "status": "unsolved",
+      "expanded": 1,
+      "walkExpanded": 122,
+      "scope": "Selected witness state after input 56 only",
+      "expected": "unsolved",
+      "verdict": "passed"
+    },
+    {
+      "name": "selected_119_walking_only",
+      "status": "unsolved",
+      "expanded": 1,
+      "walkExpanded": 138,
+      "scope": "Selected witness state after input 119 only",
+      "expected": "unsolved",
+      "verdict": "passed"
+    }
+  ],
+  "contactWitnesses": [
+    {
+      "event": "contact",
+      "step": 27,
+      "input": "U",
+      "observation": {
+        "d": "U",
+        "primary": "M1",
+        "moved": [
+          "M1",
+          "M0"
+        ],
+        "removed": [],
+        "translated": [
+          "M1",
+          "M0"
+        ],
+        "contacts": [
+          {
+            "from": "M1",
+            "to": "M0",
+            "C": [
+              5,
+              14,
+              0
+            ],
+            "T": [
+              5,
+              13,
+              0
+            ],
+            "along": 0,
+            "lateral": -2
+          }
+        ],
+        "transfer": true,
+        "offset": false,
+        "P": [
+          3,
+          13,
+          0
+        ],
+        "I": [
+          3,
+          12,
+          0
+        ],
+        "qualifyingContacts": [
+          {
+            "from": "M1",
+            "to": "M0",
+            "C": [
+              5,
+              14,
+              0
+            ],
+            "T": [
+              5,
+              13,
+              0
+            ],
+            "along": 0,
+            "lateral": -2
+          }
+        ]
+      }
+    },
+    {
+      "event": "corridor",
+      "step": 56,
+      "input": "D",
+      "observation": {
+        "d": "D",
+        "primary": "M0",
+        "moved": [
+          "M3",
+          "M0"
+        ],
+        "removed": [],
+        "translated": [
+          "M3",
+          "M0"
+        ],
+        "contacts": [
+          {
+            "from": "M3",
+            "to": "M0",
+            "C": [
+              2,
+              4,
+              0
+            ],
+            "T": [
+              2,
+              5,
+              0
+            ],
+            "along": 1,
+            "lateral": -5
+          },
+          {
+            "from": "M0",
+            "to": "M3",
+            "C": [
+              2,
+              5,
+              0
+            ],
+            "T": [
+              2,
+              6,
+              0
+            ],
+            "along": 2,
+            "lateral": -5
+          }
+        ],
+        "transfer": false,
+        "offset": false,
+        "P": [
+          7,
+          4,
+          0
+        ],
+        "I": [
+          7,
+          5,
+          0
+        ],
+        "qualifyingContacts": []
+      }
+    },
+    {
+      "event": "delivery",
+      "step": 119,
+      "input": "R",
+      "observation": {
+        "d": "R",
+        "primary": "M0",
+        "moved": [
+          "M2",
+          "M0"
+        ],
+        "removed": [],
+        "translated": [
+          "M2",
+          "M0"
+        ],
+        "contacts": [
+          {
+            "from": "M0",
+            "to": "M2",
+            "C": [
+              11,
+              2,
+              0
+            ],
+            "T": [
+              12,
+              2,
+              0
+            ],
+            "along": 7,
+            "lateral": -1
+          }
+        ],
+        "transfer": false,
+        "offset": false,
+        "P": [
+          5,
+          1,
+          0
+        ],
+        "I": [
+          6,
+          1,
+          0
+        ],
+        "qualifyingContacts": []
+      }
+    }
+  ],
+  "observerRegression": {
+    "passed": true,
+    "scope": "Reject removal at 36 and wrong pair at 56; accept actual complete pair translations at 56 and 119."
+  },
+  "classification": "replayed-official-case-with-scoped-exclusions",
+  "hasUnknown": true,
+  "positiveControlsFromWitness": [
+    {
+      "event": "contact",
+      "status": "solved",
+      "path": "DLLLLLLLLLULDDDDDUULLLDRDR",
+      "inputs": 26,
+      "nextInput": "U",
+      "endpoint": "legal-contact-opportunity",
+      "replayPassed": true,
+      "scope": "Selected original witness prefix, with the named contact forbidden during the prefix and verified as the next ordinary input. This positive control makes no necessity claim."
+    },
+    {
+      "event": "corridor",
+      "status": "solved",
+      "path": "DLLLLLLLLLULDDDDDUULLLDRDRUUUUUDDRUURRRRRRRULLDLURULUUL",
+      "inputs": 55,
+      "nextInput": "D",
+      "endpoint": "legal-contact-opportunity",
+      "replayPassed": true,
+      "scope": "Selected original witness prefix, with the named contact forbidden during the prefix and verified as the next ordinary input. This positive control makes no necessity claim."
+    },
+    {
+      "event": "delivery",
+      "status": "solved",
+      "path": "DLLLLLLLLLULDDDDDUULLLDRDRUUUUUDDRUURRRRRRRULLDLURULUULDDDDDRDDDLUUULURUUDRRUULULDRDDDLUUUUDDDDLLLLLDDRUULUUUUUULURRRR",
+      "inputs": 118,
+      "nextInput": "R",
+      "endpoint": "legal-contact-opportunity",
+      "replayPassed": true,
+      "scope": "Selected original witness prefix, with the named contact forbidden during the prefix and verified as the next ordinary input. This positive control makes no necessity claim."
+    }
+  ],
+  "capUnit": "Push-state nodes after merging the same frozen-object walking component; separate from the official action-state budget.",
+  "engine": {
+    "repo": "<MazeBenchEngine checkout>",
+    "commit": "0ac96b8a2648db09f375989cd7bc33699222c1e6"
+  },
+  "initialOfficialSearch": {
+    "status": "capped",
+    "expanded": 1000000,
+    "cap": 1000000,
+    "scope": "Unguided complete-gem A* search; unknown, not unsolved."
+  },
+  "witnessConstruction": [
+    {
+      "label": "starter",
+      "method": "ordinary push-state search",
+      "startStep": 0,
+      "status": "solved",
+      "expanded": 99,
+      "path": "DLLLLLLLLLULDDDDDUULLLDRDRU",
+      "scope": "Selected milestone used to construct a replayable witness; no shortest-route or necessary-pose claim."
+    },
+    {
+      "label": "span pose",
+      "method": "guided official A*",
+      "startStep": 27,
+      "status": "solved",
+      "expanded": 106,
+      "path": "UUUUDDRUURRRRRRRULLDLURUL",
+      "scope": "Selected milestone used to construct a replayable witness; no shortest-route or necessary-pose claim."
+    },
+    {
+      "label": "corridor work",
+      "method": "guided official A*",
+      "startStep": 52,
+      "status": "solved",
+      "expanded": 15,
+      "path": "UULDDDD",
+      "scope": "Selected milestone used to construct a replayable witness; no shortest-route or necessary-pose claim."
+    },
+    {
+      "label": "selected lower pose",
+      "method": "guided official A*",
+      "startStep": 59,
+      "status": "solved",
+      "expanded": 1,
+      "path": "D",
+      "scope": "Selected milestone used to construct a replayable witness; no shortest-route or necessary-pose claim."
+    },
+    {
+      "label": "upper delivery",
+      "method": "guided official A*",
+      "startStep": 60,
+      "status": "solved",
+      "expanded": 23324,
+      "path": "RDDDLUUULURUUDRRUULULDRDDDLUUUUDDDDLLLLLDDRUULUUUUUULURRRR",
+      "scope": "Selected milestone used to construct a replayable witness; no shortest-route or necessary-pose claim."
+    },
+    {
+      "label": "gem completion",
+      "method": "official A*",
+      "startStep": 118,
+      "status": "solved",
+      "expanded": 1009,
+      "path": "RLLLLDDDDDDDRRRRUURRRRRRRUULULU",
+      "scope": "Selected milestone used to construct a replayable witness; no shortest-route or necessary-pose claim."
+    }
+  ],
+  "packagedDesign": {
+    "path": "references/official-fxe-design.json",
+    "cells": "fc11dc0ec1765031d0a69ee5ce8ba65d42f8547e5466b74ac0a6ac3588869e94",
+    "contract": "5a5faff8a0608ccc0ff4cc0f6d4108b894a7718205b330a5e9f3fb95e56bbb8c",
+    "case": "ad93227e7c9960031ee2bd42411904495454211e7df63abebb80d64b3014e3f0",
+    "scope": "Current package after adding the result-scope explanation. Original run fingerprints are preserved; geometry, route and mechanical declarations are unchanged."
+  },
+  "overall": "unknown"
+}

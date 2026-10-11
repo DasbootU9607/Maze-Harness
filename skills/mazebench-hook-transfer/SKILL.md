@@ -1,15 +1,17 @@
 ---
 name: mazebench-hook-transfer
-description: Design, build, and structurally verify MazeBench shape-dependent contact puzzles. Default to independent transport, usable docking, true member contact, and continued passage work, with transferable GxE mechanism logic. For authoring, not model evaluation.
+description: Design, build, and structurally verify MazeBench shape-dependent contact puzzles. Default to independent transport, usable docking, true member contact, and continued passage work, with transferable GxE and FxE mechanism logic. For authoring, not model evaluation.
 ---
 
 # MazeBench Hook Transfer
 
 Use a rigid tool's shape and relative position to solve a pushing, stance, reachability, or movement-constraint problem. Rear and lateral contact are useful relationships; ordinary straight chain pushing alone does not establish shape-dependent function.
 
+Official source rooms: [GxE](references/official-case.md) and [FxE](references/official-fxe-case.md). Both preserve the original room bytes and have separate replay and scope records.
+
 ## Required reading and default complex mode
 
-For new maps, first read [Mechanism logic](references/mechanism-logic.md). Extract the functional roles, real input/contact relationships, movement preconditions, structural functions, and causal dependencies before choosing shapes or coordinates. Read [the complete official case](references/official-case.md) and its states/checks when evidence or physics details need confirmation. Skill creation or maintenance requires full case analysis; reproductions retain the complete case workflow. Read other cases only when combining their mechanisms.
+For new maps, first read [Mechanism logic](references/mechanism-logic.md). Extract the functional roles, real input/contact relationships, movement preconditions, structural functions, and causal dependencies before choosing shapes or coordinates. Consult [GxE](references/official-case.md) for rear release and passage work, or [FxE](references/official-fxe-case.md) for a released tool, separated input/workspace, and repeated contact roles. Read their states/checks when evidence or physics needs confirmation. Skill maintenance requires complete analysis of the affected case; reproductions retain its full evidence workflow.
 
 Record the mechanism document path, SHA256, and `readBeforeLayout: true` in the new contract. An unchanged previously read version may be reused. The receipt checks document version consistency; it cannot prove reading, timing, understanding, or mechanism necessity. For each inherited relation, identify this map's actual members, boundaries, passages, and stances as described in [the contract interface](references/complex-validation.md).
 
@@ -38,6 +40,7 @@ For default complex authoring, read [Planning depth](references/planning-depth.m
 - Prefer planar geometry unless height serves a specific function. Multi-object relays, mixed-height contact, sliding, and repeated tool reuse need compatible observations and checks.
 - Read [Verification](references/verification.md). Separate legal completion, useful contact, contact necessity, preparation necessity, and the local function of a shape part. Joint movement alone proves none of the stronger claims.
 - `contact-events.cjs` observes direct same-elevation unit translations for rear or lateral contact. `verify-contact.cjs` is narrower: it checks active lateral transfer onto a plate with two groups. It is not a universal hook verifier. Other outcomes require a matching scoped checker.
+- Multi-pair complex events can name `tool`, `target`, and `contactKind`; check each actual input/contact pair separately. [FxE's scoped regression](scripts/verify-official-fxe.cjs) replays its complete goal and reports exhausted, bypassed, and capped restrictions individually; it does not automatically certify every default complex requirement.
 - Capped searches are unknown. Preserve and replay successful bypasses. Removing a part can change support, stance access, and clearance as well as contact; do not claim global shape minimality from a local edit.
 - Use [Composition](references/composition.md) when integrating other mechanisms, and recheck the complete room.
 

@@ -2,6 +2,8 @@
 
 This complete analysis is required when maintaining the skill or reproducing the case. New authoring first reads [Mechanism logic](mechanism-logic.md), then consults this case and its states/checks for detailed evidence or physics questions. Mechanism interpretations come from the map, code, and ordinary replay, without an account from the original author or human difficulty experiments. Coordinates are zero-based, U decreases y, and every initial elevation is z=0.
 
+Original room: **GxE**, as indexed by `games/maze/world_map.json`.
+
 Original source: `games/maze/levels/9hgghfgcsu.txt`, MazeBenchEngine commit `0ac96b8a2648db09f375989cd7bc33699222c1e6`. The engine is MIT-licensed; preserve the original map bytes and applicable source notices without adding unsupported authorship claims. The unmodified [official map](official-world-map.txt) has SHA256 `4c2a18742e7949e815a620aa6c1cff8f79ed2ff8aa93801b0d63261238caa1df`.
 
 The official map has no gem. The analyzed objective is to reach (2,13,0), starting at (13,7,0); a gem-free `isSolved` result does not establish that reach objective. M0 is a six-cell C-shaped tool and M1 a five-cell target with a bent tail. Target member (8,14) is between walls at (7,14) and (9,14), and the bottom edge prevents downward movement. Voids at x=4..6,y=11 restrict stances for direct upward pushes. The tool's upper input arm, left connector, rear working arm, and inner opening create the input and rear target contact.

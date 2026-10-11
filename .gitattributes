@@ -1,6 +1,4 @@
 * text=auto eol=lf
 
-# Keep official source-map bytes and their published SHA256 hashes intact.
-skills/*/references/official-world-map.txt -text whitespace=cr-at-eol
-skills/*/references/user-world-map.txt -text whitespace=cr-at-eol
-skills/*/references/authored-world-map.txt -text whitespace=cr-at-eol
+# Keep source-map bytes and their published SHA256 hashes intact, including named cases.
+skills/*/references/*-world-map.txt -text whitespace=cr-at-eol

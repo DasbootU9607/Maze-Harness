@@ -7,6 +7,8 @@ description: Design, build, and verify MazeBench ice puzzles in which a rigid cr
 
 Use a movable rigid cross to change stopping points and pushing stances on ice. All four arms participate in whole-group sliding collisions and can provide braking surfaces for the player. Moving the cross opens some routes and closes others. The complete objective includes collecting the gem and returning to the declared doorway cell.
 
+Source room: **JxG** in the official world map. The packaged [user reference](references/user-case.md) is a user-provided reconstruction with different wall-underlay tokens; its checks apply to that preserved version.
+
 ## Required reading and default complex mode
 
 For new maps, first read [Mechanism logic](references/mechanism-logic.md). Extract the functional roles, real input/contact relationships, movement preconditions, structural functions, and causal dependencies before choosing shapes or coordinates. Read [the complete user case](references/user-case.md) and its states/checks when evidence or physics details need confirmation. Skill creation or maintenance requires full case analysis; reproductions retain the complete case workflow. Read other cases only when combining their mechanisms.

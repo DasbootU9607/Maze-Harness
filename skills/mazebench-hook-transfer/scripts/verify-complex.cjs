@@ -9,7 +9,7 @@ async function verify(repo,spec,root,cap=1000000){
   validate(spec,root);const c=spec.contract,cells=spec.cells,{engine:e,solver}=load(repo,cells),o=observe(e,c);
   const initial=o.snap(e.initialState);assert(Object.keys(c.members).every(g=>o.group(initial,g).every(p=>p.z===0&&!p.removed)));
   assert(sameMembers(initial,c.members));
-  report.readRecord=checkReadRecord(spec,root,'references/official-case.md');
+  report.readRecord=checkReadRecord(spec,root,['references/official-case.md','references/official-fxe-case.md']);
   report.fingerprints={cells:hash(cells),contract:hash(c),[report.readRecord.kind]:report.readRecord.sha256};
   for(const f of ['public/maze-engine.js','public/maze-solver.js','server/maze-levels.js','games/maze/level_parsing.json'])report.fingerprints[f]=hash(fs.readFileSync(path.join(repo,f)));
   const m=v=>v.moved.length>0,match=(name,v)=>o.matches(v,c.events[name]);

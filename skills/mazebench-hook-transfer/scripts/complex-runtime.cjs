@@ -37,13 +37,16 @@ function observe(e,c){
   const transfer=!!tool&&primary===tool&&translates(tool)&&translates(target)&&contact.length>0;
   const pair=m.pair,relative=a=>{const x=pair&&group(a,pair[0])[0],y=pair&&group(a,pair[1])[0];return x&&y?[y.x-x.x,y.y-x.y,y.z-x.z]:null;};
   const offset=!!pair&&!same(relative(a),relative(b));
-  return {d,primary,moved,removed,contacts,transfer,offset,P:point(p),I:[p.x+dx,p.y+dy,p.z],qualifyingContacts:contact};
+  return {d,primary,moved,removed,translated:moved.filter(translates),contacts,transfer,offset,P:point(p),I:[p.x+dx,p.y+dy,p.z],qualifyingContacts:contact};
  }
  function matches(v,q){
   if(q.kind==='move')return v.moved.includes(q.group)&&(!q.direction||v.d===q.direction)&&(!q.primary||v.primary===q.group);
   if(q.kind==='remove')return v.removed.includes(q.group);
   if(q.kind==='independent-tool')return v.moved.includes(c.mechanism.tool)&&!v.moved.includes(c.mechanism.target);
-  if(q.kind==='contact')return v.transfer;
+  if(q.kind==='contact'){
+   if(!q.tool)return v.transfer;
+   return v.primary===q.tool&&v.translated.includes(q.tool)&&v.translated.includes(q.target)&&v.contacts.some(t=>t.from===q.tool&&t.to===q.target&&(q.contactKind==='rear'?t.along<0:t.lateral!==0));
+  }
   if(q.kind==='offset')return v.offset;
   if(q.kind==='all-motion')return v.moved.length>0;
   throw Error('Unsupported event selector '+q.kind);
@@ -83,6 +86,7 @@ function validate(spec,root){
  for(const q of Object.values(c.events)){
   assert(['move','remove','independent-tool','contact','offset','all-motion'].includes(q.kind));
   if(q.group)assert(points[q.group]);if(q.direction)assert(D[q.direction]);
+  if(q.tool||q.target||q.contactKind)assert(q.kind==='contact'&&points[q.tool]&&points[q.target]&&q.tool!==q.target&&['side','rear'].includes(q.contactKind),'Explicit contact needs distinct declared groups and side/rear kind');
  }
  assert(c.mechanism&&['boundary','side','rear'].includes(c.mechanism.kind));
  assert((c.profile==='planar-boundary-preparation-v2')===(c.mechanism.kind==='boundary'),'Mechanism/profile routing mismatch');
@@ -113,7 +117,7 @@ function validate(spec,root){
  assert(Array.isArray(c.spatial.blocked)&&c.spatial.blocked.length&&c.spatial.blocked.every(b=>b.reason&&b.stance?.length===3&&D[b.direction]),'Declare concrete blocked stance/destination relationships');
  assert(Array.isArray(c.spatial.reserved)&&c.spatial.reserved.length&&c.spatial.reserved.every(r=>r.cell?.length===3&&r.function),'Declare concrete next/recovery stances');
  assert(c.inherited?.length>=3&&c.changes?.length);
- const record=checkReadRecord(spec,root,'references/official-case.md');
+ const record=checkReadRecord(spec,root,['references/official-case.md','references/official-fxe-case.md']);
  if(record.kind==='mechanism'){
   const coordinate=p=>p?.length===3&&p.every(Number.isInteger)&&p[0]>=0&&p[0]<16&&p[1]>=0&&p[1]<16&&p[2]===0;
   assert(new Set(c.stages.map(s=>s.event)).size===c.stages.length,'New stages need distinct functional events');

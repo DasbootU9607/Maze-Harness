@@ -62,11 +62,42 @@ async function main() {
     const template = read(path.join(root, 'references/design-template.json'));
     test(name + ': blank scaffold cannot certify a map', () => assert.throws(() => runtime.validate(template, root)));
     if (engineRepo) {
+      checkOrigin(root, legacy, skating ? 'user' : 'official');
       const { engine: e } = runtime.load(engineRepo, legacy.cells);
       const o = skating ? runtime.observer(e, legacy) : runtime.observe(e, legacy.contract);
       test(name + ': complete original ordinary replay', () => runtime.replay(e, o, legacy.witness));
       rows.at(-1).inputs = legacy.witness.length;
       rows.at(-1).cells = hash(JSON.stringify(legacy.cells));
+    }
+    const extras = fs.readdirSync(path.join(root, 'references')).filter(file => /^(?:official|user|authored)-[a-z0-9-]+-case\.md$/.test(file));
+    for (const file of extras) {
+      const family = file.slice(0, -'-case.md'.length), casePaths = [casePath, ...extras.map(f => 'references/' + f)];
+      const extra = read(path.join(root, 'references', family + '-design.json'));
+      test(name + ': ' + family + ' reproduction contract', () => runtime.validate(extra, root));
+      test(name + ': ' + family + ' reading version', () => assert.equal(checkReadRecord(extra, root, casePaths).kind, 'case'));
+      const stale = structuredClone(extra); stale.contract.readReceipt.sha256 = '0'.repeat(64);
+      test(name + ': reject stale ' + family, () => assert.throws(() => runtime.validate(stale, root), /different document version/));
+      const foreign = structuredClone(extra); foreign.contract.readReceipt.path = 'references/official-unregistered-case.md';
+      test(name + ': reject unregistered named case', () => assert.throws(() => runtime.validate(foreign, root), /Unsupported reading document/));
+      const badPair = structuredClone(extra), pair = Object.values(badPair.contract.events).find(q => q.kind === 'contact' && q.tool);
+      if (pair) {
+        pair.target = 'M999';
+        test(name + ': reject undeclared contact pair', () => assert.throws(() => runtime.validate(badPair, root), /Explicit contact/));
+      }
+      if (engineRepo) {
+        checkOrigin(root, extra, family);
+        const { engine: e } = runtime.load(engineRepo, extra.cells), o = runtime.observe(e, extra.contract);
+        let replay;
+        test(name + ': ' + family + ' complete original replay', () => { replay = runtime.replay(e, o, extra.witness); });
+        rows.at(-1).inputs = extra.witness.length;
+        if (family === 'official-fxe') test(name + ': explicit contacts distinguish pairs and full translations', () => {
+          assert(o.matches(replay.rows[26].event, extra.contract.events.contact));
+          assert(!o.matches(replay.rows[35].event, extra.contract.events.contact));
+          assert(o.matches(replay.rows[55].event, extra.contract.events.corridor));
+          assert(!o.matches(replay.rows[55].event, extra.contract.events.delivery));
+          assert(o.matches(replay.rows[118].event, extra.contract.events.delivery));
+        });
+      }
     }
   }
   const report = { passed, engineReplayed: !!engineRepo, checks: rows, scope: 'Version and contract rejection regressions; optional complete-case ordinary replay. Format acceptance does not prove the migrated declarations or their stage semantics.' };
@@ -75,5 +106,21 @@ async function main() {
     fs.mkdirSync(out, { recursive: true }); fs.writeFileSync(path.join(out, 'read-record-tests.json'), JSON.stringify(report, null, 2) + '\n');
   }
   console.log(JSON.stringify({ passed, engineReplayed: !!engineRepo }));
+}
+function checkOrigin(root, spec, family) {
+  const origin = spec.originRoom;
+  const index = read(path.join(engineRepo, origin.worldMap)).levels;
+  test(path.basename(root) + ': ' + family + ' official world-map room', () => {
+    assert.equal(index[path.basename(origin.level)].join('x'), origin.id);
+    const upstream = fs.readFileSync(path.join(engineRepo, origin.level));
+    const packaged = fs.readFileSync(path.join(root, 'references', family + '-world-map.txt'));
+    if (origin.relationship === 'unmodified-official') assert(upstream.equals(packaged));
+    else {
+      const tokenize = bytes => bytes.toString('utf8').trim().split(/\s+/);
+      const a = tokenize(upstream), b = tokenize(packaged);
+      assert.equal(a.length, b.length);
+      assert(a.every((token, i) => token === b[i] || token === 'i+#' && b[i] === '.+#'));
+    }
+  });
 }
 main().catch(error => { console.error(error); process.exitCode = 1; });

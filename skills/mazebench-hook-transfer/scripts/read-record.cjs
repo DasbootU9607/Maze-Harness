@@ -11,7 +11,8 @@ function checkReadRecord(spec, root, casePath) {
   const c = spec.contract, receipt = c.readReceipt;
   const mechanismPath = 'references/mechanism-logic.md';
   assert(receipt?.readBeforeLayout === true, 'Declare the pre-layout reading record');
-  assert([mechanismPath, casePath].includes(receipt.path), 'Unsupported reading document');
+  const casePaths = Array.isArray(casePath) ? casePath : [casePath];
+  assert([mechanismPath, ...casePaths].includes(receipt.path), 'Unsupported reading document');
   const bytes = fs.readFileSync(path.join(root, receipt.path));
   assert.equal(receipt.sha256, hash(bytes), 'Reading record refers to a different document version');
   const kind = receipt.path === mechanismPath ? 'mechanism' : 'case';

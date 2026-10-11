@@ -377,7 +377,7 @@
     "optionalRoles": [],
     "readReceipt": {
       "path": "references/official-case.md",
-      "sha256": "e4dd6c0872ff65402effe2e40e6d33aa0d043450ae373afaa99d3945f2daf5a9",
+      "sha256": "8cb85228fe706a35e7800358301d8eaeb60d4f4b8abc0e3c5a78c8ef17cd976f",
       "readBeforeLayout": true
     },
     "inherited": [
@@ -1027,5 +1027,11 @@
       }
     ]
   },
-  "witness": "DDLULLLLLLRUULDDLLDRURRRDDLULDRDDDLDLLLLU"
+  "witness": "DDLULLLLLLRUULDDLLDRURRRDDLULDRDDDLDLLLLU",
+  "originRoom": {
+    "id": "GxE",
+    "worldMap": "games/maze/world_map.json",
+    "level": "games/maze/levels/9hgghfgcsu.txt",
+    "relationship": "unmodified-official"
+  }
 }

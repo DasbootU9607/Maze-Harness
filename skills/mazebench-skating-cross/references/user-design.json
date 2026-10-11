@@ -344,7 +344,7 @@
     },
     "readReceipt": {
       "path": "references/user-case.md",
-      "sha256": "8fac10ffd16b54a373315a555c746f154d1ca692325706a6977206575f4086b7",
+      "sha256": "57880c8f6cf7373027cfb319a388e5cbeebe67480073b8ee01a24c7c19984433",
       "readBeforeLayout": true
     },
     "inherited": [
@@ -1784,5 +1784,11 @@
       111,
       117
     ]
+  },
+  "originRoom": {
+    "id": "JxG",
+    "worldMap": "games/maze/world_map.json",
+    "level": "games/maze/levels/eaxixyrjgf.txt",
+    "relationship": "user-provided-reconstruction"
   }
 }

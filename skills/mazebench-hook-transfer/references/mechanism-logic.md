@@ -1,8 +1,8 @@
 # Hook Transfer mechanism logic
 
-Use this extraction before choosing new geometry. The source is the complete upstream official GxE case. Consult [the full case](official-case.md), [states](official-states.json), and [checks](official-checks.json) when details need confirmation. Skill maintenance requires the complete source analysis. Preserve [the original design](official-design.json) for reproduction/regression; start new authoring from [the empty contract](design-template.json).
+Use this extraction before choosing new geometry. The official source rooms are **GxE** and **FxE**. [GxE](official-case.md) supplies rear release and passage-work evidence; [FxE](official-fxe-case.md) adds a released object becoming a tool and repeated use of a span at separate targets. Consult each case's linked states/checks when details need confirmation. Maintenance requires complete analysis of the affected source. Preserve their runnable designs for reproduction/regression; start new authoring from [the empty contract](design-template.json).
 
-Claims are labeled **necessary in the case**, **witness choice**, **selected state**, or **unconfirmed**. Exhausted restrictions prove only their map and endpoint. The case has an explicit passage goal and no gem; a gem-free engine `isSolved` is not evidence of reaching it.
+Claims are labeled **necessary in the case**, **witness choice**, **selected state**, or **unconfirmed**. The first four relations below refer to GxE; the two additional relations explicitly identify FxE. Exhausted restrictions prove only their map and endpoint. GxE has a passage goal and no gem; a gem-free engine `isSolved` is not evidence of reaching it. FxE has a gem objective. Its scoped checks do not inherit GxE's necessity conclusions.
 
 ## Roles and interactions
 
@@ -36,10 +36,26 @@ Independent preparation enables usable contact; contact changes the target's res
 
 **Selected state:** walking or freezing either group at the input-28 pose cannot complete the passage. **Witness choice:** tool-L at 29 then target-R at 31 is one continuation. A complete target-R-free counterexample is preserved in [checks](official-checks.json), so that continuation is not uniquely necessary. [Case scope](official-case.md#evidence-and-scope) distinguishes these selected states from all first-contact histories; the complex verifier's all-history walking-only and optional post-contact group checks are separate obligations. Do not upgrade selected-state freezes to universal claims.
 
+## Additional relationships from FxE
+
+### ht-tool-role-transition
+
+A constrained object can first be the target of contact and later become the tool for another operation. Derive each interaction's player stance, primary input, working member and target independently. Releasing an object is useful only if the resulting configuration permits its transport, input access and subsequent work.
+
+**FxE witness choice:** M1's offset end releases M0; M0 subsequently operates M3 and M2. The three contacts use different input/working members and preserve ordinary rigid translation. [The contact table](official-fxe-case.md#replayed-contact-and-access-chain) and [states](official-fxe-states.json) record the actual pairs. **Necessary in FxE under exhausted checks:** M1, M0 and the initial M1-to-M0 lateral contact cannot be bypassed. Other global role/contact exclusions may be capped; [checks](official-fxe-checks.json) govern their scope. The same four groups or a universal three-contact chain is unconfirmed.
+
+### ht-recovered-span
+
+A supported span can reach a restricted member across a gap while keeping the player's input on accessible terrain. An opening can admit the working end and allow different contacts as relative positions change. Plan withdrawal, renewed stance access and later use of another part of the same tool; actual contact must end when the groups separate.
+
+**FxE selected states and witness choices:** the span enters M3's opening and moves its lower arm; later translation separates the groups, and further work permits upper-corridor access. The same tool's foot then contacts M2 on a row offset from the input. [Replay analysis](official-fxe-case.md) records these functions, supported overhangs and the legal loss of the starter at input 36. The starter's removal, selected reversals, exact opening, length and direction order are not established as necessary. Preserve complete footprints and official support rules; a span is not automatically a walkable bridge.
+
 ## Allowed variations and verification obligations
 
 Keep constrained direct operation, independent transport, reachable input, actual rear/lateral member contact, full-body support/clearance, and connected work after contact. Re-derive the goal, shapes, openings, orientation, boundaries, support and parking space, initial separation, and continuation. Neither the source's exact passage coordinate nor a particular compass order is inherited.
 
 Map each chosen relation ID to this map's initial members and boundary/passage/stance cells in `inherited`. Declare the new P/I/C/T observations, all-group motion, conflicts, and tested preparation endpoints. Verify completion, freezes, mechanism exclusion, positive/restricted first opportunities, and post-contact work using [complex verification](complex-validation.md). A change in a connector may affect contact, support, clearance, and stance reachability simultaneously; disclose each effect. Caps, exceptions, and unsupported physics are unknown.
+
+Choose relations that serve the new goal; adding FxE does not require copying its group count, route or every relation into every map. For repeated contacts, declare each pair with the complex event selector's `tool`, `target`, and `contactKind`, then test the claimed dependencies at their actual opportunities. A legal source witness supports that realization; a capped exclusion does not establish necessity.
 
 New physics and a newly invented mechanism are unnecessary. A translated/reflected/renamed case or one added member alone does not establish substantive variation. Explain the newly derived access/contact/preparation realization and report only the application evidence actually checked.

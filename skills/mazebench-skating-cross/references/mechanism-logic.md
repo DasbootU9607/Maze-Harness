@@ -1,6 +1,6 @@
 # Skating Cross mechanism logic
 
-Read this extraction first for new authoring. Its source is the complete **user-authored** reference map, not an upstream official level. Consult [the user case](user-case.md), [states](user-states.json), and [checks](user-checks.json) for detailed evidence or physics questions. Maintaining the extraction requires full source analysis. [The original design](user-design.json) is reproduction/regression material; [the empty contract](design-template.json) carries no source geometry.
+Read this extraction first for new authoring. Its source is the complete **user-provided reconstruction of official room JxG**. The case records its 83 wall-underlay token differences from upstream; all checks below refer to the preserved user version. Consult [the user case](user-case.md), [states](user-states.json), and [checks](user-checks.json) for detailed evidence or physics questions. Maintaining the extraction requires full source analysis. [The original design](user-design.json) is reproduction/regression material; [the empty contract](design-template.json) carries no source geometry.
 
 Distinguish **necessary in the case**, **witness choice**, **selected state**, and **unconfirmed**. Official-engine replay does not change the map's provenance. The full objective is gem collection followed by alive arrival at the declared in-room doorway, not passage into a neighboring room.
 

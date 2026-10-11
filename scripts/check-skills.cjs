@@ -9,7 +9,6 @@ const { TextDecoder } = require('node:util');
 const hash = value => crypto.createHash('sha256').update(
   Buffer.isBuffer(value) || typeof value === 'string' ? value : JSON.stringify(value)
 ).digest('hex');
-const sourceTypes = ['official', 'user', 'authored'];
 const conventionalNames = new Set(['SKILL.md', 'LICENSE', 'THIRD_PARTY_NOTICES.md']);
 const textExtensions = new Set(['.md', '.json', '.yaml', '.yml', '.cjs', '.js', '.py', '.txt']);
 
@@ -120,7 +119,8 @@ function checkRepository(root) {
     check(templateReceipt?.path === 'references/mechanism-logic.md' && templateReceipt.sha256 === '' &&
       templateReceipt.readBeforeLayout === true,
       skill + ': leave the mechanism version receipt to be filled after reading');
-    const families = sourceTypes.filter(source => fs.existsSync(path.join(references, source + '-case.md')));
+    const families = fs.readdirSync(references).filter(name => /^(?:official|user|authored)(?:-[a-z0-9]+)*-case\.md$/.test(name))
+      .map(name => name.slice(0, -'-case.md'.length));
     check(families.length > 0, skill + ': include a case with explicit source provenance');
     for (const source of families) {
       const names = ['case.md', 'world-map.txt', 'design.json', 'states.json', 'checks.json'];
@@ -133,12 +133,17 @@ function checkRepository(root) {
       const mapPath = path.join(references, source + '-world-map.txt');
       if (!spec || !report || !fs.existsSync(mapPath)) continue;
       const caseText = textFiles.get(casePath) || '';
+      const origin = spec.originRoom;
+      if (source.startsWith('official') || origin) check(origin && /^[A-Z]+x[A-Z]+$/.test(origin.id) && origin.worldMap === 'games/maze/world_map.json' &&
+        /^games\/maze\/levels\/[a-z0-9]+\.txt$/.test(origin.level) &&
+        ['unmodified-official', 'user-provided-reconstruction'].includes(origin.relationship) && caseText.includes(origin.id) && caseText.includes(origin.level),
+        skill + ': ' + source + ' must identify its original room and upstream map');
       const mapHash = hash(fs.readFileSync(mapPath));
       check(caseText.includes(mapHash), skill + ': case must record the original map SHA256');
       check(/[0-9a-f]{40}/.test(caseText), skill + ': case must record the engine commit');
-      check(source !== 'user' || /user (?:reference )?case|user-authored/i.test(caseText),
+      check(!source.startsWith('user') || /user (?:reference )?case|user-authored/i.test(caseText),
         skill + ': identify the user-authored case');
-      check(source !== 'official' || /games\/maze\/levels\//.test(caseText),
+      check(!source.startsWith('official') || /games\/maze\/levels\//.test(caseText),
         skill + ': record the official upstream map path');
       const receipt = spec.contract?.readReceipt;
       check(receipt?.path === 'references/' + source + '-case.md' &&

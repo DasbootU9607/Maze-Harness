@@ -1,4 +1,4 @@
-# Skating Cross user case and mechanism analysis
+# JxG Skating Cross user reference case and mechanism analysis
 
 Maintainers and reproductions analyze this complete case. New authoring first reads [Mechanism logic](mechanism-logic.md), returning here for evidence or physics questions.
 
@@ -6,7 +6,7 @@ The user constructed this case on a supplied blank map. The confirmed objective 
 
 ## Provenance and initial state
 
-The bundled [original map bytes](user-world-map.txt) preserve the user reference case, including the gem. Map SHA256: `d95611963f45420573cf662f7eba9b494f8622203505627cebf1f425f3e3b296`. Engine baseline: `0ac96b8a2648db09f375989cd7bc33699222c1e6`. This is not an upstream official level. When redistributing generated drafts, retain the applicable engine and asset licenses and notices from the separate engine installation.
+The bundled [original map bytes](user-world-map.txt) preserve the user reference case, including the gem. Map SHA256: `d95611963f45420573cf662f7eba9b494f8622203505627cebf1f425f3e3b296`. Engine baseline: `0ac96b8a2648db09f375989cd7bc33699222c1e6`. The original room is **JxG**, indexed as `games/maze/levels/eaxixyrjgf.txt` by `games/maze/world_map.json`. Its upstream SHA256 is `f8d3bb11617bbd5a08560c0997ca66c0e2a6806f93302542fc338f0da7a2fdd8`. The packaged map is a user-provided reconstruction of that room: all 83 differences are wall-underlay tokens (`.+#` here, `i+#` upstream); every other cell token, including player, cross and gem, matches. Preserve this user version and its scoped historical checks; they are not automatically checks of the unmodified upstream bytes. When redistributing generated drafts, retain the applicable engine and asset licenses and notices from the separate engine installation.
 
 Coordinates are zero-based; U decreases y, and every position has z=0. P=(15,1,0), gem=(12,8,0), and completion cell=(15,1,0). The starting cell is the only open boundary cell. In the single-room profile, continuing outward from the doorway causes a fall, so verification ends when the player reaches that cell after collecting the gem.
 

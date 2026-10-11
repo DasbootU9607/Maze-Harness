@@ -1,0 +1,951 @@
+{
+  "title": "FxE official full reference",
+  "originRoom": {
+    "id": "FxE",
+    "worldMap": "games/maze/world_map.json",
+    "level": "games/maze/levels/5ufa4nkpse.txt",
+    "relationship": "unmodified-official"
+  },
+  "cells": [
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      "+",
+      ".+#",
+      ".+#",
+      ".+#",
+      "+",
+      "+"
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "+",
+      ".",
+      ".",
+      ".",
+      "+",
+      "+"
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      "G",
+      "M2",
+      "M2",
+      "+",
+      "+"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      ".+#",
+      ".",
+      "M2",
+      "M2",
+      "+",
+      "+"
+    ],
+    [
+      ".+#",
+      "M3",
+      "M3",
+      "+",
+      "+",
+      "+",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#",
+      ".",
+      "M2",
+      "M2",
+      "+",
+      "+"
+    ],
+    [
+      ".+#",
+      "M3",
+      ".",
+      "+",
+      "+",
+      "+",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#",
+      ".+#",
+      ".+#",
+      "M2",
+      "+",
+      "+"
+    ],
+    [
+      ".+#",
+      "M3",
+      "M3",
+      "+",
+      "+",
+      "+",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "."
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      "+",
+      "+",
+      "+",
+      ".",
+      "M1",
+      "M1",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "."
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "M1",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+p",
+      "."
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "M1",
+      "M1",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "."
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      "M0",
+      "M0",
+      "M0",
+      "M0",
+      "M0",
+      "M0",
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      ".",
+      ".",
+      ".",
+      ".",
+      "M0",
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#"
+    ]
+  ],
+  "contract": {
+    "mode": "complex",
+    "profile": "planar-hook-depth-v2",
+    "goal": {
+      "kind": "gem"
+    },
+    "members": {
+      "M2": [
+        [
+          12,
+          2,
+          0
+        ],
+        [
+          13,
+          2,
+          0
+        ],
+        [
+          12,
+          3,
+          0
+        ],
+        [
+          13,
+          3,
+          0
+        ],
+        [
+          12,
+          4,
+          0
+        ],
+        [
+          13,
+          4,
+          0
+        ],
+        [
+          13,
+          5,
+          0
+        ]
+      ],
+      "M3": [
+        [
+          1,
+          4,
+          0
+        ],
+        [
+          2,
+          4,
+          0
+        ],
+        [
+          1,
+          5,
+          0
+        ],
+        [
+          1,
+          6,
+          0
+        ],
+        [
+          2,
+          6,
+          0
+        ]
+      ],
+      "M1": [
+        [
+          7,
+          7,
+          0
+        ],
+        [
+          8,
+          7,
+          0
+        ],
+        [
+          8,
+          8,
+          0
+        ],
+        [
+          8,
+          9,
+          0
+        ],
+        [
+          9,
+          9,
+          0
+        ]
+      ],
+      "M0": [
+        [
+          5,
+          13,
+          0
+        ],
+        [
+          6,
+          13,
+          0
+        ],
+        [
+          7,
+          13,
+          0
+        ],
+        [
+          8,
+          13,
+          0
+        ],
+        [
+          9,
+          13,
+          0
+        ],
+        [
+          10,
+          13,
+          0
+        ],
+        [
+          10,
+          14,
+          0
+        ]
+      ]
+    },
+    "roles": {
+      "M1": "starter tool",
+      "M0": "released long tool, later reused",
+      "M3": "corridor blocker",
+      "M2": "gem-pocket blocker"
+    },
+    "allowRemoval": [
+      "M2",
+      "M3",
+      "M1",
+      "M0"
+    ],
+    "necessaryRoles": [
+      "M2",
+      "M3",
+      "M1",
+      "M0"
+    ],
+    "optionalRoles": [],
+    "readReceipt": {
+      "path": "references/official-fxe-case.md",
+      "sha256": "ad93227e7c9960031ee2bd42411904495454211e7df63abebb80d64b3014e3f0",
+      "readBeforeLayout": true
+    },
+    "inherited": [
+      "Constrained input resolved by real offset member contact.",
+      "A released target becomes a tool in later interactions.",
+      "Supported span and target opening connect separated input and working cells.",
+      "Tool recovery and renewed stance access connect successive targets."
+    ],
+    "changes": [
+      "Unmodified official FxE reproduction; all coordinates, groups and terrain are preserved. Dependency declarations are scoped verification hypotheses."
+    ],
+    "spatial": {
+      "boundaries": [
+        [
+          11,
+          13,
+          0
+        ],
+        [
+          11,
+          14,
+          0
+        ],
+        [
+          10,
+          15,
+          0
+        ],
+        [
+          12,
+          5,
+          0
+        ]
+      ],
+      "voids": [
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          14,
+          0,
+          0
+        ],
+        [
+          15,
+          0,
+          0
+        ],
+        [
+          10,
+          1,
+          0
+        ],
+        [
+          14,
+          1,
+          0
+        ],
+        [
+          15,
+          1,
+          0
+        ],
+        [
+          3,
+          2,
+          0
+        ],
+        [
+          4,
+          2,
+          0
+        ],
+        [
+          5,
+          2,
+          0
+        ],
+        [
+          6,
+          2,
+          0
+        ],
+        [
+          7,
+          2,
+          0
+        ],
+        [
+          8,
+          2,
+          0
+        ],
+        [
+          9,
+          2,
+          0
+        ],
+        [
+          10,
+          2,
+          0
+        ],
+        [
+          14,
+          2,
+          0
+        ],
+        [
+          15,
+          2,
+          0
+        ],
+        [
+          3,
+          3,
+          0
+        ],
+        [
+          4,
+          3,
+          0
+        ],
+        [
+          5,
+          3,
+          0
+        ],
+        [
+          6,
+          3,
+          0
+        ],
+        [
+          7,
+          3,
+          0
+        ],
+        [
+          8,
+          3,
+          0
+        ],
+        [
+          9,
+          3,
+          0
+        ],
+        [
+          14,
+          3,
+          0
+        ],
+        [
+          15,
+          3,
+          0
+        ],
+        [
+          3,
+          4,
+          0
+        ],
+        [
+          4,
+          4,
+          0
+        ],
+        [
+          5,
+          4,
+          0
+        ],
+        [
+          14,
+          4,
+          0
+        ],
+        [
+          15,
+          4,
+          0
+        ],
+        [
+          3,
+          5,
+          0
+        ],
+        [
+          4,
+          5,
+          0
+        ],
+        [
+          5,
+          5,
+          0
+        ],
+        [
+          14,
+          5,
+          0
+        ],
+        [
+          15,
+          5,
+          0
+        ],
+        [
+          3,
+          6,
+          0
+        ],
+        [
+          4,
+          6,
+          0
+        ],
+        [
+          5,
+          6,
+          0
+        ],
+        [
+          3,
+          7,
+          0
+        ],
+        [
+          4,
+          7,
+          0
+        ],
+        [
+          5,
+          7,
+          0
+        ],
+        [
+          0,
+          14,
+          0
+        ],
+        [
+          1,
+          14,
+          0
+        ],
+        [
+          2,
+          14,
+          0
+        ],
+        [
+          3,
+          14,
+          0
+        ],
+        [
+          4,
+          14,
+          0
+        ],
+        [
+          5,
+          14,
+          0
+        ],
+        [
+          0,
+          15,
+          0
+        ],
+        [
+          1,
+          15,
+          0
+        ],
+        [
+          2,
+          15,
+          0
+        ],
+        [
+          3,
+          15,
+          0
+        ],
+        [
+          4,
+          15,
+          0
+        ],
+        [
+          5,
+          15,
+          0
+        ]
+      ],
+      "support": "Official whole-group support and removal; no invented bridge or pulling physics.",
+      "blocked": [
+        {
+          "group": "M0",
+          "direction": "U",
+          "stance": [
+            6,
+            14,
+            0
+          ],
+          "keyStep": 0,
+          "destinations": [
+            [
+              6,
+              12,
+              0
+            ]
+          ],
+          "reason": "Initial below-span stance is inaccessible with groups frozen."
+        },
+        {
+          "group": "M0",
+          "direction": "R",
+          "stance": [
+            4,
+            13,
+            0
+          ],
+          "keyStep": 0,
+          "destinations": [
+            [
+              11,
+              14,
+              0
+            ]
+          ],
+          "reason": "The whole-group foot collides with the right wall."
+        },
+        {
+          "group": "M3",
+          "direction": "D",
+          "stance": [
+            2,
+            3,
+            0
+          ],
+          "keyStep": 0,
+          "destinations": [
+            [
+              2,
+              5,
+              0
+            ]
+          ],
+          "reason": "The upper input stance is initially inaccessible."
+        },
+        {
+          "group": "M2",
+          "direction": "R",
+          "stance": [
+            11,
+            2,
+            0
+          ],
+          "keyStep": 0,
+          "destinations": [
+            [
+              13,
+              2,
+              0
+            ]
+          ],
+          "reason": "The direct input lies in the inaccessible gem pocket."
+        }
+      ],
+      "reserved": [
+        {
+          "cell": [
+            3,
+            13,
+            0
+          ],
+          "function": "Starter input stance"
+        },
+        {
+          "cell": [
+            7,
+            4,
+            0
+          ],
+          "function": "Central stance for the span in M3 opening"
+        },
+        {
+          "cell": [
+            5,
+            1,
+            0
+          ],
+          "function": "Upper-corridor input for final offset contact"
+        }
+      ]
+    },
+    "events": {
+      "prep": {
+        "kind": "independent-tool"
+      },
+      "contact": {
+        "kind": "contact"
+      },
+      "corridor": {
+        "kind": "contact",
+        "tool": "M0",
+        "target": "M3",
+        "contactKind": "side"
+      },
+      "delivery": {
+        "kind": "contact",
+        "tool": "M0",
+        "target": "M2",
+        "contactKind": "side"
+      },
+      "postWork": {
+        "kind": "all-motion"
+      }
+    },
+    "stages": [
+      {
+        "name": "Prepare the starter",
+        "event": "prep",
+        "conflict": "The long tool has no reachable direct releasing input.",
+        "effect": "Bring the starter to a supported offset contact pose."
+      },
+      {
+        "name": "Release the long tool",
+        "event": "contact",
+        "conflict": "M0 foot and stance restrictions prevent direct release.",
+        "effect": "Lift M0 through real M1 contact."
+      },
+      {
+        "name": "Open corridor access",
+        "event": "corridor",
+        "conflict": "The left blocker prevents upper access.",
+        "effect": "Use the long span through the blocker opening."
+      },
+      {
+        "name": "Reuse the tool at the gem pocket",
+        "event": "delivery",
+        "conflict": "Direct access to the gem-pocket input is unavailable.",
+        "effect": "Apply the foot from a newly reachable upper stance."
+      },
+      {
+        "name": "Complete access after transfer",
+        "event": "postWork",
+        "after": "contact",
+        "conflict": "First contact does not provide a walking-only completion in the witness.",
+        "effect": "Reconfigure objects and collect the gem."
+      }
+    ],
+    "dependencies": [
+      {
+        "prepare": "prep",
+        "before": "contact",
+        "conflict": "Independent positioning precedes usable contact."
+      },
+      {
+        "prepare": "contact",
+        "before": "corridor",
+        "conflict": "The long tool must become operable."
+      },
+      {
+        "prepare": "corridor",
+        "before": "delivery",
+        "conflict": "Upper access is needed for renewed use of the span."
+      },
+      {
+        "prepare": "delivery",
+        "before": "goal",
+        "conflict": "The gem pocket requires a real releasing operation."
+      },
+      {
+        "prepare": "postWork",
+        "before": "goal",
+        "after": "contact",
+        "conflict": "Contact leaves subsequent work."
+      }
+    ],
+    "mechanism": {
+      "kind": "side",
+      "tool": "M1",
+      "target": "M0"
+    }
+  },
+  "witness": "DLLLLLLLLLULDDDDDUULLLDRDRUUUUUDDRUURRRRRRRULLDLURULUULDDDDDRDDDLUUULURUUDRRUULULDRDDDLUUUUDDDDLLLLLDDRUULUUUUUULURRRRRLLLLDDDDDDDRRRRUURRRRRRRUULULU"
+}

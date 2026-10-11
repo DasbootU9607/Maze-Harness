@@ -2,6 +2,8 @@
 
 This complete analysis is required when maintaining the skill or reproducing the case. New authoring first reads [Mechanism logic](mechanism-logic.md), then consults this case and its states/checks for detailed evidence or physics questions. Mechanism interpretations come from the map, code, and ordinary replay, without an account from the original author or human difficulty experiments. Coordinates are zero-based, U decreases y, and every initial elevation is z=0.
 
+Original room: **GxF**, as indexed by `games/maze/world_map.json`.
+
 Original source: `games/maze/levels/0lzre7ixaq.txt`, MazeBenchEngine commit `0ac96b8a2648db09f375989cd7bc33699222c1e6`. The engine is MIT-licensed; preserve the original map bytes and applicable source notices without adding unsupported authorship claims. The unmodified [official map](official-world-map.txt) has SHA256 `493020c70b983b3a93fa4df871eb118c5fb8a0621f8ab09111b6d3653433ef33`.
 
 The objective is to collect the gem at (2,9,0), starting at (7,1,0). M0 is a two-cell tool at (6,5,0),(7,5,0), M1/M2 are three-cell L helpers, and M3 is a three-cell horizontal target. The table below lists all members. The tool's input and working ends occupy different columns. Helper ears, complete tool width, and player pushing faces compete for central clearance; a path for the tool center is insufficient.
