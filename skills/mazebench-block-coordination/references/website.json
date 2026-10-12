@@ -1,0 +1,10 @@
+{
+  "verb": "Coordinate the next push",
+  "description": "Plan each shield move around the player's next usable input. BxB connects handoffs and reuse; BxC combines joint delivery, separate preparation and a later approach.",
+  "steps": [
+    "Work backward from the exit to a useful shield operation and its reachable input side.",
+    "Choose how the next tool is prepared, how it travels, and how the player continues after using it.",
+    "Keep parked tools usable for their later roles; release them through a verified route to the goal."
+  ],
+  "exampleDescription": "A separately verified authored realization of tool preparation, usable input access and release."
+}

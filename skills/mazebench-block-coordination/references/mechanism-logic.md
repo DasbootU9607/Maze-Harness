@@ -1,20 +1,46 @@
 # MazeBench Block Coordination: mechanism logic
 
-Coordinate several movable gate shields so every traverse leads to a usable next input. BxB hands off among independent blocks and reuses its final shield. BxC transports two groups together, separates them to pre-position a future shield, returns through clear ground, and uses the other block to reach the prepared contact. Keep joint movement, independent movement and safe release as conditional choices justified by downstream work.
+Coordinate movable gate shields by preserving a sequence of executable inputs. The useful result of a push includes the player's access to the next working side, the tool positions and the remaining duties of every retained tool. Gate suppression follows current same-elevation occupancy: pushing across a gate does not leave a permanently open trail. A previously traversed cell may block a later approach.
 
 Read this before new geometry. A read receipt checks version consistency, not understanding or necessity.
 
+## Common causal model
+
+A reachable input uses a shield; its legal movement gives the player another usable contact or access to clear ground; the remaining tools preserve the next operation; the sequence ends at the complete doorway goal. This model is an authoring inference from the two complete witnesses. It does not prescribe every solution's route or prove a unique order.
+
+Treat these as separate decisions, not two mutually exclusive case templates:
+
+| Decision | Supported choices | Evidence |
+| --- | --- | --- |
+| How does the next tool become usable? | Reach an initially placed shield, or prepare its position and then create the approach. | BxB 12/19; BxC 35-44. |
+| How are tools delivered? | Move one group at a time, or temporarily propagate a push through actual contact. | All BxB blue-moving inputs are individual; BxC 15-23 and 31-32 move a pair before separate roles. |
+| What continues after this operation? | Hand off to another shield, reuse the same shield from another side, or leave it and walk to the goal. | BxB 13/20, 27-33 and 38-40; BxC 44 and 53-55. |
+
+These choices describe functions that can be considered separately. Their arbitrary recombination has not been verified. See the [reference comparison](reference-library.md) for observed combinations and evidence limits.
+
 ### prepare-next-shield
 
-Roles: player, current or approach shield, next working shield, and the stances connecting them. Before committing a traverse, establish an executable next action. BxB inputs 12/19 reach already placed M1/M2 contacts; BxC inputs 35-44 place M0 at a future contact row and use M1 to reach its western side. The paired BxC branches from input 35 show the final R blocked without that placement and legal after ordinary placement/retreat/approach. Preserve actual same-elevation contact, usable arrival and subsequent work; vary coordinates, direction order and which tool is prepared. Evidence: full witnesses and a selected-state preparation control. No unique order or universal preparation count is established.
+Roles: player, current or approach shield, next working shield and connecting input stances. The next shield may be the same physical group with a changed pushing side. Before a planned handoff, identify the actual member and direction, establish a reachable player stance and check the full legal translation. Arrival is useful when this input enables subsequent work.
+
+BxB inputs 12/19 reach initially placed M1/M2; its final M2 is later reused. BxC 35-44 prepares M0 and uses M1 to approach it. Paired ordinary branches from BxC step 35 match the player/M1 approach positions but leave M0 at different positions: the final R is blocked without useful placement and legal after placement, retreat and reapproach. This verifies that local preparation opportunity. It does not exclude different histories.
+
+Preserve executable contact and continuation; vary geometry, orientation and the identity of the prepared tool. A new realization must replay its approach, actual next action and complete suffix. A claim that preparation is unavoidable additionally needs a compatible full-goal exclusion.
 
 ### independent-or-chain-motion
 
-Roles: primary input group, any contacted secondary group, player and complete body footprints. Independent handoff is witnessed by every blue-moving BxB input. BxC inputs 15-23 and 31-32 instead move two distinct groups together: the player contacts the rear member and that member contacts the forward member in the input direction. Inputs 35 onward separate their work. Full ordinary event assertions verify both contact propagation and later single-group motion. Preserve actual directional member contacts and full-group clearance/support; do not infer a bond from color or adjacency. Joint transport is now a witnessed optional branch, not a family-wide invariant. The BxC exclusion against joint motion was capped and establishes no global necessity.
+Roles: player, primary input group, contacted secondary groups and their complete footprints. For same-elevation unit pushes, the input member must occupy P+d; each propagated contact must connect an actual member to another at displacement d. Full-group clearance and support still govern the move. Same-ID membership, contact-driven co-motion and later temporal handoff are different relationships.
+
+Every blue-moving BxB input moves exactly one group; only its specific role transitions are handoffs. BxC 15-23 and 31-32 move two distinct groups through directional contact, then 35-44 separates their work. A shared delivery is useful when its destination supports the later individual roles and reachable separation inputs. Adjacency or a common destination alone is insufficient.
+
+Joint transport is an evidenced optional branch. The BxC exclusion against joint motion remains unknown. For new geometry, verify the full contacted bodies during delivery and their subsequent use; the two references' single-member groups do not establish reliability for larger shapes.
 
 ### retain-or-release-tools
 
-Roles are assigned by the next useful operation. Retain a tool while its later shielding or approach role remains needed; release it when another reachable shield or clear-ground path takes over. BxB parks M0/M1 after handoffs, reuses M2 and leaves M3/M4 unused. BxC preserves both tools through common delivery, parks the prepared M0 during a useful return to M1, then releases M1 after it enables the M0 contact. Both routes leave their last shield and finish at a free doorway slot. Preserve operable placement and an actual full exit; vary which group changes role. BxB group-movement necessity remains scoped to its own exhausted checks. All corresponding BxC full-goal restrictions are unknown. More blocks, extra straight pushes or purposeless returns do not create a deeper mechanism.
+Assign retention to a future operation, not to permanent proximity. Distinguish active use, parked-but-retained use and release from the current plan. A retained tool can remain stationary while another tool supplies access to it. A released tool is no longer moved by the verified remaining route; this does not prove every alternative route can ignore it.
+
+BxB parks M0/M1 after handoffs, reuses M2 from changed input sides and leaves M3/M4 unused. BxC retains the prepared M0 while returning to M1, then releases M1 after it supplies the M0 input stance. Both leave their last shield and finish at a free doorway slot. The final tool's boundary arrival alone is not completion.
+
+For each retained tool, name its later action and preserve the ordinary route to its input side. For each release, replay the remaining plan with that tool staying parked. Clear ground must connect specific stances or the exit. It is not automatically a recovery path merely because it is empty. Extra tools, repeated straight pushes and returns that change no useful access do not create additional causal stages.
 
 ## Source-backed motion
 
@@ -30,4 +56,4 @@ All cited functions belong to public/maze-engine.js at the recorded commit. Toke
 
 ## Scope
 
-BxB and BxC provide distinct complete official realizations of the same three relations. Case-specific necessity does not transfer between them. BxB never moves two groups together; BxC witnesses common transport followed by separate roles, with global exclusion results unknown. Read each complete case for coordinates and current evidence. No new authored realization was created or transfer-tested.
+BxB and BxC provide distinct complete official realizations of the same three relations. All blue groups in both rooms have one member and remain at the same elevation along the witnesses. Larger rigid shapes require fresh footprint checks; ice, slopes and other unobserved combinations need compatible observers. No all-tools-use rule, fixed stage count, mandatory retreat or exact direction order is inferred. BxB's exhausted group restrictions remain case-specific; BxC's full-goal exclusions remain unknown. Read each complete case for coordinates and evidence. No new authored realization was created or transfer-tested.
