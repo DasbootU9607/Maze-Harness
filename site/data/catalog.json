@@ -31,7 +31,8 @@
       "name": "Hook Transfer",
       "rooms": [
         "GxE",
-        "FxE"
+        "FxE",
+        "FxG"
       ],
       "verb": "Reach beyond the pushing face.",
       "description": "Transport and dock a shaped tool so one member receives a push while another moves an otherwise restricted object.",
@@ -43,7 +44,8 @@
       "exampleDescription": "Line up the offset tool, transfer a push to the restricted target, and keep working to reach the gem.",
       "officialCases": [
         "official-gxe",
-        "official-fxe"
+        "official-fxe",
+        "official-fxg"
       ],
       "authoredCases": [
         "authored-hook-transfer"
@@ -54,7 +56,9 @@
       "id": "constrained-transport",
       "name": "Constrained Transport",
       "rooms": [
-        "GxF"
+        "GxF",
+        "GxG",
+        "GxH"
       ],
       "verb": "Deliver the tool. Keep a way back.",
       "description": "Rearrange helpers and recover temporary parking space to deliver a tool with a reachable, usable pushing position.",
@@ -65,7 +69,9 @@
       ],
       "exampleDescription": "Borrow a crowded aisle, move the tool through it, and recover the space needed for its final use.",
       "officialCases": [
-        "official-gxf"
+        "official-gxf",
+        "official-gxg",
+        "official-gxh"
       ],
       "authoredCases": [
         "authored-constrained-transport"
@@ -93,6 +99,72 @@
         "authored-skating-cross"
       ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-skating-cross"
+    },
+    {
+      "id": "block-coordination",
+      "name": "Block Coordination",
+      "verb": "Block Coordination",
+      "description": "Design MazeBench passages with several movable blocks whose shielding roles are prepared, handed off, retained or released to reach an exit. Based on BxB; for map authoring.",
+      "steps": [],
+      "exampleDescription": "An agent-authored realization built with this skill.",
+      "rooms": [
+        "BxB"
+      ],
+      "officialCases": [
+        "official-bxb"
+      ],
+      "authoredCases": [],
+      "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-block-coordination"
+    },
+    {
+      "id": "bridge-convoy",
+      "name": "Bridge Convoy",
+      "verb": "Bridge Convoy",
+      "description": "Design and analyze MazeBench puzzles that reserve consumable bridge floors, stage a reusable gate-opening block, and re-form a two-module push convoy after a turn. Based on verified official BxE evidence; for map authoring, not model evaluation.",
+      "steps": [],
+      "exampleDescription": "An agent-authored realization built with this skill.",
+      "rooms": [
+        "BxE"
+      ],
+      "officialCases": [
+        "official-bxe"
+      ],
+      "authoredCases": [],
+      "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-bridge-convoy"
+    },
+    {
+      "id": "clear-ground-turning",
+      "name": "Clear Ground Turning",
+      "verb": "Clear Ground Turning",
+      "description": "Design MazeBench passages where a single movable block shields reactive gates and nearby clear ground enables repeated changes of pushing side. Based on ExB; for map authoring.",
+      "steps": [],
+      "exampleDescription": "An agent-authored realization built with this skill.",
+      "rooms": [
+        "ExB"
+      ],
+      "officialCases": [
+        "official-exb"
+      ],
+      "authoredCases": [],
+      "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-clear-ground-turning"
+    },
+    {
+      "id": "enclosure-navigation",
+      "name": "Enclosure Navigation",
+      "verb": "Enclosure Navigation",
+      "description": "Design MazeBench reactive-gate passages using a rigid enclosure, protected pushing directions, and safe release. Extracts CxB and DxB mechanisms for map authoring.",
+      "steps": [],
+      "exampleDescription": "An agent-authored realization built with this skill.",
+      "rooms": [
+        "CxB",
+        "DxB"
+      ],
+      "officialCases": [
+        "official-cxb",
+        "official-dxb"
+      ],
+      "authoredCases": [],
+      "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-enclosure-navigation"
     }
   ],
   "cases": [
@@ -186,9 +258,14 @@
       "description": "The complete upstream room used by this skill.",
       "thumbnail": "assets/thumbnails/official-gxf.png",
       "map": "data/maps/official-gxf-world-map.txt",
-      "witness": "DLLLDDRRRRDULLLDLDDDDDDRRRRUURUURURULLLRRDDLUDDDDDLLLULLUUUUUURRRDRDDRRRULRUULDDRDDLDDDLLLLULLUUUUURRRURDDULLLLDDDDDDRRRRUURUURURULLRDDLDDDRUUUURULLLRRDDLUDDDDDLLLULLUUUUURLDDDDDDRRRRUURUUURRUULDDDDDDRDLLLLLLULDDLLLUUUR",
+      "witness": "DLLLDDRRRRDULLLDLDDDDDDRRRRUURUURURULLLRRDDLUDDDDDLLLULLUUUUUURRRDRDDRRRULRUULDDRDDLDDDLLLLULLUUUUURRRURDDULLLLDDDDDDRRRRUURUURURULLRDDLDDDRUUUURULLLRRDDLUDDDDDLLLULLUUUUURLDDDDDDRRRRUURUUURRUULDDDDDDRDLLLLLLULDDLLLUUURDLDDRRRUUUUUUUUUUURRRRRRRRRRR",
       "goal": {
-        "kind": "gem"
+        "kind": "gem-and-return",
+        "cell": [
+          15,
+          1,
+          0
+        ]
       }
     },
     {
@@ -244,6 +321,181 @@
           7,
           0
         ]
+      }
+    },
+    {
+      "id": "official-bxb",
+      "kind": "official",
+      "title": "Room BxB",
+      "skill": "block-coordination",
+      "world": "maze",
+      "room": "BxB",
+      "description": "The complete upstream room used by this skill.",
+      "thumbnail": "assets/thumbnails/official-bxb.png",
+      "map": "data/maps/official-bxb-world-map.txt",
+      "witness": "UULLLLLLLLLLDDDDDDDRRRRRRRRURDRDLLLLLDLL",
+      "goal": {
+        "kind": "reach",
+        "cell": [
+          7,
+          15,
+          0
+        ]
+      }
+    },
+    {
+      "id": "official-bxe",
+      "kind": "official",
+      "title": "Room BxE",
+      "skill": "bridge-convoy",
+      "world": "maze",
+      "room": "BxE",
+      "description": "The complete upstream room used by this skill.",
+      "thumbnail": "assets/thumbnails/official-bxe.png",
+      "map": "data/maps/official-bxe-world-map.txt",
+      "witness": "DDDDRDLLLLDLUUUULUURDDDDLDRRRRURDDDDRDLLLLULLLDDRULURRRLLDRRURRDRLLLLDLLLURRRRRDRUUUUUUUULUURURDLLDRRRRRDRURRURDDUUDLLLLLUURRDLDRRRURDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDRRRRRR",
+      "goal": {
+        "kind": "reach",
+        "cell": [
+          15,
+          10,
+          0
+        ]
+      }
+    },
+    {
+      "id": "official-exb",
+      "kind": "official",
+      "title": "Room ExB",
+      "skill": "clear-ground-turning",
+      "world": "maze",
+      "room": "ExB",
+      "description": "The complete upstream room used by this skill.",
+      "thumbnail": "assets/thumbnails/official-exb.png",
+      "map": "data/maps/official-exb-world-map.txt",
+      "witness": "LLLLULURRRRRDRUUUUUULURRRRRURDDDDRDLLLLLLLLLLUUULLLL",
+      "goal": {
+        "kind": "reach",
+        "cell": [
+          0,
+          7,
+          0
+        ]
+      }
+    },
+    {
+      "id": "official-gxg",
+      "kind": "official",
+      "title": "Room GxG",
+      "skill": "constrained-transport",
+      "world": "maze",
+      "room": "GxG",
+      "description": "The complete upstream room used by this skill.",
+      "thumbnail": "assets/thumbnails/official-gxg.png",
+      "map": "data/maps/official-gxg-world-map.txt",
+      "witness": "RRRRRRRRRDDDLDDRDLULLLLDDRDDRDRUUDLLUULUURURRRDLDDULURRRDLULLLLDDRDDRDRURRUULURULLDLULLLLUURDLDRRDDRDDRRUURRUULULLLULDDDUURRRRDLRDDLURULDLURDDDDDLLLLUULURUULUURDLDRRRLLDDDDDRRRRRUUUUUULLRRDDDDDDLLLLLUUUUURRRURDDDDRRDLULDRDLLLLLLRRRRRRUUUUUUURUULLLLLLLLLDDDDDDDLDDRDRDRLULUUUUUUUUUUULL",
+      "goal": {
+        "kind": "gem-and-return",
+        "cell": [
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "id": "official-gxh",
+      "kind": "official",
+      "title": "Room GxH",
+      "skill": "constrained-transport",
+      "world": "maze",
+      "room": "GxH",
+      "description": "The complete upstream room used by this skill.",
+      "thumbnail": "assets/thumbnails/official-gxh.png",
+      "map": "data/maps/official-gxh-world-map.txt",
+      "witness": "DDDDDDDDDDLLLLLLUULLULURDDRRRRURUUUDDDDLLLLLUURLDDRRRRUULLLLUUUURRRDRDRDLLRUULUURDDDDDUUUULLLDDLDDRRRLLLDDRRRRUUUDLLLLUUUUURRRRRDLRDDLURULLLLDLLLURDRURRULLLUUURRRRRDLLLLLDDDDDRDDDDRDDRRRRRRUUUUUUUUUUUURR",
+      "goal": {
+        "kind": "gem-and-return",
+        "cell": [
+          15,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "id": "official-cxb",
+      "kind": "official",
+      "title": "Room CxB",
+      "skill": "enclosure-navigation",
+      "world": "maze",
+      "room": "CxB",
+      "description": "The complete upstream room used by this skill.",
+      "thumbnail": "assets/thumbnails/official-cxb.png",
+      "map": "data/maps/official-cxb-world-map.txt",
+      "witness": "UUUULDLLLLLLDDLDLDDDDDDLLLUUUUULRUULL",
+      "goal": {
+        "kind": "reach",
+        "cell": [
+          0,
+          6,
+          0
+        ]
+      }
+    },
+    {
+      "id": "official-dxb",
+      "kind": "official",
+      "title": "Room DxB",
+      "skill": "enclosure-navigation",
+      "world": "maze",
+      "room": "DxB",
+      "description": "The complete upstream room used by this skill.",
+      "thumbnail": "assets/thumbnails/official-dxb.png",
+      "map": "data/maps/official-dxb-world-map.txt",
+      "witness": "UUULRUULDDDDRDDLLLLUULLLLUULLLDDDLL",
+      "goal": {
+        "kind": "reach",
+        "cell": [
+          0,
+          7,
+          0
+        ]
+      }
+    },
+    {
+      "id": "official-fxg",
+      "kind": "official",
+      "title": "Room FxG",
+      "skill": "hook-transfer",
+      "world": "maze",
+      "room": "FxG",
+      "description": "The complete upstream room used by this skill.",
+      "thumbnail": "assets/thumbnails/official-fxg.png",
+      "map": "data/maps/official-fxg-world-map.txt",
+      "witness": "DLLULDDDLLDDRRRLLLLRRRRRLLLLLUUUUDRUURRRRRRRDDDDDDRRRRUULLLLLLUUUULLDDDDDRRDDLLUULLDDUUURRUUUULLLDDRRLLLRUURRRDDDDLLDDDDDRUUUULDDDDRRRDDDDDUUUUURUUUUDDDDLLLLLURUUUUURRURRRRRRDLRRRDDLLLLLLUUURDDDDDDDLLLLLULLURDDRRRRRUUUUUUULLUURDDURRRRRDRRUUR",
+      "goal": {
+        "kind": "reach",
+        "cell": [
+          15,
+          1,
+          0
+        ]
+      },
+      "completeObjective": {
+        "kind": "ordered-room-local-passages",
+        "first": [
+          7,
+          15,
+          0
+        ],
+        "then": [
+          15,
+          1,
+          0
+        ],
+        "preserveFirstByFrozenWalking": true,
+        "verification": "scripts/verify-official-fxg.cjs"
       }
     }
   ],
@@ -834,7 +1086,7 @@
       "id": "BxB",
       "column": 1,
       "row": 1,
-      "skill": null,
+      "skill": "block-coordination",
       "cells": [
         "################",
         "#..............#",
@@ -860,7 +1112,7 @@
       "id": "CxB",
       "column": 2,
       "row": 1,
-      "skill": null,
+      "skill": "enclosure-navigation",
       "cells": [
         "################",
         "#..............#",
@@ -886,7 +1138,7 @@
       "id": "DxB",
       "column": 3,
       "row": 1,
-      "skill": null,
+      "skill": "enclosure-navigation",
       "cells": [
         "################",
         "#..#...........#",
@@ -912,7 +1164,7 @@
       "id": "ExB",
       "column": 4,
       "row": 1,
-      "skill": null,
+      "skill": "clear-ground-turning",
       "cells": [
         "################",
         "#..............#",
@@ -2092,7 +2344,7 @@
       "id": "BxE",
       "column": 1,
       "row": 4,
-      "skill": null,
+      "skill": "bridge-convoy",
       "cells": [
         "#####..........#",
         "#.......#......#",
@@ -3028,7 +3280,7 @@
       "id": "FxG",
       "column": 5,
       "row": 6,
-      "skill": null,
+      "skill": "hook-transfer",
       "cells": [
         "######....######",
         "#...............",
@@ -3054,7 +3306,7 @@
       "id": "GxG",
       "column": 6,
       "row": 6,
-      "skill": null,
+      "skill": "constrained-transport",
       "cells": [
         "################",
         "...............#",
@@ -3470,7 +3722,7 @@
       "id": "GxH",
       "column": 6,
       "row": 7,
-      "skill": null,
+      "skill": "constrained-transport",
       "cells": [
         "################",
         "#....bb.........",

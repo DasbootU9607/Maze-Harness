@@ -117,7 +117,7 @@ function validate(spec,root){
  assert(Array.isArray(c.spatial.blocked)&&c.spatial.blocked.length&&c.spatial.blocked.every(b=>b.reason&&b.stance?.length===3&&D[b.direction]),'Declare concrete blocked stance/destination relationships');
  assert(Array.isArray(c.spatial.reserved)&&c.spatial.reserved.length&&c.spatial.reserved.every(r=>r.cell?.length===3&&r.function),'Declare concrete next/recovery stances');
  assert(c.inherited?.length>=3&&c.changes?.length);
- const record=checkReadRecord(spec,root,['references/official-case.md','references/official-fxe-case.md']);
+ const record=checkReadRecord(spec,root,['references/official-case.md','references/official-fxe-case.md','references/official-fxg-case.md']);
  if(record.kind==='mechanism'){
   const coordinate=p=>p?.length===3&&p.every(Number.isInteger)&&p[0]>=0&&p[0]<16&&p[1]>=0&&p[1]<16&&p[2]===0;
   assert(new Set(c.stages.map(s=>s.event)).size===c.stages.length,'New stages need distinct functional events');

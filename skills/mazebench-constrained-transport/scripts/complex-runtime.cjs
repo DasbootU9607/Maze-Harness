@@ -22,7 +22,7 @@ const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b),point=a=>[a.x,a.y,a.z];
 function observe(e,c){
  const snap=s=>e.actorTypes.map((type,i)=>({i,type,group:e.actorGroupIds[i]||null,x:s.actorX[i],y:s.actorY[i],z:s.actorElevation[i],removed:!!s.actorRemoved[i]}));
  const group=(a,g)=>a.filter(p=>p.group===g&&!p.removed),pose=(a,g)=>group(a,g).map(point).sort((a,b)=>a.join(',').localeCompare(b.join(',')));
- const goal=s=>{if(c.goal.kind==='gem')return e.isSolved(s);return snap(s).some(p=>p.type==='player'&&!p.removed&&same(point(p),c.goal.cell));};
+ const goal=s=>{if(c.goal.kind==='gem')return e.isSolved(s);return (c.goal.kind!=='gem-and-return'||e.isSolved(s))&&snap(s).some(p=>p.type==='player'&&!p.removed&&same(point(p),c.goal.cell));};
  function event(a,b,d){
   const [dx,dy]=D[d],p=a.find(p=>p.type==='player'&&!p.removed);
   const primary=a.find(q=>q.group&&!q.removed&&q.x===p.x+dx&&q.y===p.y+dy&&q.z===p.z)?.group||null;
@@ -33,7 +33,7 @@ function observe(e,c){
    if(q.x+dx===t.x&&q.y+dy===t.y&&q.z===t.z)contacts.push({from:q.group,to:t.group,C:point(q),T:point(t),along:(t.x-p.x)*dx+(t.y-p.y)*dy,lateral:(t.x-p.x)*dy-(t.y-p.y)*dx});
   const translates=g=>group(a,g).length>0&&group(a,g).every(q=>!b[q.i].removed&&same(point(b[q.i]),[q.x+dx,q.y+dy,q.z]));
   const m=c.mechanism,tool=m.tool,target=m.target;
-  const contact=tool?contacts.filter(t=>t.from===tool&&t.to===target&&(m.kind==='rear'?t.along<0:t.lateral!==0)):[];
+  const contact=tool?contacts.filter(t=>t.from===tool&&t.to===target&&(m.kind==='rear'?t.along<0:m.kind==='axial'?t.lateral===0&&t.along>1:t.lateral!==0)):[];
   const transfer=!!tool&&primary===tool&&translates(tool)&&translates(target)&&contact.length>0;
   const pair=m.pair,relative=a=>{const x=pair&&group(a,pair[0])[0],y=pair&&group(a,pair[1])[0];return x&&y?[y.x-x.x,y.y-x.y,y.z-x.z]:null;};
   const offset=!!pair&&!same(relative(a),relative(b));
@@ -67,13 +67,13 @@ function validate(spec,root){
  assert(['planar-boundary-preparation-v2','planar-transport-depth-v2','planar-hook-depth-v2'].includes(c?.profile),'Unsupported complex profile');
  assert(c.mode==='complex');assert(cells?.length===16&&cells.every(r=>r.length===16));
  assert(cells.flat().every(t=>/^(?:\+|\.|#|p|G|M[0-4]|(?:\.\+|\+)(?:#|p|G|M[0-4]))$/.test(t)),'Unsupported terrain/token');
- assert(['gem','reach'].includes(c.goal?.kind));
- if(c.goal.kind==='reach')assert(c.goal.cell?.length===3&&c.goal.cell.every(Number.isInteger)&&c.goal.cell[2]===0);
+ assert(['gem','reach','gem-and-return'].includes(c.goal?.kind));
+ if(c.goal.kind!=='gem')assert(c.goal.cell?.length===3&&c.goal.cell.every(Number.isInteger)&&c.goal.cell[2]===0);
  assert(Array.isArray(c.allowRemoval));
  assert(c.members&&Object.keys(c.members).length>=2&&Object.keys(c.members).every(g=>/^M[0-4]$/.test(g)));
  const points={};let player=0,gems=0;
  cells.forEach((r,y)=>r.forEach((t,x)=>{const top=t.split('+').at(-1);if(/^M[0-4]$/.test(top))(points[top]??=[]).push([x,y,0]);if(top==='p')player++;if(top==='G')gems++;}));
- assert.equal(player,1);assert.equal(gems,c.goal.kind==='gem'?1:0,'Explicit passage goal requires no accidental gem objective');
+ assert.equal(player,1);assert.equal(gems,c.goal.kind==='reach'?0:1,'Declare the complete gem or passage objective');
  assert.deepEqual(Object.keys(points).sort(),Object.keys(c.members).sort());
  for(const g of Object.keys(points))assert(same(points[g],c.members[g]),'Declare ALL initial members, row order, z=0: '+g);
  assert(c.allowRemoval.every(g=>points[g]));assert(c.necessaryRoles?.length>=2&&c.necessaryRoles.every(g=>points[g]));
@@ -84,7 +84,8 @@ function validate(spec,root){
   assert(['move','remove','independent-tool','contact','offset','all-motion'].includes(q.kind));
   if(q.group)assert(points[q.group]);if(q.direction)assert(D[q.direction]);
  }
- assert(c.mechanism&&['boundary','side','rear'].includes(c.mechanism.kind));
+ assert(c.mechanism&&['boundary','side','rear','axial'].includes(c.mechanism.kind));
+ if(c.mechanism.kind==='axial')assert(c.profile==='planar-transport-depth-v2','Axial reach is a transport profile');
  assert((c.profile==='planar-boundary-preparation-v2')===(c.mechanism.kind==='boundary'),'Mechanism/profile routing mismatch');
  if(c.mechanism.kind==='boundary')assert(c.mechanism.pair?.length===2&&c.mechanism.pair.every(g=>points[g])&&c.boundaryControls?.length);
  else assert(points[c.mechanism.tool]&&points[c.mechanism.target]&&c.mechanism.tool!==c.mechanism.target);

@@ -1,0 +1,4 @@
+interface:
+  display_name: "MazeBench Clear Ground Turning"
+  short_description: "Use safe ground to redirect one gate shield"
+  default_prompt: "Use $mazebench-clear-ground-turning to derive and verify a passage from its functional relations; read the mechanism logic before choosing geometry."

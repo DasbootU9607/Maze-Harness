@@ -4,7 +4,7 @@ Agent skills for designing, building, and verifying MazeBench puzzles.
 
 [Explore the website](https://dasbootu9607.github.io/Maze-Harness/) · [256-room world map](https://dasbootu9607.github.io/Maze-Harness/world.html) · [Play the full maze](https://dasbootu9607.github.io/Maze-Harness/player.html)
 
-The website pairs all four mechanism skills with five complete official references and four existing agent-authored trials. Every room thumbnail opens the 3D player; highlighted tiles on the 16 × 16 world map link to the associated skill. The playground includes room search, an unrestricted room picker, keyboard and touch controls, undo/reset, and saved solution playback. See [website maintenance](docs/website.md) for local preview, data provenance, and GitHub Pages publishing.
+The website pairs mechanism skills with complete official references and existing agent-authored trials. Every room thumbnail opens the 3D player; highlighted tiles on the 16 × 16 world map link to the associated skill. The playground includes room search, an unrestricted room picker, keyboard and touch controls, undo/reset, and saved solution playback. See [website maintenance](docs/website.md) for local preview, data provenance, and GitHub Pages publishing.
 
 ## Skills
 
@@ -12,11 +12,15 @@ The website pairs all four mechanism skills with five complete official referenc
 | --- | --- | --- |
 | [MazeBench Case Workflow](skills/mazebench-case-workflow/SKILL.md) | Official cases and supplied variants | Collect core logic, analyze evidence, maintain related references and difficulty tiers, and create or extend a standardized skill |
 | [MazeBench Boundary Stagger](skills/mazebench-boundary-stagger/SKILL.md) | HxH | Fixed boundaries and relative offsets that release a route or pushing position |
-| [MazeBench Hook Transfer](skills/mazebench-hook-transfer/SKILL.md) | GxE; FxE | Shape-dependent contact, usable docking, and movement transferred between objects |
-| [MazeBench Constrained Transport](skills/mazebench-constrained-transport/SKILL.md) | GxF | Tool delivery through shared space, helper rearrangement, and changing pushing positions |
+| [MazeBench Hook Transfer](skills/mazebench-hook-transfer/SKILL.md) | GxE; FxE; FxG | Shape-dependent contact, shared clearance, tool-role changes, and connected passage opening |
+| [MazeBench Constrained Transport](skills/mazebench-constrained-transport/SKILL.md) | GxF; GxG; GxH | Goal-dependent tool selection, shared workspace, reserved circulation, and usable delivery with return |
 | [MazeBench Skating Cross](skills/mazebench-skating-cross/SKILL.md) | JxG | Directed ice stopping, reusable cross poses, changing pushing sides, and collecting a gem before returning to the doorway |
+| [MazeBench Bridge Convoy](skills/mazebench-bridge-convoy/SKILL.md) | BxE | Limited bridges, gate occupancy, independent staging, and turning a floor-first convoy |
+| [MazeBench Block Coordination](skills/mazebench-block-coordination/SKILL.md) | BxB | Sequential shield handoffs, changing active blocks, and retaining a tool for continued work |
+| [MazeBench Enclosure Navigation](skills/mazebench-enclosure-navigation/SKILL.md) | CxB; DxB | Reachable cavity entry, shape-dependent protected directions, and safe release at the exit |
+| [MazeBench Clear Ground Turning](skills/mazebench-clear-ground-turning/SKILL.md) | ExB | Reusing one gate-shielding block through safe-ground changes of pushing side |
 
-New authoring defaults to connected, multi-stage rooms. Before choosing shapes or coordinates, new authoring reads the skill's extracted mechanism logic and derives roles, player stances/contact, rigid shape/support/clearance, and then layout. It maps each inherited relationship to concrete authored geometry and builds an executable contract. Full cases remain available for evidence questions, maintenance, reproduction, and regression; they are not new-map templates. All four skills use complete upstream official rooms, with each original room identified in its case. Compact mechanism demonstrations remain available when explicitly requested.
+New authoring reads the skill's extracted mechanism logic before choosing shapes or coordinates, then derives roles, player stances/contact, rigid shape/support/clearance, and layout. It maps each inherited relationship to concrete authored geometry and an executable verification plan. Stage count follows the selected mechanism and requested scope. Full cases remain available for evidence questions, maintenance, reproduction, and regression; they are not new-map templates. Each case identifies its complete upstream official room. Compact mechanism demonstrations remain available when explicitly requested.
 
 ## Install
 
@@ -34,9 +38,9 @@ Use $mazebench-case-workflow to build a skill from official room HxH.
 
 For each introduced case, the agent first asks for the human's core operating logic, unless that input is already available. A short natural-language explanation is sufficient. It then pins the original map, analyzes initial states and motion rules, replays the full objective, extracts and integrates causal relations, writes the package, and checks the implemented scope. Additional cases get separate human-input records. The helper detects missing input and stale analysis/synthesis versions; it does not certify human authorship or gameplay truth. Source capture may continue while input is pending. Working records remain private and outside distributed skills.
 
-The Case Workflow supplies templates and a resumable `workflow.cjs` helper. Its scaffold is explicitly unfinished; the agent must supply actual evidence and compatible helpers before installation. Run `node scripts/test-case-workflow.cjs` for its source-capture, input-gate, stale-record and scaffold regressions. The four mechanism skills below retain their existing gameplay profiles.
+The Case Workflow supplies templates and a resumable `workflow.cjs` helper. Its scaffold is explicitly unfinished; the agent must supply actual evidence and compatible helpers before installation. Run `node scripts/test-case-workflow.cjs` for its source-capture, input-gate, stale-record and scaffold regressions. Existing gameplay profiles retain their original scope; newer reference verifiers do not automatically certify new maps.
 
-Later additions can be similar official cases or user-supplied variants. The workflow preserves their provenance, parent/change records, shared mechanism relations and stable case families in `reference-catalog.json`. A difficulty guide compares skill-relative levels using explicit human assignments, provisional structural estimates or actual playtest evidence; ties and unranked cases are allowed. Baseline catalog imports support incremental merges without replacing the original cases. New variants require their own replay and mechanism checks; neither the parent's proofs nor its difficulty automatically transfer. The existing four skills have not been retroactively assigned ratings by this workflow update.
+Later additions can be similar official cases or user-supplied variants. The workflow preserves their provenance, parent/change records, shared mechanism relations and stable case families in `reference-catalog.json`. A difficulty guide compares skill-relative levels using explicit human assignments, provisional structural estimates or actual playtest evidence; ties and unranked cases are allowed. Baseline catalog imports support incremental merges without replacing original cases. New variants require their own replay and mechanism checks; neither the parent's proofs nor its difficulty automatically transfer. Each current catalog states its actual grading basis.
 
 Give the authoring request to the coding agent:
 
@@ -47,19 +51,21 @@ delivery. Choose the geometry. Build a new draft, replay a complete solution,
 test the dependencies you claim, and provide Play/Edit links and the map.
 ```
 
-For a combined room, name the skills whose mechanisms you need. The agent constructs an authored specification and uses the supplied helpers; the browser is for editing and playing the result. Each `SKILL.md` routes first to mechanism logic, then planning guidance, an empty design scaffold, and the complex validation interface. New receipts fingerprint mechanism logic; legacy case receipts remain supported. Reading records establish document version consistency, not understanding or necessity. At least three dependent functional stages are required; walking, repeated pushes in one direction, and unrelated blockers do not count. The checks reject missing evidence and report capped or unsupported searches as unknown. Ice needs the Skating Cross observer; the other skills' unit-translation profiles do not certify sliding.
+For a combined room, name the skills whose mechanisms you need. Each `SKILL.md` routes first to mechanism logic, then planning guidance, an empty design scaffold, and its documented verification interface. Reading records establish document version consistency, not understanding or necessity. The established complex authoring profiles require at least three dependent functional stages; walking and repeated pushes alone do not count. Official reference profiles instead check their actual source, complete route and declared local or restricted controls. They cannot certify a newly authored room without a compatible observer and fresh evidence. Capped or unsupported searches remain unknown. Ice needs the Skating Cross observer; unit-translation profiles do not certify sliding.
 
 Builders create fresh local drafts. Verification checks supported mechanics and declared restrictions; it does not measure human difficulty. These skills are for map authoring, not benchmark model evaluation.
 
 ## Package structure
 
-Each skill contains `SKILL.md`, agent metadata in `agents/`, focused guidance in `references/`, and reusable helpers in `scripts/`. The references include five unmodified official room maps (HxH, GxE, FxE, GxF, JxG), selected key states, scoped restriction results, and runnable design contracts. Development drafts, screenshots, complete extraction traces, and test-run archives stay outside the distribution.
+Each skill contains `SKILL.md`, agent metadata in `agents/`, focused guidance in `references/`, and reusable helpers in `scripts/`. References contain unmodified official room maps, selected key states, scoped restriction results, and runnable design contracts. Development drafts, screenshots, raw human demonstrations, complete extraction traces, and test-run archives stay outside the distribution. Original Git LF and checkout CRLF maps retain their own hashes; publication accepts only exact bytes or CRLF-to-LF equivalence.
 
 The legacy helpers retain their existing profiles. The complex entrypoints and official case evidence were validated against engine commit `0ac96b8a2648db09f375989cd7bc33699222c1e6`; earlier basic helpers used baseline `07aa03a5c0ee8b4e0b025a52793055e89cb68bfe` with Node 24.13.0. Review engine interfaces and revalidate generated maps when changing that dependency. Each checker documents its supported profile and reports capped searches as unknown.
 
 Author self-tests accepted three full official cases and six constrained or local shape variants, and rejected four solvable controls that bypassed the required planning. These results do not establish human difficulty or improved independent-author performance. The reusable official regression evidence is included in each skill's `official-checks.json`; the full development archive remains local.
 
 The additional [FxE case](skills/mazebench-hook-transfer/references/official-fxe-case.md) has a complete 149-input ordinary replay and separate scoped checks. It adds tool-role changes and repeated contact pairs. Some global exclusions are capped, so it is not included in the earlier three-case complex-pass claim. Its `official-fxe-checks.json` preserves those limits, and `verify-official-fxe.cjs` reruns the scoped regression.
+
+The newer references extend the rule library without adding authored mazes. In particular, GxG witnesses short-bar delivery but its target-freeze and transfer-exclusion searches are capped; they do not prove a unique final tool or mandatory contact. GxH witnesses an L-shaped final tool with exhaustive scoped controls. The updated GxF solution includes the post-gem doorway return while preserving its historical gem-route contract. Difficulty tiers are structural estimates unless a catalog explicitly states another basis. Transfer to new geometry remains to be tested.
 
 [MIT License](LICENSE) · [Third-party notices](THIRD_PARTY_NOTICES.md)
 

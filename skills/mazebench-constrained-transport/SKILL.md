@@ -1,13 +1,15 @@
 ---
 name: mazebench-constrained-transport
-description: Design, build, and structurally verify MazeBench tool transport puzzles. Default to shared workspace changes, purposeful recovery, repeated helper roles, and usable delivery, with transferable GxF mechanism logic. For authoring, not model evaluation.
+description: Design and verify MazeBench tool transport puzzles through shared-space exchanges, recoverable parking and usable delivery. Choose axial or offset tools from the final task, using GxF, GxG and GxH evidence. For authoring, not model evaluation.
 ---
 
 # MazeBench Constrained Transport
 
 Build puzzles where a tool has a concrete purpose and reaching an operable working position is itself a puzzle. Plan the complete rigid footprint, helper configurations, and reachable pushing faces. A path for the tool's center or several objects moving together is insufficient.
 
-Official source room: **GxF**; see [the source and evidence](references/official-case.md).
+Official references: [GxF](references/official-case.md), [GxG](references/official-gxg-case.md), and [GxH](references/official-gxh-case.md). Each revised analysis includes gem collection and return to the room doorway. GxF/GxG use the short bar as the final tool; GxH uses an L and parks the short bar. Select roles from the final contact, complete footprint and player access, rather than assigning the same role to a silhouette in every room.
+
+Use [the reference catalog](references/reference-catalog.json) and [difficulty guide](references/difficulty.md) to select a compatible branch. Their l3 placements are provisional structural estimates, not an official ranking or playtest scores. GxG's target-freeze and transfer-exclusion searches are capped; its complete solution is verified, but those necessity claims remain unknown.
 
 ## Required reading and default complex mode
 
@@ -25,10 +27,10 @@ Derive the map in this order: user goal -> functional roles and relationships ->
 
 The user supplies a goal and necessary constraints. Choose the tool, helpers, route, parking areas, player start, and gem position. Unspecified shapes and coordinates are design variables.
 
-1. Define the useful target change and how it enables the objective. Check the tool-use relationship before adding transport restrictions.
+1. Define the useful target change and how it enables the complete objective, including any return. Compare candidate tools at the terminal contact before adding transport restrictions. Axial reach and offset contact are distinct realizations; an L is not universally too large and a bar is not universally the tool.
 2. Define operable delivery: the full tool footprint and elevation, the player's reachable pushing cell, and a legal input direction.
 3. Derive transport stages from every member's destination, support, propagated contacts, and access to the next pushing face. Preserve circulation between stages.
-4. Give each helper a causal role. Identify the blocked tool move, parking area, or stance that the helper releases. Independent repositioning must do useful work.
+4. Give each helper a causal role. Identify the blocked tool move, parking area, or stance that the helper releases. Before exchanging relative positions, reserve the player's next pushing side and future exit route. A parked group may later become an active helper again.
 5. Construct an unprepared but solvable start. Include retreat, temporary parking, or helper reuse when it follows from the shared-space constraints.
 6. Solve and replay the full task, record delivery and actual contact, and test claimed helper, tool-use, and preparation dependencies. Revise geometry from counterexamples.
 
@@ -63,6 +65,8 @@ node scripts/verify.cjs --repo ENGINE --out NEW_OUTPUT --cap 1000000
 Deliver Play/Edit links, Build JSON, a concise mechanism explanation, a verified route, role assignments, the usable delivery state, and scoped restriction evidence. Report which passages and pushing faces survive each stage.
 
 Preserve existing maps, artifacts, and engine code. Do not launch benchmark models, paid evaluations, or unauthorized remote publication as part of this skill. Input count is not a human-difficulty score.
+
+For official GxG/GxH reference maintenance, use `scripts/official-runtime.cjs` with the matching `official-gxg-design.json` or `official-gxh-design.json`, as described in [verification](references/verification.md). Those reference contracts certify ordinary replay and scoped checks, not default complex authoring. The original GxF design and historical gem-only checks remain preserved; [its additional solution](references/official-solution.json) verifies the stronger return goal. No new maze was generated while extracting these references, so new-map transfer remains a separate authoring validation obligation.
 
 ## Website completion in Maze Harness
 

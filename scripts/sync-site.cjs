@@ -23,7 +23,8 @@ function synchronize(options = {}, root = defaultRoot) {
     const text = fs.readFileSync(path.join(dir, 'SKILL.md'), 'utf8');
     const name = text.match(/^# MazeBench (.+)$/m)?.[1];
     assert(name && !/\[TODO|\{\{/.test(text), 'Finish the skill before publication: ' + pkg);
-    const description = text.match(/^description: (.+)$/m)?.[1];
+    const rawDescription = text.match(/^description: (.+)$/m)?.[1];
+    const description = rawDescription?.startsWith('"') ? JSON.parse(rawDescription) : rawDescription;
     const previous = catalog.skills.find(s => s.id === id);
     // Optional editorial text; absent metadata never prevents automatic discovery.
     const metadataPath = path.join(dir, 'references/website.json');
@@ -40,18 +41,45 @@ function synchronize(options = {}, root = defaultRoot) {
     for (const file of references) {
       const design = read(path.join(dir, 'references', file));
       const reference = 'skills/' + pkg + '/references/' + file.replace(/-design\.json$/, '-world-map.txt');
-      const sha = hash(fs.readFileSync(path.join(root, reference)));
-      const room = catalog.rooms.find(r => r.sha256 === sha);
+      const referenceBytes = fs.readFileSync(path.join(root, reference));
+      const sha = hash(referenceBytes);
+      const normalize = bytes => bytes.toString('utf8').replace(/\r\n/g, '\n');
+      const room = catalog.rooms.find(r => r.sha256 === sha) || catalog.rooms.find(r =>
+        r.id === design.originRoom?.id &&
+        normalize(fs.readFileSync(path.join(site, 'data/maps/official-' + r.id.toLowerCase() + '-world-map.txt'))) === normalize(referenceBytes));
       assert(room, 'Official reference must match an unchanged room in the published world: ' + reference);
+      // A supplemental complete objective can extend a historical regression route.
+      // Its claim is never trusted without fresh replay against the published room.
+      const solutionFile = file.replace(/-design\.json$/, '-solution.json');
+      const solutionPath = path.join(dir, 'references', solutionFile);
+      const hasSolution = fs.existsSync(solutionPath);
+      const solution = hasSolution ? read(solutionPath) : null;
+      if (hasSolution) {
+        assert(solution && typeof solution.goal === 'object' && solution.goal !== null, 'Supplemental solution requires goal: ' + solutionFile);
+        assert(typeof solution.witness === 'string' && /^[UDLR]+$/.test(solution.witness), 'Supplemental solution requires a complete witness: ' + solutionFile);
+      }
+      const completion = hasSolution ? solution : design;
+      if (completion === solution) assert([solution.packagedMapSha256, solution.sourceMapSha256, solution.mapSha256].includes(sha), 'Supplemental solution map mismatch: ' + solutionFile);
       const existing = catalog.cases.find(c => c.kind === 'official' && c.skill === id && c.room === room.id);
       const baseId = 'official-' + room.id.toLowerCase();
       const caseId = existing?.id || (catalog.cases.some(c => c.id === baseId) ? baseId + '-' + id : baseId);
       const entry = { id: caseId, kind: 'official', title: 'Room ' + room.id, skill: id, world: 'maze', room: room.id,
         description: 'The complete upstream room used by this skill.', thumbnail: 'assets/thumbnails/' + caseId + '.png',
-        map: 'data/maps/' + baseId + '-world-map.txt', witness: design.witness, goal: design.contract?.goal || design.goal || { kind: 'gem' } };
-      replay(read(path.join(site, 'data/levels/maze/level_' + room.id + '.json')), entry);
-      if (existing) Object.assign(existing, entry); else catalog.cases.push(entry);
-      records.set(caseId, { id: caseId, kind: 'official', room: room.id, sourceFile: room.sourceFile, sourceMapSha256: sha, skillReference: reference });
+        map: 'data/maps/' + baseId + '-world-map.txt', witness: completion.witness, goal: hasSolution ? solution.goal : design.contract?.goal || design.goal || { kind: 'gem' } };
+      const completeObjective = completion.completeObjective || design.completeObjective;
+      if (solution?.completeObjective && design.completeObjective) assert.deepEqual(solution.completeObjective, design.completeObjective, 'Supplemental complete objective differs from design: ' + solutionFile);
+      if (completeObjective) entry.completeObjective = completeObjective;
+      const objectiveVerification = replay(read(path.join(site, 'data/levels/maze/level_' + room.id + '.json')), entry);
+      if (existing) {
+        delete existing.completeObjective;
+        Object.assign(existing, entry);
+      } else catalog.cases.push(entry);
+      const record = { id: caseId, kind: 'official', room: room.id, sourceFile: room.sourceFile, sourceMapSha256: room.sha256, skillReference: reference };
+      Object.assign(record, { witnessSha256: hash(entry.witness), goalSha256: hash(entry.goal), objectiveVerification });
+      if (completeObjective) record.completeObjectiveSha256 = hash(completeObjective);
+      if (sha !== room.sha256) Object.assign(record, { skillReferenceSha256: sha, mapEquivalence: 'CRLF-to-LF only; original bytes retained' });
+      if (completion === solution) Object.assign(record, { solutionReference: 'skills/' + pkg + '/references/' + solutionFile, solutionSha256: hash(fs.readFileSync(solutionPath)) });
+      records.set(caseId, record);
       if (!skill.rooms.includes(room.id)) skill.rooms.push(room.id);
       if (!skill.officialCases.includes(caseId)) skill.officialCases.push(caseId);
     }

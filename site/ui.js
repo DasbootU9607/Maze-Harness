@@ -31,6 +31,11 @@ export function playUrl(entry, replay = false) {
   return './player.html?' + new URLSearchParams({ world: entry.world, room: entry.room, case: entry.id, ...(replay ? {replay:'1'} : {}) });
 }
 export function goalText(entry) {
+  if (entry.completeObjective?.kind === 'ordered-room-local-passages') {
+    const label = cell => cell[0] === 0 ? 'west doorway' : cell[0] === 15 ? 'east doorway' : cell[1] === 0 ? 'north doorway' : cell[1] === 15 ? 'south doorway' : 'passage at (' + cell.slice(0, 2).join(', ') + ')';
+    const first = label(entry.completeObjective.first), then = label(entry.completeObjective.then);
+    return 'Reach the ' + first + ', then the ' + then + '.' + (entry.completeObjective.preserveFirstByFrozenWalking ? ' Keep the ' + first + ' accessible on foot without moving the blocks.' : '');
+  }
   if (entry.goal?.kind === 'gem-and-return') return 'Collect the gem, then return to the doorway.';
   if (entry.goal?.kind === 'reach') return 'Open the passage and reach the target doorway.';
   return 'Find a way to collect the gem.';

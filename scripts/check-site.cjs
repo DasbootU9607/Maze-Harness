@@ -13,7 +13,7 @@ const provenance = read('data/provenance.json');
 const context = { window: {}, console, structuredClone };
 vm.runInNewContext(fs.readFileSync(path.join(site, 'runtime/maze-engine.js'), 'utf8'), context);
 const createEngine = context.window.MazeEngine.createEngine;
-const vectors = {U:[0,-1],D:[0,1],L:[-1,0],R:[1,0]};
+const replay = require('./site-content.cjs').createReplay(path.join(site, 'runtime/maze-engine.js'));
 assert(catalog.skills.length > 0);
 assert.equal(new Set(catalog.skills.map(s => s.id)).size, catalog.skills.length);
 assert.equal(new Set(catalog.cases.map(c => c.id)).size, catalog.cases.length);
@@ -58,22 +58,21 @@ for (const entry of catalog.cases) {
   checkAssets(data);
   assert(fs.existsSync(path.join(site, entry.thumbnail)), 'Missing thumbnail: ' + entry.id);
   assert(fs.statSync(path.join(site, entry.thumbnail)).size > 5000, 'Empty thumbnail: ' + entry.id);
-  const engine = createEngine(data);
-  const state = engine.cloneState(engine.initialState);
-  for (const direction of entry.witness) {
-    assert(vectors[direction], 'Invalid saved input');
-    engine.move(state, ...vectors[direction]);
-    inputs++;
-  }
-  const players = data.actors.map((a,i) => ['player','circle_player'].includes(a.type) ? i : -1).filter(i => i >= 0);
-  assert(players.some(i => !state.actorRemoved[i]), 'No surviving player: ' + entry.id);
-  if (entry.goal.kind !== 'reach') assert(engine.isSolved(state), 'Saved route did not collect all gems: ' + entry.id);
-  if (entry.goal.cell) assert(players.some(i => !state.actorRemoved[i] && state.actorX[i] === entry.goal.cell[0] && state.actorY[i] === entry.goal.cell[1] && state.actorElevation[i] === (entry.goal.cell[2] || 0)), 'Saved route did not reach its final doorway: ' + entry.id);
+  const objectiveVerification = replay(data, entry);
+  inputs += entry.witness.length;
   const record = provenance.cases.find(c => c.id === entry.id);
   assert(record);
   if (record.witnessSha256) assert.equal(sha(entry.witness), record.witnessSha256);
+  if (record.goalSha256) assert.equal(sha(JSON.stringify(entry.goal)), record.goalSha256);
+  if (record.completeObjectiveSha256) assert.equal(sha(JSON.stringify(entry.completeObjective)), record.completeObjectiveSha256);
+  if (record.objectiveVerification) assert.deepEqual(objectiveVerification, record.objectiveVerification, 'Complete objective evidence changed');
   assert.equal(sha(fs.readFileSync(path.join(site, entry.map))), record.sourceMapSha256);
-  if (record.skillReference) assert.equal(sha(fs.readFileSync(path.join(root, record.skillReference))), record.sourceMapSha256);
+  if (record.skillReference) {
+    const bytes = fs.readFileSync(path.join(root, record.skillReference));
+    assert.equal(sha(bytes), record.skillReferenceSha256 || record.sourceMapSha256);
+    assert.equal(bytes.toString('utf8').replace(/\r\n/g, '\n'), fs.readFileSync(path.join(site, entry.map), 'utf8').replace(/\r\n/g, '\n'), 'Official reference changed beyond line endings');
+  }
+  if (record.solutionReference) assert.equal(sha(fs.readFileSync(path.join(root, record.solutionReference))), record.solutionSha256);
 }
 for (const runtime of provenance.runtime) assert.equal(sha(fs.readFileSync(path.join(site, 'runtime', runtime.file))), runtime.sha256, 'Runtime changed without refreshing provenance: ' + runtime.file);
 for (const skill of catalog.skills) {

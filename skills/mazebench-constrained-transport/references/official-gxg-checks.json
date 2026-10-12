@@ -1,0 +1,75 @@
+{
+  "profile": "planar-transport-reference-v1",
+  "cap": 6000,
+  "replayPassed": true,
+  "witness": "RRRRRRRRRDDDLDDRDLULLLLDDRDDRDRUUDLLUULUURURRRDLDDULURRRDLULLLLDDRDDRDRURRUULURULLDLULLLLUURDLDRRDDRDDRRUURRUULULLLULDDDUURRRRDLRDDLURULDLURDDDDDLLLLUULURUULUURDLDRRRLLDDDDDRRRRRUUUUUULLRRDDDDDDLLLLLUUUUURRRURDDDDRRDLULDRDLLLLLLRRRRRRUUUUUUURUULLLLLLLLLDDDDDDDLDDRDRDRLULUUUUUUUUUUULL",
+  "fingerprints": {
+    "cells": "34e04c47af0c03321154c1a9593415d9b62e1d31adb11168fee4e935c4ad285c",
+    "contract": "80c248e5aa3234957804528d9352567647d3797122dddd27faec794bf76a926a"
+  },
+  "goal": {
+    "kind": "gem-and-return",
+    "cell": [
+      0,
+      1,
+      0
+    ]
+  },
+  "ordinaryAndSearchStatesMatch": true,
+  "inputs": 284,
+  "contactSteps": [
+    228
+  ],
+  "checks": [
+    {
+      "name": "freeze_M0",
+      "status": "unsolved",
+      "expanded": 1,
+      "walkExpanded": 88,
+      "scope": "Initial-state full gem-and-return goal with exactly this legal-transition exclusion; no unique order or minimal shape claim."
+    },
+    {
+      "name": "freeze_M1",
+      "status": "unsolved",
+      "expanded": 1,
+      "walkExpanded": 88,
+      "scope": "Initial-state full gem-and-return goal with exactly this legal-transition exclusion; no unique order or minimal shape claim."
+    },
+    {
+      "name": "freeze_M2",
+      "status": "unsolved",
+      "expanded": 1,
+      "walkExpanded": 88,
+      "scope": "Initial-state full gem-and-return goal with exactly this legal-transition exclusion; no unique order or minimal shape claim."
+    },
+    {
+      "name": "freeze_M3",
+      "status": "capped",
+      "expanded": 6000,
+      "walkExpanded": 561651,
+      "cap": 6000,
+      "scope": "Initial-state full gem-and-return goal with exactly this legal-transition exclusion; no unique order or minimal shape claim."
+    },
+    {
+      "name": "forbid_declared_transfer",
+      "status": "capped",
+      "expanded": 6000,
+      "walkExpanded": 561651,
+      "cap": 6000,
+      "scope": "Initial-state full gem-and-return goal with exactly this legal-transition exclusion; no unique order or minimal shape claim."
+    }
+  ],
+  "scope": "Verified official reference, with separate scoped restrictions. This is not a new-map transfer test or a complex-authoring certificate.",
+  "source": {
+    "map": "references/official-gxg-world-map.txt",
+    "map_sha256": "d88f529e34a54459508c119552dd0384b84f24d02b28fe046014be1497b5a914",
+    "engineCommit": "0ac96b8a2648db09f375989cd7bc33699222c1e6"
+  },
+  "packagedDesign": {
+    "path": "references/official-gxg-design.json",
+    "cells": "34e04c47af0c03321154c1a9593415d9b62e1d31adb11168fee4e935c4ad285c",
+    "contract": "56bc4063d8fba39d45b810ac772dee5a4dd8f17bd20b510e6584622ac7e53b35",
+    "case": "a80989b4ef11b4e4f1c00c0d3ef4e9c742b084f04ff0e73b57d2331cbd042463"
+  },
+  "evidenceNote": "The executed report fingerprints retain the pre-editorial receipt. packagedDesign identifies the current documentation-only revision; map, witness and mechanical fields did not change."
+}

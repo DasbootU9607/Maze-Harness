@@ -1,0 +1,7 @@
+# Deriving a new design
+
+Choose the complete passage objective and the sides that must remain pushable during its constrained section. Build a cavity and input members for those sides, then fit the whole body through the terrain. Derive staging space that lets the player enter that cavity from the real spawn. Arrange terrain changes that give the different protected directions work to do. Finish with a usable departure area; check that the parked body does not seal the only exit slot. A compact demonstration can isolate one protected move. A composed design should connect entry, direction-dependent traversal and release through their actual preconditions; repeated straight pushes do not add functional stages.
+
+Choose shapes, direction order and coordinates autonomously from these functions. Begin from [design-template.json](design-template.json), whose geometry and witness are empty. Record the current mechanism-logic SHA256 in contract.readReceipt before layout; preserve the honest scope of that declaration. Map each adopted relation to actual members, boundaries, safe stances, support and continuation. A compact demonstration and an original-room reproduction have narrower goals than a composed passage.
+
+The included helper intentionally verifies complete official references only. It does not build new maps or certify new-map transfer. When a new map is requested, implement or use an appropriate official build/observer path and validate the complete authored state without relabeling it official.

@@ -15,6 +15,8 @@ Record the following relationships before assigning cells; a fixed silhouette is
 
 A working position is a joint condition on tool and player. Common failures include a tool passing a narrow opening while leaving the player on the wrong side, and a tool aligned with its target whose other member collides with a wall during the push.
 
+Select the final tool before assigning permanent names to the other groups. GxF/GxG deliver the short bar; GxH first parks that bar and delivers an L. Test axial reach and offset reach against the real terminal clearance, support and stance. A narrow opening by itself does not prove that every L is unusable. See [the reference comparison](difficulty.md).
+
 ## Choose geometry
 
 Derive rigid shapes from functional cells:
@@ -35,6 +37,8 @@ Describe a stage as current configuration, blocked action, preparation, tool mov
 - **Change sides:** A continuous player route connects consecutive pushing faces. Distinguish walking-only access from access that needs additional pushes.
 - **Propagate contact:** Record actual contacts and every affected group when one push moves others. Shared motion alone does not establish shape functionality.
 - **Connect stages:** The actual previous endpoint must satisfy the next stage's requirements, including neighboring objects and return paths.
+
+Before each exchange of relative positions, name the passage and pushing face that must remain available afterward. A bay is outside the current work only if the full parked footprint preserves that future access. Restoring a group can restore a useful configuration without undoing the overall task. Parking can also be temporary: GxH's other L later resumes its helper role.
 
 Use only the methods the task needs. Extra walking distance does not substitute for a preparation dependency.
 

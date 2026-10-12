@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const assert = require('node:assert/strict');
 const { synchronize } = require('./sync-site.cjs');
-const { read, hash } = require('./site-content.cjs');
+const { read, hash, createReplay } = require('./site-content.cjs');
 const root = path.resolve(__dirname, '..');
 const output = path.join(root, 'outputs');
 fs.mkdirSync(output, { recursive: true });
@@ -15,12 +15,12 @@ const get = key => args.includes(key) ? path.resolve(args[args.indexOf(key) + 1]
 try {
   fs.cpSync(path.join(root, 'site'), path.join(fixture, 'site'), { recursive: true });
   fs.cpSync(path.join(root, 'skills'), path.join(fixture, 'skills'), { recursive: true });
-  const initial = read(path.join(fixture, 'site/data/catalog.json'));
   synchronize({}, fixture);
+  const initial = read(path.join(fixture, 'site/data/catalog.json'));
   assert.equal(synchronize({}, fixture).changed.length, 0, 'Repeated synchronization must be idempotent');
   const pkg = path.join(fixture, 'skills/mazebench-publication-fixture');
   fs.cpSync(path.join(fixture, 'skills/mazebench-boundary-stagger'), pkg, { recursive: true });
-  fs.writeFileSync(path.join(pkg, 'SKILL.md'), '---\nname: mazebench-publication-fixture\ndescription: Disposable publication regression fixture.\n---\n\n# MazeBench Publication Fixture\n');
+  fs.writeFileSync(path.join(pkg, 'SKILL.md'), '---\nname: mazebench-publication-fixture\ndescription: "Disposable publication regression fixture."\n---\n\n# MazeBench Publication Fixture\n');
   // This is an automation fixture reusing existing evidence, not a new skill claim.
   fs.writeFileSync(path.join(pkg, 'references/website.json'), JSON.stringify({ verb: 'A discovery fixture.', steps: [] }, null, 2) + '\n');
   assert.throws(() => synchronize({ check: true }, fixture), /catalog is stale/);
@@ -28,6 +28,7 @@ try {
   let catalog = read(path.join(fixture, 'site/data/catalog.json'));
   assert.equal(catalog.skills.length, initial.skills.length + 1, 'Discover an additional skill without a code edit');
   const added = catalog.skills.find(s => s.id === 'publication-fixture');
+  assert.equal(added.description, 'Disposable publication regression fixture.', 'Quoted frontmatter must not leak quotation marks into website text');
   assert.equal(added.authoredCases.length, 0, 'Do not invent a playable example for a new skill');
   assert(added.officialCases.length);
   assert.deepEqual(catalog.cases.filter(c => c.kind === 'authored'), initial.cases.filter(c => c.kind === 'authored'), 'Preserve every existing authored example');
@@ -38,6 +39,56 @@ try {
   write(officialDesign, { ...design, witness: 'U' });
   assert.throws(() => synchronize({}, fixture), /Incomplete/);
   write(officialDesign, design);
+  const mapFile = path.join(pkg, 'references/official-world-map.txt');
+  const originalMap = fs.readFileSync(mapFile);
+  fs.writeFileSync(mapFile, originalMap.toString('utf8').replace(/\r\n/g, '\n'));
+  synchronize({}, fixture);
+  const normalized = read(path.join(fixture, 'site/data/provenance.json')).cases.find(c => c.skillReference?.startsWith('skills/mazebench-publication-fixture/'));
+  assert.equal(normalized.skillReferenceSha256 || normalized.sourceMapSha256, hash(fs.readFileSync(mapFile)));
+  fs.writeFileSync(mapFile, fs.readFileSync(mapFile, 'utf8').replace('.+#', '.'));
+  assert.throws(() => synchronize({}, fixture), /unchanged room/);
+  fs.writeFileSync(mapFile, originalMap);
+  const supplementalFile = path.join(pkg, 'references/official-solution.json');
+  write(supplementalFile, { witness: design.witness, sourceMapSha256: hash(originalMap) });
+  assert.throws(() => synchronize({}, fixture), /Supplemental solution requires goal/);
+  write(supplementalFile, { goal: design.contract.goal, sourceMapSha256: hash(originalMap) });
+  assert.throws(() => synchronize({}, fixture), /Supplemental solution requires a complete witness/);
+  write(supplementalFile, null);
+  assert.throws(() => synchronize({}, fixture), /Supplemental solution requires goal/);
+  write(supplementalFile, { witness: design.witness, goal: design.contract.goal, sourceMapSha256: '0'.repeat(64) });
+  assert.throws(() => synchronize({}, fixture), /solution map mismatch/);
+  write(supplementalFile, { witness: 'U', goal: design.contract.goal, sourceMapSha256: hash(originalMap) });
+  assert.throws(() => synchronize({}, fixture), /Incomplete/);
+  fs.unlinkSync(supplementalFile);
+  synchronize({}, fixture);
+  const fxgFile = path.join(fixture, 'skills/mazebench-hook-transfer/references/official-fxg-solution.json');
+  const fxg = read(fxgFile);
+  const fxgEntry = read(path.join(fixture, 'site/data/catalog.json')).cases.find(c => c.room === 'FxG' && c.skill === 'hook-transfer');
+  assert.deepEqual(fxgEntry.completeObjective, fxg.completeObjective, 'Publish the full ordered passage objective');
+  const fxgRecord = read(path.join(fixture, 'site/data/provenance.json')).cases.find(c => c.id === fxgEntry.id);
+  assert.equal(fxgRecord.completeObjectiveSha256, hash(fxg.completeObjective));
+  assert.equal(fxgRecord.objectiveVerification.firstVisitStep, 139);
+  assert.equal(fxgRecord.objectiveVerification.thenVisitStep, 241);
+  assert.equal(fxgRecord.objectiveVerification.retainedFirst.status, 'reachable');
+  const missingFirst = structuredClone(fxg); delete missingFirst.completeObjective.first;
+  write(fxgFile, missingFirst);
+  assert.throws(() => synchronize({}, fixture), /complete objective differs|first passage/);
+  const wrongPassage = structuredClone(fxg); wrongPassage.completeObjective.first = [0, 0, 0];
+  write(fxgFile, wrongPassage);
+  assert.throws(() => synchronize({}, fixture), /complete objective differs|first-passage visit/);
+  write(fxgFile, fxg);
+  const replay = createReplay(path.join(fixture, 'site/runtime/maze-engine.js'));
+  const fxgData = read(path.join(fixture, 'site/data/levels/maze/level_FxG.json'));
+  assert.throws(() => replay(fxgData, missingFirst), /complete first passage cell/);
+  assert.throws(() => replay(fxgData, wrongPassage), /Incomplete first-passage visit/);
+  // Same actual map and route: this earlier player cell is occupied by a block
+  // at completion. Merely visiting it must not certify retained walking access.
+  const noReturn = structuredClone(fxg); noReturn.completeObjective.first = [4, 1, 0];
+  noReturn.completeObjective.preserveFirstByFrozenWalking = false;
+  assert.equal(replay(fxgData, noReturn).firstVisitStep, 38);
+  noReturn.completeObjective.preserveFirstByFrozenWalking = true;
+  assert.throws(() => replay(fxgData, noReturn), /no longer reachable with every nonplayer frozen/);
+  synchronize({}, fixture);
   const engine = get('--engine'), trials = get('--trials');
   if (engine || trials) {
     assert(engine && trials, 'Supply both --engine and --trials for real import regressions');
@@ -74,7 +125,7 @@ try {
     assert.equal(catalog.cases.length, initial.cases.length + added.officialCases.length);
     console.log('Real trial import, immutable world export, duplicate suppression, unknown/stale report rejection passed.');
   }
-  console.log('Incremental website discovery, multiple skill references, witness validation, preservation and idempotence passed.');
+  console.log('Incremental discovery, line-ending provenance, required supplemental fields, ordered passages, retained frozen walking, preservation and idempotence passed.');
 } finally {
   const resolved = fs.realpathSync(fixture);
   assert(path.dirname(resolved).toLowerCase() === fs.realpathSync(output).toLowerCase() && path.basename(resolved).startsWith('site-sync-'));

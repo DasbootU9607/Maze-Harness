@@ -66,3 +66,16 @@ The normal use contract requires the player to push the tool directly. A helper-
 | `unknown` | No established counterexample, but at least one capped check or missing verified witness |
 
 A pass covers only the defined acceptance scope. Freezing does not prove unique ordering; excluding use does not prove a minimal tool shape; solutions and input counts do not prove human insight or difficulty. Revalidate after composition or changes to walls and entry points.
+
+## Official reference-library regressions
+
+GxG/GxH use `planar-transport-reference-v1`, with the full original cells, members, permitted whole-group loss, final contact and gem-and-return goal. This is a reference evidence profile, not a complex-authoring certificate. Run from the skill directory with fresh output files:
+
+```text
+node scripts/official-runtime.cjs --repo ENGINE --spec references/official-gxg-design.json --out NEW_OUTPUT/gxg-checks.json --cap 6000
+node scripts/official-runtime.cjs --repo ENGINE --spec references/official-gxh-design.json --out NEW_OUTPUT/gxh-checks.json --cap 6000
+```
+
+The helper validates the complete case receipt, replays the full route with ordinary/search-state comparison, observes the actual declared contact, and separately freezes every group or excludes that contact. The cap counts push components; each walking component retains gem state. GxG has capped target-freeze and transfer exclusions. GxH's exclusions exhausted. These reports explicitly preserve the distinction between a verified route and a necessary mechanism. Contact predicates require complete surviving translations, while support loss is separately visible in replay states.
+
+The GxF `official-design.json` and historical checks retain their gem goal. `official-solution.json` adds a separately ordinary-replayed route to the full return endpoint, preserving the original evidence. New authoring uses the complex profile and empty template, not these solved reference contracts.

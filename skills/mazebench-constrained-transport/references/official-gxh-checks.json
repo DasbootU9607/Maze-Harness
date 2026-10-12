@@ -1,0 +1,73 @@
+{
+  "profile": "planar-transport-reference-v1",
+  "cap": 6000,
+  "replayPassed": true,
+  "witness": "DDDDDDDDDDLLLLLLUULLULURDDRRRRURUUUDDDDLLLLLUURLDDRRRRUULLLLUUUURRRDRDRDLLRUULUURDDDDDUUUULLLDDLDDRRRLLLDDRRRRUUUDLLLLUUUUURRRRRDLRDDLURULLLLDLLLURDRURRULLLUUURRRRRDLLLLLDDDDDRDDDDRDDRRRRRRUUUUUUUUUUUURR",
+  "fingerprints": {
+    "cells": "c059cd44e4fa4a2e91f39dcc138bbe0780bb2e2478531b05a780d2e70d9fd7b6",
+    "contract": "d916cb0ef51a26e2fe96870600e8486d22b4b37a26962dd338403e8f2810765a"
+  },
+  "goal": {
+    "kind": "gem-and-return",
+    "cell": [
+      15,
+      1,
+      0
+    ]
+  },
+  "ordinaryAndSearchStatesMatch": true,
+  "inputs": 203,
+  "contactSteps": [
+    154
+  ],
+  "checks": [
+    {
+      "name": "freeze_M3",
+      "status": "unsolved",
+      "expanded": 3694,
+      "walkExpanded": 337408,
+      "scope": "Initial-state full gem-and-return goal with exactly this legal-transition exclusion; no unique order or minimal shape claim."
+    },
+    {
+      "name": "freeze_M1",
+      "status": "unsolved",
+      "expanded": 1,
+      "walkExpanded": 116,
+      "scope": "Initial-state full gem-and-return goal with exactly this legal-transition exclusion; no unique order or minimal shape claim."
+    },
+    {
+      "name": "freeze_M2",
+      "status": "unsolved",
+      "expanded": 1,
+      "walkExpanded": 116,
+      "scope": "Initial-state full gem-and-return goal with exactly this legal-transition exclusion; no unique order or minimal shape claim."
+    },
+    {
+      "name": "freeze_M0",
+      "status": "unsolved",
+      "expanded": 1,
+      "walkExpanded": 116,
+      "scope": "Initial-state full gem-and-return goal with exactly this legal-transition exclusion; no unique order or minimal shape claim."
+    },
+    {
+      "name": "forbid_declared_transfer",
+      "status": "unsolved",
+      "expanded": 3694,
+      "walkExpanded": 337408,
+      "scope": "Initial-state full gem-and-return goal with exactly this legal-transition exclusion; no unique order or minimal shape claim."
+    }
+  ],
+  "scope": "Verified official reference, with separate scoped restrictions. This is not a new-map transfer test or a complex-authoring certificate.",
+  "source": {
+    "map": "references/official-gxh-world-map.txt",
+    "map_sha256": "2e14d5e000b27fea40972f313df248333e1f696714339051ca24e07416df804f",
+    "engineCommit": "0ac96b8a2648db09f375989cd7bc33699222c1e6"
+  },
+  "packagedDesign": {
+    "path": "references/official-gxh-design.json",
+    "cells": "c059cd44e4fa4a2e91f39dcc138bbe0780bb2e2478531b05a780d2e70d9fd7b6",
+    "contract": "c77abca61f53b44125d745ae5bd229ac40210371dd8060b413c4dcc3df5fa982",
+    "case": "9639f4256384c3dbd65bac8c7db0697948f76bc5394a3f627c44c36e4e548fb9"
+  },
+  "evidenceNote": "The executed report fingerprints retain the pre-editorial receipt. packagedDesign identifies the current documentation-only revision; map, witness and mechanical fields did not change."
+}

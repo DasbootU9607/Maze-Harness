@@ -1,17 +1,17 @@
 ---
 name: mazebench-hook-transfer
-description: Design, build, and structurally verify MazeBench shape-dependent contact puzzles. Default to independent transport, usable docking, true member contact, and continued passage work, with transferable GxE and FxE mechanism logic. For authoring, not model evaluation.
+description: Design, build, and structurally verify MazeBench shape-dependent contact puzzles. Use independent transport, usable docking, true member contact, shared clearance, and continued passage work from GxE, FxE, and FxG. For authoring, not model evaluation.
 ---
 
 # MazeBench Hook Transfer
 
 Use a rigid tool's shape and relative position to solve a pushing, stance, reachability, or movement-constraint problem. Rear and lateral contact are useful relationships; ordinary straight chain pushing alone does not establish shape-dependent function.
 
-Official source rooms: [GxE](references/official-case.md) and [FxE](references/official-fxe-case.md). Both preserve the original room bytes and have separate replay and scope records.
+Official source rooms: [GxE](references/official-case.md), [FxE](references/official-fxe-case.md), and [FxG](references/official-fxg-case.md). Each preserves its original room bytes and separate replay scope. Use the [reference synthesis](references/reference-library.md) and [difficulty guide](references/difficulty.md) to select relevant functions and a local reference level; levels do not certify a new map or human difficulty.
 
 ## Required reading and default complex mode
 
-For new maps, first read [Mechanism logic](references/mechanism-logic.md). Extract the functional roles, real input/contact relationships, movement preconditions, structural functions, and causal dependencies before choosing shapes or coordinates. Consult [GxE](references/official-case.md) for rear release and passage work, or [FxE](references/official-fxe-case.md) for a released tool, separated input/workspace, and repeated contact roles. Read their states/checks when evidence or physics needs confirmation. Skill maintenance requires complete analysis of the affected case; reproductions retain its full evidence workflow.
+For new maps, first read [Mechanism logic](references/mechanism-logic.md). Extract the functional roles, real input/contact relationships, movement preconditions, structural functions, and causal dependencies before choosing shapes or coordinates. Consult [GxE](references/official-case.md) for rear release and passage work, [FxE](references/official-fxe-case.md) for a released tool and repeated contact roles, or [FxG](references/official-fxg-case.md) for competing footprints, input access restored by withdrawal, and changing tools across two passages. Read their states/checks when evidence or physics needs confirmation. Skill maintenance requires complete analysis of the affected case; reproductions retain its full evidence workflow.
 
 Record the mechanism document path, SHA256, and `readBeforeLayout: true` in the new contract. An unchanged previously read version may be reused. The receipt checks document version consistency; it cannot prove reading, timing, understanding, or mechanism necessity. For each inherited relation, identify this map's actual members, boundaries, passages, and stances as described in [the contract interface](references/complex-validation.md).
 
@@ -32,6 +32,8 @@ Choose the geometry unless the user specifies it. Read [Design](references/desig
 5. For active docking, choose a separated start and feasible independent transport. Preparation must change relative positions; walking to an already usable tool does not establish it. Preserve access to P after docking.
 6. Plan continued work after contact. Define the intended event, solve and replay, then search for bypasses and revise the actual failing relationship.
 
+When several tools share the work area, check the next input after each contact. A useful member can become an obstacle to another stance; reserve an executable withdrawal or recovery and test that it restores the intended action. Where the objective includes multiple passages, verify the uninterrupted complete route and earlier-route retention or explicit recovery. FxG supplies this optional branch; its particular four shapes and two-door count are not universal requirements.
+
 For default complex authoring, read [Planning depth](references/planning-depth.md). Design access before and after use together. A tool or helper may occupy space temporarily, but its later movement must remain possible. A longer transport distance alone is not a new planning stage.
 
 ## Rules and verification
@@ -41,6 +43,7 @@ For default complex authoring, read [Planning depth](references/planning-depth.m
 - Read [Verification](references/verification.md). Separate legal completion, useful contact, contact necessity, preparation necessity, and the local function of a shape part. Joint movement alone proves none of the stronger claims.
 - `contact-events.cjs` observes direct same-elevation unit translations for rear or lateral contact. `verify-contact.cjs` is narrower: it checks active lateral transfer onto a plate with two groups. It is not a universal hook verifier. Other outcomes require a matching scoped checker.
 - Multi-pair complex events can name `tool`, `target`, and `contactKind`; check each actual input/contact pair separately. [FxE's scoped regression](scripts/verify-official-fxe.cjs) replays its complete goal and reports exhausted, bypassed, and capped restrictions individually; it does not automatically certify every default complex requirement.
+- [FxG's scoped regression](scripts/verify-official-fxg.cjs) verifies both room-local doorways in one route, final south access, real contact pairs and selected clearance controls. Its ordinary complex goal represents only the final eastern doorway, so run this helper for the complete FxG objective. It makes no all-history necessity claim; no new map was authored to test this extension's transfer.
 - Capped searches are unknown. Preserve and replay successful bypasses. Removing a part can change support, stance access, and clearance as well as contact; do not claim global shape minimality from a local edit.
 - Use [Composition](references/composition.md) when integrating other mechanisms, and recheck the complete room.
 

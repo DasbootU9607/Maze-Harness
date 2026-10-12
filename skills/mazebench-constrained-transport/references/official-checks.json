@@ -1098,8 +1098,22 @@
   "packagedDesign": {
     "path": "references/official-design.json",
     "cells": "4a7ca34578d364d1666672b094b4e9fe452474b89dcd7fe8fc4b4d74fbb73819",
-    "contract": "ee3e7878622f92c1991a90c3d0020822cf3f5f05506523445b9ae2b31427aeb1",
-    "case": "138513f5cde53d3364ae47fc449c036049b82bf2eefe02af226c4bf60e075ece",
-    "scope": "Current packaged design after source-room documentation; historical verification fingerprints are unchanged."
+    "contract": "d3f24627d94553cad7db10ef53db8da73e651aefbff85118ac3349b623359e86",
+    "case": "5e689dbbe29fcbb99eea0a0e3dc95f1fe971ea93c6e85d29b9012af6b729370a"
+  },
+  "updatedGoalReplay": {
+    "goal": {
+      "kind": "gem-and-return",
+      "cell": [
+        15,
+        1,
+        0
+      ]
+    },
+    "inputs": 248,
+    "ordinaryReplayPassed": true,
+    "witnessPath": "references/official-solution.json",
+    "sourceMapSha256": "e7677e6c68f3b3181ab12b945bebe2fc7e8926efb7263f4f4432b7a41b48ed56",
+    "scope": "Fresh complete ordinary replay; prior gem-goal necessity reports above are preserved historical evidence."
   }
 }

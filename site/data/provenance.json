@@ -94,7 +94,13 @@
       "room": "HxH",
       "sourceFile": "mygl8anih8.txt",
       "sourceMapSha256": "b02c9a4bfd089d9c4b1df350ad8b254d06b3ce42e91f11af8c587f0e420b5df7",
-      "skillReference": "skills/mazebench-boundary-stagger/references/official-world-map.txt"
+      "skillReference": "skills/mazebench-boundary-stagger/references/official-world-map.txt",
+      "witnessSha256": "65884fb6650fa9ef1d906ad0809be7ba0e72e7b68e8d30f80f3f6c821ab71f68",
+      "goalSha256": "d0e9ee473e6678e6ec4a4c2e39082a0673bbf3f48a2cfc6915faf3c2a2254583",
+      "objectiveVerification": {
+        "ordinaryReplayPassed": true,
+        "inputs": 56
+      }
     },
     {
       "id": "authored-boundary-stagger",
@@ -111,7 +117,13 @@
       "room": "GxE",
       "sourceFile": "9hgghfgcsu.txt",
       "sourceMapSha256": "4c2a18742e7949e815a620aa6c1cff8f79ed2ff8aa93801b0d63261238caa1df",
-      "skillReference": "skills/mazebench-hook-transfer/references/official-world-map.txt"
+      "skillReference": "skills/mazebench-hook-transfer/references/official-world-map.txt",
+      "witnessSha256": "d47733d17e6e7059030254f4265a3c02e0eed66feca95972eb452ff8fccdb537",
+      "goalSha256": "240c2c573a068733b701111586d3195d9e5f4c0b40b1b89738e1696432878183",
+      "objectiveVerification": {
+        "ordinaryReplayPassed": true,
+        "inputs": 41
+      }
     },
     {
       "id": "official-fxe",
@@ -119,7 +131,13 @@
       "room": "FxE",
       "sourceFile": "5ufa4nkpse.txt",
       "sourceMapSha256": "31db3aa3e127c359bd909958d038535b7cc805810d90edc43f9cf47e1175d9ec",
-      "skillReference": "skills/mazebench-hook-transfer/references/official-fxe-world-map.txt"
+      "skillReference": "skills/mazebench-hook-transfer/references/official-fxe-world-map.txt",
+      "witnessSha256": "cd531d0f3312b4bb52205cbd89f31609cb36c0daa34fa1a3b7314172f33d0a63",
+      "goalSha256": "d0e9ee473e6678e6ec4a4c2e39082a0673bbf3f48a2cfc6915faf3c2a2254583",
+      "objectiveVerification": {
+        "ordinaryReplayPassed": true,
+        "inputs": 149
+      }
     },
     {
       "id": "authored-hook-transfer",
@@ -136,7 +154,15 @@
       "room": "GxF",
       "sourceFile": "0lzre7ixaq.txt",
       "sourceMapSha256": "493020c70b983b3a93fa4df871eb118c5fb8a0621f8ab09111b6d3653433ef33",
-      "skillReference": "skills/mazebench-constrained-transport/references/official-world-map.txt"
+      "skillReference": "skills/mazebench-constrained-transport/references/official-world-map.txt",
+      "witnessSha256": "35f77fcd2ae4798ec03d7b86810551f90f8c6e90d5f6527895ec3c9a86ec972c",
+      "goalSha256": "82576dc170ae33475fa3c4cac1847e5fba51fd92a66f2aeaa02478b6cdeac288",
+      "objectiveVerification": {
+        "ordinaryReplayPassed": true,
+        "inputs": 248
+      },
+      "solutionReference": "skills/mazebench-constrained-transport/references/official-solution.json",
+      "solutionSha256": "803906ea6f104db25c53dde64f51151e0c9f45b65053cbc00edf955c66d7c975"
     },
     {
       "id": "authored-constrained-transport",
@@ -153,7 +179,13 @@
       "room": "JxG",
       "sourceFile": "eaxixyrjgf.txt",
       "sourceMapSha256": "f8d3bb11617bbd5a08560c0997ca66c0e2a6806f93302542fc338f0da7a2fdd8",
-      "skillReference": "skills/mazebench-skating-cross/references/official-world-map.txt"
+      "skillReference": "skills/mazebench-skating-cross/references/official-world-map.txt",
+      "witnessSha256": "e00dff3f75bf67fb1521e5a840123e7a9c820a5cda43d669c307f5ab3506d150",
+      "goalSha256": "82576dc170ae33475fa3c4cac1847e5fba51fd92a66f2aeaa02478b6cdeac288",
+      "objectiveVerification": {
+        "ordinaryReplayPassed": true,
+        "inputs": 138
+      }
     },
     {
       "id": "authored-skating-cross",
@@ -163,6 +195,159 @@
       "sourceMapSha256": "db12fef9a2d0098380ca2b9b4afc1ddb9a08b0e3c5eb8e87b54ad7ce1a2d8a24",
       "witnessSha256": "0fea3b864832b5247c094b66495762c0e2f2b2a3343ef5d507107ef7c7628fc7",
       "source": "Existing agent-authored four-skill playtest; geometry preserved."
+    },
+    {
+      "id": "official-bxb",
+      "kind": "official",
+      "room": "BxB",
+      "sourceFile": "w3yrkloyft.txt",
+      "sourceMapSha256": "349d9c47dc87d180cea4f792998026dc435c07090efcec8e7500e44f45933807",
+      "skillReference": "skills/mazebench-block-coordination/references/official-world-map.txt",
+      "witnessSha256": "fddb436f173d2fc858d985017f5cd63d311129e21258b2d635b77489f8ee8461",
+      "goalSha256": "deed6d85dbfa9eda447b433f75ed22bd652814dd1aceaa70c332726e78bc0be3",
+      "objectiveVerification": {
+        "ordinaryReplayPassed": true,
+        "inputs": 40
+      },
+      "skillReferenceSha256": "bd49d992a8d319fe9d8bdc704ec9bad10845e7e022c3d250965884f55c71fa90",
+      "mapEquivalence": "CRLF-to-LF only; original bytes retained",
+      "solutionReference": "skills/mazebench-block-coordination/references/official-solution.json",
+      "solutionSha256": "ee0796fd8e524dd717a0753193baad45527241402a2d728916b46cc91b5fecb7"
+    },
+    {
+      "id": "official-bxe",
+      "kind": "official",
+      "room": "BxE",
+      "sourceFile": "qha68yvol5.txt",
+      "sourceMapSha256": "5d0013de5c1ba62bf52b7d36a7f001c02bcbd82af855d418810acdad9c582093",
+      "skillReference": "skills/mazebench-bridge-convoy/references/official-world-map.txt",
+      "witnessSha256": "ce8bc4522ec01da01a70254c842e8e4b022d8ed0761d49b2eed054f96b3656a5",
+      "goalSha256": "c66e52671a8906cdbd7daaff2e709dc2b2599c6d72e7034027532d18b552be03",
+      "objectiveVerification": {
+        "ordinaryReplayPassed": true,
+        "inputs": 177
+      },
+      "skillReferenceSha256": "ade16fc76beffcd49c57ab4751cd660f60512f989c9c4e20d74afdd48258d132",
+      "mapEquivalence": "CRLF-to-LF only; original bytes retained",
+      "solutionReference": "skills/mazebench-bridge-convoy/references/official-solution.json",
+      "solutionSha256": "6c484b61cfdc5f279e11829424adfdab6464c65fcf420475a4563c6dbbe8f1eb"
+    },
+    {
+      "id": "official-exb",
+      "kind": "official",
+      "room": "ExB",
+      "sourceFile": "z1ukmhp7er.txt",
+      "sourceMapSha256": "929c7ca2f441e0f30e98dcacefe4d461ffc9b3eef85a3a3238990f260371b509",
+      "skillReference": "skills/mazebench-clear-ground-turning/references/official-world-map.txt",
+      "witnessSha256": "8d8649b511da4d1ec737810b97894ffe3c81c4b339193b2f488e220b9511a047",
+      "goalSha256": "4f40cfa0ab6984e3c5b1c5bdf216f4a749ed8ce3fb0356c93ca5895855bfc716",
+      "objectiveVerification": {
+        "ordinaryReplayPassed": true,
+        "inputs": 52
+      },
+      "skillReferenceSha256": "461d16d96f2a208caf5fdb9ef243a1e6e55ec594de0a532f2bfa273422ace55b",
+      "mapEquivalence": "CRLF-to-LF only; original bytes retained",
+      "solutionReference": "skills/mazebench-clear-ground-turning/references/official-solution.json",
+      "solutionSha256": "99d487c8960cec817a086afaa7f0ef3149d2184d71c3c83208d4ffe248c1ee0f"
+    },
+    {
+      "id": "official-gxg",
+      "kind": "official",
+      "room": "GxG",
+      "sourceFile": "fa74bg7jkj.txt",
+      "sourceMapSha256": "ebef2b1536a657bf5a8c32db910e7fbb2c0752bef8ecd3dc08f3b6d328e1f508",
+      "skillReference": "skills/mazebench-constrained-transport/references/official-gxg-world-map.txt",
+      "witnessSha256": "55605598882303d2e585bfc1497610f1f0c5836993d756bdeb31b396bbf26406",
+      "goalSha256": "d89155333207624714c1d07ea417270024b6e41e91d48622d1d4da649b5fd6da",
+      "objectiveVerification": {
+        "ordinaryReplayPassed": true,
+        "inputs": 284
+      },
+      "skillReferenceSha256": "d88f529e34a54459508c119552dd0384b84f24d02b28fe046014be1497b5a914",
+      "mapEquivalence": "CRLF-to-LF only; original bytes retained",
+      "solutionReference": "skills/mazebench-constrained-transport/references/official-gxg-solution.json",
+      "solutionSha256": "80b144fd7235766da761e0f4e186674fb1852b332cf4f1cfda984bee4ebffe5d"
+    },
+    {
+      "id": "official-gxh",
+      "kind": "official",
+      "room": "GxH",
+      "sourceFile": "dfizxjsozb.txt",
+      "sourceMapSha256": "97ebd5ea9e344b7ccab82dde72733d40884972f79cef5cc00a5eabd04d866d61",
+      "skillReference": "skills/mazebench-constrained-transport/references/official-gxh-world-map.txt",
+      "witnessSha256": "a97cb2fc3db6fb315871cc284d8ef101470822f46bb801d3c7d84d06fea51a6a",
+      "goalSha256": "82576dc170ae33475fa3c4cac1847e5fba51fd92a66f2aeaa02478b6cdeac288",
+      "objectiveVerification": {
+        "ordinaryReplayPassed": true,
+        "inputs": 203
+      },
+      "skillReferenceSha256": "2e14d5e000b27fea40972f313df248333e1f696714339051ca24e07416df804f",
+      "mapEquivalence": "CRLF-to-LF only; original bytes retained",
+      "solutionReference": "skills/mazebench-constrained-transport/references/official-gxh-solution.json",
+      "solutionSha256": "a02c6c9a50209e84c277b55caaa3923b0782fff2e3e11bfe0f005ec08f3b52f1"
+    },
+    {
+      "id": "official-cxb",
+      "kind": "official",
+      "room": "CxB",
+      "sourceFile": "pxuf6ufuyl.txt",
+      "sourceMapSha256": "bcd2919aa744dc96921643c41ed90f027c61993cf091dd8abf20d8b24c5f4268",
+      "skillReference": "skills/mazebench-enclosure-navigation/references/official-world-map.txt",
+      "witnessSha256": "f57af6d23d4d739d2a4bc9dd8bf9408fafa9a70638fa27c32c7695158e930709",
+      "goalSha256": "749ed4da047ccec677e01cfd9a62987a75784db154fd31dc560722d6acdb1b8c",
+      "objectiveVerification": {
+        "ordinaryReplayPassed": true,
+        "inputs": 37
+      },
+      "skillReferenceSha256": "2c9406daeb78705f832345daf999df406dd500256c8626dbfbdf86442ab36951",
+      "mapEquivalence": "CRLF-to-LF only; original bytes retained",
+      "solutionReference": "skills/mazebench-enclosure-navigation/references/official-solution.json",
+      "solutionSha256": "dc0f95bce485b00a17fe2a4703ef01e46670cc02458e08228fbe9be5fcfb9bc2"
+    },
+    {
+      "id": "official-dxb",
+      "kind": "official",
+      "room": "DxB",
+      "sourceFile": "gtiuoosv7v.txt",
+      "sourceMapSha256": "1fa4cc0185a48ea745bb8cf5e807cc24e9c858bc064b005bafd22b853b4025b9",
+      "skillReference": "skills/mazebench-enclosure-navigation/references/official-dxb-world-map.txt",
+      "witnessSha256": "d22ec4816e54e92ba0f503eb60b8d93908e6b63ab89ba86e50390728cce35e12",
+      "goalSha256": "4f40cfa0ab6984e3c5b1c5bdf216f4a749ed8ce3fb0356c93ca5895855bfc716",
+      "objectiveVerification": {
+        "ordinaryReplayPassed": true,
+        "inputs": 35
+      },
+      "skillReferenceSha256": "abb7f2a1247d5796d2c496d3cc3cc4caca72cbc0a98cd646391ce628b4e44ee4",
+      "mapEquivalence": "CRLF-to-LF only; original bytes retained",
+      "solutionReference": "skills/mazebench-enclosure-navigation/references/official-dxb-solution.json",
+      "solutionSha256": "e24c6f68e66bcd11f459e5fa6001e76f18b263a3f7fbfb76307f474bec2528b8"
+    },
+    {
+      "id": "official-fxg",
+      "kind": "official",
+      "room": "FxG",
+      "sourceFile": "ahxsncllqs.txt",
+      "sourceMapSha256": "37a0bcba03fb9b201856a32d9b4e424832ba44b84925ea5e35ea9372d5e4e1c0",
+      "skillReference": "skills/mazebench-hook-transfer/references/official-fxg-world-map.txt",
+      "witnessSha256": "6f81c54f684da7c2aee7e514734771eef39fac22542f90926b888a8bee125826",
+      "goalSha256": "3b900c573d4ae1f063d41a872c562448fe11243add9ec8717eb8873b1f55f3b0",
+      "objectiveVerification": {
+        "ordinaryReplayPassed": true,
+        "inputs": 241,
+        "firstVisitStep": 139,
+        "thenVisitStep": 241,
+        "retainedFirst": {
+          "status": "reachable",
+          "witness": "LDDLLULLLDLLLDLLDDDDDDRRRDDDDD",
+          "expanded": 83,
+          "cap": 16384
+        }
+      },
+      "completeObjectiveSha256": "252a8031fe0fa597212c1022a15b3fd59bef5043021f27cb683ba9b7f82d659e",
+      "skillReferenceSha256": "844daf7e412b3a0660403906342f4e0bd74d6f64ee4264f917763249574e5650",
+      "mapEquivalence": "CRLF-to-LF only; original bytes retained",
+      "solutionReference": "skills/mazebench-hook-transfer/references/official-fxg-solution.json",
+      "solutionSha256": "999ba0cdfbf4043328724ee45120f5d74c4669129a8d64daeabcd2018c27e95a"
     }
   ],
   "directEntryPolicy": "Rooms without an authored player get a temporary arrival actor only when opened directly. Entries are open, matching floor boundaries with an ordinary legal inward move. Raw maps, exported room states, and normal doorway traversal remain unchanged.",

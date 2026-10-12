@@ -1,0 +1,204 @@
+{
+  "originRoom": {
+    "id": "FxG",
+    "worldMap": "games/maze/world_map.json",
+    "level": "games/maze/levels/ahxsncllqs.txt",
+    "relationship": "unmodified-official"
+  },
+  "engineCommit": "0ac96b8a2648db09f375989cd7bc33699222c1e6",
+  "source": {
+    "map": "references/official-fxg-world-map.txt",
+    "map_sha256": "844daf7e412b3a0660403906342f4e0bd74d6f64ee4264f917763249574e5650"
+  },
+  "goal": {
+    "kind": "reach",
+    "cell": [
+      15,
+      1,
+      0
+    ]
+  },
+  "completeObjective": {
+    "kind": "ordered-room-local-passages",
+    "first": [
+      7,
+      15,
+      0
+    ],
+    "then": [
+      15,
+      1,
+      0
+    ],
+    "preserveFirstByFrozenWalking": true,
+    "verification": "scripts/verify-official-fxg.cjs"
+  },
+  "scope": "Complete two-passage ordinary witness and selected-state access controls. No exhaustive mechanism exclusion, unique order, global part minimality, shortest-route or human-difficulty claim.",
+  "solution": {
+    "status": "solved",
+    "path": "DLLULDDDLLDDRRRLLLLRRRRRLLLLLUUUUDRUURRRRRRRDDDDDDRRRRUULLLLLLUUUULLDDDDDRRDDLLUULLDDUUURRUUUULLLDDRRLLLRUURRRDDDDLLDDDDDRUUUULDDDDRRRDDDDDUUUUURUUUUDDDDLLLLLURUUUUURRURRRRRRDLRRRDDLLLLLLUUURDDDDDDDLLLLLULLURDDRRRRRUUUUUUULLUURDDURRRRRDRRUUR",
+    "inputs": 241,
+    "ordinaryReplayPassed": true,
+    "southVisitStep": 139,
+    "eastVisitStep": 241
+  },
+  "checks": [
+    {
+      "name": "south_passage_visited",
+      "actual": true,
+      "expected": true,
+      "verdict": "passed",
+      "scope": "Ordinary prefix from the unchanged official initial state."
+    },
+    {
+      "name": "east_passage_visited",
+      "actual": true,
+      "expected": true,
+      "verdict": "passed",
+      "scope": "Same uninterrupted route after visiting the south passage."
+    },
+    {
+      "name": "south_still_walkable_at_completion",
+      "actual": true,
+      "expected": true,
+      "verdict": "passed",
+      "scope": "Final selected state with all objects frozen."
+    },
+    {
+      "name": "initial_south_walking",
+      "actual": false,
+      "expected": false,
+      "verdict": "passed",
+      "scope": "Initial selected state with all objects frozen."
+    },
+    {
+      "name": "initial_east_walking",
+      "actual": false,
+      "expected": false,
+      "verdict": "passed",
+      "scope": "Initial selected state with all objects frozen."
+    },
+    {
+      "name": "initial_north_return",
+      "actual": true,
+      "expected": true,
+      "verdict": "passed",
+      "scope": "The initially open north return is deliberately excluded from the two-passage objective."
+    },
+    {
+      "name": "contact_southShift",
+      "actual": true,
+      "expected": true,
+      "verdict": "passed",
+      "scope": "Actual input, same-elevation contact, and full translations at input 14."
+    },
+    {
+      "name": "contact_zDock",
+      "actual": true,
+      "expected": true,
+      "verdict": "passed",
+      "scope": "Actual input, same-elevation contact, and full translations at input 101."
+    },
+    {
+      "name": "contact_rearLift",
+      "actual": true,
+      "expected": true,
+      "verdict": "passed",
+      "scope": "Actual input, same-elevation contact, and full translations at input 123."
+    },
+    {
+      "name": "contact_barRedock",
+      "actual": true,
+      "expected": true,
+      "verdict": "passed",
+      "scope": "Actual input, same-elevation contact, and full translations at input 208."
+    },
+    {
+      "name": "contact_eastRelease",
+      "actual": true,
+      "expected": true,
+      "verdict": "passed",
+      "scope": "Actual input, same-elevation contact, and full translations at input 228."
+    },
+    {
+      "name": "before_clearance_upper_nub_stance",
+      "actual": false,
+      "expected": false,
+      "verdict": "passed",
+      "scope": "Selected state after south passage visit; no global necessity inference."
+    },
+    {
+      "name": "after_clearance_upper_nub_stance",
+      "actual": true,
+      "expected": true,
+      "verdict": "passed",
+      "scope": "M0 was raised at input 159; other groups retain their input-149 poses."
+    },
+    {
+      "name": "other_groups_fixed_in_first_clearance_control",
+      "actual": true,
+      "expected": true,
+      "verdict": "passed",
+      "scope": "The selected access comparison changes only M0 among movable groups."
+    },
+    {
+      "name": "before_withdrawal_upper_bar_stance",
+      "actual": false,
+      "expected": false,
+      "verdict": "passed",
+      "scope": "Selected docking state with M0, M1 and M2 shifted right together."
+    },
+    {
+      "name": "after_withdrawal_upper_bar_stance",
+      "actual": true,
+      "expected": true,
+      "verdict": "passed",
+      "scope": "Only M0 moves between these object configurations; walking obtains the next input stance."
+    },
+    {
+      "name": "other_groups_fixed_in_second_clearance_control",
+      "actual": true,
+      "expected": true,
+      "verdict": "passed",
+      "scope": "The selected access comparison changes only M0 among movable groups."
+    },
+    {
+      "name": "walking_only_after_rear_lift",
+      "actual": false,
+      "expected": false,
+      "verdict": "passed",
+      "scope": "Selected state after the first rear lift; continued object work remains."
+    },
+    {
+      "name": "no_removed_group_members",
+      "actual": false,
+      "expected": false,
+      "verdict": "passed",
+      "scope": "This witness preserves all four groups."
+    },
+    {
+      "name": "wrong_contact_pair_rejected",
+      "actual": false,
+      "expected": false,
+      "verdict": "passed",
+      "scope": "Observer control: the M1-to-M3 event cannot stand in for M2-to-M1."
+    }
+  ],
+  "necessaryMechanism": {
+    "status": "unconfirmed",
+    "reason": "No exhaustive all-history restriction search was used for this new case."
+  },
+  "fingerprints": {
+    "public/maze-engine.js": "c25be363e30186b7435c20361f20542170bdabc9de8c0dad8fa45198e5cab842",
+    "public/maze-solver.js": "be7ecce88b17e2f5cc4894a2fd5c86ba8008cb157406a5728bc8ab110fb3df9d",
+    "server/maze-levels.js": "9b75ab87efdcaee23a91c442d1bdcc7975f545f3a58ec4403c3fce2fd4a341e0",
+    "games/maze/level_parsing.json": "54cb1bc6d2e545a89abe860e2c84e45ed5fd31b244b828b8424d2693d05b780d"
+  },
+  "packagedDesign": {
+    "path": "references/official-fxg-design.json",
+    "cells": "4255ce97027b3baf6e7930cd1d0955124c680480a23a43dc1c1b278da08bfffe",
+    "contract": "cb9c351a1d2eb11ce0fd800ba1b8739855351d3c0ecb81ce4afaab82707bed2f",
+    "case": "177581c7b25baa89b1d1595d2fed85685baf78e72f1371c94152ffc78b24933d"
+  },
+  "overall": "passed"
+}

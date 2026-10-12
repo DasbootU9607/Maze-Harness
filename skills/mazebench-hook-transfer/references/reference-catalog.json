@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "targetSkill": "mazebench-hook-transfer",
+  "scope": "Relative references for shape-dependent contact, scoped to each stated goal and entry. Different objectives confound comparisons; these are design judgments, not calibrated human-difficulty scores.",
+  "levels": [
+    {
+      "id": "l1",
+      "label": "Contact and continuation",
+      "criteria": "Prepare one tool-target relationship, establish operable contact, and continue passage work."
+    },
+    {
+      "id": "l2",
+      "label": "Released-tool reuse",
+      "criteria": "Release a constrained tool and reuse its different members against successive targets, with recovery and changing input access."
+    },
+    {
+      "id": "l3",
+      "label": "Shared-space coordination",
+      "criteria": "Coordinate competing full footprints, withdraw and reuse tools, switch roles, and establish more than one passage in one continued route."
+    }
+  ],
+  "references": [
+    {
+      "id": "GxE",
+      "kind": "official",
+      "family": "official",
+      "parentCase": "",
+      "changeSummary": "",
+      "relations": [
+        "ht-remote-contact",
+        "ht-operable-docking",
+        "ht-parts-and-restriction",
+        "ht-continued-work"
+      ],
+      "mapSha256": "4c2a18742e7949e815a620aa6c1cff8f79ed2ff8aa93801b0d63261238caa1df",
+      "engineCommit": "0ac96b8a2648db09f375989cd7bc33699222c1e6",
+      "casePath": "references/official-case.md",
+      "difficulty": {
+        "level": "l1",
+        "basis": "structural-estimate",
+        "rationale": "Provisional structural inventory of the existing case: one prepared rear-contact pair releases a boundary restriction and enables further passage work. It is the comparison foundation, not an easy-room claim."
+      }
+    },
+    {
+      "id": "FxE",
+      "kind": "official",
+      "family": "official-fxe",
+      "parentCase": "",
+      "changeSummary": "",
+      "relations": [
+        "ht-remote-contact",
+        "ht-operable-docking",
+        "ht-tool-role-transition",
+        "ht-recovered-span"
+      ],
+      "mapSha256": "31db3aa3e127c359bd909958d038535b7cc805810d90edc43f9cf47e1175d9ec",
+      "engineCommit": "0ac96b8a2648db09f375989cd7bc33699222c1e6",
+      "casePath": "references/official-fxe-case.md",
+      "difficulty": {
+        "level": "l2",
+        "basis": "structural-estimate",
+        "rationale": "Provisional structural inventory of the existing case: a released target becomes a tool, crosses separated input/work areas and operates two later targets. This adds role transition and repeated recovery to the single-pair foundation; the gem goal differs."
+      }
+    },
+    {
+      "id": "FxG",
+      "kind": "official",
+      "family": "official-fxg",
+      "parentCase": "",
+      "changeSummary": "",
+      "relations": [
+        "ht-remote-contact",
+        "ht-operable-docking",
+        "ht-continued-work",
+        "ht-tool-role-transition",
+        "ht-shared-clearance",
+        "ht-passage-handoff"
+      ],
+      "mapSha256": "844daf7e412b3a0660403906342f4e0bd74d6f64ee4264f917763249574e5650",
+      "engineCommit": "0ac96b8a2648db09f375989cd7bc33699222c1e6",
+      "casePath": "references/official-fxg-case.md",
+      "difficulty": {
+        "level": "l3",
+        "basis": "human-assigned",
+        "rationale": "The supplied relative higher placement is mapped to Shared-space coordination: competing footprints repeatedly change later input access, several pairs switch roles, and one continuous route opens two passages. This is a user judgment with structural rationale, not a playtest or solver-count ranking."
+      }
+    }
+  ]
+}

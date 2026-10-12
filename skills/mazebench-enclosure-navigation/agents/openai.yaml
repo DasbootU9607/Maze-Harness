@@ -1,0 +1,4 @@
+interface:
+  display_name: "MazeBench Enclosure Navigation"
+  short_description: "Guide rigid enclosures through reactive gates"
+  default_prompt: "Use $mazebench-enclosure-navigation to derive and verify a passage from its functional relations; read the mechanism logic before choosing geometry."

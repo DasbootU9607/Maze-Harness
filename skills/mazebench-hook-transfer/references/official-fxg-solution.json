@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "room": "FxG",
+  "witness": "DLLULDDDLLDDRRRLLLLRRRRRLLLLLUUUUDRUURRRRRRRDDDDDDRRRRUULLLLLLUUUULLDDDDDRRDDLLUULLDDUUURRUUUULLLDDRRLLLRUURRRDDDDLLDDDDDRUUUULDDDDRRRDDDDDUUUUURUUUUDDDDLLLLLURUUUUURRURRRRRRDLRRRDDLLLLLLUUURDDDDDDDLLLLLULLURDDRRRRRUUUUUUULLUURDDURRRRRDRRUUR",
+  "goal": {
+    "kind": "reach",
+    "cell": [
+      15,
+      1,
+      0
+    ]
+  },
+  "ordinaryReplayPassed": true,
+  "engineCommit": "0ac96b8a2648db09f375989cd7bc33699222c1e6",
+  "sourceMapSha256": "844daf7e412b3a0660403906342f4e0bd74d6f64ee4264f917763249574e5650",
+  "entryStateSha256": "d1671fa4b37295a6f60aa0a47c492f2c02daab410e3e98d75dfc781b8a217578",
+  "engineSha256": "c25be363e30186b7435c20361f20542170bdabc9de8c0dad8fa45198e5cab842",
+  "completeObjective": {
+    "kind": "ordered-room-local-passages",
+    "first": [
+      7,
+      15,
+      0
+    ],
+    "then": [
+      15,
+      1,
+      0
+    ],
+    "preserveFirstByFrozenWalking": true,
+    "verification": "scripts/verify-official-fxg.cjs"
+  },
+  "scope": "Workflow replay verifies the final east reach. The linked scoped verifier also checks the prior south visit and final south access."
+}

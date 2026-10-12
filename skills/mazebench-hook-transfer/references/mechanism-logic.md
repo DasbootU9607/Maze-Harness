@@ -1,6 +1,6 @@
 # Hook Transfer mechanism logic
 
-Use this extraction before choosing new geometry. The official source rooms are **GxE** and **FxE**. [GxE](official-case.md) supplies rear release and passage-work evidence; [FxE](official-fxe-case.md) adds a released object becoming a tool and repeated use of a span at separate targets. Consult each case's linked states/checks when details need confirmation. Maintenance requires complete analysis of the affected source. Preserve their runnable designs for reproduction/regression; start new authoring from [the empty contract](design-template.json).
+Use this extraction before choosing new geometry. The official source rooms are **GxE**, **FxE**, and **FxG**. [GxE](official-case.md) supplies rear release and passage-work evidence; [FxE](official-fxe-case.md) adds a released object becoming a tool and repeated use of a span at separate targets; [FxG](official-fxg-case.md) adds shared clearance and continued tool handoff across passages. Consult each case's linked states/checks when details need confirmation. Maintenance requires complete analysis of the affected source. Preserve their runnable designs for reproduction/regression; start new authoring from [the empty contract](design-template.json). The [reference synthesis](reference-library.md) and [difficulty guide](difficulty.md) retain the distinct evidence and grading bases.
 
 Claims are labeled **necessary in the case**, **witness choice**, **selected state**, or **unconfirmed**. The first four relations below refer to GxE; the two additional relations explicitly identify FxE. Exhausted restrictions prove only their map and endpoint. GxE has a passage goal and no gem; a gem-free engine `isSolved` is not evidence of reaching it. FxE has a gem objective. Its scoped checks do not inherit GxE's necessity conclusions.
 
@@ -49,6 +49,20 @@ A constrained object can first be the target of contact and later become the too
 A supported span can reach a restricted member across a gap while keeping the player's input on accessible terrain. An opening can admit the working end and allow different contacts as relative positions change. Plan withdrawal, renewed stance access and later use of another part of the same tool; actual contact must end when the groups separate.
 
 **FxE selected states and witness choices:** the span enters M3's opening and moves its lower arm; later translation separates the groups, and further work permits upper-corridor access. The same tool's foot then contacts M2 on a row offset from the input. [Replay analysis](official-fxe-case.md) records these functions, supported overhangs and the legal loss of the starter at input 36. The starter's removal, selected reversals, exact opening, length and direction order are not established as necessary. Preserve complete footprints and official support rules; a span is not automatically a walkable bridge.
+
+## Additional relationships from FxG
+
+### ht-shared-clearance
+
+A tool's whole footprint can change from a useful contact surface to an obstruction of another input. Plan the post-contact stance and the withdrawal, translation or recovery that makes it reachable. Demonstrate the newly executable action, not just a visually opened gap. The relationship concerns changing access and collision constraints; it does not require a fixed parking pose or compass direction.
+
+**FxG selected states:** M0's upward movement at input 159 changes frozen access to the M1 nub stance (12,4) while the other groups keep their input-149 poses. Later M0's independent withdrawal at 224 changes frozen access to the bar input (7,1) while M1/M2/M3 keep their input-208 poses. [The case](official-fxg-case.md) and [checks](official-fxg-checks.json) document both controls. **Witness choice:** the earlier M0 retreat after docking M2 occurs in this route; its exact timing is not proved necessary. **Unconfirmed:** no all-history FxG clearance or unique-order exclusion was completed.
+
+### ht-passage-handoff
+
+After opening one objective route, reassess the released objects as candidate tools for the remaining work. A blocker can become a remote working span while another tool moves out of its input path. For multiple-passage goals, check them in one continuous route and verify preservation or recovery of the earlier route. The number of passages is conditional on the authored objective.
+
+**FxG witness:** M2 rear-lifts M1, the player reaches the south doorway at 139, and M1 later contacts M3 at 228 to open the eastern doorway reached at 241. Final frozen-object walking still reaches the south doorway. [Complete source replay](official-fxg-design.json) and [the scoped helper](../scripts/verify-official-fxg.cjs) verify both endpoints and separate the actual pairs. The north return is initially open and is not this objective. **Unconfirmed:** the exact route, four groups, two doorways and every witnessed role are not established as necessary for all solutions or all new designs.
 
 ## Allowed variations and verification obligations
 

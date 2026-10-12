@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "targetSkill": "mazebench-constrained-transport",
+  "scope": "Relative reference complexity within this skill and its stated objectives; not an absolute human-difficulty score.",
+  "levels": [
+    {
+      "id": "l1",
+      "label": "Foundation",
+      "criteria": "Expose a core relation with limited prerequisite planning and accessible recovery."
+    },
+    {
+      "id": "l2",
+      "label": "Combination",
+      "criteria": "Connect preparations, changing input access, or reuse of the same mechanism."
+    },
+    {
+      "id": "l3",
+      "label": "Planning",
+      "criteria": "Coordinate deeper dependencies, constrained shared space, role changes, or recovery tradeoffs."
+    }
+  ],
+  "references": [
+    {
+      "id": "GxF",
+      "kind": "official",
+      "family": "official",
+      "parentCase": "",
+      "changeSummary": "",
+      "relations": [
+        "ct-usable-delivery",
+        "ct-shared-clearance",
+        "ct-input-work-support",
+        "ct-recovery-and-reuse",
+        "ct-role-selection",
+        "ct-reserved-circulation"
+      ],
+      "mapSha256": "493020c70b983b3a93fa4df871eb118c5fb8a0621f8ab09111b6d3653433ef33",
+      "engineCommit": "0ac96b8a2648db09f375989cd7bc33699222c1e6",
+      "casePath": "references/official-case.md",
+      "difficulty": {
+        "level": "l3",
+        "basis": "structural-estimate",
+        "rationale": "Shared helper bays, changing pushing faces and repeated recovery prepare an offset final use; the revised endpoint also includes returning to the doorway. Structural planning estimate, not a playtest score."
+      }
+    },
+    {
+      "id": "GxG",
+      "kind": "official",
+      "family": "official-gxg",
+      "parentCase": "",
+      "changeSummary": "",
+      "relations": [
+        "ct-usable-delivery",
+        "ct-shared-clearance",
+        "ct-input-work-support",
+        "ct-recovery-and-reuse",
+        "ct-role-selection",
+        "ct-reserved-circulation"
+      ],
+      "mapSha256": "d88f529e34a54459508c119552dd0384b84f24d02b28fe046014be1497b5a914",
+      "engineCommit": "0ac96b8a2648db09f375989cd7bc33699222c1e6",
+      "casePath": "references/official-gxg-case.md",
+      "difficulty": {
+        "level": "l3",
+        "basis": "structural-estimate",
+        "rationale": "Two interacting helper exchanges reserve circulation before axial delivery; target repositioning and tool withdrawal follow first contact. Comparable planning tier, without a strict rank against the other branches."
+      }
+    },
+    {
+      "id": "GxH",
+      "kind": "official",
+      "family": "official-gxh",
+      "parentCase": "",
+      "changeSummary": "",
+      "relations": [
+        "ct-usable-delivery",
+        "ct-shared-clearance",
+        "ct-input-work-support",
+        "ct-recovery-and-reuse",
+        "ct-role-selection",
+        "ct-reserved-circulation"
+      ],
+      "mapSha256": "2e14d5e000b27fea40972f313df248333e1f696714339051ca24e07416df804f",
+      "engineCommit": "0ac96b8a2648db09f375989cd7bc33699222c1e6",
+      "casePath": "references/official-gxh-case.md",
+      "difficulty": {
+        "level": "l3",
+        "basis": "structural-estimate",
+        "rationale": "Roles change: the bar is parked, one L is restored and transported, and another L is reused before offset contact and whole-target support loss. Planning estimate with a complete return objective."
+      }
+    }
+  ]
+}

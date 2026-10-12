@@ -1,0 +1,7 @@
+# Deriving a new design
+
+Start at the full goal and work backward through the last needed push and its input stance. Place a clear-ground area that makes that stance reachable from the preceding shielded arrival. Repeat only where a new change of pushing side has a causal role. Then derive spawn-side setup and a supported initial block pose. Check each turning area as a small reachability problem with the block held in its arrival pose; a nearby empty cell is insufficient if the player cannot enter it or reach the correct side. Connect the segments using the same block and finish at the doorway. A compact case may demonstrate one transfer; a composed design should make successive transfers depend on where the preceding pushes delivered the tool.
+
+Choose shapes, direction order and coordinates autonomously from these functions. Begin from [design-template.json](design-template.json), whose geometry and witness are empty. Record the current mechanism-logic SHA256 in contract.readReceipt before layout; preserve the honest scope of that declaration. Map each adopted relation to actual members, boundaries, safe stances, support and continuation. A compact demonstration and an original-room reproduction have narrower goals than a composed passage.
+
+The included helper intentionally verifies complete official references only. It does not build new maps or certify new-map transfer. When a new map is requested, implement or use an appropriate official build/observer path and validate the complete authored state without relabeling it official.

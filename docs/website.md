@@ -39,7 +39,9 @@ These are existing four-skill playtest maps, not newly generated examples. Offic
 
 The source maps and exported level states are unmodified. Twenty official rooms contain no player token because they normally receive a player from a neighboring room. For a direct jump only, `room-entry.js` adds an arrival actor at an unoccupied, matching floor boundary with a verified legal inward move. The catalog records its adjacent source room. Normal doorway transitions still consume the original room JSON and use the engine's player-transfer logic. Reset restores the current entry state. Collected gems are stored per world in local browser storage, as in the original engine.
 
-Saved solutions cover all nine examples and total 738 inputs. These are witnesses, not shortest-path or difficulty claims. Skating Cross routes include the post-gem return; GxE uses its documented passage-reaching goal.
+The initial nine examples had 738 saved inputs; subsequent reference additions are discovered from the skill packages. Current totals are reported by `check-site.cjs`. These are witnesses, not shortest-path or difficulty claims. Return objectives include the post-gem doorway, and gem-free cases use explicit passage endpoints.
+
+An optional `official*-solution.json` can provide a verified longer objective while preserving the historical design contract. Synchronization checks its map identity and freshly replays it before publication. Original packaged Git LF and website CRLF maps keep separate hashes when needed; only full CRLF-to-LF equivalence is accepted. Ordered passage objectives track both visits in the same route and, when declared, verify a final walking return with all other actors frozen. Causal necessity remains within each skill verifier's documented scope.
 
 ## Local preview
 

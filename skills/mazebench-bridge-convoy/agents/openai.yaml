@@ -1,0 +1,4 @@
+interface:
+  display_name: "MazeBench Bridge Convoy"
+  short_description: "Plan bridge resources and turn two-tool convoys"
+  default_prompt: "Use $mazebench-bridge-convoy to derive a puzzle from bridge allocation, gate occupancy, two-tool staging and a useful convoy turn; preserve full-goal verification and explicit evidence limits."

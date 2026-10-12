@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "targetSkill": "mazebench-clear-ground-turning",
+  "scope": "Relative reference complexity within this skill and its stated objectives; not an absolute human-difficulty score.",
+  "levels": [
+    {
+      "id": "l1",
+      "label": "Foundation",
+      "criteria": "Expose a core relation with limited prerequisite planning and accessible recovery."
+    },
+    {
+      "id": "l2",
+      "label": "Combination",
+      "criteria": "Connect preparations, changing input access, or reuse of the same mechanism."
+    },
+    {
+      "id": "l3",
+      "label": "Planning",
+      "criteria": "Coordinate deeper dependencies, constrained shared space, role changes, or recovery tradeoffs."
+    }
+  ],
+  "references": [
+    {
+      "id": "ExB",
+      "kind": "official",
+      "family": "official",
+      "parentCase": "",
+      "changeSummary": "",
+      "relations": [
+        "shielded-lane-advance",
+        "clear-ground-stance-transfer",
+        "connected-tool-reuse"
+      ],
+      "mapSha256": "461d16d96f2a208caf5fdb9ef243a1e6e55ec594de0a532f2bfa273422ace55b",
+      "engineCommit": "0ac96b8a2648db09f375989cd7bc33699222c1e6",
+      "casePath": "references/official-case.md",
+      "difficulty": {
+        "level": "l2",
+        "basis": "structural-estimate",
+        "rationale": "Combination: a single shield must arrive beside successive clear-ground areas so the player can change its pushing side and continue to the exit; no empirical ranking or within-family neighbor comparison is available."
+      }
+    }
+  ]
+}

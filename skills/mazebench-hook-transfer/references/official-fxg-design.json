@@ -1,0 +1,1093 @@
+{
+  "title": "Official FxG: shared clearance and two passages",
+  "originRoom": {
+    "id": "FxG",
+    "worldMap": "games/maze/world_map.json",
+    "level": "games/maze/levels/ahxsncllqs.txt",
+    "relationship": "unmodified-official"
+  },
+  "engineCommit": "0ac96b8a2648db09f375989cd7bc33699222c1e6",
+  "source": {
+    "map": "references/official-fxg-world-map.txt",
+    "map_sha256": "844daf7e412b3a0660403906342f4e0bd74d6f64ee4264f917763249574e5650"
+  },
+  "cells": [
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+p",
+      ".",
+      ".",
+      ".",
+      ".",
+      "+",
+      ".",
+      "."
+    ],
+    [
+      ".+#",
+      ".",
+      "M0",
+      "M0",
+      ".",
+      "M0",
+      "M0",
+      ".",
+      ".",
+      ".",
+      ".",
+      "M2",
+      "M2",
+      "+",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".",
+      "M0",
+      ".",
+      ".",
+      ".",
+      "M0",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "M2",
+      ".",
+      "M3",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".",
+      "M0",
+      "M0",
+      "M0",
+      "M0",
+      "M0",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "M2",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      ".",
+      "M0",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "M2",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      ".",
+      "M0",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "M2",
+      "M2",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      ".",
+      "M0",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      ".",
+      "M0",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      ".",
+      "M0",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#"
+    ],
+    [
+      ".+#",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      "M1",
+      "M1",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      "+",
+      ".+#"
+    ],
+    [
+      ".+#",
+      "+",
+      "+",
+      "+",
+      "M1",
+      "M1",
+      "M1",
+      "M1",
+      "M1",
+      "M1",
+      "M1",
+      "M1",
+      "+",
+      "+",
+      "+",
+      ".+#"
+    ],
+    [
+      ".+#",
+      "+",
+      "+",
+      "+",
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#",
+      "+",
+      "+",
+      "+",
+      ".+#"
+    ],
+    [
+      ".+#",
+      "+",
+      "+",
+      "+",
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#",
+      "+",
+      "+",
+      "+",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#"
+    ]
+  ],
+  "contract": {
+    "profile": "planar-hook-depth-v2",
+    "mode": "complex",
+    "goal": {
+      "kind": "reach",
+      "cell": [
+        15,
+        1,
+        0
+      ]
+    },
+    "mechanism": {
+      "kind": "rear",
+      "tool": "M2",
+      "target": "M1"
+    },
+    "members": {
+      "M0": [
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          3,
+          2,
+          0
+        ],
+        [
+          5,
+          2,
+          0
+        ],
+        [
+          6,
+          2,
+          0
+        ],
+        [
+          2,
+          3,
+          0
+        ],
+        [
+          6,
+          3,
+          0
+        ],
+        [
+          2,
+          4,
+          0
+        ],
+        [
+          3,
+          4,
+          0
+        ],
+        [
+          4,
+          4,
+          0
+        ],
+        [
+          5,
+          4,
+          0
+        ],
+        [
+          6,
+          4,
+          0
+        ],
+        [
+          4,
+          5,
+          0
+        ],
+        [
+          4,
+          6,
+          0
+        ],
+        [
+          4,
+          7,
+          0
+        ],
+        [
+          4,
+          8,
+          0
+        ],
+        [
+          4,
+          9,
+          0
+        ]
+      ],
+      "M1": [
+        [
+          7,
+          11,
+          0
+        ],
+        [
+          8,
+          11,
+          0
+        ],
+        [
+          4,
+          12,
+          0
+        ],
+        [
+          5,
+          12,
+          0
+        ],
+        [
+          6,
+          12,
+          0
+        ],
+        [
+          7,
+          12,
+          0
+        ],
+        [
+          8,
+          12,
+          0
+        ],
+        [
+          9,
+          12,
+          0
+        ],
+        [
+          10,
+          12,
+          0
+        ],
+        [
+          11,
+          12,
+          0
+        ]
+      ],
+      "M2": [
+        [
+          11,
+          2,
+          0
+        ],
+        [
+          12,
+          2,
+          0
+        ],
+        [
+          12,
+          3,
+          0
+        ],
+        [
+          12,
+          4,
+          0
+        ],
+        [
+          12,
+          5,
+          0
+        ],
+        [
+          12,
+          6,
+          0
+        ],
+        [
+          13,
+          6,
+          0
+        ]
+      ],
+      "M3": [
+        [
+          14,
+          3,
+          0
+        ]
+      ]
+    },
+    "roles": {
+      "M0": "Remote input frame and clearance tool",
+      "M1": "Southern blocker, later eastern-release tool",
+      "M2": "Bent docking and rear-lift tool",
+      "M3": "Eastern passage blocker"
+    },
+    "allowRemoval": [],
+    "necessaryRoles": [
+      "M0",
+      "M1",
+      "M2",
+      "M3"
+    ],
+    "optionalRoles": [],
+    "readReceipt": {
+      "path": "references/official-fxg-case.md",
+      "sha256": "177581c7b25baa89b1d1595d2fed85685baf78e72f1371c94152ffc78b24933d",
+      "readBeforeLayout": true
+    },
+    "inherited": [
+      "Actual far-member contacts from reachable input faces.",
+      "Independent docking and subsequent input recovery.",
+      "A released target becomes a tool for another passage.",
+      "Competing footprints must be withdrawn or reused to expose the next stance."
+    ],
+    "changes": [
+      "Unchanged official FxG reproduction. Necessity-role and dependency declarations are candidate obligations, not established FxG exclusions. Use the scoped source-case verifier for the documented completion and selected-state claims."
+    ],
+    "spatial": {
+      "boundaries": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0
+        ],
+        [
+          5,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          11,
+          0,
+          0
+        ],
+        [
+          12,
+          0,
+          0
+        ],
+        [
+          13,
+          0,
+          0
+        ],
+        [
+          14,
+          0,
+          0
+        ],
+        [
+          15,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          15,
+          2,
+          0
+        ],
+        [
+          0,
+          3,
+          0
+        ],
+        [
+          15,
+          3,
+          0
+        ],
+        [
+          0,
+          4,
+          0
+        ],
+        [
+          15,
+          4,
+          0
+        ],
+        [
+          0,
+          5,
+          0
+        ],
+        [
+          15,
+          5,
+          0
+        ],
+        [
+          0,
+          6,
+          0
+        ],
+        [
+          15,
+          6,
+          0
+        ],
+        [
+          0,
+          7,
+          0
+        ],
+        [
+          15,
+          7,
+          0
+        ],
+        [
+          0,
+          8,
+          0
+        ],
+        [
+          15,
+          8,
+          0
+        ],
+        [
+          0,
+          9,
+          0
+        ],
+        [
+          15,
+          9,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          15,
+          10,
+          0
+        ],
+        [
+          0,
+          11,
+          0
+        ],
+        [
+          15,
+          11,
+          0
+        ],
+        [
+          0,
+          12,
+          0
+        ],
+        [
+          15,
+          12,
+          0
+        ],
+        [
+          0,
+          13,
+          0
+        ],
+        [
+          4,
+          13,
+          0
+        ],
+        [
+          11,
+          13,
+          0
+        ],
+        [
+          15,
+          13,
+          0
+        ],
+        [
+          0,
+          14,
+          0
+        ],
+        [
+          4,
+          14,
+          0
+        ],
+        [
+          11,
+          14,
+          0
+        ],
+        [
+          15,
+          14,
+          0
+        ],
+        [
+          0,
+          15,
+          0
+        ],
+        [
+          1,
+          15,
+          0
+        ],
+        [
+          2,
+          15,
+          0
+        ],
+        [
+          3,
+          15,
+          0
+        ],
+        [
+          4,
+          15,
+          0
+        ],
+        [
+          5,
+          15,
+          0
+        ],
+        [
+          10,
+          15,
+          0
+        ],
+        [
+          11,
+          15,
+          0
+        ],
+        [
+          12,
+          15,
+          0
+        ],
+        [
+          13,
+          15,
+          0
+        ],
+        [
+          14,
+          15,
+          0
+        ],
+        [
+          15,
+          15,
+          0
+        ]
+      ],
+      "voids": [
+        [
+          13,
+          1,
+          0
+        ],
+        [
+          13,
+          2,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          11,
+          0
+        ],
+        [
+          3,
+          11,
+          0
+        ],
+        [
+          4,
+          11,
+          0
+        ],
+        [
+          5,
+          11,
+          0
+        ],
+        [
+          6,
+          11,
+          0
+        ],
+        [
+          9,
+          11,
+          0
+        ],
+        [
+          10,
+          11,
+          0
+        ],
+        [
+          11,
+          11,
+          0
+        ],
+        [
+          12,
+          11,
+          0
+        ],
+        [
+          13,
+          11,
+          0
+        ],
+        [
+          14,
+          11,
+          0
+        ],
+        [
+          1,
+          12,
+          0
+        ],
+        [
+          2,
+          12,
+          0
+        ],
+        [
+          3,
+          12,
+          0
+        ],
+        [
+          12,
+          12,
+          0
+        ],
+        [
+          13,
+          12,
+          0
+        ],
+        [
+          14,
+          12,
+          0
+        ],
+        [
+          1,
+          13,
+          0
+        ],
+        [
+          2,
+          13,
+          0
+        ],
+        [
+          3,
+          13,
+          0
+        ],
+        [
+          12,
+          13,
+          0
+        ],
+        [
+          13,
+          13,
+          0
+        ],
+        [
+          14,
+          13,
+          0
+        ],
+        [
+          1,
+          14,
+          0
+        ],
+        [
+          2,
+          14,
+          0
+        ],
+        [
+          3,
+          14,
+          0
+        ],
+        [
+          12,
+          14,
+          0
+        ],
+        [
+          13,
+          14,
+          0
+        ],
+        [
+          14,
+          14,
+          0
+        ]
+      ],
+      "support": "Original floor and complete group support under the official engine; no removal occurs in the witness.",
+      "blocked": [
+        {
+          "stance": [
+            15,
+            3,
+            0
+          ],
+          "direction": "L",
+          "reason": "The east wall prevents a direct leftward input from outside M3."
+        }
+      ],
+      "reserved": [
+        {
+          "cell": [
+            12,
+            4,
+            0
+          ],
+          "function": "Upper nub input obtained after M0 clearance."
+        },
+        {
+          "cell": [
+            7,
+            1,
+            0
+          ],
+          "function": "Downward M1 input obtained after final M0 withdrawal."
+        }
+      ]
+    },
+    "events": {
+      "prep": {
+        "kind": "independent-tool"
+      },
+      "contact": {
+        "kind": "contact",
+        "tool": "M2",
+        "target": "M1",
+        "contactKind": "rear"
+      },
+      "southShift": {
+        "kind": "contact",
+        "tool": "M0",
+        "target": "M1",
+        "contactKind": "side"
+      },
+      "zDock": {
+        "kind": "contact",
+        "tool": "M0",
+        "target": "M2",
+        "contactKind": "side"
+      },
+      "rearLift": {
+        "kind": "contact",
+        "tool": "M2",
+        "target": "M1",
+        "contactKind": "rear"
+      },
+      "barRedock": {
+        "kind": "contact",
+        "tool": "M0",
+        "target": "M1",
+        "contactKind": "side"
+      },
+      "eastRelease": {
+        "kind": "contact",
+        "tool": "M1",
+        "target": "M3",
+        "contactKind": "side"
+      },
+      "postWork": {
+        "kind": "all-motion"
+      }
+    },
+    "stages": [
+      {
+        "name": "Transport and dock the bent tool",
+        "event": "prep",
+        "conflict": "Its lower end must enter the available lower-space opening.",
+        "effect": "Prepare the offset end for a rear lift."
+      },
+      {
+        "name": "Rear lift of the southern blocker",
+        "event": "contact",
+        "conflict": "Direct input below the bar is initially unavailable.",
+        "effect": "Open access toward the southern doorway."
+      },
+      {
+        "name": "Continued work and tool handoff",
+        "event": "postWork",
+        "conflict": "The eastern doorway remains obstructed after the first lift.",
+        "effect": "Reuse M1 as the tool for M3."
+      }
+    ],
+    "dependencies": [
+      {
+        "prepare": "prep",
+        "before": "contact",
+        "conflict": "Initial positions do not provide the witnessed rear contact."
+      },
+      {
+        "prepare": "postWork",
+        "before": "goal",
+        "after": "contact",
+        "conflict": "The selected first-lift state does not permit walking to the eastern doorway."
+      }
+    ]
+  },
+  "completeObjective": {
+    "kind": "ordered-room-local-passages",
+    "first": [
+      7,
+      15,
+      0
+    ],
+    "then": [
+      15,
+      1,
+      0
+    ],
+    "preserveFirstByFrozenWalking": true,
+    "verification": "scripts/verify-official-fxg.cjs"
+  },
+  "witness": "DLLULDDDLLDDRRRLLLLRRRRRLLLLLUUUUDRUURRRRRRRDDDDDDRRRRUULLLLLLUUUULLDDDDDRRDDLLUULLDDUUURRUUUULLLDDRRLLLRUURRRDDDDLLDDDDDRUUUULDDDDRRRDDDDDUUUUURUUUUDDDDLLLLLURUUUUURRURRRRRRDLRRRDDLLLLLLUUURDDDDDDDLLLLLULLURDDRRRRRUUUUUUULLUURDDURRRRRDRRUUR"
+}
