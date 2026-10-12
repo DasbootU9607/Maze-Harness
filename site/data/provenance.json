@@ -348,6 +348,24 @@
       "mapEquivalence": "CRLF-to-LF only; original bytes retained",
       "solutionReference": "skills/mazebench-hook-transfer/references/official-fxg-solution.json",
       "solutionSha256": "999ba0cdfbf4043328724ee45120f5d74c4669129a8d64daeabcd2018c27e95a"
+    },
+    {
+      "id": "official-bxc",
+      "kind": "official",
+      "room": "BxC",
+      "sourceFile": "l03iufzqh7.txt",
+      "sourceMapSha256": "561a9725e63ba44d8c873be57138c8527dffed9da12939a0813312fd9dab95ca",
+      "skillReference": "skills/mazebench-block-coordination/references/official-bxc-world-map.txt",
+      "witnessSha256": "638e5ccd3cc84637f35800dd4f7741b6404e1e4bfdd5542d1856126bda574571",
+      "goalSha256": "fd4f8e8bdf7c9046756431d607f9aedc09bea3d07787e1112b86c77cd2bf5263",
+      "objectiveVerification": {
+        "ordinaryReplayPassed": true,
+        "inputs": 55
+      },
+      "skillReferenceSha256": "fb514dd9d4265fabe14a15f8a081d07577915d0633f7c38e7baaa1b3100d1a06",
+      "mapEquivalence": "CRLF-to-LF only; original bytes retained",
+      "solutionReference": "skills/mazebench-block-coordination/references/official-bxc-solution.json",
+      "solutionSha256": "c92429f9777e3f9767e689dbe1518f5f5705d56da0be167c27cc1d501d85ebee"
     }
   ],
   "directEntryPolicy": "Rooms without an authored player get a temporary arrival actor only when opened directly. Entries are open, matching floor boundaries with an ordinary legal inward move. Raw maps, exported room states, and normal doorway traversal remain unchanged.",

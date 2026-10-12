@@ -1,0 +1,24 @@
+{
+  "room": "BxC",
+  "origin": "recovered-human-recording-prefix",
+  "witness": "LLLLLDDLDRRUURDDDDDDDDDRDDDDULUULURDRUUDLUURRRRRRRRRUUR",
+  "goal": {
+    "kind": "reach",
+    "cell": [
+      15,
+      7,
+      0
+    ]
+  },
+  "ordinaryReplayPassed": true,
+  "sourceMapSha256": "fb514dd9d4265fabe14a15f8a081d07577915d0633f7c38e7baaa1b3100d1a06",
+  "engineCommit": "0ac96b8a2648db09f375989cd7bc33699222c1e6",
+  "engineSha256": "c25be363e30186b7435c20361f20542170bdabc9de8c0dad8fa45198e5cab842",
+  "entryStateSha256": "9344634375b10eeb909d2fdb2ace6420768f398fce2064a0db599237871e02c6",
+  "recovery": {
+    "throughEvent": 214,
+    "rawInputs": 194,
+    "removedBlockedInputs": 139,
+    "appendedAgentMoves": 0
+  }
+}

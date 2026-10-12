@@ -16,7 +16,7 @@ The website pairs mechanism skills with complete official references and existin
 | [MazeBench Constrained Transport](skills/mazebench-constrained-transport/SKILL.md) | GxF; GxG; GxH | Goal-dependent tool selection, shared workspace, reserved circulation, and usable delivery with return |
 | [MazeBench Skating Cross](skills/mazebench-skating-cross/SKILL.md) | JxG | Directed ice stopping, reusable cross poses, changing pushing sides, and collecting a gem before returning to the doorway |
 | [MazeBench Bridge Convoy](skills/mazebench-bridge-convoy/SKILL.md) | BxE | Limited bridges, gate occupancy, independent staging, and turning a floor-first convoy |
-| [MazeBench Block Coordination](skills/mazebench-block-coordination/SKILL.md) | BxB | Sequential shield handoffs, changing active blocks, and retaining a tool for continued work |
+| [MazeBench Block Coordination](skills/mazebench-block-coordination/SKILL.md) | BxB; BxC | Sequential shield handoffs, joint transport followed by separation, and retaining tools for later access |
 | [MazeBench Enclosure Navigation](skills/mazebench-enclosure-navigation/SKILL.md) | CxB; DxB | Reachable cavity entry, shape-dependent protected directions, and safe release at the exit |
 | [MazeBench Clear Ground Turning](skills/mazebench-clear-ground-turning/SKILL.md) | ExB | Reusing one gate-shielding block through safe-ground changes of pushing side |
 

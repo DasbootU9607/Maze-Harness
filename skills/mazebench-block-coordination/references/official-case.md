@@ -59,7 +59,7 @@ Final player reaches (7,15,0) at elevation 0; ordinaryReplayPassed is true. All 
 | 37 | L | The westbound push reaches a stance with access to the bottom corridor. | Step 37 before/after arrays in states; every actor and gate set retained |
 | 40 | L | Leave M2 parked and reach the complete bottom doorway. | Step 40 before/after arrays in states; every actor and gate set retained |
 
-The input member supplies same-elevation player contact; every other member remains part of full-body clearance/support. Gate cells provide the reactive obstacle. Ordinary clear-ground cells supply reachable preparation or release stances. The doorway is a full endpoint rather than a decorative opening. Only BxB is a verified reference. M0/M1/M2 each must move under the scoped full-goal freeze checks (15/344/367 states exhausted). M3/M4 remain unchanged in the complete witness. No simultaneous movement occurs in that witness, and no exact-order necessity is claimed. BxC was excluded after bounded searches produced no verified route; none of its case-specific behavior is integrated. The prior private search and skip records remain available for later resumption.
+The input member supplies same-elevation player contact; every other member remains part of full-body clearance/support. Gate cells provide the reactive obstacle. Ordinary clear-ground cells supply reachable preparation or release stances. The doorway is a full endpoint rather than a decorative opening. M0/M1/M2 each must move under the scoped full-goal freeze checks (15/344/367 states exhausted). M3/M4 remain unchanged in the complete witness. No simultaneous movement occurs in that witness, and no exact-order necessity is claimed. BxC supplies a separately verified co-transport realization; its behavior and limits are recorded in its own case.
 
 ## Counterfactual checks and limits
 
@@ -89,4 +89,4 @@ Integrate source-backed motion, witnessed stage connections and the stated selec
 
 ## Structural difficulty observations
 
-BxB is provisionally l2 Combination because several shield handoffs connect to a later safe-ground change of pushing side for the retained final block. It is the sole verified reference in this family, so no ranking against BxC or another layout is established. Its 40 input count is not a human-difficulty measure. Mutable tier labels and grading basis live in the catalog and difficulty guide, rather than in the replay contract.
+BxB is provisionally l2 Combination because several shield handoffs connect to a later safe-ground change of pushing side for the retained final block. The catalog and difficulty guide compare the added BxC realization separately. Its 40 input count is not a human-difficulty measure. Mutable tier labels and grading basis live in the catalog and difficulty guide, rather than in the replay contract.

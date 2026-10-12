@@ -35,7 +35,36 @@ function replay(spec,repo) {
   assert(complete(e,s,spec.contract.goal),'The full doorway objective was not reached');
   return {engine:e,state:s,initialState:snap(e.initialState),steps,finalState:snap(s),ordinaryReplayPassed:true};
 }
+function verifyMotionChecks(spec,played) {
+  const e=played.engine,player=e.actorTypes.indexOf('player');
+  return (spec.contract.motionChecks||[]).map(check=>{
+    const step=played.steps[check.step-1];assert(step&&step.moved,'Missing successful motion event');
+    assert.deepEqual(step.movedGroups,[...check.groups].sort(),'Moved groups differ from the declared event');
+    const [dx,dy]=vectors[step.direction],before=step.before,after=step.after;
+    assert.equal(after.actorX[player]-before.actorX[player],dx);assert.equal(after.actorY[player]-before.actorY[player],dy);
+    const members=group=>e.actorGroupIds.map((g,i)=>g===group&&!before.actorRemoved[i]?i:-1).filter(i=>i>=0);
+    for(const group of check.groups)for(const i of members(group)){
+      assert.equal(after.actorX[i]-before.actorX[i],dx);assert.equal(after.actorY[i]-before.actorY[i],dy);
+      assert.equal(after.actorElevation[i],before.actorElevation[i]);assert.equal(after.actorRemoved[i],before.actorRemoved[i]);
+    }
+    assert(members(check.primaryGroup).some(i=>before.actorX[i]===before.actorX[player]+dx&&before.actorY[i]===before.actorY[player]+dy&&before.actorElevation[i]===before.actorElevation[player]),'Primary input lacks actual member contact');
+    for(const [from,to] of check.chain||[])assert(members(from).some(i=>members(to).some(j=>before.actorX[i]+dx===before.actorX[j]&&before.actorY[i]+dy===before.actorY[j]&&before.actorElevation[i]===before.actorElevation[j])),'Propagated group lacks actual directional contact');
+    return {...check,direction:step.direction,passed:true,scope:'Selected ordinary witness event, actual member contacts and full-group translations; not global necessity.'};
+  });
+}
+function verifyBranches(spec,repo) {
+  return (spec.contract.branchChecks||[]).map(check=>{
+    const e=runtime(repo).createEngine(spec.levelData),s=e.cloneState(e.initialState);
+    for(const d of spec.witness.slice(0,check.afterStep))e.move(s,...vectors[d]);
+    const start=snap(s),steps=[];
+    for(const direction of check.inputs){assert(vectors[direction],'Invalid branch direction');const before=snap(s),r=e.move(s,...vectors[direction]),after=snap(s);steps.push({direction,before,after,moved:r?.moved===true,movedGroups:movedGroups(e,before,after)});}
+    assert(steps.length,'Empty branch check');const last=steps.at(-1);
+    assert.equal(last.moved,check.lastMoved,'Branch action changed');assert.deepEqual(last.movedGroups,check.lastGroups,'Branch group contact changed');
+    return {...check,passed:true,start,steps,scope:'Ordinary-action fork from a witnessed state; validates this preparation opportunity only, not all possible histories.'};
+  });
+}
 function restrictionSearch(spec,repo,restriction,{cap=20000,timeoutMs=10000}={}) {
+  assert(['freeze-group','forbid-joint-motion'].includes(restriction.kind),'Unsupported restriction');
   const e=runtime(repo).createEngine(spec.levelData),initial=e.cloneState(e.initialState),queue=[{s:initial,path:''}],seen=new Set([JSON.stringify(snap(initial))]),started=Date.now();
   let cursor=0;
   while(cursor<queue.length){
@@ -47,6 +76,7 @@ function restrictionSearch(spec,repo,restriction,{cap=20000,timeoutMs=10000}={})
       if(!r?.moved)continue;
       const groups=movedGroups(e,before,snap(next));
       if(restriction.kind==='freeze-group'&&groups.includes(restriction.group))continue;
+      if(restriction.kind==='forbid-joint-motion'&&groups.length>1)continue;
       const key=JSON.stringify(snap(next));
       if(seen.has(key))continue;
       seen.add(key);queue.push({s:next,path:node.path+d});
@@ -77,9 +107,9 @@ function verify({skill,repo,family='official',out}) {
   const parsed=api.getLevelState(game,api.getLevel(game,'level_'+spec.originRoom.id));
   assert.equal(sha(parsed),spec.source.entryStateSha256,'Packaged entry differs from the original official parsed state');
   assert.deepEqual(spec.cells,map.toString('utf8').trimEnd().split(/\r?\n/).map(row=>row.split(' ')),'Map cells mismatch');
-  const played=replay(spec,repo),checks={profile:spec.contract.profile,ordinaryReplayPassed:true,goal:spec.contract.goal,inputs:spec.witness.length,finalState:played.finalState,probes:(spec.contract.probeSteps||[]).map(n=>probe(spec,repo,n)),restrictions:(spec.contract.restrictions||[]).map(r=>restrictionSearch(spec,repo,r)),source:spec.source};
+  const played=replay(spec,repo),checks={profile:spec.contract.profile,ordinaryReplayPassed:true,goal:spec.contract.goal,inputs:spec.witness.length,finalState:played.finalState,motionChecks:verifyMotionChecks(spec,played),branchChecks:verifyBranches(spec,repo),probes:(spec.contract.probeSteps||[]).map(n=>probe(spec,repo,n)),restrictions:(spec.contract.restrictions||[]).map(r=>restrictionSearch(spec,repo,r)),source:spec.source};
   if(out){assert(!fs.existsSync(out),'Use a fresh verification output');fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'replay.json'),JSON.stringify({initialState:played.initialState,steps:played.steps,finalState:played.finalState},null,2)+'\n');fs.writeFileSync(path.join(out,'checks.json'),JSON.stringify(checks,null,2)+'\n');}
   return checks;
 }
 if(require.main===module){try{const args=process.argv.slice(2),options={skill:path.resolve(__dirname,'..')};for(let i=0;i<args.length;i+=2)options[args[i].slice(2)]=args[i+1];const result=verify(options);console.log(JSON.stringify({ordinaryReplayPassed:result.ordinaryReplayPassed,inputs:result.inputs,goal:result.goal,restrictions:result.restrictions},null,2));}catch(e){console.error(e.message);process.exitCode=1;}}
-module.exports={sha,snap,runtime,replay,probe,restrictionSearch,verify};
+module.exports={sha,snap,runtime,replay,probe,restrictionSearch,verify,verifyMotionChecks,verifyBranches};

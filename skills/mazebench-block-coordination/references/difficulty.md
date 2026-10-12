@@ -1,7 +1,10 @@
 # Reference selection and relative difficulty
 
-Select references through [reference-catalog.json](reference-catalog.json), matching relations, authored entry and room-local objective.
+Use [reference-catalog.json](reference-catalog.json) to select a compatible relation branch and complete objective. Both ratings are provisional structural estimates, not official rankings or human playtest scores.
 
-BxB is provisionally l2 Combination because several shield handoffs connect to a later safe-ground change of pushing side for the retained final block. It is the sole verified reference in this family, so no ranking against BxC or another layout is established. Its 40 input count is not a human-difficulty measure.
+| Reference | Tier | Structural comparison |
+| --- | --- | --- |
+| BxB | l2 Combination | Several initially available independent shields connect to a final tool reuse after a safe-ground turn. |
+| BxC | l3 Planning | Common delivery must connect to separate target placement, a clear-ground return, and another block creating the final input stance; more preparation precedes the handoff. |
 
-The editable ladder is l1 Foundation (one relation with accessible preparation), l2 Combination (connected preparations, stance changes or tool reuse), and l3 Planning (deeper dependencies, constrained shared workspace or recovery tradeoffs). Empty tiers and ties are allowed. These are structural estimates within this family, not calibrated human scores or official MazeBench rankings. No route count or solver expansion count is a difficulty metric. Later additions need their own human focus, complete-case analysis and qualified evidence through the case workflow.
+Block count, room geometry and doorway endpoint differ, so the comparison is not a controlled human-difficulty experiment. Neither route length, search timeout nor the existence of a human recording establishes difficulty. The l1 Foundation tier remains empty and denotes a compact relation with accessible preparation; l2 links preparations/stance changes/reuse; l3 adds deeper dependencies and shared working-space constraints. Ties and revisions are allowed when evidence warrants them. Later references need their own human focus, full ordinary completion and explicitly qualified evidence through the case workflow.

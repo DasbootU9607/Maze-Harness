@@ -104,14 +104,16 @@
       "id": "block-coordination",
       "name": "Block Coordination",
       "verb": "Block Coordination",
-      "description": "Design MazeBench passages with several movable blocks whose shielding roles are prepared, handed off, retained or released to reach an exit. Based on BxB; for map authoring.",
+      "description": "Design MazeBench passages with several movable blocks whose shielding roles are prepared, handed off, retained or released to reach an exit. Uses BxB and BxC; for map authoring.",
       "steps": [],
       "exampleDescription": "An agent-authored realization built with this skill.",
       "rooms": [
-        "BxB"
+        "BxB",
+        "BxC"
       ],
       "officialCases": [
-        "official-bxb"
+        "official-bxb",
+        "official-bxc"
       ],
       "authoredCases": [],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-block-coordination"
@@ -496,6 +498,26 @@
         ],
         "preserveFirstByFrozenWalking": true,
         "verification": "scripts/verify-official-fxg.cjs"
+      }
+    },
+    {
+      "id": "official-bxc",
+      "kind": "official",
+      "title": "Room BxC",
+      "skill": "block-coordination",
+      "world": "maze",
+      "room": "BxC",
+      "description": "The complete upstream room used by this skill.",
+      "thumbnail": "assets/thumbnails/official-bxc.png",
+      "map": "data/maps/official-bxc-world-map.txt",
+      "witness": "LLLLLDDLDRRUURDDDDDDDDDRDDDDULUULURDRUUDLUURRRRRRRRRUUR",
+      "goal": {
+        "kind": "reach",
+        "cell": [
+          15,
+          7,
+          0
+        ]
       }
     }
   ],
@@ -1512,7 +1534,7 @@
       "id": "BxC",
       "column": 1,
       "row": 2,
-      "skill": null,
+      "skill": "block-coordination",
       "cells": [
         "######....######",
         "#..............#",

@@ -37,7 +37,27 @@
       "difficulty": {
         "level": "l2",
         "basis": "structural-estimate",
-        "rationale": "Combination: independent shield handoffs lead to reuse of the final block after a safe-ground change of pushing side. Sole verified reference; no empirical or cross-case ranking is claimed."
+        "rationale": "Combination: independent shield handoffs lead to reuse of the final block after a safe-ground change of pushing side; its pre-positioned handoff shields require less preparation than the BxC realization. Structural estimate, not empirical difficulty."
+      }
+    },
+    {
+      "id": "BxC",
+      "kind": "official",
+      "family": "official-bxc",
+      "parentCase": "",
+      "changeSummary": "",
+      "relations": [
+        "prepare-next-shield",
+        "independent-or-chain-motion",
+        "retain-or-release-tools"
+      ],
+      "mapSha256": "fb514dd9d4265fabe14a15f8a081d07577915d0633f7c38e7baaa1b3100d1a06",
+      "engineCommit": "0ac96b8a2648db09f375989cd7bc33699222c1e6",
+      "casePath": "references/official-bxc-case.md",
+      "difficulty": {
+        "level": "l3",
+        "basis": "structural-estimate",
+        "rationale": "Planning: co-transport brings two tools into a shared workspace, then separate placement, a clear-ground return and a second-tool approach create the final handoff; deeper preparation than BxB, with block-count and endpoint confounds."
       }
     }
   ]
