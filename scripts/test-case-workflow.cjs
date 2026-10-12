@@ -355,7 +355,11 @@ test('Package checks validate real catalog links, map fingerprints and relation 
   fs.mkdirSync(path.dirname(directory), { recursive: true });
   fs.cpSync(path.join(root, 'skills', name), directory, { recursive: true });
   fs.writeFileSync(path.join(fixture, 'README.md'), '[MazeBench Hook Transfer](skills/mazebench-hook-transfer/SKILL.md)\n');
-  const references = ['official', 'official-fxe'].map(family => {
+  const families = fs.readdirSync(path.join(directory, 'references'))
+    .filter(file => /^official(?:-[a-z0-9]+)*-case\.md$/.test(file))
+    .map(file => file.slice(0, -'-case.md'.length)).sort();
+  assert(families.length >= 2, 'The package fixture must cover multiple official cases');
+  const references = families.map(family => {
     const spec = JSON.parse(fs.readFileSync(path.join(directory, 'references', family + '-design.json')));
     const text = fs.readFileSync(path.join(directory, 'references', family + '-case.md'), 'utf8');
     return { id: spec.originRoom.id, kind: 'official', family, parentCase: '', changeSummary: '', relations: ['ht-remote-contact'],
@@ -367,9 +371,13 @@ test('Package checks validate real catalog links, map fingerprints and relation 
   const file = path.join(directory, 'references/reference-catalog.json');
   const write = data => fs.writeFileSync(file, JSON.stringify(data, null, 2) + '\n');
   write(catalog);
-  fs.writeFileSync(path.join(directory, 'references/difficulty.md'), '# Synthetic catalog check\n\nBoth references remain unranked in this isolated test fixture.\n');
+  fs.writeFileSync(path.join(directory, 'references/difficulty.md'), '# Synthetic catalog check\n\nAll references remain unranked in this isolated test fixture.\n');
   const { checkRepository } = require('./check-skills.cjs');
   assert.deepEqual(checkRepository(fixture).errors, []);
+  const missing = structuredClone(catalog);
+  missing.references.pop();
+  write(missing);
+  assert(checkRepository(fixture).errors.some(issue => issue.includes('catalog must retain every packaged case')));
   catalog.references[0].mapSha256 = '0'.repeat(64);
   write(catalog);
   assert(checkRepository(fixture).errors.some(issue => issue.includes('stale catalog map fingerprint')));
