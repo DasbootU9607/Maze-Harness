@@ -1,0 +1,528 @@
+{
+  "title": "Relay Reserve",
+  "source": "agent-authored",
+  "cells": [
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      ".",
+      ".",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      ".",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      ".",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      ".",
+      "."
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      ".",
+      "."
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      ".",
+      "g",
+      "g",
+      ".",
+      ".",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      ".",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      ".",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "M1",
+      ".",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#",
+      "M0",
+      "p",
+      ".",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#",
+      ".",
+      ".",
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#",
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ]
+  ],
+  "witness": "UUUURDDDDLDLUUUUUURRRRRDRUUUURULLLLLLLULDDDDRRRRRRRRRUR",
+  "contract": {
+    "profile": "authored-planar-gate-planning-v1",
+    "mode": "complex",
+    "skill": "block-coordination",
+    "goal": {
+      "kind": "reach",
+      "cell": [
+        15,
+        5,
+        0
+      ]
+    },
+    "readReceipt": {
+      "path": "references/mechanism-logic.md",
+      "sha256": "ec08306e851dfda530120d5a05e9682196f23dc61a506540f7211bae120e4b44",
+      "readBeforeLayout": true
+    },
+    "members": {
+      "M1": [
+        [
+          7,
+          11,
+          0
+        ]
+      ],
+      "M0": [
+        [
+          6,
+          12,
+          0
+        ]
+      ]
+    },
+    "roles": {
+      "M1": "Prepared working shield that later builds the approach back to the retained courier.",
+      "M0": "Approach shield retained at the elbow for the final horizontal crossing."
+    },
+    "relations": [
+      "prepare-next-shield",
+      "independent-or-chain-motion",
+      "retain-or-release-tools"
+    ],
+    "stages": [
+      {
+        "name": "Prepare the later handoff",
+        "keyStep": 4,
+        "event": {
+          "kind": "move",
+          "group": "M1",
+          "direction": "U"
+        },
+        "nextStand": [
+          6,
+          13,
+          0
+        ],
+        "nextInput": {
+          "direction": "U",
+          "event": {
+            "kind": "move",
+            "group": "M0",
+            "direction": "U"
+          }
+        },
+        "conflict": "The future working shield is not initially on the handoff row.",
+        "effect": "The lower clear connector returns the player to the approach shield while M1 waits."
+      },
+      {
+        "name": "Reach the prepared shield",
+        "keyStep": 18,
+        "event": {
+          "kind": "move",
+          "group": "M0",
+          "direction": "U"
+        },
+        "nextStand": [
+          6,
+          7,
+          0
+        ],
+        "nextInput": {
+          "direction": "R",
+          "event": {
+            "kind": "move",
+            "group": "M1",
+            "direction": "R"
+          }
+        },
+        "conflict": "The courier cannot continue north or return along unoccupied gates.",
+        "effect": "The pre-positioned M1 now offers an actual legal rightward input."
+      },
+      {
+        "name": "Return to the retained courier",
+        "keyStep": 44,
+        "event": {
+          "kind": "move",
+          "group": "M1",
+          "direction": "D"
+        },
+        "nextStand": [
+          5,
+          6,
+          0
+        ],
+        "nextInput": {
+          "direction": "R",
+          "event": {
+            "kind": "move",
+            "group": "M0",
+            "direction": "R"
+          }
+        },
+        "conflict": "M0 must remain at its old elbow while M1 rebuilds its left-side approach.",
+        "effect": "M0 receives a second role as the final eastbound shield."
+      },
+      {
+        "name": "Leave a usable door slot",
+        "keyStep": 53,
+        "event": {
+          "kind": "move",
+          "group": "M0",
+          "direction": "R"
+        },
+        "nextStand": [
+          14,
+          5,
+          0
+        ],
+        "nextInput": null,
+        "conflict": "The final shield occupies the boundary cell on its own lane.",
+        "effect": "Clear ground above it supplies the real exit at the next row."
+      }
+    ],
+    "exclusions": [
+      {
+        "name": "freeze-courier",
+        "event": {
+          "kind": "move",
+          "group": "M0"
+        }
+      },
+      {
+        "name": "freeze-prepared-shield",
+        "event": {
+          "kind": "move",
+          "group": "M1"
+        }
+      },
+      {
+        "name": "omit-first-handoff",
+        "event": {
+          "kind": "move",
+          "group": "M1",
+          "direction": "R",
+          "P": [
+            6,
+            7,
+            0
+          ]
+        }
+      },
+      {
+        "name": "omit-retained-courier-use",
+        "event": {
+          "kind": "move",
+          "group": "M0",
+          "direction": "R",
+          "P": [
+            5,
+            6,
+            0
+          ]
+        }
+      }
+    ],
+    "orderedReuse": [
+      {
+        "name": "courier-handoff-courier",
+        "events": [
+          {
+            "kind": "move",
+            "group": "M0",
+            "direction": "U"
+          },
+          {
+            "kind": "move",
+            "group": "M1"
+          },
+          {
+            "kind": "move",
+            "group": "M0",
+            "direction": "R"
+          }
+        ]
+      }
+    ],
+    "branches": [
+      {
+        "name": "Preparation precedes the approach",
+        "baseStep": 0,
+        "match": [
+          "player",
+          "M0"
+        ],
+        "positive": {
+          "moves": "UUUURDDDDLDLUUUUUU",
+          "probe": "R",
+          "expect": {
+            "kind": "move",
+            "group": "M1",
+            "direction": "R"
+          },
+          "suffix": "RRRRDRUUUURULLLLLLLULDDDDRRRRRRRRRUR"
+        },
+        "negative": {
+          "moves": "DLUUUUUU",
+          "probe": "R",
+          "blocked": true,
+          "goalSearch": true
+        },
+        "claim": "The player and courier match; only the prepared second shield changes the next right input from blocked to useful."
+      }
+    ],
+    "difficulty": {
+      "basis": "structural-estimate",
+      "intended": "Planning challenge",
+      "humanPlaytests": 0
+    },
+    "limits": [
+      "No calibrated human difficulty or shortest-route claim.",
+      "Exclusions quantify only over this initial state, goal, official runtime and declared transition predicate."
+    ]
+  }
+}

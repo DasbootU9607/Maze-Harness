@@ -1,0 +1,42 @@
+{
+  "sourceKind": "agent-authored",
+  "skill": "mazebench-bridge-convoy",
+  "title": "Last Plank",
+  "designBriefSource": "The requested six-family planning batch; private prompt retained outside distribution.",
+  "parentReferences": [
+    "BxE"
+  ],
+  "relationIds": [
+    "allocate-bridge-after-access-plan",
+    "occupy-gate-before-entry",
+    "stage-and-recover-both-tools",
+    "reform-convoy-for-turn",
+    "bridge-first-delivery"
+  ],
+  "goal": "Collect the western gem while retaining the blue shield through the final gate.",
+  "stageDependency": "Spend the access plank -> recover the blue and retained floor -> assemble the northbound convoy -> independently translate the floor to form a westbound convoy -> fill the gap floor-first -> reuse blue for the final gate.",
+  "planningBurden": "One resource is irreversible, both modules must remain operable through a turn, and actor order decides whether the blue survives.",
+  "changedConstraints": [
+    "Two purposeful bridge resources replace the source multi-chamber allocation network.",
+    "One narrow gate throat makes shared delivery causally necessary.",
+    "A compact turning bay exposes the difference between independent reassembly and a nonexistent object rotation."
+  ],
+  "physicalScope": "One 16 by 16 room; ordinary pinned official engine; all initial actors at elevation zero.",
+  "difficulty": {
+    "level": "l3-planning",
+    "basis": "structural-estimate",
+    "humanPlaytests": 0,
+    "qualification": "An author estimate from dependent operations and planning tradeoffs, not calibrated human difficulty."
+  },
+  "evidence": {
+    "overall": "passed",
+    "checks": 9,
+    "reachableBranchPairs": 1,
+    "fullReplay": true
+  },
+  "limits": [
+    "Both planks, blue motion, actual convoy contact, final floor consumption and the ordered blue reuse pass exhausted exclusions.",
+    "The blue-first loss is demonstrated from ordinary reachable states; no arbitrary actor swapping is used.",
+    "Exact floor positions and every turn translation are not claimed uniquely necessary."
+  ]
+}

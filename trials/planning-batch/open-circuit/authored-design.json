@@ -1,0 +1,512 @@
+{
+  "title": "Open Circuit",
+  "source": "agent-authored",
+  "cells": [
+    [
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      ".",
+      "G",
+      "g",
+      "g",
+      ".",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      ".",
+      "g",
+      ".",
+      ".",
+      ".",
+      "g",
+      "g",
+      ".",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      ".",
+      "g",
+      "g",
+      "g",
+      "g",
+      ".",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "g",
+      "g",
+      "g",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      ".",
+      ".",
+      ".",
+      "M0",
+      "M0",
+      ".",
+      ".",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      ".",
+      ".",
+      ".",
+      ".",
+      "M0",
+      "M0",
+      "p",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      ".",
+      ".",
+      ".",
+      "M0",
+      "M0",
+      ".",
+      ".",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ]
+  ],
+  "witness": "LDLUUDLLLUURUUUURRRRRUUUURRLLDDRRRRRUULLLLLLLUULLLLDR",
+  "contract": {
+    "profile": "authored-planar-gate-planning-v1",
+    "mode": "complex",
+    "skill": "enclosure-navigation",
+    "goal": {
+      "kind": "gem"
+    },
+    "readReceipt": {
+      "path": "references/mechanism-logic.md",
+      "sha256": "f2018dc3e233a09e227036156949b3f94af5fa94ce4560df9360c52776132d7a",
+      "readBeforeLayout": true
+    },
+    "members": {
+      "M0": [
+        [
+          5,
+          11,
+          0
+        ],
+        [
+          6,
+          11,
+          0
+        ],
+        [
+          6,
+          12,
+          0
+        ],
+        [
+          7,
+          12,
+          0
+        ],
+        [
+          5,
+          13,
+          0
+        ],
+        [
+          6,
+          13,
+          0
+        ]
+      ]
+    },
+    "roles": {
+      "M0": "Asymmetric six-member enclosure with a rear protrusion, protected cavity and later external input."
+    },
+    "relations": [
+      "usable-cavity-entry",
+      "protected-direction-set",
+      "goal-connected-release"
+    ],
+    "stages": [
+      {
+        "name": "Align the full enclosure",
+        "keyStep": 1,
+        "event": {
+          "kind": "move",
+          "group": "M0",
+          "direction": "L"
+        },
+        "nextStand": [
+          4,
+          12,
+          0
+        ],
+        "nextInput": {
+          "direction": "U",
+          "event": {
+            "kind": "move",
+            "group": "M0",
+            "direction": "U"
+          }
+        },
+        "conflict": "The protruding body does not fit the narrow throat in its initial column.",
+        "effect": "A left translation preserves a reachable cavity and a legal northward push."
+      },
+      {
+        "name": "Park for an external approach",
+        "keyStep": 27,
+        "event": {
+          "kind": "move",
+          "group": "M0",
+          "direction": "R"
+        },
+        "nextStand": [
+          14,
+          2,
+          0
+        ],
+        "nextInput": {
+          "direction": "L",
+          "event": {
+            "kind": "move",
+            "group": "M0",
+            "direction": "L"
+          }
+        },
+        "conflict": "The cavity has no left contact; over-advancing seals the external input against the wall.",
+        "effect": "The safe bay connects the opening to the external right face."
+      },
+      {
+        "name": "Recover the complete body",
+        "keyStep": 45,
+        "event": {
+          "kind": "move",
+          "group": "M0",
+          "direction": "L"
+        },
+        "nextStand": [
+          3,
+          1,
+          0
+        ],
+        "nextInput": {
+          "direction": "R",
+          "event": {
+            "kind": "move",
+            "group": "M0",
+            "direction": "R"
+          }
+        },
+        "conflict": "Returning the body still leaves a member over the gem.",
+        "effect": "The north rim reconnects to a final useful side input before collection."
+      }
+    ],
+    "exclusions": [
+      {
+        "name": "freeze-enclosure",
+        "event": {
+          "kind": "move",
+          "group": "M0"
+        }
+      },
+      {
+        "name": "omit-rightward-crossing",
+        "event": {
+          "kind": "move",
+          "group": "M0",
+          "direction": "R"
+        }
+      },
+      {
+        "name": "omit-leftward-recovery",
+        "event": {
+          "kind": "move",
+          "group": "M0",
+          "direction": "L"
+        }
+      },
+      {
+        "name": "omit-northward-crossing",
+        "event": {
+          "kind": "move",
+          "group": "M0",
+          "direction": "U"
+        }
+      }
+    ],
+    "orderedReuse": [
+      {
+        "name": "protected-crossing-before-external-return",
+        "events": [
+          {
+            "kind": "move",
+            "group": "M0",
+            "direction": "R"
+          },
+          {
+            "kind": "move",
+            "group": "M0",
+            "direction": "L"
+          }
+        ]
+      }
+    ],
+    "branches": [
+      {
+        "name": "Preserve the external pushing face",
+        "baseStep": 27,
+        "positive": {
+          "moves": "LLDDRRRRRUU",
+          "probe": "L",
+          "expect": {
+            "kind": "move",
+            "group": "M0",
+            "direction": "L"
+          },
+          "suffix": "LLLLLLUULLLLDR"
+        },
+        "negative": {
+          "moves": "R",
+          "probe": "R",
+          "blocked": true,
+          "goalSearch": true,
+          "goalExpected": "solved",
+          "inaccessible": [
+            14,
+            2,
+            0
+          ]
+        },
+        "claim": "A legal extra right push removes the planned external leftward input. Repositioning can repair this choice; the exact parking pose is not globally necessary."
+      }
+    ],
+    "difficulty": {
+      "basis": "structural-estimate",
+      "intended": "Planning challenge",
+      "humanPlaytests": 0
+    },
+    "limits": [
+      "No calibrated human difficulty or shortest-route claim.",
+      "Exclusions quantify only over this initial state, goal, official runtime and declared transition predicate."
+    ]
+  }
+}

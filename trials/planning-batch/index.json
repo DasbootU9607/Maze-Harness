@@ -1,0 +1,67 @@
+{
+  "source": "Six new agent-authored planning trials",
+  "engineCommit": "0ac96b8a2648db09f375989cd7bc33699222c1e6",
+  "difficultyBasis": "structural-estimate; no human playtests",
+  "trials": [
+    {
+      "id": "relay-reserve",
+      "skill": "block-coordination",
+      "title": "Relay Reserve",
+      "publicId": "authored-block-coordination-ed4fa93087f1",
+      "url": "https://dasbootu9607.github.io/Maze-Harness/player.html?world=authored-block-coordination-ed4fa93087f1&room=AxA&case=authored-block-coordination-ed4fa93087f1",
+      "sourceMapSha256": "ed4fa93087f11ab8a919f04fae82e73bdd497d9cf3f81a61fdcad1c9527d4a82",
+      "checks": 8,
+      "branches": 1
+    },
+    {
+      "id": "open-circuit",
+      "skill": "enclosure-navigation",
+      "title": "Open Circuit",
+      "publicId": "authored-enclosure-navigation-dd1cff7d5825",
+      "url": "https://dasbootu9607.github.io/Maze-Harness/player.html?world=authored-enclosure-navigation-dd1cff7d5825&room=AxA&case=authored-enclosure-navigation-dd1cff7d5825",
+      "sourceMapSha256": "dd1cff7d582560e9a87f26600c26ee849bcd103d339f633b62a303d2270f7208",
+      "checks": 8,
+      "branches": 1
+    },
+    {
+      "id": "turning-debt",
+      "skill": "clear-ground-turning",
+      "title": "Turning Debt",
+      "publicId": "authored-clear-ground-turning-3a7a7a80206c",
+      "url": "https://dasbootu9607.github.io/Maze-Harness/player.html?world=authored-clear-ground-turning-3a7a7a80206c&room=AxA&case=authored-clear-ground-turning-3a7a7a80206c",
+      "sourceMapSha256": "3a7a7a80206c5675b4ef6472b05bae5e202d51827a580c599ed1c795c594c0f8",
+      "checks": 9,
+      "branches": 1
+    },
+    {
+      "id": "last-plank",
+      "skill": "bridge-convoy",
+      "title": "Last Plank",
+      "publicId": "authored-bridge-convoy-a38898d626b3",
+      "url": "https://dasbootu9607.github.io/Maze-Harness/player.html?world=authored-bridge-convoy-a38898d626b3&room=AxA&case=authored-bridge-convoy-a38898d626b3",
+      "sourceMapSha256": "a38898d626b306a74ec5886072bc953c250b1d0726a164799f9ae5ccc984c95b",
+      "checks": 9,
+      "branches": 1
+    },
+    {
+      "id": "return-hook",
+      "skill": "hook-transfer",
+      "title": "Return Hook",
+      "publicId": "authored-hook-transfer-1bf88985df5b",
+      "url": "https://dasbootu9607.github.io/Maze-Harness/player.html?world=authored-hook-transfer-1bf88985df5b&room=AxA&case=authored-hook-transfer-1bf88985df5b",
+      "sourceMapSha256": "1bf88985df5b8b05eadcec1c0cdc85b99fd6e15582cf420783e8390c7fd250d4",
+      "checks": 22,
+      "branches": 1
+    },
+    {
+      "id": "borrowed-corner",
+      "skill": "constrained-transport",
+      "title": "Borrowed Corner",
+      "publicId": "authored-constrained-transport-a6eaf6caf274",
+      "url": "https://dasbootu9607.github.io/Maze-Harness/player.html?world=authored-constrained-transport-a6eaf6caf274&room=AxA&case=authored-constrained-transport-a6eaf6caf274",
+      "sourceMapSha256": "a6eaf6caf2747690c1819423fabe0822efe9435963336334e4c3227f0a5c5b31",
+      "checks": 36,
+      "branches": 1
+    }
+  ]
+}

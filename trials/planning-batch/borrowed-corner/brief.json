@@ -1,0 +1,42 @@
+{
+  "sourceKind": "agent-authored",
+  "skill": "mazebench-constrained-transport",
+  "title": "Borrowed Corner",
+  "designBriefSource": "The requested six-family planning batch; private prompt retained outside distribution.",
+  "parentReferences": [
+    "GxF",
+    "GxH"
+  ],
+  "relationIds": [
+    "ct-usable-delivery",
+    "ct-shared-clearance",
+    "ct-recovery-and-reuse",
+    "ct-reserved-circulation"
+  ],
+  "goal": "Collect the gem at (7,3,0) after usable L-tool delivery and subsequent target work.",
+  "stageDependency": "Retreat the tool downward -> use the released cross-aisle to park the shutter -> recover the tool upward -> dock from the supported side -> transmit lateral contact -> lift and shift the target to expose the gem.",
+  "planningBurden": "Advancing the tool immediately blocks the helper input. The lower parking bay must preserve extraction, and the delivered tool must leave the target usable.",
+  "changedConstraints": [
+    "One long shutter and an asymmetric L replace the source multi-helper workspace.",
+    "A side corridor makes retreat before shutter movement necessary.",
+    "A second visible void removes a discovered axial-input bypass while preserving supported tool movement.",
+    "Two post-contact target operations preserve a complete final objective."
+  ],
+  "physicalScope": "One 16 by 16 room; ordinary pinned official engine; all initial actors at elevation zero.",
+  "difficulty": {
+    "level": "l3-planning",
+    "basis": "structural-estimate",
+    "humanPlaytests": 0,
+    "qualification": "An author estimate from dependent operations and planning tradeoffs, not calibrated human difficulty."
+  },
+  "evidence": {
+    "overall": "passed",
+    "checks": 36,
+    "reachableBranchPairs": 1,
+    "fullReplay": true
+  },
+  "limits": [
+    "All three groups, lateral transfer, preparation, downward/upward tool motion, ordered retreat-and-recovery, and post-contact target work pass exhausted checks.",
+    "The exact witness, helper parking location and minimal tool silhouette are not proved unique."
+  ]
+}

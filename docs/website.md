@@ -43,6 +43,14 @@ The initial nine examples had 738 saved inputs; subsequent reference additions a
 
 An optional `official*-solution.json` can provide a verified longer objective while preserving the historical design contract. Synchronization checks its map identity and freshly replays it before publication. Original packaged Git LF and website CRLF maps keep separate hashes when needed; only full CRLF-to-LF equivalence is accepted. Ordered passage objectives track both visits in the same route and, when declared, verify a final walking return with all other actors frozen. Causal necessity remains within each skill verifier's documented scope.
 
+## Planning batch and repeatable trials
+
+The [six-map planning batch](../trials/planning-batch/README.md) keeps public design contracts and full solutions in `trials/planning-batch/`. Detailed working reports and build outputs remain in the local authoring outputs. Each map was registered through the publisher with its actual saved build and matching passed verification report.
+
+Authored single-room trials start with their full gem objective. Reset and repeated saved-solution playback clear that trial's collected-gem state; the official multi-room world retains its persistent collection behavior. `scripts/test-planning-site.cjs --engine ENGINE` checks all six maps, including real input, undo, reset after completion, every solution control, touch input and deep-link reload. Add `--base-url URL` to check a deployed version.
+
+`node scripts/test-authored-gates.cjs --repo ENGINE` checks directed gate walking, ordinary/search parity, floating-floor consumption, unsupported tokens and the complete enclosure regression. Gate analysis merges only mutually reachable walking states.
+
 ## Local preview
 
 Run from the repository root:
@@ -68,7 +76,7 @@ Browser integration checks require a separate engine checkout with `playwright-c
 node scripts/test-site-browser.cjs --engine PATH_TO_ENGINE
 ```
 
-This checks desktop and mobile layouts, all four skill pages, atlas navigation, a real block push and undo/reset, natural AxA-to-AxB traversal, the 20 rooms without a predefined player, deep-link refresh, all 135 authored-route inputs against the engine, and solution playback. It blocks external network requests to verify all gameplay resources are bundled. Screenshots and reports stay in ignored `outputs/site-browser/`.
+This checks desktop and mobile layouts, all registered skill pages, atlas navigation, a real block push and undo/reset, natural AxA-to-AxB traversal, the 20 rooms without a predefined player, deep-link refresh, all registered authored-route inputs against the engine, and solution playback. It blocks external network requests to verify all gameplay resources are bundled. Screenshots and reports stay in ignored `outputs/site-browser/`.
 
 ## Refreshing the engine bundle
 

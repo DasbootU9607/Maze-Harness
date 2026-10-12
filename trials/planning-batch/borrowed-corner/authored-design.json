@@ -1,0 +1,1000 @@
+{
+  "title": "Borrowed Corner",
+  "cells": [
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      "G",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      "M2",
+      "M2",
+      "M2",
+      "M2",
+      "+",
+      ".",
+      "+",
+      ".",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      "M2",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      "M1",
+      "M1",
+      "M1",
+      "M1",
+      ".",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      ".",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      "p",
+      ".",
+      "M0",
+      "M0",
+      ".",
+      ".",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      "M0",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ]
+  ],
+  "witness": "URRDRRRUULLLDDLDDRUUUUUUUDRRULLDLLLLUULRRU",
+  "source": "agent-authored",
+  "contract": {
+    "profile": "planar-transport-depth-v2",
+    "mode": "complex",
+    "goal": {
+      "kind": "gem"
+    },
+    "members": {
+      "M2": [
+        [
+          5,
+          4,
+          0
+        ],
+        [
+          6,
+          4,
+          0
+        ],
+        [
+          7,
+          4,
+          0
+        ],
+        [
+          8,
+          4,
+          0
+        ],
+        [
+          6,
+          5,
+          0
+        ]
+      ],
+      "M1": [
+        [
+          9,
+          8,
+          0
+        ],
+        [
+          10,
+          8,
+          0
+        ],
+        [
+          11,
+          8,
+          0
+        ],
+        [
+          12,
+          8,
+          0
+        ]
+      ],
+      "M0": [
+        [
+          10,
+          10,
+          0
+        ],
+        [
+          11,
+          10,
+          0
+        ],
+        [
+          11,
+          11,
+          0
+        ]
+      ]
+    },
+    "roles": {
+      "M0": "Three-member offset tool that must retreat before being delivered upward.",
+      "M1": "Four-member horizontal shutter whose side stance is released by tool retreat.",
+      "M2": "Five-member target whose lifted and shifted continuation opens the gem."
+    },
+    "allowRemoval": [],
+    "necessaryRoles": [
+      "M2",
+      "M1",
+      "M0"
+    ],
+    "optionalRoles": [],
+    "readReceipt": {
+      "path": "references/mechanism-logic.md",
+      "sha256": "58160bf7ea100982d52b93731f9ab46c5969db3dda039a1c074458471ef6742b",
+      "readBeforeLayout": true
+    },
+    "inherited": [
+      {
+        "relation": "ct-usable-delivery",
+        "realization": "The complete offset L must reach the right-side input before contacting the inaccessible target member.",
+        "members": {
+          "M0": [
+            [
+              10,
+              10,
+              0
+            ],
+            [
+              11,
+              10,
+              0
+            ],
+            [
+              11,
+              11,
+              0
+            ]
+          ],
+          "M2": [
+            [
+              5,
+              4,
+              0
+            ],
+            [
+              6,
+              4,
+              0
+            ],
+            [
+              7,
+              4,
+              0
+            ],
+            [
+              8,
+              4,
+              0
+            ],
+            [
+              6,
+              5,
+              0
+            ]
+          ]
+        },
+        "boundaries": [
+          [
+            8,
+            3,
+            0
+          ],
+          [
+            8,
+            5,
+            0
+          ]
+        ],
+        "passages": [
+          [
+            10,
+            5,
+            0
+          ]
+        ],
+        "stances": [
+          [
+            12,
+            5,
+            0
+          ]
+        ]
+      },
+      {
+        "relation": "ct-shared-clearance",
+        "realization": "The shutter and complete L compete for the two-column throat and the cross-aisle leading to its right face.",
+        "members": {
+          "M0": [
+            [
+              10,
+              10,
+              0
+            ],
+            [
+              11,
+              10,
+              0
+            ],
+            [
+              11,
+              11,
+              0
+            ]
+          ],
+          "M1": [
+            [
+              9,
+              8,
+              0
+            ],
+            [
+              10,
+              8,
+              0
+            ],
+            [
+              11,
+              8,
+              0
+            ],
+            [
+              12,
+              8,
+              0
+            ]
+          ]
+        },
+        "boundaries": [
+          [
+            12,
+            9,
+            0
+          ],
+          [
+            12,
+            11,
+            0
+          ]
+        ],
+        "passages": [
+          [
+            10,
+            8,
+            0
+          ],
+          [
+            11,
+            8,
+            0
+          ]
+        ],
+        "stances": [
+          [
+            13,
+            8,
+            0
+          ]
+        ]
+      },
+      {
+        "relation": "ct-recovery-and-reuse",
+        "realization": "A necessary downward retreat releases the shutter stance; upward recovery is then needed before usable target contact.",
+        "members": {
+          "M0": [
+            [
+              10,
+              10,
+              0
+            ],
+            [
+              11,
+              10,
+              0
+            ],
+            [
+              11,
+              11,
+              0
+            ]
+          ],
+          "M1": [
+            [
+              9,
+              8,
+              0
+            ],
+            [
+              10,
+              8,
+              0
+            ],
+            [
+              11,
+              8,
+              0
+            ],
+            [
+              12,
+              8,
+              0
+            ]
+          ]
+        },
+        "boundaries": [],
+        "passages": [
+          [
+            10,
+            10,
+            0
+          ]
+        ],
+        "stances": [
+          [
+            10,
+            12,
+            0
+          ]
+        ]
+      },
+      {
+        "relation": "ct-reserved-circulation",
+        "realization": "The lower bay retains a southern extraction face while the shutter parks across the west end of its row.",
+        "members": {
+          "M0": [
+            [
+              10,
+              10,
+              0
+            ],
+            [
+              11,
+              10,
+              0
+            ],
+            [
+              11,
+              11,
+              0
+            ]
+          ],
+          "M1": [
+            [
+              9,
+              8,
+              0
+            ],
+            [
+              10,
+              8,
+              0
+            ],
+            [
+              11,
+              8,
+              0
+            ],
+            [
+              12,
+              8,
+              0
+            ]
+          ]
+        },
+        "boundaries": [
+          [
+            9,
+            7,
+            0
+          ]
+        ],
+        "passages": [
+          [
+            9,
+            10,
+            0
+          ]
+        ],
+        "stances": [
+          [
+            10,
+            12,
+            0
+          ]
+        ]
+      }
+    ],
+    "changes": [
+      "An asymmetric L is the delivered tool; one long shutter is the competing helper.",
+      "A sealed right-face corridor makes downward tool retreat useful before helper movement.",
+      "The final target needs two distinct post-contact operations, using its lower spur to open the gem pocket.",
+      "A second visible void blocks an axial player input while the complete L remains supported, preserving a genuinely offset delivery."
+    ],
+    "spatial": {
+      "boundaries": [
+        [
+          12,
+          11,
+          0
+        ],
+        [
+          12,
+          9,
+          0
+        ],
+        [
+          9,
+          7,
+          0
+        ],
+        [
+          12,
+          7,
+          0
+        ],
+        [
+          8,
+          3,
+          0
+        ],
+        [
+          8,
+          5,
+          0
+        ],
+        [
+          7,
+          5,
+          0
+        ]
+      ],
+      "voids": [
+        [
+          9,
+          4,
+          0
+        ],
+        [
+          11,
+          4,
+          0
+        ]
+      ],
+      "support": "Planar complete rigid groups; only declared working members overhang void. Ordinary replay verifies all members at elevation zero.",
+      "blocked": [
+        {
+          "group": "M0",
+          "keyStep": 0,
+          "stance": [
+            9,
+            10,
+            0
+          ],
+          "direction": "R",
+          "restriction": "push",
+          "destinations": [
+            [
+              12,
+              11,
+              0
+            ]
+          ],
+          "reason": "The lower leg collides when attempting to clear the cross-aisle sideways."
+        },
+        {
+          "group": "M1",
+          "keyStep": 0,
+          "stance": [
+            13,
+            8,
+            0
+          ],
+          "direction": "L",
+          "restriction": "stance",
+          "reason": "The tool cuts off the right-face corridor before its downward retreat."
+        },
+        {
+          "group": "M2",
+          "keyStep": 0,
+          "stance": [
+            9,
+            4,
+            0
+          ],
+          "direction": "L",
+          "restriction": "stance",
+          "reason": "The direct target input is a void."
+        }
+      ],
+      "reserved": [
+        {
+          "cell": [
+            10,
+            12,
+            0
+          ],
+          "function": "Southern recovery input after parking the shutter."
+        },
+        {
+          "cell": [
+            13,
+            8,
+            0
+          ],
+          "function": "Shutter input reached through the borrowed cross-aisle."
+        },
+        {
+          "cell": [
+            12,
+            5,
+            0
+          ],
+          "function": "Full-footprint docking and subsequent direct L-tool input."
+        }
+      ]
+    },
+    "events": {
+      "prepare": {
+        "kind": "independent-tool"
+      },
+      "contact": {
+        "kind": "contact"
+      },
+      "after-work": {
+        "kind": "all-motion"
+      },
+      "retreat": {
+        "kind": "move",
+        "group": "M0",
+        "direction": "D"
+      },
+      "park": {
+        "kind": "move",
+        "group": "M1",
+        "direction": "L"
+      },
+      "recover": {
+        "kind": "move",
+        "group": "M0",
+        "direction": "U"
+      },
+      "target-up": {
+        "kind": "move",
+        "group": "M2",
+        "direction": "U",
+        "primary": true
+      },
+      "target-left": {
+        "kind": "move",
+        "group": "M2",
+        "direction": "L",
+        "primary": true
+      }
+    },
+    "stages": [
+      {
+        "name": "Borrow the lower bay",
+        "event": "retreat",
+        "conflict": "Immediate ascent meets the shutter, and the tool blocks access to its right face.",
+        "effect": "A downward translation opens the cross-aisle while retaining a southern recovery face.",
+        "keyStep": 4,
+        "nextStand": [
+          13,
+          8,
+          0
+        ],
+        "nextEvent": "park",
+        "nextDirection": "L"
+      },
+      {
+        "name": "Park the shutter",
+        "event": "park",
+        "conflict": "The full horizontal helper spans the two-column ascent.",
+        "effect": "Three left pushes leave both tool columns clear and keep the lower extraction route reachable.",
+        "keyStep": 12,
+        "nextStand": [
+          10,
+          12,
+          0
+        ],
+        "nextEvent": "recover",
+        "nextDirection": "U"
+      },
+      {
+        "name": "Recover and deliver",
+        "event": "recover",
+        "conflict": "The temporary parking is below the starting pose and is not usable delivery.",
+        "effect": "The same L returns upward through the released throat, retaining the right-side docking input.",
+        "keyStep": 25,
+        "nextStand": [
+          12,
+          5,
+          0
+        ],
+        "nextEvent": "prepare",
+        "nextDirection": "L"
+      },
+      {
+        "name": "Offset contact",
+        "event": "contact",
+        "conflict": "The player cannot occupy the void beside the target, and direct alternative shifts hit fixed walls.",
+        "effect": "The L contacts the far member and releases the target from its notch.",
+        "keyStep": 31,
+        "nextStand": [
+          6,
+          5,
+          0
+        ],
+        "nextEvent": "target-up",
+        "nextDirection": "U"
+      },
+      {
+        "name": "Open the gem pocket",
+        "event": "after-work",
+        "after": "contact",
+        "conflict": "The displaced bar still blocks the pocket until its lower spur can be pushed from a rebuilt side.",
+        "effect": "Raise then shift the target; the final left shift opens the complete gem approach.",
+        "keyStep": 39,
+        "nextStand": [
+          7,
+          4,
+          0
+        ]
+      }
+    ],
+    "dependencies": [
+      {
+        "prepare": "prepare",
+        "before": "contact",
+        "conflict": "Independent transport creates a real member contact that initial walking cannot supply."
+      },
+      {
+        "prepare": "contact",
+        "before": "goal",
+        "conflict": "The constrained target blocks the complete objective before the tool makes contact."
+      },
+      {
+        "prepare": "after-work",
+        "before": "goal",
+        "after": "contact",
+        "conflict": "Contact releases a restriction while a remaining object obstruction still blocks the goal."
+      },
+      {
+        "prepare": "retreat",
+        "before": "park",
+        "conflict": "The tool seals the row-ten route to the shutter right face."
+      },
+      {
+        "prepare": "park",
+        "before": "contact",
+        "conflict": "The shutter occupies both columns needed by the full L footprint."
+      },
+      {
+        "prepare": "recover",
+        "before": "contact",
+        "conflict": "The lower parking pose cannot perform the final offset contact."
+      }
+    ],
+    "mechanism": {
+      "kind": "side",
+      "tool": "M0",
+      "target": "M2"
+    },
+    "opposingDirections": [
+      {
+        "group": "M0",
+        "directions": [
+          "D",
+          "U"
+        ],
+        "before": "contact"
+      }
+    ],
+    "reuse": [
+      {
+        "first": "retreat",
+        "return": "recover",
+        "before": "contact",
+        "conflict": "The shared cross-aisle must first be freed for the shutter, then crossed by the recovered tool.",
+        "progress": "First executable lateral target contact or full gem goal, not merely returning to the initial pose."
+      }
+    ],
+    "selectedPost": [
+      {
+        "step": 31,
+        "groups": [
+          "M2"
+        ]
+      }
+    ],
+    "postContactGroups": [
+      "M2"
+    ],
+    "branchControls": [
+      {
+        "name": "Retreat versus premature ascent",
+        "baseStep": 0,
+        "match": [
+          "player",
+          "M1",
+          "M2"
+        ],
+        "positive": {
+          "moves": "URRD",
+          "probe": "R",
+          "suffix": "RRUULLLDDLDDRUUUUUUUDRRULLDLLLLUULRRU"
+        },
+        "negative": {
+          "moves": "DDRRRULU",
+          "probe": "R",
+          "blocked": true,
+          "inaccessible": [
+            13,
+            8,
+            0
+          ]
+        },
+        "claim": "The same player stance can continue right after a downward retreat; premature ascent blocks the cross-aisle and the shutter input."
+      }
+    ]
+  }
+}

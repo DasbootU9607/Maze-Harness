@@ -1,0 +1,579 @@
+{
+  "title": "Last Plank",
+  "source": "agent-authored",
+  "cells": [
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "G",
+      ".",
+      ".",
+      "g",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".",
+      "g",
+      ".",
+      ".",
+      "+",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".",
+      "g",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "g",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      ".",
+      ".",
+      ".",
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      "p",
+      "f",
+      ".",
+      "+",
+      ".",
+      "M0",
+      ".",
+      "g",
+      ".",
+      ".",
+      "f",
+      ".",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      ".",
+      ".",
+      ".",
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ]
+  ],
+  "witness": "RRRRRRRRDRRURULDDLUUUUUURUULULDRRDLLLLLLLLLULL",
+  "contract": {
+    "profile": "authored-planar-gate-planning-v1",
+    "mode": "complex",
+    "skill": "bridge-convoy",
+    "goal": {
+      "kind": "gem"
+    },
+    "readReceipt": {
+      "path": "references/mechanism-logic.md",
+      "sha256": "fddd26be9a25227b5314ad6051cd89a8fe61c911686eb1c59be1641d67701dee",
+      "readBeforeLayout": true
+    },
+    "members": {
+      "F2": [
+        [
+          3,
+          12,
+          0
+        ]
+      ],
+      "M0": [
+        [
+          7,
+          12,
+          0
+        ]
+      ],
+      "F4": [
+        [
+          12,
+          12,
+          0
+        ]
+      ]
+    },
+    "roles": {
+      "F2": "Access plank consumed to obtain the blue tool.",
+      "M0": "Reusable gate shield and rear convoy module.",
+      "F4": "Reserved gate occupant and front module, consumed only at the final gap."
+    },
+    "relations": [
+      "allocate-bridge-after-access-plan",
+      "occupy-gate-before-entry",
+      "stage-and-recover-both-tools",
+      "reform-convoy-for-turn",
+      "bridge-first-delivery"
+    ],
+    "stages": [
+      {
+        "name": "Spend only the access plank",
+        "keyStep": 2,
+        "event": {
+          "kind": "consume",
+          "group": "F2"
+        },
+        "nextStand": [
+          6,
+          12,
+          0
+        ],
+        "nextInput": {
+          "direction": "R",
+          "event": {
+            "kind": "move",
+            "group": "M0",
+            "direction": "R"
+          }
+        },
+        "conflict": "The blue tool is on a separate supported region.",
+        "effect": "The first consumed plank creates access to the reusable shield."
+      },
+      {
+        "name": "Carry gate access into staging",
+        "keyStep": 8,
+        "event": {
+          "kind": "move",
+          "group": "M0",
+          "direction": "R"
+        },
+        "nextStand": [
+          12,
+          13,
+          0
+        ],
+        "nextInput": {
+          "direction": "U",
+          "event": {
+            "kind": "move",
+            "group": "F4",
+            "direction": "U"
+          }
+        },
+        "conflict": "The reserved floor is behind a reactive boundary and must remain movable.",
+        "effect": "The blue shield reaches the side of the reserved floor."
+      },
+      {
+        "name": "Assemble a recoverable pair",
+        "keyStep": 15,
+        "event": {
+          "kind": "move",
+          "group": "F4",
+          "direction": "L"
+        },
+        "nextStand": [
+          11,
+          13,
+          0
+        ],
+        "nextInput": {
+          "direction": "U",
+          "event": {
+            "kind": "joint",
+            "groups": [
+              "M0",
+              "F4"
+            ]
+          }
+        },
+        "conflict": "The two modules need both a contact line and a reachable rear input.",
+        "effect": "The floor leads a northbound convoy through the only supported gate lane."
+      },
+      {
+        "name": "Re-form the heading",
+        "keyStep": 31,
+        "event": {
+          "kind": "move",
+          "group": "F4",
+          "direction": "D"
+        },
+        "nextStand": [
+          12,
+          6,
+          0
+        ],
+        "nextInput": {
+          "direction": "L",
+          "event": {
+            "kind": "joint",
+            "groups": [
+              "M0",
+              "F4"
+            ]
+          }
+        },
+        "conflict": "An intact northbound convoy is not a usable westbound push line.",
+        "effect": "Two independent floor translations preserve support and restore the floor-first order."
+      },
+      {
+        "name": "Spend the retained resource",
+        "keyStep": 37,
+        "event": {
+          "kind": "consume",
+          "group": "F4"
+        },
+        "nextStand": [
+          9,
+          6,
+          0
+        ],
+        "nextInput": {
+          "direction": "L",
+          "event": {
+            "kind": "move",
+            "group": "M0",
+            "direction": "L"
+          }
+        },
+        "conflict": "Sending the blue first loses it in the gap before a floor can help.",
+        "effect": "Floor consumption creates support, and the surviving blue opens the final gate."
+      }
+    ],
+    "exclusions": [
+      {
+        "name": "freeze-access-plank",
+        "event": {
+          "kind": "move",
+          "group": "F2"
+        }
+      },
+      {
+        "name": "freeze-reserved-plank",
+        "event": {
+          "kind": "move",
+          "group": "F4"
+        }
+      },
+      {
+        "name": "freeze-reusable-shield",
+        "event": {
+          "kind": "move",
+          "group": "M0"
+        }
+      },
+      {
+        "name": "forbid-convoy-contact",
+        "event": {
+          "kind": "joint",
+          "groups": [
+            "M0",
+            "F4"
+          ]
+        }
+      },
+      {
+        "name": "forbid-final-bridge-consumption",
+        "event": {
+          "kind": "consume",
+          "group": "F4"
+        }
+      }
+    ],
+    "orderedReuse": [
+      {
+        "name": "blue-access-then-joint-delivery-then-blue-reuse",
+        "events": [
+          {
+            "kind": "move",
+            "group": "M0",
+            "direction": "R"
+          },
+          {
+            "kind": "joint",
+            "groups": [
+              "M0",
+              "F4"
+            ]
+          },
+          {
+            "kind": "move",
+            "group": "M0",
+            "direction": "L",
+            "alone": true
+          }
+        ]
+      }
+    ],
+    "branches": [
+      {
+        "name": "Floor-first versus blue-first",
+        "baseStep": 24,
+        "match": [
+          "player"
+        ],
+        "positive": {
+          "moves": "RUULULDRRD",
+          "probe": "L",
+          "expect": {
+            "kind": "joint",
+            "groups": [
+              "M0",
+              "F4"
+            ]
+          },
+          "suffix": "LLLLLLLLULL"
+        },
+        "negative": {
+          "moves": "RULRUULDRD",
+          "probe": "L",
+          "expect": {
+            "kind": "joint",
+            "groups": [
+              "M0",
+              "F4"
+            ]
+          },
+          "after": "LL",
+          "removed": [
+            "M0"
+          ],
+          "goalSearch": true
+        },
+        "claim": "Both actor orders are reached by ordinary translations. The wrong order loses the blue, preventing the final gate passage."
+      }
+    ],
+    "difficulty": {
+      "basis": "structural-estimate",
+      "intended": "Planning challenge",
+      "humanPlaytests": 0
+    },
+    "limits": [
+      "No calibrated human difficulty or shortest-route claim.",
+      "Exclusions quantify only over this initial state, goal, official runtime and declared transition predicate."
+    ]
+  }
+}

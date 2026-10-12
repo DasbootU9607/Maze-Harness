@@ -1,0 +1,12 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const {load}=require('../skills/mazebench-hook-transfer/scripts/complex-runtime.cjs');
+const {saveDraft}=require('../skills/mazebench-hook-transfer/scripts/complex-draft-io.cjs');
+const {validate}=require('./verify-authored-gates.cjs');
+const args=process.argv.slice(2),get=k=>args.includes(k)?args[args.indexOf(k)+1]:undefined;
+assert(get('--repo')&&get('--spec')&&get('--out'),'Use --repo ENGINE --spec DESIGN --out FRESH_BUILD');
+const spec=JSON.parse(fs.readFileSync(get('--spec'),'utf8'));validate(spec);load(get('--repo'),spec.cells);
+const manifest=saveDraft(get('--repo'),get('--out'),{...spec,scenario:'authored-planning-trial'});
+fs.copyFileSync(get('--spec'),path.join(get('--out'),'spec.json'));console.log(JSON.stringify(manifest));

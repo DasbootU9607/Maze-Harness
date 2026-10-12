@@ -1,0 +1,41 @@
+{
+  "sourceKind": "agent-authored",
+  "skill": "mazebench-hook-transfer",
+  "title": "Return Hook",
+  "designBriefSource": "The requested six-family planning batch; private prompt retained outside distribution.",
+  "parentReferences": [
+    "GxE"
+  ],
+  "relationIds": [
+    "ht-remote-contact",
+    "ht-operable-docking",
+    "ht-parts-and-restriction",
+    "ht-continued-work"
+  ],
+  "goal": "Collect the gem in the small chamber at (5,5,0).",
+  "stageDependency": "Move the L left and upward -> dock its offset tip across the void -> lift the target out of its notch -> reach its newly usable side -> shift it right and collect the gem.",
+  "planningBurden": "The visible working tip solves an input problem that the player cannot solve directly; contact alone still leaves the chamber blocked.",
+  "changedConstraints": [
+    "A three-member lateral L replaces the source rear-contact C.",
+    "A flange blocks downward disposal and a ceiling prevents another upward target shift.",
+    "The remaining task uses a newly reachable target input instead of ending at contact."
+  ],
+  "physicalScope": "One 16 by 16 room; ordinary pinned official engine; all initial actors at elevation zero.",
+  "difficulty": {
+    "level": "l3-planning",
+    "basis": "structural-estimate",
+    "humanPlaytests": 0,
+    "qualification": "An author estimate from dependent operations and planning tradeoffs, not calibrated human difficulty."
+  },
+  "evidence": {
+    "overall": "passed",
+    "checks": 22,
+    "reachableBranchPairs": 1,
+    "fullReplay": true
+  },
+  "limits": [
+    "Tool movement, target movement, lateral transfer, independent preparation and target work after every first-contact history pass exhausted restrictions.",
+    "The tool can be retired after its release; continued motion of that tool is not claimed necessary.",
+    "No global minimality or uniqueness of the L shape is claimed."
+  ]
+}

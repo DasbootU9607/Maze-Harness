@@ -1,0 +1,40 @@
+{
+  "sourceKind": "agent-authored",
+  "skill": "mazebench-block-coordination",
+  "title": "Relay Reserve",
+  "designBriefSource": "The requested six-family planning batch; private prompt retained outside distribution.",
+  "parentReferences": [
+    "BxB",
+    "BxC"
+  ],
+  "relationIds": [
+    "prepare-next-shield",
+    "independent-or-chain-motion",
+    "retain-or-release-tools"
+  ],
+  "goal": "Reach the free eastern doorway cell (15,5,0).",
+  "stageDependency": "Prepare M1 -> approach with M0 -> travel around with M1 -> regain the left face of retained M0 -> cross the final gate lane and leave above it.",
+  "planningBurden": "The second shield must be placed before committing to the first approach; the first shield must remain useful during a long handoff.",
+  "changedConstraints": [
+    "Two reciprocal handoffs replace the source one-way release.",
+    "A narrow spawn connector prevents freely swapping away the preparation obligation.",
+    "The final exit requires returning to the initial courier from a new side."
+  ],
+  "physicalScope": "One 16 by 16 room; ordinary pinned official engine; all initial actors at elevation zero.",
+  "difficulty": {
+    "level": "l3-planning",
+    "basis": "structural-estimate",
+    "humanPlaytests": 0,
+    "qualification": "An author estimate from dependent operations and planning tradeoffs, not calibrated human difficulty."
+  },
+  "evidence": {
+    "overall": "passed",
+    "checks": 8,
+    "reachableBranchPairs": 1,
+    "fullReplay": true
+  },
+  "limits": [
+    "The listed handoff events and the M0 -> M1 -> M0 reuse are necessary under exhausted exclusions.",
+    "No claim that every movement between handoffs or every turning cell is uniquely required."
+  ]
+}

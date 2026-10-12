@@ -1,0 +1,824 @@
+{
+  "title": "Return Hook",
+  "cells": [
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "M1",
+      "M1",
+      "M1",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "G",
+      "M1",
+      ".",
+      "#",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "M1",
+      "#",
+      "#",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "+",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "+",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "+",
+      ".",
+      ".",
+      "M0",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      "M0",
+      "M0",
+      "p",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ]
+  ],
+  "witness": "LLLDLUUURURUUUUUULLLLDDRDDL",
+  "source": "agent-authored",
+  "contract": {
+    "profile": "planar-hook-depth-v2",
+    "mode": "complex",
+    "goal": {
+      "kind": "gem"
+    },
+    "members": {
+      "M1": [
+        [
+          6,
+          4,
+          0
+        ],
+        [
+          7,
+          4,
+          0
+        ],
+        [
+          8,
+          4,
+          0
+        ],
+        [
+          6,
+          5,
+          0
+        ],
+        [
+          6,
+          6,
+          0
+        ]
+      ],
+      "M0": [
+        [
+          9,
+          9,
+          0
+        ],
+        [
+          9,
+          10,
+          0
+        ],
+        [
+          10,
+          10,
+          0
+        ]
+      ]
+    },
+    "roles": {
+      "M0": "Independent three-member L tool with an offset working tip.",
+      "M1": "Five-member notched target whose released side must be pushed to open the gem cell."
+    },
+    "allowRemoval": [],
+    "necessaryRoles": [
+      "M1",
+      "M0"
+    ],
+    "optionalRoles": [],
+    "readReceipt": {
+      "path": "references/mechanism-logic.md",
+      "sha256": "7dace0cba93c48cbca55a6f429b993220e516e18064c52c8f8a0876aefa41f08",
+      "readBeforeLayout": true
+    },
+    "inherited": [
+      {
+        "relation": "ht-remote-contact",
+        "realization": "The lower right end receives U while the raised left tip contacts the notched tail.",
+        "members": {
+          "M0": [
+            [
+              9,
+              9,
+              0
+            ],
+            [
+              9,
+              10,
+              0
+            ],
+            [
+              10,
+              10,
+              0
+            ]
+          ],
+          "M1": [
+            [
+              6,
+              4,
+              0
+            ],
+            [
+              7,
+              4,
+              0
+            ],
+            [
+              8,
+              4,
+              0
+            ],
+            [
+              6,
+              5,
+              0
+            ],
+            [
+              6,
+              6,
+              0
+            ]
+          ]
+        },
+        "boundaries": [
+          [
+            5,
+            6,
+            0
+          ],
+          [
+            7,
+            6,
+            0
+          ]
+        ],
+        "passages": [
+          [
+            7,
+            7,
+            0
+          ]
+        ],
+        "stances": [
+          [
+            7,
+            9,
+            0
+          ]
+        ]
+      },
+      {
+        "relation": "ht-operable-docking",
+        "realization": "Left transport followed by upward staging preserves the offset input face and complete support.",
+        "members": {
+          "M0": [
+            [
+              9,
+              9,
+              0
+            ],
+            [
+              9,
+              10,
+              0
+            ],
+            [
+              10,
+              10,
+              0
+            ]
+          ]
+        },
+        "boundaries": [],
+        "passages": [
+          [
+            7,
+            10,
+            0
+          ]
+        ],
+        "stances": [
+          [
+            7,
+            9,
+            0
+          ]
+        ]
+      },
+      {
+        "relation": "ht-parts-and-restriction",
+        "realization": "The target flange blocks downward disposal; tail walls block horizontal motion until the offset lift.",
+        "members": {
+          "M1": [
+            [
+              6,
+              4,
+              0
+            ],
+            [
+              7,
+              4,
+              0
+            ],
+            [
+              8,
+              4,
+              0
+            ],
+            [
+              6,
+              5,
+              0
+            ],
+            [
+              6,
+              6,
+              0
+            ]
+          ]
+        },
+        "boundaries": [
+          [
+            8,
+            5,
+            0
+          ],
+          [
+            5,
+            6,
+            0
+          ],
+          [
+            7,
+            6,
+            0
+          ],
+          [
+            6,
+            2,
+            0
+          ]
+        ],
+        "passages": [
+          [
+            6,
+            5,
+            0
+          ]
+        ],
+        "stances": [
+          [
+            6,
+            3,
+            0
+          ]
+        ]
+      },
+      {
+        "relation": "ht-continued-work",
+        "realization": "The lifted target still requires a different input side before the gem can be reached.",
+        "members": {
+          "M1": [
+            [
+              6,
+              4,
+              0
+            ],
+            [
+              7,
+              4,
+              0
+            ],
+            [
+              8,
+              4,
+              0
+            ],
+            [
+              6,
+              5,
+              0
+            ],
+            [
+              6,
+              6,
+              0
+            ]
+          ]
+        },
+        "boundaries": [
+          [
+            6,
+            2,
+            0
+          ]
+        ],
+        "passages": [
+          [
+            6,
+            5,
+            0
+          ]
+        ],
+        "stances": [
+          [
+            5,
+            3,
+            0
+          ]
+        ]
+      }
+    ],
+    "changes": [
+      "New three-member lateral L replaces the reference rear-contact C.",
+      "A five-member upper flange prevents disposal, while a separate ceiling forces a later side push.",
+      "The gem chamber is reached only after the lifted target is shifted; the tool is no longer needed after its verified release."
+    ],
+    "spatial": {
+      "boundaries": [
+        [
+          8,
+          5,
+          0
+        ],
+        [
+          5,
+          6,
+          0
+        ],
+        [
+          7,
+          6,
+          0
+        ],
+        [
+          6,
+          2,
+          0
+        ]
+      ],
+      "voids": [
+        [
+          6,
+          7,
+          0
+        ],
+        [
+          6,
+          8,
+          0
+        ],
+        [
+          6,
+          9,
+          0
+        ]
+      ],
+      "support": "Planar complete rigid groups; only declared working members overhang void. Ordinary replay verifies all members at elevation zero.",
+      "blocked": [
+        {
+          "group": "M1",
+          "keyStep": 0,
+          "stance": [
+            6,
+            3,
+            0
+          ],
+          "direction": "D",
+          "restriction": "push",
+          "destinations": [
+            [
+              8,
+              5,
+              0
+            ]
+          ],
+          "reason": "The far flange hits the wall, so direct downward disposal is blocked."
+        },
+        {
+          "group": "M1",
+          "keyStep": 0,
+          "stance": [
+            6,
+            7,
+            0
+          ],
+          "direction": "U",
+          "restriction": "stance",
+          "reason": "The direct upward input is over a void."
+        }
+      ],
+      "reserved": [
+        {
+          "cell": [
+            7,
+            9,
+            0
+          ],
+          "function": "Supported input below the docked L."
+        },
+        {
+          "cell": [
+            5,
+            3,
+            0
+          ],
+          "function": "After release, this side permits the target shift that opens the gem."
+        }
+      ]
+    },
+    "events": {
+      "prepare": {
+        "kind": "independent-tool"
+      },
+      "contact": {
+        "kind": "contact"
+      },
+      "after-work": {
+        "kind": "all-motion"
+      },
+      "target-right": {
+        "kind": "move",
+        "group": "M1",
+        "direction": "R",
+        "primary": true
+      }
+    },
+    "stages": [
+      {
+        "name": "Independent docking",
+        "event": "prepare",
+        "conflict": "The offset tip starts in a separate lower bay and cannot reach the target from initial walking.",
+        "effect": "The complete L reaches a supported docking pose above the lower input.",
+        "keyStep": 7,
+        "nextStand": [
+          7,
+          9,
+          0
+        ],
+        "nextEvent": "contact",
+        "nextDirection": "U"
+      },
+      {
+        "name": "Lateral release",
+        "event": "contact",
+        "conflict": "The target tail cannot shift sideways between its two walls; a void prevents a direct upward input.",
+        "effect": "The L lifts the full target from the notch while preserving the route to its new left face.",
+        "keyStep": 8,
+        "nextStand": [
+          5,
+          3,
+          0
+        ],
+        "nextEvent": "target-right",
+        "nextDirection": "R"
+      },
+      {
+        "name": "Rebuilt target input",
+        "event": "after-work",
+        "after": "contact",
+        "conflict": "The raised target still seals the gem chamber, and the ceiling prevents a second lift.",
+        "effect": "A direct right push from the newly useful side frees the chamber approach.",
+        "keyStep": 24,
+        "nextStand": [
+          6,
+          5,
+          0
+        ]
+      }
+    ],
+    "dependencies": [
+      {
+        "prepare": "prepare",
+        "before": "contact",
+        "conflict": "Independent transport creates a real member contact that initial walking cannot supply."
+      },
+      {
+        "prepare": "contact",
+        "before": "goal",
+        "conflict": "The constrained target blocks the complete objective before the tool makes contact."
+      },
+      {
+        "prepare": "after-work",
+        "before": "goal",
+        "after": "contact",
+        "conflict": "Contact releases a restriction while a remaining object obstruction still blocks the goal."
+      }
+    ],
+    "mechanism": {
+      "kind": "side",
+      "tool": "M0",
+      "target": "M1"
+    },
+    "selectedPost": [
+      {
+        "step": 8,
+        "groups": [
+          "M1"
+        ]
+      }
+    ],
+    "postContactGroups": [
+      "M1"
+    ],
+    "branchControls": [
+      {
+        "name": "Docking changes the same input",
+        "baseStep": 0,
+        "match": [
+          "player",
+          "M1"
+        ],
+        "positive": {
+          "moves": "LLLDLUU",
+          "probe": "U",
+          "expect": {
+            "kind": "joint",
+            "groups": [
+              "M0",
+              "M1"
+            ]
+          },
+          "suffix": "RURUUUUUULLLLDDRDDL"
+        },
+        "negative": {
+          "moves": "ULULLDL",
+          "probe": "U",
+          "unchanged": [
+            "M1"
+          ]
+        },
+        "claim": "With matching player and target states, the prepared L turns an ordinary upward walk into real lateral target contact."
+      }
+    ]
+  }
+}

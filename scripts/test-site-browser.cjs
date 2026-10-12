@@ -56,7 +56,8 @@ const norm = actors => actors.map(a=>({type:a.type,group:a.groupId||'',x:a.x,y:a
       await page.locator('.case-card').last().waitFor();
       assert.equal(await page.locator('h1').textContent(),skill.name);
       assert.equal(await page.locator('.case-card').count(),skill.officialCases.length+skill.authoredCases.length);
-      for(const id of [...skill.officialCases,...skill.authoredCases])assert.equal(await page.locator('.case-card>a[href*="case='+id+'"]').count(),1);
+      const cardCases = await page.locator('.case-card>a').evaluateAll(links => links.map(a => new URL(a.href).searchParams.get('case')));
+      for(const id of [...skill.officialCases,...skill.authoredCases])assert.equal(cardCases.filter(value => value === id).length,1);
       report.skillPages.push(skill.id);
       if(skill.id==='hook-transfer')await screenshot('skill-desktop');
     }

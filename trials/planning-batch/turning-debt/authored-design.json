@@ -1,0 +1,533 @@
+{
+  "title": "Turning Debt",
+  "source": "agent-authored",
+  "cells": [
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      ".",
+      ".",
+      ".",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      ".",
+      ".",
+      ".",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      ".",
+      ".",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      ".",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      ".",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      ".",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      ".",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "g",
+      "g",
+      ".",
+      ".",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      "p",
+      "M0",
+      ".",
+      ".",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ]
+  ],
+  "witness": "RRRDRUUUUUUULURRRRRRURDDDDDRDLLLLDLUUUUUUUUULUUR",
+  "contract": {
+    "profile": "authored-planar-gate-planning-v1",
+    "mode": "complex",
+    "skill": "clear-ground-turning",
+    "goal": {
+      "kind": "reach",
+      "cell": [
+        8,
+        0,
+        0
+      ]
+    },
+    "readReceipt": {
+      "path": "references/mechanism-logic.md",
+      "sha256": "726ef69189484f0e9878f85f3032b3b41f8ef779a063d2a8c893522ddf483243",
+      "readBeforeLayout": true
+    },
+    "members": {
+      "M0": [
+        [
+          3,
+          12,
+          0
+        ]
+      ]
+    },
+    "roles": {
+      "M0": "Single reusable shield, including the self-crossing final ascent."
+    },
+    "relations": [
+      "shielded-lane-advance",
+      "clear-ground-stance-transfer",
+      "connected-tool-reuse"
+    ],
+    "stages": [
+      {
+        "name": "Stage the shield",
+        "keyStep": 3,
+        "event": {
+          "kind": "move",
+          "group": "M0",
+          "direction": "R"
+        },
+        "nextStand": [
+          6,
+          13,
+          0
+        ],
+        "nextInput": {
+          "direction": "U",
+          "event": {
+            "kind": "move",
+            "group": "M0",
+            "direction": "U"
+          }
+        },
+        "conflict": "The northbound input is one cell beyond the broad spawn bay.",
+        "effect": "Stage at column six so the small southern floor supplies the next face."
+      },
+      {
+        "name": "Redeem the upper turning stance",
+        "keyStep": 12,
+        "event": {
+          "kind": "move",
+          "group": "M0",
+          "direction": "U"
+        },
+        "nextStand": [
+          5,
+          5,
+          0
+        ],
+        "nextInput": {
+          "direction": "R",
+          "event": {
+            "kind": "move",
+            "group": "M0",
+            "direction": "R"
+          }
+        },
+        "conflict": "Continuing north strands the only tool beyond the reachable side.",
+        "effect": "The two-cell clear bay supplies a rightward input."
+      },
+      {
+        "name": "Preserve the return line",
+        "keyStep": 27,
+        "event": {
+          "kind": "move",
+          "group": "M0",
+          "direction": "D"
+        },
+        "nextStand": [
+          13,
+          10,
+          0
+        ],
+        "nextInput": {
+          "direction": "L",
+          "event": {
+            "kind": "move",
+            "group": "M0",
+            "direction": "L"
+          }
+        },
+        "conflict": "The lower arrival must retain access around the right side.",
+        "effect": "The shield can return left toward the final junction."
+      },
+      {
+        "name": "Cross the old lane again",
+        "keyStep": 33,
+        "event": {
+          "kind": "move",
+          "group": "M0",
+          "direction": "L"
+        },
+        "nextStand": [
+          8,
+          11,
+          0
+        ],
+        "nextInput": {
+          "direction": "U",
+          "event": {
+            "kind": "move",
+            "group": "M0",
+            "direction": "U"
+          }
+        },
+        "conflict": "The earlier horizontal route is gated again after the shield leaves.",
+        "effect": "The same block is retained for the northbound crossing and exit."
+      }
+    ],
+    "exclusions": [
+      {
+        "name": "freeze-shield",
+        "event": {
+          "kind": "move",
+          "group": "M0"
+        }
+      },
+      {
+        "name": "omit-upper-turn",
+        "event": {
+          "kind": "move",
+          "group": "M0",
+          "direction": "R",
+          "P": [
+            5,
+            5,
+            0
+          ]
+        }
+      },
+      {
+        "name": "omit-southward-delivery",
+        "event": {
+          "kind": "move",
+          "group": "M0",
+          "direction": "D"
+        }
+      },
+      {
+        "name": "omit-return-to-junction",
+        "event": {
+          "kind": "move",
+          "group": "M0",
+          "direction": "L"
+        }
+      },
+      {
+        "name": "omit-final-ascent-input",
+        "event": {
+          "kind": "move",
+          "group": "M0",
+          "direction": "U",
+          "P": [
+            8,
+            11,
+            0
+          ]
+        }
+      }
+    ],
+    "orderedReuse": [
+      {
+        "name": "north-south-north-reuse",
+        "events": [
+          {
+            "kind": "move",
+            "group": "M0",
+            "direction": "U"
+          },
+          {
+            "kind": "move",
+            "group": "M0",
+            "direction": "D"
+          },
+          {
+            "kind": "move",
+            "group": "M0",
+            "direction": "U"
+          }
+        ]
+      }
+    ],
+    "branches": [
+      {
+        "name": "Do not overshoot the first turn",
+        "baseStep": 12,
+        "positive": {
+          "moves": "LU",
+          "probe": "R",
+          "expect": {
+            "kind": "move",
+            "group": "M0",
+            "direction": "R"
+          },
+          "suffix": "RRRRRURDDDDDRDLLLLDLUUUUUUUUULUUR"
+        },
+        "negative": {
+          "moves": "U",
+          "probe": "U",
+          "blocked": true,
+          "goalSearch": true
+        },
+        "claim": "A legal extra advance removes the only reachable side input; the prepared turning branch completes."
+      }
+    ],
+    "difficulty": {
+      "basis": "structural-estimate",
+      "intended": "Planning challenge",
+      "humanPlaytests": 0
+    },
+    "limits": [
+      "No calibrated human difficulty or shortest-route claim.",
+      "Exclusions quantify only over this initial state, goal, official runtime and declared transition predicate."
+    ]
+  }
+}

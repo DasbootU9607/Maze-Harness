@@ -1,0 +1,41 @@
+{
+  "sourceKind": "agent-authored",
+  "skill": "mazebench-enclosure-navigation",
+  "title": "Open Circuit",
+  "designBriefSource": "The requested six-family planning batch; private prompt retained outside distribution.",
+  "parentReferences": [
+    "CxB",
+    "DxB"
+  ],
+  "relationIds": [
+    "usable-cavity-entry",
+    "protected-direction-set",
+    "goal-connected-release"
+  ],
+  "goal": "Collect the gem at (4,1,0) after recovering the enclosure.",
+  "stageDependency": "Align the six-member body -> traverse from inside its protected cavity -> leave onto the upper bay -> approach its outside face -> recover it leftward -> use the northern rim for the final gem-clearing push.",
+  "planningBurden": "The opening and protruding member affect both passage clearance and later input access. Parking must be assessed together with the next approach.",
+  "changedConstraints": [
+    "An asymmetric six-member enclosure replaces the five-member source cavity.",
+    "The route changes from protected interior operation to an exterior leftward return.",
+    "A member still covers the gem after recovery, requiring another useful input."
+  ],
+  "physicalScope": "One 16 by 16 room; ordinary pinned official engine; all initial actors at elevation zero.",
+  "difficulty": {
+    "level": "l3-planning",
+    "basis": "structural-estimate",
+    "humanPlaytests": 0,
+    "qualification": "An author estimate from dependent operations and planning tradeoffs, not calibrated human difficulty."
+  },
+  "evidence": {
+    "overall": "passed",
+    "checks": 8,
+    "reachableBranchPairs": 1,
+    "fullReplay": true
+  },
+  "limits": [
+    "Rightward operation before later leftward recovery is necessary under the stated exclusion.",
+    "An extra push destroys the planned input but is recoverable; its saved repair route refutes an exact-parking or unavoidable-dead-end claim.",
+    "The witness uses a final right push; that exact last push is not claimed necessary across all histories."
+  ]
+}

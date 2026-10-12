@@ -1,0 +1,18 @@
+{
+  "source": "agent-authored ordinary official-engine witness",
+  "engineCommit": "0ac96b8a2648db09f375989cd7bc33699222c1e6",
+  "mapSha256": "ed4fa93087f11ab8a919f04fae82e73bdd497d9cf3f81a61fdcad1c9527d4a82",
+  "cellsSha256": "6a35ec8f7eb2969e435f6d412a1601e47220173ddcc870d694ee34492d1bf0fb",
+  "contractSha256": "508d5e0cd0128ba6d948308b0e5b69a0b50a5cc14adaed4b62d7d89e90b6ba53",
+  "goal": {
+    "kind": "reach",
+    "cell": [
+      15,
+      5,
+      0
+    ]
+  },
+  "witness": "UUUURDDDDLDLUUUUUURRRRRDRUUUURULLLLLLLULDDDDRRRRRRRRRUR",
+  "ordinaryReplayPassed": true,
+  "notAShortestPathOrDifficultyScore": true
+}

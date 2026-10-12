@@ -1,0 +1,39 @@
+{
+  "sourceKind": "agent-authored",
+  "skill": "mazebench-clear-ground-turning",
+  "title": "Turning Debt",
+  "designBriefSource": "The requested six-family planning batch; private prompt retained outside distribution.",
+  "parentReferences": [
+    "ExB"
+  ],
+  "relationIds": [
+    "shielded-lane-advance",
+    "clear-ground-stance-transfer",
+    "connected-tool-reuse"
+  ],
+  "goal": "Reach the northern doorway cell (8,0,0).",
+  "stageDependency": "Align the shield -> use the upper clear bay -> preserve the far turning input -> return to the lower junction -> ascend through an earlier lane using the same shield -> leave at the northern doorway.",
+  "planningBurden": "A previously crossed gate becomes an obstacle again. Overshooting a useful bay loses the only way to change pushing side.",
+  "changedConstraints": [
+    "The final route crosses an earlier shield lane instead of following the source rectangle.",
+    "Staggered clear bays create specific future input obligations.",
+    "A stopping wall closes an experimentally found direct northward bypass."
+  ],
+  "physicalScope": "One 16 by 16 room; ordinary pinned official engine; all initial actors at elevation zero.",
+  "difficulty": {
+    "level": "l3-planning",
+    "basis": "structural-estimate",
+    "humanPlaytests": 0,
+    "qualification": "An author estimate from dependent operations and planning tradeoffs, not calibrated human difficulty."
+  },
+  "evidence": {
+    "overall": "passed",
+    "checks": 9,
+    "reachableBranchPairs": 1,
+    "fullReplay": true
+  },
+  "limits": [
+    "The tested turning inputs and north-south-north reuse are necessary for this fixed doorway goal.",
+    "No unique shortest solution or necessity of every individual floor cell is claimed."
+  ]
+}

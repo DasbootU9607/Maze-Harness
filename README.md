@@ -6,6 +6,8 @@ Agent skills for designing, building, and verifying MazeBench puzzles.
 
 The website pairs mechanism skills with complete official references and existing agent-authored trials. Every room thumbnail opens the 3D player; highlighted tiles on the 16 × 16 world map link to the associated skill. The playground includes room search, an unrestricted room picker, keyboard and touch controls, undo/reset, and saved solution playback. See [website maintenance](docs/website.md) for local preview, data provenance, and GitHub Pages publishing.
 
+The [six-map planning batch](trials/planning-batch/README.md) adds reciprocal shield handoffs, enclosure recovery, self-crossing single-shield routes, reserved bridge convoys, offset release, and ordered tool retreat/recovery. Each trial has a complete ordinary-engine route, a public design contract, scoped exclusion checks and reachable branch evidence. Difficulty labels are structural estimates, without human playtests.
+
 ## Skills
 
 | Skill | Original room | Use it for |
