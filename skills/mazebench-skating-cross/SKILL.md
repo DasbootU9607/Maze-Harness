@@ -52,4 +52,8 @@ node scripts/verify.cjs --repo ENGINE --spec SPEC.json --out NEW_CHECK_OUTPUT --
 
 Use new output directories and preserve existing maps. Deliver Play/Edit links, Build JSON, a complete replay route, key poses, stopping points and pushing stances, explanations of their functions, and scoped verification results. Actual browser play and save/export require separate checks.
 
-Keep engine code and the official reference map unchanged. This skill is for level authoring; it does not launch evaluated models, paid evaluations or remote publication. Input counts are not human-difficulty scores.
+Keep engine code and the official reference map unchanged. This skill is for level authoring; it does not launch evaluated models, paid evaluations or unauthorized remote publication. Input counts are not human-difficulty scores.
+
+## Website completion in Maze Harness
+
+When working on the Maze Harness project, follow its repository `AGENTS.md` and `docs/website.md` after a successful build and verification. The owner has authorized ongoing GitHub Pages updates for completed skills and verified playable trials. Run the repository's `scripts/publish-site.cjs` with this skill, the separate engine, actual design, build manifest and matching successful verification report; this registers the case, captures its real 3D thumbnail, validates, commits and pushes. Check the Pages run before reporting the example live. Treat this as part of delivery without waiting for another website prompt. Preserve earlier cases and do not publish unfinished or unknown results. Outside that project, use the destination's own publication authorization.

@@ -27,6 +27,8 @@ Record the user's words separately from agent interpretation. Read [Workflow and
 6. **Write or update the package.** Follow [Package format and acceptance](references/package-format.md). Derive the skill's authoring rules from the synthesis. Keep the full official cases for regression and the new-map template empty. Choose unspecified names, shapes, coordinates, and implementation details autonomously.
 7. **Verify and install.** Check package conventions and the affected helpers, replay the complete official objectives, then try a substantively new authored realization when claiming transfer. Report unknowns honestly. Install the completed skill in the configured skill directory; follow repository instructions and existing authorization for synchronization.
 
+8. **Update the project website.** In Maze Harness, completed skill and playable-trial publication is already authorized. Follow [Website completion](references/website.md), run the repository publisher, and check the Pages result before ending the task. Include this step for later reference additions and newly generated verified examples; do not wait for another website prompt.
+
 The workflow records are resumable. The helper checks input, provenance, lineage, grading records and artifact versions. It cannot prove human authorship, understanding, mechanism truth or human difficulty. Never describe its success as gameplay verification.
 
 ## Automation
@@ -47,4 +49,4 @@ Capture/import and record each case separately. Fill `workflow.json` with actual
 
 Use `add-case --work WORK --case FxE` for a similar official case, or `add-case --work WORK --case user-offset-easy --parent HxH` for a human variant. Each addition reopens its own input gate. See [incremental commands and grading rules](references/reference-library.md) for import, baseline merge, relative tiers and selective revalidation. `status` reports the earliest unmet obligation.
 
-Preserve original maps, engine code, existing skills, and historical evidence. Raw human messages and local work paths stay out of public packages by default. This workflow does not invoke evaluated models, paid evaluations, or publish a game. Repository maintenance follows the repository's own instructions.
+Preserve original maps, engine code, existing skills, and historical evidence. Raw human messages and local work paths stay out of public packages by default. This workflow does not invoke evaluated models or paid evaluations. Website publication follows the explicit project authorization and the completion procedure above. Repository maintenance follows the repository's own instructions.

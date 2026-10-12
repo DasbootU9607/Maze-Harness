@@ -48,7 +48,7 @@ const norm = actors => actors.map(a=>({type:a.type,group:a.groupId||'',x:a.x,y:a
     const screenshot=async name=>{await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:path.join(output,name+'.png'),fullPage:true});};
     await page.goto(origin);
     await page.locator('.directory-row').last().waitFor();
-    assert.equal(await page.locator('.directory-row').count(),4);
+    assert.equal(await page.locator('.directory-row').count(),catalog.skills.length);
     await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
     await screenshot('home-desktop');
     for(const skill of catalog.skills){
@@ -63,7 +63,7 @@ const norm = actors => actors.map(a=>({type:a.type,group:a.groupId||'',x:a.x,y:a
     await page.goto(origin+'world.html');
     await page.locator('#world-atlas .atlas-tile').last().waitFor();
     assert.equal(await page.locator('#world-atlas .atlas-tile').count(),256);
-    assert.equal(await page.locator('#world-atlas .atlas-tile.used').count(),5);
+    assert.equal(await page.locator('#world-atlas .atlas-tile.used').count(),catalog.rooms.filter(r=>r.skill).length);
     await page.locator('[data-atlas-filter="used"]').click();
     assert(await page.locator('#world-atlas .atlas-grid').evaluate(e=>e.classList.contains('filter-used')));
     await page.locator('[data-atlas-filter="all"]').click();
@@ -146,6 +146,20 @@ const norm = actors => actors.map(a=>({type:a.type,group:a.groupId||'',x:a.x,y:a
     report.touchBlockPush=true;
     await page.goto(origin+'skill.html?id=missing');
     await page.locator('.error-state').waitFor();report.invalidSkillHandled=true;
+    const expanded = structuredClone(catalog);
+    expanded.skills.push({...expanded.skills[0],id:'publication-fixture',name:'Publication Fixture',authoredCases:[],steps:[]});
+    await context.route('**/data/catalog.json',route=>route.fulfill({json:expanded}));
+    await page.goto(origin+'index.html');
+    await page.locator('.directory-row').last().waitFor();
+    assert.equal(await page.locator('.directory-row').count(),expanded.skills.length);
+    assert.equal(await page.locator('[data-count="skills"]').first().textContent(),String(expanded.skills.length));
+    await page.goto(origin+'skill.html?id=publication-fixture');
+    await page.locator('.case-card').last().waitFor();
+    assert.equal(await page.locator('h1').textContent(),'Publication Fixture');
+    assert(await page.locator('#main').textContent().then(text=>text.includes('A verified playable example will appear')));
+    assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Additional skill mobile overflow');
+    await context.unroute('**/data/catalog.json');
+    report.additionalSkillAndEmptyState=true;
     assert.deepEqual(report.errors,[]);assert.deepEqual(report.failedResponses,[]);assert.deepEqual(report.externalRequests,[]);
     report.passed=true;
     console.log(JSON.stringify(report,null,2));

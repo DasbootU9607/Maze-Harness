@@ -63,4 +63,8 @@ node scripts/build.cjs --repo ENGINE --spec SPEC.json --out NEW_OUTPUT
 
 Then apply the checker matching the contract, as documented in [Verification](references/verification.md). Deliver Play/Edit links, Build JSON, a replayed route, contact states, dependency evidence, and unresolved limitations.
 
-Preserve existing drafts and engine code. This is map authoring: do not launch evaluated models, paid evaluations, or remote publication. Solver correctness and human difficulty are separate questions.
+Preserve existing drafts and engine code. This is map authoring: do not launch evaluated models, paid evaluations, or unauthorized remote publication. Solver correctness and human difficulty are separate questions.
+
+## Website completion in Maze Harness
+
+When working on the Maze Harness project, follow its repository `AGENTS.md` and `docs/website.md` after a successful build and verification. The owner has authorized ongoing GitHub Pages updates for completed skills and verified playable trials. Run the repository's `scripts/publish-site.cjs` with this skill, the separate engine, actual design, build manifest and matching successful verification report; this registers the case, captures its real 3D thumbnail, validates, commits and pushes. Check the Pages run before reporting the example live. Treat this as part of delivery without waiting for another website prompt. Preserve earlier cases and do not publish unfinished or unknown results. Outside that project, use the destination's own publication authorization.

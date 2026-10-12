@@ -14,12 +14,17 @@ const context = { window: {}, console, structuredClone };
 vm.runInNewContext(fs.readFileSync(path.join(site, 'runtime/maze-engine.js'), 'utf8'), context);
 const createEngine = context.window.MazeEngine.createEngine;
 const vectors = {U:[0,-1],D:[0,1],L:[-1,0],R:[1,0]};
-assert.equal(catalog.skills.length, 4);
+assert(catalog.skills.length > 0);
+assert.equal(new Set(catalog.skills.map(s => s.id)).size, catalog.skills.length);
+assert.equal(new Set(catalog.cases.map(c => c.id)).size, catalog.cases.length);
 assert.equal(catalog.rooms.length, 256);
 assert.equal(new Set(catalog.rooms.map(r => r.id)).size, 256);
-assert.deepEqual(catalog.rooms.filter(r => r.skill).map(r => r.id).sort(), ['FxE','GxE','GxF','HxH','JxG']);
-assert.equal(catalog.cases.filter(c => c.kind === 'official').length, 5);
-assert.equal(catalog.cases.filter(c => c.kind === 'authored').length, 4);
+for (const room of catalog.rooms) {
+  const skills = catalog.skills.filter(s => s.rooms.includes(room.id)).map(s => s.id);
+  assert.deepEqual(room.skills || (room.skill ? [room.skill] : []), skills, 'Stale room-to-skill mapping: ' + room.id);
+  assert.equal(room.skill, skills[0] || null);
+}
+require('./sync-site.cjs').synchronize({ check: true });
 function checkAssets(value) {
   if (Array.isArray(value)) value.forEach(checkAssets);
   else if (value && typeof value === 'object') Object.values(value).forEach(checkAssets);
@@ -60,18 +65,20 @@ for (const entry of catalog.cases) {
     engine.move(state, ...vectors[direction]);
     inputs++;
   }
-  const players = data.actors.map((a,i) => a.type === 'player' ? i : -1).filter(i => i >= 0);
+  const players = data.actors.map((a,i) => ['player','circle_player'].includes(a.type) ? i : -1).filter(i => i >= 0);
   assert(players.some(i => !state.actorRemoved[i]), 'No surviving player: ' + entry.id);
   if (entry.goal.kind !== 'reach') assert(engine.isSolved(state), 'Saved route did not collect all gems: ' + entry.id);
   if (entry.goal.cell) assert(players.some(i => !state.actorRemoved[i] && state.actorX[i] === entry.goal.cell[0] && state.actorY[i] === entry.goal.cell[1] && state.actorElevation[i] === (entry.goal.cell[2] || 0)), 'Saved route did not reach its final doorway: ' + entry.id);
   const record = provenance.cases.find(c => c.id === entry.id);
   assert(record);
+  if (record.witnessSha256) assert.equal(sha(entry.witness), record.witnessSha256);
   assert.equal(sha(fs.readFileSync(path.join(site, entry.map))), record.sourceMapSha256);
   if (record.skillReference) assert.equal(sha(fs.readFileSync(path.join(root, record.skillReference))), record.sourceMapSha256);
 }
 for (const runtime of provenance.runtime) assert.equal(sha(fs.readFileSync(path.join(site, 'runtime', runtime.file))), runtime.sha256, 'Runtime changed without refreshing provenance: ' + runtime.file);
 for (const skill of catalog.skills) {
-  assert(skill.officialCases.length && skill.authoredCases.length);
+  assert(skill.officialCases.length);
+  assert(fs.existsSync(path.join(root, 'skills/mazebench-' + skill.id + '/SKILL.md')));
   for (const id of [...skill.officialCases, ...skill.authoredCases]) assert(catalog.cases.some(c => c.id === id && c.skill === skill.id));
 }
 for (const name of ['MazeBenchEngine.txt','engine-third-party-notices.txt','three.txt','geist.txt']) assert(fs.statSync(path.join(site,'licenses',name)).size > 500);
@@ -83,4 +90,4 @@ for (const page of ['index','skill','world','player','about']) {
     assert(fs.existsSync(path.join(site,url)), 'Missing page dependency: ' + url);
   }
 }
-console.log('Site checks passed: 256 rooms, 5 reference mappings, 9 saved solutions (' + inputs + ' inputs), assets, licenses, and source fingerprints.');
+console.log('Site checks passed: 256 rooms, ' + catalog.skills.length + ' skills, ' + catalog.rooms.filter(r => r.skill).length + ' reference rooms, ' + catalog.cases.length + ' saved solutions (' + inputs + ' inputs), assets, licenses, and source fingerprints.');

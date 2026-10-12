@@ -62,4 +62,8 @@ node scripts/verify.cjs --repo ENGINE --out NEW_OUTPUT --cap 1000000
 
 Deliver Play/Edit links, Build JSON, a concise mechanism explanation, a verified route, role assignments, the usable delivery state, and scoped restriction evidence. Report which passages and pushing faces survive each stage.
 
-Preserve existing maps, artifacts, and engine code. Do not launch benchmark models, paid evaluations, or remote publication as part of this skill. Input count is not a human-difficulty score.
+Preserve existing maps, artifacts, and engine code. Do not launch benchmark models, paid evaluations, or unauthorized remote publication as part of this skill. Input count is not a human-difficulty score.
+
+## Website completion in Maze Harness
+
+When working on the Maze Harness project, follow its repository `AGENTS.md` and `docs/website.md` after a successful build and verification. The owner has authorized ongoing GitHub Pages updates for completed skills and verified playable trials. Run the repository's `scripts/publish-site.cjs` with this skill, the separate engine, actual design, build manifest and matching successful verification report; this registers the case, captures its real 3D thumbnail, validates, commits and pushes. Check the Pages run before reporting the example live. Treat this as part of delivery without waiting for another website prompt. Preserve earlier cases and do not publish unfinished or unknown results. Outside that project, use the destination's own publication authorization.

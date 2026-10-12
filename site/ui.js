@@ -58,7 +58,7 @@ export function atlas(catalog, { mode = 'references', currentRoom = '' } = {}) {
     for (const column of letters) {
       const id = column + 'x' + row;
       const room = rooms.get(id);
-      const label = id + (room.skill ? ' — ' + skills.get(room.skill) : ' — Play room');
+      const label = id + (room.skill ? ' — ' + (room.skills || [room.skill]).map(s => skills.get(s)).join(', ') : ' — Play room');
       const inner = silhouette(room) + `<span class="room-label">${id}</span>`;
       const classes = 'atlas-tile' + (room.skill ? ' used' : '') + (id === currentRoom ? ' current' : '');
       if (mode === 'select') html += `<button class="${classes}" data-room="${id}" title="${label}" aria-label="Go to ${id}"${id === currentRoom ? ' aria-current="true"' : ''}>${inner}</button>`;

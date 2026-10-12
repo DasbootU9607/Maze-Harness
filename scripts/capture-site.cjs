@@ -18,6 +18,7 @@ const {createServer, prefix} = require('./serve-site.cjs');
     browser = await chromium.launch({channel:'chrome', headless:true, args:['--enable-unsafe-swiftshader']});
     const context = await browser.newContext({viewport:{width:720,height:440}, reducedMotion:'reduce'});
     for (const entry of catalog.cases) {
+      if (args.includes('--missing') && fs.existsSync(path.join(root, 'site', entry.thumbnail))) continue;
       const page = await context.newPage();
       const errors = [];
       page.on('pageerror', error => errors.push(error.message));

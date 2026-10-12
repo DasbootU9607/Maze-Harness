@@ -1,6 +1,6 @@
 'use strict';
 
-// Export the existing engine and authored trials; never regenerate their geometry.
+// Explicit engine refresh. Incremental publication uses sync-site.cjs.
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
@@ -15,7 +15,6 @@ function option(name) {
   return path.resolve(args[i + 1]);
 }
 const engineRoot = option('--engine');
-const trialsRoot = option('--trials');
 const site = path.join(root, 'site');
 const engine = require(path.join(engineRoot, 'server/app.js'));
 const hash = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
@@ -100,28 +99,14 @@ copy(path.join(engineRoot, 'node_modules/three/LICENSE'), 'licenses/three.txt');
 copyDirectory(path.join(engineRoot, 'games/maze/assets_3d'), 'assets/maze/assets_3d');
 copyDirectory(path.join(engineRoot, 'games/maze/images'), 'assets/maze/images');
 
-const skillContent = [
-  { id: 'boundary-stagger', name: 'Boundary Stagger', rooms: ['HxH'], verb: 'Make space. Open a route.',
-    description: 'Use fixed boundaries and relative offsets to turn a blocked room into a connected sequence of openings.',
-    steps: ['Prepare shared space', 'Shift the blocking assembly', 'Open the gem route'],
-    exampleDescription: 'Shift rigid groups around fixed boundaries, make room for the next move, and release the path to the gem.' },
-  { id: 'hook-transfer', name: 'Hook Transfer', rooms: ['GxE', 'FxE'], verb: 'Reach beyond the pushing face.',
-    description: 'Transport and dock a shaped tool so one member receives a push while another moves an otherwise restricted object.',
-    steps: ['Transport the tool', 'Dock at a useful contact', 'Continue the passage work'],
-    exampleDescription: 'Line up the offset tool, transfer a push to the restricted target, and keep working to reach the gem.' },
-  { id: 'constrained-transport', name: 'Constrained Transport', rooms: ['GxF'], verb: 'Deliver the tool. Keep a way back.',
-    description: 'Rearrange helpers and recover temporary parking space to deliver a tool with a reachable, usable pushing position.',
-    steps: ['Rearrange the helpers', 'Recover shared space', 'Deliver an operable tool'],
-    exampleDescription: 'Borrow a crowded aisle, move the tool through it, and recover the space needed for its final use.' },
-  { id: 'skating-cross', name: 'Skating Cross', rooms: ['JxG'], verb: 'A moving cross. A new place to stop.',
-    description: 'Move a rigid cross across ice to create stopping points, change pushing sides, collect the gem, and return to the doorway.',
-    steps: ['Create a stopping point', 'Change pushing sides', 'Collect and return'],
-    exampleDescription: 'Slide the cross into new stopping positions, collect the gem, then return to the starting doorway.' }
-];
-const maps = read(path.join(trialsRoot, 'maps.json'));
-const catalog = { repository: 'https://github.com/DasbootU9607/Maze-Harness', engineRepository: 'https://github.com/mazebench/MazeBenchEngine', engineCommit, defaultRoom: 'HxI', skills: [], cases: [], rooms: [] };
-const provenance = { engineCommit, officialWorldMapSha256: hash(fs.readFileSync(path.join(engineRoot, 'games/maze/world_map.json'))), runtime, cases: [] };
-const mapped = new Map(skillContent.flatMap(s => s.rooms.map(room => [room, s.id])));
+const catalog = read(path.join(site, 'data/catalog.json'));
+const provenance = read(path.join(site, 'data/provenance.json'));
+catalog.engineCommit = engineCommit;
+catalog.rooms = [];
+provenance.engineCommit = engineCommit;
+provenance.officialWorldMapSha256 = hash(fs.readFileSync(path.join(engineRoot, 'games/maze/world_map.json')));
+provenance.runtime = runtime;
+const mapped = new Map(catalog.skills.flatMap(s => s.rooms.map(room => [room, s.id])));
 function localAssets(value) {
   if (Array.isArray(value)) return value.map(localAssets);
   if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, localAssets(v)]));
@@ -191,37 +176,8 @@ for (const room of catalog.rooms) {
 }
 provenance.directEntryPolicy = 'Rooms without an authored player get a temporary arrival actor only when opened directly. Entries are open, matching floor boundaries with an ordinary legal inward move. Raw maps, exported room states, and normal doorway traversal remain unchanged.';
 provenance.directEntryRooms = catalog.rooms.filter(r => r.directEntry).map(r => ({room:r.id,...r.directEntry}));
-for (const skill of skillContent) {
-  const map = maps.find(m => m.skill === skill.id);
-  assert(map, 'Missing authored trial: ' + skill.id);
-  const spec = read(path.join(trialsRoot, skill.id + '.json'));
-  const game = engine.getGame(map.id);
-  const level = engine.getLevel(game, 'level_AxA');
-  const state = writeLevel(game, level);
-  const bytes = fs.readFileSync(path.join(engineRoot, 'games', game.id, 'levels', level.fileName));
-  write('data/maps/authored-' + skill.id + '-world-map.txt', bytes);
-  const caseId = 'authored-' + skill.id;
-  const authored = { id: caseId, kind: 'authored', title: map.title, skill: skill.id, world: map.id, room: 'AxA', description: skill.exampleDescription, thumbnail: 'assets/thumbnails/' + caseId + '.png', map: 'data/maps/' + caseId + '-world-map.txt', witness: spec.witness, goal: spec.contract.goal };
-  json('data/designs/' + skill.id + '.json', { title: spec.title, cells: spec.cells, witness: spec.witness, goal: spec.contract.goal });
-  provenance.cases.push({ id: caseId, kind: 'authored', originalDraftId: map.id, title: map.title, sourceMapSha256: hash(bytes), witnessSha256: hash(spec.witness), source: 'Existing agent-authored four-skill playtest; geometry preserved.' });
-  const officialCases = [];
-  for (const room of skill.rooms) {
-    const ref = room === 'FxE' ? 'official-fxe' : 'official';
-    const referenceFile = path.join(root, 'skills/mazebench-' + skill.id + '/references/' + ref + '-world-map.txt');
-    const design = read(path.join(root, 'skills/mazebench-' + skill.id + '/references/' + ref + '-design.json'));
-    const entry = catalog.rooms.find(r => r.id === room);
-    assert.equal(hash(fs.readFileSync(referenceFile)), entry.sha256, 'Official room differs from packaged skill evidence: ' + room);
-    const id = 'official-' + room.toLowerCase();
-    const data = { id, kind: 'official', title: 'Room ' + room, skill: skill.id, world: 'maze', room, description: 'The complete upstream room used by this skill.', thumbnail: 'assets/thumbnails/' + id + '.png', map: 'data/maps/' + id + '-world-map.txt', witness: design.witness, goal: design.contract?.goal || design.goal || { kind: 'gem' } };
-    catalog.cases.push(data);
-    officialCases.push(id);
-    provenance.cases.push({ id, kind: 'official', room, sourceFile: entry.sourceFile, sourceMapSha256: entry.sha256, skillReference: path.relative(root, referenceFile).replaceAll('\\', '/') });
-  }
-  catalog.cases.push(authored);
-  catalog.skills.push({ ...skill, officialCases, authoredCases: [caseId], source: catalog.repository + '/tree/main/skills/mazebench-' + skill.id });
-  assert(state.width === spec.cells[0].length && state.height === spec.cells.length);
-}
 json('data/catalog.json', catalog);
 json('data/provenance.json', provenance);
 write('.nojekyll', '');
+require('./sync-site.cjs').synchronize();
 console.log('Exported ' + catalog.rooms.length + ' official rooms, ' + catalog.skills.length + ' skills, and ' + catalog.cases.length + ' playable cases.');

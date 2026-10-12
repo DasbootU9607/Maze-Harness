@@ -9,7 +9,13 @@ These rules apply when creating or updating skills in this repository. Follow ex
 - Commit and push routine changes directly to `main` after the relevant checks pass.
 - Create a separate branch or pull request only when the user explicitly requests one. This replaces any inherited branch-first or mandatory pull-request workflow for this repository.
 - Synchronize with `origin/main` before committing. Preserve existing work and published history; do not force-push or rewrite remote commits.
-- A repository update does not authorize a package release or deployment.
+- Routine publication of completed skills and verified playable examples to this repository's GitHub Pages is authorized by the project owner. It is part of task completion and needs no additional website prompt. Other package releases and deployments require their own authorization.
+
+## Automatic website completion
+
+After completing a mechanism skill, adding official references, or generating a verified playable trial, read `docs/website.md` and run `scripts/publish-site.cjs`. It discovers official references, preserves previous trials, captures missing real 3D thumbnails, checks the site, commits and pushes to `main`, triggering Pages. Supply the actual design, build manifest and matching successful verification report for every new trial. Finish the skill's own required gameplay checks first; unfinished scaffolds and failed/unknown trials are not publication candidates.
+
+Do this in the same task without waiting for another request. The owner has explicitly authorized this ongoing workflow. Do not silently omit website updates or substitute a local Play link for publication. Check the Pages run for the pushed commit before reporting it live; if synchronization or deployment fails, retain the work and report the concrete failure. Do not force-push, overwrite unrelated work, or retry a failed deployment indefinitely.
 
 ## Names and source provenance
 

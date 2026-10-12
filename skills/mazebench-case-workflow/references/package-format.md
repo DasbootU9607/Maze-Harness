@@ -42,6 +42,7 @@ Use [the entrypoint template](../assets/skill-template.md) and adapt its instruc
 3. Design order and functional stages; choose unspecified geometry autonomously.
 4. Source-backed motion rules, supported physics/profile, and distinct claim strengths.
 5. Actual build/verify commands and deliverables, with fresh output locations and known limits.
+6. The destination project's authorized website completion step, as in [Website completion](website.md); retain it in newly generated mechanism skills.
 
 Include reference selection through `reference-catalog.json` and `difficulty.md`: shared relation IDs, provenance/parent, relative tier, grading basis, comparison rationale and limits. Difficulty labels belong in the catalog/guide, so regrading metadata does not automatically change official case analysis or imply a new replay. User variants retain `user-*` families and actual parent/change provenance.
 
@@ -76,5 +77,7 @@ Before calling the skill complete:
 - Test claims whose truth the new or changed skill relies on. A legal witness plus an exhausted compatible exclusion supports a scoped dependency; a cap is unknown. Test solvable bypass controls so the observer cannot certify mechanism-free solutions.
 - When claiming new-map transfer, build and verify at least one substantively different realization derived from the extracted functions. A reflection, rename or extra cell alone does not establish transfer. If no new realization was checked, state that limitation rather than claiming independent-author reliability.
 - If Play/Edit links, browser behavior, saving or export are deliverables, verify them separately; engine replay does not test the UI. Workflow-only changes do not require inventing a new puzzle or rerunning unrelated searches.
+
+For Maze Harness, complete [website publication](website.md) after the checks above. New skills are discovered from their official reference files; new playable trials need their actual design, saved build and matching passed verification.
 
 Install only the completed package in the configured skill directory, preserving existing installations or updating them deliberately. Report the skill path, short invocation, core extracted logic, cases used, checks actually run and unresolved scope. Do not finish with only a proposed workflow when the user requested the package itself.

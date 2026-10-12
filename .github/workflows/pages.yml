@@ -4,11 +4,13 @@ on:
   push:
     branches: [main]
     paths:
+      - 'skills/**'
       - 'site/**'
       - 'scripts/*site*.cjs'
       - '.github/workflows/pages.yml'
   pull_request:
     paths:
+      - 'skills/**'
       - 'site/**'
       - 'scripts/*site*.cjs'
       - '.github/workflows/pages.yml'
@@ -31,6 +33,8 @@ jobs:
           node-version: '24'
       - name: Verify all rooms, saved routes, and provenance
         run: node scripts/check-site.cjs
+      - name: Verify incremental skill discovery
+        run: node scripts/test-site-sync.cjs
       - name: Upload static site
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4

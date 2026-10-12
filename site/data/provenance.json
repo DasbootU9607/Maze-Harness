@@ -89,15 +89,6 @@
   ],
   "cases": [
     {
-      "id": "authored-boundary-stagger",
-      "kind": "authored",
-      "originalDraftId": "draft-depth-972ac6fc10",
-      "title": "Shiftlock Vault",
-      "sourceMapSha256": "3c4f05f4a454e481862fff20087cab6d9e1a897647036e9c32a6c30b7ee3037b",
-      "witnessSha256": "22e4e2a32f4481db6d79467280aee955cc3920e1a529fa3f0aff9f430f04bb22",
-      "source": "Existing agent-authored four-skill playtest; geometry preserved."
-    },
-    {
       "id": "official-hxh",
       "kind": "official",
       "room": "HxH",
@@ -106,12 +97,12 @@
       "skillReference": "skills/mazebench-boundary-stagger/references/official-world-map.txt"
     },
     {
-      "id": "authored-hook-transfer",
+      "id": "authored-boundary-stagger",
       "kind": "authored",
-      "originalDraftId": "draft-depth-bb5740533c",
-      "title": "Offset Gallery",
-      "sourceMapSha256": "5aadb5f0ca91eccdd62911cd79b464141ec5a38621c243d21793e82e897c45f5",
-      "witnessSha256": "d71736821674694f3202103360c7b3adb31f85e6361e38952232c3490ee300c2",
+      "originalDraftId": "draft-depth-972ac6fc10",
+      "title": "Shiftlock Vault",
+      "sourceMapSha256": "3c4f05f4a454e481862fff20087cab6d9e1a897647036e9c32a6c30b7ee3037b",
+      "witnessSha256": "22e4e2a32f4481db6d79467280aee955cc3920e1a529fa3f0aff9f430f04bb22",
       "source": "Existing agent-authored four-skill playtest; geometry preserved."
     },
     {
@@ -131,12 +122,12 @@
       "skillReference": "skills/mazebench-hook-transfer/references/official-fxe-world-map.txt"
     },
     {
-      "id": "authored-constrained-transport",
+      "id": "authored-hook-transfer",
       "kind": "authored",
-      "originalDraftId": "draft-depth-0c26344924",
-      "title": "Borrowed Aisle",
-      "sourceMapSha256": "9b367a974fed41031a35b2f853db35e57e03057abdc65a696070dc4afec7a443",
-      "witnessSha256": "aa6f2176bc197a593f41046d8b97c999c9c3242f9a14c5533de086b512648d8a",
+      "originalDraftId": "draft-depth-bb5740533c",
+      "title": "Offset Gallery",
+      "sourceMapSha256": "5aadb5f0ca91eccdd62911cd79b464141ec5a38621c243d21793e82e897c45f5",
+      "witnessSha256": "d71736821674694f3202103360c7b3adb31f85e6361e38952232c3490ee300c2",
       "source": "Existing agent-authored four-skill playtest; geometry preserved."
     },
     {
@@ -148,12 +139,12 @@
       "skillReference": "skills/mazebench-constrained-transport/references/official-world-map.txt"
     },
     {
-      "id": "authored-skating-cross",
+      "id": "authored-constrained-transport",
       "kind": "authored",
-      "originalDraftId": "draft-skating-52a89ba3c6",
-      "title": "Glacier Turn",
-      "sourceMapSha256": "db12fef9a2d0098380ca2b9b4afc1ddb9a08b0e3c5eb8e87b54ad7ce1a2d8a24",
-      "witnessSha256": "0fea3b864832b5247c094b66495762c0e2f2b2a3343ef5d507107ef7c7628fc7",
+      "originalDraftId": "draft-depth-0c26344924",
+      "title": "Borrowed Aisle",
+      "sourceMapSha256": "9b367a974fed41031a35b2f853db35e57e03057abdc65a696070dc4afec7a443",
+      "witnessSha256": "aa6f2176bc197a593f41046d8b97c999c9c3242f9a14c5533de086b512648d8a",
       "source": "Existing agent-authored four-skill playtest; geometry preserved."
     },
     {
@@ -163,6 +154,15 @@
       "sourceFile": "eaxixyrjgf.txt",
       "sourceMapSha256": "f8d3bb11617bbd5a08560c0997ca66c0e2a6806f93302542fc338f0da7a2fdd8",
       "skillReference": "skills/mazebench-skating-cross/references/official-world-map.txt"
+    },
+    {
+      "id": "authored-skating-cross",
+      "kind": "authored",
+      "originalDraftId": "draft-skating-52a89ba3c6",
+      "title": "Glacier Turn",
+      "sourceMapSha256": "db12fef9a2d0098380ca2b9b4afc1ddb9a08b0e3c5eb8e87b54ad7ce1a2d8a24",
+      "witnessSha256": "0fea3b864832b5247c094b66495762c0e2f2b2a3343ef5d507107ef7c7628fc7",
+      "source": "Existing agent-authored four-skill playtest; geometry preserved."
     }
   ],
   "directEntryPolicy": "Rooms without an authored player get a temporary arrival actor only when opened directly. Entries are open, matching floor boundaries with an ordinary legal inward move. Raw maps, exported room states, and normal doorway traversal remain unchanged.",
