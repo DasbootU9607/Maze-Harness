@@ -2,3 +2,20 @@
 
 # Keep source-map bytes and their published SHA256 hashes intact, including named cases.
 skills/*/references/*-world-map.txt -text whitespace=cr-at-eol
+
+# Published map downloads retain the same upstream bytes as skill evidence.
+site/*.html text eol=lf
+site/*.js text eol=lf
+site/*.css text eol=lf
+site/runtime/*.js text eol=lf
+site/data/**/*.json text eol=lf
+site/data/maps/*.txt -text whitespace=cr-at-eol
+site/assets/**/*.woff2 binary
+site/assets/**/*.png binary
+site/assets/**/*.glb binary
+
+# Keep upstream formatting while distinguishing vendored and exported material.
+site/vendor/*.js whitespace=-space-before-tab linguist-vendored
+site/utils/*.js linguist-vendored
+site/runtime/*.js linguist-vendored
+site/data/** linguist-generated

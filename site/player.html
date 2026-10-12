@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Play all 256 MazeBench rooms in 3D, switch freely between rooms, and try the four agent-authored Maze Harness puzzles.">
+  <title>Playground — Maze Harness</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./style.css"><link rel="stylesheet" href="./player.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+  <script type="module" src="./player.js"></script>
+</head>
+<body data-page="player">
+  <a class="skip-link" href="#maze-canvas">Skip to game</a><header id="site-header"></header>
+  <main id="main" class="playground container">
+    <div class="playground-heading"><div><div class="eyebrow">THE PLAYGROUND</div><h1 id="room-title">The complete maze.</h1></div><a id="skill-back" class="text-link small" href="./world.html">Explore the world map ↗</a></div>
+    <div class="playground-layout">
+      <section class="game-column mazebench-controls" aria-label="MazeBench player">
+        <div class="game-toolbar"><div class="current-room"><span class="status-dot" aria-hidden="true"></span><span id="room-label" class="mono">LOADING</span></div><div class="game-toolbar-actions"><button class="button" type="button" data-action="undo" aria-label="Undo last action">Undo <kbd>Z</kbd></button><button class="button" type="button" data-action="reset" aria-label="Reset level">Reset <kbd>R</kbd></button><button class="button" type="button" id="fullscreen" aria-label="Enter fullscreen">⛶</button></div></div>
+        <div id="game-root" class="is-loading">
+          <div class="play-shell"><div class="play-header" hidden></div><div class="mazebench-runtime-toggles" hidden><button id="fuzzy-toggle" type="button" aria-pressed="false"></button><button id="edge-toggle" type="button" aria-pressed="true"></button></div><section class="play-stage" aria-label="Interactive 3D maze"><div class="maze-frame is-loading"><canvas id="maze-canvas" class="maze-canvas" width="900" height="680" tabindex="0" aria-label="3D maze. Use arrow keys to move, A and D to rotate, W and S to tilt, Z to undo, R to reset."></canvas><div class="game-loading" role="status"><span class="loading-cube"></span><span>Preparing your room…</span></div></div></section></div>
+        </div>
+        <div class="game-control-bar"><div class="control-group"><span class="control-label mono">MOVE</span><div class="control-pad" data-quadrant-pad="move"><button class="control-button" type="button" data-move="left" aria-label="Move left">←</button><button class="control-button" type="button" data-move="up" aria-label="Move up">↑</button><button class="control-button" type="button" data-move="down" aria-label="Move down">↓</button><button class="control-button" type="button" data-move="right" aria-label="Move right">→</button></div></div><div class="control-group"><span class="control-label mono">CAMERA</span><div class="camera-pad control-pad" data-quadrant-pad="camera"><button class="control-button" type="button" data-camera="left" aria-label="Rotate camera left">↶</button><button class="control-button" type="button" data-camera="right" aria-label="Rotate camera right">↷</button><button class="control-button" type="button" data-camera="up" aria-label="Tilt camera up">↑</button><button class="control-button" type="button" data-camera="down" aria-label="Tilt camera down">↓</button></div></div><div class="session-stats mono"><span id="move-stat">0 moves</span><span id="gem-stat">0 gems</span></div></div>
+        <div id="game-status" class="game-status" role="status" aria-live="polite">Loading the original MazeBench engine…</div>
+      </section>
+      <aside class="play-sidebar" aria-label="Room selection and instructions">
+        <label class="eyebrow" for="world-select">CHOOSE A WORLD</label><select id="world-select" aria-label="Choose a world" disabled><option>Loading worlds…</option></select>
+        <div id="official-navigation"><div class="sidebar-label"><label class="eyebrow" for="room-input">JUMP TO A ROOM</label><span class="mono small muted">256 UNLOCKED</span></div><form id="room-form"><input id="room-input" name="room" placeholder="e.g. HxH" autocomplete="off" list="room-options" aria-label="Room coordinates" pattern="[A-Pa-p][xX×][A-Pa-p]" maxlength="3" required><datalist id="room-options"></datalist><button class="button primary" type="submit">Go →</button></form><div class="room-shortcuts"><button class="text-link" type="button" id="previous-room">← Previous</button><button class="text-link" type="button" id="next-room">Next →</button></div><button class="button browse-rooms" type="button" id="browse-rooms">Browse all rooms <span>▦</span></button><div id="player-mini-map" class="player-mini-map"></div></div>
+        <div class="player-objective"><div class="eyebrow">YOUR OBJECTIVE</div><p id="objective">Explore the room and collect its gems.</p><a class="text-link small" id="reference-skill" hidden>Explore this room’s skill ↗</a></div>
+        <div id="solution-controls" hidden><button class="button" id="replay" type="button">Watch saved solution <span>▷</span></button><p id="replay-caption" class="replay-caption">A recorded route, not necessarily the shortest.</p></div>
+        <details class="keyboard-help"><summary class="eyebrow">HOW TO PLAY <span>+</span></summary><div><p><kbd>↑ ↓ ← →</kbd> Move and push</p><p><kbd>A / D</kbd> Rotate camera</p><p><kbd>W / S</kbd> Tilt camera</p><p><kbd>Z / U</kbd> Undo a move</p><p><kbd>R</kbd> Reset the room</p><p class="help-note">Move your character and push rigid shapes to open a route. On ice, keep sliding until something stops you. Use the buttons below the board on touch screens.</p></div></details>
+        <p class="play-provenance">Original MazeBench rules and 3D assets.<br>Gem progress is saved in this browser.</p>
+      </aside>
+    </div>
+  </main>
+  <dialog id="room-dialog" aria-labelledby="room-dialog-title"><div class="dialog-heading"><div><div class="eyebrow">THE OFFICIAL WORLD</div><h2 id="room-dialog-title">Pick any room.</h2></div><button class="button" type="button" id="close-rooms" aria-label="Close room selector">Close ×</button></div><div id="dialog-atlas" class="atlas-scroll"></div><p>All 256 rooms are playable. Dark tiles are skill references; the outlined tile is your current room.</p></dialog>
+  <footer id="site-footer"></footer><div id="toast" class="toast" role="status"></div>
+  <noscript><p class="noscript-note">Enable JavaScript to play the maze.</p></noscript>
+</body>
+</html>

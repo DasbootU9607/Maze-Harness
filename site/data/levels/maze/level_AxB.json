@@ -1,0 +1,6647 @@
+{
+  "gameId": "maze",
+  "levelId": "level_AxB",
+  "levelLabel": "Level AxB",
+  "sourceFileName": "sjejnsyuln.txt",
+  "width": 16,
+  "height": 16,
+  "terrain": [
+    [
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 2,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 2,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 2,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 3,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      }
+    ],
+    [
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 2,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      }
+    ],
+    [
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 2,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 3,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      }
+    ],
+    [
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "ice_slope",
+        "direction": "down",
+        "label": "Ice Slope Down",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "ice_slope",
+            "label": "Ice Slope Down",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": "down",
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 2,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      }
+    ],
+    [
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "player_lift",
+        "direction": null,
+        "label": "Player Lift",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "player_lift",
+            "label": "Player Lift",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 2,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 3,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      }
+    ],
+    [
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "ice_block",
+        "direction": null,
+        "label": "Ice Block",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "ice_block",
+            "label": "Ice Block",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "ice_block",
+        "direction": null,
+        "label": "Ice Block",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "ice_block",
+            "label": "Ice Block",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 2,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      }
+    ],
+    [
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "ice_block",
+        "direction": null,
+        "label": "Ice Block",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "ice_block",
+            "label": "Ice Block",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "ice_block",
+        "direction": null,
+        "label": "Ice Block",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "ice_block",
+            "label": "Ice Block",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 2,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 3,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      }
+    ],
+    [
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "player_lift",
+        "direction": null,
+        "label": "Player Lift",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "player_lift",
+            "label": "Player Lift",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "tree",
+        "direction": null,
+        "label": "Tree 1",
+        "imageUrl": null,
+        "modelUrl": "./assets/maze/assets_3d/t1.glb",
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "tree",
+            "label": "Tree 1",
+            "imageUrl": null,
+            "modelUrl": "./assets/maze/assets_3d/t1.glb",
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "ice_block",
+        "direction": null,
+        "label": "Ice Block",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "ice_block",
+            "label": "Ice Block",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "ice_slope",
+        "direction": "up",
+        "label": "Ice Slope Up",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "ice_slope",
+            "label": "Ice Slope Up",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": "up",
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 2,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      }
+    ],
+    [
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "ice_block",
+        "direction": null,
+        "label": "Ice Block",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "ice_block",
+            "label": "Ice Block",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "ice_block",
+        "direction": null,
+        "label": "Ice Block",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "ice_block",
+            "label": "Ice Block",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 2,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 3,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      }
+    ],
+    [
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "ice_slope",
+        "direction": "up",
+        "label": "Ice Slope Up",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "ice_slope",
+            "label": "Ice Slope Up",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": "up",
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "ice_block",
+        "direction": null,
+        "label": "Ice Block",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "ice_block",
+            "label": "Ice Block",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 2,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      }
+    ],
+    [
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "empty",
+        "direction": null,
+        "label": "Empty",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "ice_block",
+        "direction": null,
+        "label": "Ice Block",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "ice_block",
+            "label": "Ice Block",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 2,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 3,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      }
+    ],
+    [
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 2,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      }
+    ],
+    [
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 2,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 3,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      }
+    ],
+    [
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 2,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      }
+    ],
+    [
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "floor",
+        "direction": null,
+        "label": "Floor",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": null,
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 2,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 3,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      }
+    ],
+    [
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "ice_block",
+        "direction": null,
+        "label": "Ice Block",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "ice_block",
+            "label": "Ice Block",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      },
+      {
+        "type": "wall",
+        "direction": null,
+        "label": "Wall",
+        "imageUrl": null,
+        "modelUrl": null,
+        "layers": [
+          {
+            "type": "floor",
+            "label": "Floor",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 0,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 1,
+            "raised": false
+          },
+          {
+            "type": "wall",
+            "label": "Wall",
+            "imageUrl": null,
+            "modelUrl": null,
+            "direction": null,
+            "styleKey": null,
+            "elevation": 2,
+            "raised": false
+          }
+        ],
+        "underlay": {
+          "type": "floor",
+          "direction": null,
+          "label": "Floor",
+          "imageUrl": null,
+          "modelUrl": null,
+          "layers": null,
+          "underlay": null,
+          "raised": false
+        },
+        "raised": false
+      }
+    ]
+  ],
+  "actors": [
+    {
+      "type": "player",
+      "groupId": null,
+      "label": "Player",
+      "imageUrl": null,
+      "modelUrl": null,
+      "direction": null,
+      "shape": null,
+      "styleKey": null,
+      "raised": false,
+      "elevation": 0,
+      "x": 5,
+      "y": 1
+    },
+    {
+      "type": "weightless_box",
+      "groupId": "M0",
+      "label": "Weightless Box",
+      "imageUrl": null,
+      "modelUrl": null,
+      "direction": null,
+      "shape": null,
+      "styleKey": null,
+      "raised": false,
+      "elevation": 0,
+      "x": 10,
+      "y": 1
+    },
+    {
+      "type": "weightless_box",
+      "groupId": "M0",
+      "label": "Weightless Box",
+      "imageUrl": null,
+      "modelUrl": null,
+      "direction": null,
+      "shape": null,
+      "styleKey": null,
+      "raised": false,
+      "elevation": 0,
+      "x": 11,
+      "y": 1
+    },
+    {
+      "type": "weightless_box",
+      "groupId": "M0",
+      "label": "Weightless Box",
+      "imageUrl": null,
+      "modelUrl": null,
+      "direction": null,
+      "shape": null,
+      "styleKey": null,
+      "raised": false,
+      "elevation": 0,
+      "x": 12,
+      "y": 1
+    },
+    {
+      "type": "weightless_box",
+      "groupId": "M0",
+      "label": "Weightless Box",
+      "imageUrl": null,
+      "modelUrl": null,
+      "direction": null,
+      "shape": null,
+      "styleKey": null,
+      "raised": false,
+      "elevation": 0,
+      "x": 10,
+      "y": 2
+    },
+    {
+      "type": "weightless_box",
+      "groupId": "M0",
+      "label": "Weightless Box",
+      "imageUrl": null,
+      "modelUrl": null,
+      "direction": null,
+      "shape": null,
+      "styleKey": null,
+      "raised": false,
+      "elevation": 0,
+      "x": 12,
+      "y": 2
+    },
+    {
+      "type": "weightless_box",
+      "groupId": "M0",
+      "label": "Weightless Box",
+      "imageUrl": null,
+      "modelUrl": null,
+      "direction": null,
+      "shape": null,
+      "styleKey": null,
+      "raised": false,
+      "elevation": 0,
+      "x": 10,
+      "y": 3
+    },
+    {
+      "type": "weightless_box",
+      "groupId": "M0",
+      "label": "Weightless Box",
+      "imageUrl": null,
+      "modelUrl": null,
+      "direction": null,
+      "shape": null,
+      "styleKey": null,
+      "raised": false,
+      "elevation": 0,
+      "x": 10,
+      "y": 4
+    },
+    {
+      "type": "weightless_box",
+      "groupId": "M0",
+      "label": "Weightless Box",
+      "imageUrl": null,
+      "modelUrl": null,
+      "direction": null,
+      "shape": null,
+      "styleKey": null,
+      "raised": false,
+      "elevation": 0,
+      "x": 11,
+      "y": 4
+    },
+    {
+      "type": "weightless_box",
+      "groupId": "M1",
+      "label": "Weightless Box",
+      "imageUrl": null,
+      "modelUrl": null,
+      "direction": null,
+      "shape": null,
+      "styleKey": null,
+      "raised": false,
+      "elevation": 1,
+      "x": 4,
+      "y": 6
+    }
+  ],
+  "cameraView": {
+    "width": 16,
+    "height": 16
+  },
+  "worldColumns": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P"
+  ],
+  "worldRows": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P"
+  ],
+  "playApiBaseUrl": "./data/levels/maze"
+}

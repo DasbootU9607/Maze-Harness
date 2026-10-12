@@ -2,6 +2,10 @@
 
 Agent skills for designing, building, and verifying MazeBench puzzles.
 
+[Explore the website](https://dasbootu9607.github.io/Maze-Harness/) · [256-room world map](https://dasbootu9607.github.io/Maze-Harness/world.html) · [Play the full maze](https://dasbootu9607.github.io/Maze-Harness/player.html)
+
+The website pairs all four mechanism skills with five complete official references and four existing agent-authored trials. Every room thumbnail opens the 3D player; highlighted tiles on the 16 × 16 world map link to the associated skill. The playground includes room search, an unrestricted room picker, keyboard and touch controls, undo/reset, and saved solution playback. See [website maintenance](docs/website.md) for local preview, data provenance, and GitHub Pages publishing.
+
 ## Skills
 
 | Skill | Original room | Use it for |
@@ -18,7 +22,7 @@ New authoring defaults to connected, multi-stage rooms. Before choosing shapes o
 
 Copy each desired directory from `skills/` into your coding agent's configured skill directory. Keep the entire directory together: its instructions reference the included documentation and scripts. Alternatively, ask the agent to read the relevant `SKILL.md` directly from a checkout of this repository.
 
-The skills need a separate [MazeBenchEngine](https://github.com/mazebench/MazeBenchEngine) checkout, Node.js, the engine's dependencies, and write access to its local drafts. Pass that checkout explicitly as `--repo`; the engine and game assets are not bundled here.
+The skills need a separate [MazeBenchEngine](https://github.com/mazebench/MazeBenchEngine) checkout, Node.js, the engine's dependencies, and write access to its local drafts. Pass that checkout explicitly as `--repo`; the skill packages do not bundle the engine or game assets. The website includes a separate, pinned browser runtime for playing the published examples.
 
 ## Use
 
