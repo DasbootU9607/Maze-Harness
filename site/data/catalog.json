@@ -48,7 +48,8 @@
         "official-fxg"
       ],
       "authoredCases": [
-        "authored-hook-transfer"
+        "authored-hook-transfer",
+        "authored-hook-transfer-1bf88985df5b"
       ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-hook-transfer"
     },
@@ -74,7 +75,8 @@
         "official-gxh"
       ],
       "authoredCases": [
-        "authored-constrained-transport"
+        "authored-constrained-transport",
+        "authored-constrained-transport-a6eaf6caf274"
       ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-constrained-transport"
     },
@@ -119,7 +121,9 @@
         "official-bxb",
         "official-bxc"
       ],
-      "authoredCases": [],
+      "authoredCases": [
+        "authored-block-coordination-ed4fa93087f1"
+      ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-block-coordination"
     },
     {
@@ -135,7 +139,9 @@
       "officialCases": [
         "official-bxe"
       ],
-      "authoredCases": [],
+      "authoredCases": [
+        "authored-bridge-convoy-a38898d626b3"
+      ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-bridge-convoy"
     },
     {
@@ -151,7 +157,9 @@
       "officialCases": [
         "official-exb"
       ],
-      "authoredCases": [],
+      "authoredCases": [
+        "authored-clear-ground-turning-3a7a7a80206c"
+      ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-clear-ground-turning"
     },
     {
@@ -169,7 +177,9 @@
         "official-cxb",
         "official-dxb"
       ],
-      "authoredCases": [],
+      "authoredCases": [
+        "authored-enclosure-navigation-dd1cff7d5825"
+      ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-enclosure-navigation"
     }
   ],
@@ -523,6 +533,142 @@
           0
         ]
       }
+    },
+    {
+      "id": "authored-block-coordination-ed4fa93087f1",
+      "kind": "authored",
+      "title": "Relay Reserve",
+      "skill": "block-coordination",
+      "world": "authored-block-coordination-ed4fa93087f1",
+      "room": "AxA",
+      "description": "A shield left behind still has work to do. Preserve the next approach through two handoffs.",
+      "thumbnail": "assets/thumbnails/authored-block-coordination-ed4fa93087f1.png",
+      "map": "data/maps/authored-block-coordination-ed4fa93087f1-world-map.txt",
+      "witness": "UUUURDDDDLDLUUUUUURRRRRDRUUUURULLLLLLLULDDDDRRRRRRRRRUR",
+      "goal": {
+        "kind": "reach",
+        "cell": [
+          15,
+          5,
+          0
+        ]
+      },
+      "difficulty": {
+        "level": "planning",
+        "basis": "structural-estimate",
+        "humanPlaytests": 0
+      },
+      "designSource": "https://github.com/DasbootU9607/Maze-Harness/tree/main/trials/planning-batch/relay-reserve"
+    },
+    {
+      "id": "authored-enclosure-navigation-dd1cff7d5825",
+      "kind": "authored",
+      "title": "Open Circuit",
+      "skill": "enclosure-navigation",
+      "world": "authored-enclosure-navigation-dd1cff7d5825",
+      "room": "AxA",
+      "description": "Carry a rigid enclosure through the gates, then find a new way to work from outside it.",
+      "thumbnail": "assets/thumbnails/authored-enclosure-navigation-dd1cff7d5825.png",
+      "map": "data/maps/authored-enclosure-navigation-dd1cff7d5825-world-map.txt",
+      "witness": "LDLUUDLLLUURUUUURRRRRUUUURRLLDDRRRRRUULLLLLLLUULLLLDR",
+      "goal": {
+        "kind": "gem"
+      },
+      "difficulty": {
+        "level": "planning",
+        "basis": "structural-estimate",
+        "humanPlaytests": 0
+      },
+      "designSource": "https://github.com/DasbootU9607/Maze-Harness/tree/main/trials/planning-batch/open-circuit"
+    },
+    {
+      "id": "authored-clear-ground-turning-3a7a7a80206c",
+      "kind": "authored",
+      "title": "Turning Debt",
+      "skill": "clear-ground-turning",
+      "world": "authored-clear-ground-turning-3a7a7a80206c",
+      "room": "AxA",
+      "description": "One shield, several useful turning bays, and a route that crosses its own earlier path.",
+      "thumbnail": "assets/thumbnails/authored-clear-ground-turning-3a7a7a80206c.png",
+      "map": "data/maps/authored-clear-ground-turning-3a7a7a80206c-world-map.txt",
+      "witness": "RRRDRUUUUUUULURRRRRRURDDDDDRDLLLLDLUUUUUUUUULUUR",
+      "goal": {
+        "kind": "reach",
+        "cell": [
+          8,
+          0,
+          0
+        ]
+      },
+      "difficulty": {
+        "level": "planning",
+        "basis": "structural-estimate",
+        "humanPlaytests": 0
+      },
+      "designSource": "https://github.com/DasbootU9607/Maze-Harness/tree/main/trials/planning-batch/turning-debt"
+    },
+    {
+      "id": "authored-bridge-convoy-a38898d626b3",
+      "kind": "authored",
+      "title": "Last Plank",
+      "skill": "bridge-convoy",
+      "world": "authored-bridge-convoy-a38898d626b3",
+      "room": "AxA",
+      "description": "Keep the last bridge floor and the blue block usable through a change of heading.",
+      "thumbnail": "assets/thumbnails/authored-bridge-convoy-a38898d626b3.png",
+      "map": "data/maps/authored-bridge-convoy-a38898d626b3-world-map.txt",
+      "witness": "RRRRRRRRDRRURULDDLUUUUUURUULULDRRDLLLLLLLLLULL",
+      "goal": {
+        "kind": "gem"
+      },
+      "difficulty": {
+        "level": "planning",
+        "basis": "structural-estimate",
+        "humanPlaytests": 0
+      },
+      "designSource": "https://github.com/DasbootU9607/Maze-Harness/tree/main/trials/planning-batch/last-plank"
+    },
+    {
+      "id": "authored-hook-transfer-1bf88985df5b",
+      "kind": "authored",
+      "title": "Return Hook",
+      "skill": "hook-transfer",
+      "world": "authored-hook-transfer-1bf88985df5b",
+      "room": "AxA",
+      "description": "An offset working tip releases the target, but the gem still needs another operation.",
+      "thumbnail": "assets/thumbnails/authored-hook-transfer-1bf88985df5b.png",
+      "map": "data/maps/authored-hook-transfer-1bf88985df5b-world-map.txt",
+      "witness": "LLLDLUUURURUUUUUULLLLDDRDDL",
+      "goal": {
+        "kind": "gem"
+      },
+      "difficulty": {
+        "level": "planning",
+        "basis": "structural-estimate",
+        "humanPlaytests": 0
+      },
+      "designSource": "https://github.com/DasbootU9607/Maze-Harness/tree/main/trials/planning-batch/return-hook"
+    },
+    {
+      "id": "authored-constrained-transport-a6eaf6caf274",
+      "kind": "authored",
+      "title": "Borrowed Corner",
+      "skill": "constrained-transport",
+      "world": "authored-constrained-transport-a6eaf6caf274",
+      "room": "AxA",
+      "description": "Two tools compete for one corner. Preserve the route needed to recover the one you park.",
+      "thumbnail": "assets/thumbnails/authored-constrained-transport-a6eaf6caf274.png",
+      "map": "data/maps/authored-constrained-transport-a6eaf6caf274-world-map.txt",
+      "witness": "URRDRRRUULLLDDLDDRUUUUUUUDRRULLDLLLLUULRRU",
+      "goal": {
+        "kind": "gem"
+      },
+      "difficulty": {
+        "level": "planning",
+        "basis": "structural-estimate",
+        "humanPlaytests": 0
+      },
+      "designSource": "https://github.com/DasbootU9607/Maze-Harness/tree/main/trials/planning-batch/borrowed-corner"
     }
   ],
   "rooms": [

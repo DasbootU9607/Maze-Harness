@@ -366,6 +366,102 @@
       "mapEquivalence": "CRLF-to-LF only; original bytes retained",
       "solutionReference": "skills/mazebench-block-coordination/references/official-bxc-solution.json",
       "solutionSha256": "c92429f9777e3f9767e689dbe1518f5f5705d56da0be167c27cc1d501d85ebee"
+    },
+    {
+      "id": "authored-block-coordination-ed4fa93087f1",
+      "kind": "authored",
+      "originalDraftId": "draft-depth-2bd03fd9a9",
+      "title": "Relay Reserve",
+      "sourceMapSha256": "ed4fa93087f11ab8a919f04fae82e73bdd497d9cf3f81a61fdcad1c9527d4a82",
+      "witnessSha256": "b15bdb1feed8459e3b675b2e96aeec6dbc2af57b3c8b9328516d8a6b556b4f89",
+      "source": "Agent-authored trial; verified design and saved draft matched before publication.",
+      "verification": {
+        "overall": "passed",
+        "profile": "authored-planar-gate-planning-v1",
+        "cellsSha256": "6a35ec8f7eb2969e435f6d412a1601e47220173ddcc870d694ee34492d1bf0fb",
+        "contractSha256": "508d5e0cd0128ba6d948308b0e5b69a0b50a5cc14adaed4b62d7d89e90b6ba53",
+        "reportSha256": "ab87c88be299afb3a8a37b8badc70d6240fd8290bc70c952933eb068b192ddcd"
+      }
+    },
+    {
+      "id": "authored-enclosure-navigation-dd1cff7d5825",
+      "kind": "authored",
+      "originalDraftId": "draft-depth-988cb44c72",
+      "title": "Open Circuit",
+      "sourceMapSha256": "dd1cff7d582560e9a87f26600c26ee849bcd103d339f633b62a303d2270f7208",
+      "witnessSha256": "9a1e25ee0398ea7666fcd735ff08c1cfec4bf236f960d2c91b421398d2b3169b",
+      "source": "Agent-authored trial; verified design and saved draft matched before publication.",
+      "verification": {
+        "overall": "passed",
+        "profile": "authored-planar-gate-planning-v1",
+        "cellsSha256": "4e5b12f6ae283835589eba0e94bd9e2a9dd3f34e81625d1f0661372a7880d42c",
+        "contractSha256": "5e8a9f98a3616d68a6bace9eced30b23847d1ab5ef72bab7477f116d72b392fc",
+        "reportSha256": "73691ece48b7e02adffbb4e3985866ec72713ff2c51775eab0ce352d31af1d4a"
+      }
+    },
+    {
+      "id": "authored-clear-ground-turning-3a7a7a80206c",
+      "kind": "authored",
+      "originalDraftId": "draft-depth-f5bf60d137",
+      "title": "Turning Debt",
+      "sourceMapSha256": "3a7a7a80206c5675b4ef6472b05bae5e202d51827a580c599ed1c795c594c0f8",
+      "witnessSha256": "2a04d515a207c8fed21fcee63bb654ef835b0d00fda3fcd6aef6bc256e82bcd6",
+      "source": "Agent-authored trial; verified design and saved draft matched before publication.",
+      "verification": {
+        "overall": "passed",
+        "profile": "authored-planar-gate-planning-v1",
+        "cellsSha256": "e5c2678bf794edc8a6263083c3a91065fa30b73046bc43b37be34679f2545842",
+        "contractSha256": "1efc2024de54584afb1e1edce663ce17e6ffc4a03d2d485b0df7903d5dc0ca9a",
+        "reportSha256": "7e9c9da1a259f51eb3c4cb1d4595578b1ef8360a08980c4efd99a2f32cb97c3b"
+      }
+    },
+    {
+      "id": "authored-bridge-convoy-a38898d626b3",
+      "kind": "authored",
+      "originalDraftId": "draft-depth-3ce5ce5ade",
+      "title": "Last Plank",
+      "sourceMapSha256": "a38898d626b306a74ec5886072bc953c250b1d0726a164799f9ae5ccc984c95b",
+      "witnessSha256": "2e20e7379f97181e21e5c1d61117202cb8a5b7f0c354582d5ca552c75583ce75",
+      "source": "Agent-authored trial; verified design and saved draft matched before publication.",
+      "verification": {
+        "overall": "passed",
+        "profile": "authored-planar-gate-planning-v1",
+        "cellsSha256": "500ca87bd93e8741a699474acaff90efa3f615be7a70368a73a69d702792cfe0",
+        "contractSha256": "d9f82e37dbe3b6fc9d0537e31a4999daec6c3ff40ccb6ddc81d8825faba5b8ff",
+        "reportSha256": "fffa6262396e6198229745834da5b6a34d94bde6f42aff71efd0a0210081f3f5"
+      }
+    },
+    {
+      "id": "authored-hook-transfer-1bf88985df5b",
+      "kind": "authored",
+      "originalDraftId": "draft-depth-ab97ccf277",
+      "title": "Return Hook",
+      "sourceMapSha256": "1bf88985df5b8b05eadcec1c0cdc85b99fd6e15582cf420783e8390c7fd250d4",
+      "witnessSha256": "0fc88e76d7c498990bf53e685ba7ac40eed519a323d6398de79e73f9cd5e504c",
+      "source": "Agent-authored trial; verified design and saved draft matched before publication.",
+      "verification": {
+        "overall": "passed",
+        "profile": "planar-hook-depth-v2",
+        "cellsSha256": "d2e3b5ebf8bb13685e7f11891ccfaa0d3fad0d66a862542538cfceaf2d4e379d",
+        "contractSha256": "f81e60cd45b15f581db141691a0b2d7cf035d92bfc033d6a7a440456baf67f35",
+        "reportSha256": "b82e7b3eac70b391c13cd69e36319e2d435ac7c539aca4db5614bd32c67c692d"
+      }
+    },
+    {
+      "id": "authored-constrained-transport-a6eaf6caf274",
+      "kind": "authored",
+      "originalDraftId": "draft-depth-599c6b0468",
+      "title": "Borrowed Corner",
+      "sourceMapSha256": "a6eaf6caf2747690c1819423fabe0822efe9435963336334e4c3227f0a5c5b31",
+      "witnessSha256": "f70c13396d5ec3d9889da04329b2d5f55a1933bc931324f41d63d1fef29d21d6",
+      "source": "Agent-authored trial; verified design and saved draft matched before publication.",
+      "verification": {
+        "overall": "passed",
+        "profile": "planar-transport-depth-v2",
+        "cellsSha256": "c535e61e4d15fdb305f08a55e588b2733b75181ad9eb42cc1f50f9e0f3cfa4cb",
+        "contractSha256": "fdd6657e9309d35f60eb57cd6013b63737241009aeda6fcac5c5f7e2ca1af5e5",
+        "reportSha256": "0553408c7a15c4d60ac795503495164df5a112b5bc5a55640729e2a6e3185f5e"
+      }
     }
   ],
   "directEntryPolicy": "Rooms without an authored player get a temporary arrival actor only when opened directly. Entries are open, matching floor boundaries with an ordinary legal inward move. Raw maps, exported room states, and normal doorway traversal remain unchanged.",

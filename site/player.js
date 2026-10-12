@@ -34,6 +34,7 @@ function updateRoomUi() {
   const preferred = params.get('case');
   selectedCase = catalog.cases.find(c => c.id === preferred && c.world === world && c.room === room) || catalog.cases.find(c => c.world === world && c.room === room);
   const generated = world !== 'maze';
+  document.getElementById('progress-note').textContent = generated ? 'Reset restores the complete trial, including its gems.' : 'Gem progress is saved in this browser.';
   document.getElementById('room-title').textContent = generated ? selectedCase?.title || 'Agent-authored room' : 'The complete maze.';
   document.title = (generated ? selectedCase?.title : 'Room ' + room) + ' — Maze Harness';
   document.getElementById('room-label').textContent = generated ? 'AGENT AUTHORED / ' + room : 'ROOM ' + room;
@@ -83,6 +84,21 @@ async function switchRoom(room) {
   } catch (error) { status(error.message); toast('Could not open the room. Please try again.'); }
   finally { changingRoom = false; window.__MAZEBENCH_INPUT_LOCKED__ = false; }
 }
+// Authored single-room trials restart their full objective, including gems.
+async function resetAuthoredTrial() {
+  if (world === 'maze' || !app() || changingRoom) return;
+  changingRoom = true;
+  stopReplay();
+  window.__MAZEBENCH_INPUT_LOCKED__ = true;
+  try {
+    await idle();
+    app().resetCollectionProgress();
+    app().resetPositions();
+    await idle();
+    status('Room reset. Arrow keys to move.');
+  } catch (error) { status(error.message); }
+  finally { changingRoom = false; window.__MAZEBENCH_INPUT_LOCKED__ = false; }
+}
 async function replay() {
   if (replaying) { stopReplay(); status('Solution paused. Continue playing from here.'); return; }
   if (!selectedCase?.witness) return;
@@ -95,6 +111,7 @@ async function replay() {
     // Reload the source state so a solution always starts from the original pose.
     const data = await app().loadLevelState('level_' + entry.room);
     if (token !== replayToken) return;
+    if (world !== 'maze') app().resetCollectionProgress();
     app().applyLevelState(data, { immediateCamera: true, resetHistory: true, resetLevelEntry: true, updateUrl: false });
     for (let i = 0; i < entry.witness.length; i++) {
       await idle();
@@ -147,10 +164,23 @@ try {
   document.addEventListener('fullscreenchange', () => window.dispatchEvent(new Event('resize')));
   document.getElementById('replay').addEventListener('click', replay);
   document.querySelectorAll('[data-action],[data-move]').forEach(button => button.addEventListener('pointerdown', () => { stopReplay(); status('Your move.'); }, true));
+  document.querySelector('[data-action="reset"]').addEventListener('click', event => {
+    if (world === 'maze') return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    resetAuthoredTrial();
+  }, true);
   // The original runtime binds keys and wheel at window scope. Keep form fields,
   // dialogs, and page scrolling usable while retaining all in-game controls.
   window.addEventListener('keydown', event => {
     if (event.target.matches('input, select, textarea') || dialog.open) { event.stopImmediatePropagation(); return; }
+    const resetKeys = window.__MAZEBENCH_CONTROLS__?.keys?.reset || ['KeyR'];
+    if (world !== 'maze' && resetKeys.includes(event.code)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      resetAuthoredTrial();
+      return;
+    }
     if (['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','KeyZ','KeyU','KeyR'].includes(event.code)) stopReplay();
   }, true);
   window.addEventListener('wheel', event => { if (!event.target.closest('.play-stage')) event.stopImmediatePropagation(); }, { capture: true, passive: true });
@@ -158,7 +188,7 @@ try {
   if (!url.searchParams.has('view')) { url.searchParams.set('view', '1'); history.replaceState(null, '', url); }
   const response = await fetch('./data/levels/' + world + '/level_' + room + '.json');
   if (!response.ok) throw new Error('Room data could not be loaded. Try another room.');
-  window.__PLAY_DATA__ = { ...withDirectEntry(await response.json(), catalog), hostOwnsPlayHud: true, hostOwnsWorldMapNavigation: true, disableHorizontalNeighborFetches: capture || world !== 'maze', ignoreSavedGemProgress: capture };
+  window.__PLAY_DATA__ = { ...withDirectEntry(await response.json(), catalog), hostOwnsPlayHud: true, hostOwnsWorldMapNavigation: true, disableHorizontalNeighborFetches: capture || world !== 'maze', ignoreSavedGemProgress: capture || world !== 'maze' };
   window.__PLAY_WORLD_DATA__ = { game: { id: world }, worldColumns: [...letters], worldRows: [...letters], existingLevels: world === 'maze' ? catalog.rooms.map(r => ({id:'level_' + r.id, label:r.id})) : [{id:'level_AxA',label:'AxA'}] };
   for (const name of ['play-rules','play-core','play-render-effects','play-render-terrain','play-render-actors','play-render-three','play-render-compositor','play-render','maze-engine','play-movement','play-world-transitions','play-gameplay','play']) await loadScript(name);
   if (!app()) throw new Error('The 3D player could not initialize. Reload to try again.');
