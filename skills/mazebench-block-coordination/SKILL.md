@@ -7,6 +7,21 @@ description: "Design MazeBench passages with several movable blocks whose shield
 
 Coordinate movable gate shields by preserving the player's next executable input. A successful operation delivers both a useful tool position and access to its working side. BxB demonstrates handoffs to initially placed shields and later reuse of one block; BxC demonstrates temporary joint transport, separate preparation and another block supplying the approach. Retaining a tool means keeping its future role usable, including while it is parked. Release follows a verified continuation to the exit.
 
+## Automatic authoring record
+
+For new authored work, choose the absolute design-spec path before reading mechanism references or laying out cells. Start its local recording session and viewer through the packaged bridge; this is part of the agent's workflow and requires no extra command from the user:
+
+```text
+node scripts/authoring-observer.cjs start --spec SPEC.json --title "Authoring task"
+node scripts/authoring-observer.cjs read --spec SPEC.json --file references/mechanism-logic.md
+```
+
+Use `read --spec SPEC.json --file FILE` for the other source files actually needed. Keep the spec path stable across revisions so ordinary build and verification commands join the same session automatically. The existing authoring CLI entrypoints record command output, candidate snapshots and fresh reports when the optional runtime is available; official-reference regression helpers remain reference checks rather than new-map sessions. For custom helpers, use `exec --spec SPEC.json --kind command -- EXECUTABLE ARGS`, or `--kind test --report FRESH_REPORT.json` for a validation report.
+
+Record concise design goals and revision reasons with `note --spec SPEC.json --json NOTE.json`; supported note fields are `goal`, `sources`, `change`, `reason`, and `expectedChecks`. Preserve unsuccessful candidates and tests, and use `finish --spec SPEC.json` when delivery is complete. Notes are agent statements, not private internal reasoning. File delivery records access, while contract read receipts establish version consistency; neither proves comprehension or causal use.
+
+The bridge discovers an optional local runtime through configuration or a surrounding checkout. An unavailable or failed recorder is reported explicitly. Continue the authorized design work when recording is unavailable, disclose the missing coverage, and never claim that unrecorded reads or commands were captured. Keep machine-specific runtime configuration and generated sessions outside the distributed skill package.
+
 ## Required reading and modes
 
 For new authoring read [mechanism logic](references/mechanism-logic.md), then [design guidance](references/design.md). Use the [cross-case comparison](references/reference-library.md) to select supported branches; the [catalog](references/reference-catalog.json) and [difficulty guide](references/difficulty.md) record source and relative complexity. For maintenance or reproduction read the complete case and its evidence: [BxB](references/official-case.md) and [BxC](references/official-bxc-case.md). Preserve complete objectives and all original members. Record the current required document SHA256 in contract.readReceipt; this checks version consistency, not understanding.

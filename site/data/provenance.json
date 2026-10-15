@@ -462,6 +462,29 @@
         "contractSha256": "fdd6657e9309d35f60eb57cd6013b63737241009aeda6fcac5c5f7e2ca1af5e5",
         "reportSha256": "0553408c7a15c4d60ac795503495164df5a112b5bc5a55640729e2a6e3185f5e"
       }
+    },
+    {
+      "id": "authored-boundary-stagger-2f126bf137c6",
+      "kind": "authored",
+      "originalDraftId": "draft-depth-9b44133bbb",
+      "title": "Rooflock Workshop",
+      "sourceMapSha256": "2f126bf137c6d92747659bacc07f3df94c252cbfee19534c6502ae10651479c0",
+      "witnessSha256": "84dbf5142db461fd18027d80a112f4f3d1635dcd5f15e8cd1261690b620e5d14",
+      "source": "Agent-authored trial; verified design and saved draft matched before publication.",
+      "verification": {
+        "overall": "passed",
+        "profile": "planar-boundary-preparation-v2",
+        "cellsSha256": "e2e55f6e600628399bbbd530f5cf6c544850cec8bd958a84b6bc230b3fbdddb5",
+        "contractSha256": "9de56feb2119d9a83c079096eea4d12b0f7a0f425af2339d39e25020b7395bb6",
+        "reportSha256": "8960692f497fe6b4eee2519c41cdb7601a94502eb11e1d44d231ac1e35b26011"
+      },
+      "authoringProcess": {
+        "schemaVersion": 1,
+        "data": "data/processes/authored-boundary-stagger-2f126bf137c6.json",
+        "sha256": "2a71af786b903a01dd553ad853e61d2bcf7aa8ca0c57909f28bedf03cffce33e",
+        "cellsSha256": "e2e55f6e600628399bbbd530f5cf6c544850cec8bd958a84b6bc230b3fbdddb5",
+        "contractSha256": "9de56feb2119d9a83c079096eea4d12b0f7a0f425af2339d39e25020b7395bb6"
+      }
     }
   ],
   "directEntryPolicy": "Rooms without an authored player get a temporary arrival actor only when opened directly. Entries are open, matching floor boundaries with an ordinary legal inward move. Raw maps, exported room states, and normal doorway traversal remain unchanged.",

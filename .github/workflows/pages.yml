@@ -7,12 +7,16 @@ on:
       - 'skills/**'
       - 'site/**'
       - 'scripts/*site*.cjs'
+      - 'scripts/*authoring*.cjs'
+      - 'tools/authoring-observatory/**'
       - '.github/workflows/pages.yml'
   pull_request:
     paths:
       - 'skills/**'
       - 'site/**'
       - 'scripts/*site*.cjs'
+      - 'scripts/*authoring*.cjs'
+      - 'tools/authoring-observatory/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -35,6 +39,11 @@ jobs:
         run: node scripts/check-site.cjs
       - name: Verify incremental skill discovery
         run: node scripts/test-site-sync.cjs
+      - name: Verify authoring recorder and public evidence projection
+        run: |
+          node --test tools/authoring-observatory/tests/*.test.cjs
+          node scripts/test-authoring-integration.cjs
+          node scripts/test-authoring-process.cjs
       - name: Upload static site
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4

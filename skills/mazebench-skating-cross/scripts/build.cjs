@@ -9,7 +9,7 @@ function build(repo, spec, out) {
   fs.writeFileSync(path.join(out, 'spec.json'), JSON.stringify(spec, null, 2) + '\n');
   return manifest;
 }
-if (require.main === module) {
+if (require.main === module && !require('./authoring-observer.cjs').runAutomatic({script:__filename,kind:'build'})) {
   const args = process.argv.slice(2), get = k => args[args.indexOf(k) + 1];
   assert(args.includes('--repo') && args.includes('--spec') && args.includes('--out'));
   console.log(JSON.stringify(build(get('--repo'), read(get('--spec')), get('--out'))));

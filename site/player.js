@@ -44,6 +44,20 @@ function updateRoomUi() {
   document.getElementById('solution-controls').hidden = !selectedCase?.witness;
   const back = document.getElementById('skill-back');
   const reference = document.getElementById('reference-skill');
+  let processLink = document.getElementById('build-process-link');
+  if (!processLink) {
+    processLink = document.createElement('a');
+    processLink.id = 'build-process-link';
+    processLink.className = 'text-link small';
+    processLink.textContent = 'Build process ↗';
+    const processParagraph = document.createElement('p');
+    processParagraph.append(processLink);
+    reference.parentElement.append(processParagraph);
+  }
+  processLink.hidden = !selectedCase?.process?.data;
+  processLink.parentElement.hidden = processLink.hidden;
+  if (selectedCase?.process?.data) processLink.href = './process.html?' + new URLSearchParams({case: selectedCase.id});
+  else processLink.removeAttribute('href');
   if (selectedCase) {
     const skill = catalog.skills.find(s => s.id === selectedCase.skill);
     back.href = './skill.html?id=' + skill.id;

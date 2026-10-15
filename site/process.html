@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Explore saved Maze Harness design versions, checks, source references, and public authoring notes.">
+  <title>Build process - Maze Harness</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./process.css">
+  <script type="module" src="./process.js"></script>
+</head>
+<body data-page="process">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header"></header>
+  <main id="main" class="process-page">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="./index.html">Library</a><span>/</span><a id="skill-link" href="./index.html#skills">Skill</a><span>/</span>Build process</nav>
+    <section class="process-intro">
+      <div><div class="eyebrow">FROM A SKILL TO A PLAYABLE ROOM</div><h1 id="process-title">Build process</h1><p id="process-summary">Loading the saved production record...</p></div>
+      <div class="process-actions"><a id="play-room" class="button primary" href="./player.html">Play room <span aria-hidden="true">&#8599;</span></a><a id="process-data" class="button" href="#" download>Public data <span aria-hidden="true">&#8595;</span></a></div>
+    </section>
+    <section id="process-stats" class="process-stats" aria-label="Saved record overview"></section>
+    <p id="process-provenance" class="process-provenance"></p>
+    <div class="process-layout">
+      <section class="process-panel graph-panel" aria-label="Build relationship graph">
+        <header class="process-panel-head"><div><span class="eyebrow">01 / RELATIONSHIPS</span><h2>Follow the build</h2></div><div class="graph-tools"><button id="zoom-out" type="button" aria-label="Zoom out">&#8722;</button><span id="zoom-level" class="mono">100%</span><button id="zoom-in" type="button" aria-label="Zoom in">+</button><button id="fit-graph" type="button">Fit</button></div></header>
+        <div class="graph-filterbar"><label><input id="show-tests" type="checkbox" checked> Tests</label><label><input id="show-notes" type="checkbox" checked> Notes</label><label><input id="show-resources" type="checkbox"> Resources</label><span class="graph-help">Drag to pan. Scroll to zoom.</span></div>
+        <div id="graph-viewport" class="graph-viewport"><svg id="process-graph" aria-label="Saved version and evidence relationships" role="group"><g id="graph-world"></g></svg><div id="graph-empty" class="graph-empty" hidden>No saved graph nodes.</div></div>
+        <div class="graph-legend"><span><i class="legend-node candidate"></i>Version</span><span><i class="legend-node passed"></i>Passed</span><span><i class="legend-node failed"></i>Failed</span><span><i class="legend-node unknown"></i>Unknown</span><span><i class="legend-line inferred"></i>Inferred relationship</span></div>
+        <div class="edge-key"><span><b>revision</b> saved parent relationship</span><span><b>tested</b> check of a version</span><span><b>cites</b> source reference</span><span><b>annotation</b> public explanation</span><span><b>supports</b> supporting evidence</span></div>
+      </section>
+      <aside class="process-panel node-inspector" aria-label="Selected graph node">
+        <header class="process-panel-head"><div><span class="eyebrow">02 / SELECTED NODE</span><h2>Inspect the evidence</h2></div></header>
+        <div id="node-detail" class="node-detail"><p>Select a graph node to inspect the saved record.</p></div>
+      </aside>
+    </div>
+    <div class="process-artifacts">
+      <section id="map-panel" class="process-panel process-map-panel" aria-label="Candidate maps">
+        <header class="process-panel-head"><div><span class="eyebrow">03 / MAP VERSIONS</span><h2>See what changed</h2></div><span id="map-cell-info" class="mono small muted">Hover for coordinates</span></header>
+        <div class="process-map-tools"><label class="process-select-label">Version <select id="process-candidate" aria-label="Select saved candidate"></select></label><label class="process-select-label">Compare with <select id="process-parent" aria-label="Select comparison parent"></select></label><label class="process-select-label">Layer <select id="process-layer" aria-label="Select map layer"></select></label></div>
+        <p id="map-provenance" class="map-provenance"></p>
+        <div id="process-maps" class="process-maps"><figure id="parent-map-frame" hidden><figcaption id="parent-map-title">Parent version</figcaption><canvas id="parent-map-canvas" aria-label="Parent version map"></canvas></figure><figure><figcaption id="candidate-map-title">Selected version</figcaption><canvas id="candidate-map-canvas" aria-label="Selected version map"></canvas></figure></div>
+        <div id="process-diff" class="process-diff"></div><div id="process-map-legend" class="process-map-legend"></div>
+      </section>
+      <section class="process-panel process-tests-panel" aria-label="Checks associated with the selected version">
+        <header class="process-panel-head"><div><span class="eyebrow">04 / CHECKS</span><h2>Test the claim</h2></div><span id="check-count" class="mono small muted"></span></header>
+        <div id="candidate-tests" class="candidate-tests"></div>
+      </section>
+    </div>
+    <details class="process-coverage" open><summary>What this record can tell you</summary><p id="coverage-description"></p><ul id="coverage-limitations"></ul><p class="coverage-footnote">These are public records of artifacts, checks, references, and author statements. They do not represent a model's complete internal reasoning. Graph positions are for readability, not elapsed time. A branch or merge appears only when an explicit relationship was saved.</p></details>
+  </main>
+  <footer id="site-footer"></footer>
+  <div id="toast" class="toast" role="status"></div>
+</body>
+</html>

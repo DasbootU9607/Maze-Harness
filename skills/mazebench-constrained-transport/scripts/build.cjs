@@ -27,7 +27,7 @@ function build(repo,out,spec){
   fs.copyFileSync(path.join(dir,'levels/level_AxA.txt'),path.join(out,'level_AxA.txt'));
   return manifest;
 }
-if(require.main===module){
+if (require.main === module && !require('./authoring-observer.cjs').runAutomatic({script:__filename,kind:'build'})){
   try{
     const a=args();assert(a.repo&&a.out&&a.spec,'Use --repo REPO --spec FILE --out NEW_OUTPUT');
     const spec=read(path.resolve(a.spec));

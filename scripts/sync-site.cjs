@@ -4,6 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const assert = require('node:assert/strict');
 const { hash, read, createReplay } = require('./site-content.cjs');
+const { exportProcess, discoverAuthoringRun } = require('./export-authoring-process.cjs');
 const defaultRoot = path.resolve(__dirname, '..');
 function synchronize(options = {}, root = defaultRoot) {
   const site = path.join(root, 'site');
@@ -87,6 +88,7 @@ function synchronize(options = {}, root = defaultRoot) {
   }
   const trialFlags = ['spec', 'build', 'verification', 'engine'];
   const importing = trialFlags.slice(0, 3).some(key => options[key]);
+  assert(!options['authoring-run'] || importing, '--authoring-run requires the actual trial spec, build and verification inputs');
   if (importing) {
     assert(skillId && trialFlags.every(key => options[key]), 'Trial import requires --skill, --engine, --spec, --build and --verification');
     const skill = catalog.skills.find(s => s.id === skillId);
@@ -109,6 +111,7 @@ function synchronize(options = {}, root = defaultRoot) {
     assert.deepEqual(cells, spec.cells, 'The saved draft is different from the verified design');
     const sourceMapSha256 = hash(bytes);
     const existing = catalog.cases.find(c => c.kind === 'authored' && c.skill === skillId && records.get(c.id)?.sourceMapSha256 === sourceMapSha256);
+    let publishedEntry = existing;
     if (existing) {
       replay(read(path.join(site, 'data/levels/' + existing.world + '/level_' + existing.room + '.json')), { ...existing, witness: spec.witness, goal: spec.contract.goal });
       assert.equal(existing.witness, spec.witness, 'An existing case has a different saved route; review it explicitly');
@@ -132,10 +135,21 @@ function synchronize(options = {}, root = defaultRoot) {
       pending.set(entry.map, bytes);
       json('data/designs/' + id + '.json', { title: spec.title, cells: spec.cells, witness: spec.witness, goal: spec.contract.goal });
       catalog.cases.push(entry);
+      publishedEntry = entry;
       skill.authoredCases.push(id);
       records.set(id, { id, kind: 'authored', originalDraftId: manifest.id, title: spec.title, sourceMapSha256, witnessSha256: hash(spec.witness),
         source: 'Agent-authored trial; verified design and saved draft matched before publication.',
         verification: { overall: report.overall, profile: report.profile, cellsSha256: report.fingerprints.cells, contractSha256: report.fingerprints.contract, reportSha256: hash(fs.readFileSync(options.verification)) } });
+    }
+    const authoringRun = discoverAuthoringRun(options);
+    if (authoringRun) {
+      const process = exportProcess(authoringRun, { caseId: publishedEntry.id, title: spec.title, skill: skillId,
+        expectedCellsSha256: hash(spec.cells), expectedContractSha256: hash(spec.contract) });
+      const file = 'data/processes/' + publishedEntry.id + '.json';
+      json(file, process);
+      publishedEntry.process = { data: file, schemaVersion: 1 };
+      records.get(publishedEntry.id).authoringProcess = { schemaVersion: 1, data: file, sha256: hash(JSON.stringify(process, null, 2) + '\n'),
+        cellsSha256: hash(spec.cells), contractSha256: hash(spec.contract) };
     }
   }
   for (const room of catalog.rooms) {
@@ -159,7 +173,7 @@ function parseArgs(args) {
   const options = {};
   for (let i = 0; i < args.length; i++) {
     const key = args[i].replace(/^--/, '');
-    assert(['skill', 'engine', 'spec', 'build', 'verification', 'check', 'prepare-only'].includes(key) && args[i].startsWith('--'), 'Unknown option: ' + args[i]);
+    assert(['skill', 'engine', 'spec', 'build', 'verification', 'authoring-run', 'check', 'prepare-only'].includes(key) && args[i].startsWith('--'), 'Unknown option: ' + args[i]);
     assert(!Object.hasOwn(options, key), 'Duplicate option: ' + args[i]);
     if (['check', 'prepare-only'].includes(key)) options[key] = true;
     else { assert(args[i + 1] && !args[i + 1].startsWith('--'), 'Missing value: ' + args[i]); options[key] = args[++i]; }

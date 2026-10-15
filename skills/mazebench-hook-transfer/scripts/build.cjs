@@ -10,7 +10,7 @@ function build(repo,out,spec){
  fs.writeFileSync(path.join(out,'spec.json'),JSON.stringify(spec,null,2)+'\n',{flag:'wx'});
  return manifest;
 }
-if(require.main===module){
+if (require.main === module && !require('./authoring-observer.cjs').runAutomatic({script:__filename,kind:'build'})){
  const args=process.argv.slice(2),get=k=>args.includes(k)?args[args.indexOf(k)+1]:undefined;
  try{
   assert(get('--repo')&&get('--out')&&get('--spec'),'Use --repo ENGINE --spec FILE --out FRESH_OUTPUT');

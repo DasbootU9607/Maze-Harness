@@ -53,7 +53,7 @@ async function verify(repo,out,cap=1000000,reportName='verification.json'){
   report.scope='Only the declared planar profile and exact transition exclusions. Witness order is not uniqueness; frozen groups do not prove directional order; caps are unknown; the declared delivery pose is not every possible working pose.';
   fs.writeFileSync(reportFile,JSON.stringify(report,null,2)+'\n',{flag:'wx'});return report;
 }
-if(require.main===module){
+if (require.main === module && !require('./authoring-observer.cjs').runAutomatic({script:__filename,kind:'test'})){
   const a=args();assert(a.repo&&a.out,'Use --repo REPO --out OUTPUT [--cap N] [--report FILE.json]');
   verify(a.repo,a.out,Number(a.cap||1000000),a.report||'verification.json').then(r=>{
     console.log(JSON.stringify({overall:r.overall,moves:r.solution.moves??null,witness:r.witness,witnessFailures:r.witnessFailures,checks:r.checks.map(c=>({name:c.name,verdict:c.verdict,expanded:c.expanded}))}));

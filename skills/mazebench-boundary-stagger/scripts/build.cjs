@@ -1,3 +1,4 @@
+if (require.main !== module || !require('./authoring-observer.cjs').runAutomatic({script:__filename,kind:'build'})) {
 // Build an agent-authored cells specification through official save services.
 const fs=require('node:fs'),assert=require('node:assert/strict');
 const {saveDraft}=require('./draft-io.cjs'),{load,validatePlanar}=require('./runtime.cjs');
@@ -9,3 +10,4 @@ assert(value.title&&value.cells&&value.contract,'A spec needs title, cells, and 
 validatePlanar({world:{width:1,height:1},levels:[{cells:value.cells}]},value.contract);
 const {engine}=load(get('--repo'),value.cells);assert.deepEqual(engine.loadWarnings,[]);
 console.log(JSON.stringify(saveDraft(get('--repo'),get('--out'),{...value,scenario:value.scenario||'custom-stagger'}),null,2));
+}

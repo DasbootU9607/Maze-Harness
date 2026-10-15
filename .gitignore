@@ -20,3 +20,11 @@ reports/
 *.key
 .vscode/
 .idea/
+
+# Private observer settings and append-only local run evidence
+.mazebench-observatory.json
+authoring-observer.local.json
+authoring-session.json
+tools/authoring-observatory/runs/
+tools/authoring-observatory/server-state.json
+tools/authoring-observatory/viewer.*.log

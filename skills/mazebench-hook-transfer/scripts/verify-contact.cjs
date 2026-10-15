@@ -110,7 +110,7 @@ async function verify(repo,out,cap=300000,reportName='verification.json',options
  fs.writeFileSync(path.join(out,reportName),JSON.stringify(report,null,2)+'\n');
  console.log(JSON.stringify({draft:m.id,solution:report.solution,checks:report.checks,directStand:report.directStand,overall:report.overall}));return report;
 }
-if(require.main===module){const a=process.argv.slice(2),get=(k,f)=>a.includes(k)?a[a.indexOf(k)+1]:f;
+if (require.main === module && !require('./authoring-observer.cjs').runAutomatic({script:__filename,kind:'test'})){const a=process.argv.slice(2),get=(k,f)=>a.includes(k)?a[a.indexOf(k)+1]:f;
  assert(get('--out'));verify(get('--repo',process.cwd()),get('--out'),Number(get('--cap',300000)),get('--report','verification.json'),{contrastNoRear:a.includes('--contrast-no-rear')})
  .then(r=>{if(r.overall!=='passed')process.exitCode=1;}).catch(e=>{console.error(e);process.exitCode=1;});}
 module.exports={verify};

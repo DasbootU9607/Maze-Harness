@@ -132,7 +132,7 @@ async function verify(repo,spec,root,cap=1000000){
  return report;
 }
 function sameMembers(initial,members){return Object.entries(members).every(([g,p])=>JSON.stringify(initial.filter(a=>a.group===g&&!a.removed).map(a=>[a.x,a.y,a.z]))===JSON.stringify(p));}
-if(require.main===module){
+if (require.main === module && !require('./authoring-observer.cjs').runAutomatic({script:__filename,kind:'test'})){
  const a=process.argv.slice(2),get=k=>a.includes(k)?a[a.indexOf(k)+1]:undefined;
  assert(get('--repo')&&get('--spec')&&get('--out'));const out=path.resolve(get('--out'));assert(!fs.existsSync(out),'Choose new report directory');
  verify(path.resolve(get('--repo')),read(get('--spec')),path.resolve(__dirname,'..'),Number(get('--cap')||1000000)).then(r=>{

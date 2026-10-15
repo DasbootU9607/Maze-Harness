@@ -125,7 +125,7 @@ async function verify(repo, spec, cap = 300000) {
   }
   return report;
 }
-if (require.main === module) {
+if (require.main === module && !require('./authoring-observer.cjs').runAutomatic({script:__filename,kind:'test'})) {
   const args = process.argv.slice(2), get = k => args[args.indexOf(k) + 1];
   assert(args.includes('--repo') && args.includes('--spec') && args.includes('--out'));
   const out = path.resolve(get('--out')); assert(!fs.existsSync(out), 'Choose a fresh report directory');

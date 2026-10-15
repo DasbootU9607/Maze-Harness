@@ -26,6 +26,31 @@ Git publication requires `main`, the expected repository remote and an up-to-dat
 
 For read-only drift detection, run `node scripts/sync-site.cjs --check`. For local catalog synchronization alone, run `node scripts/sync-site.cjs`. These do not capture thumbnails or push; use the publisher for task completion. Fresh checkouts need no engine to validate the committed static site.
 
+## Public authoring processes
+
+A recorded authoring run can accompany a verified playable trial:
+
+```sh
+node scripts/publish-site.cjs --engine ENGINE --skill mazebench-mechanism --spec DESIGN.json --build BUILD/manifest.json --verification CHECKS/verification.json --authoring-run RUN_DIRECTORY
+```
+
+Use `--prepare-only` for local preparation. The same `--authoring-run` argument works with `scripts/sync-site.cjs`. Without an explicit run, synchronization checks `authoring-session.json` beside the spec. Its version-1 record uses marker-relative `runDir` and `specPath`; an optional `sessions` object maps individual relative spec filenames to relative run directories. The matching `sessions` entry takes precedence. Otherwise `specPath` must resolve to this exact spec before the main `runDir` is used. A neighboring marker for a different spec does not attach a process.
+
+The exporter runs the recorder's read-only evidence audit, requires a completed run and an exactly bound passed test, and compares both the final candidate's cells and contract fingerprints with the published spec. Stale, incomplete, altered or mismatched evidence stops the import before pending website changes are written. The saved process goes to `site/data/processes/CASE_ID.json`; the case catalog carries `process: {data, schemaVersion: 1}`. Older cases without recorded evidence retain their existing behavior and have no invented process link.
+
+Only an allowlisted public projection is written: map snapshots and hashes, recomputed cell differences, recorded parent links, scoped test outcomes, concise agent annotations, and resource names plus hashes. Raw reports, resource contents, command arguments, stdout/stderr, local paths, personal identifiers, credentials and original human messages are excluded. Short permitted text fields are sanitized before an additional privacy scan. Failed diagnostic executions remain visible as diagnostic outcomes, separate from mechanism-test verdicts; an exit code is not treated as proof that a maze passed.
+
+The graph links revisions, tests, explicit citations, annotations and scoped delivery evidence. Snapshot order does not prove causal reasoning. Inferred historical relationships are labelled, and unrecorded branches or merges are never reconstructed. Resource delivery does not establish comprehension or actual use; annotations are explanations, not internal thought transcripts.
+
+To inspect a public projection without changing the website:
+
+```sh
+node scripts/export-authoring-process.cjs --run RUN_DIRECTORY --case CASE_ID --spec DESIGN.json --skill MECHANISM --out OUTPUT.json
+node scripts/test-authoring-process.cjs
+```
+
+Pass `--run RUN_DIRECTORY --spec DESIGN.json` to the test command to include a real completed run. Add `--engine ENGINE --build BUILD/manifest.json --verification CHECKS/verification.json` to exercise verified trial synchronization in a disposable website copy. These tests never publish or modify the source run.
+
 ## Initial content
 
 | Skill | Official rooms | Existing authored trial | Original local draft |

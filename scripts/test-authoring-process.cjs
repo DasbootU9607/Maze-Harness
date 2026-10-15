@@ -1,0 +1,161 @@
+'use strict';
+
+// Synthetic record-integrity fixtures plus optional read-only real-run coverage.
+const fs = require('node:fs');
+const path = require('node:path');
+const assert = require('node:assert/strict');
+const { spawnSync } = require('node:child_process');
+const store = require('../tools/authoring-observatory/lib/store.cjs');
+const { exportProcess, discoverAuthoringRun, sanitizeText, assertPublicPrivacy, assertAcyclic } = require('./export-authoring-process.cjs');
+const { synchronize, parseArgs } = require('./sync-site.cjs');
+const { checkAuthoringProcess } = require('./check-site.cjs');
+const { hash, read } = require('./site-content.cjs');
+const root = path.resolve(__dirname, '..');
+const outputs = path.join(root, 'outputs');
+fs.mkdirSync(outputs, { recursive: true });
+const temporary = fs.mkdtempSync(path.join(outputs, 'authoring-process-'));
+const write = (file, value) => {
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  fs.writeFileSync(file, typeof value === 'string' ? value : JSON.stringify(value, null, 2) + '\n');
+};
+const argv = process.argv.slice(2);
+const get = flag => argv.includes(flag) ? path.resolve(argv[argv.indexOf(flag) + 1]) : null;
+
+function syntheticRun() {
+  const runDir = store.createRun({ root: temporary, id: 'synthetic-record-fixture', title: 'Record integrity fixture', task: 'ORIGINAL-HUMAN-MESSAGE must stay private', mode: 'observed' });
+  const reference = path.join(temporary, 'skills/mazebench-fixture/references/mechanism-logic.md');
+  write(reference, 'PRIVATE-RESOURCE-CONTENTS');
+  store.recordResource(runDir, reference, { kind: 'mechanism' });
+  const file = path.join(temporary, 'inputs/design.json');
+  const spec = { title: 'Synthetic record fixture', cells: [['#', '#'], ['p', '.']], contract: { fixture: true } };
+  write(file, spec);
+  const first = store.captureSpec(runDir, file, { label: 'Initial record fixture' });
+  const failed = store.appendEvent(runDir, 'command.started', { label: 'Recorded diagnostic fixture', command: ['PRIVATE-COMMAND'], inputSha256: first.sha256 }, { candidateId: first.id });
+  store.appendEvent(runDir, 'command.completed', { commandEventId: failed.id, code: 1 }, { candidateId: first.id });
+  store.recordNote(runDir, { candidateId: first.id, goal: 'Fixture annotation', sources: ['references/mechanism-logic.md'], change: 'A fixture-only cell change', reason: 'Absolute C:\\Users\\PersonalUser\\private\\file.txt\nPersonalUser token=SUPER_PRIVATE_TOKEN email@example.test sk-test_abcdefghijklmnopqrstuvwxyz', expectedChecks: ['synthetic integrity check'] });
+  spec.cells[1][1] = 'G'; write(file, spec);
+  const final = store.captureSpec(runDir, file, { label: 'Final record fixture', parentId: first.id });
+  const started = store.appendEvent(runDir, 'command.started', { label: 'Synthetic integrity test', command: ['PRIVATE-COMMAND'], inputSha256: final.sha256 }, { candidateId: final.id });
+  store.appendEvent(runDir, 'command.completed', { commandEventId: started.id, code: 0 }, { candidateId: final.id });
+  const report = { overall: 'passed', replayPassed: true, fingerprints: { cells: final.cellsSha256, contract: final.contractSha256 }, checks: [{ name: 'synthetic_integrity', verdict: 'passed', private: 'PRIVATE-REPORT-CONTENTS' }], scope: 'Synthetic record fixture only; no gameplay was executed.' };
+  const reportFile = path.join(temporary, 'private-report.json'); write(reportFile, report);
+  store.addTest(runDir, { candidateId: final.id, status: 'passed', label: 'Synthetic report', scope: report.scope, binding: 'exact', bindingBasis: 'report-fingerprints-and-command-boundaries', inputSha256: final.sha256, inputCellsSha256: final.cellsSha256, inputContractSha256: final.contractSha256, processExitCode: 0, commandEventId: started.id, reportPath: store.saveArtifact(runDir, reportFile), reportSha256: hash(fs.readFileSync(reportFile)), checks: [{ name: 'synthetic_integrity', status: 'passed', detail: report }] });
+  // The path label is synthetic metadata; its artifact remains inside the fixture.
+  const index = read(path.join(runDir, 'index.json'));
+  index.resources[0].path = 'C:/Users/PersonalUser/.codex/skills/mazebench-fixture/references/mechanism-logic.md';
+  write(path.join(runDir, 'index.json'), index);
+  store.updateManifest(runDir, { status: 'complete' });
+  return { runDir, spec, first, final };
+}
+
+try {
+  const fixture = syntheticRun();
+  const options = { caseId: 'authored-process-fixture', title: fixture.spec.title, skill: 'fixture', expectedCellsSha256: fixture.final.cellsSha256, expectedContractSha256: fixture.final.contractSha256 };
+  const doc = exportProcess(fixture.runDir, options);
+  assert.equal(doc.candidates.length, 2);
+  assert.equal(doc.tests.length, 2);
+  assert(doc.tests.some(test => test.category === 'diagnostic' && test.status === 'failed'));
+  assert(doc.edges.some(edge => edge.kind === 'revision' && edge.from === 'candidate-' + fixture.first.id && edge.to === 'candidate-' + fixture.final.id));
+  assert(doc.edges.some(edge => edge.kind === 'cites'));
+  assert.deepEqual(doc.candidates[1].diff.changed, [{ x: 1, y: 1, z: 0, before: '.', after: 'G' }]);
+  assertAcyclic(doc.nodes, doc.edges); assertPublicPrivacy(doc, ['PersonalUser']);
+  const publicSite = path.join(temporary, 'public-validation');
+  const entry = { id: doc.caseId, title: doc.title, skill: doc.skill, kind: 'authored', process: { schemaVersion: 1, data: 'data/processes/' + doc.caseId + '.json' } };
+  const record = { verification: { cellsSha256: fixture.final.cellsSha256, contractSha256: fixture.final.contractSha256 }, authoringProcess: { schemaVersion: 1, data: entry.process.data, cellsSha256: fixture.final.cellsSha256, contractSha256: fixture.final.contractSha256 } };
+  write(path.join(publicSite, 'data/designs/' + entry.id + '.json'), fixture.spec);
+  const setPublic = value => { const file = path.join(publicSite, entry.process.data); write(file, value); record.authoringProcess.sha256 = hash(fs.readFileSync(file)); };
+  setPublic(doc); checkAuthoringProcess(publicSite, entry, record);
+  fs.appendFileSync(path.join(publicSite, entry.process.data), ' ');
+  assert.throws(() => checkAuthoringProcess(publicSite, entry, record), /bytes SHA-256/);
+  setPublic(doc);
+  const stale = structuredClone(doc); stale.finalCandidateId = stale.candidates[0].id; setPublic(stale);
+  assert.throws(() => checkAuthoringProcess(publicSite, entry, record), /final candidate is stale/);
+  const dangling = structuredClone(doc); dangling.edges[0].to = 'absent-node'; setPublic(dangling);
+  assert.throws(() => checkAuthoringProcess(publicSite, entry, record), /missing node/);
+  const privateField = structuredClone(doc); privateField.notes[0].unreviewedPayload = 'PRIVATE'; setPublic(privateField);
+  assert.throws(() => checkAuthoringProcess(publicSite, entry, record), /Non-allowlisted/);
+  setPublic(doc);
+  const oldContract = record.verification.contractSha256; record.verification.contractSha256 = '0'.repeat(64);
+  assert.throws(() => checkAuthoringProcess(publicSite, entry, record), /final contract differs/);
+  record.verification.contractSha256 = oldContract;
+  const badSupport = structuredClone(doc), failedTest = badSupport.tests.find(test => test.status === 'failed');
+  badSupport.edges.push({ from: failedTest.graphNodeId, to: 'delivery-final', kind: 'supports' }); setPublic(badSupport);
+  assert.throws(() => checkAuthoringProcess(publicSite, entry, record), /Failed or unbound test/);
+  setPublic(doc); checkAuthoringProcess(publicSite, entry, record);
+  checkAuthoringProcess(publicSite, { id: 'untraced-case' }, {});
+  const serialized = JSON.stringify(doc);
+  for (const secret of ['ORIGINAL-HUMAN-MESSAGE', 'PRIVATE-RESOURCE-CONTENTS', 'PRIVATE-COMMAND', 'PRIVATE-REPORT-CONTENTS', 'SUPER_PRIVATE_TOKEN', 'PersonalUser', 'email@example.test']) assert(!serialized.includes(secret), 'Private data leaked: ' + secret);
+  assert.equal(doc.resources[0].displayPath, 'mazebench-fixture/references/mechanism-logic.md');
+  assert.throws(() => exportProcess(fixture.runDir, { ...options, expectedCellsSha256: '0'.repeat(64) }), /cells do not match/);
+  assert.throws(() => exportProcess(fixture.runDir, { ...options, expectedContractSha256: '0'.repeat(64) }), /contract does not match/);
+  const insideOutput = spawnSync(process.execPath, [path.join(__dirname, 'export-authoring-process.cjs'), '--run', fixture.runDir, '--case', options.caseId, '--spec', path.join(temporary, 'inputs/design.json'), '--out', path.join(fixture.runDir, 'should-not-exist.json')], { encoding: 'utf8' });
+  assert.notEqual(insideOutput.status, 0, 'Standalone export must not write into the private source run');
+  assert.match(insideOutput.stderr, /outside the run/);
+  assert(!fs.existsSync(path.join(fixture.runDir, 'should-not-exist.json')));
+  assert.throws(() => assertAcyclic([{ id: 'a' }, { id: 'b' }], [{ from: 'a', to: 'b', kind: 'revision' }, { from: 'b', to: 'a', kind: 'revision' }]), /cycle/);
+  const noTime = sanitizeText('C:\\Users\\HiddenName\\file.txt\n/home/HiddenName/private.json\npath=/etc/shadow\nBearer SECRET_VALUE', ['HiddenName']);
+  assert(!/HiddenName|SECRET_VALUE|Users/.test(noTime));
+  assert(!noTime.includes('/etc/'));
+  const snapshotFile = path.join(fixture.runDir, read(path.join(fixture.runDir, 'index.json')).candidates[0].specPath);
+  const snapshotBytes = fs.readFileSync(snapshotFile); fs.appendFileSync(snapshotFile, ' ');
+  assert.throws(() => exportProcess(fixture.runDir, options), /audit must pass/);
+  fs.writeFileSync(snapshotFile, snapshotBytes);
+
+  const markerDir = path.join(temporary, 'marker'); fs.mkdirSync(markerDir);
+  const firstSpec = path.join(markerDir, 'one.json'), secondSpec = path.join(markerDir, 'two.json');
+  assert.equal(discoverAuthoringRun({ spec: firstSpec }), null);
+  write(path.join(markerDir, 'authoring-session.json'), { schemaVersion: 1, runDir: '../run-one', specPath: 'one.json', sessions: { 'two.json': '../run-two' } });
+  assert.equal(discoverAuthoringRun({ spec: firstSpec }), path.resolve(markerDir, '../run-one'));
+  assert.equal(discoverAuthoringRun({ spec: secondSpec }), path.resolve(markerDir, '../run-two'));
+  assert.equal(discoverAuthoringRun({ spec: path.join(markerDir, 'unrelated.json') }), null);
+  assert.equal(discoverAuthoringRun({ spec: secondSpec, 'authoring-run': fixture.runDir }), fixture.runDir);
+  assert.equal(parseArgs(['--authoring-run', fixture.runDir])['authoring-run'], fixture.runDir);
+  assert.deepEqual(parseArgs(['--check']), { check: true });
+
+  const run = get('--run'), specPath = get('--spec');
+  assert(!run || specPath, '--run requires --spec');
+  let real = null;
+  if (run) {
+    const spec = read(specPath), before = hash(fs.readFileSync(path.join(run, 'index.json')));
+    real = exportProcess(run, { caseId: 'authored-real-process-check', title: spec.title, skill: 'boundary-stagger', expectedCellsSha256: hash(spec.cells), expectedContractSha256: hash(spec.contract) });
+    assert.equal(real.finalCandidateId, real.candidates.at(-1).id);
+    assert(real.tests.some(test => test.category === 'test' && test.status === 'failed'), 'Keep actual failed tests in the public projection');
+    assert(real.tests.some(test => test.category === 'diagnostic' && test.status === 'failed'), 'Keep actual diagnostic failures');
+    assert.equal(before, hash(fs.readFileSync(path.join(run, 'index.json'))), 'Export must not mutate the source run');
+    assertPublicPrivacy(real); assertAcyclic(real.nodes, real.edges);
+    write(path.join(temporary, 'real-public-process.json'), real);
+  }
+  const engine = get('--engine'), build = get('--build'), verification = get('--verification');
+  if (engine || build || verification) {
+    assert(run && specPath && engine && build && verification, 'Integration needs --run, --spec, --engine, --build and --verification');
+    const siteRoot = path.join(temporary, 'website'); fs.mkdirSync(siteRoot);
+    fs.cpSync(path.join(root, 'site'), path.join(siteRoot, 'site'), { recursive: true });
+    fs.cpSync(path.join(root, 'skills'), path.join(siteRoot, 'skills'), { recursive: true });
+    const localSpec = path.join(temporary, 'no-marker/design.json'); write(localSpec, read(specPath));
+    // Remove only fixture process associations, including a previously imported
+    // identical map, to exercise the no-trace path independent of local state.
+    const catalogFile = path.join(siteRoot, 'site/data/catalog.json'), catalog = read(catalogFile);
+    for (const entry of catalog.cases) delete entry.process;
+    write(catalogFile, catalog);
+    const args = { skill: 'mazebench-boundary-stagger', engine, spec: localSpec, build, verification };
+    synchronize(args, siteRoot);
+    let entries = read(catalogFile).cases;
+    assert(entries.every(entry => !entry.process), 'No run means no invented process metadata');
+    synchronize({ ...args, 'authoring-run': run }, siteRoot);
+    entries = read(catalogFile).cases;
+    const entry = entries.find(entry => entry.process);
+    assert(entry && entry.process.schemaVersion === 1);
+    const publicDoc = read(path.join(siteRoot, 'site', entry.process.data));
+    assert.equal(publicDoc.caseId, entry.id);
+    assert.equal(publicDoc.candidates.at(-1).cellsSha256, hash(read(localSpec).cells));
+    assertPublicPrivacy(publicDoc);
+    assert.equal(synchronize({ ...args, 'authoring-run': run }, siteRoot).changed.length, 0, 'Trace synchronization must be idempotent');
+    synchronize({}, siteRoot);
+    assert.deepEqual(read(catalogFile).cases.find(item => item.id === entry.id).process, entry.process, 'Unrelated synchronization preserves an existing process');
+  }
+  console.log(JSON.stringify({ passed: true, syntheticPrivacyAndIntegrity: true, multiSpecMarker: true, realRun: !!real, websiteIntegration: !!engine }));
+} finally {
+  const relative = path.relative(outputs, path.resolve(temporary));
+  assert(relative && !relative.startsWith('..') && !path.isAbsolute(relative), 'Temporary cleanup escaped the intended outputs directory');
+  fs.rmSync(temporary, { recursive: true, force: true });
+}

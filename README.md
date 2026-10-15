@@ -30,6 +30,8 @@ Copy each desired directory from `skills/` into your coding agent's configured s
 
 The skills need a separate [MazeBenchEngine](https://github.com/mazebench/MazeBenchEngine) checkout, Node.js, the engine's dependencies, and write access to its local drafts. Pass that checkout explicitly as `--repo`; the skill packages do not bundle the engine or game assets. The website includes a separate, pinned browser runtime for playing the published examples.
 
+For automatic authoring records, configure the optional [local recorder](tools/authoring-observatory/README.md) once. Skill tasks then appear in its live viewer, and normal build/verification commands save version-bound evidence automatically. Verified website cases with a recorded run expose a **Build process** graph showing revisions, failed attempts, tests and concise design annotations. The graph presents saved evidence, not private internal reasoning.
+
 ## Use
 
 To create a new mechanism skill or add an official case to an existing one:

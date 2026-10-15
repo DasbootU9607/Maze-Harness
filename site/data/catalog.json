@@ -22,7 +22,8 @@
         "official-hxh"
       ],
       "authoredCases": [
-        "authored-boundary-stagger"
+        "authored-boundary-stagger",
+        "authored-boundary-stagger-2f126bf137c6"
       ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-boundary-stagger"
     },
@@ -669,6 +670,25 @@
         "humanPlaytests": 0
       },
       "designSource": "https://github.com/DasbootU9607/Maze-Harness/tree/main/trials/planning-batch/borrowed-corner"
+    },
+    {
+      "id": "authored-boundary-stagger-2f126bf137c6",
+      "kind": "authored",
+      "title": "Rooflock Workshop",
+      "skill": "boundary-stagger",
+      "world": "authored-boundary-stagger-2f126bf137c6",
+      "room": "AxA",
+      "description": "Shift rigid groups around fixed boundaries, make room for the next move, and release the path to the gem.",
+      "thumbnail": "assets/thumbnails/authored-boundary-stagger-2f126bf137c6.png",
+      "map": "data/maps/authored-boundary-stagger-2f126bf137c6-world-map.txt",
+      "witness": "UUUURRRDDRRLDDDRURRRR",
+      "goal": {
+        "kind": "gem"
+      },
+      "process": {
+        "data": "data/processes/authored-boundary-stagger-2f126bf137c6.json",
+        "schemaVersion": 1
+      }
     }
   ],
   "rooms": [

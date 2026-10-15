@@ -87,7 +87,7 @@ async function verify(repo,out,cap=300000,reportName='verification.json'){
  report.overall=outcomes.includes('failed')||report.solution.status==='unsolved'?'failed':outcomes.includes('unknown')||!report.replayPassed?'unknown':'passed';
  fs.writeFileSync(path.join(out,reportName),JSON.stringify(report,null,2)+'\n');return report;
 }
-if(require.main===module){const args=process.argv.slice(2),get=(k,f)=>args.includes(k)?args[args.indexOf(k)+1]:f;
+if (require.main === module && !require('./authoring-observer.cjs').runAutomatic({script:__filename,kind:'test'})){const args=process.argv.slice(2),get=(k,f)=>args.includes(k)?args[args.indexOf(k)+1]:f;
  assert(get('--repo')&&get('--out'),'Use --repo ENGINE --out GENERATED');
  verify(get('--repo'),get('--out'),Number(get('--cap',300000)),get('--report','verification.json')).then(r=>{
   console.log(JSON.stringify({solution:r.solution,checks:r.checks,preparation:r.preparation,firstGoalOpening:r.firstGoalOpening,overall:r.overall}));if(r.overall!=='passed')process.exitCode=1;

@@ -20,6 +20,8 @@ function publish(options, run = (file, args, capture = false) => execFileSync(fi
     run('git', ['fetch', 'origin', 'main']);
     run('git', ['merge-base', '--is-ancestor', 'origin/main', 'HEAD']);
   }
+  // synchronize also audits and exports --authoring-run (or a matching session
+  // marker) before any site writes are committed or network publication occurs.
   const result = synchronize(options);
   run(process.execPath, ['scripts/capture-site.cjs', '--engine', path.resolve(options.engine), '--missing']);
   run(process.execPath, ['scripts/check-skills.cjs']);
