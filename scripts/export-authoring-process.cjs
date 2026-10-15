@@ -114,22 +114,37 @@ function assertPublicPrivacy(document, identities = []) {
     assert(value && typeof value === 'object' && !Array.isArray(value), 'Invalid public object: ' + label);
     for (const key of Object.keys(value)) assert(allowed.includes(key), 'Non-allowlisted public field: ' + label + '.' + key);
   };
-  fields(document, ['schemaVersion', 'caseId', 'title', 'skill', 'finalCandidateId', 'summary', 'coverage', 'nodes', 'edges', 'candidates', 'tests', 'notes', 'resources'], 'process');
+  const strings = value => assert(Array.isArray(value) && value.every(item => typeof item === 'string'), 'Expected public text array');
+  const flat = value => assert(Object.values(value).every(item => item === null || ['string', 'number', 'boolean'].includes(typeof item)), 'Nested unreviewed public data');
+  fields(document, ['schemaVersion', 'caseId', 'title', 'skill', 'finalCandidateId', 'summary', 'coverage', 'nodes', 'edges', 'candidates', 'tests', 'notes', 'resources', 'operations', 'replays'], 'process');
   for (const key of ['caseId', 'title', 'skill', 'finalCandidateId', 'summary']) assert(typeof document[key] === 'string', 'Invalid public text: ' + key);
-  fields(document.coverage, ['mode', 'audit', 'limitations'], 'coverage');
+  fields(document.coverage, ['mode', 'audit', 'limitations', 'sources'], 'coverage');
+  if (document.coverage.sources) {
+    fields(document.coverage.sources, ['directOriginalCaseRead', 'originalCaseResourceIds', 'indirect', 'scope'], 'coverage.sources');
+    assert(['recorded', 'not-recorded'].includes(document.coverage.sources.directOriginalCaseRead));
+    strings(document.coverage.sources.originalCaseResourceIds); assert(typeof document.coverage.sources.scope === 'string');
+    assert(Array.isArray(document.coverage.sources.indirect));
+    for (const source of document.coverage.sources.indirect) { fields(source, ['caseId', 'viaResourceIds', 'basis'], 'indirect source'); assert(/^[A-P]x[A-P]$/.test(source.caseId)); strings(source.viaResourceIds); assert.equal(source.basis, 'skill-source-reference'); }
+  }
   fields(document.coverage.audit, ['status', 'failed', 'unknown'], 'audit');
   assert(Array.isArray(document.coverage.limitations) && document.coverage.limitations.every(value => typeof value === 'string'));
   for (const key of ['nodes', 'edges', 'candidates', 'tests', 'notes', 'resources']) assert(Array.isArray(document[key]), 'Missing public array: ' + key);
   for (const node of document.nodes) {
     fields(node, ['id', 'kind', 'label', 'status', 'order', 'summary', 'details'], 'node');
-    const detailFields = { candidate: ['candidateId', 'cellsSha256', 'contractSha256', 'parentBasis'], test: ['testId', 'candidateId', 'binding', 'category'], note: ['noteId', 'candidateId', 'origin', 'retrospective'], resource: ['resourceId', 'displayPath', 'sha256', 'kind'], delivery: ['caseId', 'candidateId', 'cellsSha256', 'contractSha256'] };
+    const detailFields = { candidate: ['candidateId', 'cellsSha256', 'contractSha256', 'parentBasis'], test: ['testId', 'candidateId', 'binding', 'category'], note: ['noteId', 'candidateId', 'origin', 'retrospective'], resource: ['resourceId', 'displayPath', 'sha256', 'kind', 'delivery'], operation: ['operationId', 'candidateId', 'inputCandidateId', 'outputCandidateId', 'kind', 'binding'], replay: ['replayId', 'candidateId', 'binding', 'sourceKind'], delivery: ['caseId', 'candidateId', 'cellsSha256', 'contractSha256'] };
     assert(detailFields[node.kind], 'Invalid public node kind'); fields(node.details, detailFields[node.kind], 'node.details');
     assert(typeof node.label === 'string' && typeof node.summary === 'string');
     assert(Object.values(node.details).every(value => value === null || ['string', 'boolean', 'number'].includes(typeof value)), 'Nested data is not allowed in public node details');
   }
   for (const edge of document.edges) fields(edge, ['from', 'to', 'kind', 'label', 'inferred'], 'edge');
   for (const candidate of document.candidates) {
-    fields(candidate, ['id', 'graphNodeId', 'label', 'parentId', 'parentIds', 'cells', 'sha256', 'cellsSha256', 'contractSha256', 'origin', 'parentBasis', 'diff'], 'candidate');
+    fields(candidate, ['id', 'graphNodeId', 'label', 'parentId', 'parentIds', 'cells', 'sha256', 'cellsSha256', 'contractSha256', 'origin', 'parentBasis', 'diff', 'preview'], 'candidate');
+    if (candidate.preview) {
+      fields(candidate.preview, ['levelPath', 'levelSha256', 'cellsSha256', 'status', 'replay'], 'preview');
+      assert.equal(candidate.preview.status, 'iteration');
+      for (const key of ['levelPath', 'levelSha256', 'cellsSha256']) assert(typeof candidate.preview[key] === 'string');
+      if (candidate.preview.replay) { fields(candidate.preview.replay, ['data', 'sha256', 'candidateId', 'cellsSha256', 'contractSha256', 'sourceSha256', 'route', 'frameCount', 'binding', 'sourceKind'], 'preview.replay'); flat(candidate.preview.replay); }
+    }
     publicCells(candidate.cells); fields(candidate.diff, ['added', 'removed', 'changed'], 'diff');
     for (const key of ['added', 'removed', 'changed']) {
       assert(Array.isArray(candidate.diff[key]), 'Invalid cell diff');
@@ -141,7 +156,10 @@ function assertPublicPrivacy(document, identities = []) {
     assert(Array.isArray(test.checks)); for (const check of test.checks) fields(check, ['name', 'status'], 'test.check');
   }
   for (const note of document.notes) { fields(note, ['id', 'graphNodeId', 'candidateId', 'label', 'goal', 'change', 'reason', 'sources', 'expectedChecks', 'origin', 'retrospective'], 'note'); assert(['label', 'goal', 'change', 'reason'].every(key => typeof note[key] === 'string')); assert(['sources', 'expectedChecks'].every(key => Array.isArray(note[key]) && note[key].every(value => typeof value === 'string'))); }
-  for (const resource of document.resources) fields(resource, ['id', 'graphNodeId', 'label', 'displayPath', 'basename', 'sha256', 'kind', 'origin'], 'resource');
+  for (const resource of document.resources) { fields(resource, ['id', 'graphNodeId', 'label', 'displayPath', 'basename', 'sha256', 'kind', 'origin', 'delivery'], 'resource'); flat(resource); }
+  for (const key of ['operations', 'replays']) if (document[key] !== undefined) assert(Array.isArray(document[key]));
+  for (const operation of document.operations || []) { fields(operation, ['id', 'graphNodeId', 'candidateId', 'inputCandidateId', 'outputCandidateId', 'label', 'kind', 'status', 'binding', 'scope'], 'operation'); flat(operation); }
+  for (const replay of document.replays || []) { fields(replay, ['id', 'graphNodeId', 'candidateId', 'label', 'route', 'frameCount', 'binding', 'sourceKind', 'sourceSha256', 'cellsSha256', 'contractSha256', 'data', 'sha256'], 'replay'); flat(replay); }
   const serialized = JSON.stringify(document);
   assert(!/[A-Za-z]:[\\/]|\\\\(?:Users|home)|\/(?:Users|home|tmp|private|workspace|var|etc|opt|mnt|root)\//i.test(serialized), 'Public process contains a local absolute path');
   assert(!/\b(?:sk-[A-Za-z0-9_-]{12,}|gh[pousr]_[A-Za-z0-9_]+|github_pat_[A-Za-z0-9_]+|AKIA[A-Z0-9]{16})\b/.test(serialized), 'Public process contains a credential-like value');
@@ -167,7 +185,7 @@ function exportProcess(runDirectory, { caseId, expectedCellsSha256, expectedCont
   assert.equal(last.contractSha256, expectedContractSha256, 'Published contract does not match the final recorded candidate');
   assert(index.tests.some(test => test.candidateId === last.id && test.status === 'passed' && test.binding === 'exact' && test.inputSha256 === last.sha256), 'Final candidate needs a passed test with exact recorded input');
   const identities = identityTokens(index), clean = (text, limit) => sanitizeText(text, identities, limit);
-  const nodes = [], edges = [], candidates = [], tests = [], notes = [], resources = [];
+  const nodes = [], edges = [], candidates = [], tests = [], notes = [], resources = [], operations = [], replays = [];
   const sequence = (type, id, fallback = 0) => events.find(event => event.type === type && (event.details?.id === id || event.candidateId === id))?.seq ?? fallback;
   const sourceCandidates = new Map(index.candidates.map(candidate => [candidate.id, candidate]));
   for (const item of index.candidates) {
@@ -200,11 +218,57 @@ function exportProcess(runDirectory, { caseId, expectedCellsSha256, expectedCont
     tests.push(test); nodes.push({ id: test.graphNodeId, kind: 'test', label: test.label, status: 'failed', order: event.seq, summary: test.scope, details: { testId: id, candidateId, category: 'diagnostic', binding: test.binding } });
     if (candidateId) edges.push({ from: 'candidate-' + candidateId, to: test.graphNodeId, kind: 'tested', label: 'Diagnostic execution association', inferred: false });
   }
+  for (const event of events.filter(event => event.type === 'command.completed' && event.details?.code === 0 && !event.details.signal)) {
+    const start = events.find(item => item.id === event.details.commandEventId);
+    if (!start) continue;
+    const inputCandidateId = sourceCandidates.has(start.candidateId) ? start.candidateId : null;
+    const outputCandidateId = sourceCandidates.has(event.candidateId) ? event.candidateId : null;
+    const candidateId = outputCandidateId || inputCandidateId, id = 'operation-' + idOf(start.id);
+    const label = /[\u3400-\u9fff]/.test(start.details.label || '') ? (start.details.kind === 'test' ? 'Browser validation completed' : 'Local preview service started') : clean(start.details.label || 'Recorded operation', 200);
+    const operation = { id, graphNodeId: id, candidateId, inputCandidateId, outputCandidateId, label,
+      kind: ['command', 'build', 'test'].includes(start.details.kind) ? start.details.kind : 'command', status: 'completed', binding: 'recorded-command-boundaries',
+      scope: 'The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.' };
+    operations.push(operation);
+    nodes.push({ id, kind: 'operation', label, status: 'neutral', order: event.seq, summary: operation.scope,
+      details: { operationId: id, candidateId, inputCandidateId, outputCandidateId, kind: operation.kind, binding: operation.binding } });
+  }
+  for (const event of events.filter(event => event.type === 'artifact.saved' && event.details?.kind === 'replay')) {
+    const candidate = sourceCandidates.get(event.candidateId); assert(candidate, 'Replay references an unknown candidate');
+    const bytes = fs.readFileSync(savedFile(runDir, event.details.artifactPath)), saved = JSON.parse(bytes);
+    assert.equal(saved.fingerprints?.cells, candidate.cellsSha256, 'Replay cells do not match its recorded candidate');
+    assert.equal(saved.fingerprints?.contract, candidate.contractSha256, 'Replay contract does not match its recorded candidate');
+    assert(typeof saved.path === 'string' && /^[UDLR]+$/.test(saved.path), 'Replay needs recorded ordinary inputs');
+    assert(Array.isArray(saved.frames) && saved.frames.length === saved.path.length + 1, 'Replay must include initial and every input frame');
+    const id = 'replay-' + idOf(event.id);
+    const replay = { id, graphNodeId: id, candidateId: candidate.id, label: 'Saved ordinary gameplay replay', route: saved.path, frameCount: saved.frames.length,
+      binding: 'exact-artifact', sourceKind: 'saved-replay', sourceSha256: hash(bytes), cellsSha256: candidate.cellsSha256, contractSha256: candidate.contractSha256 };
+    replays.push(replay);
+    nodes.push({ id, kind: 'replay', label: replay.label, status: 'neutral', order: event.seq,
+      summary: `${saved.path.length} recorded inputs and ${saved.frames.length} saved frames, bound to ${candidate.id}.`,
+      details: { replayId: id, candidateId: candidate.id, binding: replay.binding, sourceKind: replay.sourceKind } });
+  }
+  const directOriginalCaseIds = [], indirect = new Map();
   for (const item of index.resources) {
     const id = idOf(item.id), displayPath = publicReference(item.path, identities);
-    const resource = { id, graphNodeId: 'resource-' + id, label: displayPath, displayPath, basename: displayPath.split('/').at(-1), sha256: hashOf(item.sha256), kind: clean(item.kind, 60), origin: item.origin === 'historical' ? 'historical' : 'observed' };
+    const delivered = events.some(event => event.type === 'resource.read' && event.details?.id === id);
+    const resource = { id, graphNodeId: 'resource-' + id, label: displayPath, displayPath, basename: displayPath.split('/').at(-1), sha256: hashOf(item.sha256), kind: clean(item.kind, 60), origin: item.origin === 'historical' ? 'historical' : 'observed', delivery: delivered ? 'recorded-read' : 'snapshot' };
     resources.push(resource);
-    nodes.push({ id: resource.graphNodeId, kind: 'resource', label: resource.basename, status: 'neutral', order: sequence('resource.read', id), summary: resource.origin === 'observed' ? 'Recorded bytes delivered; not proof of understanding or use.' : 'Historical snapshot; reading time and actual use are unknown.', details: { resourceId: id, displayPath, sha256: resource.sha256, kind: resource.kind } });
+    nodes.push({ id: resource.graphNodeId, kind: 'resource', label: resource.basename, status: 'neutral', order: sequence('resource.read', id), summary: delivered ? 'Recorded bytes delivered; not proof of understanding or use.' : 'Saved version snapshot; reading and actual use are not recorded.', details: { resourceId: id, displayPath, sha256: resource.sha256, kind: resource.kind, delivery: resource.delivery } });
+    if (delivered && /^official(?:-[a-z0-9-]+)?-(?:case\.md|design\.json|world-map\.txt|states\.json|checks\.json)$/.test(resource.basename)) directOriginalCaseIds.push(id);
+    if (delivered && item.kind === 'mechanism' && item.artifactPath) {
+      const introduction = fs.readFileSync(savedFile(runDir, item.artifactPath), 'utf8').slice(0, 1500);
+      for (const match of introduction.matchAll(/(?:upstream\s+)?official\s+([A-P]x[A-P])\b/g)) {
+        if (!indirect.has(match[1])) indirect.set(match[1], []);
+        if (!indirect.get(match[1]).includes(id)) indirect.get(match[1]).push(id);
+      }
+    }
+  }
+  for (const event of events.filter(event => event.type === 'skill.attached')) {
+    const id = 'snapshot-' + idOf(event.id), displayPath = publicReference(event.details.skill + '/SKILL.md', identities);
+    const resource = { id, graphNodeId: 'resource-' + id, label: 'Skill attached: ' + displayPath, displayPath, basename: 'SKILL.md', sha256: hashOf(event.details.sha256), kind: 'skill', origin: 'observed', delivery: 'snapshot' };
+    resources.push(resource);
+    nodes.push({ id: resource.graphNodeId, kind: 'resource', label: resource.label, status: 'neutral', order: event.seq,
+      summary: 'Skill version captured as a dependency. This event does not record a reading.', details: { resourceId: id, displayPath, sha256: resource.sha256, kind: 'skill', delivery: 'snapshot' } });
   }
   for (const item of index.notes.filter(item => item.origin === 'agent_statement')) {
     const id = idOf(item.id), candidateId = sourceCandidates.has(item.candidateId) ? item.candidateId : null;
@@ -216,7 +280,7 @@ function exportProcess(runDirectory, { caseId, expectedCellsSha256, expectedCont
     const cited = new Set();
     for (const ref of note.sources) {
       const file = ref.split('#')[0];
-      const matches = resources.filter(resource => (resource.displayPath.endsWith(file) || resource.basename === file) && sequence('resource.read', resource.id) <= order);
+      const matches = resources.filter(resource => resource.delivery === 'recorded-read' && (resource.displayPath.endsWith(file) || resource.basename === file) && sequence('resource.read', resource.id) <= order);
       if (!matches.length || new Set(matches.map(resource => resource.sha256)).size !== 1) continue;
       const resource = matches.at(-1);
       if (!cited.has(resource.id)) edges.push({ from: resource.graphNodeId, to: note.graphNodeId, kind: 'cites', label: 'Explicit note citation; not proof of use', inferred: false });
@@ -230,13 +294,16 @@ function exportProcess(runDirectory, { caseId, expectedCellsSha256, expectedCont
   nodes.sort((a, b) => a.order - b.order || a.id.localeCompare(b.id));
   const document = { schemaVersion: 1, caseId, title: clean(title || last.label, 200), skill: clean(skill, 100), finalCandidateId: last.id,
     summary: `${candidates.length} recorded candidates, ${tests.filter(test => test.category === 'test').length} tests, ${tests.filter(test => test.category === 'diagnostic').length} failed diagnostics, and ${notes.length} agent annotations.`,
-    coverage: { mode: manifest.mode === 'historical' ? 'historical' : 'observed', audit: { status: audit.status, failed: audit.counts.failed, unknown: audit.counts.unknown }, limitations: [
+    coverage: { mode: manifest.mode === 'historical' ? 'historical' : 'observed', audit: { status: audit.status, failed: audit.counts.failed, unknown: audit.counts.unknown },
+      sources: { directOriginalCaseRead: directOriginalCaseIds.length ? 'recorded' : 'not-recorded', originalCaseResourceIds: directOriginalCaseIds,
+        indirect: [...indirect].map(([caseId, viaResourceIds]) => ({ caseId, viaResourceIds, basis: 'skill-source-reference' })),
+        scope: 'Direct reading is reported only for captured read events. A source named by a skill is indirect provenance, not evidence that this run opened or used the original case.' }, limitations: [
       'Only recorded operations and saved snapshots are shown; transient in-memory drafts and unrecorded activity remain unknown.',
       'Snapshot parent links show recorded version order, not proof of causal reasoning. No unrecorded branches or merges are reconstructed.',
       'Agent annotations are concise explanations, not internal thought transcripts. Recorded resource delivery does not prove comprehension or use.',
       'Test outcomes retain their own scope. Author self-tests do not establish independent-agent effectiveness or human difficulty.',
       ...(manifest.limitations || []).map(value => clean(value))
-    ] }, nodes, edges, candidates, tests, notes, resources };
+    ] }, nodes, edges, candidates, tests, notes, resources, operations, replays };
   assertAcyclic(nodes, edges); assertPublicPrivacy(document, identities);
   return document;
 }

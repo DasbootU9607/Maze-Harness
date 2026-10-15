@@ -5,6 +5,7 @@ const path = require('node:path');
 const assert = require('node:assert/strict');
 const { hash, read, createReplay } = require('./site-content.cjs');
 const { exportProcess, discoverAuthoringRun } = require('./export-authoring-process.cjs');
+const { attachProcessPreviews } = require('./process-previews.cjs');
 const defaultRoot = path.resolve(__dirname, '..');
 function synchronize(options = {}, root = defaultRoot) {
   const site = path.join(root, 'site');
@@ -145,6 +146,8 @@ function synchronize(options = {}, root = defaultRoot) {
     if (authoringRun) {
       const process = exportProcess(authoringRun, { caseId: publishedEntry.id, title: spec.title, skill: skillId,
         expectedCellsSha256: hash(spec.cells), expectedContractSha256: hash(spec.contract) });
+      attachProcessPreviews(process, authoringRun, { engineRoot, runtime: path.join(site, 'runtime/maze-engine.js'), emit: (file, bytes) => pending.set(file, bytes) });
+      require('./export-authoring-process.cjs').assertPublicPrivacy(process);
       const file = 'data/processes/' + publishedEntry.id + '.json';
       json(file, process);
       publishedEntry.process = { data: file, schemaVersion: 1 };

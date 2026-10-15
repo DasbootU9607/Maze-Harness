@@ -6,6 +6,7 @@ const crypto = require('node:crypto');
 const assert = require('node:assert/strict');
 const { assertPublicPrivacy, assertAcyclic } = require('./export-authoring-process.cjs');
 const { hash } = require('./site-content.cjs');
+const { validatePreviewFiles } = require('./process-previews.cjs');
 
 function checkAuthoringProcess(site, entry, record) {
   if (!entry.process) {
@@ -54,10 +55,31 @@ function checkAuthoringProcess(site, entry, record) {
     assert(test.checks.every(check => typeof check.name === 'string' && ['passed', 'failed', 'unknown', 'error'].includes(check.status)));
     if (test.candidateId) { assert(candidates.has(test.candidateId), 'Test references a missing candidate'); assert(hasEdge(candidates.get(test.candidateId).graphNodeId, test.graphNodeId, 'tested'), 'Missing tested edge'); }
   }
-  for (const [kind, list, key] of [['note', process.notes, 'noteId'], ['resource', process.resources, 'resourceId']]) {
+  for (const [kind, list, key] of [['note', process.notes, 'noteId'], ['resource', process.resources, 'resourceId'], ['operation', process.operations || [], 'operationId'], ['replay', process.replays || [], 'replayId']]) {
     assert.equal(new Set(list.map(row => row.id)).size, list.length, 'Duplicate public record');
-    for (const row of list) { nodeFor(row, kind, key); assert(!occupiedNodes.has(row.graphNodeId)); occupiedNodes.add(row.graphNodeId); }
+    for (const row of list) {
+      const node = nodeFor(row, kind, key); assert(!occupiedNodes.has(row.graphNodeId)); occupiedNodes.add(row.graphNodeId);
+      if (row.candidateId) { assert(candidates.has(row.candidateId)); assert.equal(node.details.candidateId, row.candidateId); }
+      if (kind === 'operation') {
+        assert.equal(row.status, 'completed'); assert.equal(node.status, 'neutral');
+        for (const field of ['inputCandidateId', 'outputCandidateId']) if (row[field]) assert(candidates.has(row[field]), 'Operation references an unknown candidate');
+        assert.equal(row.candidateId, row.outputCandidateId || row.inputCandidateId);
+      }
+      if (kind === 'replay') {
+        const candidate = candidates.get(row.candidateId); assert(candidate);
+        assert.equal(row.cellsSha256, candidate.cellsSha256); assert.equal(row.contractSha256, candidate.contractSha256);
+        assert.equal(row.binding, 'exact-artifact'); assert.equal(row.sourceKind, 'saved-replay');
+        assert(/^[UDLR]+$/.test(row.route)); assert.equal(row.frameCount, row.route.length + 1);
+      }
+    }
   }
+  if (process.coverage.sources) {
+    const source = process.coverage.sources;
+    for (const id of source.originalCaseResourceIds) assert(process.resources.some(resource => resource.id === id && resource.delivery === 'recorded-read'));
+    assert.equal(source.directOriginalCaseRead, source.originalCaseResourceIds.length ? 'recorded' : 'not-recorded');
+    for (const item of source.indirect) for (const id of item.viaResourceIds) assert(process.resources.some(resource => resource.id === id && resource.delivery === 'recorded-read'));
+  }
+  validatePreviewFiles(site, process);
   const final = process.candidates.at(-1);
   assert(final && final.id === process.finalCandidateId, 'Process final candidate is stale');
   assert.equal(final.cellsSha256, evidence.cellsSha256, 'Process final cells differ from provenance');
@@ -165,7 +187,7 @@ for (const skill of catalog.skills) {
   for (const id of [...skill.officialCases, ...skill.authoredCases]) assert(catalog.cases.some(c => c.id === id && c.skill === skill.id));
 }
 for (const name of ['MazeBenchEngine.txt','engine-third-party-notices.txt','three.txt','geist.txt']) assert(fs.statSync(path.join(site,'licenses',name)).size > 500);
-for (const page of ['index','skill','world','player','about', ...(catalog.cases.some(entry => entry.process) ? ['process'] : [])]) {
+for (const page of ['index','skill','world','player','about', ...(catalog.cases.some(entry => entry.process) ? ['process', 'process-player'] : [])]) {
   const html = fs.readFileSync(path.join(site, page + '.html'), 'utf8');
   for (const [,url] of html.matchAll(/(?:src|href)="([^"?#]+)(?:[?#][^"]*)?"/g)) {
     if (/^https?:/.test(url)) continue;

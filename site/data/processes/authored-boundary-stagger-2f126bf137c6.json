@@ -12,6 +12,21 @@
       "failed": 0,
       "unknown": 0
     },
+    "sources": {
+      "directOriginalCaseRead": "not-recorded",
+      "originalCaseResourceIds": [],
+      "indirect": [
+        {
+          "caseId": "HxH",
+          "viaResourceIds": [
+            "r001",
+            "r006"
+          ],
+          "basis": "skill-source-reference"
+        }
+      ],
+      "scope": "Direct reading is reported only for captured read events. A source named by a skill is indirect provenance, not evidence that this run opened or used the original case."
+    },
     "limitations": [
       "Only recorded operations and saved snapshots are shown; transient in-memory drafts and unrecorded activity remain unknown.",
       "Snapshot parent links show recorded version order, not proof of causal reasoning. No unrecorded branches or merges are reconstructed.",
@@ -32,7 +47,8 @@
         "resourceId": "r001",
         "displayPath": "mazebench-boundary-stagger/references/mechanism-logic.md",
         "sha256": "c4953095eff5b1525a1c56ec59bf219dcde17bef352e4b0b76f80b27085cf5ac",
-        "kind": "mechanism"
+        "kind": "mechanism",
+        "delivery": "recorded-read"
       }
     },
     {
@@ -46,7 +62,8 @@
         "resourceId": "r002",
         "displayPath": "mazebench-boundary-stagger/SKILL.md",
         "sha256": "e94c8ad80dedb9c7a020c2dfd76ad8050fc81da8a40af98cc419262370500d6e",
-        "kind": "skill"
+        "kind": "skill",
+        "delivery": "recorded-read"
       }
     },
     {
@@ -60,7 +77,8 @@
         "resourceId": "r003",
         "displayPath": "mazebench-boundary-stagger/references/complex-validation.md",
         "sha256": "da036b7b63e615abddf7ee4f5e007926cc1d603f873d55ac25c6cf6948144244",
-        "kind": "reference"
+        "kind": "reference",
+        "delivery": "recorded-read"
       }
     },
     {
@@ -74,7 +92,8 @@
         "resourceId": "r004",
         "displayPath": "mazebench-boundary-stagger/references/planning-depth.md",
         "sha256": "f9cfed13dc075bd564871941bff6218fa6dfee5d9809218bdb261379cfec9033",
-        "kind": "reference"
+        "kind": "reference",
+        "delivery": "recorded-read"
       }
     },
     {
@@ -88,7 +107,8 @@
         "resourceId": "r005",
         "displayPath": "mazebench-boundary-stagger/references/design-template.json",
         "sha256": "e3c6a8407cca8b9401072b61c1b98f9b6c572895b1fc88a785be6176f93a7cc4",
-        "kind": "reference"
+        "kind": "reference",
+        "delivery": "recorded-read"
       }
     },
     {
@@ -102,7 +122,8 @@
         "resourceId": "r006",
         "displayPath": "mazebench-boundary-stagger/references/mechanism-logic.md",
         "sha256": "c4953095eff5b1525a1c56ec59bf219dcde17bef352e4b0b76f80b27085cf5ac",
-        "kind": "mechanism"
+        "kind": "mechanism",
+        "delivery": "recorded-read"
       }
     },
     {
@@ -116,7 +137,8 @@
         "resourceId": "r007",
         "displayPath": "mazebench-boundary-stagger/scripts/complex-runtime.cjs",
         "sha256": "27e8a54cd7308961363a8a61c502bff0ba67798fd7899503945839c678216f22",
-        "kind": "reference"
+        "kind": "reference",
+        "delivery": "recorded-read"
       }
     },
     {
@@ -130,7 +152,8 @@
         "resourceId": "r008",
         "displayPath": "mazebench-boundary-stagger/scripts/verify-complex.cjs",
         "sha256": "5e2a6ce6866819af9edf416d845d88093e96febdd65719d6c6e315edcde93482",
-        "kind": "reference"
+        "kind": "reference",
+        "delivery": "recorded-read"
       }
     },
     {
@@ -162,6 +185,22 @@
       }
     },
     {
+      "id": "operation-e000011",
+      "kind": "operation",
+      "label": "author-first-layout",
+      "status": "neutral",
+      "order": 13,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000011",
+        "candidateId": "v001",
+        "inputCandidateId": null,
+        "outputCandidateId": "v001",
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
       "id": "test-diagnostic-e000014",
       "kind": "test",
       "label": "solve-first-layout",
@@ -173,6 +212,22 @@
         "candidateId": "v001",
         "category": "diagnostic",
         "binding": "observed-command-association"
+      }
+    },
+    {
+      "id": "operation-e000016",
+      "kind": "operation",
+      "label": "inspect-first-layout-obstruction",
+      "status": "neutral",
+      "order": 17,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000016",
+        "candidateId": "v001",
+        "inputCandidateId": "v001",
+        "outputCandidateId": "v001",
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
       }
     },
     {
@@ -201,6 +256,22 @@
         "cellsSha256": "7943b9136885d33f04ec3de5ab37c16b4ef8070f323a4aeb89c70688a9a9fbdb",
         "contractSha256": "5a03a4768e61f303b9c15f9e12cd735f8be9bebae8e8a9f45ab014d8be9ff181",
         "parentBasis": "observed-snapshot-order"
+      }
+    },
+    {
+      "id": "operation-e000021",
+      "kind": "operation",
+      "label": "revise-latch-clearance",
+      "status": "neutral",
+      "order": 23,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000021",
+        "candidateId": "v002",
+        "inputCandidateId": "v001",
+        "outputCandidateId": "v002",
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
       }
     },
     {
@@ -246,6 +317,22 @@
       }
     },
     {
+      "id": "operation-e000028",
+      "kind": "operation",
+      "label": "close-northeast-bypass",
+      "status": "neutral",
+      "order": 30,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000028",
+        "candidateId": "v003",
+        "inputCandidateId": "v002",
+        "outputCandidateId": "v003",
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
       "id": "candidate-v004",
       "kind": "candidate",
       "label": "v004 · Rooflock Workshop",
@@ -257,6 +344,38 @@
         "cellsSha256": "e2e55f6e600628399bbbd530f5cf6c544850cec8bd958a84b6bc230b3fbdddb5",
         "contractSha256": "9de56feb2119d9a83c079096eea4d12b0f7a0f425af2339d39e25020b7395bb6",
         "parentBasis": "observed-snapshot-order"
+      }
+    },
+    {
+      "id": "operation-e000031",
+      "kind": "operation",
+      "label": "solve-and-bind-stage-witnesses",
+      "status": "neutral",
+      "order": 33,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000031",
+        "candidateId": "v004",
+        "inputCandidateId": "v003",
+        "outputCandidateId": "v004",
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "operation-e000034",
+      "kind": "operation",
+      "label": "formal-complex-verification-01",
+      "status": "neutral",
+      "order": 35,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000034",
+        "candidateId": "v004",
+        "inputCandidateId": "v004",
+        "outputCandidateId": "v004",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
       }
     },
     {
@@ -284,7 +403,8 @@
         "resourceId": "r009",
         "displayPath": "mazebench-boundary-stagger/references/design.md",
         "sha256": "c3014fd8c193475d870875a07886dfe7a894b87f37e4e55ed286ee2307a8daa6",
-        "kind": "reference"
+        "kind": "reference",
+        "delivery": "recorded-read"
       }
     },
     {
@@ -298,7 +418,56 @@
         "resourceId": "r010",
         "displayPath": "mazebench-boundary-stagger/scripts/browser-check.cjs",
         "sha256": "b1c9ba5646551c8d3e06f19ce6d410afdcf94611a22460151c124281b6d05b9e",
-        "kind": "verifier"
+        "kind": "verifier",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "operation-e000039",
+      "kind": "operation",
+      "label": "build-verified-rooflock-draft",
+      "status": "neutral",
+      "order": 40,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000039",
+        "candidateId": "v004",
+        "inputCandidateId": "v004",
+        "outputCandidateId": "v004",
+        "kind": "build",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "operation-e000041",
+      "kind": "operation",
+      "label": "Local preview service started",
+      "status": "neutral",
+      "order": 42,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000041",
+        "candidateId": "v004",
+        "inputCandidateId": "v004",
+        "outputCandidateId": "v004",
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "operation-e000043",
+      "kind": "operation",
+      "label": "saved-build-ordinary-replay",
+      "status": "neutral",
+      "order": 44,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000043",
+        "candidateId": "v004",
+        "inputCandidateId": "v004",
+        "outputCandidateId": "v004",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
       }
     },
     {
@@ -313,6 +482,20 @@
         "candidateId": "v004",
         "binding": "exact",
         "category": "test"
+      }
+    },
+    {
+      "id": "replay-e000046",
+      "kind": "replay",
+      "label": "Saved ordinary gameplay replay",
+      "status": "neutral",
+      "order": 46,
+      "summary": "21 recorded inputs and 22 saved frames, bound to v004.",
+      "details": {
+        "replayId": "replay-e000046",
+        "candidateId": "v004",
+        "binding": "exact-artifact",
+        "sourceKind": "saved-replay"
       }
     },
     {
@@ -355,6 +538,22 @@
         "candidateId": "v004",
         "origin": "agent_statement",
         "retrospective": false
+      }
+    },
+    {
+      "id": "operation-e000057",
+      "kind": "operation",
+      "label": "Browser validation completed",
+      "status": "neutral",
+      "order": 58,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000057",
+        "candidateId": "v004",
+        "inputCandidateId": "v004",
+        "outputCandidateId": "v004",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
       }
     },
     {
@@ -2641,6 +2840,12 @@
         ],
         "removed": [],
         "changed": []
+      },
+      "preview": {
+        "levelPath": "data/process-levels/authored-boundary-stagger-2f126bf137c6/v001.json",
+        "levelSha256": "bb11834e2012f664dfdecb94b2a6919c90d85f353e188e3b7ec402ed9ac171b7",
+        "cellsSha256": "889d3511dca49c565555e0f2f7c8cab62dda0353abf84cf967743ddcdaf97906",
+        "status": "iteration"
       }
     },
     {
@@ -2979,6 +3184,12 @@
             "after": "."
           }
         ]
+      },
+      "preview": {
+        "levelPath": "data/process-levels/authored-boundary-stagger-2f126bf137c6/v002.json",
+        "levelSha256": "f59d4dbfee2581d3c5a863fcd35bae592f73c3b7bb8381bf5aab0a9ad7b5ee27",
+        "cellsSha256": "7943b9136885d33f04ec3de5ab37c16b4ef8070f323a4aeb89c70688a9a9fbdb",
+        "status": "iteration"
       }
     },
     {
@@ -3303,6 +3514,12 @@
             "after": "#"
           }
         ]
+      },
+      "preview": {
+        "levelPath": "data/process-levels/authored-boundary-stagger-2f126bf137c6/v003.json",
+        "levelSha256": "d5e5e4c1108d9902ec0009f6c079ca6b36b1768838b1911d1d6fcb4fa1b52d07",
+        "cellsSha256": "e2e55f6e600628399bbbd530f5cf6c544850cec8bd958a84b6bc230b3fbdddb5",
+        "status": "iteration"
       }
     },
     {
@@ -3612,6 +3829,24 @@
         "added": [],
         "removed": [],
         "changed": []
+      },
+      "preview": {
+        "levelPath": "data/process-levels/authored-boundary-stagger-2f126bf137c6/v004.json",
+        "levelSha256": "29f118a132dfb9e78ab5229ba6bc13197bffd1b8ef93d066fc41ca6c18116870",
+        "cellsSha256": "e2e55f6e600628399bbbd530f5cf6c544850cec8bd958a84b6bc230b3fbdddb5",
+        "status": "iteration",
+        "replay": {
+          "data": "data/process-replays/authored-boundary-stagger-2f126bf137c6/v004.json",
+          "sha256": "688d291bb32bf4668c1ccb7d0fde986c5e52ef9cd2f8a7885bdde1f90886ad8c",
+          "candidateId": "v004",
+          "cellsSha256": "e2e55f6e600628399bbbd530f5cf6c544850cec8bd958a84b6bc230b3fbdddb5",
+          "contractSha256": "9de56feb2119d9a83c079096eea4d12b0f7a0f425af2339d39e25020b7395bb6",
+          "sourceSha256": "2db92435984bf105ff76a80b0c881be14581ba8d59df30a7bea334a0acdd122e",
+          "route": "UUUURRRDDRRLDDDRURRRR",
+          "frameCount": 22,
+          "binding": "exact-artifact",
+          "sourceKind": "saved-replay"
+        }
       }
     }
   ],
@@ -3924,7 +4159,8 @@
       "basename": "mechanism-logic.md",
       "sha256": "c4953095eff5b1525a1c56ec59bf219dcde17bef352e4b0b76f80b27085cf5ac",
       "kind": "mechanism",
-      "origin": "observed"
+      "origin": "observed",
+      "delivery": "recorded-read"
     },
     {
       "id": "r002",
@@ -3934,7 +4170,8 @@
       "basename": "SKILL.md",
       "sha256": "e94c8ad80dedb9c7a020c2dfd76ad8050fc81da8a40af98cc419262370500d6e",
       "kind": "skill",
-      "origin": "observed"
+      "origin": "observed",
+      "delivery": "recorded-read"
     },
     {
       "id": "r003",
@@ -3944,7 +4181,8 @@
       "basename": "complex-validation.md",
       "sha256": "da036b7b63e615abddf7ee4f5e007926cc1d603f873d55ac25c6cf6948144244",
       "kind": "reference",
-      "origin": "observed"
+      "origin": "observed",
+      "delivery": "recorded-read"
     },
     {
       "id": "r004",
@@ -3954,7 +4192,8 @@
       "basename": "planning-depth.md",
       "sha256": "f9cfed13dc075bd564871941bff6218fa6dfee5d9809218bdb261379cfec9033",
       "kind": "reference",
-      "origin": "observed"
+      "origin": "observed",
+      "delivery": "recorded-read"
     },
     {
       "id": "r005",
@@ -3964,7 +4203,8 @@
       "basename": "design-template.json",
       "sha256": "e3c6a8407cca8b9401072b61c1b98f9b6c572895b1fc88a785be6176f93a7cc4",
       "kind": "reference",
-      "origin": "observed"
+      "origin": "observed",
+      "delivery": "recorded-read"
     },
     {
       "id": "r006",
@@ -3974,7 +4214,8 @@
       "basename": "mechanism-logic.md",
       "sha256": "c4953095eff5b1525a1c56ec59bf219dcde17bef352e4b0b76f80b27085cf5ac",
       "kind": "mechanism",
-      "origin": "observed"
+      "origin": "observed",
+      "delivery": "recorded-read"
     },
     {
       "id": "r007",
@@ -3984,7 +4225,8 @@
       "basename": "complex-runtime.cjs",
       "sha256": "27e8a54cd7308961363a8a61c502bff0ba67798fd7899503945839c678216f22",
       "kind": "reference",
-      "origin": "observed"
+      "origin": "observed",
+      "delivery": "recorded-read"
     },
     {
       "id": "r008",
@@ -3994,7 +4236,8 @@
       "basename": "verify-complex.cjs",
       "sha256": "5e2a6ce6866819af9edf416d845d88093e96febdd65719d6c6e315edcde93482",
       "kind": "reference",
-      "origin": "observed"
+      "origin": "observed",
+      "delivery": "recorded-read"
     },
     {
       "id": "r009",
@@ -4004,7 +4247,8 @@
       "basename": "design.md",
       "sha256": "c3014fd8c193475d870875a07886dfe7a894b87f37e4e55ed286ee2307a8daa6",
       "kind": "reference",
-      "origin": "observed"
+      "origin": "observed",
+      "delivery": "recorded-read"
     },
     {
       "id": "r010",
@@ -4014,7 +4258,147 @@
       "basename": "browser-check.cjs",
       "sha256": "b1c9ba5646551c8d3e06f19ce6d410afdcf94611a22460151c124281b6d05b9e",
       "kind": "verifier",
-      "origin": "observed"
+      "origin": "observed",
+      "delivery": "recorded-read"
+    }
+  ],
+  "operations": [
+    {
+      "id": "operation-e000011",
+      "graphNodeId": "operation-e000011",
+      "candidateId": "v001",
+      "inputCandidateId": null,
+      "outputCandidateId": "v001",
+      "label": "author-first-layout",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000016",
+      "graphNodeId": "operation-e000016",
+      "candidateId": "v001",
+      "inputCandidateId": "v001",
+      "outputCandidateId": "v001",
+      "label": "inspect-first-layout-obstruction",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000021",
+      "graphNodeId": "operation-e000021",
+      "candidateId": "v002",
+      "inputCandidateId": "v001",
+      "outputCandidateId": "v002",
+      "label": "revise-latch-clearance",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000028",
+      "graphNodeId": "operation-e000028",
+      "candidateId": "v003",
+      "inputCandidateId": "v002",
+      "outputCandidateId": "v003",
+      "label": "close-northeast-bypass",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000031",
+      "graphNodeId": "operation-e000031",
+      "candidateId": "v004",
+      "inputCandidateId": "v003",
+      "outputCandidateId": "v004",
+      "label": "solve-and-bind-stage-witnesses",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000034",
+      "graphNodeId": "operation-e000034",
+      "candidateId": "v004",
+      "inputCandidateId": "v004",
+      "outputCandidateId": "v004",
+      "label": "formal-complex-verification-01",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000039",
+      "graphNodeId": "operation-e000039",
+      "candidateId": "v004",
+      "inputCandidateId": "v004",
+      "outputCandidateId": "v004",
+      "label": "build-verified-rooflock-draft",
+      "kind": "build",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000041",
+      "graphNodeId": "operation-e000041",
+      "candidateId": "v004",
+      "inputCandidateId": "v004",
+      "outputCandidateId": "v004",
+      "label": "Local preview service started",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000043",
+      "graphNodeId": "operation-e000043",
+      "candidateId": "v004",
+      "inputCandidateId": "v004",
+      "outputCandidateId": "v004",
+      "label": "saved-build-ordinary-replay",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000057",
+      "graphNodeId": "operation-e000057",
+      "candidateId": "v004",
+      "inputCandidateId": "v004",
+      "outputCandidateId": "v004",
+      "label": "Browser validation completed",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    }
+  ],
+  "replays": [
+    {
+      "id": "replay-e000046",
+      "graphNodeId": "replay-e000046",
+      "candidateId": "v004",
+      "label": "Saved ordinary gameplay replay",
+      "route": "UUUURRRDDRRLDDDRURRRR",
+      "frameCount": 22,
+      "binding": "exact-artifact",
+      "sourceKind": "saved-replay",
+      "sourceSha256": "2db92435984bf105ff76a80b0c881be14581ba8d59df30a7bea334a0acdd122e",
+      "cellsSha256": "e2e55f6e600628399bbbd530f5cf6c544850cec8bd958a84b6bc230b3fbdddb5",
+      "contractSha256": "9de56feb2119d9a83c079096eea4d12b0f7a0f425af2339d39e25020b7395bb6",
+      "data": "data/process-replays/authored-boundary-stagger-2f126bf137c6/v004.json",
+      "sha256": "688d291bb32bf4668c1ccb7d0fde986c5e52ef9cd2f8a7885bdde1f90886ad8c"
     }
   ]
 }

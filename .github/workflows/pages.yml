@@ -8,6 +8,7 @@ on:
       - 'site/**'
       - 'scripts/*site*.cjs'
       - 'scripts/*authoring*.cjs'
+      - 'scripts/*process*.cjs'
       - 'tools/authoring-observatory/**'
       - '.github/workflows/pages.yml'
   pull_request:
@@ -16,6 +17,7 @@ on:
       - 'site/**'
       - 'scripts/*site*.cjs'
       - 'scripts/*authoring*.cjs'
+      - 'scripts/*process*.cjs'
       - 'tools/authoring-observatory/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:

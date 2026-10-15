@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Candidate preview — Maze Harness</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./process-player.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+  <script type="module" src="./process-player.js"></script>
+</head>
+<body class="process-player">
+  <main class="candidate-player mazebench-controls" aria-label="Interactive candidate preview">
+    <header class="preview-toolbar">
+      <div class="preview-label"><strong id="candidate-label">Candidate</strong><span id="preview-status">Loading preview</span></div>
+      <button id="replay-play" class="replay-primary" type="button" hidden>Watch recorded replay</button>
+    </header>
+    <div id="game-root" class="is-loading">
+      <div class="play-shell">
+        <div class="play-header" hidden></div>
+        <div class="mazebench-runtime-toggles" hidden><button id="fuzzy-toggle" type="button" aria-pressed="false"></button><button id="edge-toggle" type="button" aria-pressed="true"></button></div>
+        <section class="play-stage" aria-label="3D candidate board">
+          <div class="maze-frame is-loading">
+            <canvas id="maze-canvas" class="maze-canvas" width="900" height="680" tabindex="0" aria-label="Interactive maze. Arrow keys move. Z undoes. R resets, including gems. A and D rotate the camera. W and S tilt it."></canvas>
+            <div class="game-loading" role="status"><span class="loading-mark" aria-hidden="true"></span><span id="loading-message">Opening recorded candidate…</span></div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <section id="replay-controls" class="replay-controls" aria-label="Recorded replay controls" hidden>
+      <div class="replay-actions">
+        <button id="replay-step" type="button" aria-label="Advance recorded replay one step">Step →</button>
+        <button id="replay-restart" type="button" aria-label="Restart recorded replay">Restart</button>
+        <label for="replay-speed">Speed <select id="replay-speed" aria-label="Replay speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select></label>
+        <span id="replay-counter" class="replay-counter">0 / 0</span>
+      </div>
+      <label class="replay-progress-label"><span class="sr-only">Recorded replay progress</span><input id="replay-progress" type="range" min="0" max="0" value="0" step="1" aria-label="Recorded replay progress"></label>
+    </section>
+    <div class="preview-controls">
+      <div class="control-pad" data-quadrant-pad="move" aria-label="Movement controls">
+        <button type="button" data-move="left" aria-label="Move left">←</button><button type="button" data-move="up" aria-label="Move up">↑</button><button type="button" data-move="down" aria-label="Move down">↓</button><button type="button" data-move="right" aria-label="Move right">→</button>
+      </div>
+      <div class="control-pad camera-pad" data-quadrant-pad="camera" aria-label="Camera controls">
+        <button type="button" data-camera="left" aria-label="Rotate camera left">↶</button><button type="button" data-camera="right" aria-label="Rotate camera right">↷</button><button type="button" data-camera="up" aria-label="Tilt camera up">↑</button><button type="button" data-camera="down" aria-label="Tilt camera down">↓</button>
+      </div>
+      <div class="edit-controls"><button id="undo-move" type="button" aria-label="Undo last action">Undo</button><button id="reset-room" type="button" aria-label="Reset level and restore gems">Reset</button></div>
+    </div>
+    <div class="preview-footer"><p id="game-status" role="status" aria-live="polite">Loading the original MazeBench engine…</p><span id="move-stat">0 moves</span></div>
+  </main>
+  <noscript>Enable JavaScript to play this candidate.</noscript>
+</body>
+</html>
