@@ -6,6 +6,7 @@ from pathlib import Path
 import subprocess
 import time
 import urllib.request
+import urllib.parse
 
 BASE = Path(__file__).resolve().parent
 STATE = BASE / "server-state.json"
@@ -26,16 +27,19 @@ def start():
     parser.add_argument("--root", type=Path, default=BASE / "runs")
     args = parser.parse_args()
     root = args.root.resolve()
+    port = args.port
     if STATE.exists():
         previous = json.loads(STATE.read_text(encoding="utf-8"))
         if healthy(previous.get("url", ""), root):
             print(previous["url"])
             return
+        if not port and previous.get("root") == str(root):
+            port = urllib.parse.urlparse(previous.get("url", "")).port or 0
     log_path = BASE / "viewer.stdout.log"
     error_path = BASE / "viewer.stderr.log"
     with log_path.open("w", encoding="utf-8") as stdout, error_path.open("w", encoding="utf-8") as stderr:
         process = subprocess.Popen(
-            ["node", str(BASE / "server.cjs"), "--port", str(args.port), "--root", str(root)],
+            ["node", str(BASE / "server.cjs"), "--port", str(port), "--root", str(root)],
             cwd=BASE, stdout=stdout, stderr=stderr, stdin=subprocess.DEVNULL,
             creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0,
             start_new_session=os.name != "nt",
