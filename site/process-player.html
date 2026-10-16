@@ -14,7 +14,7 @@
 <body class="process-player">
   <main class="candidate-player mazebench-controls" aria-label="Interactive candidate preview">
     <header class="preview-toolbar">
-      <div class="preview-label"><strong id="candidate-label">Candidate</strong><span id="preview-status">Loading preview</span></div>
+      <div class="preview-label"><span id="preview-status">Loading preview</span></div>
       <button id="replay-play" class="replay-primary" type="button" hidden>Watch recorded replay</button>
     </header>
     <div id="game-root" class="is-loading">
@@ -38,7 +38,7 @@
       </div>
       <label class="replay-progress-label"><span class="sr-only">Recorded replay progress</span><input id="replay-progress" type="range" min="0" max="0" value="0" step="1" aria-label="Recorded replay progress"></label>
     </section>
-    <div class="preview-controls">
+    <div id="manual-controls" class="preview-controls">
       <div class="control-pad" data-quadrant-pad="move" aria-label="Movement controls">
         <button type="button" data-move="left" aria-label="Move left">←</button><button type="button" data-move="up" aria-label="Move up">↑</button><button type="button" data-move="down" aria-label="Move down">↓</button><button type="button" data-move="right" aria-label="Move right">→</button>
       </div>

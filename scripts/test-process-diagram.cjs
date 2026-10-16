@@ -29,11 +29,21 @@ async function assertSelectedInView(page, id) {
   const position = await page.evaluate(value => {
     const list = document.querySelector('#process-timeline'), button = [...list.querySelectorAll('.timeline-node')].find(node => node.dataset.nodeId === value);
     const parent = list.getBoundingClientRect(), child = button.getBoundingClientRect();
-    return {top:child.top-parent.top,bottom:child.bottom-parent.top,height:parent.height,scrollTop:list.scrollTop};
+    return {top:child.top-parent.top,bottom:child.bottom-parent.top,height:parent.height,scrollTop:list.scrollTop,nodeHeight:child.height,hiddenAncestor:!!button.closest('[hidden]')};
   }, id);
   assert(position.top >= -1 && position.bottom <= position.height + 1, 'The deep-linked node must be fully visible in the scrolling diagram');
+  assert(position.nodeHeight > 0 && !position.hiddenAncestor,'Selecting a supporting event must expand its group');
   return position;
 }
+const assertAnchored = branches => {
+  assert.equal(branches.length,2,'The real synthetic fork has two distinct revision edges');
+  for (const branch of branches) assert(branch.startError <= 2 && branch.endError <= 2,'Revision branches must stay attached to visible candidate circles through grouping, scrolling and resize');
+};
+const setGroups = async (page, expanded) => {
+  const toggles=page.locator('.timeline-group-toggle[aria-expanded="'+!expanded+'"]');
+  while (await toggles.count()) await toggles.first().click();
+  await settle(page);
+};
 async function branchRecords(page) {
   await settle(page);
   return page.locator('.revision-branch').evaluateAll(paths => paths.map(line => {
@@ -67,6 +77,37 @@ async function branchRecords(page) {
     };
     const lastNode = original.nodes.at(-1).id;
     await visit(lastNode);
+    assert.equal(await page.locator('.timeline-node').count(),original.nodes.length,'All supporting records must remain available in the DOM');
+    assert.equal(await page.locator('.timeline-node:visible').count(),12,'Default view keeps only key events');
+    assert.equal(await page.locator('.timeline-group-toggle[aria-expanded="false"]').count(),8);
+    const support = await page.locator('.timeline-node[data-key-event="false"]').first().getAttribute('data-node-id');
+    const supportGroup = await page.locator('.timeline-node[data-node-id="'+support+'"]').evaluate(button=>button.closest('li').dataset.groupId);
+    const groupToggle = page.locator('.timeline-group-toggle[data-group-id="'+supportGroup+'"]');
+    await groupToggle.click();
+    assert.equal(await groupToggle.getAttribute('aria-expanded'),'true');
+    assert(await page.locator('.timeline-node[data-node-id="'+support+'"]').isVisible());
+    await groupToggle.click();
+    assert.equal(await groupToggle.getAttribute('aria-expanded'),'false');
+    assert.equal(await page.locator('.timeline-node[data-node-id="'+support+'"]').isVisible(),false);
+    await visit(support);
+    assert.equal(await groupToggle.getAttribute('aria-expanded'),'true','A supporting-event deep link automatically opens its exact group');
+    await page.reload();
+    const supportingDeepLink = await assertSelectedInView(page,support);
+    assert.equal(await groupToggle.getAttribute('aria-expanded'),'true','Reload preserves access to the linked supporting event');
+    const selectedTitle=await page.locator('#operation-title').innerText(),selectedURL=page.url();
+    await groupToggle.click();
+    assert.equal(await page.locator('.timeline-node[data-node-id="'+support+'"]').isVisible(),false);
+    assert.equal(await page.locator('#operation-title').innerText(),selectedTitle,'Collapsing a group must retain the selected event details');
+    assert.equal(page.url(),selectedURL,'Collapsing a group must retain its selected event deep link');
+    assert.equal(await groupToggle.getAttribute('data-contains-selection'),'true','A collapsed group must disclose its contained selection');
+    await groupToggle.press('Enter');await assertSelectedInView(page,support);
+    const diagnosticNodes = original.nodes.filter(node=>node.kind==='test'&&node.details?.category==='diagnostic'&&node.status==='failed');
+    for (const node of diagnosticNodes) {
+      const groupId = await page.locator('.timeline-node[data-node-id="'+node.id+'"]').evaluate(button=>button.closest('li').dataset.groupId);
+      assert(groupId,'Diagnostic failures may be grouped but must retain their group');
+      assert.match(await page.locator('.timeline-group-toggle[data-group-id="'+groupId+'"]').innerText(),/fail/i,'Collapsed group summary must disclose its recorded failure');
+    }
+    await visit(lastNode);
     assert.equal((await branchRecords(page)).length,0,'The real linear record must not show revision forks');
     assert.equal(await page.locator('#process-timeline').getAttribute('data-branch-count'),'0');
     const title = await page.locator('#operation-title').innerText();
@@ -87,7 +128,9 @@ async function branchRecords(page) {
     await page.setViewportSize({width:390,height:844});
     await visit(lastNode); await page.reload();
     const mobileDeepLink = await assertSelectedInView(page,lastNode);
-    report.deepLinks = {desktopReload:desktopDeepLink,mobileReload:mobileDeepLink,sourceQueryDoesNotBorrowMap:true,keyboardNavigation:true};
+    await visit(support);await page.reload();await assertSelectedInView(page,support);
+    report.deepLinks = {desktopReload:desktopDeepLink,mobileReload:mobileDeepLink,supportingReload:supportingDeepLink,supportingMobileAutoExpand:true,sourceQueryDoesNotBorrowMap:true,keyboardNavigation:true};
+    report.grouping={defaultKeyEvents:12,supportingEvents:original.nodes.length-12,groups:8,clickExpandCollapse:true,keyboardGroupToggle:true,collapseRetainsSelectedRecord:true,diagnosticFailuresDisclosed:true};
     report.realRecordBranchCount = 0;
 
     fixture = structuredClone(original);
@@ -120,12 +163,22 @@ async function branchRecords(page) {
       await page.locator('.timeline-node[data-node-id="'+child.graphNodeId+'"]').click();await assertSelectedInView(page,child.graphNodeId);
       for (const branch of await branchRecords(page)) assert(branch.startError<=2 && branch.endError<=2,'Revision branches must stay attached when the diagram scrolls');
     }
+    await setGroups(page,true);
+    assert.equal(await page.locator('.timeline-node:visible').count(),original.nodes.length,'Expanding groups exposes every recorded event');
+    const expandedBranches=await branchRecords(page);assertAnchored(expandedBranches);
+    await setGroups(page,false);
+    assert.equal(await page.locator('.timeline-node:visible').count(),12);
+    const collapsedBranches=await branchRecords(page);assertAnchored(collapsedBranches);
     await page.screenshot({path:path.join(output,'synthetic-revision-fork.png'),fullPage:true});
     await page.setViewportSize({width:390,height:844});
     const mobileBranches = await branchRecords(page);
     assert.equal(mobileBranches.length,2,'Both revision branches must remain present on mobile');
     for (const branch of mobileBranches) assert(branch.startError<=2 && branch.endError<=2,'Revision branches must stay attached after responsive resize');
-    report.syntheticFork = {branches,mobileBranches,childrenClickable:true};
+    await setGroups(page,true);assertAnchored(await branchRecords(page));
+    await setGroups(page,false);assertAnchored(await branchRecords(page));
+    await page.setViewportSize({width:1024,height:900});
+    const mediumBranches=await branchRecords(page);assertAnchored(mediumBranches);
+    report.syntheticFork = {branches,expandedBranches,collapsedBranches,mobileBranches,mediumBranches,childrenClickable:true,groupToggleGeometry:true};
     assert.deepEqual(fs.readFileSync(sourcePath),sourceBytes,'Diagram fixtures must not modify the saved public record');
     assert.deepEqual(report.errors,[]);assert.deepEqual(report.failedResponses,[]);
     report.passed=true;

@@ -1,7 +1,7 @@
 import { loadCatalog, shell, playUrl, showError } from './ui.js';
 
 const $ = id => document.getElementById(id);
-const state = { data: null, catalog: null, entry: null, skill: null, nodes: [], selectedId: null, candidateId: null, previewCandidateId: null, expanded: false, returnFocus: null, previousOverflow: '', revisionBranches: [] };
+const state = { data: null, catalog: null, entry: null, skill: null, nodes: [], selectedId: null, candidateId: null, previewCandidateId: null, previewKey: null, previewMode: null, expanded: false, returnFocus: null, previousOverflow: '', revisionBranches: [], keyNodeIds: new Set(), timelineGroups: [], nodeGroups: new Map() };
 const kindNames = { resource: 'READ', candidate: 'VERSION', test: 'TEST', note: 'DESIGN NOTE', operation: 'OPERATION', replay: 'REPLAY', delivery: 'DELIVERY' };
 const statusNames = { passed: 'Passed', failed: 'Failed', unknown: 'Unknown', error: 'Error' };
 const resourceNames = { 'SKILL.md': 'Read skill instructions', 'mechanism-logic.md': 'Read extracted mechanism', 'planning-depth.md': 'Read planning guidance', 'complex-validation.md': 'Read verification guidance', 'design-template.json': 'Read design template', 'complex-runtime.cjs': 'Inspect mechanism runtime', 'verify-complex.cjs': 'Inspect the verifier', 'design.md': 'Read design conventions', 'browser-check.cjs': 'Inspect browser replay checks' };
@@ -92,6 +92,31 @@ function diffText(candidate) {
   const changed = diff.changed?.length || 0, added = diff.added?.length || 0, removed = diff.removed?.length || 0;
   return changed || added || removed ? `${changed} changed / ${added} added / ${removed} removed vs ${parent}` : `Cells unchanged from ${parent}; declarations may differ`;
 }
+function classifyTimeline() {
+  const keyIds = new Set(), seenReadKinds = new Set(), formalTests = new Map(); let firstNote = false;
+  for (const node of state.nodes) {
+    const record = recordFor(node);
+    if (['candidate', 'replay', 'delivery'].includes(node.kind)) keyIds.add(node.id);
+    if (node.kind === 'resource') {
+      const category = resourceCategory(record);
+      if (['Skill instructions', 'Extracted mechanism', 'Original case material'].includes(category) && !seenReadKinds.has(category)) { keyIds.add(node.id); seenReadKinds.add(category); }
+    }
+    if (node.kind === 'note' && !firstNote) { keyIds.add(node.id); firstNote = true; }
+    if (node.kind === 'test' && record?.category !== 'diagnostic') {
+      const candidateId = record?.candidateId || node.details?.candidateId || 'unbound';
+      if (!formalTests.has(candidateId)) formalTests.set(candidateId, []); formalTests.get(candidateId).push(node);
+      if (['failed', 'error', 'unknown'].includes(node.status)) keyIds.add(node.id);
+    }
+  }
+  for (const tests of formalTests.values()) { keyIds.add(tests[0].id); keyIds.add(tests[tests.length - 1].id); }
+  if (!keyIds.size && state.nodes.length) keyIds.add(state.nodes[0].id);
+  state.keyNodeIds = keyIds; state.timelineGroups = []; state.nodeGroups.clear(); let group = null;
+  for (const node of state.nodes) {
+    if (keyIds.has(node.id)) { group = null; continue; }
+    if (!group) { group = { id: `group-${node.id}`, nodes: [], expanded: false }; state.timelineGroups.push(group); }
+    group.nodes.push(node); state.nodeGroups.set(node.id, group);
+  }
+}
 
 async function start() {
   shell('process');
@@ -111,16 +136,16 @@ async function start() {
   $('skill-link').textContent = state.skill?.name || 'Skill library'; $('skill-link').href = state.skill ? './skill.html?id=' + encodeURIComponent(state.skill.id) : './index.html#skills';
   const mode = data.coverage?.mode || data.mode || 'unknown'; $('record-mode').textContent = mode === 'observed' ? 'OBSERVED RECORD' : mode === 'historical' ? 'HISTORICAL IMPORT' : 'PARTIAL RECORD'; $('record-mode').classList.toggle('historical', mode === 'historical');
   $('record-summary').textContent = `${state.data.candidates.length} versions / ${state.data.resources.length} recorded references / ${state.data.tests.length} test records`;
-  $('timeline-count').textContent = `${state.nodes.length} records`;
-  $('timeline-context').textContent = mode === 'historical' ? 'Imported record order. Original event times are unknown.' : 'Recorded order. Select an event to inspect its evidence.';
+  classifyTimeline();
+  $('timeline-count').textContent = `${state.keyNodeIds.size} key / ${state.nodes.length} total`;
+  $('timeline-context').textContent = `${state.nodes.length - state.keyNodeIds.size} supporting records are grouped in their original order.${mode === 'historical' ? ' Original times are unknown.' : ''}`;
   $('coverage-description').textContent = data.coverage?.description || 'This view contains saved operations, references, maps, test outcomes, and public author explanations. It does not reconstruct unrecorded activity.';
   const limits = [...(data.coverage?.limitations || []), ...(data.limitations || []), data.coverage?.sources?.scope].filter(Boolean).map(text).filter((item, index, all) => all.indexOf(item) === index);
   limits.forEach(item => $('coverage-limitations').append(el('li', '', item)));
-  for (const candidate of state.data.candidates) { const option = el('option', '', candidate.id); option.value = candidate.id; $('candidate-version').append(option); }
   renderTimeline(); installInteractions();
   const requested = byId(query.get('node')), requestedCandidate = state.data.candidates.find(candidate => candidate.id === query.get('candidate'));
   const firstCandidate = state.data.candidates.find(candidate => candidate.preview?.levelPath) || state.data.candidates[0];
-  selectNode(requested?.id || requestedCandidate?.graphNodeId || firstCandidate?.graphNodeId || state.nodes[0]?.id, { initial: true });
+  selectNode(requested?.id || requestedCandidate?.graphNodeId || firstCandidate?.graphNodeId || state.nodes[0]?.id, { initial: true, focus: Boolean(requested || requestedCandidate) });
 }
 
 function renderTimeline() {
@@ -132,16 +157,48 @@ function renderTimeline() {
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); svg.id = 'revision-branches'; svg.setAttribute('aria-hidden', 'true'); layer.append(svg); timeline.append(layer);
   }
   for (const node of state.nodes) {
+    const group = state.nodeGroups.get(node.id); let parent = timeline;
+    if (group) {
+      if (group.nodes[0].id === node.id) {
+        const container = el('li', 'timeline-group'), toggle = el('button', 'timeline-group-toggle'), events = el('ol', 'timeline-group-events'); container.dataset.groupId = group.id; toggle.type = 'button'; toggle.dataset.groupId = group.id; toggle.setAttribute('aria-expanded', String(group.expanded)); events.id = `events-${group.id}`; events.hidden = !group.expanded; toggle.setAttribute('aria-controls', events.id);
+        const label = el('span', 'timeline-group-copy'), first = group.nodes[0], last = group.nodes[group.nodes.length - 1], failed = group.nodes.filter(item => ['failed', 'error'].includes(item.status)), diagnostics = failed.filter(item => recordFor(item)?.category === 'diagnostic');
+        label.append(el('span', 'timeline-group-label', `${group.nodes.length} supporting ${group.nodes.length === 1 ? 'event' : 'events'}`));
+        label.append(el('span', 'timeline-group-range', `Records ${first.order ?? first.sourceIndex + 1}${first.id === last.id ? '' : `–${last.order ?? last.sourceIndex + 1}`}`));
+        if (failed.length) label.append(el('span', 'timeline-group-failures', diagnostics.length === failed.length ? `${diagnostics.length} failed diagnostic ${diagnostics.length === 1 ? 'process' : 'processes'}` : `${failed.length} failed ${failed.length === 1 ? 'event' : 'events'}`));
+        const selected = el('span', 'timeline-group-selected', 'Selected event'); selected.hidden = true; label.append(selected);
+        toggle.append(el('span', 'timeline-group-marker', '···'), label, el('span', 'timeline-group-action', group.expanded ? 'Hide' : 'Show')); toggle.addEventListener('click', () => toggleTimelineGroup(group.id, !group.expanded)); container.append(toggle, events); timeline.append(container);
+      }
+      parent = $(`events-${group.id}`);
+    }
     const item = el('li', `timeline-item ${node.kind} ${node.status || ''}`), button = el('button', `timeline-node ${node.kind} ${node.status || ''}`); button.type = 'button'; button.dataset.nodeId = node.id; button.dataset.kind = node.kind; button.title = nodeTitle(node);
+    button.dataset.keyEvent = String(state.keyNodeIds.has(node.id)); if (group) item.dataset.groupId = group.id;
     const body = el('span', 'timeline-body'), content = el('span', 'timeline-text');
     content.append(el('span', 'timeline-kind-inline', nodeCategory(node)), el('span', 'timeline-label', nodeAction(node))); body.append(content);
     if (node.kind === 'test' && statusNames[node.status]) body.append(el('span', `timeline-state ${node.status}`, recordFor(node)?.category === 'diagnostic' && node.status === 'failed' ? 'Process failed' : statusNames[node.status]));
     const circle = el('span', 'timeline-dot'), ring = el('span', 'timeline-ring'), dot = el('span', 'timeline-center');
     ring.setAttribute('aria-hidden', 'true'); dot.setAttribute('aria-hidden', 'true');
     circle.append(ring, dot, el('span', 'timeline-number', String(node.order ?? node.sourceIndex + 1).padStart(2, '0')));
-    button.append(el('span', 'timeline-kind', nodeCategory(node)), circle, el('span', 'timeline-connector'), body); button.addEventListener('click', () => selectNode(node.id)); item.append(button); timeline.append(item);
+    button.append(el('span', 'timeline-kind', nodeCategory(node)), circle, el('span', 'timeline-connector'), body); button.addEventListener('click', () => selectNode(node.id)); item.append(button); parent.append(item);
   }
   requestAnimationFrame(renderRevisionBranches);
+}
+function toggleTimelineGroup(id, expanded) {
+  const group = state.timelineGroups.find(item => item.id === id); if (!group) return;
+  group.expanded = expanded; const toggle = [...$('process-timeline').querySelectorAll('.timeline-group-toggle')].find(button => button.dataset.groupId === id);
+  $(`events-${id}`).hidden = !expanded; toggle.setAttribute('aria-expanded', String(expanded)); toggle.querySelector('.timeline-group-action').textContent = expanded ? 'Hide' : 'Show';
+  if (!expanded && group.nodes.some(node => node.id === state.selectedId)) {
+    toggle.focus({ preventScroll: true });
+  }
+  syncGroupSelection();
+  requestAnimationFrame(renderRevisionBranches);
+}
+function syncGroupSelection() {
+  for (const toggle of $('process-timeline').querySelectorAll('.timeline-group-toggle')) {
+    const group = state.timelineGroups.find(item => item.id === toggle.dataset.groupId), containsSelection = !group.expanded && group.nodes.some(node => node.id === state.selectedId);
+    toggle.classList.toggle('contains-selection', containsSelection); toggle.dataset.containsSelection = String(containsSelection);
+    if (containsSelection) toggle.setAttribute('aria-current', 'step'); else toggle.removeAttribute('aria-current');
+    toggle.querySelector('.timeline-group-selected').hidden = !containsSelection;
+  }
 }
 function recordedRevisionBranches() {
   const candidates = new Map(state.data.candidates.map(candidate => [candidate.graphNodeId, candidate])), children = new Map();
@@ -157,6 +214,7 @@ function renderRevisionBranches() {
   const svg = $('revision-branches'); if (!svg) return;
   const timeline = $('process-timeline'), rect = timeline.getBoundingClientRect(), circles = new Map();
   for (const button of timeline.querySelectorAll('.timeline-node')) {
+    if (!button.getClientRects().length) continue;
     const circle = button.querySelector('.timeline-dot').getBoundingClientRect();
     circles.set(button.dataset.nodeId, { x: circle.left - rect.left + timeline.scrollLeft, y: circle.top - rect.top + timeline.scrollTop + circle.height / 2 });
   }
@@ -169,37 +227,56 @@ function renderRevisionBranches() {
     const title = document.createElementNS('http://www.w3.org/2000/svg', 'title'); title.textContent = `Recorded revision: ${nodeAction(byId(edge.from))} to ${nodeAction(byId(edge.to))}`; path.append(title); svg.append(path);
   }
 }
-function selectNode(id, { initial = false } = {}) {
+function selectNode(id, { initial = false, focus = true } = {}) {
   const node = byId(id); if (!node) return;
   if (state.expanded) closePreview(); state.selectedId = id;
+  const group = state.nodeGroups.get(id); if (group && !group.expanded) toggleTimelineGroup(group.id, true);
   for (const button of $('process-timeline').querySelectorAll('.timeline-node')) { if (button.dataset.nodeId === id) button.setAttribute('aria-current', 'step'); else button.removeAttribute('aria-current'); }
+  syncGroupSelection();
   const record = recordFor(node), candidate = candidateFor(node), index = state.nodes.indexOf(node);
   $('previous-operation').disabled = index === 0; $('next-operation').disabled = index === state.nodes.length - 1;
   const meta = clear($('operation-meta')); meta.append(el('span', '', nodeCategory(node)), el('span', '', `/ RECORD ${node.order ?? index + 1}`));
-  if (candidate) meta.append(el('span', '', `/ ${candidate.id}`));
-  if (statusNames[node.status]) meta.append(el('span', `status-label ${node.status}`, statusNames[node.status]));
+  if (candidate && node.kind !== 'candidate') meta.append(el('span', '', `/ ${candidate.id}`));
+  if (statusNames[node.status] && node.kind !== 'test') meta.append(el('span', `status-label ${node.status}`, statusNames[node.status]));
   $('operation-title').textContent = nodeAction(node);
-  $('operation-summary').textContent = node.kind === 'resource' ? `${resourceCategory(record)} / ${record?.delivery === 'snapshot' || record?.origin === 'historical' ? 'Saved source snapshot' : 'Recorded file read'}` : node.kind === 'note' ? 'Public author explanation' : node.summary || record?.summary || '';
-  renderPreview(candidate); renderSources(node, record, candidate); renderExplanation(node, record, candidate); renderChecks(node, record); renderRelations(node);
+  let summary = '';
+  if (node.kind === 'resource') summary = `${resourceCategory(record)} / ${record?.delivery === 'snapshot' || record?.origin === 'historical' ? 'Saved source snapshot' : 'Recorded file read'}`;
+  else if (node.kind === 'candidate' && candidate) summary = diffText(candidate);
+  else if (node.kind === 'test') { const checks = record?.checks || [], passed = checks.filter(check => check.status === 'passed').length; summary = record?.category === 'diagnostic' ? `Diagnostic process ${node.status || 'outcome unknown'}.` : `${statusNames[node.status] || 'Result unknown'}${checks.length ? ` · ${passed} of ${checks.length} checks passed` : ''}.`; }
+  else if (node.kind === 'replay' && record) summary = `${record.frameCount || 0} saved frames · ${record.route?.length || 0} recorded inputs`;
+  else if (node.kind === 'delivery') summary = node.summary || '';
+  $('operation-summary').textContent = summary; $('operation-summary').hidden = !summary;
+  renderPreview(node, record, candidate); renderSources(node, record); renderExplanation(node, record, candidate); renderChecks(node, record); renderRelations(node);
   const safeRecord = record ? Object.fromEntries(Object.entries(record).filter(([key]) => !['cells', 'diff'].includes(key))) : null;
   $('operation-evidence-body').textContent = JSON.stringify({ node: Object.fromEntries(Object.entries(node).filter(([key]) => key !== 'sourceIndex')), ...(safeRecord ? { record: safeRecord } : {}) }, null, 2); $('operation-evidence').open = false;
   const url = new URL(location.href); url.searchParams.set('node', node.id); if (candidate) url.searchParams.set('candidate', candidate.id); else url.searchParams.delete('candidate'); history.replaceState(null, '', url);
   if (!initial) $('operation-detail').scrollTop = 0;
   {
     const button = [...$('process-timeline').querySelectorAll('.timeline-node')].find(item => item.dataset.nodeId === id);
-    if (button) { const list = $('process-timeline'), rect = button.getBoundingClientRect(), listRect = list.getBoundingClientRect(); if (rect.top < listRect.top || rect.bottom > listRect.bottom) list.scrollTop += rect.top - listRect.top - list.clientHeight / 3; }
+    if (button) { const list = $('process-timeline'), rect = button.getBoundingClientRect(), listRect = list.getBoundingClientRect(); if (rect.top < listRect.top || rect.bottom > listRect.bottom) list.scrollTop += rect.top - listRect.top - list.clientHeight / 3; if (focus) button.focus({ preventScroll: true }); }
   }
 }
 
-function renderPreview(candidate) {
+function exactReplayFor(node, record, candidate) {
+  if (node.kind !== 'replay' || !record || !candidate?.preview?.levelPath) return null;
+  const bound = candidate.preview.replay;
+  if (!bound || record.binding !== 'exact-artifact' || bound.binding !== 'exact-artifact' || record.sourceKind !== 'saved-replay' || bound.sourceKind !== 'saved-replay') return null;
+  if (record.candidateId !== candidate.id || bound.candidateId !== candidate.id) return null;
+  if (!record.cellsSha256 || record.cellsSha256 !== candidate.cellsSha256 || bound.cellsSha256 !== candidate.cellsSha256 || !record.contractSha256 || record.contractSha256 !== candidate.contractSha256 || bound.contractSha256 !== candidate.contractSha256) return null;
+  if (!record.data || record.data !== bound.data || !record.sha256 || record.sha256 !== bound.sha256 || !record.sourceSha256 || record.sourceSha256 !== bound.sourceSha256) return null;
+  return record;
+}
+function renderPreview(node, record, candidate) {
   state.candidateId = candidate?.id || null;
-  const available = Boolean(candidate?.preview?.levelPath); $('preview-shell').hidden = !available;
+  const replay = exactReplayFor(node, record, candidate), mode = node.kind === 'candidate' && candidate?.preview?.levelPath ? 'play' : replay ? 'replay' : null;
+  const available = Boolean(mode); $('preview-shell').hidden = !available;
   if (!available) { $('preview-frame').contentWindow?.postMessage({ source: 'mazebench-process', type: 'pause' }, location.origin); return; }
-  $('preview-title').textContent = candidate.id; $('candidate-version').value = candidate.id; $('preview-diff').textContent = diffText(candidate);
-  if (state.previewCandidateId !== candidate.id) {
-    state.previewCandidateId = candidate.id; $('preview-status').textContent = 'Loading saved version...'; $('preview-error').hidden = true;
-    $('preview-frame').title = `Interactive 3D preview of saved version ${candidate.id}`;
-    $('preview-frame').src = './process-player.html?' + new URLSearchParams({ case: state.entry.id, candidate: candidate.id });
+  $('preview-title').textContent = mode === 'play' ? 'Playable map' : 'Recorded replay';
+  const key = `${mode}:${candidate.id}:${replay?.id || ''}`;
+  if (state.previewKey !== key) {
+    state.previewKey = key; state.previewCandidateId = candidate.id; state.previewMode = mode; $('preview-status').textContent = 'Loading map...'; $('preview-error').hidden = true;
+    $('preview-frame').title = mode === 'play' ? `Try saved version ${candidate.id}` : `Watch saved replay ${record.id}`;
+    $('preview-frame').src = './process-player.html?' + new URLSearchParams({ case: state.entry.id, candidate: candidate.id, mode, ...(replay ? { replay: replay.id } : {}) });
   }
 }
 function sourceCases() {
@@ -207,8 +284,8 @@ function sourceCases() {
   if (Array.isArray(indirect)) return indirect.map(item => ({ ...item, entry: state.catalog.cases.find(entry => entry.kind === 'official' && (entry.room === item.caseId || entry.id === item.caseId)) })).filter(item => item.entry);
   return (state.skill?.officialCases || []).map(id => ({ caseId: state.catalog.cases.find(entry => entry.id === id)?.room, basis: 'skill-source-reference', entry: state.catalog.cases.find(entry => entry.id === id) })).filter(item => item.entry);
 }
-function renderSources(node, record, candidate) {
-  const host = clear($('source-overview')); host.hidden = Boolean(candidate); if (candidate) return;
+function renderSources(node, record) {
+  const host = clear($('source-overview')); host.hidden = node.kind !== 'resource'; if (host.hidden) return;
   if (node.kind === 'resource') {
     host.append(el('div', 'source-path', record?.displayPath || node.details?.displayPath || record?.label || node.label));
     const citedNotes = state.data.edges.filter(edge => edge.kind === 'cites' && (edge.from === node.id || edge.to === node.id)).map(edge => byId(edge.from === node.id ? edge.to : edge.from)).filter(other => other?.kind === 'note');
@@ -234,11 +311,11 @@ function explanationPart(host, title, value) {
 }
 function renderExplanation(node, record, candidate) {
   const host = clear($('operation-explanation'));
-  if (candidate && !candidate.preview?.levelPath) explanationPart(host, 'Saved candidate', `${candidate.id} is bound to this record, but an interactive 3D preview has not been published for that snapshot.`);
+  if (node.kind === 'candidate' && candidate && !candidate.preview?.levelPath) explanationPart(host, 'Saved candidate', `${candidate.id} is bound to this record, but an interactive 3D preview has not been published for that snapshot.`);
   if (node.kind === 'note' && record) { explanationPart(host, 'Design goal', record.goal); explanationPart(host, 'Proposed change', record.change); explanationPart(host, 'Public explanation', record.reason); explanationPart(host, 'Checks the author intended to run', record.expectedChecks); if (record.retrospective) explanationPart(host, 'Recording context', 'This explanation was recorded retrospectively.'); }
   else if (node.kind === 'operation' && record) { explanationPart(host, 'What this operation establishes', record.scope); if (record.inputCandidateId || record.outputCandidateId) explanationPart(host, 'Saved input and output', `Input: ${record.inputCandidateId || 'not associated'}. Output: ${record.outputCandidateId || 'not associated'}. These are recorded boundaries, not a reconstruction of intermediate in-memory states.`); }
-  else if (node.kind === 'candidate' && candidate) { explanationPart(host, 'Version change', diffText(candidate)); const parentEdges = state.data.edges.filter(edge => edge.to === node.id && edge.kind === 'revision'); if (parentEdges.some(edge => edge.inferred)) explanationPart(host, 'Version order', 'This parent relationship is inferred from historical file order. It is not an observed causal sequence.'); }
-  else if (node.kind === 'replay' && record) { explanationPart(host, 'Saved replay evidence', `${record.frameCount || 0} recorded states${record.route ? ` / ${record.route.length} saved actions` : ''}. The preview uses the replay attached to this candidate; no route is invented for an unverified version.`); explanationPart(host, 'Replay binding', record.binding); }
+  else if (node.kind === 'candidate' && candidate) { const parentEdges = state.data.edges.filter(edge => edge.to === node.id && edge.kind === 'revision'); if (parentEdges.some(edge => edge.inferred)) explanationPart(host, 'Version order', 'This parent relationship is inferred from historical file order. It is not an observed causal sequence.'); }
+  else if (node.kind === 'replay' && record && !exactReplayFor(node, record, candidate)) explanationPart(host, 'Replay availability', 'This event has no published replay artifact that matches its saved candidate and contract. Its recorded metadata is available below.');
   if (node.kind === 'test') explanationPart(host, record?.category === 'diagnostic' ? 'Diagnostic scope' : 'Test scope', record?.scope || 'This result applies only to its recorded scope and associated input.');
 }
 function renderChecks(node, record) {
@@ -254,11 +331,17 @@ function relationButton(other, inferred) {
   const button = el('button', `relation-chip${inferred ? ' inferred' : ''}`); button.type = 'button'; button.dataset.nodeId = other.id; button.title = nodeTitle(other); button.append(el('span', '', nodeAction(other)), el('span', 'relation-arrow', '\u2197')); button.addEventListener('click', () => selectNode(other.id)); return button;
 }
 function renderRelations(node) {
-  const host = clear($('operation-relations')), edges = state.data.edges.filter(edge => edge.from === node.id || edge.to === node.id); host.hidden = !edges.length; if (!edges.length) return;
-  host.append(el('h3', '', 'RELATED RECORDS'));
+  const host = clear($('operation-relations')), edges = state.data.edges.filter(edge => edge.from === node.id || edge.to === node.id);
   const groups = new Map();
   const titles = { revision: ['Next saved versions', 'Previous saved versions'], tested: ['Tests of this version', 'Version tested'], cites: ['Cited by public notes', 'References cited in this note'], annotation: ['Public notes on this version', 'Version associated with this note'], supports: ['Supported records', 'Supporting records'], produced: ['Produced records', 'Producing operation'], replay: ['Replay evidence', 'Version replayed'] };
   for (const edge of edges) { const outgoing = edge.from === node.id, other = byId(outgoing ? edge.to : edge.from); if (!other) continue; const title = titles[edge.kind]?.[outgoing ? 0 : 1] || `${edge.kind} / ${outgoing ? 'outgoing' : 'incoming'}`; if (!groups.has(title)) groups.set(title, []); groups.get(title).push({ edge, other }); }
+  const candidate = candidateFor(node), linkedNodes = new Set([...groups.values()].flat().map(item => item.other.id));
+  if (candidate && node.kind !== 'candidate' && !linkedNodes.has(candidate.graphNodeId)) { const other = byId(candidate.graphNodeId); if (other) groups.set('Recorded version', [{ edge: { kind: 'recorded-candidate-association', inferred: false }, other }]); }
+  if (node.kind === 'candidate' && candidate) {
+    const replays = state.data.replays.map(record => ({ record, other: byId(record.graphNodeId) })).filter(item => item.other && exactReplayFor(item.other, item.record, candidate));
+    if (replays.length) groups.set('Recorded replays', replays.map(({ other }) => ({ edge: { kind: 'exact-replay-binding', inferred: false }, other })));
+  }
+  host.hidden = !groups.size; if (!groups.size) return; host.append(el('h3', '', 'RELATED RECORDS'));
   for (const [title, relations] of groups) { const group = el('div', 'relation-group'), chips = el('div', 'relation-chips'); group.append(el('p', 'relation-caption', title)); for (const { edge, other } of relations) { const button = relationButton(other, edge.inferred); button.title = `${edge.kind}${edge.inferred ? ' (inferred)' : ''}: ${nodeTitle(other)}`; chips.append(button); } group.append(chips); host.append(group); }
 }
 
@@ -266,6 +349,7 @@ function expandPreview() {
   if ($('preview-shell').hidden || state.expanded) return;
   state.expanded = true; state.returnFocus = document.activeElement; state.previousOverflow = document.body.style.overflow; document.body.style.overflow = 'hidden'; document.body.classList.add('preview-open');
   $('preview-shell').classList.add('expanded'); $('preview-shell').setAttribute('role', 'dialog'); $('preview-shell').setAttribute('aria-modal', 'true'); $('preview-backdrop').hidden = false; $('expand-preview').hidden = true; $('close-preview').hidden = false; $('close-preview').focus();
+  $('preview-frame').contentWindow?.postMessage({ source: 'mazebench-process', type: 'orient' }, location.origin);
 }
 function closePreview() {
   if (!state.expanded) return;
@@ -284,15 +368,14 @@ function installInteractions() {
   });
   $('previous-operation').addEventListener('click', () => { const i = state.nodes.findIndex(node => node.id === state.selectedId); if (i > 0) selectNode(state.nodes[i - 1].id); });
   $('next-operation').addEventListener('click', () => { const i = state.nodes.findIndex(node => node.id === state.selectedId); if (i < state.nodes.length - 1) selectNode(state.nodes[i + 1].id); });
-  $('candidate-version').addEventListener('change', () => { const candidate = state.data.candidates.find(item => item.id === $('candidate-version').value); if (candidate) selectNode(candidate.graphNodeId); });
   $('expand-preview').addEventListener('click', expandPreview); $('close-preview').addEventListener('click', closePreview); $('preview-backdrop').addEventListener('click', closePreview); window.addEventListener('keydown', handleEscape);
   $('preview-frame').addEventListener('load', () => { try { $('preview-frame').contentWindow.addEventListener('keydown', handleEscape); } catch (_) { /* The iframe is expected to remain same-origin. */ } });
   window.addEventListener('message', event => {
     const message = event.data;
     if (event.origin !== location.origin || event.source !== $('preview-frame').contentWindow || message?.source !== 'mazebench-process-player' || message.caseId !== state.entry.id || message.candidateId !== state.previewCandidateId) return;
-    if (message.type === 'ready') { $('preview-error').hidden = true; $('preview-status').textContent = message.hasReplay ? 'Interactive version / bound replay available' : 'Interactive saved version / no bound replay'; }
+    if (message.type === 'ready') { $('preview-error').hidden = true; $('preview-status').textContent = state.previewMode === 'play' ? 'Playable map ready' : 'Recorded replay ready'; }
     else if (message.type === 'error') { $('preview-error').textContent = message.message || 'The saved preview could not be opened.'; $('preview-error').hidden = false; $('preview-status').textContent = 'Preview unavailable'; }
-    else if (message.type === 'replay-state') $('preview-status').textContent = message.total > 0 ? `Saved replay / ${message.step || 0} of ${message.total}${message.playing ? ' / playing' : message.status ? ' / ' + message.status : ' / paused'}` : 'Interactive saved version / no bound replay';
+    else if (message.type === 'replay-state' && state.previewMode === 'replay') $('preview-status').textContent = message.total > 0 ? `Saved replay / ${message.step || 0} of ${message.total}${message.playing ? ' / playing' : message.status ? ' / ' + message.status : ' / paused'}` : 'Recorded replay ready';
   });
 }
 

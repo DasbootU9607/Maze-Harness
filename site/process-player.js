@@ -2,31 +2,41 @@ import {loadCatalog} from './ui.js';
 
 const params = new URLSearchParams(location.search);
 const caseId = params.get('case'), candidateId = params.get('candidate');
+const mode = params.get('mode') || 'play', replayId = params.get('replay'), replayOnly = mode === 'replay';
 const $ = id => document.getElementById(id);
 const app = () => window.__MAZEBENCH_APP__;
 const vectors = {U:[0,-1],D:[0,1],L:[-1,0],R:[1,0]};
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-const state = window.__PROCESS_PLAYER_STATE__ = {caseId,candidateId,step:0,total:0,replaying:false,status:'loading',hasReplay:false};
-let initialLevel, candidate, savedReplay, expectedFrames, replayEngine, expectedFinalSolved = false;
+const state = window.__PROCESS_PLAYER_STATE__ = {caseId,candidateId,mode,replayId,step:0,total:0,replaying:false,status:'loading',hasReplay:false,busy:false,seeking:false,ready:false};
+let initialLevel, candidate, replayRecord, savedReplay, expectedFrames, replayEngine, expectedFinalSolved = false;
 let busy = false, seeking = false, replayDirty = false, ready = false, disposed = false, token = 0, statsTimer = null;
 let actionQueue = Promise.resolve();
-window.__MAZEBENCH_INPUT_LOCKED__ = true;
+let orientationLockUntil = 0, orientationTimer = null;
+let runtimeInputLock = true;
+// The original runtime refreshes this flag when overlays change. A replay
+// remains read-only across those writes, pauses, completion, and resizing.
+Object.defineProperty(window, '__MAZEBENCH_INPUT_LOCKED__', {
+  configurable:true, get:() => replayOnly || runtimeInputLock,
+  set:value => {runtimeInputLock = value === true;}
+});
+if (replayOnly) window.__MAZEBENCH_CONTROLS_CAPTURE__ = true;
 
 function notify(type, detail = {}) {
-  if (window.parent !== window) window.parent.postMessage({source:'mazebench-process-player',type,caseId,candidateId,...detail}, location.origin);
+  if (window.parent !== window) window.parent.postMessage({source:'mazebench-process-player',type,caseId,candidateId,mode,...detail}, location.origin);
 }
 function status(message) { $('game-status').textContent = message; }
 function sync() {
   const locked = !ready || busy || seeking || state.replaying;
+  Object.assign(state, {busy,seeking,ready});
   window.__MAZEBENCH_INPUT_LOCKED__ = locked;
-  for (const button of document.querySelectorAll('[data-move],[data-camera],#undo-move')) button.disabled = locked;
-  $('reset-room').disabled = !ready || busy || seeking;
-  $('replay-play').disabled = !ready || !state.hasReplay || seeking || (busy && !state.replaying);
+  for (const button of document.querySelectorAll('[data-move],[data-camera],#undo-move')) button.disabled = replayOnly || locked;
+  $('reset-room').disabled = replayOnly || !ready || busy || seeking;
+  $('replay-play').disabled = !replayOnly || !ready || !state.hasReplay || seeking || (busy && !state.replaying);
   $('replay-play').textContent = state.replaying ? 'Pause replay' : state.step === state.total && state.total ? 'Replay again' : state.step ? 'Resume recorded replay' : 'Watch recorded replay';
   $('replay-play').setAttribute('aria-pressed', String(state.replaying));
-  $('replay-step').disabled = !ready || busy || seeking || state.replaying || !state.hasReplay || state.step >= state.total;
-  $('replay-restart').disabled = !ready || busy || seeking || !state.hasReplay;
-  $('replay-progress').disabled = !ready || busy || seeking || !state.hasReplay;
+  $('replay-step').disabled = !replayOnly || !ready || busy || seeking || state.replaying || !state.hasReplay || state.step >= state.total;
+  $('replay-restart').disabled = !replayOnly || !ready || busy || seeking || !state.hasReplay;
+  $('replay-progress').disabled = !replayOnly || !ready || busy || seeking || !state.hasReplay;
   $('replay-progress').max = String(state.total);
   $('replay-progress').value = String(state.step);
   $('replay-progress').setAttribute('aria-valuetext', `Step ${state.step} of ${state.total}`);
@@ -67,7 +77,26 @@ function framePlayableArea() {
     stableHeight:(Math.max(0,...cells.map(cell => cell.elevation || 0)) + 1.5) * unit,
     centerY:0.25 * unit
   };
-  app().threeRenderer.setDebugCameraView?.({mode:'isometric',yaw:-0.35,tilt:0.85,zoom:1});
+  app().threeRenderer.setDebugCameraView?.({mode:'isometric',yaw:0,tilt:0.85,zoom:1,animate:false,preserveSceneCache:true});
+  app().render();
+}
+function installOrientationGuard() {
+  const renderer = app().threeRenderer, setView = renderer.setDebugCameraView.bind(renderer);
+  // The runtime owns a separate 400 ms camera-key animation. Let that finish
+  // internally while keeping its stale writes from rotating an expanded room.
+  renderer.setDebugCameraView = options => setView(performance.now() < orientationLockUntil
+    ? {...options,yaw:0,tilt:0.85,animate:false} : options);
+}
+function orient() {
+  window.dispatchEvent(new Event('blur'));
+  orientationLockUntil = performance.now() + 650;
+  clearTimeout(orientationTimer);
+  framePlayableArea();
+  orientationTimer = setTimeout(() => {
+    if (disposed || !ready) return;
+    framePlayableArea();
+    notify('oriented',{yaw:app().threeRenderer.getDebugCameraYaw(),tilt:app().threeRenderer.getDebugCameraTilt()});
+  }, 660);
 }
 async function idle() {
   const deadline = performance.now() + 15000;
@@ -103,6 +132,7 @@ async function restoreInitial() {
   app().render();
 }
 async function reset() {
+  if (replayOnly || !ready || busy || seeking) return;
   stopReplay();
   return queue(async () => {
     busy = true; sync();
@@ -111,7 +141,7 @@ async function reset() {
   });
 }
 async function takeReplayStep() {
-  if (!state.hasReplay || state.step >= state.total) return;
+  if (!replayOnly || !state.hasReplay || state.step >= state.total) return;
   busy = true; sync();
   try {
     await idle();
@@ -128,15 +158,15 @@ async function takeReplayStep() {
     }
     state.step = next;
     state.status = next === state.total ? 'complete' : state.replaying ? 'playing' : 'paused';
-    status(next === state.total ? `Recorded replay complete${expectedFinalSolved ? ' · goal reached' : ''}. Reset to try this version.` : `Recorded replay · ${next} / ${state.total} · ${direction}`);
+    status(next === state.total ? `Recorded replay complete${expectedFinalSolved ? ' · goal reached' : ''}. Restart to watch again.` : `Recorded replay · ${next} / ${state.total} · ${direction}`);
   } finally {
     if (app()) app().replayMoveDurationMs = null;
     busy = false; sync();
   }
 }
 async function playReplay() {
-  if (!state.hasReplay || !ready) return;
-  if (state.replaying) {stopReplay('Replay paused. Resume, step, or play this version yourself.'); return;}
+  if (!replayOnly || !state.hasReplay || !ready) return;
+  if (state.replaying) {stopReplay('Replay paused. Resume or step through the recorded actions.'); return;}
   const playbackToken = ++token;
   state.replaying = true;
   state.status = 'playing';
@@ -155,6 +185,7 @@ async function playReplay() {
   });
 }
 async function seekReplay(target) {
+  if (!replayOnly || !state.hasReplay || !ready || !Number.isInteger(target) || target < 0 || target > state.total) return;
   stopReplay();
   return queue(async () => {
     seeking = true; sync();
@@ -187,10 +218,13 @@ function loadScript(name) {
   });
 }
 async function loadReplay() {
-  const descriptor = candidate.preview.replay;
-  if (!descriptor) return;
+  const descriptor = replayRecord, preview = candidate.preview.replay;
+  if (!replayOnly || !descriptor || !preview) throw new Error('This event has no bound saved replay.');
+  for (const key of ['data','sha256','candidateId','cellsSha256','contractSha256','sourceSha256','route','frameCount','binding','sourceKind']) {
+    if (descriptor[key] !== preview[key]) throw new Error('The selected replay does not match this candidate preview.');
+  }
   if (descriptor.candidateId !== candidate.id || descriptor.cellsSha256 !== candidate.cellsSha256 || descriptor.contractSha256 !== candidate.contractSha256 ||
-      descriptor.sourceKind !== 'saved-replay' || !['exact-artifact','recorded-input-hash'].includes(descriptor.binding)) throw new Error('The saved replay is not bound to this candidate.');
+      descriptor.sourceKind !== 'saved-replay' || descriptor.binding !== 'exact-artifact') throw new Error('The saved replay is not bound to this candidate.');
   const replay = await jsonAsset(descriptor.data, descriptor.sha256);
   if (replay.candidateId !== candidate.id || replay.cellsSha256 !== candidate.cellsSha256 || replay.contractSha256 !== candidate.contractSha256 ||
       replay.sourceSha256 !== descriptor.sourceSha256 || replay.route !== descriptor.route || !/^[UDLR]+$/.test(replay.route || '')) throw new Error('Replay identity or route does not match this candidate.');
@@ -204,7 +238,7 @@ async function loadReplay() {
       if (!moved.moved) throw new Error(`The saved replay contains an illegal input at step ${step}.`);
     }
     const frame = replay.frames[step];
-    if (frame.step !== step || (step && frame.direction !== replay.route[step-1]) || !Array.isArray(frame.actors) ||
+    if (frame.step !== step || frame.direction !== (step ? replay.route[step-1] : null) || !Array.isArray(frame.actors) ||
         actorsKey(frame.actors) !== actorsKey(engineActors(physical))) throw new Error(`Saved replay state ${step} differs from the original engine.`);
     expected.push(actorsKey(engineActors(physical)));
   }
@@ -215,19 +249,28 @@ async function loadReplay() {
   state.total = replay.route.length;
   $('replay-controls').hidden = false;
   $('replay-play').hidden = false;
-  $('preview-status').textContent = 'Bound recorded replay';
+  $('preview-status').textContent = `Recorded replay · ${state.total} inputs`;
 }
 
 $('replay-play').addEventListener('click', playReplay);
-$('replay-step').addEventListener('click', () => {stopReplay(); queue(takeReplayStep);});
-$('replay-restart').addEventListener('click', reset);
+$('replay-step').addEventListener('click', () => {if (!replayOnly || !ready || busy || seeking) return; stopReplay(); queue(takeReplayStep);});
+$('replay-restart').addEventListener('click', () => seekReplay(0));
 $('replay-progress').addEventListener('change', event => seekReplay(Number(event.target.value)));
 $('reset-room').addEventListener('click', reset);
 $('undo-move').addEventListener('click', () => {
+  if (replayOnly || !ready || busy || seeking) return;
   stopReplay();
   queue(async () => {busy=true;sync();try{await idle();app().undoMove();await idle();replayDirty=true;state.status='manual';status('Move undone.');}finally{busy=false;sync();}});
 });
 window.addEventListener('keydown', event => {
+  if (replayOnly) {
+    // Keep native replay buttons, range/select controls, Tab, and parent Escape
+    // usable while preventing every keyboard route into the game runtime.
+    if (event.key === 'Escape' || event.key === 'Tab') return;
+    if (event.target.closest?.('#replay-controls,#replay-play')) {event.stopImmediatePropagation();return;}
+    if (['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','KeyZ','KeyU','KeyR','KeyW','KeyA','KeyS','KeyD'].includes(event.code)) event.preventDefault();
+    event.stopImmediatePropagation(); return;
+  }
   if (event.target.matches('input,select,textarea')) {event.stopImmediatePropagation();return;}
   if (event.code === 'KeyR') {event.preventDefault();event.stopImmediatePropagation();if(ready&&!busy&&!seeking)reset();return;}
   if (['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','KeyZ','KeyU'].includes(event.code) && !state.replaying && !busy && !seeking) {
@@ -235,30 +278,51 @@ window.addEventListener('keydown', event => {
   }
 }, true);
 document.querySelectorAll('[data-move]').forEach(button => {
-  const manualMove = () => {if (!state.replaying && !busy && !seeking) {replayDirty=true;state.status='manual';status('Your move.');}};
+  const manualMove = () => {if (!replayOnly && !state.replaying && !busy && !seeking) {replayDirty=true;state.status='manual';status('Your move.');}};
   button.addEventListener('pointerdown', manualMove, true);
   button.addEventListener('click', event => {if(event.detail===0)manualMove();}, true);
 });
+// Capture before the vendored runtime registers its delegated touch handlers.
+// Hidden controls are also inert/disabled, but input rejection is independent
+// of visibility so synthetic clicks and pointer events cannot move the board.
+for (const type of ['pointerdown','pointermove','touchstart','touchmove','click','dblclick','contextmenu']) {
+  window.addEventListener(type, event => {
+    if (!replayOnly || !event.target.closest?.('#game-root,#manual-controls')) return;
+    event.preventDefault(); event.stopImmediatePropagation();
+  }, {capture:true,passive:false});
+}
 window.addEventListener('message', event => {
-  if (event.origin === location.origin && event.source === window.parent && event.data?.source === 'mazebench-process' && event.data.type === 'pause') stopReplay();
+  if (event.origin !== location.origin || event.source !== window.parent || event.data?.source !== 'mazebench-process') return;
+  if (event.data.type === 'pause') stopReplay();
+  else if (event.data.type === 'orient' && ready) orient();
 });
 document.addEventListener('visibilitychange', () => {if(document.hidden)stopReplay();});
 window.addEventListener('pagehide', event => {
   stopReplay();
   clearInterval(statsTimer);
+  clearTimeout(orientationTimer);
   if (!event.persisted) {disposed=true;app()?.threeRenderer?.dispose?.();}
 });
 
 try {
+  if (!['play','replay'].includes(mode)) throw new Error('Choose play or replay mode.');
   if (!caseId || !candidateId) throw new Error('Choose a recorded candidate to open its preview.');
+  document.body.dataset.mode = mode;
+  $('manual-controls').hidden = replayOnly; $('manual-controls').inert = replayOnly;
+  document.querySelector('.candidate-player').setAttribute('aria-label', replayOnly ? 'Recorded gameplay replay' : 'Interactive candidate preview');
+  $('maze-canvas').setAttribute('aria-label', replayOnly ? 'Read-only recorded maze replay. Use the replay controls to view saved actions.' : 'Interactive maze. Arrow keys move. Z undoes. R resets, including gems. A and D rotate the camera. W and S tilt it.');
   const catalog = await loadCatalog(), entry = catalog.cases.find(item => item.id === caseId);
   if (!entry?.process?.data) throw new Error('This case has no recorded authoring process.');
   const process = await jsonAsset(entry.process.data);
   candidate = process.candidates.find(item => item.id === candidateId);
   if (!candidate?.preview?.levelPath || candidate.preview.cellsSha256 !== candidate.cellsSha256) throw new Error('This candidate has no matching playable preview.');
+  if (replayOnly) {
+    replayRecord = (process.replays || []).find(item => item.id === replayId);
+    const replayNode = process.nodes?.find(node => node.id === replayRecord?.graphNodeId && node.kind === 'replay');
+    if (!replayId || !replayRecord || replayRecord.candidateId !== candidate.id || replayNode?.details?.candidateId !== candidate.id || replayNode?.details?.replayId !== replayRecord.id) throw new Error('Choose a saved replay event bound to this candidate.');
+  }
   document.title = `${candidateId} · ${entry.title} — Maze Harness`;
-  $('candidate-label').textContent = candidateId;
-  $('preview-status').textContent = 'Playable · not verified';
+  $('preview-status').textContent = replayOnly ? 'Loading recorded replay' : 'Playable draft';
   initialLevel = {...await jsonAsset(candidate.preview.levelPath,candidate.preview.levelSha256),
     hostOwnsPlayHud:true,hostOwnsWorldMapNavigation:true,disableHorizontalNeighborFetches:true,ignoreSavedGemProgress:true};
   window.__PLAY_DATA__ = structuredClone(initialLevel);
@@ -271,18 +335,18 @@ try {
   if (!app().threeRenderer?.isReady()) throw new Error('This preview requires WebGL. Enable hardware acceleration to play.');
   await app().threeRenderer.whenLevelStateModelsReady(initialLevel);
   app().playSurroundingRadius = 0;
+  installOrientationGuard();
   framePlayableArea();
   await idle();
-  try {await loadReplay();}
-  catch (error) {status('Playable preview; recorded replay unavailable: '+error.message);notify('error',{message:error.message});}
+  if (replayOnly) await loadReplay();
   ready = true;
   state.status = 'ready';
   sync();
   // Replay controls change the canvas height after the runtime's first layout.
   window.dispatchEvent(new Event('resize'));
   app().render();
-  if (!candidate.preview.replay || state.hasReplay) status(state.hasReplay ? 'Watch the recorded route, or use arrow keys to play.' : 'Playable iteration · no verified replay is recorded for this version.');
-  statsTimer = setInterval(() => {$('move-stat').textContent = `${app()?.moveHistory?.length || 0} moves`;}, 250);
+  status(replayOnly ? 'Read-only recording · play, pause, or step through saved actions.' : 'Playable iteration · arrow keys to move · Z undo · R reset.');
+  statsTimer = setInterval(() => {$('move-stat').textContent = replayOnly ? `${state.step} / ${state.total}` : `${app()?.moveHistory?.length || 0} moves`;}, 250);
   window.__HARNESS_READY__ = true;
   notify('ready',{hasReplay:state.hasReplay,total:state.total});
 } catch (error) {

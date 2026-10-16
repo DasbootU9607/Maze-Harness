@@ -23,7 +23,7 @@
     <div class="process-record-line"><span id="record-mode" class="record-mode">SAVED RECORD</span><span id="record-summary"></span></div>
     <div class="process-workspace">
       <aside class="timeline-column" aria-label="Recorded production timeline">
-        <header class="timeline-toolbar"><div class="timeline-heading"><h2>Build timeline</h2><span id="timeline-count" class="mono"></span></div><p id="timeline-context" class="timeline-context">Select an operation to see its evidence and associated version.</p></header>
+        <header class="timeline-toolbar"><div class="timeline-heading"><h2>Build timeline</h2><span id="timeline-count" class="mono"></span></div><p id="timeline-context" class="timeline-context">Select an operation to see its evidence and associated version.</p><details class="timeline-grouping-rule"><summary>How events are grouped</summary><p>The first skill, mechanism, and original-case reads, the first design note, every saved version, the first and last formal result for each version, formal failures or unknown results, saved replays, and delivery remain visible. Other consecutive records can be expanded in place. This is a display grouping; recorded order is unchanged.</p></details></header>
         <ol id="process-timeline" class="process-timeline timeline-scroll"></ol>
       </aside>
       <article id="operation-detail" class="operation-detail" aria-label="Selected operation">
@@ -31,9 +31,9 @@
         <h2 id="operation-title">Choose an operation</h2>
         <p id="operation-summary" class="operation-summary"></p>
         <section id="preview-shell" class="preview-shell" aria-labelledby="preview-title" hidden>
-          <header class="preview-toolbar"><div><span class="eyebrow">SAVED VERSION</span><span id="preview-title">3D preview</span></div><div class="preview-actions"><label class="process-sr-only" for="candidate-version">Preview a saved version</label><select id="candidate-version"></select><button id="expand-preview" type="button">Expand <span aria-hidden="true">&#8599;</span></button><button id="close-preview" type="button" hidden>Close <span aria-hidden="true">&#215;</span></button></div></header>
+          <header class="preview-toolbar"><span id="preview-title">Playable map</span><div class="preview-actions"><button id="expand-preview" type="button">Expand <span aria-hidden="true">&#8599;</span></button><button id="close-preview" type="button" hidden>Close <span aria-hidden="true">&#215;</span></button></div></header>
           <iframe id="preview-frame" class="preview-frame" title="Interactive saved maze version" allow="fullscreen" loading="eager"></iframe>
-          <div class="preview-foot"><span id="preview-status" role="status">Loading saved version...</span><span id="preview-diff"></span></div>
+          <span id="preview-status" class="process-sr-only" role="status">Loading saved version...</span>
           <p id="preview-error" class="preview-error" role="alert" hidden></p>
         </section>
         <section id="source-overview" class="source-overview" hidden></section>

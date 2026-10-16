@@ -1,6 +1,8 @@
 html,body.process-player{height:100%;min-height:320px;overflow:hidden;scroll-behavior:auto}
 
 .process-player [hidden]{display:none!important}
+.process-player[data-mode=replay] #manual-controls{display:none!important}
+.process-player[data-mode=replay] .maze-canvas{cursor:default;touch-action:none}
 .candidate-player{height:100%;display:flex;flex-direction:column;background:#fff;overflow:hidden;font-size:14px}
 .candidate-player button,.candidate-player select{font-size:14px;line-height:1.2}
 .candidate-player button{border:1px solid #dedede;border-radius:4px;background:#fff;padding:7px 9px;white-space:nowrap}
