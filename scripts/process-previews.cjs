@@ -96,18 +96,25 @@ function attachProcessPreviews(document, runDir, { engineRoot, runtime, emit }) 
     const levelPath = `data/process-levels/${document.caseId}/${candidate.id}.json`;
     candidate.preview = { levelPath, levelSha256: hash(levelBytes), cellsSha256: candidate.cellsSha256, status: 'iteration' };
     emit(levelPath, levelBytes);
-    const record = document.replays.find(replay => replay.candidateId === candidate.id);
-    if (!record) continue;
-    const event = events.find(event => event.id === record.id.replace(/^replay-/, ''));
-    assert(event?.type === 'artifact.saved' && event.details.kind === 'replay' && event.candidateId === candidate.id);
-    const base = fs.realpathSync(runDir), file = fs.realpathSync(path.resolve(runDir, event.details.artifactPath)), relative = path.relative(base, file);
-    assert(relative && relative !== '..' && !relative.startsWith('..' + path.sep) && !path.isAbsolute(relative), 'Replay escapes source run');
-    assert.equal(hash(fs.readFileSync(file)), record.sourceSha256, 'Recorded replay source bytes changed');
-    const replay = projectReplay(read(file), record); validateReplay(level, replay, createEngine);
-    const data = `data/process-replays/${document.caseId}/${candidate.id}.json`, replayBytes = bytes(replay);
-    record.data = data; record.sha256 = hash(replayBytes);
-    candidate.preview.replay = Object.fromEntries(['data', 'sha256', 'candidateId', 'cellsSha256', 'contractSha256', 'sourceSha256', 'route', 'frameCount', 'binding', 'sourceKind'].map(key => [key, record[key]]));
-    emit(data, replayBytes);
+    const records = document.replays.filter(replay => replay.candidateId === candidate.id);
+    if (!records.length) continue;
+    candidate.preview.replays = [];
+    for (const record of records) {
+      assert(/^replay-[a-z0-9-]+$/i.test(record.id), 'Invalid replay record identity');
+      const event = events.find(event => event.id === record.id.replace(/^replay-/, ''));
+      assert(event?.type === 'artifact.saved' && event.details.kind === 'replay' && event.candidateId === candidate.id);
+      const base = fs.realpathSync(runDir), file = fs.realpathSync(path.resolve(runDir, event.details.artifactPath)), relative = path.relative(base, file);
+      assert(relative && relative !== '..' && !relative.startsWith('..' + path.sep) && !path.isAbsolute(relative), 'Replay escapes source run');
+      assert.equal(hash(fs.readFileSync(file)), record.sourceSha256, 'Recorded replay source bytes changed');
+      const replay = projectReplay(read(file), record); validateReplay(level, replay, createEngine);
+      const data = `data/process-replays/${document.caseId}/${candidate.id}-${record.id}.json`, replayBytes = bytes(replay);
+      record.data = data; record.sha256 = hash(replayBytes);
+      candidate.preview.replays.push(Object.fromEntries(['id', 'data', 'sha256', 'candidateId', 'cellsSha256', 'contractSha256', 'sourceSha256', 'route', 'frameCount', 'binding', 'sourceKind'].map(key => [key, record[key]])));
+      emit(data, replayBytes);
+    }
+    // Keep the original single-replay API as an alias, never as a fallback for
+    // selecting a different recorded event.
+    candidate.preview.replay = structuredClone(candidate.preview.replays[0]);
   }
 }
 
@@ -141,16 +148,25 @@ function validatePreviewFiles(site, document) {
       }
     };
     assetCheck(level);
-    if (!preview.replay) continue;
-    const metadata = preview.replay, record = document.replays.find(replay => replay.candidateId === candidate.id && replay.data === metadata.data);
-    assert(record, 'Preview replay has no recorded source');
-    for (const key of Object.keys(metadata)) assert.equal(metadata[key], record[key], 'Preview replay record mismatch');
-    assert.equal(metadata.candidateId, candidate.id); assert.equal(metadata.cellsSha256, candidate.cellsSha256); assert.equal(metadata.contractSha256, candidate.contractSha256);
-    assert.equal(metadata.data, `data/process-replays/${document.caseId}/${candidate.id}.json`);
-    const replay = load(metadata.data, metadata.sha256);
-    for (const key of ['candidateId', 'cellsSha256', 'contractSha256', 'sourceSha256', 'route']) assert.equal(replay[key], metadata[key], 'Replay file binding mismatch');
-    assert.equal(replay.frames.length, metadata.frameCount);
-    validateReplay(level, replay, createEngine);
+    const records = (document.replays || []).filter(replay => replay.candidateId === candidate.id);
+    const descriptors = preview.replays ?? (preview.replay ? [preview.replay] : []);
+    assert(Array.isArray(descriptors), 'Invalid preview replay list');
+    assert.equal(descriptors.length, records.length, 'Every recorded replay needs its own preview binding');
+    if (preview.replays) {
+      assert.equal(new Set(descriptors.map(item => item.id)).size, descriptors.length, 'Duplicate preview replay identity');
+      assert.deepEqual(preview.replay, descriptors[0], 'Legacy replay alias must match the first recorded replay');
+    }
+    for (const metadata of descriptors) {
+      const record = records.find(replay => preview.replays ? replay.id === metadata.id : replay.data === metadata.data);
+      assert(record, 'Preview replay has no recorded source');
+      for (const key of Object.keys(metadata)) assert.equal(metadata[key], record[key], 'Preview replay record mismatch');
+      assert.equal(metadata.candidateId, candidate.id); assert.equal(metadata.cellsSha256, candidate.cellsSha256); assert.equal(metadata.contractSha256, candidate.contractSha256);
+      assert.equal(metadata.data, preview.replays ? `data/process-replays/${document.caseId}/${candidate.id}-${record.id}.json` : `data/process-replays/${document.caseId}/${candidate.id}.json`);
+      const replay = load(metadata.data, metadata.sha256);
+      for (const key of ['candidateId', 'cellsSha256', 'contractSha256', 'sourceSha256', 'route']) assert.equal(replay[key], metadata[key], 'Replay file binding mismatch');
+      assert.equal(replay.frames.length, metadata.frameCount);
+      validateReplay(level, replay, createEngine);
+    }
   }
 }
 

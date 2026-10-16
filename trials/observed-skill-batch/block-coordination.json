@@ -1,0 +1,508 @@
+{
+  "title": "Relay Court",
+  "cells": [
+    [
+      "#",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "g",
+      "#",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "g",
+      "#",
+      ".",
+      ".",
+      "p",
+      "M0",
+      "g",
+      "g",
+      "g",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "g",
+      "#",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "g",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "M1",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "g",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "g",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "g",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "g",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "g",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "g",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "g",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "g",
+      "M2",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ]
+  ],
+  "contract": {
+    "profile": "authored-planar-gate-planning-v1",
+    "mode": "complex",
+    "goal": {
+      "kind": "reach",
+      "cell": [
+        1,
+        0,
+        0
+      ]
+    },
+    "members": {
+      "M0": [
+        [
+          7,
+          4,
+          0
+        ]
+      ],
+      "M1": [
+        [
+          12,
+          6,
+          0
+        ]
+      ],
+      "M2": [
+        [
+          10,
+          11,
+          0
+        ]
+      ]
+    },
+    "roles": {
+      "M0": "Eastbound approach shield, released after the first landing",
+      "M1": "Southbound approach shield, released after the second landing",
+      "M2": "Westbound shield retained for northbound reuse"
+    },
+    "readReceipt": {
+      "path": "references/mechanism-logic.md",
+      "sha256": "ec08306e851dfda530120d5a05e9682196f23dc61a506540f7211bae120e4b44",
+      "readBeforeLayout": true
+    },
+    "inherited": [],
+    "events": {},
+    "stages": [
+      {
+        "name": "Reach the second shield",
+        "conflict": "Unoccupied gates prevent walking from the entry to the southern shield.",
+        "effect": "The eastbound shield delivers a reachable north input to M1.",
+        "keyStep": 5,
+        "event": {
+          "kind": "move",
+          "group": "M0",
+          "direction": "R"
+        },
+        "nextStand": [
+          12,
+          5,
+          0
+        ],
+        "nextInput": {
+          "direction": "D",
+          "event": {
+            "kind": "move",
+            "group": "M1",
+            "direction": "D"
+          }
+        }
+      },
+      {
+        "name": "Hand off to the retained shield",
+        "conflict": "The lower westbound lane is separated by another reactive gate run.",
+        "effect": "M1 delivers the player to the eastern input of M2 and remains parked.",
+        "keyStep": 12,
+        "event": {
+          "kind": "move",
+          "group": "M1",
+          "direction": "D"
+        },
+        "nextStand": [
+          11,
+          11,
+          0
+        ],
+        "nextInput": {
+          "direction": "L",
+          "event": {
+            "kind": "move",
+            "group": "M2",
+            "direction": "L"
+          }
+        }
+      },
+      {
+        "name": "Change the last pushing side",
+        "conflict": "Westbound transport alone cannot reach the upper doorway.",
+        "effect": "The last landing permits a southern input that sends the retained M2 north.",
+        "keyStep": 22,
+        "event": {
+          "kind": "move",
+          "group": "M2",
+          "direction": "L"
+        },
+        "nextStand": [
+          2,
+          12,
+          0
+        ],
+        "nextInput": {
+          "direction": "U",
+          "event": {
+            "kind": "move",
+            "group": "M2",
+            "direction": "U"
+          }
+        }
+      },
+      {
+        "name": "Release the final shield",
+        "conflict": "The parked shield blocks a direct north input but the door has a separate clear approach.",
+        "effect": "Walk around the parked final shield to the actual boundary doorway.",
+        "keyStep": 34,
+        "event": {
+          "kind": "move",
+          "group": "M2",
+          "direction": "U"
+        },
+        "nextStand": [
+          1,
+          0,
+          0
+        ]
+      }
+    ],
+    "dependencies": [],
+    "skill": "block-coordination",
+    "relations": [
+      "prepare-next-shield",
+      "independent-or-chain-motion",
+      "retain-or-release-tools"
+    ],
+    "branches": [
+      {
+        "name": "Prepared-northbound-shield",
+        "claim": "With the same player approach, placing M2 on the next north gate changes the next U from blocked to usable.",
+        "baseStep": 22,
+        "match": [
+          "player",
+          "M0",
+          "M1"
+        ],
+        "positive": {
+          "moves": "DLU",
+          "probe": "U",
+          "blocked": false,
+          "expect": {
+            "kind": "move",
+            "group": "M2",
+            "direction": "U"
+          },
+          "suffix": "UUUUUUUULUU"
+        },
+        "negative": {
+          "moves": "DLLUR",
+          "probe": "U",
+          "blocked": true,
+          "goalSearch": true,
+          "goalExpected": "unsolved"
+        }
+      }
+    ],
+    "exclusions": [
+      {
+        "name": "freeze-M0",
+        "event": {
+          "kind": "move",
+          "group": "M0"
+        }
+      },
+      {
+        "name": "freeze-M1",
+        "event": {
+          "kind": "move",
+          "group": "M1"
+        }
+      },
+      {
+        "name": "freeze-M2",
+        "event": {
+          "kind": "move",
+          "group": "M2"
+        }
+      }
+    ],
+    "orderedReuse": [
+      {
+        "name": "retained-shield-west-then-north",
+        "events": [
+          {
+            "kind": "move",
+            "group": "M2",
+            "direction": "L"
+          },
+          {
+            "kind": "move",
+            "group": "M2",
+            "direction": "U"
+          }
+        ]
+      }
+    ]
+  },
+  "witness": "RRRRRDRDDDDDLDLLLLLLLLDLUUUUUUUUUULUU"
+}

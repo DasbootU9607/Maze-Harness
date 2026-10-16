@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "trials": [
+    {
+      "skill": "boundary-stagger",
+      "title": "Offset Foundry",
+      "publicId": "authored-boundary-stagger-2f5622cc46de",
+      "spec": "boundary-stagger.json",
+      "versions": 3,
+      "geometryVersions": 2,
+      "inputs": 27,
+      "verificationChecks": 20,
+      "browserFrames": 28,
+      "testRecords": 6,
+      "nonPassingTests": 1
+    },
+    {
+      "skill": "hook-transfer",
+      "title": "Forklift Courtyard",
+      "publicId": "authored-hook-transfer-5e3a324db881",
+      "spec": "hook-transfer.json",
+      "versions": 4,
+      "geometryVersions": 2,
+      "inputs": 16,
+      "verificationChecks": 23,
+      "browserFrames": 17,
+      "testRecords": 5,
+      "nonPassingTests": 1
+    },
+    {
+      "skill": "constrained-transport",
+      "title": "Switchyard Tool Delivery",
+      "publicId": "authored-constrained-transport-60b4a35f5a3f",
+      "spec": "constrained-transport.json",
+      "versions": 2,
+      "geometryVersions": 2,
+      "inputs": 28,
+      "verificationChecks": 33,
+      "browserFrames": 29,
+      "testRecords": 6,
+      "nonPassingTests": 1
+    },
+    {
+      "skill": "skating-cross",
+      "title": "Frost Compass",
+      "publicId": "authored-skating-cross-942ab792fe79",
+      "spec": "skating-cross.json",
+      "versions": 3,
+      "geometryVersions": 2,
+      "inputs": 19,
+      "verificationChecks": 19,
+      "browserFrames": 20,
+      "testRecords": 6,
+      "nonPassingTests": 1
+    },
+    {
+      "skill": "block-coordination",
+      "title": "Relay Court",
+      "publicId": "authored-block-coordination-030c8da1aa61",
+      "spec": "block-coordination.json",
+      "versions": 2,
+      "geometryVersions": 2,
+      "inputs": 37,
+      "verificationChecks": 7,
+      "browserFrames": 38,
+      "testRecords": 3,
+      "nonPassingTests": 0
+    }
+  ]
+}

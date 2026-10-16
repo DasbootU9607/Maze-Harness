@@ -16,6 +16,25 @@ After setup, invoke a maze skill normally. The agent starts a task before readin
 
 Private settings accept `runtime`, `runsRoot`, `python` and `viewer` (default true). `MAZEBENCH_OBSERVER_CONFIG` selects a settings file; `MAZEBENCH_OBSERVER_RUNTIME` overrides the runtime path. These paths are local configuration, never published package data. `viewer: false` is intended for isolated tests. Imported helper APIs remain unchanged; automatic capture applies to CLI entrypoints, not arbitrary direct function calls.
 
+## Shared local process view
+
+The viewer can serve the checked public website on its existing port under `/Maze-Harness/`. Set `publicSiteDir` in a private `.mazebench-observatory.json` beside the runtime or in an ancestor directory. Paths resolve relative to that settings file. The server also honors `MAZEBENCH_OBSERVER_CONFIG`, or an explicit `node server.cjs --site PUBLIC_SITE_DIRECTORY` argument.
+
+For example, in the directory containing the runtime and repository:
+
+```json
+{
+  "runtime": "./authoring-observatory",
+  "publicSiteDir": "./Maze-Harness/site"
+}
+```
+
+Restart the viewer after changing configuration. Its normal polling discovers newly registered cases without another server or refresh command. A matching run displays **Key events and 3D preview**, opening the same collapsible process page and 3D player used by Pages. Raw evidence remains available in the original viewer.
+
+Matching requires the local run's last candidate and the public process's last candidate to agree on cells, contract and explicitly recorded skill. The public final pointer and actual cells fingerprint must also agree. Missing, ambiguous or stale matches show no link. This identifies a matching published artifact, not identical event histories: separate runs producing the same final artifact can link to the same public case. The current run's original evidence remains authoritative for its own operations.
+
+Only configure an already checked public `site` directory. Public routes reject hidden files, path traversal and symlink escapes. They allow same-origin frames, hashed import maps and renderer styles; private evidence retains its stricter content policy. The mount does not expose raw run directories as static files, write data or upload evidence.
+
 ## Evidence behavior
 
 `authoring-session.json` beside a spec joins operations to its run. A per-spec mapping avoids mixing different designs in the same directory. A successful build also writes a marker to its output directory, binding that build to its saved candidate and input file hashes. Validation of an older build remains bound to that build, even if its source spec has changed. Modified build files mark the binding as mismatched, never a passing result for the new map.
@@ -34,4 +53,4 @@ node scripts/test-authoring-process.cjs
 node tools/authoring-observatory/audit-run.cjs --run RUN_DIRECTORY --out NEW_REPORT.json
 ```
 
-The local server accepts GET only, checks loopback Host headers, prevents traversal and symlink escapes, and serves only its configured run directory. It has no write, command-execution or upload API.
+The local server accepts GET only, checks loopback Host headers, and prevents traversal and symlink escapes. It serves its viewer, configured run APIs and optional checked public site. It has no write, command-execution or upload API.

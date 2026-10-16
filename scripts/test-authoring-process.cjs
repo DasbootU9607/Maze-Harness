@@ -178,11 +178,12 @@ try {
     write(replayFile, alteredReplay);
     const wrongFrame = structuredClone(publicDoc), replaySha = hash(fs.readFileSync(replayFile));
     wrongFrame.candidates.find(candidate => candidate.id === final.id).preview.replay.sha256 = replaySha;
+    wrongFrame.candidates.find(candidate => candidate.id === final.id).preview.replays[0].sha256 = replaySha;
     wrongFrame.replays.find(replay => replay.candidateId === final.id).sha256 = replaySha;
     assert.throws(() => validatePreviewFiles(site, wrongFrame), /Saved actors differ/);
     fs.writeFileSync(replayFile, originalReplay);
     const mismatched = structuredClone(publicDoc); mismatched.candidates[0].preview.replay = structuredClone(final.preview.replay);
-    assert.throws(() => validatePreviewFiles(site, mismatched), /no recorded source/);
+    assert.throws(() => validatePreviewFiles(site, mismatched), /no recorded source|Every recorded replay/);
     assert.equal(synchronize({ ...args, 'authoring-run': run }, siteRoot).changed.length, 0, 'Trace synchronization must be idempotent');
     synchronize({}, siteRoot);
     assert.deepEqual(read(catalogFile).cases.find(item => item.id === entry.id).process, entry.process, 'Unrelated synchronization preserves an existing process');

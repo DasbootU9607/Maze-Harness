@@ -1,0 +1,841 @@
+{
+  "title": "Offset Foundry",
+  "cells": [
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      "M0",
+      ".",
+      "#",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      "M0",
+      "#",
+      ".",
+      "M2",
+      "M2",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "M1",
+      "#",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "G",
+      ".",
+      ".",
+      "M1",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      "p",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ]
+  ],
+  "contract": {
+    "profile": "planar-boundary-preparation-v2",
+    "mode": "complex",
+    "goal": {
+      "kind": "gem"
+    },
+    "members": {
+      "M0": [
+        [
+          6,
+          3,
+          0
+        ],
+        [
+          6,
+          4,
+          0
+        ]
+      ],
+      "M1": [
+        [
+          6,
+          5,
+          0
+        ],
+        [
+          6,
+          6,
+          0
+        ]
+      ],
+      "M2": [
+        [
+          9,
+          4,
+          0
+        ],
+        [
+          10,
+          4,
+          0
+        ]
+      ]
+    },
+    "roles": {
+      "M0": "Roof-limited release column",
+      "M1": "Exit corridor gate",
+      "M2": "Horizontal release-face shutter"
+    },
+    "allowRemoval": [],
+    "necessaryRoles": [
+      "M0",
+      "M1",
+      "M2"
+    ],
+    "optionalRoles": [],
+    "readReceipt": {
+      "path": "references/mechanism-logic.md",
+      "sha256": "c4953095eff5b1525a1c56ec59bf219dcde17bef352e4b0b76f80b27085cf5ac",
+      "readBeforeLayout": true
+    },
+    "inherited": [
+      {
+        "relation": "bs-contact-release",
+        "realization": "M1 upward input recruits M0 through (6,5)/(6,4); M0 top hits roof (6,2). M0 left disengages that contact.",
+        "members": {
+          "M0": [
+            [
+              6,
+              3,
+              0
+            ],
+            [
+              6,
+              4,
+              0
+            ]
+          ],
+          "M1": [
+            [
+              6,
+              5,
+              0
+            ],
+            [
+              6,
+              6,
+              0
+            ]
+          ]
+        },
+        "boundaries": [
+          [
+            6,
+            2,
+            0
+          ]
+        ],
+        "passages": [
+          [
+            6,
+            6,
+            0
+          ]
+        ],
+        "stances": [
+          [
+            6,
+            7,
+            0
+          ],
+          [
+            7,
+            3,
+            0
+          ]
+        ]
+      },
+      {
+        "relation": "bs-whole-body-access",
+        "realization": "The complete M2 domino can slide right only into the reserved bay, opening the bent path to the east face of M0. Both members of M1 must clear their destinations.",
+        "members": {
+          "M0": [
+            [
+              6,
+              3,
+              0
+            ],
+            [
+              6,
+              4,
+              0
+            ]
+          ],
+          "M1": [
+            [
+              6,
+              5,
+              0
+            ],
+            [
+              6,
+              6,
+              0
+            ]
+          ],
+          "M2": [
+            [
+              9,
+              4,
+              0
+            ],
+            [
+              10,
+              4,
+              0
+            ]
+          ]
+        },
+        "boundaries": [
+          [
+            10,
+            3,
+            0
+          ],
+          [
+            7,
+            5,
+            0
+          ]
+        ],
+        "passages": [
+          [
+            9,
+            4,
+            0
+          ],
+          [
+            9,
+            3,
+            0
+          ],
+          [
+            9,
+            2,
+            0
+          ],
+          [
+            8,
+            2,
+            0
+          ],
+          [
+            7,
+            2,
+            0
+          ]
+        ],
+        "stances": [
+          [
+            8,
+            4,
+            0
+          ],
+          [
+            7,
+            3,
+            0
+          ],
+          [
+            6,
+            7,
+            0
+          ]
+        ]
+      },
+      {
+        "relation": "bs-prepared-release",
+        "realization": "Parking M2 right opens the sole initial approach to M0-left; offsetting M0 permits M1 movement, after which gate repositioning uncovers the only gem corridor.",
+        "members": {
+          "M0": [
+            [
+              6,
+              3,
+              0
+            ],
+            [
+              6,
+              4,
+              0
+            ]
+          ],
+          "M1": [
+            [
+              6,
+              5,
+              0
+            ],
+            [
+              6,
+              6,
+              0
+            ]
+          ],
+          "M2": [
+            [
+              9,
+              4,
+              0
+            ],
+            [
+              10,
+              4,
+              0
+            ]
+          ]
+        },
+        "boundaries": [
+          [
+            8,
+            3,
+            0
+          ],
+          [
+            7,
+            4,
+            0
+          ],
+          [
+            5,
+            5,
+            0
+          ]
+        ],
+        "passages": [
+          [
+            9,
+            4,
+            0
+          ],
+          [
+            6,
+            6,
+            0
+          ],
+          [
+            5,
+            6,
+            0
+          ]
+        ],
+        "stances": [
+          [
+            8,
+            4,
+            0
+          ],
+          [
+            7,
+            3,
+            0
+          ],
+          [
+            6,
+            7,
+            0
+          ]
+        ]
+      }
+    ],
+    "changes": [
+      "New floor-only arrangement: a two-member horizontal shutter parks into a side bay; a bent access route exposes a two-member vertical column; a distinct vertical gate closes a one-cell gem corridor. No staircase outline, void disposal, original coordinates or source route is reused.",
+      "Add a three-cell lower aisle to allow recovery from a downward gate move; this is tested separately for directional bypasses.",
+      "The recovery aisle admits a valid downward finish. The final contract retains this bypass and tests necessary gate movement without claiming a unique upward solution."
+    ],
+    "spatial": {
+      "boundaries": [
+        [
+          6,
+          2,
+          0
+        ],
+        [
+          10,
+          3,
+          0
+        ],
+        [
+          8,
+          3,
+          0
+        ],
+        [
+          7,
+          4,
+          0
+        ],
+        [
+          5,
+          5,
+          0
+        ],
+        [
+          7,
+          5,
+          0
+        ]
+      ],
+      "voids": [],
+      "support": "Every actor occupies permanent floor at z=0. No removal is allowed. The right shutter bay and left column pocket retain full-body support.",
+      "blocked": [
+        {
+          "group": "M1",
+          "direction": "U",
+          "keyStep": 0,
+          "stance": [
+            6,
+            7,
+            0
+          ],
+          "restriction": "push",
+          "destinations": [
+            [
+              6,
+              2,
+              0
+            ]
+          ],
+          "reason": "The gate contacts the roof column and its top member would enter the fixed roof."
+        },
+        {
+          "group": "M0",
+          "direction": "L",
+          "keyStep": 0,
+          "stance": [
+            7,
+            3,
+            0
+          ],
+          "restriction": "stance",
+          "reason": "The only entry into the bent northern approach crosses the shutter at (9,4)."
+        }
+      ],
+      "reserved": [
+        {
+          "cell": [
+            8,
+            4,
+            0
+          ],
+          "function": "Shutter right-input stance"
+        },
+        {
+          "cell": [
+            11,
+            4,
+            0
+          ],
+          "function": "Shutter receiving bay"
+        },
+        {
+          "cell": [
+            7,
+            3,
+            0
+          ],
+          "function": "Column left-input stance reached after shutter parking"
+        },
+        {
+          "cell": [
+            5,
+            4,
+            0
+          ],
+          "function": "Column offset pocket"
+        },
+        {
+          "cell": [
+            6,
+            7,
+            0
+          ],
+          "function": "Gate upward stance retained after release"
+        },
+        {
+          "cell": [
+            6,
+            8,
+            0
+          ],
+          "function": "Restore a gate moved downward once from a reachable southern stance"
+        }
+      ]
+    },
+    "events": {
+      "park": {
+        "kind": "move",
+        "group": "M2",
+        "direction": "R"
+      },
+      "release": {
+        "kind": "move",
+        "group": "M0",
+        "direction": "L"
+      },
+      "offset": {
+        "kind": "offset"
+      },
+      "gateWork": {
+        "kind": "move",
+        "group": "M1"
+      }
+    },
+    "stages": [
+      {
+        "name": "Park the access shutter",
+        "event": "park",
+        "conflict": "M2 covers the only passage into the northern release-face route.",
+        "effect": "Expose (9,4) and reach the east side of M0.",
+        "keyStep": 5,
+        "nextStand": [
+          7,
+          3,
+          0
+        ],
+        "nextEvent": "release",
+        "nextDirection": "L"
+      },
+      {
+        "name": "Release the roof contact",
+        "event": "release",
+        "after": "park",
+        "conflict": "The M1 upward cluster includes M0, whose top destination is a roof wall.",
+        "effect": "Offset M0 left and preserve the southern stance for M1.",
+        "keyStep": 11,
+        "nextStand": [
+          6,
+          7,
+          0
+        ],
+        "nextEvent": "gateWork",
+        "nextDirection": "U"
+      },
+      {
+        "name": "Clear the exit gate",
+        "event": "gateWork",
+        "after": "release",
+        "conflict": "M1 occupies the only connection to the gem corridor.",
+        "effect": "Move M1 to vacate (6,6); the upward witness opens a walking finish, while a separately replayed downward completion is also legal.",
+        "keyStep": 24,
+        "nextStand": [
+          5,
+          6,
+          0
+        ]
+      }
+    ],
+    "dependencies": [
+      {
+        "prepare": "park",
+        "before": "release",
+        "conflict": "The release stance cannot be reached before M2-right opens the bent approach."
+      },
+      {
+        "prepare": "release",
+        "before": "gateWork",
+        "conflict": "M0 must independently shift left before M1 can move from its initial constrained pose."
+      },
+      {
+        "prepare": "gateWork",
+        "before": "goal",
+        "conflict": "M1 must move to clear the sole gem corridor; upward motion is not uniquely required."
+      }
+    ],
+    "mechanism": {
+      "kind": "boundary",
+      "pair": [
+        "M0",
+        "M1"
+      ]
+    },
+    "releaseEvent": "release",
+    "preparationEvents": [
+      "park"
+    ],
+    "boundaryControls": [
+      {
+        "name": "roof_column_cluster",
+        "prefix": "",
+        "stance": [
+          6,
+          7,
+          0
+        ],
+        "direction": "U",
+        "group": "M1",
+        "walls": [
+          [
+            6,
+            2,
+            0
+          ]
+        ],
+        "forbid": "release"
+      }
+    ]
+  },
+  "witness": "LUUURUULLDLRURRDDDDLDLLULLL"
+}

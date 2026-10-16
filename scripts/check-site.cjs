@@ -27,7 +27,20 @@ function checkAuthoringProcess(site, entry, record) {
   const process = JSON.parse(bytes.toString('utf8'));
   assertPublicPrivacy(process); assertAcyclic(process.nodes, process.edges);
   assert.equal(process.schemaVersion, 1); assert.equal(process.caseId, entry.id); assert.equal(process.skill, entry.skill); assert.equal(process.title, entry.title);
-  assert.equal(process.coverage.audit.status, 'passed'); assert.equal(process.coverage.audit.failed, 0); assert.equal(process.coverage.audit.unknown, 0);
+  assert.equal(process.coverage.audit.failed, 0);
+  const audit = process.coverage.audit, exceptions = audit.exceptions || [];
+  if (audit.status === 'passed') { assert.equal(audit.unknown, 0); assert.equal(exceptions.length, 0); }
+  else {
+    assert.equal(audit.status, 'unknown'); assert(exceptions.length > 0); assert.equal(exceptions.length, audit.unknown);
+    assert.equal(new Set(exceptions.map(item => item.testId)).size, exceptions.length);
+    for (const item of exceptions) {
+      const test = process.tests.find(test => test.id === item.testId);
+      assert(item.check === 'test.bindingBasis' && item.status === 'unknown' && item.basis === 'command-boundaries-only' && test && ['failed', 'error', 'unknown'].includes(test.status) && test.bindingBasis === item.basis, 'Unapproved audit uncertainty');
+    }
+  }
+  const weakTests = process.tests.filter(test => test.bindingBasis === 'command-boundaries-only');
+  assert.deepEqual(weakTests.map(test => test.id).sort(), exceptions.map(item => item.testId).sort(), 'Audit exceptions must identify every weakly bound test');
+  assert(weakTests.every(test => ['failed', 'error', 'unknown'].includes(test.status) && test.binding === 'observed-command-association'), 'Weakly bound history cannot claim exact or passed');
   const nodes = new Map(process.nodes.map(node => [node.id, node]));
   const candidates = new Map(process.candidates.map(candidate => [candidate.id, candidate]));
   const tests = new Map(process.tests.map(test => [test.id, test]));
@@ -101,7 +114,7 @@ function checkAuthoringProcess(site, entry, record) {
     if (edge.kind === 'annotation') assert.equal(process.notes.find(note => note.id === to.details.noteId).candidateId, from.details.candidateId, 'Annotation edge targets the wrong candidate');
     if (edge.kind === 'supports') {
       if (from.kind === 'candidate') assert.equal(from.details.candidateId, final.id, 'An older candidate cannot support final delivery');
-      else { assert.equal(from.kind, 'test'); const test = tests.get(from.details.testId); assert(test.status === 'passed' && test.binding === 'exact' && test.category === 'test' && test.candidateId === final.id, 'Failed or unbound test cannot support delivery'); }
+      else { assert.equal(from.kind, 'test'); const test = tests.get(from.details.testId); assert(test.status === 'passed' && test.binding === 'exact' && (!test.bindingBasis || test.bindingBasis === 'report-fingerprints-and-command-boundaries') && test.category === 'test' && test.candidateId === final.id, 'Failed or unbound test cannot support delivery'); }
     }
   }
   assert(hasEdge(final.graphNodeId, delivery.id, 'supports'), 'Missing final delivery association');

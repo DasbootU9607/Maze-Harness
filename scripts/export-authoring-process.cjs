@@ -126,7 +126,11 @@ function assertPublicPrivacy(document, identities = []) {
     assert(Array.isArray(document.coverage.sources.indirect));
     for (const source of document.coverage.sources.indirect) { fields(source, ['caseId', 'viaResourceIds', 'basis'], 'indirect source'); assert(/^[A-P]x[A-P]$/.test(source.caseId)); strings(source.viaResourceIds); assert.equal(source.basis, 'skill-source-reference'); }
   }
-  fields(document.coverage.audit, ['status', 'failed', 'unknown'], 'audit');
+  fields(document.coverage.audit, ['status', 'failed', 'unknown', 'exceptions'], 'audit');
+  if (document.coverage.audit.exceptions !== undefined) {
+    assert(Array.isArray(document.coverage.audit.exceptions));
+    for (const item of document.coverage.audit.exceptions) { fields(item, ['check', 'testId', 'basis', 'status'], 'audit.exception'); flat(item); }
+  }
   assert(Array.isArray(document.coverage.limitations) && document.coverage.limitations.every(value => typeof value === 'string'));
   for (const key of ['nodes', 'edges', 'candidates', 'tests', 'notes', 'resources']) assert(Array.isArray(document[key]), 'Missing public array: ' + key);
   for (const node of document.nodes) {
@@ -140,10 +144,15 @@ function assertPublicPrivacy(document, identities = []) {
   for (const candidate of document.candidates) {
     fields(candidate, ['id', 'graphNodeId', 'label', 'parentId', 'parentIds', 'cells', 'sha256', 'cellsSha256', 'contractSha256', 'origin', 'parentBasis', 'diff', 'preview'], 'candidate');
     if (candidate.preview) {
-      fields(candidate.preview, ['levelPath', 'levelSha256', 'cellsSha256', 'status', 'replay'], 'preview');
+      fields(candidate.preview, ['levelPath', 'levelSha256', 'cellsSha256', 'status', 'replay', 'replays'], 'preview');
       assert.equal(candidate.preview.status, 'iteration');
       for (const key of ['levelPath', 'levelSha256', 'cellsSha256']) assert(typeof candidate.preview[key] === 'string');
-      if (candidate.preview.replay) { fields(candidate.preview.replay, ['data', 'sha256', 'candidateId', 'cellsSha256', 'contractSha256', 'sourceSha256', 'route', 'frameCount', 'binding', 'sourceKind'], 'preview.replay'); flat(candidate.preview.replay); }
+      const replayFields = ['id', 'data', 'sha256', 'candidateId', 'cellsSha256', 'contractSha256', 'sourceSha256', 'route', 'frameCount', 'binding', 'sourceKind'];
+      if (candidate.preview.replay) { fields(candidate.preview.replay, replayFields, 'preview.replay'); flat(candidate.preview.replay); }
+      if (candidate.preview.replays !== undefined) {
+        assert(Array.isArray(candidate.preview.replays), 'Expected a public replay descriptor array');
+        for (const replay of candidate.preview.replays) { fields(replay, replayFields, 'preview.replays'); flat(replay); assert(/^replay-[a-z0-9-]+$/i.test(replay.id), 'Invalid replay descriptor identity'); }
+      }
     }
     publicCells(candidate.cells); fields(candidate.diff, ['added', 'removed', 'changed'], 'diff');
     for (const key of ['added', 'removed', 'changed']) {
@@ -152,7 +161,7 @@ function assertPublicPrivacy(document, identities = []) {
     }
   }
   for (const test of document.tests) {
-    fields(test, ['id', 'graphNodeId', 'candidateId', 'label', 'status', 'checks', 'scope', 'binding', 'origin', 'category'], 'test');
+    fields(test, ['id', 'graphNodeId', 'candidateId', 'label', 'status', 'checks', 'scope', 'binding', 'bindingBasis', 'origin', 'category'], 'test');
     assert(Array.isArray(test.checks)); for (const check of test.checks) fields(check, ['name', 'status'], 'test.check');
   }
   for (const note of document.notes) { fields(note, ['id', 'graphNodeId', 'candidateId', 'label', 'goal', 'change', 'reason', 'sources', 'expectedChecks', 'origin', 'retrospective'], 'note'); assert(['label', 'goal', 'change', 'reason'].every(key => typeof note[key] === 'string')); assert(['sources', 'expectedChecks'].every(key => Array.isArray(note[key]) && note[key].every(value => typeof value === 'string'))); }
@@ -174,8 +183,16 @@ function exportProcess(runDirectory, { caseId, expectedCellsSha256, expectedCont
   const runDir = path.resolve(runDirectory);
   const { auditRun } = require('../tools/authoring-observatory/audit-run.cjs');
   const audit = auditRun(runDir);
-  assert.equal(audit.status, 'passed', 'Authoring run evidence audit must pass before public export');
   const manifest = read(savedFile(runDir, 'manifest.json')), index = read(savedFile(runDir, 'index.json'));
+  const auditExceptions = [];
+  for (const check of audit.checks.filter(item => item.status === 'unknown')) {
+    const testId = /^Test (t[0-9]+) is associated by command-boundary hashes only;/.exec(check.detail)?.[1];
+    const test = index.tests.find(item => item.id === testId);
+    assert(check.name === 'test.bindingBasis' && test && ['failed', 'error', 'unknown'].includes(test.status) && test.bindingBasis === 'command-boundaries-only', 'Authoring run evidence audit must pass except explicitly scoped non-passed command-boundary tests');
+    auditExceptions.push({check: 'test.bindingBasis', testId, basis: 'command-boundaries-only', status: 'unknown'});
+  }
+  assert.equal(audit.counts.failed, 0, 'Authoring run evidence audit must pass without integrity failures');
+  assert(audit.status === 'passed' || audit.status === 'unknown' && auditExceptions.length === audit.counts.unknown && auditExceptions.length > 0, 'Authoring run evidence audit must pass except explicitly scoped non-passed command-boundary tests');
   assert(['complete', 'imported'].includes(manifest.status), 'Complete the authoring run before export');
   const events = fs.readFileSync(savedFile(runDir, 'events.jsonl'), 'utf8').split(/\r?\n/).filter(Boolean).map(JSON.parse);
   const last = index.candidates.at(-1);
@@ -183,7 +200,7 @@ function exportProcess(runDirectory, { caseId, expectedCellsSha256, expectedCont
   if (manifest.finalCandidateId) assert.equal(manifest.finalCandidateId, last.id, 'Final candidate marker is stale');
   assert.equal(last.cellsSha256, expectedCellsSha256, 'Published cells do not match the final recorded candidate');
   assert.equal(last.contractSha256, expectedContractSha256, 'Published contract does not match the final recorded candidate');
-  assert(index.tests.some(test => test.candidateId === last.id && test.status === 'passed' && test.binding === 'exact' && test.inputSha256 === last.sha256), 'Final candidate needs a passed test with exact recorded input');
+  assert(index.tests.some(test => test.candidateId === last.id && test.status === 'passed' && test.binding === 'exact' && test.bindingBasis === 'report-fingerprints-and-command-boundaries' && test.inputSha256 === last.sha256), 'Final candidate needs a passed test with exact recorded input and report fingerprints');
   const identities = identityTokens(index), clean = (text, limit) => sanitizeText(text, identities, limit);
   const nodes = [], edges = [], candidates = [], tests = [], notes = [], resources = [], operations = [], replays = [];
   const sequence = (type, id, fallback = 0) => events.find(event => event.type === type && (event.details?.id === id || event.candidateId === id))?.seq ?? fallback;
@@ -205,6 +222,11 @@ function exportProcess(runDirectory, { caseId, expectedCellsSha256, expectedCont
       : names.some(name => name.startsWith('normal_play_')) ? 'Browser replay and editor export' : 'Recorded test ' + id;
     const label = /[\u3400-\u9fff]/.test(item.label || '') ? fallbackLabel : clean(item.label || id, 200);
     const test = { id, graphNodeId: 'test-' + id, candidateId, label, status: statusOf(item.status), checks: (item.checks || []).map(check => ({ name: clean(check.name, 200), status: statusOf(check.status || check.verdict) })), scope: clean(item.scope), binding: ['exact', 'historical', 'mismatch', 'missing'].includes(item.binding) ? item.binding : 'missing', origin: item.origin === 'historical' ? 'historical' : 'observed', category: 'test' };
+    test.bindingBasis = ['report-fingerprints-and-command-boundaries', 'command-boundaries-only'].includes(item.bindingBasis) ? item.bindingBasis : 'unspecified';
+    if (test.bindingBasis === 'command-boundaries-only') {
+      test.binding = 'observed-command-association';
+      test.scope += ' Association is limited to captured command-boundary hashes; the saved report does not independently identify its map input. This result cannot support final acceptance.';
+    }
     tests.push(test);
     nodes.push({ id: test.graphNodeId, kind: 'test', label: test.label, status: graphStatus(test.status), order: sequence('test.completed', id), summary: test.scope, details: { testId: id, candidateId, binding: test.binding, category: test.category } });
     if (candidateId) edges.push({ from: 'candidate-' + candidateId, to: test.graphNodeId, kind: 'tested', label: test.binding, inferred: test.binding !== 'exact' });
@@ -240,7 +262,9 @@ function exportProcess(runDirectory, { caseId, expectedCellsSha256, expectedCont
     assert(typeof saved.path === 'string' && /^[UDLR]+$/.test(saved.path), 'Replay needs recorded ordinary inputs');
     assert(Array.isArray(saved.frames) && saved.frames.length === saved.path.length + 1, 'Replay must include initial and every input frame');
     const id = 'replay-' + idOf(event.id);
-    const replay = { id, graphNodeId: id, candidateId: candidate.id, label: 'Saved ordinary gameplay replay', route: saved.path, frameCount: saved.frames.length,
+    const label = saved.source === 'Observed actor states from ordinary local MazeBench browser Play handler, compared at every input against the official engine'
+      ? 'Saved browser playthrough' : 'Saved ordinary gameplay replay';
+    const replay = { id, graphNodeId: id, candidateId: candidate.id, label, route: saved.path, frameCount: saved.frames.length,
       binding: 'exact-artifact', sourceKind: 'saved-replay', sourceSha256: hash(bytes), cellsSha256: candidate.cellsSha256, contractSha256: candidate.contractSha256 };
     replays.push(replay);
     nodes.push({ id, kind: 'replay', label: replay.label, status: 'neutral', order: event.seq,
@@ -290,11 +314,11 @@ function exportProcess(runDirectory, { caseId, expectedCellsSha256, expectedCont
   const deliveryId = 'delivery-final';
   nodes.push({ id: deliveryId, kind: 'delivery', label: 'Published final candidate ' + last.id, status: 'passed', order: events.at(-1)?.seq + 1 || 1, summary: 'Final map and contract hashes match the published design. Earlier failed attempts remain visible.', details: { caseId, candidateId: last.id, cellsSha256: last.cellsSha256, contractSha256: last.contractSha256 } });
   edges.push({ from: 'candidate-' + last.id, to: deliveryId, kind: 'supports', label: 'Published cells and contract match', inferred: false });
-  for (const test of tests.filter(test => test.category === 'test' && test.candidateId === last.id && test.status === 'passed' && test.binding === 'exact')) edges.push({ from: test.graphNodeId, to: deliveryId, kind: 'supports', label: 'Passed within the stated test scope', inferred: false });
+  for (const test of tests.filter(test => test.category === 'test' && test.candidateId === last.id && test.status === 'passed' && test.binding === 'exact' && test.bindingBasis === 'report-fingerprints-and-command-boundaries')) edges.push({ from: test.graphNodeId, to: deliveryId, kind: 'supports', label: 'Passed within the stated test scope', inferred: false });
   nodes.sort((a, b) => a.order - b.order || a.id.localeCompare(b.id));
   const document = { schemaVersion: 1, caseId, title: clean(title || last.label, 200), skill: clean(skill, 100), finalCandidateId: last.id,
     summary: `${candidates.length} recorded candidates, ${tests.filter(test => test.category === 'test').length} tests, ${tests.filter(test => test.category === 'diagnostic').length} failed diagnostics, and ${notes.length} agent annotations.`,
-    coverage: { mode: manifest.mode === 'historical' ? 'historical' : 'observed', audit: { status: audit.status, failed: audit.counts.failed, unknown: audit.counts.unknown },
+    coverage: { mode: manifest.mode === 'historical' ? 'historical' : 'observed', audit: { status: audit.status, failed: audit.counts.failed, unknown: audit.counts.unknown, ...(auditExceptions.length ? {exceptions: auditExceptions} : {}) },
       sources: { directOriginalCaseRead: directOriginalCaseIds.length ? 'recorded' : 'not-recorded', originalCaseResourceIds: directOriginalCaseIds,
         indirect: [...indirect].map(([caseId, viaResourceIds]) => ({ caseId, viaResourceIds, basis: 'skill-source-reference' })),
         scope: 'Direct reading is reported only for captured read events. A source named by a skill is indirect provenance, not evidence that this run opened or used the original case.' }, limitations: [
@@ -302,6 +326,7 @@ function exportProcess(runDirectory, { caseId, expectedCellsSha256, expectedCont
       'Snapshot parent links show recorded version order, not proof of causal reasoning. No unrecorded branches or merges are reconstructed.',
       'Agent annotations are concise explanations, not internal thought transcripts. Recorded resource delivery does not prove comprehension or use.',
       'Test outcomes retain their own scope. Author self-tests do not establish independent-agent effectiveness or human difficulty.',
+      ...(auditExceptions.length ? ['Non-passed tests ' + auditExceptions.map(item => item.testId).join(', ') + ' have command-boundary association only. Their report input identity remains unknown; they are retained as production history, not acceptance evidence.'] : []),
       ...(manifest.limitations || []).map(value => clean(value))
     ] }, nodes, edges, candidates, tests, notes, resources, operations, replays };
   assertAcyclic(nodes, edges); assertPublicPrivacy(document, identities);

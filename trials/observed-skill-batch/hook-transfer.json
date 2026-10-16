@@ -1,0 +1,730 @@
+{
+  "title": "Forklift Courtyard",
+  "cells": [
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "#",
+      "M1",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "M1",
+      ".",
+      ".",
+      "G",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "+",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      "M0",
+      "M0",
+      "M0",
+      "M0",
+      "M0",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      ".",
+      "M0",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      ".",
+      "p",
+      ".",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    [
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ]
+  ],
+  "contract": {
+    "profile": "planar-hook-depth-v2",
+    "mode": "complex",
+    "goal": {
+      "kind": "gem"
+    },
+    "members": {
+      "M0": [
+        [
+          6,
+          10,
+          0
+        ],
+        [
+          7,
+          10,
+          0
+        ],
+        [
+          8,
+          10,
+          0
+        ],
+        [
+          9,
+          10,
+          0
+        ],
+        [
+          10,
+          10,
+          0
+        ],
+        [
+          6,
+          11,
+          0
+        ]
+      ],
+      "M1": [
+        [
+          10,
+          7,
+          0
+        ],
+        [
+          10,
+          8,
+          0
+        ]
+      ]
+    },
+    "roles": {
+      "M0": "Supported elbow span: accessible input foot and remote working tip",
+      "M1": "Two-member passage latch with inaccessible upward input"
+    },
+    "allowRemoval": [],
+    "necessaryRoles": [
+      "M0",
+      "M1"
+    ],
+    "optionalRoles": [],
+    "readReceipt": {
+      "path": "references/mechanism-logic.md",
+      "sha256": "7dace0cba93c48cbca55a6f429b993220e516e18064c52c8f8a0876aefa41f08",
+      "readBeforeLayout": true
+    },
+    "inherited": [
+      {
+        "relation": "ht-remote-contact",
+        "realization": "The working tip lifts the latch on an input line laterally offset from the accessible foot.",
+        "members": {
+          "M0": [
+            [
+              6,
+              11,
+              0
+            ],
+            [
+              10,
+              10,
+              0
+            ]
+          ],
+          "M1": [
+            [
+              10,
+              8,
+              0
+            ]
+          ]
+        },
+        "boundaries": [
+          [
+            9,
+            7,
+            0
+          ],
+          [
+            11,
+            7,
+            0
+          ]
+        ],
+        "passages": [
+          [
+            11,
+            8,
+            0
+          ]
+        ],
+        "stances": [
+          [
+            6,
+            12,
+            0
+          ]
+        ]
+      },
+      {
+        "relation": "ht-operable-docking",
+        "realization": "Independent upward transport aligns the supported tool across a gap while preserving west-side circulation.",
+        "members": {
+          "M0": [
+            [
+              6,
+              10,
+              0
+            ],
+            [
+              7,
+              10,
+              0
+            ],
+            [
+              8,
+              10,
+              0
+            ],
+            [
+              9,
+              10,
+              0
+            ],
+            [
+              10,
+              10,
+              0
+            ],
+            [
+              6,
+              11,
+              0
+            ]
+          ]
+        },
+        "boundaries": [
+          [
+            9,
+            7,
+            0
+          ]
+        ],
+        "passages": [
+          [
+            5,
+            8,
+            0
+          ]
+        ],
+        "stances": [
+          [
+            6,
+            12,
+            0
+          ]
+        ]
+      },
+      {
+        "relation": "ht-continued-work",
+        "realization": "After lifting the latch the span still occupies the only eastward passage and must be withdrawn.",
+        "members": {
+          "M0": [
+            [
+              6,
+              10,
+              0
+            ],
+            [
+              7,
+              10,
+              0
+            ],
+            [
+              8,
+              10,
+              0
+            ],
+            [
+              9,
+              10,
+              0
+            ],
+            [
+              10,
+              10,
+              0
+            ],
+            [
+              6,
+              11,
+              0
+            ]
+          ],
+          "M1": [
+            [
+              10,
+              7,
+              0
+            ],
+            [
+              10,
+              8,
+              0
+            ]
+          ]
+        },
+        "boundaries": [
+          [
+            11,
+            7,
+            0
+          ]
+        ],
+        "passages": [
+          [
+            11,
+            8,
+            0
+          ]
+        ],
+        "stances": [
+          [
+            6,
+            7,
+            0
+          ]
+        ]
+      }
+    ],
+    "changes": [
+      "New six-member elbow span and two-member latch, replacing the source C enclosure and bent-tail target.",
+      "A side-contact lift from a southern staging bay replaces the source rear release.",
+      "The tool must vacate the east passage after lifting; continued work is tool clearance rather than copying the source continuation.",
+      "Trimmed the unused southeast staging pocket after the initial layout passed structural verification; the western circulation and two functional input stances remain."
+    ],
+    "spatial": {
+      "boundaries": [
+        [
+          9,
+          6,
+          0
+        ],
+        [
+          9,
+          7,
+          0
+        ],
+        [
+          10,
+          5,
+          0
+        ],
+        [
+          11,
+          7,
+          0
+        ]
+      ],
+      "voids": [
+        [
+          10,
+          9,
+          0
+        ]
+      ],
+      "support": "The tool remains supported by its western span and elbow while its remote tip crosses the one-cell void. All actors remain at z=0.",
+      "blocked": [
+        {
+          "group": "M1",
+          "direction": "U",
+          "keyStep": 0,
+          "stance": [
+            10,
+            9,
+            0
+          ],
+          "restriction": "stance",
+          "reason": "The direct upward stance lies in void; remote supported contact is required."
+        }
+      ],
+      "reserved": [
+        {
+          "cell": [
+            5,
+            7,
+            0
+          ],
+          "function": "West circulation around the span"
+        },
+        {
+          "cell": [
+            6,
+            7,
+            0
+          ],
+          "function": "Downward withdrawal input"
+        },
+        {
+          "cell": [
+            5,
+            8,
+            0
+          ],
+          "function": "West circulation linking the staging and upper bays"
+        },
+        {
+          "cell": [
+            6,
+            12,
+            0
+          ],
+          "function": "Initial independent docking input"
+        }
+      ]
+    },
+    "events": {
+      "dock": {
+        "kind": "independent-tool"
+      },
+      "lift": {
+        "kind": "contact"
+      },
+      "withdraw": {
+        "kind": "move",
+        "group": "M0"
+      },
+      "continued": {
+        "kind": "all-motion"
+      }
+    },
+    "stages": [
+      {
+        "name": "dock",
+        "event": "dock",
+        "conflict": "Remote tip starts below the latch and cannot yet transmit the useful lift.",
+        "effect": "Transport aligns the tip while preserving a reachable input.",
+        "keyStep": 2,
+        "nextStand": [
+          6,
+          11,
+          0
+        ],
+        "nextEvent": "lift",
+        "nextDirection": "U"
+      },
+      {
+        "name": "lift",
+        "event": "lift",
+        "after": "dock",
+        "conflict": "The direct upward latch stance is a void and horizontal movement hits its pocket walls.",
+        "effect": "Side contact lifts the latch from the passage.",
+        "keyStep": 3,
+        "nextStand": [
+          6,
+          7,
+          0
+        ],
+        "nextEvent": "withdraw",
+        "nextDirection": "D"
+      },
+      {
+        "name": "withdraw",
+        "event": "withdraw",
+        "after": "lift",
+        "conflict": "The useful span now occupies the east passage itself.",
+        "effect": "Moving it again clears the route to the gem.",
+        "keyStep": 9,
+        "nextStand": [
+          11,
+          8,
+          0
+        ]
+      }
+    ],
+    "dependencies": [
+      {
+        "prepare": "dock",
+        "before": "lift",
+        "conflict": "The tip begins one transport step short of the latch and cannot perform contact before independent docking."
+      },
+      {
+        "prepare": "lift",
+        "before": "goal",
+        "conflict": "The latch occupies the sole east passage and must be lifted before the gem can be reached."
+      },
+      {
+        "prepare": "withdraw",
+        "before": "goal",
+        "after": "lift",
+        "conflict": "After lifting the latch the tool itself blocks the same passage and must move again."
+      },
+      {
+        "prepare": "continued",
+        "before": "goal",
+        "after": "lift",
+        "conflict": "The first useful contact alone leaves the tool across the exit route, so continued rigid-body movement is required."
+      }
+    ],
+    "mechanism": {
+      "kind": "side",
+      "tool": "M0",
+      "target": "M1"
+    },
+    "selectedPost": [
+      {
+        "step": 3,
+        "groups": [
+          "M0"
+        ]
+      }
+    ],
+    "postContactGroups": [
+      "M0"
+    ]
+  },
+  "witness": "RUULUUURDRRRRRRR"
+}

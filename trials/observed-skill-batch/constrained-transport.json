@@ -1,0 +1,910 @@
+{
+  "title": "Switchyard Tool Delivery",
+  "cells": [
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      ".",
+      "p",
+      ".",
+      ".",
+      ".",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      ".+#",
+      "M0",
+      "M0",
+      "M0",
+      "+M0",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "M0",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      ".+#",
+      ".",
+      ".",
+      ".",
+      "+",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      ".",
+      ".",
+      "M1",
+      "M1",
+      "M2",
+      "M2",
+      "M2",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".",
+      "G",
+      ".",
+      ".",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#"
+    ],
+    [
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#",
+      ".+#"
+    ]
+  ],
+  "contract": {
+    "profile": "planar-transport-depth-v2",
+    "mode": "complex",
+    "goal": {
+      "kind": "gem-and-return",
+      "cell": [
+        6,
+        7,
+        0
+      ]
+    },
+    "members": {
+      "M0": [
+        [
+          6,
+          8,
+          0
+        ],
+        [
+          7,
+          8,
+          0
+        ],
+        [
+          8,
+          8,
+          0
+        ],
+        [
+          9,
+          8,
+          0
+        ],
+        [
+          9,
+          9,
+          0
+        ]
+      ],
+      "M1": [
+        [
+          7,
+          11,
+          0
+        ],
+        [
+          8,
+          11,
+          0
+        ]
+      ],
+      "M2": [
+        [
+          9,
+          11,
+          0
+        ],
+        [
+          10,
+          11,
+          0
+        ],
+        [
+          11,
+          11,
+          0
+        ]
+      ]
+    },
+    "roles": {
+      "M0": "Broad input head with an offset working toe",
+      "M1": "Two-cell passage shuttle",
+      "M2": "Three-cell crossbar reserving the shuttle destination"
+    },
+    "allowRemoval": [],
+    "necessaryRoles": [
+      "M0",
+      "M1",
+      "M2"
+    ],
+    "optionalRoles": [],
+    "readReceipt": {
+      "path": "references/mechanism-logic.md",
+      "sha256": "58160bf7ea100982d52b93731f9ab46c5969db3dda039a1c074458471ef6742b",
+      "readBeforeLayout": true
+    },
+    "inherited": [
+      {
+        "relation": "ct-usable-delivery",
+        "realization": "The input head is pushed at its western member while the eastern toe overhangs the void and contacts the crossbar; the western stance remains supported.",
+        "members": {
+          "M0": [
+            [
+              6,
+              8,
+              0
+            ],
+            [
+              7,
+              8,
+              0
+            ],
+            [
+              8,
+              8,
+              0
+            ],
+            [
+              9,
+              8,
+              0
+            ],
+            [
+              9,
+              9,
+              0
+            ]
+          ],
+          "M2": [
+            [
+              9,
+              11,
+              0
+            ],
+            [
+              10,
+              11,
+              0
+            ],
+            [
+              11,
+              11,
+              0
+            ]
+          ]
+        },
+        "boundaries": [
+          [
+            10,
+            10,
+            0
+          ]
+        ],
+        "passages": [
+          [
+            6,
+            9,
+            0
+          ]
+        ],
+        "stances": [
+          [
+            6,
+            8,
+            0
+          ]
+        ]
+      },
+      {
+        "relation": "ct-shared-clearance",
+        "realization": "The toe left in the crossbar row after contact occupies the shuttle destination. Recovering the full tool frees that shared row.",
+        "members": {
+          "M0": [
+            [
+              6,
+              8,
+              0
+            ],
+            [
+              7,
+              8,
+              0
+            ],
+            [
+              8,
+              8,
+              0
+            ],
+            [
+              9,
+              8,
+              0
+            ],
+            [
+              9,
+              9,
+              0
+            ]
+          ],
+          "M1": [
+            [
+              7,
+              11,
+              0
+            ],
+            [
+              8,
+              11,
+              0
+            ]
+          ]
+        },
+        "boundaries": [
+          [
+            5,
+            10,
+            0
+          ],
+          [
+            10,
+            10,
+            0
+          ],
+          [
+            7,
+            12,
+            0
+          ]
+        ],
+        "passages": [
+          [
+            8,
+            11,
+            0
+          ]
+        ],
+        "stances": [
+          [
+            6,
+            11,
+            0
+          ]
+        ]
+      },
+      {
+        "relation": "ct-recovery-and-reuse",
+        "realization": "The same tool first advances to move the crossbar, then retreats upward to make the shuttle push usable; the target displacement remains useful after recovery.",
+        "members": {
+          "M0": [
+            [
+              6,
+              8,
+              0
+            ],
+            [
+              7,
+              8,
+              0
+            ],
+            [
+              8,
+              8,
+              0
+            ],
+            [
+              9,
+              8,
+              0
+            ],
+            [
+              9,
+              9,
+              0
+            ]
+          ]
+        },
+        "boundaries": [
+          [
+            5,
+            10,
+            0
+          ],
+          [
+            10,
+            10,
+            0
+          ]
+        ],
+        "passages": [
+          [
+            4,
+            10,
+            0
+          ],
+          [
+            5,
+            11,
+            0
+          ]
+        ],
+        "stances": [
+          [
+            6,
+            11,
+            0
+          ]
+        ]
+      },
+      {
+        "relation": "ct-reserved-circulation",
+        "realization": "A west-side bypass around the fixed wall at (5,10) preserves the lower tool recovery stance without giving direct access into the gem pocket.",
+        "members": {
+          "M1": [
+            [
+              7,
+              11,
+              0
+            ],
+            [
+              8,
+              11,
+              0
+            ]
+          ]
+        },
+        "boundaries": [
+          [
+            5,
+            10,
+            0
+          ],
+          [
+            7,
+            12,
+            0
+          ]
+        ],
+        "passages": [
+          [
+            4,
+            9,
+            0
+          ],
+          [
+            4,
+            10,
+            0
+          ],
+          [
+            4,
+            11,
+            0
+          ]
+        ],
+        "stances": [
+          [
+            6,
+            11,
+            0
+          ]
+        ]
+      }
+    ],
+    "changes": [
+      "Built from the empty template: a compact west circulation loop, offset toe and broad head, shuttle row, and southern gem pocket replace the original large central helper exchange. No source cells or event poses were copied.",
+      "The post-contact toe obstruction must be removed before a different group can use the released crossbar space; the return objective reuses the west corridor.",
+      "Counterexample-driven revision: void beneath the initial eastern head prevents the axial input bypass found by verification-01 while preserving the intended side-contact witness."
+    ],
+    "spatial": {
+      "boundaries": [
+        [
+          5,
+          8,
+          0
+        ],
+        [
+          5,
+          10,
+          0
+        ],
+        [
+          10,
+          10,
+          0
+        ],
+        [
+          11,
+          10,
+          0
+        ],
+        [
+          12,
+          11,
+          0
+        ],
+        [
+          7,
+          12,
+          0
+        ]
+      ],
+      "voids": [
+        [
+          9,
+          8,
+          0
+        ],
+        [
+          9,
+          10,
+          0
+        ]
+      ],
+      "support": "Official group support: the broad tool retains supported members while its eastern head initially overhangs (9,8) and its toe later overhangs (9,10). These voids prevent axial player entry. No group removal is permitted.",
+      "blocked": [
+        {
+          "group": "M1",
+          "direction": "R",
+          "stance": [
+            6,
+            11,
+            0
+          ],
+          "keyStep": 0,
+          "restriction": "push",
+          "destinations": [
+            [
+              8,
+              11,
+              0
+            ],
+            [
+              9,
+              11,
+              0
+            ],
+            [
+              10,
+              11,
+              0
+            ],
+            [
+              11,
+              11,
+              0
+            ],
+            [
+              12,
+              11,
+              0
+            ]
+          ],
+          "reason": "The shuttle recruits the entire target crossbar, whose eastern member would enter the fixed boundary at (12,11)."
+        },
+        {
+          "group": "M2",
+          "direction": "D",
+          "stance": [
+            9,
+            10,
+            0
+          ],
+          "keyStep": 0,
+          "restriction": "stance",
+          "reason": "The direct downward input face is void; the other upper faces of the target are walls."
+        },
+        {
+          "group": "M0",
+          "direction": "D",
+          "stance": [
+            9,
+            8,
+            0
+          ],
+          "keyStep": 1,
+          "restriction": "stance",
+          "reason": "The eastern input stance is void after initial transport, so the working toe cannot be driven by an axial player input."
+        }
+      ],
+      "reserved": [
+        {
+          "cell": [
+            6,
+            11,
+            0
+          ],
+          "function": "Tool recovery from below after contact, then shuttle input from the west."
+        },
+        {
+          "cell": [
+            8,
+            12,
+            0
+          ],
+          "function": "Gem-pocket entry after the shuttle leaves the only open southern doorway."
+        }
+      ]
+    },
+    "events": {
+      "prep": {
+        "kind": "independent-tool"
+      },
+      "contact": {
+        "kind": "contact"
+      },
+      "recover": {
+        "kind": "move",
+        "group": "M0",
+        "direction": "U"
+      },
+      "shuttle": {
+        "kind": "move",
+        "group": "M1",
+        "direction": "R"
+      },
+      "postWork": {
+        "kind": "all-motion"
+      }
+    },
+    "stages": [
+      {
+        "name": "Offset crossbar displacement",
+        "event": "contact",
+        "keyStep": 2,
+        "nextStand": [
+          6,
+          11,
+          0
+        ],
+        "nextEvent": "recover",
+        "nextDirection": "U",
+        "conflict": "The target locks the shuttle row and cannot be pushed from its void or walled upper stances.",
+        "effect": "Transported offset toe pushes the crossbar down, leaving the toe in the newly released shuttle destination."
+      },
+      {
+        "name": "Recover the tool from shared space",
+        "event": "recover",
+        "after": "contact",
+        "keyStep": 9,
+        "nextStand": [
+          6,
+          11,
+          0
+        ],
+        "nextEvent": "shuttle",
+        "nextDirection": "R",
+        "conflict": "The tool toe now occupies the required shuttle destination, and lateral/southern tool moves are blocked by boundaries and the shuttle.",
+        "effect": "The reserved western circulation route reaches the lower input face; an upward retreat clears the shuttle row."
+      },
+      {
+        "name": "Release the gem doorway",
+        "event": "shuttle",
+        "after": "recover",
+        "keyStep": 12,
+        "nextStand": [
+          8,
+          12,
+          0
+        ],
+        "conflict": "The shuttle still spans the only approach to the southern pocket.",
+        "effect": "Moving the shuttle right into the target vacated row opens entry to the gem and retains the west-side return route."
+      }
+    ],
+    "dependencies": [
+      {
+        "prepare": "prep",
+        "before": "contact",
+        "conflict": "The initial tool is not docked; independent transport must first establish the actual contact opportunity."
+      },
+      {
+        "prepare": "contact",
+        "before": "shuttle",
+        "conflict": "The crossbar blocks the shuttle destination until the tool moves it."
+      },
+      {
+        "prepare": "recover",
+        "before": "shuttle",
+        "conflict": "The tool must withdraw from the released target row before the shuttle can move."
+      },
+      {
+        "prepare": "shuttle",
+        "before": "goal",
+        "conflict": "The shuttle blocks the gem doorway."
+      },
+      {
+        "prepare": "contact",
+        "before": "goal",
+        "conflict": "The crossbar must leave the shuttle row."
+      },
+      {
+        "prepare": "postWork",
+        "before": "goal",
+        "after": "contact",
+        "conflict": "Contact alone leaves both the toe and shuttle obstructing the gem route."
+      }
+    ],
+    "mechanism": {
+      "kind": "side",
+      "tool": "M0",
+      "target": "M2"
+    },
+    "opposingDirections": [
+      {
+        "group": "M0",
+        "directions": [
+          "D",
+          "U"
+        ],
+        "before": "shuttle"
+      }
+    ],
+    "reuse": [
+      {
+        "first": "contact",
+        "return": "recover",
+        "before": "shuttle",
+        "conflict": "After useful contact the working toe blocks the next group destination; the same tool must retreat.",
+        "progress": "A reachable legal rightward shuttle push or the complete goal, rather than a return to the initial tool pose."
+      }
+    ],
+    "postContactGroups": [
+      "M0",
+      "M1"
+    ]
+  },
+  "scenario": "authored-switchyard-transport-20261016",
+  "witness": "DDLLDDRRUDRRDDRLUULLLLUUUURR"
+}

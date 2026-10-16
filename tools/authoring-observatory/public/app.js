@@ -43,6 +43,9 @@ async function refresh() {
     if (digest === state.digest) return; state.digest = digest; state.run = run;
     const url = new URL(location.href); url.searchParams.set('run', state.id); history.replaceState(null, '', url);
     $('title').textContent = run.manifest.title;
+    $('process-link').hidden = !run.processUrl;
+    $('process-link').title = 'Published case matching this task\'s final map, contract and skill';
+    if (run.processUrl) $('process-link').href = run.processUrl; else $('process-link').removeAttribute('href');
     $('summary').textContent = `${run.manifest.status} / ${run.candidates.length} versions / ${run.tests.length} tests / ${run.events.length} events`;
     $('coverage').textContent = run.coverage.description;
     $('versions').replaceChildren();
