@@ -133,11 +133,11 @@ function renderTimeline() {
   }
   for (const node of state.nodes) {
     const item = el('li', `timeline-item ${node.kind} ${node.status || ''}`), button = el('button', `timeline-node ${node.kind} ${node.status || ''}`); button.type = 'button'; button.dataset.nodeId = node.id; button.dataset.kind = node.kind; button.title = nodeTitle(node);
-    const body = el('span', 'timeline-body'); body.append(el('span', 'timeline-label', nodeAction(node)));
+    const body = el('span', 'timeline-body'), content = el('span', 'timeline-text');
+    content.append(el('span', 'timeline-kind-inline', nodeCategory(node)), el('span', 'timeline-label', nodeAction(node))); body.append(content);
     if (node.kind === 'test' && statusNames[node.status]) body.append(el('span', `timeline-state ${node.status}`, recordFor(node)?.category === 'diagnostic' && node.status === 'failed' ? 'Process failed' : statusNames[node.status]));
-    const circle = el('span', 'timeline-dot'), ring = el('img', 'timeline-ring'), dot = el('img', 'timeline-center');
-    ring.src = './assets/process-ring.svg'; ring.alt = ''; ring.width = 42; ring.height = 42;
-    dot.src = './assets/process-node.svg'; dot.alt = ''; dot.width = 34; dot.height = 34;
+    const circle = el('span', 'timeline-dot'), ring = el('span', 'timeline-ring'), dot = el('span', 'timeline-center');
+    ring.setAttribute('aria-hidden', 'true'); dot.setAttribute('aria-hidden', 'true');
     circle.append(ring, dot, el('span', 'timeline-number', String(node.order ?? node.sourceIndex + 1).padStart(2, '0')));
     button.append(el('span', 'timeline-kind', nodeCategory(node)), circle, el('span', 'timeline-connector'), body); button.addEventListener('click', () => selectNode(node.id)); item.append(button); timeline.append(item);
   }
