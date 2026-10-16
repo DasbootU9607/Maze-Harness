@@ -218,8 +218,9 @@ function loadScript(name) {
   });
 }
 async function loadReplay() {
-  const descriptor = replayRecord, preview = candidate.preview.replay;
+  const descriptor = replayRecord, preview = candidate.preview.replays ? candidate.preview.replays.find(item => item.id === descriptor?.id) : candidate.preview.replay;
   if (!replayOnly || !descriptor || !preview) throw new Error('This event has no bound saved replay.');
+  if (preview.id && preview.id !== descriptor.id) throw new Error('The selected replay identity does not match this candidate preview.');
   for (const key of ['data','sha256','candidateId','cellsSha256','contractSha256','sourceSha256','route','frameCount','binding','sourceKind']) {
     if (descriptor[key] !== preview[key]) throw new Error('The selected replay does not match this candidate preview.');
   }

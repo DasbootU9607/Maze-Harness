@@ -1,0 +1,4175 @@
+{
+  "schemaVersion": 1,
+  "caseId": "authored-boundary-stagger-2f5622cc46de",
+  "title": "Offset Foundry",
+  "skill": "boundary-stagger",
+  "finalCandidateId": "v003",
+  "summary": "3 recorded candidates, 6 tests, 0 failed diagnostics, and 3 agent annotations.",
+  "coverage": {
+    "mode": "observed",
+    "audit": {
+      "status": "passed",
+      "failed": 0,
+      "unknown": 0
+    },
+    "sources": {
+      "directOriginalCaseRead": "recorded",
+      "originalCaseResourceIds": [
+        "r005",
+        "r006",
+        "r007"
+      ],
+      "indirect": [],
+      "scope": "Direct reading is reported only for captured read events. A source named by a skill is indirect provenance, not evidence that this run opened or used the original case."
+    },
+    "limitations": [
+      "Only recorded operations and saved snapshots are shown; transient in-memory drafts and unrecorded activity remain unknown.",
+      "Snapshot parent links show recorded version order, not proof of causal reasoning. No unrecorded branches or merges are reconstructed.",
+      "Agent annotations are concise explanations, not internal thought transcripts. Recorded resource delivery does not prove comprehension or use.",
+      "Test outcomes retain their own scope. Author self-tests do not establish independent-agent effectiveness or human difficulty.",
+      "Automatic CLI boundaries record supported build and verification commands. Other commands and resource reads require the skill observer helper.",
+      "Snapshots describe saved versions at operation boundaries, not every editor keystroke. Design notes are author statements, not internal reasoning.",
+      "A started task remains running until the author records finish. An interrupted task may therefore remain open."
+    ]
+  },
+  "nodes": [
+    {
+      "id": "resource-snapshot-e000003",
+      "kind": "resource",
+      "label": "Skill attached: mazebench-boundary-stagger/SKILL.md",
+      "status": "neutral",
+      "order": 3,
+      "summary": "Skill version captured as a dependency. This event does not record a reading.",
+      "details": {
+        "resourceId": "snapshot-e000003",
+        "displayPath": "mazebench-boundary-stagger/SKILL.md",
+        "sha256": "60b2ce239cbd194e081e7a8411ef120cb4351a647d69496dd295566f25306ea8",
+        "kind": "skill",
+        "delivery": "snapshot"
+      }
+    },
+    {
+      "id": "resource-r001",
+      "kind": "resource",
+      "label": "SKILL.md",
+      "status": "neutral",
+      "order": 4,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r001",
+        "displayPath": "mazebench-boundary-stagger/SKILL.md",
+        "sha256": "60b2ce239cbd194e081e7a8411ef120cb4351a647d69496dd295566f25306ea8",
+        "kind": "skill",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r002",
+      "kind": "resource",
+      "label": "mechanism-logic.md",
+      "status": "neutral",
+      "order": 5,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r002",
+        "displayPath": "mazebench-boundary-stagger/references/mechanism-logic.md",
+        "sha256": "c4953095eff5b1525a1c56ec59bf219dcde17bef352e4b0b76f80b27085cf5ac",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r003",
+      "kind": "resource",
+      "label": "planning-depth.md",
+      "status": "neutral",
+      "order": 6,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r003",
+        "displayPath": "mazebench-boundary-stagger/references/planning-depth.md",
+        "sha256": "f9cfed13dc075bd564871941bff6218fa6dfee5d9809218bdb261379cfec9033",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r004",
+      "kind": "resource",
+      "label": "complex-validation.md",
+      "status": "neutral",
+      "order": 7,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r004",
+        "displayPath": "mazebench-boundary-stagger/references/complex-validation.md",
+        "sha256": "da036b7b63e615abddf7ee4f5e007926cc1d603f873d55ac25c6cf6948144244",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r005",
+      "kind": "resource",
+      "label": "official-case.md",
+      "status": "neutral",
+      "order": 8,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r005",
+        "displayPath": "mazebench-boundary-stagger/references/official-case.md",
+        "sha256": "24e8afa2b2dabad8eb1ab53640772c07d447cb3c1425484551072f47c79d7b61",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r006",
+      "kind": "resource",
+      "label": "official-world-map.txt",
+      "status": "neutral",
+      "order": 9,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r006",
+        "displayPath": "mazebench-boundary-stagger/references/official-world-map.txt",
+        "sha256": "b02c9a4bfd089d9c4b1df350ad8b254d06b3ce42e91f11af8c587f0e420b5df7",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r007",
+      "kind": "resource",
+      "label": "official-states.json",
+      "status": "neutral",
+      "order": 10,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r007",
+        "displayPath": "mazebench-boundary-stagger/references/official-states.json",
+        "sha256": "c5de3355f34f068d24a8676a8b15220fbf81535b01767ae0920175143581bbe9",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r008",
+      "kind": "resource",
+      "label": "design-template.json",
+      "status": "neutral",
+      "order": 11,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r008",
+        "displayPath": "mazebench-boundary-stagger/references/design-template.json",
+        "sha256": "e3c6a8407cca8b9401072b61c1b98f9b6c572895b1fc88a785be6176f93a7cc4",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "note-n001",
+      "kind": "note",
+      "label": "Build a new three-stage floor-supported boundary puzzle from the empty template: open a release-face approach, independently offset a roof-limited rigid column, then raise a separate exit gate.",
+      "status": "neutral",
+      "order": 12,
+      "summary": "Use a horizontal parking shutter, a two-cell vertical roof column and a separate two-cell vertical gate, with a bent approach to the column's east face. Derive new floor corridors and one parking bay rather than copying the HxH stairs or support-loss layout.",
+      "details": {
+        "noteId": "n001",
+        "candidateId": null,
+        "origin": "agent_statement",
+        "retrospective": false
+      }
+    },
+    {
+      "id": "candidate-v001",
+      "kind": "candidate",
+      "label": "v001 · Offset Foundry",
+      "status": "neutral",
+      "order": 14,
+      "summary": "0 changed cells; 256 added; 0 removed.",
+      "details": {
+        "candidateId": "v001",
+        "cellsSha256": "d5fc43b173ff27f594e1be1fefcd4a9cce4811939ca76995818f6a070305cb2f",
+        "contractSha256": "14f1846689f0d1d19e5b75ce16501d5494b28e4ad313b37b077016479b53fecd",
+        "parentBasis": "observed-snapshot-order"
+      }
+    },
+    {
+      "id": "operation-e000013",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 15,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000013",
+        "candidateId": "v001",
+        "inputCandidateId": null,
+        "outputCandidateId": "v001",
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "operation-e000016",
+      "kind": "operation",
+      "label": "verify-complex.cjs",
+      "status": "neutral",
+      "order": 17,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000016",
+        "candidateId": "v001",
+        "inputCandidateId": "v001",
+        "outputCandidateId": "v001",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "test-t001",
+      "kind": "test",
+      "label": "verify-complex.cjs",
+      "status": "passed",
+      "order": 18,
+      "summary": "Author self-test; ordinary official physics; exhaustive restricted push-state graph, frozen walking components; no human-difficulty or independent-author claim.",
+      "details": {
+        "testId": "t001",
+        "candidateId": "v001",
+        "binding": "exact",
+        "category": "test"
+      }
+    },
+    {
+      "id": "note-n002",
+      "kind": "note",
+      "label": "Improve recovery after the roof column has been released, while preserving the three connected functional stages.",
+      "status": "neutral",
+      "order": 19,
+      "summary": "Add a lower circulation aisle at (6,8), (7,8), and (8,8), so a gate moved downward once can be approached from below and restored.",
+      "details": {
+        "noteId": "n002",
+        "candidateId": "v001",
+        "origin": "agent_statement",
+        "retrospective": false
+      }
+    },
+    {
+      "id": "candidate-v002",
+      "kind": "candidate",
+      "label": "v002 · Offset Foundry",
+      "status": "neutral",
+      "order": 21,
+      "summary": "3 changed cells; 0 added; 0 removed.",
+      "details": {
+        "candidateId": "v002",
+        "cellsSha256": "d063758257b5dc32bb08e380a14c7f1beaa841b56d8386ea172ff450c03d1756",
+        "contractSha256": "25ff1d2b71947dd52217018d89885fa1384d4d29ccf6b778d7db4c793653beb0",
+        "parentBasis": "observed-snapshot-order"
+      }
+    },
+    {
+      "id": "operation-e000020",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 22,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000020",
+        "candidateId": "v002",
+        "inputCandidateId": "v001",
+        "outputCandidateId": "v002",
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "test-t002",
+      "kind": "test",
+      "label": "verify-complex.cjs",
+      "status": "failed",
+      "order": 25,
+      "summary": "Author self-test; ordinary official physics; exhaustive restricted push-state graph, frozen walking components; no human-difficulty or independent-author claim.",
+      "details": {
+        "testId": "t002",
+        "candidateId": "v002",
+        "binding": "exact",
+        "category": "test"
+      }
+    },
+    {
+      "id": "note-n003",
+      "kind": "note",
+      "label": "Keep the recovery aisle and state the dependency actually supported by the revised map.",
+      "status": "neutral",
+      "order": 26,
+      "summary": "Replace the upward-only final-stage event with movement of the exit gate in either legal direction. Keep the ordinary upward witness and exact spatial checks, and add a selected-state recovery check.",
+      "details": {
+        "noteId": "n003",
+        "candidateId": "v002",
+        "origin": "agent_statement",
+        "retrospective": false
+      }
+    },
+    {
+      "id": "candidate-v003",
+      "kind": "candidate",
+      "label": "v003 · Offset Foundry",
+      "status": "neutral",
+      "order": 28,
+      "summary": "0 changed cells; 0 added; 0 removed.",
+      "details": {
+        "candidateId": "v003",
+        "cellsSha256": "d063758257b5dc32bb08e380a14c7f1beaa841b56d8386ea172ff450c03d1756",
+        "contractSha256": "234f84a1b69a985ef244608613992808e3a39c510f4024c7264f2e55e9b9ca3a",
+        "parentBasis": "observed-snapshot-order"
+      }
+    },
+    {
+      "id": "operation-e000027",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 29,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000027",
+        "candidateId": "v003",
+        "inputCandidateId": "v002",
+        "outputCandidateId": "v003",
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "operation-e000030",
+      "kind": "operation",
+      "label": "verify-complex.cjs",
+      "status": "neutral",
+      "order": 31,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000030",
+        "candidateId": "v003",
+        "inputCandidateId": "v003",
+        "outputCandidateId": "v003",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "test-t003",
+      "kind": "test",
+      "label": "verify-complex.cjs",
+      "status": "passed",
+      "order": 32,
+      "summary": "Author self-test; ordinary official physics; exhaustive restricted push-state graph, frozen walking components; no human-difficulty or independent-author claim.",
+      "details": {
+        "testId": "t003",
+        "candidateId": "v003",
+        "binding": "exact",
+        "category": "test"
+      }
+    },
+    {
+      "id": "operation-e000033",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 34,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000033",
+        "candidateId": "v003",
+        "inputCandidateId": "v003",
+        "outputCandidateId": "v003",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "test-t004",
+      "kind": "test",
+      "label": "recovery-check.json",
+      "status": "passed",
+      "order": 35,
+      "summary": "Selected-state ordinary-engine recovery after one downward gate move, and ordinary replay of the actual upward-necessity counterexample. No all-state deadlock claim.",
+      "details": {
+        "testId": "t004",
+        "candidateId": "v003",
+        "binding": "exact",
+        "category": "test"
+      }
+    },
+    {
+      "id": "operation-e000036",
+      "kind": "operation",
+      "label": "build-complex.cjs",
+      "status": "neutral",
+      "order": 37,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000036",
+        "candidateId": "v003",
+        "inputCandidateId": "v003",
+        "outputCandidateId": "v003",
+        "kind": "build",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "operation-e000039",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 40,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000039",
+        "candidateId": "v003",
+        "inputCandidateId": "v003",
+        "outputCandidateId": "v003",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "test-t005",
+      "kind": "test",
+      "label": "replay-check-01.json",
+      "status": "passed",
+      "order": 41,
+      "summary": "Author self-test of saved build cells and complete ordinary official-engine route. Every ordinary move is compared with moveForSearch; no browser, human difficulty or global deadlock claim.",
+      "details": {
+        "testId": "t005",
+        "candidateId": "v003",
+        "binding": "exact",
+        "category": "test"
+      }
+    },
+    {
+      "id": "replay-e000042",
+      "kind": "replay",
+      "label": "Saved ordinary gameplay replay",
+      "status": "neutral",
+      "order": 42,
+      "summary": "27 recorded inputs and 28 saved frames, bound to v003.",
+      "details": {
+        "replayId": "replay-e000042",
+        "candidateId": "v003",
+        "binding": "exact-artifact",
+        "sourceKind": "saved-replay"
+      }
+    },
+    {
+      "id": "operation-e000043",
+      "kind": "operation",
+      "label": "Browser play, recorded frames and editor round-trip",
+      "status": "neutral",
+      "order": 44,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000043",
+        "candidateId": "v003",
+        "inputCandidateId": "v003",
+        "outputCandidateId": "v003",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "test-t006",
+      "kind": "test",
+      "label": "Browser play, recorded frames and editor round-trip",
+      "status": "passed",
+      "order": 45,
+      "summary": "Author self-play through the ordinary browser Play handler; each observed browser actor frame matched the official engine. First-push Undo/Reset and unchanged-cells editor save/export are separate checks. This is not a blind model evaluation or human difficulty measurement.",
+      "details": {
+        "testId": "t006",
+        "candidateId": "v003",
+        "binding": "exact",
+        "category": "test"
+      }
+    },
+    {
+      "id": "replay-e000046",
+      "kind": "replay",
+      "label": "Saved browser playthrough",
+      "status": "neutral",
+      "order": 46,
+      "summary": "27 recorded inputs and 28 saved frames, bound to v003.",
+      "details": {
+        "replayId": "replay-e000046",
+        "candidateId": "v003",
+        "binding": "exact-artifact",
+        "sourceKind": "saved-replay"
+      }
+    },
+    {
+      "id": "delivery-final",
+      "kind": "delivery",
+      "label": "Published final candidate v003",
+      "status": "passed",
+      "order": 48,
+      "summary": "Final map and contract hashes match the published design. Earlier failed attempts remain visible.",
+      "details": {
+        "caseId": "authored-boundary-stagger-2f5622cc46de",
+        "candidateId": "v003",
+        "cellsSha256": "d063758257b5dc32bb08e380a14c7f1beaa841b56d8386ea172ff450c03d1756",
+        "contractSha256": "234f84a1b69a985ef244608613992808e3a39c510f4024c7264f2e55e9b9ca3a"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "candidate-v001",
+      "to": "candidate-v002",
+      "kind": "revision",
+      "label": "Observed snapshot order; not causal proof",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v002",
+      "to": "candidate-v003",
+      "kind": "revision",
+      "label": "Observed snapshot order; not causal proof",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v001",
+      "to": "test-t001",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v002",
+      "to": "test-t002",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v003",
+      "to": "test-t003",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v003",
+      "to": "test-t004",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v003",
+      "to": "test-t005",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v003",
+      "to": "test-t006",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "resource-r002",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r003",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r004",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r005",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r006",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r007",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v001",
+      "to": "note-n002",
+      "kind": "annotation",
+      "label": "Agent annotation about this candidate",
+      "inferred": false
+    },
+    {
+      "from": "resource-r003",
+      "to": "note-n002",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v002",
+      "to": "note-n003",
+      "kind": "annotation",
+      "label": "Agent annotation about this candidate",
+      "inferred": false
+    },
+    {
+      "from": "resource-r004",
+      "to": "note-n003",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v003",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Published cells and contract match",
+      "inferred": false
+    },
+    {
+      "from": "test-t003",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Passed within the stated test scope",
+      "inferred": false
+    },
+    {
+      "from": "test-t004",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Passed within the stated test scope",
+      "inferred": false
+    },
+    {
+      "from": "test-t005",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Passed within the stated test scope",
+      "inferred": false
+    },
+    {
+      "from": "test-t006",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Passed within the stated test scope",
+      "inferred": false
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "graphNodeId": "candidate-v001",
+      "label": "Offset Foundry",
+      "parentId": null,
+      "parentIds": [],
+      "cells": [
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          ".",
+          "M0",
+          ".",
+          "#",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          ".",
+          "M0",
+          "#",
+          ".",
+          "M2",
+          "M2",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "M1",
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "G",
+          ".",
+          ".",
+          "M1",
+          ".",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          ".",
+          ".",
+          ".",
+          "p",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ]
+      ],
+      "sha256": "40be421c567a5338e59527df419907807a49cf3fe69726f46e294f539d0d22ae",
+      "cellsSha256": "d5fc43b173ff27f594e1be1fefcd4a9cce4811939ca76995818f6a070305cb2f",
+      "contractSha256": "14f1846689f0d1d19e5b75ce16501d5494b28e4ad313b37b077016479b53fecd",
+      "origin": "observed",
+      "parentBasis": "observed-snapshot-order",
+      "diff": {
+        "added": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "M2"
+          },
+          {
+            "x": 10,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 10,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 10,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 10,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 11,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "G"
+          },
+          {
+            "x": 3,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "M0"
+          },
+          {
+            "x": 6,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "M0"
+          },
+          {
+            "x": 6,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "M1"
+          },
+          {
+            "x": 6,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "M1"
+          },
+          {
+            "x": 6,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 7,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 7,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 7,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 7,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 9,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 9,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "M2"
+          },
+          {
+            "x": 9,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 9,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 9,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "p"
+          },
+          {
+            "x": 9,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          }
+        ],
+        "removed": [],
+        "changed": []
+      },
+      "preview": {
+        "levelPath": "data/process-levels/authored-boundary-stagger-2f5622cc46de/v001.json",
+        "levelSha256": "90ec6ab310c097427e8dc6f4bcd387c4a91f7778092ff07d037556d430174bab",
+        "cellsSha256": "d5fc43b173ff27f594e1be1fefcd4a9cce4811939ca76995818f6a070305cb2f",
+        "status": "iteration"
+      }
+    },
+    {
+      "id": "v002",
+      "graphNodeId": "candidate-v002",
+      "label": "Offset Foundry",
+      "parentId": "v001",
+      "parentIds": [
+        "v001"
+      ],
+      "cells": [
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          ".",
+          "M0",
+          ".",
+          "#",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          ".",
+          "M0",
+          "#",
+          ".",
+          "M2",
+          "M2",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "M1",
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "G",
+          ".",
+          ".",
+          "M1",
+          ".",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          ".",
+          ".",
+          ".",
+          "p",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ]
+      ],
+      "sha256": "2550dc63dbadc7e77cfd693bc70f0de707f49fa10143dd8f2074065ee059922d",
+      "cellsSha256": "d063758257b5dc32bb08e380a14c7f1beaa841b56d8386ea172ff450c03d1756",
+      "contractSha256": "25ff1d2b71947dd52217018d89885fa1384d4d29ccf6b778d7db4c793653beb0",
+      "origin": "observed",
+      "parentBasis": "observed-snapshot-order",
+      "diff": {
+        "added": [],
+        "removed": [],
+        "changed": [
+          {
+            "x": 6,
+            "y": 8,
+            "z": 0,
+            "before": "#",
+            "after": "."
+          },
+          {
+            "x": 7,
+            "y": 8,
+            "z": 0,
+            "before": "#",
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 8,
+            "z": 0,
+            "before": "#",
+            "after": "."
+          }
+        ]
+      },
+      "preview": {
+        "levelPath": "data/process-levels/authored-boundary-stagger-2f5622cc46de/v002.json",
+        "levelSha256": "be3357ee676bcc1dc5b87e231630130fd16013165b57cd134f2352f81027d930",
+        "cellsSha256": "d063758257b5dc32bb08e380a14c7f1beaa841b56d8386ea172ff450c03d1756",
+        "status": "iteration"
+      }
+    },
+    {
+      "id": "v003",
+      "graphNodeId": "candidate-v003",
+      "label": "Offset Foundry",
+      "parentId": "v002",
+      "parentIds": [
+        "v002"
+      ],
+      "cells": [
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          ".",
+          "M0",
+          ".",
+          "#",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          ".",
+          "M0",
+          "#",
+          ".",
+          "M2",
+          "M2",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "M1",
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "G",
+          ".",
+          ".",
+          "M1",
+          ".",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          ".",
+          ".",
+          ".",
+          "p",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ]
+      ],
+      "sha256": "77f9339a5cce4aed431b8f1a481c32fa001c66740655f6813039bcc7ecc9f5d3",
+      "cellsSha256": "d063758257b5dc32bb08e380a14c7f1beaa841b56d8386ea172ff450c03d1756",
+      "contractSha256": "234f84a1b69a985ef244608613992808e3a39c510f4024c7264f2e55e9b9ca3a",
+      "origin": "observed",
+      "parentBasis": "observed-snapshot-order",
+      "diff": {
+        "added": [],
+        "removed": [],
+        "changed": []
+      },
+      "preview": {
+        "levelPath": "data/process-levels/authored-boundary-stagger-2f5622cc46de/v003.json",
+        "levelSha256": "5c8c8ac8c19510afc63b50f544dac010cd17818fc535ddac5ed241a8da996125",
+        "cellsSha256": "d063758257b5dc32bb08e380a14c7f1beaa841b56d8386ea172ff450c03d1756",
+        "status": "iteration",
+        "replays": [
+          {
+            "id": "replay-e000042",
+            "data": "data/process-replays/authored-boundary-stagger-2f5622cc46de/v003-replay-e000042.json",
+            "sha256": "866d432a0a95f0643e693aa221c5a43f850d5105992c46ef37d7c6e8628fc3e2",
+            "candidateId": "v003",
+            "cellsSha256": "d063758257b5dc32bb08e380a14c7f1beaa841b56d8386ea172ff450c03d1756",
+            "contractSha256": "234f84a1b69a985ef244608613992808e3a39c510f4024c7264f2e55e9b9ca3a",
+            "sourceSha256": "c91dcc786ab4b721bcbb7074d327b667afc23bff75b750848d05dd8a8c73574b",
+            "route": "LUUURUULLDLRURRDDDDLDLLULLL",
+            "frameCount": 28,
+            "binding": "exact-artifact",
+            "sourceKind": "saved-replay"
+          },
+          {
+            "id": "replay-e000046",
+            "data": "data/process-replays/authored-boundary-stagger-2f5622cc46de/v003-replay-e000046.json",
+            "sha256": "59ca194d8e9438fecff7f137f8beb1435bb90a67719f2a3bcd1eaf85abc6eb80",
+            "candidateId": "v003",
+            "cellsSha256": "d063758257b5dc32bb08e380a14c7f1beaa841b56d8386ea172ff450c03d1756",
+            "contractSha256": "234f84a1b69a985ef244608613992808e3a39c510f4024c7264f2e55e9b9ca3a",
+            "sourceSha256": "62d8fc97127e1e9d73bf71db80a6af4e311c60a358f38a4923dfb4ff7e882bba",
+            "route": "LUUURUULLDLRURRDDDDLDLLULLL",
+            "frameCount": 28,
+            "binding": "exact-artifact",
+            "sourceKind": "saved-replay"
+          }
+        ],
+        "replay": {
+          "id": "replay-e000042",
+          "data": "data/process-replays/authored-boundary-stagger-2f5622cc46de/v003-replay-e000042.json",
+          "sha256": "866d432a0a95f0643e693aa221c5a43f850d5105992c46ef37d7c6e8628fc3e2",
+          "candidateId": "v003",
+          "cellsSha256": "d063758257b5dc32bb08e380a14c7f1beaa841b56d8386ea172ff450c03d1756",
+          "contractSha256": "234f84a1b69a985ef244608613992808e3a39c510f4024c7264f2e55e9b9ca3a",
+          "sourceSha256": "c91dcc786ab4b721bcbb7074d327b667afc23bff75b750848d05dd8a8c73574b",
+          "route": "LUUURUULLDLRURRDDDDLDLLULLL",
+          "frameCount": 28,
+          "binding": "exact-artifact",
+          "sourceKind": "saved-replay"
+        }
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "graphNodeId": "test-t001",
+      "candidateId": "v001",
+      "label": "verify-complex.cjs",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "blocked_M1_U_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "blocked_M0_L_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Park the access shutter",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Release the roof contact",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Lift the exit gate",
+          "status": "passed"
+        },
+        {
+          "name": "initial_frozen_walking",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M0",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M1",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M2",
+          "status": "passed"
+        },
+        {
+          "name": "forbid_mechanism",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_park_to_release",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_park_to_release",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_release_to_raise",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_release_to_raise",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_raise_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_raise_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "at_most_one_push_then_walk",
+          "status": "passed"
+        },
+        {
+          "name": "one_same_direction_translation_process",
+          "status": "passed"
+        },
+        {
+          "name": "first_mechanism_then_walking_only_all_histories",
+          "status": "passed"
+        },
+        {
+          "name": "matched_boundary_roof_column_cluster",
+          "status": "passed"
+        }
+      ],
+      "scope": "Author self-test; ordinary official physics; exhaustive restricted push-state graph, frozen walking components; no human-difficulty or independent-author claim.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    },
+    {
+      "id": "t002",
+      "graphNodeId": "test-t002",
+      "candidateId": "v002",
+      "label": "verify-complex.cjs",
+      "status": "failed",
+      "checks": [
+        {
+          "name": "blocked_M1_U_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "blocked_M0_L_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Park the access shutter",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Release the roof contact",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Lift the exit gate",
+          "status": "passed"
+        },
+        {
+          "name": "initial_frozen_walking",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M0",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M1",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M2",
+          "status": "passed"
+        },
+        {
+          "name": "forbid_mechanism",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_park_to_release",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_park_to_release",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_release_to_raise",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_release_to_raise",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_raise_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_raise_to_goal",
+          "status": "failed"
+        },
+        {
+          "name": "at_most_one_push_then_walk",
+          "status": "passed"
+        },
+        {
+          "name": "one_same_direction_translation_process",
+          "status": "passed"
+        },
+        {
+          "name": "first_mechanism_then_walking_only_all_histories",
+          "status": "passed"
+        },
+        {
+          "name": "matched_boundary_roof_column_cluster",
+          "status": "passed"
+        }
+      ],
+      "scope": "Author self-test; ordinary official physics; exhaustive restricted push-state graph, frozen walking components; no human-difficulty or independent-author claim.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    },
+    {
+      "id": "t003",
+      "graphNodeId": "test-t003",
+      "candidateId": "v003",
+      "label": "verify-complex.cjs",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "blocked_M1_U_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "blocked_M0_L_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Park the access shutter",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Release the roof contact",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Clear the exit gate",
+          "status": "passed"
+        },
+        {
+          "name": "initial_frozen_walking",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M0",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M1",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M2",
+          "status": "passed"
+        },
+        {
+          "name": "forbid_mechanism",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_park_to_release",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_park_to_release",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_release_to_gateWork",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_release_to_gateWork",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_gateWork_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_gateWork_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "at_most_one_push_then_walk",
+          "status": "passed"
+        },
+        {
+          "name": "one_same_direction_translation_process",
+          "status": "passed"
+        },
+        {
+          "name": "first_mechanism_then_walking_only_all_histories",
+          "status": "passed"
+        },
+        {
+          "name": "matched_boundary_roof_column_cluster",
+          "status": "passed"
+        }
+      ],
+      "scope": "Author self-test; ordinary official physics; exhaustive restricted push-state graph, frozen walking components; no human-difficulty or independent-author claim.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    },
+    {
+      "id": "t004",
+      "graphNodeId": "test-t004",
+      "candidateId": "v003",
+      "label": "recovery-check.json",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "single_gate_down_has_reachable_restore_stance",
+          "status": "passed"
+        },
+        {
+          "name": "preserved_downward_goal_counterexample",
+          "status": "passed"
+        }
+      ],
+      "scope": "Selected-state ordinary-engine recovery after one downward gate move, and ordinary replay of the actual upward-necessity counterexample. No all-state deadlock claim.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    },
+    {
+      "id": "t005",
+      "graphNodeId": "test-t005",
+      "candidateId": "v003",
+      "label": "replay-check-01.json",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "saved_build_matches_design",
+          "status": "passed"
+        },
+        {
+          "name": "ordinary_and_search_transitions_match",
+          "status": "passed"
+        },
+        {
+          "name": "complete_gem_objective",
+          "status": "passed"
+        }
+      ],
+      "scope": "Author self-test of saved build cells and complete ordinary official-engine route. Every ordinary move is compared with moveForSearch; no browser, human difficulty or global deadlock claim.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    },
+    {
+      "id": "t006",
+      "graphNodeId": "test-t006",
+      "candidateId": "v003",
+      "label": "Browser play, recorded frames and editor round-trip",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "saved_build_matches_current_spec",
+          "status": "passed"
+        },
+        {
+          "name": "first_object_push_undo_and_reset",
+          "status": "passed"
+        },
+        {
+          "name": "every_browser_frame_matches_ordinary_engine",
+          "status": "passed"
+        },
+        {
+          "name": "complete_goal_in_browser",
+          "status": "passed"
+        },
+        {
+          "name": "editor_save_and_export_preserve_cells",
+          "status": "passed"
+        },
+        {
+          "name": "editor_3d_rendered",
+          "status": "passed"
+        }
+      ],
+      "scope": "Author self-play through the ordinary browser Play handler; each observed browser actor frame matched the official engine. First-push Undo/Reset and unchanged-cells editor save/export are separate checks. This is not a blind model evaluation or human difficulty measurement.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    }
+  ],
+  "notes": [
+    {
+      "id": "n001",
+      "graphNodeId": "note-n001",
+      "candidateId": null,
+      "label": "Build a new three-stage floor-supported boundary puzzle from the empty template: open a release-face approach, independently offset a roof-limited rigid column, then raise a separate exit gate.",
+      "goal": "Build a new three-stage floor-supported boundary puzzle from the empty template: open a release-face approach, independently offset a roof-limited rigid column, then raise a separate exit gate.",
+      "change": "Use a horizontal parking shutter, a two-cell vertical roof column and a separate two-cell vertical gate, with a bent approach to the column's east face. Derive new floor corridors and one parking bay rather than copying the HxH stairs or support-loss layout.",
+      "reason": "The shutter must expose the only approach to the release stance; the roof column must disengage before the gate can rise; the gate must then clear the only gem corridor. All three stages affect the next functional operation.",
+      "sources": [
+        "references/mechanism-logic.md",
+        "references/planning-depth.md",
+        "references/complex-validation.md",
+        "references/official-case.md",
+        "references/official-world-map.txt",
+        "references/official-states.json"
+      ],
+      "expectedChecks": [
+        "No initial walking goal",
+        "Each role frozen is unsolved",
+        "No first release opportunity without parking the shutter",
+        "No gate-up opportunity without offsetting the roof column",
+        "Matched roof removal admits the blocked gate input and a goal bypass without column offset",
+        "Ordinary saved-build replay and browser play/save/export"
+      ],
+      "origin": "agent_statement",
+      "retrospective": false
+    },
+    {
+      "id": "n002",
+      "graphNodeId": "note-n002",
+      "candidateId": "v001",
+      "label": "Improve recovery after the roof column has been released, while preserving the three connected functional stages.",
+      "goal": "Improve recovery after the roof column has been released, while preserving the three connected functional stages.",
+      "change": "Add a lower circulation aisle at (6,8), (7,8), and (8,8), so a gate moved downward once can be approached from below and restored.",
+      "reason": "The first layout passes its declared dependency checks, but inspection exposes an avoidable irreversible gate-down mistake after release. The recovery aisle may also allow a downward completion; rerun the existing directional claim and retain any counterexample before revising the claim.",
+      "sources": [
+        "references/planning-depth.md",
+        "verification.json"
+      ],
+      "expectedChecks": [
+        "Three necessary rigid roles remain necessary",
+        "Shutter parking still precedes column release",
+        "Column release still precedes gate progress",
+        "Retest whether upward gate motion remains necessary",
+        "Ordinary replay of any gate-down bypass"
+      ],
+      "origin": "agent_statement",
+      "retrospective": false
+    },
+    {
+      "id": "n003",
+      "graphNodeId": "note-n003",
+      "candidateId": "v002",
+      "label": "Keep the recovery aisle and state the dependency actually supported by the revised map.",
+      "goal": "Keep the recovery aisle and state the dependency actually supported by the revised map.",
+      "change": "Replace the upward-only final-stage event with movement of the exit gate in either legal direction. Keep the ordinary upward witness and exact spatial checks, and add a selected-state recovery check.",
+      "reason": "The fresh check found and ordinarily replayed a complete route without M1-up. It still requires parking M2, independently offsetting M0, and moving M1 afterward. The failed directional necessity result is retained; the final claim concerns gate movement, not a unique direction or solution order beyond the tested dependencies.",
+      "sources": [
+        "verification.json",
+        "references/complex-validation.md"
+      ],
+      "expectedChecks": [
+        "Gate movement is necessary for the real gem objective",
+        "No gate movement opportunity before column-left",
+        "A single gate-down mistake can be restored from the new aisle",
+        "Replay the preserved downward bypass using ordinary engine moves"
+      ],
+      "origin": "agent_statement",
+      "retrospective": false
+    }
+  ],
+  "resources": [
+    {
+      "id": "r001",
+      "graphNodeId": "resource-r001",
+      "label": "mazebench-boundary-stagger/SKILL.md",
+      "displayPath": "mazebench-boundary-stagger/SKILL.md",
+      "basename": "SKILL.md",
+      "sha256": "60b2ce239cbd194e081e7a8411ef120cb4351a647d69496dd295566f25306ea8",
+      "kind": "skill",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r002",
+      "graphNodeId": "resource-r002",
+      "label": "mazebench-boundary-stagger/references/mechanism-logic.md",
+      "displayPath": "mazebench-boundary-stagger/references/mechanism-logic.md",
+      "basename": "mechanism-logic.md",
+      "sha256": "c4953095eff5b1525a1c56ec59bf219dcde17bef352e4b0b76f80b27085cf5ac",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r003",
+      "graphNodeId": "resource-r003",
+      "label": "mazebench-boundary-stagger/references/planning-depth.md",
+      "displayPath": "mazebench-boundary-stagger/references/planning-depth.md",
+      "basename": "planning-depth.md",
+      "sha256": "f9cfed13dc075bd564871941bff6218fa6dfee5d9809218bdb261379cfec9033",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r004",
+      "graphNodeId": "resource-r004",
+      "label": "mazebench-boundary-stagger/references/complex-validation.md",
+      "displayPath": "mazebench-boundary-stagger/references/complex-validation.md",
+      "basename": "complex-validation.md",
+      "sha256": "da036b7b63e615abddf7ee4f5e007926cc1d603f873d55ac25c6cf6948144244",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r005",
+      "graphNodeId": "resource-r005",
+      "label": "mazebench-boundary-stagger/references/official-case.md",
+      "displayPath": "mazebench-boundary-stagger/references/official-case.md",
+      "basename": "official-case.md",
+      "sha256": "24e8afa2b2dabad8eb1ab53640772c07d447cb3c1425484551072f47c79d7b61",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r006",
+      "graphNodeId": "resource-r006",
+      "label": "mazebench-boundary-stagger/references/official-world-map.txt",
+      "displayPath": "mazebench-boundary-stagger/references/official-world-map.txt",
+      "basename": "official-world-map.txt",
+      "sha256": "b02c9a4bfd089d9c4b1df350ad8b254d06b3ce42e91f11af8c587f0e420b5df7",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r007",
+      "graphNodeId": "resource-r007",
+      "label": "mazebench-boundary-stagger/references/official-states.json",
+      "displayPath": "mazebench-boundary-stagger/references/official-states.json",
+      "basename": "official-states.json",
+      "sha256": "c5de3355f34f068d24a8676a8b15220fbf81535b01767ae0920175143581bbe9",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r008",
+      "graphNodeId": "resource-r008",
+      "label": "mazebench-boundary-stagger/references/design-template.json",
+      "displayPath": "mazebench-boundary-stagger/references/design-template.json",
+      "basename": "design-template.json",
+      "sha256": "e3c6a8407cca8b9401072b61c1b98f9b6c572895b1fc88a785be6176f93a7cc4",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "snapshot-e000003",
+      "graphNodeId": "resource-snapshot-e000003",
+      "label": "Skill attached: mazebench-boundary-stagger/SKILL.md",
+      "displayPath": "mazebench-boundary-stagger/SKILL.md",
+      "basename": "SKILL.md",
+      "sha256": "60b2ce239cbd194e081e7a8411ef120cb4351a647d69496dd295566f25306ea8",
+      "kind": "skill",
+      "origin": "observed",
+      "delivery": "snapshot"
+    }
+  ],
+  "operations": [
+    {
+      "id": "operation-e000013",
+      "graphNodeId": "operation-e000013",
+      "candidateId": "v001",
+      "inputCandidateId": null,
+      "outputCandidateId": "v001",
+      "label": "node",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000016",
+      "graphNodeId": "operation-e000016",
+      "candidateId": "v001",
+      "inputCandidateId": "v001",
+      "outputCandidateId": "v001",
+      "label": "verify-complex.cjs",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000020",
+      "graphNodeId": "operation-e000020",
+      "candidateId": "v002",
+      "inputCandidateId": "v001",
+      "outputCandidateId": "v002",
+      "label": "node",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000027",
+      "graphNodeId": "operation-e000027",
+      "candidateId": "v003",
+      "inputCandidateId": "v002",
+      "outputCandidateId": "v003",
+      "label": "node",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000030",
+      "graphNodeId": "operation-e000030",
+      "candidateId": "v003",
+      "inputCandidateId": "v003",
+      "outputCandidateId": "v003",
+      "label": "verify-complex.cjs",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000033",
+      "graphNodeId": "operation-e000033",
+      "candidateId": "v003",
+      "inputCandidateId": "v003",
+      "outputCandidateId": "v003",
+      "label": "node",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000036",
+      "graphNodeId": "operation-e000036",
+      "candidateId": "v003",
+      "inputCandidateId": "v003",
+      "outputCandidateId": "v003",
+      "label": "build-complex.cjs",
+      "kind": "build",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000039",
+      "graphNodeId": "operation-e000039",
+      "candidateId": "v003",
+      "inputCandidateId": "v003",
+      "outputCandidateId": "v003",
+      "label": "node",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000043",
+      "graphNodeId": "operation-e000043",
+      "candidateId": "v003",
+      "inputCandidateId": "v003",
+      "outputCandidateId": "v003",
+      "label": "Browser play, recorded frames and editor round-trip",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    }
+  ],
+  "replays": [
+    {
+      "id": "replay-e000042",
+      "graphNodeId": "replay-e000042",
+      "candidateId": "v003",
+      "label": "Saved ordinary gameplay replay",
+      "route": "LUUURUULLDLRURRDDDDLDLLULLL",
+      "frameCount": 28,
+      "binding": "exact-artifact",
+      "sourceKind": "saved-replay",
+      "sourceSha256": "c91dcc786ab4b721bcbb7074d327b667afc23bff75b750848d05dd8a8c73574b",
+      "cellsSha256": "d063758257b5dc32bb08e380a14c7f1beaa841b56d8386ea172ff450c03d1756",
+      "contractSha256": "234f84a1b69a985ef244608613992808e3a39c510f4024c7264f2e55e9b9ca3a",
+      "data": "data/process-replays/authored-boundary-stagger-2f5622cc46de/v003-replay-e000042.json",
+      "sha256": "866d432a0a95f0643e693aa221c5a43f850d5105992c46ef37d7c6e8628fc3e2"
+    },
+    {
+      "id": "replay-e000046",
+      "graphNodeId": "replay-e000046",
+      "candidateId": "v003",
+      "label": "Saved browser playthrough",
+      "route": "LUUURUULLDLRURRDDDDLDLLULLL",
+      "frameCount": 28,
+      "binding": "exact-artifact",
+      "sourceKind": "saved-replay",
+      "sourceSha256": "62d8fc97127e1e9d73bf71db80a6af4e311c60a358f38a4923dfb4ff7e882bba",
+      "cellsSha256": "d063758257b5dc32bb08e380a14c7f1beaa841b56d8386ea172ff450c03d1756",
+      "contractSha256": "234f84a1b69a985ef244608613992808e3a39c510f4024c7264f2e55e9b9ca3a",
+      "data": "data/process-replays/authored-boundary-stagger-2f5622cc46de/v003-replay-e000046.json",
+      "sha256": "59ca194d8e9438fecff7f137f8beb1435bb90a67719f2a3bcd1eaf85abc6eb80"
+    }
+  ]
+}

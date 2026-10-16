@@ -23,7 +23,8 @@
       ],
       "authoredCases": [
         "authored-boundary-stagger",
-        "authored-boundary-stagger-2f126bf137c6"
+        "authored-boundary-stagger-2f126bf137c6",
+        "authored-boundary-stagger-2f5622cc46de"
       ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-boundary-stagger"
     },
@@ -50,7 +51,8 @@
       ],
       "authoredCases": [
         "authored-hook-transfer",
-        "authored-hook-transfer-1bf88985df5b"
+        "authored-hook-transfer-1bf88985df5b",
+        "authored-hook-transfer-5e3a324db881"
       ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-hook-transfer"
     },
@@ -77,7 +79,8 @@
       ],
       "authoredCases": [
         "authored-constrained-transport",
-        "authored-constrained-transport-a6eaf6caf274"
+        "authored-constrained-transport-a6eaf6caf274",
+        "authored-constrained-transport-60b4a35f5a3f"
       ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-constrained-transport"
     },
@@ -99,7 +102,8 @@
         "official-jxg"
       ],
       "authoredCases": [
-        "authored-skating-cross"
+        "authored-skating-cross",
+        "authored-skating-cross-942ab792fe79"
       ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-skating-cross"
     },
@@ -123,7 +127,8 @@
         "official-bxc"
       ],
       "authoredCases": [
-        "authored-block-coordination-ed4fa93087f1"
+        "authored-block-coordination-ed4fa93087f1",
+        "authored-block-coordination-030c8da1aa61"
       ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-block-coordination"
     },
@@ -687,6 +692,116 @@
       },
       "process": {
         "data": "data/processes/authored-boundary-stagger-2f126bf137c6.json",
+        "schemaVersion": 1
+      }
+    },
+    {
+      "id": "authored-boundary-stagger-2f5622cc46de",
+      "kind": "authored",
+      "title": "Offset Foundry",
+      "skill": "boundary-stagger",
+      "world": "authored-boundary-stagger-2f5622cc46de",
+      "room": "AxA",
+      "description": "Shift rigid groups around fixed boundaries, make room for the next move, and release the path to the gem.",
+      "thumbnail": "assets/thumbnails/authored-boundary-stagger-2f5622cc46de.png",
+      "map": "data/maps/authored-boundary-stagger-2f5622cc46de-world-map.txt",
+      "witness": "LUUURUULLDLRURRDDDDLDLLULLL",
+      "goal": {
+        "kind": "gem"
+      },
+      "process": {
+        "data": "data/processes/authored-boundary-stagger-2f5622cc46de.json",
+        "schemaVersion": 1
+      }
+    },
+    {
+      "id": "authored-hook-transfer-5e3a324db881",
+      "kind": "authored",
+      "title": "Forklift Courtyard",
+      "skill": "hook-transfer",
+      "world": "authored-hook-transfer-5e3a324db881",
+      "room": "AxA",
+      "description": "Line up the offset tool, transfer a push to the restricted target, and keep working to reach the gem.",
+      "thumbnail": "assets/thumbnails/authored-hook-transfer-5e3a324db881.png",
+      "map": "data/maps/authored-hook-transfer-5e3a324db881-world-map.txt",
+      "witness": "RUULUUURDRRRRRRR",
+      "goal": {
+        "kind": "gem"
+      },
+      "process": {
+        "data": "data/processes/authored-hook-transfer-5e3a324db881.json",
+        "schemaVersion": 1
+      }
+    },
+    {
+      "id": "authored-constrained-transport-60b4a35f5a3f",
+      "kind": "authored",
+      "title": "Switchyard Tool Delivery",
+      "skill": "constrained-transport",
+      "world": "authored-constrained-transport-60b4a35f5a3f",
+      "room": "AxA",
+      "description": "Borrow a crowded aisle, move the tool through it, and recover the space needed for its final use.",
+      "thumbnail": "assets/thumbnails/authored-constrained-transport-60b4a35f5a3f.png",
+      "map": "data/maps/authored-constrained-transport-60b4a35f5a3f-world-map.txt",
+      "witness": "DDLLDDRRUDRRDDRLUULLLLUUUURR",
+      "goal": {
+        "kind": "gem-and-return",
+        "cell": [
+          6,
+          7,
+          0
+        ]
+      },
+      "process": {
+        "data": "data/processes/authored-constrained-transport-60b4a35f5a3f.json",
+        "schemaVersion": 1
+      }
+    },
+    {
+      "id": "authored-skating-cross-942ab792fe79",
+      "kind": "authored",
+      "title": "Frost Compass",
+      "skill": "skating-cross",
+      "world": "authored-skating-cross-942ab792fe79",
+      "room": "AxA",
+      "description": "Slide the cross into new stopping positions, collect the gem, then return to the starting doorway.",
+      "thumbnail": "assets/thumbnails/authored-skating-cross-942ab792fe79.png",
+      "map": "data/maps/authored-skating-cross-942ab792fe79-world-map.txt",
+      "witness": "RDDULDRURDRULDDLULU",
+      "goal": {
+        "kind": "gem-and-return",
+        "cell": [
+          2,
+          2,
+          0
+        ]
+      },
+      "process": {
+        "data": "data/processes/authored-skating-cross-942ab792fe79.json",
+        "schemaVersion": 1
+      }
+    },
+    {
+      "id": "authored-block-coordination-030c8da1aa61",
+      "kind": "authored",
+      "title": "Relay Court",
+      "skill": "block-coordination",
+      "world": "authored-block-coordination-030c8da1aa61",
+      "room": "AxA",
+      "description": "A separately verified authored realization of tool preparation, usable input access and release.",
+      "thumbnail": "assets/thumbnails/authored-block-coordination-030c8da1aa61.png",
+      "map": "data/maps/authored-block-coordination-030c8da1aa61-world-map.txt",
+      "witness": "RRRRRDRDDDDDLDLLLLLLLLDLUUUUUUUUUULUU",
+      "goal": {
+        "kind": "reach",
+        "cell": [
+          1,
+          0,
+          0
+        ]
+      },
+      "process": {
+        "data": "data/processes/authored-block-coordination-030c8da1aa61.json",
         "schemaVersion": 1
       }
     }

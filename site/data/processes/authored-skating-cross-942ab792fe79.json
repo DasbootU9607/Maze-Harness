@@ -1,0 +1,4097 @@
+{
+  "schemaVersion": 1,
+  "caseId": "authored-skating-cross-942ab792fe79",
+  "title": "Frost Compass",
+  "skill": "skating-cross",
+  "finalCandidateId": "v003",
+  "summary": "3 recorded candidates, 6 tests, 0 failed diagnostics, and 3 agent annotations.",
+  "coverage": {
+    "mode": "observed",
+    "audit": {
+      "status": "passed",
+      "failed": 0,
+      "unknown": 0
+    },
+    "sources": {
+      "directOriginalCaseRead": "recorded",
+      "originalCaseResourceIds": [
+        "r006",
+        "r007",
+        "r008"
+      ],
+      "indirect": [],
+      "scope": "Direct reading is reported only for captured read events. A source named by a skill is indirect provenance, not evidence that this run opened or used the original case."
+    },
+    "limitations": [
+      "Only recorded operations and saved snapshots are shown; transient in-memory drafts and unrecorded activity remain unknown.",
+      "Snapshot parent links show recorded version order, not proof of causal reasoning. No unrecorded branches or merges are reconstructed.",
+      "Agent annotations are concise explanations, not internal thought transcripts. Recorded resource delivery does not prove comprehension or use.",
+      "Test outcomes retain their own scope. Author self-tests do not establish independent-agent effectiveness or human difficulty.",
+      "Automatic CLI boundaries record supported build and verification commands. Other commands and resource reads require the skill observer helper.",
+      "Snapshots describe saved versions at operation boundaries, not every editor keystroke. Design notes are author statements, not internal reasoning.",
+      "A started task remains running until the author records finish. An interrupted task may therefore remain open."
+    ]
+  },
+  "nodes": [
+    {
+      "id": "resource-snapshot-e000003",
+      "kind": "resource",
+      "label": "Skill attached: mazebench-skating-cross/SKILL.md",
+      "status": "neutral",
+      "order": 3,
+      "summary": "Skill version captured as a dependency. This event does not record a reading.",
+      "details": {
+        "resourceId": "snapshot-e000003",
+        "displayPath": "mazebench-skating-cross/SKILL.md",
+        "sha256": "e6e37a07abcecf0ebba7d066a277e5c28a8308b614ba53ab3fdfc48fa9549386",
+        "kind": "skill",
+        "delivery": "snapshot"
+      }
+    },
+    {
+      "id": "resource-r001",
+      "kind": "resource",
+      "label": "SKILL.md",
+      "status": "neutral",
+      "order": 4,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r001",
+        "displayPath": "mazebench-skating-cross/SKILL.md",
+        "sha256": "e6e37a07abcecf0ebba7d066a277e5c28a8308b614ba53ab3fdfc48fa9549386",
+        "kind": "skill",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r002",
+      "kind": "resource",
+      "label": "mechanism-logic.md",
+      "status": "neutral",
+      "order": 5,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r002",
+        "displayPath": "mazebench-skating-cross/references/mechanism-logic.md",
+        "sha256": "38893a6acc86d55a6ca216f794f2e0cd09a6e897c3dcfedb5384cbd175e9f247",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r003",
+      "kind": "resource",
+      "label": "planning-depth.md",
+      "status": "neutral",
+      "order": 6,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r003",
+        "displayPath": "mazebench-skating-cross/references/planning-depth.md",
+        "sha256": "fbb19ded77faa9fd3dce184496a7f63ac4ca10dbfa2e3867e67ff78291316e00",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r004",
+      "kind": "resource",
+      "label": "complex-validation.md",
+      "status": "neutral",
+      "order": 7,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r004",
+        "displayPath": "mazebench-skating-cross/references/complex-validation.md",
+        "sha256": "1359df20e27773a602066f55e422adffc8507bf8160da5edcd0d0ee7ab06c616",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r005",
+      "kind": "resource",
+      "label": "design-template.json",
+      "status": "neutral",
+      "order": 8,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r005",
+        "displayPath": "mazebench-skating-cross/references/design-template.json",
+        "sha256": "c508348d99af852fd1da821b9fbe0e6e6ca412e650a8233b6add83b637da77fb",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r006",
+      "kind": "resource",
+      "label": "official-case.md",
+      "status": "neutral",
+      "order": 9,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r006",
+        "displayPath": "mazebench-skating-cross/references/official-case.md",
+        "sha256": "8a6c19d78ed91886ac77b8612a0f74eaf668d7d8d573a0b5341a426106235a4d",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r007",
+      "kind": "resource",
+      "label": "official-world-map.txt",
+      "status": "neutral",
+      "order": 10,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r007",
+        "displayPath": "mazebench-skating-cross/references/official-world-map.txt",
+        "sha256": "f8d3bb11617bbd5a08560c0997ca66c0e2a6806f93302542fc338f0da7a2fdd8",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r008",
+      "kind": "resource",
+      "label": "official-states.json",
+      "status": "neutral",
+      "order": 11,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r008",
+        "displayPath": "mazebench-skating-cross/references/official-states.json",
+        "sha256": "81eb5a03f4f89ae619115d41f68dac4842e22d394130825d102ef28acddabf38",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r009",
+      "kind": "resource",
+      "label": "design.md",
+      "status": "neutral",
+      "order": 12,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r009",
+        "displayPath": "mazebench-skating-cross/references/design.md",
+        "sha256": "e11d642c7dffcadd426223d71153b4f3e591abc9e2546e0186b0159f2a549d19",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r010",
+      "kind": "resource",
+      "label": "verification.md",
+      "status": "neutral",
+      "order": 13,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r010",
+        "displayPath": "mazebench-skating-cross/references/verification.md",
+        "sha256": "e57233b5b968d848a1c99c96c19c1e1089ebb38371f989df3648752df48bcc21",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "note-n001",
+      "kind": "note",
+      "label": "Create a new ice room with at least three connected cross repositioning stages, a cross-braked turn onto the gem route, and an alive return to the starting doorway.",
+      "status": "neutral",
+      "order": 14,
+      "summary": "Start from the empty template with a smaller inset ice basin, an asymmetric seven-member cross, and three interior pier stops. Place the gem inside the stopping graph rather than at a trivial boundary stop. Derive useful docking poses from this new footprint and verify them through ordinary engine motion.",
+      "details": {
+        "noteId": "n001",
+        "candidateId": null,
+        "origin": "agent_statement",
+        "retrospective": false
+      }
+    },
+    {
+      "id": "candidate-v001",
+      "kind": "candidate",
+      "label": "v001 · Frost Compass",
+      "status": "neutral",
+      "order": 16,
+      "summary": "0 changed cells; 256 added; 0 removed.",
+      "details": {
+        "candidateId": "v001",
+        "cellsSha256": "92ea9fb6fd5e978668781f8c0fbcce7434ac8b53894ba43bc8e5e0d367b0f0fd",
+        "contractSha256": "5b5b89e5b54ac6e2ef5b689ac9d59cd1e41f814faa83b525a78842a6f2873103",
+        "parentBasis": "observed-snapshot-order"
+      }
+    },
+    {
+      "id": "operation-e000015",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 17,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000015",
+        "candidateId": "v001",
+        "inputCandidateId": null,
+        "outputCandidateId": "v001",
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "test-t001",
+      "kind": "test",
+      "label": "diagnostic-01.json",
+      "status": "failed",
+      "order": 20,
+      "summary": "Exploratory ordinary-engine geometry checks before the final complex contract. Solved routes are replayed; this is not a complete complex certification.",
+      "details": {
+        "testId": "t001",
+        "candidateId": "v001",
+        "binding": "exact",
+        "category": "test"
+      }
+    },
+    {
+      "id": "note-n002",
+      "kind": "note",
+      "label": "Make the first cross input reachable from the doorway without adding floor-based free turning.",
+      "status": "neutral",
+      "order": 21,
+      "summary": "Add a top-edge pier at (9,2), stopping the initial rightward slide at (8,2), aligned with the cross's longer right arm.",
+      "details": {
+        "noteId": "n002",
+        "candidateId": "v001",
+        "origin": "agent_statement",
+        "retrospective": false
+      }
+    },
+    {
+      "id": "candidate-v002",
+      "kind": "candidate",
+      "label": "v002 · Frost Compass",
+      "status": "neutral",
+      "order": 23,
+      "summary": "1 changed cells; 0 added; 0 removed.",
+      "details": {
+        "candidateId": "v002",
+        "cellsSha256": "34251ad0b4c255fc41fff00aa66631c8791453ac6c2872d07e968364013ddaa1",
+        "contractSha256": "8badc0a028c0225c86b70380bd6d2e162c48707006c7d200ce68670d066b700e",
+        "parentBasis": "observed-snapshot-order"
+      }
+    },
+    {
+      "id": "operation-e000022",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 24,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000022",
+        "candidateId": "v002",
+        "inputCandidateId": "v001",
+        "outputCandidateId": "v002",
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "operation-e000025",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 26,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000025",
+        "candidateId": "v002",
+        "inputCandidateId": "v002",
+        "outputCandidateId": "v002",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "test-t002",
+      "kind": "test",
+      "label": "diagnostic-02.json",
+      "status": "passed",
+      "order": 27,
+      "summary": "Exploratory ordinary-engine geometry checks before the final complex contract. Solved routes are replayed; this is not a complete complex certification.",
+      "details": {
+        "testId": "t002",
+        "candidateId": "v002",
+        "binding": "exact",
+        "category": "test"
+      }
+    },
+    {
+      "id": "operation-e000028",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 29,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000028",
+        "candidateId": "v002",
+        "inputCandidateId": "v002",
+        "outputCandidateId": "v002",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "test-t003",
+      "kind": "test",
+      "label": "direction-preparation.json",
+      "status": "passed",
+      "order": 30,
+      "summary": "Fresh directional preparation prefix checks for the new basin; exact parking poses are not assumed necessary.",
+      "details": {
+        "testId": "t003",
+        "candidateId": "v002",
+        "binding": "exact",
+        "category": "test"
+      }
+    },
+    {
+      "id": "note-n003",
+      "kind": "note",
+      "label": "Bind the three functional stages to the dependencies actually demonstrated by the new basin.",
+      "status": "neutral",
+      "order": 31,
+      "summary": "Declare upward preparation, right docking at center (8,4), and lower alignment at center (8,9). Use the 19-input complete route as the ordinary witness, with next input faces at (5,5) and (10,3).",
+      "details": {
+        "noteId": "n003",
+        "candidateId": "v002",
+        "origin": "agent_statement",
+        "retrospective": false
+      }
+    },
+    {
+      "id": "candidate-v003",
+      "kind": "candidate",
+      "label": "v003 · Frost Compass",
+      "status": "neutral",
+      "order": 33,
+      "summary": "0 changed cells; 0 added; 0 removed.",
+      "details": {
+        "candidateId": "v003",
+        "cellsSha256": "34251ad0b4c255fc41fff00aa66631c8791453ac6c2872d07e968364013ddaa1",
+        "contractSha256": "8a9a9fea6c7636cf80dd16d45daf1d4811a7c959e7c20958d1a5261dac73b0a7",
+        "parentBasis": "observed-snapshot-order"
+      }
+    },
+    {
+      "id": "operation-e000032",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 34,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000032",
+        "candidateId": "v003",
+        "inputCandidateId": "v002",
+        "outputCandidateId": "v003",
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "operation-e000035",
+      "kind": "operation",
+      "label": "verify.cjs",
+      "status": "neutral",
+      "order": 36,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000035",
+        "candidateId": "v003",
+        "inputCandidateId": "v003",
+        "outputCandidateId": "v003",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "test-t004",
+      "kind": "test",
+      "label": "verify.cjs",
+      "status": "passed",
+      "order": 37,
+      "summary": "Report-specific check; no broader mechanism or difficulty claim.",
+      "details": {
+        "testId": "t004",
+        "candidateId": "v003",
+        "binding": "exact",
+        "category": "test"
+      }
+    },
+    {
+      "id": "operation-e000038",
+      "kind": "operation",
+      "label": "build.cjs",
+      "status": "neutral",
+      "order": 39,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000038",
+        "candidateId": "v003",
+        "inputCandidateId": "v003",
+        "outputCandidateId": "v003",
+        "kind": "build",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "operation-e000041",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 42,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000041",
+        "candidateId": "v003",
+        "inputCandidateId": "v003",
+        "outputCandidateId": "v003",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "test-t005",
+      "kind": "test",
+      "label": "replay-check-01.json",
+      "status": "passed",
+      "order": 43,
+      "summary": "Complete ordinary official-engine gem-and-return replay loaded from actual saved build cells, with every ordinary transition compared against moveForSearch. Separate browser play/save/export remains required.",
+      "details": {
+        "testId": "t005",
+        "candidateId": "v003",
+        "binding": "exact",
+        "category": "test"
+      }
+    },
+    {
+      "id": "replay-e000044",
+      "kind": "replay",
+      "label": "Saved ordinary gameplay replay",
+      "status": "neutral",
+      "order": 44,
+      "summary": "19 recorded inputs and 20 saved frames, bound to v003.",
+      "details": {
+        "replayId": "replay-e000044",
+        "candidateId": "v003",
+        "binding": "exact-artifact",
+        "sourceKind": "saved-replay"
+      }
+    },
+    {
+      "id": "operation-e000045",
+      "kind": "operation",
+      "label": "Browser play, recorded frames and editor round-trip",
+      "status": "neutral",
+      "order": 46,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000045",
+        "candidateId": "v003",
+        "inputCandidateId": "v003",
+        "outputCandidateId": "v003",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "test-t006",
+      "kind": "test",
+      "label": "Browser play, recorded frames and editor round-trip",
+      "status": "passed",
+      "order": 47,
+      "summary": "Author self-play through the ordinary browser Play handler; each observed browser actor frame matched the official engine. First-push Undo/Reset and unchanged-cells editor save/export are separate checks. This is not a blind model evaluation or human difficulty measurement.",
+      "details": {
+        "testId": "t006",
+        "candidateId": "v003",
+        "binding": "exact",
+        "category": "test"
+      }
+    },
+    {
+      "id": "replay-e000048",
+      "kind": "replay",
+      "label": "Saved browser playthrough",
+      "status": "neutral",
+      "order": 48,
+      "summary": "19 recorded inputs and 20 saved frames, bound to v003.",
+      "details": {
+        "replayId": "replay-e000048",
+        "candidateId": "v003",
+        "binding": "exact-artifact",
+        "sourceKind": "saved-replay"
+      }
+    },
+    {
+      "id": "delivery-final",
+      "kind": "delivery",
+      "label": "Published final candidate v003",
+      "status": "passed",
+      "order": 50,
+      "summary": "Final map and contract hashes match the published design. Earlier failed attempts remain visible.",
+      "details": {
+        "caseId": "authored-skating-cross-942ab792fe79",
+        "candidateId": "v003",
+        "cellsSha256": "34251ad0b4c255fc41fff00aa66631c8791453ac6c2872d07e968364013ddaa1",
+        "contractSha256": "8a9a9fea6c7636cf80dd16d45daf1d4811a7c959e7c20958d1a5261dac73b0a7"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "candidate-v001",
+      "to": "candidate-v002",
+      "kind": "revision",
+      "label": "Observed snapshot order; not causal proof",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v002",
+      "to": "candidate-v003",
+      "kind": "revision",
+      "label": "Observed snapshot order; not causal proof",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v001",
+      "to": "test-t001",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v002",
+      "to": "test-t002",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v002",
+      "to": "test-t003",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v003",
+      "to": "test-t004",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v003",
+      "to": "test-t005",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v003",
+      "to": "test-t006",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "resource-r002",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r003",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r004",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r006",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r007",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r008",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r009",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r010",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v001",
+      "to": "note-n002",
+      "kind": "annotation",
+      "label": "Agent annotation about this candidate",
+      "inferred": false
+    },
+    {
+      "from": "resource-r009",
+      "to": "note-n002",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v002",
+      "to": "note-n003",
+      "kind": "annotation",
+      "label": "Agent annotation about this candidate",
+      "inferred": false
+    },
+    {
+      "from": "resource-r004",
+      "to": "note-n003",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v003",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Published cells and contract match",
+      "inferred": false
+    },
+    {
+      "from": "test-t004",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Passed within the stated test scope",
+      "inferred": false
+    },
+    {
+      "from": "test-t005",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Passed within the stated test scope",
+      "inferred": false
+    },
+    {
+      "from": "test-t006",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Passed within the stated test scope",
+      "inferred": false
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "graphNodeId": "candidate-v001",
+      "label": "Frost Compass",
+      "parentId": null,
+      "parentIds": [],
+      "cells": [
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          ".+p",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i+M0",
+          "i+M0",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+G",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ]
+      ],
+      "sha256": "108865f41f63445d3cb450ad25b89e162faca72b84a200a26a64cf31e8ddd7ff",
+      "cellsSha256": "92ea9fb6fd5e978668781f8c0fbcce7434ac8b53894ba43bc8e5e0d367b0f0fd",
+      "contractSha256": "5b5b89e5b54ac6e2ef5b689ac9d59cd1e41f814faa83b525a78842a6f2873103",
+      "origin": "observed",
+      "parentBasis": "observed-snapshot-order",
+      "diff": {
+        "added": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 10,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 10,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 10,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 10,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 10,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 10,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 10,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 10,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "i+G"
+          },
+          {
+            "x": 10,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 11,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 11,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 11,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 11,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 11,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 11,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 11,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 11,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 11,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 11,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 13,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 2,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 2,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 2,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+p"
+          },
+          {
+            "x": 2,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 2,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 2,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 2,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 2,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 2,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 2,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 3,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 3,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 3,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 3,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 3,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 3,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 3,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 3,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 3,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 3,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 3,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 4,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 4,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 4,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 4,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 4,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 4,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 4,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 4,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 4,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 5,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 5,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 5,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 5,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 5,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 5,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i+M0"
+          },
+          {
+            "x": 5,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 5,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 5,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 5,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 6,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 6,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 6,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 6,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 6,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "i+M0"
+          },
+          {
+            "x": 6,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "i+M0"
+          },
+          {
+            "x": 6,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i+M0"
+          },
+          {
+            "x": 6,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "i+M0"
+          },
+          {
+            "x": 6,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 6,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 6,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 7,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 7,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 7,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 7,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 7,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 7,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 7,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i+M0"
+          },
+          {
+            "x": 7,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 7,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 7,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 7,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 8,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 8,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 8,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 8,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 8,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 8,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 8,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i+M0"
+          },
+          {
+            "x": 8,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 8,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 8,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 8,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          }
+        ],
+        "removed": [],
+        "changed": []
+      },
+      "preview": {
+        "levelPath": "data/process-levels/authored-skating-cross-942ab792fe79/v001.json",
+        "levelSha256": "77b288adaa47fc57c174ccd1068926755f3f6733da63193dc80dd4d3392fbc0a",
+        "cellsSha256": "92ea9fb6fd5e978668781f8c0fbcce7434ac8b53894ba43bc8e5e0d367b0f0fd",
+        "status": "iteration"
+      }
+    },
+    {
+      "id": "v002",
+      "graphNodeId": "candidate-v002",
+      "label": "Frost Compass",
+      "parentId": "v001",
+      "parentIds": [
+        "v001"
+      ],
+      "cells": [
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          ".+p",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i+M0",
+          "i+M0",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+G",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ]
+      ],
+      "sha256": "0d1e58e6272d613cb9e131fbbb41b1330a66f621a43d6798e011cd9ca806f69a",
+      "cellsSha256": "34251ad0b4c255fc41fff00aa66631c8791453ac6c2872d07e968364013ddaa1",
+      "contractSha256": "8badc0a028c0225c86b70380bd6d2e162c48707006c7d200ce68670d066b700e",
+      "origin": "observed",
+      "parentBasis": "observed-snapshot-order",
+      "diff": {
+        "added": [],
+        "removed": [],
+        "changed": [
+          {
+            "x": 9,
+            "y": 2,
+            "z": 0,
+            "before": "i",
+            "after": "#"
+          }
+        ]
+      },
+      "preview": {
+        "levelPath": "data/process-levels/authored-skating-cross-942ab792fe79/v002.json",
+        "levelSha256": "dc4ec8c6e754b8bc6dacabf9679fa5a2254bbc5644a77c89f0446d17b3dd8f23",
+        "cellsSha256": "34251ad0b4c255fc41fff00aa66631c8791453ac6c2872d07e968364013ddaa1",
+        "status": "iteration"
+      }
+    },
+    {
+      "id": "v003",
+      "graphNodeId": "candidate-v003",
+      "label": "Frost Compass",
+      "parentId": "v002",
+      "parentIds": [
+        "v002"
+      ],
+      "cells": [
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          ".+p",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i+M0",
+          "i+M0",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+G",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ]
+      ],
+      "sha256": "86de3da8b3ab05fdb6cc9df7bf08f70f885d2109fda5af82900a84a1ff24c56e",
+      "cellsSha256": "34251ad0b4c255fc41fff00aa66631c8791453ac6c2872d07e968364013ddaa1",
+      "contractSha256": "8a9a9fea6c7636cf80dd16d45daf1d4811a7c959e7c20958d1a5261dac73b0a7",
+      "origin": "observed",
+      "parentBasis": "observed-snapshot-order",
+      "diff": {
+        "added": [],
+        "removed": [],
+        "changed": []
+      },
+      "preview": {
+        "levelPath": "data/process-levels/authored-skating-cross-942ab792fe79/v003.json",
+        "levelSha256": "3e720c7f263c0d54abc6fdcbbe297fee9116c5dd840fe50766701d11222e4a1d",
+        "cellsSha256": "34251ad0b4c255fc41fff00aa66631c8791453ac6c2872d07e968364013ddaa1",
+        "status": "iteration",
+        "replays": [
+          {
+            "id": "replay-e000044",
+            "data": "data/process-replays/authored-skating-cross-942ab792fe79/v003-replay-e000044.json",
+            "sha256": "eb4a66cc284b4715425691b0eb4a05811e88ccb0450aac7e507598799be5e667",
+            "candidateId": "v003",
+            "cellsSha256": "34251ad0b4c255fc41fff00aa66631c8791453ac6c2872d07e968364013ddaa1",
+            "contractSha256": "8a9a9fea6c7636cf80dd16d45daf1d4811a7c959e7c20958d1a5261dac73b0a7",
+            "sourceSha256": "f44a6dbbc6e95ddfec0761ba4a533fe0529911d1145b57819317ebddb09b60bb",
+            "route": "RDDULDRURDRULDDLULU",
+            "frameCount": 20,
+            "binding": "exact-artifact",
+            "sourceKind": "saved-replay"
+          },
+          {
+            "id": "replay-e000048",
+            "data": "data/process-replays/authored-skating-cross-942ab792fe79/v003-replay-e000048.json",
+            "sha256": "f4790464ba24abd1fe52fd730ddcea581a0ed27540ca66eb763f6b430bceed61",
+            "candidateId": "v003",
+            "cellsSha256": "34251ad0b4c255fc41fff00aa66631c8791453ac6c2872d07e968364013ddaa1",
+            "contractSha256": "8a9a9fea6c7636cf80dd16d45daf1d4811a7c959e7c20958d1a5261dac73b0a7",
+            "sourceSha256": "a58164499df661e0907d4e346a0bce0447bdb2cf6feb6403d9508abc3e16005b",
+            "route": "RDDULDRURDRULDDLULU",
+            "frameCount": 20,
+            "binding": "exact-artifact",
+            "sourceKind": "saved-replay"
+          }
+        ],
+        "replay": {
+          "id": "replay-e000044",
+          "data": "data/process-replays/authored-skating-cross-942ab792fe79/v003-replay-e000044.json",
+          "sha256": "eb4a66cc284b4715425691b0eb4a05811e88ccb0450aac7e507598799be5e667",
+          "candidateId": "v003",
+          "cellsSha256": "34251ad0b4c255fc41fff00aa66631c8791453ac6c2872d07e968364013ddaa1",
+          "contractSha256": "8a9a9fea6c7636cf80dd16d45daf1d4811a7c959e7c20958d1a5261dac73b0a7",
+          "sourceSha256": "f44a6dbbc6e95ddfec0761ba4a533fe0529911d1145b57819317ebddb09b60bb",
+          "route": "RDDULDRURDRULDDLULU",
+          "frameCount": 20,
+          "binding": "exact-artifact",
+          "sourceKind": "saved-replay"
+        }
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "graphNodeId": "test-t001",
+      "candidateId": "v001",
+      "label": "diagnostic-01.json",
+      "status": "failed",
+      "checks": [
+        {
+          "name": "complete_gem_and_return",
+          "status": "failed"
+        },
+        {
+          "name": "cross_movement_required",
+          "status": "passed"
+        },
+        {
+          "name": "static_cross_braking_required",
+          "status": "passed"
+        },
+        {
+          "name": "more_than_two_motions",
+          "status": "passed"
+        }
+      ],
+      "scope": "Exploratory ordinary-engine geometry checks before the final complex contract. Solved routes are replayed; this is not a complete complex certification.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    },
+    {
+      "id": "t002",
+      "graphNodeId": "test-t002",
+      "candidateId": "v002",
+      "label": "diagnostic-02.json",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "complete_gem_and_return",
+          "status": "passed"
+        },
+        {
+          "name": "cross_movement_required",
+          "status": "passed"
+        },
+        {
+          "name": "static_cross_braking_required",
+          "status": "passed"
+        },
+        {
+          "name": "more_than_two_motions",
+          "status": "passed"
+        }
+      ],
+      "scope": "Exploratory ordinary-engine geometry checks before the final complex contract. Solved routes are replayed; this is not a complete complex certification.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    },
+    {
+      "id": "t003",
+      "graphNodeId": "test-t003",
+      "candidateId": "v002",
+      "label": "direction-preparation.json",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "dock_without_D",
+          "status": "passed"
+        },
+        {
+          "name": "dock_without_U",
+          "status": "passed"
+        },
+        {
+          "name": "dock_without_L",
+          "status": "passed"
+        },
+        {
+          "name": "dock_without_R",
+          "status": "passed"
+        }
+      ],
+      "scope": "Fresh directional preparation prefix checks for the new basin; exact parking poses are not assumed necessary.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    },
+    {
+      "id": "t004",
+      "graphNodeId": "test-t004",
+      "candidateId": "v003",
+      "label": "verify.cjs",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "complete_objective",
+          "status": "passed"
+        },
+        {
+          "name": "official_solver_positive",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_cross",
+          "status": "passed"
+        },
+        {
+          "name": "forbid_static_cross_brake",
+          "status": "passed"
+        },
+        {
+          "name": "at_most_1_cross_motions",
+          "status": "passed"
+        },
+        {
+          "name": "at_most_2_cross_motions",
+          "status": "passed"
+        },
+        {
+          "name": "single_direction_cross_motion",
+          "status": "passed"
+        },
+        {
+          "name": "first_cross_motion_then_frozen",
+          "status": "passed"
+        },
+        {
+          "name": "dependency_1_positive",
+          "status": "passed"
+        },
+        {
+          "name": "dependency_1_without_preparation",
+          "status": "passed"
+        },
+        {
+          "name": "dependency_2_positive",
+          "status": "passed"
+        },
+        {
+          "name": "dependency_2_without_preparation",
+          "status": "passed"
+        },
+        {
+          "name": "dependency_3_positive",
+          "status": "passed"
+        },
+        {
+          "name": "dependency_3_without_preparation",
+          "status": "passed"
+        },
+        {
+          "name": "stage_Lift into the upper workspace",
+          "status": "passed"
+        },
+        {
+          "name": "stage_Dock against the entry pier",
+          "status": "passed"
+        },
+        {
+          "name": "stage_Align the gem descent",
+          "status": "passed"
+        },
+        {
+          "name": "selected_8_cross_frozen",
+          "status": "passed"
+        },
+        {
+          "name": "selected_9_cross_frozen",
+          "status": "passed"
+        }
+      ],
+      "scope": "Report-specific check; no broader mechanism or difficulty claim.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    },
+    {
+      "id": "t005",
+      "graphNodeId": "test-t005",
+      "candidateId": "v003",
+      "label": "replay-check-01.json",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "saved_build_matches_design",
+          "status": "passed"
+        },
+        {
+          "name": "ordinary_and_search_transitions_match",
+          "status": "passed"
+        },
+        {
+          "name": "gem_collected_and_alive_doorway_return",
+          "status": "passed"
+        }
+      ],
+      "scope": "Complete ordinary official-engine gem-and-return replay loaded from actual saved build cells, with every ordinary transition compared against moveForSearch. Separate browser play/save/export remains required.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    },
+    {
+      "id": "t006",
+      "graphNodeId": "test-t006",
+      "candidateId": "v003",
+      "label": "Browser play, recorded frames and editor round-trip",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "saved_build_matches_current_spec",
+          "status": "passed"
+        },
+        {
+          "name": "first_object_push_undo_and_reset",
+          "status": "passed"
+        },
+        {
+          "name": "every_browser_frame_matches_ordinary_engine",
+          "status": "passed"
+        },
+        {
+          "name": "complete_goal_in_browser",
+          "status": "passed"
+        },
+        {
+          "name": "editor_save_and_export_preserve_cells",
+          "status": "passed"
+        },
+        {
+          "name": "editor_3d_rendered",
+          "status": "passed"
+        }
+      ],
+      "scope": "Author self-play through the ordinary browser Play handler; each observed browser actor frame matched the official engine. First-push Undo/Reset and unchanged-cells editor save/export are separate checks. This is not a blind model evaluation or human difficulty measurement.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    }
+  ],
+  "notes": [
+    {
+      "id": "n001",
+      "graphNodeId": "note-n001",
+      "candidateId": null,
+      "label": "Create a new ice room with at least three connected cross repositioning stages, a cross-braked turn onto the gem route, and an alive return to the starting doorway.",
+      "goal": "Create a new ice room with at least three connected cross repositioning stages, a cross-braked turn onto the gem route, and an alive return to the starting doorway.",
+      "change": "Start from the empty template with a smaller inset ice basin, an asymmetric seven-member cross, and three interior pier stops. Place the gem inside the stopping graph rather than at a trivial boundary stop. Derive useful docking poses from this new footprint and verify them through ordinary engine motion.",
+      "reason": "The longer upper and right arms change remote collision stops and usable input sides. A lower interior gem needs a stopping turn; the same cross must make that turn usable while preserving a return path. Do not transfer the source's pose coordinates or direction order.",
+      "sources": [
+        "references/mechanism-logic.md",
+        "references/planning-depth.md",
+        "references/complex-validation.md",
+        "references/official-case.md",
+        "references/official-world-map.txt",
+        "references/official-states.json",
+        "references/design.md",
+        "references/verification.md"
+      ],
+      "expectedChecks": [
+        "Complete gem-and-return solution",
+        "Frozen cross and forbidden cross braking each exclude completion",
+        "At least three functional motions supported by prefix dependencies",
+        "Directed stopping graphs and actual next pushes",
+        "Saved-build ordinary replay and separate browser play/save/export"
+      ],
+      "origin": "agent_statement",
+      "retrospective": false
+    },
+    {
+      "id": "n002",
+      "graphNodeId": "note-n002",
+      "candidateId": "v001",
+      "label": "Make the first cross input reachable from the doorway without adding floor-based free turning.",
+      "goal": "Make the first cross input reachable from the doorway without adding floor-based free turning.",
+      "change": "Add a top-edge pier at (9,2), stopping the initial rightward slide at (8,2), aligned with the cross's longer right arm.",
+      "reason": "The first diagnostic exhausts just four corner stops: no player ray meets the cross. The new pier should create a downward approach to a real arm face and let ordinary search evaluate the resulting preparation chain.",
+      "sources": [
+        "diagnostic-01.json",
+        "references/design.md"
+      ],
+      "expectedChecks": [
+        "A usable initial cross input exists",
+        "Complete gem-and-return solution",
+        "Braking and multiple cross motions remain necessary"
+      ],
+      "origin": "agent_statement",
+      "retrospective": false
+    },
+    {
+      "id": "n003",
+      "graphNodeId": "note-n003",
+      "candidateId": "v002",
+      "label": "Bind the three functional stages to the dependencies actually demonstrated by the new basin.",
+      "goal": "Bind the three functional stages to the dependencies actually demonstrated by the new basin.",
+      "change": "Declare upward preparation, right docking at center (8,4), and lower alignment at center (8,9). Use the 19-input complete route as the ordinary witness, with next input faces at (5,5) and (10,3).",
+      "reason": "The first downward parking pose and the exact upper-left pose each have bypasses, so neither is declared necessary. The separate directional prefix search excludes docking without upward motion. Docking is necessary before lower alignment, and lower alignment is necessary for the full objective. Long static brakes are required somewhere in every completion, but the gem is collected during the final cross push in this witness.",
+      "sources": [
+        "diagnostic-02.json",
+        "direction-preparation.json",
+        "references/complex-validation.md"
+      ],
+      "expectedChecks": [
+        "Positive and restricted upward-preparation-to-docking prefix",
+        "Positive and restricted docking-to-lower-alignment prefix",
+        "Lower alignment required for gem-and-return",
+        "Directed next-stance access after each stage",
+        "No completion using at most two cross motions"
+      ],
+      "origin": "agent_statement",
+      "retrospective": false
+    }
+  ],
+  "resources": [
+    {
+      "id": "r001",
+      "graphNodeId": "resource-r001",
+      "label": "mazebench-skating-cross/SKILL.md",
+      "displayPath": "mazebench-skating-cross/SKILL.md",
+      "basename": "SKILL.md",
+      "sha256": "e6e37a07abcecf0ebba7d066a277e5c28a8308b614ba53ab3fdfc48fa9549386",
+      "kind": "skill",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r002",
+      "graphNodeId": "resource-r002",
+      "label": "mazebench-skating-cross/references/mechanism-logic.md",
+      "displayPath": "mazebench-skating-cross/references/mechanism-logic.md",
+      "basename": "mechanism-logic.md",
+      "sha256": "38893a6acc86d55a6ca216f794f2e0cd09a6e897c3dcfedb5384cbd175e9f247",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r003",
+      "graphNodeId": "resource-r003",
+      "label": "mazebench-skating-cross/references/planning-depth.md",
+      "displayPath": "mazebench-skating-cross/references/planning-depth.md",
+      "basename": "planning-depth.md",
+      "sha256": "fbb19ded77faa9fd3dce184496a7f63ac4ca10dbfa2e3867e67ff78291316e00",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r004",
+      "graphNodeId": "resource-r004",
+      "label": "mazebench-skating-cross/references/complex-validation.md",
+      "displayPath": "mazebench-skating-cross/references/complex-validation.md",
+      "basename": "complex-validation.md",
+      "sha256": "1359df20e27773a602066f55e422adffc8507bf8160da5edcd0d0ee7ab06c616",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r005",
+      "graphNodeId": "resource-r005",
+      "label": "mazebench-skating-cross/references/design-template.json",
+      "displayPath": "mazebench-skating-cross/references/design-template.json",
+      "basename": "design-template.json",
+      "sha256": "c508348d99af852fd1da821b9fbe0e6e6ca412e650a8233b6add83b637da77fb",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r006",
+      "graphNodeId": "resource-r006",
+      "label": "mazebench-skating-cross/references/official-case.md",
+      "displayPath": "mazebench-skating-cross/references/official-case.md",
+      "basename": "official-case.md",
+      "sha256": "8a6c19d78ed91886ac77b8612a0f74eaf668d7d8d573a0b5341a426106235a4d",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r007",
+      "graphNodeId": "resource-r007",
+      "label": "mazebench-skating-cross/references/official-world-map.txt",
+      "displayPath": "mazebench-skating-cross/references/official-world-map.txt",
+      "basename": "official-world-map.txt",
+      "sha256": "f8d3bb11617bbd5a08560c0997ca66c0e2a6806f93302542fc338f0da7a2fdd8",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r008",
+      "graphNodeId": "resource-r008",
+      "label": "mazebench-skating-cross/references/official-states.json",
+      "displayPath": "mazebench-skating-cross/references/official-states.json",
+      "basename": "official-states.json",
+      "sha256": "81eb5a03f4f89ae619115d41f68dac4842e22d394130825d102ef28acddabf38",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r009",
+      "graphNodeId": "resource-r009",
+      "label": "mazebench-skating-cross/references/design.md",
+      "displayPath": "mazebench-skating-cross/references/design.md",
+      "basename": "design.md",
+      "sha256": "e11d642c7dffcadd426223d71153b4f3e591abc9e2546e0186b0159f2a549d19",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r010",
+      "graphNodeId": "resource-r010",
+      "label": "mazebench-skating-cross/references/verification.md",
+      "displayPath": "mazebench-skating-cross/references/verification.md",
+      "basename": "verification.md",
+      "sha256": "e57233b5b968d848a1c99c96c19c1e1089ebb38371f989df3648752df48bcc21",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "snapshot-e000003",
+      "graphNodeId": "resource-snapshot-e000003",
+      "label": "Skill attached: mazebench-skating-cross/SKILL.md",
+      "displayPath": "mazebench-skating-cross/SKILL.md",
+      "basename": "SKILL.md",
+      "sha256": "e6e37a07abcecf0ebba7d066a277e5c28a8308b614ba53ab3fdfc48fa9549386",
+      "kind": "skill",
+      "origin": "observed",
+      "delivery": "snapshot"
+    }
+  ],
+  "operations": [
+    {
+      "id": "operation-e000015",
+      "graphNodeId": "operation-e000015",
+      "candidateId": "v001",
+      "inputCandidateId": null,
+      "outputCandidateId": "v001",
+      "label": "node",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000022",
+      "graphNodeId": "operation-e000022",
+      "candidateId": "v002",
+      "inputCandidateId": "v001",
+      "outputCandidateId": "v002",
+      "label": "node",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000025",
+      "graphNodeId": "operation-e000025",
+      "candidateId": "v002",
+      "inputCandidateId": "v002",
+      "outputCandidateId": "v002",
+      "label": "node",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000028",
+      "graphNodeId": "operation-e000028",
+      "candidateId": "v002",
+      "inputCandidateId": "v002",
+      "outputCandidateId": "v002",
+      "label": "node",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000032",
+      "graphNodeId": "operation-e000032",
+      "candidateId": "v003",
+      "inputCandidateId": "v002",
+      "outputCandidateId": "v003",
+      "label": "node",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000035",
+      "graphNodeId": "operation-e000035",
+      "candidateId": "v003",
+      "inputCandidateId": "v003",
+      "outputCandidateId": "v003",
+      "label": "verify.cjs",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000038",
+      "graphNodeId": "operation-e000038",
+      "candidateId": "v003",
+      "inputCandidateId": "v003",
+      "outputCandidateId": "v003",
+      "label": "build.cjs",
+      "kind": "build",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000041",
+      "graphNodeId": "operation-e000041",
+      "candidateId": "v003",
+      "inputCandidateId": "v003",
+      "outputCandidateId": "v003",
+      "label": "node",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000045",
+      "graphNodeId": "operation-e000045",
+      "candidateId": "v003",
+      "inputCandidateId": "v003",
+      "outputCandidateId": "v003",
+      "label": "Browser play, recorded frames and editor round-trip",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    }
+  ],
+  "replays": [
+    {
+      "id": "replay-e000044",
+      "graphNodeId": "replay-e000044",
+      "candidateId": "v003",
+      "label": "Saved ordinary gameplay replay",
+      "route": "RDDULDRURDRULDDLULU",
+      "frameCount": 20,
+      "binding": "exact-artifact",
+      "sourceKind": "saved-replay",
+      "sourceSha256": "f44a6dbbc6e95ddfec0761ba4a533fe0529911d1145b57819317ebddb09b60bb",
+      "cellsSha256": "34251ad0b4c255fc41fff00aa66631c8791453ac6c2872d07e968364013ddaa1",
+      "contractSha256": "8a9a9fea6c7636cf80dd16d45daf1d4811a7c959e7c20958d1a5261dac73b0a7",
+      "data": "data/process-replays/authored-skating-cross-942ab792fe79/v003-replay-e000044.json",
+      "sha256": "eb4a66cc284b4715425691b0eb4a05811e88ccb0450aac7e507598799be5e667"
+    },
+    {
+      "id": "replay-e000048",
+      "graphNodeId": "replay-e000048",
+      "candidateId": "v003",
+      "label": "Saved browser playthrough",
+      "route": "RDDULDRURDRULDDLULU",
+      "frameCount": 20,
+      "binding": "exact-artifact",
+      "sourceKind": "saved-replay",
+      "sourceSha256": "a58164499df661e0907d4e346a0bce0447bdb2cf6feb6403d9508abc3e16005b",
+      "cellsSha256": "34251ad0b4c255fc41fff00aa66631c8791453ac6c2872d07e968364013ddaa1",
+      "contractSha256": "8a9a9fea6c7636cf80dd16d45daf1d4811a7c959e7c20958d1a5261dac73b0a7",
+      "data": "data/process-replays/authored-skating-cross-942ab792fe79/v003-replay-e000048.json",
+      "sha256": "f4790464ba24abd1fe52fd730ddcea581a0ed27540ca66eb763f6b430bceed61"
+    }
+  ]
+}

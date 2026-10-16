@@ -1,0 +1,3406 @@
+{
+  "schemaVersion": 1,
+  "caseId": "authored-block-coordination-030c8da1aa61",
+  "title": "Relay Court",
+  "skill": "block-coordination",
+  "finalCandidateId": "v002",
+  "summary": "2 recorded candidates, 3 tests, 0 failed diagnostics, and 2 agent annotations.",
+  "coverage": {
+    "mode": "observed",
+    "audit": {
+      "status": "passed",
+      "failed": 0,
+      "unknown": 0
+    },
+    "sources": {
+      "directOriginalCaseRead": "recorded",
+      "originalCaseResourceIds": [
+        "r004",
+        "r005",
+        "r006",
+        "r007",
+        "r008"
+      ],
+      "indirect": [],
+      "scope": "Direct reading is reported only for captured read events. A source named by a skill is indirect provenance, not evidence that this run opened or used the original case."
+    },
+    "limitations": [
+      "Only recorded operations and saved snapshots are shown; transient in-memory drafts and unrecorded activity remain unknown.",
+      "Snapshot parent links show recorded version order, not proof of causal reasoning. No unrecorded branches or merges are reconstructed.",
+      "Agent annotations are concise explanations, not internal thought transcripts. Recorded resource delivery does not prove comprehension or use.",
+      "Test outcomes retain their own scope. Author self-tests do not establish independent-agent effectiveness or human difficulty.",
+      "Automatic CLI boundaries record supported build and verification commands. Other commands and resource reads require the skill observer helper.",
+      "Snapshots describe saved versions at operation boundaries, not every editor keystroke. Design notes are author statements, not internal reasoning.",
+      "A started task remains running until the author records finish. An interrupted task may therefore remain open."
+    ]
+  },
+  "nodes": [
+    {
+      "id": "resource-snapshot-e000003",
+      "kind": "resource",
+      "label": "Skill attached: mazebench-block-coordination/SKILL.md",
+      "status": "neutral",
+      "order": 3,
+      "summary": "Skill version captured as a dependency. This event does not record a reading.",
+      "details": {
+        "resourceId": "snapshot-e000003",
+        "displayPath": "mazebench-block-coordination/SKILL.md",
+        "sha256": "e1a7da7362b1c100cdf8283a8e4cca033f4f3eba5c4dd8fdf3700d46f3ffe6c2",
+        "kind": "skill",
+        "delivery": "snapshot"
+      }
+    },
+    {
+      "id": "resource-r001",
+      "kind": "resource",
+      "label": "SKILL.md",
+      "status": "neutral",
+      "order": 4,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r001",
+        "displayPath": "mazebench-block-coordination/SKILL.md",
+        "sha256": "e1a7da7362b1c100cdf8283a8e4cca033f4f3eba5c4dd8fdf3700d46f3ffe6c2",
+        "kind": "skill",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r002",
+      "kind": "resource",
+      "label": "mechanism-logic.md",
+      "status": "neutral",
+      "order": 5,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r002",
+        "displayPath": "mazebench-block-coordination/references/mechanism-logic.md",
+        "sha256": "ec08306e851dfda530120d5a05e9682196f23dc61a506540f7211bae120e4b44",
+        "kind": "mechanism",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r003",
+      "kind": "resource",
+      "label": "design.md",
+      "status": "neutral",
+      "order": 6,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r003",
+        "displayPath": "mazebench-block-coordination/references/design.md",
+        "sha256": "f819f9b541ba9b8d47819903282f20d1e6d96f4ff1f7c0cd43beeb43c09b3f87",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r004",
+      "kind": "resource",
+      "label": "official-case.md",
+      "status": "neutral",
+      "order": 7,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r004",
+        "displayPath": "mazebench-block-coordination/references/official-case.md",
+        "sha256": "cb5f5ad4459556766717c1554743fb8a88c5b182d033868b17e366205b43df77",
+        "kind": "source",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r005",
+      "kind": "resource",
+      "label": "official-bxc-case.md",
+      "status": "neutral",
+      "order": 8,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r005",
+        "displayPath": "mazebench-block-coordination/references/official-bxc-case.md",
+        "sha256": "c075fca5089dbf3a0418d297550260d822ddc1c483563bc7625f1ab995173061",
+        "kind": "source",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r006",
+      "kind": "resource",
+      "label": "official-case.md",
+      "status": "neutral",
+      "order": 9,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r006",
+        "displayPath": "mazebench-block-coordination/references/official-case.md",
+        "sha256": "cb5f5ad4459556766717c1554743fb8a88c5b182d033868b17e366205b43df77",
+        "kind": "source",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r007",
+      "kind": "resource",
+      "label": "official-world-map.txt",
+      "status": "neutral",
+      "order": 10,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r007",
+        "displayPath": "mazebench-block-coordination/references/official-world-map.txt",
+        "sha256": "bd49d992a8d319fe9d8bdc704ec9bad10845e7e022c3d250965884f55c71fa90",
+        "kind": "source",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r008",
+      "kind": "resource",
+      "label": "official-bxc-case.md",
+      "status": "neutral",
+      "order": 11,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r008",
+        "displayPath": "mazebench-block-coordination/references/official-bxc-case.md",
+        "sha256": "c075fca5089dbf3a0418d297550260d822ddc1c483563bc7625f1ab995173061",
+        "kind": "source",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r009",
+      "kind": "resource",
+      "label": "verification.md",
+      "status": "neutral",
+      "order": 12,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r009",
+        "displayPath": "mazebench-block-coordination/references/verification.md",
+        "sha256": "c8b6d3e6dd8ace4260bb177106d790b5cf44d851aefcc411212f827eed983eeb",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r010",
+      "kind": "resource",
+      "label": "reference-library.md",
+      "status": "neutral",
+      "order": 13,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r010",
+        "displayPath": "mazebench-block-coordination/references/reference-library.md",
+        "sha256": "0cf1b8660915c86754cbe7f1138cfad25ccfc02c4b2b41605936914a1ff47902",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "note-n001",
+      "kind": "note",
+      "label": "Reach the upper doorway through a sequence of three usable gate shields, retaining the last shield for a second pushing direction.",
+      "status": "neutral",
+      "order": 14,
+      "summary": "Create a new folded passage with eastbound delivery, a southbound handoff, westbound delivery and a northbound reuse of the final shield.",
+      "details": {
+        "noteId": "n001",
+        "candidateId": null,
+        "origin": "agent_statement",
+        "retrospective": false
+      }
+    },
+    {
+      "id": "candidate-v001",
+      "kind": "candidate",
+      "label": "v001 · Relay Court",
+      "status": "neutral",
+      "order": 16,
+      "summary": "0 changed cells; 256 added; 0 removed.",
+      "details": {
+        "candidateId": "v001",
+        "cellsSha256": "09fa2aa96446725cfbfb58ecb9f9daf30e61a14f3df7eb50f0f079545df91065",
+        "contractSha256": "28a07a603f8e097951117b6ea86e872f2cd121713930f45b1e281cdd67e51339",
+        "parentBasis": "observed-snapshot-order"
+      }
+    },
+    {
+      "id": "operation-e000015",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 17,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000015",
+        "candidateId": "v001",
+        "inputCandidateId": null,
+        "outputCandidateId": "v001",
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "operation-e000018",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 19,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000018",
+        "candidateId": "v001",
+        "inputCandidateId": "v001",
+        "outputCandidateId": "v001",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "test-t001",
+      "kind": "test",
+      "label": "probe-01.json",
+      "status": "passed",
+      "order": 20,
+      "summary": "Report-specific check; no broader mechanism or difficulty claim.",
+      "details": {
+        "testId": "t001",
+        "candidateId": "v001",
+        "binding": "exact",
+        "category": "test"
+      }
+    },
+    {
+      "id": "note-n002",
+      "kind": "note",
+      "label": "Keep the three shield handoffs readable and prove that the final shield must change direction before reaching the doorway.",
+      "status": "neutral",
+      "order": 21,
+      "summary": "Trim unused north/east/south parking space, make the upper doorway unambiguous, and bind observed handoffs to the design contract.",
+      "details": {
+        "noteId": "n002",
+        "candidateId": "v001",
+        "origin": "agent_statement",
+        "retrospective": false
+      }
+    },
+    {
+      "id": "candidate-v002",
+      "kind": "candidate",
+      "label": "v002 · Relay Court",
+      "status": "neutral",
+      "order": 23,
+      "summary": "14 changed cells; 0 added; 0 removed.",
+      "details": {
+        "candidateId": "v002",
+        "cellsSha256": "b4e52a74e76463438e8380c288905ff38a1076bc2342073a6b1cd4662e8b64e7",
+        "contractSha256": "5c2a46f1284297b8d276fe862e558dac46ca0d563447aa9db2c64f7ffa2dfdf4",
+        "parentBasis": "observed-snapshot-order"
+      }
+    },
+    {
+      "id": "operation-e000022",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 24,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000022",
+        "candidateId": "v002",
+        "inputCandidateId": "v001",
+        "outputCandidateId": "v002",
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "operation-e000025",
+      "kind": "operation",
+      "label": "build.cjs",
+      "status": "neutral",
+      "order": 26,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000025",
+        "candidateId": "v002",
+        "inputCandidateId": "v002",
+        "outputCandidateId": "v002",
+        "kind": "build",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "operation-e000028",
+      "kind": "operation",
+      "label": "verify.cjs",
+      "status": "neutral",
+      "order": 29,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000028",
+        "candidateId": "v002",
+        "inputCandidateId": "v002",
+        "outputCandidateId": "v002",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "test-t002",
+      "kind": "test",
+      "label": "verify.cjs",
+      "status": "passed",
+      "order": 30,
+      "summary": "Ordinary official replay, directed walking SCCs, complete actor footprints, reachable branch controls and the listed finite-state exclusions. No human difficulty or unique-route claim.",
+      "details": {
+        "testId": "t002",
+        "candidateId": "v002",
+        "binding": "exact",
+        "category": "test"
+      }
+    },
+    {
+      "id": "operation-e000031",
+      "kind": "operation",
+      "label": "Browser play, recorded frames and editor round-trip",
+      "status": "neutral",
+      "order": 32,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000031",
+        "candidateId": "v002",
+        "inputCandidateId": "v002",
+        "outputCandidateId": "v002",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "test-t003",
+      "kind": "test",
+      "label": "Browser play, recorded frames and editor round-trip",
+      "status": "passed",
+      "order": 33,
+      "summary": "Author self-play through the ordinary browser Play handler; each observed browser actor frame matched the official engine. First-push Undo/Reset and unchanged-cells editor save/export are separate checks. This is not a blind model evaluation or human difficulty measurement.",
+      "details": {
+        "testId": "t003",
+        "candidateId": "v002",
+        "binding": "exact",
+        "category": "test"
+      }
+    },
+    {
+      "id": "replay-e000034",
+      "kind": "replay",
+      "label": "Saved browser playthrough",
+      "status": "neutral",
+      "order": 34,
+      "summary": "37 recorded inputs and 38 saved frames, bound to v002.",
+      "details": {
+        "replayId": "replay-e000034",
+        "candidateId": "v002",
+        "binding": "exact-artifact",
+        "sourceKind": "saved-replay"
+      }
+    },
+    {
+      "id": "delivery-final",
+      "kind": "delivery",
+      "label": "Published final candidate v002",
+      "status": "passed",
+      "order": 36,
+      "summary": "Final map and contract hashes match the published design. Earlier failed attempts remain visible.",
+      "details": {
+        "caseId": "authored-block-coordination-030c8da1aa61",
+        "candidateId": "v002",
+        "cellsSha256": "b4e52a74e76463438e8380c288905ff38a1076bc2342073a6b1cd4662e8b64e7",
+        "contractSha256": "5c2a46f1284297b8d276fe862e558dac46ca0d563447aa9db2c64f7ffa2dfdf4"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "candidate-v001",
+      "to": "candidate-v002",
+      "kind": "revision",
+      "label": "Observed snapshot order; not causal proof",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v001",
+      "to": "test-t001",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v002",
+      "to": "test-t002",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v002",
+      "to": "test-t003",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "resource-r006",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r008",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v001",
+      "to": "note-n002",
+      "kind": "annotation",
+      "label": "Agent annotation about this candidate",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v002",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Published cells and contract match",
+      "inferred": false
+    },
+    {
+      "from": "test-t002",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Passed within the stated test scope",
+      "inferred": false
+    },
+    {
+      "from": "test-t003",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Passed within the stated test scope",
+      "inferred": false
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "graphNodeId": "candidate-v001",
+      "label": "Relay Court",
+      "parentId": null,
+      "parentIds": [],
+      "cells": [
+        [
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "g",
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "g",
+          "#",
+          ".",
+          ".",
+          "p",
+          "M0",
+          "g",
+          "g",
+          "g",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "g",
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "g",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "M1",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "g",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "g",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "g",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "g",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "g",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "g",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "g",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          ".",
+          ".",
+          ".",
+          ".",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          ".",
+          ".",
+          "g",
+          "g",
+          "g",
+          "g",
+          "g",
+          "g",
+          "M2",
+          ".",
+          ".",
+          ".",
+          ".",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          ".",
+          ".",
+          ".",
+          ".",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ]
+      ],
+      "sha256": "40f4a8aaee6bd1b9a41099a91688a20a098ebab7a03e77a94828fde0a7be428a",
+      "cellsSha256": "09fa2aa96446725cfbfb58ecb9f9daf30e61a14f3df7eb50f0f079545df91065",
+      "contractSha256": "28a07a603f8e097951117b6ea86e872f2cd121713930f45b1e281cdd67e51339",
+      "origin": "observed",
+      "parentBasis": "observed-snapshot-order",
+      "diff": {
+        "added": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "M2"
+          },
+          {
+            "x": 10,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 10,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 11,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 11,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 11,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 11,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 11,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 11,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 12,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 12,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 12,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 12,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 12,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 12,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "M1"
+          },
+          {
+            "x": 12,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 12,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 12,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 13,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 13,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 13,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 13,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 13,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 13,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 13,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 14,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 14,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 14,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 2,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 2,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 2,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 2,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 2,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 2,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 2,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 2,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 2,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 2,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 2,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 2,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 3,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 3,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 3,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 3,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 3,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 3,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 3,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 4,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 5,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 6,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "p"
+          },
+          {
+            "x": 6,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 7,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "M0"
+          },
+          {
+            "x": 7,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 8,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 8,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 9,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 9,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          }
+        ],
+        "removed": [],
+        "changed": []
+      },
+      "preview": {
+        "levelPath": "data/process-levels/authored-block-coordination-030c8da1aa61/v001.json",
+        "levelSha256": "f29783f3c1d4265a13bc5a251c5c9f87231474f6f572648eae3eeefc4e43e46d",
+        "cellsSha256": "09fa2aa96446725cfbfb58ecb9f9daf30e61a14f3df7eb50f0f079545df91065",
+        "status": "iteration"
+      }
+    },
+    {
+      "id": "v002",
+      "graphNodeId": "candidate-v002",
+      "label": "Relay Court",
+      "parentId": "v001",
+      "parentIds": [
+        "v001"
+      ],
+      "cells": [
+        [
+          "#",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "g",
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "g",
+          "#",
+          ".",
+          ".",
+          "p",
+          "M0",
+          "g",
+          "g",
+          "g",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "g",
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "g",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "M1",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "g",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "g",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "g",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "g",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "g",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "g",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "g",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          ".",
+          ".",
+          "g",
+          "g",
+          "g",
+          "g",
+          "g",
+          "g",
+          "M2",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ]
+      ],
+      "sha256": "7dabe2568af7acf2f06d989b4e7924b50e8a56ee10441f5821bff4c5513943c4",
+      "cellsSha256": "b4e52a74e76463438e8380c288905ff38a1076bc2342073a6b1cd4662e8b64e7",
+      "contractSha256": "5c2a46f1284297b8d276fe862e558dac46ca0d563447aa9db2c64f7ffa2dfdf4",
+      "origin": "observed",
+      "parentBasis": "observed-snapshot-order",
+      "diff": {
+        "added": [],
+        "removed": [],
+        "changed": [
+          {
+            "x": 1,
+            "y": 13,
+            "z": 0,
+            "before": ".",
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 3,
+            "z": 0,
+            "before": ".",
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 3,
+            "z": 0,
+            "before": ".",
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 10,
+            "z": 0,
+            "before": ".",
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 11,
+            "z": 0,
+            "before": ".",
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 12,
+            "z": 0,
+            "before": ".",
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 3,
+            "z": 0,
+            "before": ".",
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 10,
+            "z": 0,
+            "before": ".",
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 11,
+            "z": 0,
+            "before": ".",
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 12,
+            "z": 0,
+            "before": ".",
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "before": ".",
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 13,
+            "z": 0,
+            "before": ".",
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 0,
+            "z": 0,
+            "before": ".",
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 13,
+            "z": 0,
+            "before": ".",
+            "after": "#"
+          }
+        ]
+      },
+      "preview": {
+        "levelPath": "data/process-levels/authored-block-coordination-030c8da1aa61/v002.json",
+        "levelSha256": "5c1caaf85ff245cd4dce0ddc251c865c1f24926fcbaeb8b66e37cafb37a37fed",
+        "cellsSha256": "b4e52a74e76463438e8380c288905ff38a1076bc2342073a6b1cd4662e8b64e7",
+        "status": "iteration",
+        "replays": [
+          {
+            "id": "replay-e000034",
+            "data": "data/process-replays/authored-block-coordination-030c8da1aa61/v002-replay-e000034.json",
+            "sha256": "bdf9f76c776891a38ac398f5c499e2abf243343324b3499207c5a9bf157d5259",
+            "candidateId": "v002",
+            "cellsSha256": "b4e52a74e76463438e8380c288905ff38a1076bc2342073a6b1cd4662e8b64e7",
+            "contractSha256": "5c2a46f1284297b8d276fe862e558dac46ca0d563447aa9db2c64f7ffa2dfdf4",
+            "sourceSha256": "19fd3a11be00fde98c203ef68c1500da53c570b5bd440d6d013aea085cae5aa4",
+            "route": "RRRRRDRDDDDDLDLLLLLLLLDLUUUUUUUUUULUU",
+            "frameCount": 38,
+            "binding": "exact-artifact",
+            "sourceKind": "saved-replay"
+          }
+        ],
+        "replay": {
+          "id": "replay-e000034",
+          "data": "data/process-replays/authored-block-coordination-030c8da1aa61/v002-replay-e000034.json",
+          "sha256": "bdf9f76c776891a38ac398f5c499e2abf243343324b3499207c5a9bf157d5259",
+          "candidateId": "v002",
+          "cellsSha256": "b4e52a74e76463438e8380c288905ff38a1076bc2342073a6b1cd4662e8b64e7",
+          "contractSha256": "5c2a46f1284297b8d276fe862e558dac46ca0d563447aa9db2c64f7ffa2dfdf4",
+          "sourceSha256": "19fd3a11be00fde98c203ef68c1500da53c570b5bd440d6d013aea085cae5aa4",
+          "route": "RRRRRDRDDDDDLDLLLLLLLLDLUUUUUUUUUULUU",
+          "frameCount": 38,
+          "binding": "exact-artifact",
+          "sourceKind": "saved-replay"
+        }
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "graphNodeId": "test-t001",
+      "candidateId": "v001",
+      "label": "probe-01.json",
+      "status": "passed",
+      "checks": [],
+      "scope": "Report-specific check; no broader mechanism or difficulty claim.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    },
+    {
+      "id": "t002",
+      "graphNodeId": "test-t002",
+      "candidateId": "v002",
+      "label": "verify.cjs",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "initial-frozen-walking",
+          "status": "passed"
+        },
+        {
+          "name": "freeze-M0",
+          "status": "passed"
+        },
+        {
+          "name": "freeze-M1",
+          "status": "passed"
+        },
+        {
+          "name": "freeze-M2",
+          "status": "passed"
+        },
+        {
+          "name": "without-retained-shield-west-then-north",
+          "status": "passed"
+        },
+        {
+          "name": "at-most-one-object-push",
+          "status": "passed"
+        },
+        {
+          "name": "one-pushing-direction",
+          "status": "passed"
+        }
+      ],
+      "scope": "Ordinary official replay, directed walking SCCs, complete actor footprints, reachable branch controls and the listed finite-state exclusions. No human difficulty or unique-route claim.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    },
+    {
+      "id": "t003",
+      "graphNodeId": "test-t003",
+      "candidateId": "v002",
+      "label": "Browser play, recorded frames and editor round-trip",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "saved_build_matches_current_spec",
+          "status": "passed"
+        },
+        {
+          "name": "first_object_push_undo_and_reset",
+          "status": "passed"
+        },
+        {
+          "name": "every_browser_frame_matches_ordinary_engine",
+          "status": "passed"
+        },
+        {
+          "name": "complete_goal_in_browser",
+          "status": "passed"
+        },
+        {
+          "name": "editor_save_and_export_preserve_cells",
+          "status": "passed"
+        },
+        {
+          "name": "editor_3d_rendered",
+          "status": "passed"
+        }
+      ],
+      "scope": "Author self-play through the ordinary browser Play handler; each observed browser actor frame matched the official engine. First-push Undo/Reset and unchanged-cells editor save/export are separate checks. This is not a blind model evaluation or human difficulty measurement.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    }
+  ],
+  "notes": [
+    {
+      "id": "n001",
+      "graphNodeId": "note-n001",
+      "candidateId": null,
+      "label": "Reach the upper doorway through a sequence of three usable gate shields, retaining the last shield for a second pushing direction.",
+      "goal": "Reach the upper doorway through a sequence of three usable gate shields, retaining the last shield for a second pushing direction.",
+      "change": "Create a new folded passage with eastbound delivery, a southbound handoff, westbound delivery and a northbound reuse of the final shield.",
+      "reason": "Each landing must deliver the player to an executable next input. The last landing needs clear ground for changing the final shield's pushing side. Earlier shields may stay parked after their verified handoff.",
+      "sources": [
+        "prepare-next-shield",
+        "independent-or-chain-motion",
+        "retain-or-release-tools",
+        "official-case.md",
+        "official-bxc-case.md"
+      ],
+      "expectedChecks": [
+        "Ordinary complete doorway replay",
+        "Independent freezes of all three shields",
+        "Changed-side reuse exclusion",
+        "Reachable branch controls",
+        "Browser play and save/export"
+      ],
+      "origin": "agent_statement",
+      "retrospective": false
+    },
+    {
+      "id": "n002",
+      "graphNodeId": "note-n002",
+      "candidateId": "v001",
+      "label": "Keep the three shield handoffs readable and prove that the final shield must change direction before reaching the doorway.",
+      "goal": "Keep the three shield handoffs readable and prove that the final shield must change direction before reaching the doorway.",
+      "change": "Trim unused north/east/south parking space, make the upper doorway unambiguous, and bind observed handoffs to the design contract.",
+      "reason": "The first ordinary replay completed in 37 inputs. Its broad landings admit unnecessary parking states. The revision preserves working stances while removing unused alcoves, then tests whether leaving the last shield off the northbound lane prevents the next input.",
+      "sources": [
+        "probe-01.json",
+        "prepare-next-shield",
+        "retain-or-release-tools"
+      ],
+      "expectedChecks": [
+        "Recheck the saved 37-input route",
+        "Freeze each shield",
+        "Exclude west-then-north reuse",
+        "Compare two reachable states with the same player approach"
+      ],
+      "origin": "agent_statement",
+      "retrospective": false
+    }
+  ],
+  "resources": [
+    {
+      "id": "r001",
+      "graphNodeId": "resource-r001",
+      "label": "mazebench-block-coordination/SKILL.md",
+      "displayPath": "mazebench-block-coordination/SKILL.md",
+      "basename": "SKILL.md",
+      "sha256": "e1a7da7362b1c100cdf8283a8e4cca033f4f3eba5c4dd8fdf3700d46f3ffe6c2",
+      "kind": "skill",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r002",
+      "graphNodeId": "resource-r002",
+      "label": "mazebench-block-coordination/references/mechanism-logic.md",
+      "displayPath": "mazebench-block-coordination/references/mechanism-logic.md",
+      "basename": "mechanism-logic.md",
+      "sha256": "ec08306e851dfda530120d5a05e9682196f23dc61a506540f7211bae120e4b44",
+      "kind": "mechanism",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r003",
+      "graphNodeId": "resource-r003",
+      "label": "mazebench-block-coordination/references/design.md",
+      "displayPath": "mazebench-block-coordination/references/design.md",
+      "basename": "design.md",
+      "sha256": "f819f9b541ba9b8d47819903282f20d1e6d96f4ff1f7c0cd43beeb43c09b3f87",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r004",
+      "graphNodeId": "resource-r004",
+      "label": "mazebench-block-coordination/references/official-case.md",
+      "displayPath": "mazebench-block-coordination/references/official-case.md",
+      "basename": "official-case.md",
+      "sha256": "cb5f5ad4459556766717c1554743fb8a88c5b182d033868b17e366205b43df77",
+      "kind": "source",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r005",
+      "graphNodeId": "resource-r005",
+      "label": "mazebench-block-coordination/references/official-bxc-case.md",
+      "displayPath": "mazebench-block-coordination/references/official-bxc-case.md",
+      "basename": "official-bxc-case.md",
+      "sha256": "c075fca5089dbf3a0418d297550260d822ddc1c483563bc7625f1ab995173061",
+      "kind": "source",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r006",
+      "graphNodeId": "resource-r006",
+      "label": "mazebench-block-coordination/references/official-case.md",
+      "displayPath": "mazebench-block-coordination/references/official-case.md",
+      "basename": "official-case.md",
+      "sha256": "cb5f5ad4459556766717c1554743fb8a88c5b182d033868b17e366205b43df77",
+      "kind": "source",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r007",
+      "graphNodeId": "resource-r007",
+      "label": "mazebench-block-coordination/references/official-world-map.txt",
+      "displayPath": "mazebench-block-coordination/references/official-world-map.txt",
+      "basename": "official-world-map.txt",
+      "sha256": "bd49d992a8d319fe9d8bdc704ec9bad10845e7e022c3d250965884f55c71fa90",
+      "kind": "source",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r008",
+      "graphNodeId": "resource-r008",
+      "label": "mazebench-block-coordination/references/official-bxc-case.md",
+      "displayPath": "mazebench-block-coordination/references/official-bxc-case.md",
+      "basename": "official-bxc-case.md",
+      "sha256": "c075fca5089dbf3a0418d297550260d822ddc1c483563bc7625f1ab995173061",
+      "kind": "source",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r009",
+      "graphNodeId": "resource-r009",
+      "label": "mazebench-block-coordination/references/verification.md",
+      "displayPath": "mazebench-block-coordination/references/verification.md",
+      "basename": "verification.md",
+      "sha256": "c8b6d3e6dd8ace4260bb177106d790b5cf44d851aefcc411212f827eed983eeb",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r010",
+      "graphNodeId": "resource-r010",
+      "label": "mazebench-block-coordination/references/reference-library.md",
+      "displayPath": "mazebench-block-coordination/references/reference-library.md",
+      "basename": "reference-library.md",
+      "sha256": "0cf1b8660915c86754cbe7f1138cfad25ccfc02c4b2b41605936914a1ff47902",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "snapshot-e000003",
+      "graphNodeId": "resource-snapshot-e000003",
+      "label": "Skill attached: mazebench-block-coordination/SKILL.md",
+      "displayPath": "mazebench-block-coordination/SKILL.md",
+      "basename": "SKILL.md",
+      "sha256": "e1a7da7362b1c100cdf8283a8e4cca033f4f3eba5c4dd8fdf3700d46f3ffe6c2",
+      "kind": "skill",
+      "origin": "observed",
+      "delivery": "snapshot"
+    }
+  ],
+  "operations": [
+    {
+      "id": "operation-e000015",
+      "graphNodeId": "operation-e000015",
+      "candidateId": "v001",
+      "inputCandidateId": null,
+      "outputCandidateId": "v001",
+      "label": "node",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000018",
+      "graphNodeId": "operation-e000018",
+      "candidateId": "v001",
+      "inputCandidateId": "v001",
+      "outputCandidateId": "v001",
+      "label": "node",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000022",
+      "graphNodeId": "operation-e000022",
+      "candidateId": "v002",
+      "inputCandidateId": "v001",
+      "outputCandidateId": "v002",
+      "label": "node",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000025",
+      "graphNodeId": "operation-e000025",
+      "candidateId": "v002",
+      "inputCandidateId": "v002",
+      "outputCandidateId": "v002",
+      "label": "build.cjs",
+      "kind": "build",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000028",
+      "graphNodeId": "operation-e000028",
+      "candidateId": "v002",
+      "inputCandidateId": "v002",
+      "outputCandidateId": "v002",
+      "label": "verify.cjs",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000031",
+      "graphNodeId": "operation-e000031",
+      "candidateId": "v002",
+      "inputCandidateId": "v002",
+      "outputCandidateId": "v002",
+      "label": "Browser play, recorded frames and editor round-trip",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    }
+  ],
+  "replays": [
+    {
+      "id": "replay-e000034",
+      "graphNodeId": "replay-e000034",
+      "candidateId": "v002",
+      "label": "Saved browser playthrough",
+      "route": "RRRRRDRDDDDDLDLLLLLLLLDLUUUUUUUUUULUU",
+      "frameCount": 38,
+      "binding": "exact-artifact",
+      "sourceKind": "saved-replay",
+      "sourceSha256": "19fd3a11be00fde98c203ef68c1500da53c570b5bd440d6d013aea085cae5aa4",
+      "cellsSha256": "b4e52a74e76463438e8380c288905ff38a1076bc2342073a6b1cd4662e8b64e7",
+      "contractSha256": "5c2a46f1284297b8d276fe862e558dac46ca0d563447aa9db2c64f7ffa2dfdf4",
+      "data": "data/process-replays/authored-block-coordination-030c8da1aa61/v002-replay-e000034.json",
+      "sha256": "bdf9f76c776891a38ac398f5c499e2abf243343324b3499207c5a9bf157d5259"
+    }
+  ]
+}

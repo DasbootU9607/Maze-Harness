@@ -259,11 +259,13 @@ function selectNode(id, { initial = false, focus = true } = {}) {
 
 function exactReplayFor(node, record, candidate) {
   if (node.kind !== 'replay' || !record || !candidate?.preview?.levelPath) return null;
-  const bound = candidate.preview.replay;
+  const bound = candidate.preview.replays ? candidate.preview.replays.find(item => item.id === record.id) : candidate.preview.replay;
+  if (bound?.id && bound.id !== record.id) return null;
   if (!bound || record.binding !== 'exact-artifact' || bound.binding !== 'exact-artifact' || record.sourceKind !== 'saved-replay' || bound.sourceKind !== 'saved-replay') return null;
   if (record.candidateId !== candidate.id || bound.candidateId !== candidate.id) return null;
   if (!record.cellsSha256 || record.cellsSha256 !== candidate.cellsSha256 || bound.cellsSha256 !== candidate.cellsSha256 || !record.contractSha256 || record.contractSha256 !== candidate.contractSha256 || bound.contractSha256 !== candidate.contractSha256) return null;
   if (!record.data || record.data !== bound.data || !record.sha256 || record.sha256 !== bound.sha256 || !record.sourceSha256 || record.sourceSha256 !== bound.sourceSha256) return null;
+  if (record.route !== bound.route || record.frameCount !== bound.frameCount) return null;
   return record;
 }
 function renderPreview(node, record, candidate) {

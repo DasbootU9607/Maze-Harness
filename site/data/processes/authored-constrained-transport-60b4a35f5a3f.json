@@ -1,0 +1,4028 @@
+{
+  "schemaVersion": 1,
+  "caseId": "authored-constrained-transport-60b4a35f5a3f",
+  "title": "Switchyard Tool Delivery",
+  "skill": "constrained-transport",
+  "finalCandidateId": "v002",
+  "summary": "2 recorded candidates, 6 tests, 0 failed diagnostics, and 3 agent annotations.",
+  "coverage": {
+    "mode": "observed",
+    "audit": {
+      "status": "passed",
+      "failed": 0,
+      "unknown": 0
+    },
+    "sources": {
+      "directOriginalCaseRead": "recorded",
+      "originalCaseResourceIds": [
+        "r006",
+        "r007",
+        "r008",
+        "r010",
+        "r011",
+        "r012",
+        "r013"
+      ],
+      "indirect": [],
+      "scope": "Direct reading is reported only for captured read events. A source named by a skill is indirect provenance, not evidence that this run opened or used the original case."
+    },
+    "limitations": [
+      "Only recorded operations and saved snapshots are shown; transient in-memory drafts and unrecorded activity remain unknown.",
+      "Snapshot parent links show recorded version order, not proof of causal reasoning. No unrecorded branches or merges are reconstructed.",
+      "Agent annotations are concise explanations, not internal thought transcripts. Recorded resource delivery does not prove comprehension or use.",
+      "Test outcomes retain their own scope. Author self-tests do not establish independent-agent effectiveness or human difficulty.",
+      "Automatic CLI boundaries record supported build and verification commands. Other commands and resource reads require the skill observer helper.",
+      "Snapshots describe saved versions at operation boundaries, not every editor keystroke. Design notes are author statements, not internal reasoning.",
+      "A started task remains running until the author records finish. An interrupted task may therefore remain open."
+    ]
+  },
+  "nodes": [
+    {
+      "id": "resource-snapshot-e000003",
+      "kind": "resource",
+      "label": "Skill attached: mazebench-constrained-transport/SKILL.md",
+      "status": "neutral",
+      "order": 3,
+      "summary": "Skill version captured as a dependency. This event does not record a reading.",
+      "details": {
+        "resourceId": "snapshot-e000003",
+        "displayPath": "mazebench-constrained-transport/SKILL.md",
+        "sha256": "dd8952749a5af243fefe5b730f38009f1de6a036fae2dca55779223f40e30616",
+        "kind": "skill",
+        "delivery": "snapshot"
+      }
+    },
+    {
+      "id": "resource-r001",
+      "kind": "resource",
+      "label": "SKILL.md",
+      "status": "neutral",
+      "order": 4,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r001",
+        "displayPath": "mazebench-constrained-transport/SKILL.md",
+        "sha256": "dd8952749a5af243fefe5b730f38009f1de6a036fae2dca55779223f40e30616",
+        "kind": "skill",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r002",
+      "kind": "resource",
+      "label": "mechanism-logic.md",
+      "status": "neutral",
+      "order": 5,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r002",
+        "displayPath": "mazebench-constrained-transport/references/mechanism-logic.md",
+        "sha256": "58160bf7ea100982d52b93731f9ab46c5969db3dda039a1c074458471ef6742b",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r003",
+      "kind": "resource",
+      "label": "planning-depth.md",
+      "status": "neutral",
+      "order": 6,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r003",
+        "displayPath": "mazebench-constrained-transport/references/planning-depth.md",
+        "sha256": "223ad6a184ace04a032f3a22cd44cd5baf090208ec177d4f8ce410bf83c05f14",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r004",
+      "kind": "resource",
+      "label": "complex-validation.md",
+      "status": "neutral",
+      "order": 7,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r004",
+        "displayPath": "mazebench-constrained-transport/references/complex-validation.md",
+        "sha256": "ccb33c3a8da1469f6dea194ee2f129d43a1816f9bf590c0110f503c16ebfb038",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r005",
+      "kind": "resource",
+      "label": "design-template.json",
+      "status": "neutral",
+      "order": 8,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r005",
+        "displayPath": "mazebench-constrained-transport/references/design-template.json",
+        "sha256": "51dcef0d90e6acad8965291a42a49c3304852615de7370f5e74eb9eb1ca89ea1",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r006",
+      "kind": "resource",
+      "label": "official-gxg-case.md",
+      "status": "neutral",
+      "order": 9,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r006",
+        "displayPath": "mazebench-constrained-transport/references/official-gxg-case.md",
+        "sha256": "a80989b4ef11b4e4f1c00c0d3ef4e9c742b084f04ff0e73b57d2331cbd042463",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r007",
+      "kind": "resource",
+      "label": "official-gxg-world-map.txt",
+      "status": "neutral",
+      "order": 10,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r007",
+        "displayPath": "mazebench-constrained-transport/references/official-gxg-world-map.txt",
+        "sha256": "d88f529e34a54459508c119552dd0384b84f24d02b28fe046014be1497b5a914",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r008",
+      "kind": "resource",
+      "label": "official-gxg-states.json",
+      "status": "neutral",
+      "order": 11,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r008",
+        "displayPath": "mazebench-constrained-transport/references/official-gxg-states.json",
+        "sha256": "053750c097947301002a5e0993bf3aa77a3d1c42a8e13d356266828d76ff3923",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r009",
+      "kind": "resource",
+      "label": "design.md",
+      "status": "neutral",
+      "order": 12,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r009",
+        "displayPath": "mazebench-constrained-transport/references/design.md",
+        "sha256": "b59ecc9dafd10e8a1c01e0b2f830a3fcdc49e91c8a33a61772558a7472dafe73",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r010",
+      "kind": "resource",
+      "label": "official-design.json",
+      "status": "neutral",
+      "order": 13,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r010",
+        "displayPath": "mazebench-constrained-transport/references/official-design.json",
+        "sha256": "be5d66f2295829bca165450f491d203edbac4919c0555bcad47ca48a25efdc94",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r011",
+      "kind": "resource",
+      "label": "official-gxg-checks.json",
+      "status": "neutral",
+      "order": 14,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r011",
+        "displayPath": "mazebench-constrained-transport/references/official-gxg-checks.json",
+        "sha256": "2ac7140129aa774bce735e8d83ee9f9ca9b2bf07b575bd8583ca2a4d790e5a60",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "note-n001",
+      "kind": "note",
+      "label": "Create a genuinely new constrained-transport room with a connected tool-use, recovery, and shared-passage release sequence, collecting a gem and returning to the initial entry.",
+      "status": "neutral",
+      "order": 15,
+      "summary": "Prospective design: independently lay out a broad-headed, offset working-toe tool, a two-member passage shuttle, and a three-member target crossbar. The tool approaches a void-constrained target from above. After contact, its toe occupies the shuttle destination; the tool must retreat upward before the shuttle can move right to open the gem passage. Keep a west-side recovery route and an explicit gem-and-return endpoint.",
+      "details": {
+        "noteId": "n001",
+        "candidateId": null,
+        "origin": "agent_statement",
+        "retrospective": false
+      }
+    },
+    {
+      "id": "resource-r012",
+      "kind": "resource",
+      "label": "official-case.md",
+      "status": "neutral",
+      "order": 16,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r012",
+        "displayPath": "mazebench-constrained-transport/references/official-case.md",
+        "sha256": "5e689dbbe29fcbb99eea0a0e3dc95f1fe971ea93c6e85d29b9012af6b729370a",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "resource-r013",
+      "kind": "resource",
+      "label": "official-world-map.txt",
+      "status": "neutral",
+      "order": 17,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r013",
+        "displayPath": "mazebench-constrained-transport/references/official-world-map.txt",
+        "sha256": "493020c70b983b3a93fa4df871eb118c5fb8a0621f8ab09111b6d3653433ef33",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      }
+    },
+    {
+      "id": "operation-e000018",
+      "kind": "operation",
+      "label": "Project actual original states for inspection",
+      "status": "neutral",
+      "order": 19,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000018",
+        "candidateId": null,
+        "inputCandidateId": null,
+        "outputCandidateId": null,
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "candidate-v001",
+      "kind": "candidate",
+      "label": "v001 · Switchyard Tool Delivery",
+      "status": "neutral",
+      "order": 21,
+      "summary": "0 changed cells; 256 added; 0 removed.",
+      "details": {
+        "candidateId": "v001",
+        "cellsSha256": "52397f5a38f438e65c508d81e84c3341a53878afd85efc646d1455998ac2d992",
+        "contractSha256": "fcf052207bc3156baf7b9a4d8f9bdbdf0dfa13eb9eec9ef0aececf593afe6a66",
+        "parentBasis": "observed-snapshot-order"
+      }
+    },
+    {
+      "id": "operation-e000020",
+      "kind": "operation",
+      "label": "Construct first candidate from empty template",
+      "status": "neutral",
+      "order": 22,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000020",
+        "candidateId": "v001",
+        "inputCandidateId": null,
+        "outputCandidateId": "v001",
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "operation-e000023",
+      "kind": "operation",
+      "label": "Initial ordinary witness and independent search",
+      "status": "neutral",
+      "order": 24,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000023",
+        "candidateId": "v001",
+        "inputCandidateId": "v001",
+        "outputCandidateId": "v001",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "test-t001",
+      "kind": "test",
+      "label": "Initial ordinary witness and independent search",
+      "status": "passed",
+      "order": 25,
+      "summary": "Report-specific check; no broader mechanism or difficulty claim.",
+      "details": {
+        "testId": "t001",
+        "candidateId": "v001",
+        "binding": "exact",
+        "category": "test"
+      }
+    },
+    {
+      "id": "operation-e000026",
+      "kind": "operation",
+      "label": "build-complex.cjs",
+      "status": "neutral",
+      "order": 27,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000026",
+        "candidateId": "v001",
+        "inputCandidateId": "v001",
+        "outputCandidateId": "v001",
+        "kind": "build",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "test-t002",
+      "kind": "test",
+      "label": "verify-complex.cjs",
+      "status": "failed",
+      "order": 31,
+      "summary": "Author self-test; ordinary official physics; exhaustive restricted push-state graph, frozen walking components; no human-difficulty or independent-author claim.",
+      "details": {
+        "testId": "t002",
+        "candidateId": "v001",
+        "binding": "exact",
+        "category": "test"
+      }
+    },
+    {
+      "id": "note-n002",
+      "kind": "note",
+      "label": "Remove the actual axial-input bypass exposed by the first complete structural verification.",
+      "status": "neutral",
+      "order": 32,
+      "summary": "Replace floor beneath the initial eastern tool-head member at (9,8) with void, preserving the connected tool footprint and its other supporting members. Record both voids and the inaccessible axial stance explicitly.",
+      "details": {
+        "noteId": "n002",
+        "candidateId": "v001",
+        "origin": "agent_statement",
+        "retrospective": false
+      }
+    },
+    {
+      "id": "candidate-v002",
+      "kind": "candidate",
+      "label": "v002 · Switchyard Tool Delivery",
+      "status": "neutral",
+      "order": 34,
+      "summary": "1 changed cells; 0 added; 0 removed.",
+      "details": {
+        "candidateId": "v002",
+        "cellsSha256": "b46f9dea0102e29d193cd32e82556ec5cc292e8b235068adabffa9b1e05be49c",
+        "contractSha256": "3dd1b0cd716beae7c231a972e8e0c321424695666ac54587066e6b7e132cf3fe",
+        "parentBasis": "observed-snapshot-order"
+      }
+    },
+    {
+      "id": "operation-e000033",
+      "kind": "operation",
+      "label": "Revise geometry from axial bypass",
+      "status": "neutral",
+      "order": 35,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000033",
+        "candidateId": "v002",
+        "inputCandidateId": "v001",
+        "outputCandidateId": "v002",
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "operation-e000036",
+      "kind": "operation",
+      "label": "Revised ordinary witness and search",
+      "status": "neutral",
+      "order": 37,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000036",
+        "candidateId": "v002",
+        "inputCandidateId": "v002",
+        "outputCandidateId": "v002",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "test-t003",
+      "kind": "test",
+      "label": "Revised ordinary witness and search",
+      "status": "passed",
+      "order": 38,
+      "summary": "Report-specific check; no broader mechanism or difficulty claim.",
+      "details": {
+        "testId": "t003",
+        "candidateId": "v002",
+        "binding": "exact",
+        "category": "test"
+      }
+    },
+    {
+      "id": "operation-e000039",
+      "kind": "operation",
+      "label": "verify-complex.cjs",
+      "status": "neutral",
+      "order": 40,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000039",
+        "candidateId": "v002",
+        "inputCandidateId": "v002",
+        "outputCandidateId": "v002",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "test-t004",
+      "kind": "test",
+      "label": "verify-complex.cjs",
+      "status": "passed",
+      "order": 41,
+      "summary": "Author self-test; ordinary official physics; exhaustive restricted push-state graph, frozen walking components; no human-difficulty or independent-author claim.",
+      "details": {
+        "testId": "t004",
+        "candidateId": "v002",
+        "binding": "exact",
+        "category": "test"
+      }
+    },
+    {
+      "id": "operation-e000042",
+      "kind": "operation",
+      "label": "build-complex.cjs",
+      "status": "neutral",
+      "order": 43,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000042",
+        "candidateId": "v002",
+        "inputCandidateId": "v002",
+        "outputCandidateId": "v002",
+        "kind": "build",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "operation-e000045",
+      "kind": "operation",
+      "label": "Saved build ordinary replay and full endpoint",
+      "status": "neutral",
+      "order": 46,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000045",
+        "candidateId": "v002",
+        "inputCandidateId": "v002",
+        "outputCandidateId": "v002",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "test-t005",
+      "kind": "test",
+      "label": "Saved build ordinary replay and full endpoint",
+      "status": "passed",
+      "order": 47,
+      "summary": "Ordinary official-engine replay of the actual saved build, including collection and return. Every ordinary transition is compared with moveForSearch. Browser input and editor persistence are separate tests.",
+      "details": {
+        "testId": "t005",
+        "candidateId": "v002",
+        "binding": "exact",
+        "category": "test"
+      }
+    },
+    {
+      "id": "replay-e000048",
+      "kind": "replay",
+      "label": "Saved ordinary gameplay replay",
+      "status": "neutral",
+      "order": 48,
+      "summary": "28 recorded inputs and 29 saved frames, bound to v002.",
+      "details": {
+        "replayId": "replay-e000048",
+        "candidateId": "v002",
+        "binding": "exact-artifact",
+        "sourceKind": "saved-replay"
+      }
+    },
+    {
+      "id": "note-n003",
+      "kind": "note",
+      "label": "Hand off the final structurally verified candidate for independent browser Play and editor persistence QA.",
+      "status": "neutral",
+      "order": 49,
+      "summary": "Candidate v002 passes all 33 complex structural checks. Retain the earlier axial bypass, the failed first verification, and the geometry revision. The verified route is DDLLDDRRUDRRDDRLUULLLLUUUURR: 28 inputs, five object-moving inputs, and three dependent functional stages.",
+      "details": {
+        "noteId": "n003",
+        "candidateId": "v002",
+        "origin": "agent_statement",
+        "retrospective": false
+      }
+    },
+    {
+      "id": "operation-e000050",
+      "kind": "operation",
+      "label": "Browser play, recorded frames and editor round-trip",
+      "status": "neutral",
+      "order": 51,
+      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "details": {
+        "operationId": "operation-e000050",
+        "candidateId": "v002",
+        "inputCandidateId": "v002",
+        "outputCandidateId": "v002",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      }
+    },
+    {
+      "id": "test-t006",
+      "kind": "test",
+      "label": "Browser play, recorded frames and editor round-trip",
+      "status": "passed",
+      "order": 52,
+      "summary": "Author self-play through the ordinary browser Play handler; each observed browser actor frame matched the official engine. First-push Undo/Reset and unchanged-cells editor save/export are separate checks. This is not a blind model evaluation or human difficulty measurement.",
+      "details": {
+        "testId": "t006",
+        "candidateId": "v002",
+        "binding": "exact",
+        "category": "test"
+      }
+    },
+    {
+      "id": "replay-e000053",
+      "kind": "replay",
+      "label": "Saved browser playthrough",
+      "status": "neutral",
+      "order": 53,
+      "summary": "28 recorded inputs and 29 saved frames, bound to v002.",
+      "details": {
+        "replayId": "replay-e000053",
+        "candidateId": "v002",
+        "binding": "exact-artifact",
+        "sourceKind": "saved-replay"
+      }
+    },
+    {
+      "id": "delivery-final",
+      "kind": "delivery",
+      "label": "Published final candidate v002",
+      "status": "passed",
+      "order": 55,
+      "summary": "Final map and contract hashes match the published design. Earlier failed attempts remain visible.",
+      "details": {
+        "caseId": "authored-constrained-transport-60b4a35f5a3f",
+        "candidateId": "v002",
+        "cellsSha256": "b46f9dea0102e29d193cd32e82556ec5cc292e8b235068adabffa9b1e05be49c",
+        "contractSha256": "3dd1b0cd716beae7c231a972e8e0c321424695666ac54587066e6b7e132cf3fe"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "candidate-v001",
+      "to": "candidate-v002",
+      "kind": "revision",
+      "label": "Observed snapshot order; not causal proof",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v001",
+      "to": "test-t001",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v001",
+      "to": "test-t002",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v002",
+      "to": "test-t003",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v002",
+      "to": "test-t004",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v002",
+      "to": "test-t005",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v002",
+      "to": "test-t006",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "resource-r002",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r003",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r004",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r006",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r007",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r008",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r011",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r009",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v001",
+      "to": "note-n002",
+      "kind": "annotation",
+      "label": "Agent annotation about this candidate",
+      "inferred": false
+    },
+    {
+      "from": "resource-r002",
+      "to": "note-n002",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v002",
+      "to": "note-n003",
+      "kind": "annotation",
+      "label": "Agent annotation about this candidate",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v002",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Published cells and contract match",
+      "inferred": false
+    },
+    {
+      "from": "test-t003",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Passed within the stated test scope",
+      "inferred": false
+    },
+    {
+      "from": "test-t004",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Passed within the stated test scope",
+      "inferred": false
+    },
+    {
+      "from": "test-t005",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Passed within the stated test scope",
+      "inferred": false
+    },
+    {
+      "from": "test-t006",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Passed within the stated test scope",
+      "inferred": false
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "graphNodeId": "candidate-v001",
+      "label": "Switchyard Tool Delivery",
+      "parentId": null,
+      "parentIds": [],
+      "cells": [
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".",
+          "p",
+          ".",
+          ".",
+          ".",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".+#",
+          "M0",
+          "M0",
+          "M0",
+          "M0",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          "M0",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".+#",
+          ".",
+          ".",
+          ".",
+          "+",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".",
+          ".",
+          "M1",
+          "M1",
+          "M2",
+          "M2",
+          "M2",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          "G",
+          ".",
+          ".",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ]
+      ],
+      "sha256": "2e19c195dd905d6f7637a78207a94818414fde09122d008b951f221fb8e19c1e",
+      "cellsSha256": "52397f5a38f438e65c508d81e84c3341a53878afd85efc646d1455998ac2d992",
+      "contractSha256": "fcf052207bc3156baf7b9a4d8f9bdbdf0dfa13eb9eec9ef0aececf593afe6a66",
+      "origin": "observed",
+      "parentBasis": "observed-snapshot-order",
+      "diff": {
+        "added": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "M2"
+          },
+          {
+            "x": 10,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 10,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 10,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "M2"
+          },
+          {
+            "x": 11,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 11,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 11,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "p"
+          },
+          {
+            "x": 6,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "M0"
+          },
+          {
+            "x": 6,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 7,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 7,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "M1"
+          },
+          {
+            "x": 7,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 7,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "M0"
+          },
+          {
+            "x": 7,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "M1"
+          },
+          {
+            "x": 8,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "M0"
+          },
+          {
+            "x": 8,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 9,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "+"
+          },
+          {
+            "x": 9,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "M2"
+          },
+          {
+            "x": 9,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 9,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "G"
+          },
+          {
+            "x": 9,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 9,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "M0"
+          },
+          {
+            "x": 9,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "M0"
+          }
+        ],
+        "removed": [],
+        "changed": []
+      },
+      "preview": {
+        "levelPath": "data/process-levels/authored-constrained-transport-60b4a35f5a3f/v001.json",
+        "levelSha256": "87b403273b5a65f613141a931694489bf83f01343b0ff4b43871fd060fd934e7",
+        "cellsSha256": "52397f5a38f438e65c508d81e84c3341a53878afd85efc646d1455998ac2d992",
+        "status": "iteration"
+      }
+    },
+    {
+      "id": "v002",
+      "graphNodeId": "candidate-v002",
+      "label": "Switchyard Tool Delivery",
+      "parentId": "v001",
+      "parentIds": [
+        "v001"
+      ],
+      "cells": [
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".",
+          "p",
+          ".",
+          ".",
+          ".",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".+#",
+          "M0",
+          "M0",
+          "M0",
+          "+M0",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          "M0",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".+#",
+          ".",
+          ".",
+          ".",
+          "+",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".",
+          ".",
+          "M1",
+          "M1",
+          "M2",
+          "M2",
+          "M2",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          "G",
+          ".",
+          ".",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ]
+      ],
+      "sha256": "99f3a333b4e1e4d3d5dc0a1fd65384e4fdcf37e9419ccdaaacf09bf1074aa63b",
+      "cellsSha256": "b46f9dea0102e29d193cd32e82556ec5cc292e8b235068adabffa9b1e05be49c",
+      "contractSha256": "3dd1b0cd716beae7c231a972e8e0c321424695666ac54587066e6b7e132cf3fe",
+      "origin": "observed",
+      "parentBasis": "observed-snapshot-order",
+      "diff": {
+        "added": [],
+        "removed": [],
+        "changed": [
+          {
+            "x": 9,
+            "y": 8,
+            "z": 0,
+            "before": "M0",
+            "after": "+M0"
+          }
+        ]
+      },
+      "preview": {
+        "levelPath": "data/process-levels/authored-constrained-transport-60b4a35f5a3f/v002.json",
+        "levelSha256": "f6b637887cb095875727eddcedf6134118e2a81c77e311ff7d70e2542aba7ff3",
+        "cellsSha256": "b46f9dea0102e29d193cd32e82556ec5cc292e8b235068adabffa9b1e05be49c",
+        "status": "iteration",
+        "replays": [
+          {
+            "id": "replay-e000048",
+            "data": "data/process-replays/authored-constrained-transport-60b4a35f5a3f/v002-replay-e000048.json",
+            "sha256": "401f18719a279a6fb19ac55667ecb5a0ee723f5a08154f543359b2fc5af836d9",
+            "candidateId": "v002",
+            "cellsSha256": "b46f9dea0102e29d193cd32e82556ec5cc292e8b235068adabffa9b1e05be49c",
+            "contractSha256": "3dd1b0cd716beae7c231a972e8e0c321424695666ac54587066e6b7e132cf3fe",
+            "sourceSha256": "d53c82f9a7f5142f46ac63639cad85bf95323a4d1e626b0feea868538b456551",
+            "route": "DDLLDDRRUDRRDDRLUULLLLUUUURR",
+            "frameCount": 29,
+            "binding": "exact-artifact",
+            "sourceKind": "saved-replay"
+          },
+          {
+            "id": "replay-e000053",
+            "data": "data/process-replays/authored-constrained-transport-60b4a35f5a3f/v002-replay-e000053.json",
+            "sha256": "9e690c37c226067a0b08134e77992ea08478ae7fd5d73b0a54e780fafcb25bf5",
+            "candidateId": "v002",
+            "cellsSha256": "b46f9dea0102e29d193cd32e82556ec5cc292e8b235068adabffa9b1e05be49c",
+            "contractSha256": "3dd1b0cd716beae7c231a972e8e0c321424695666ac54587066e6b7e132cf3fe",
+            "sourceSha256": "9bedde5469df067c178bcb3a6b47ed7cb31afc22c87c1789b89d6010f051d2f8",
+            "route": "DDLLDDRRUDRRDDRLUULLLLUUUURR",
+            "frameCount": 29,
+            "binding": "exact-artifact",
+            "sourceKind": "saved-replay"
+          }
+        ],
+        "replay": {
+          "id": "replay-e000048",
+          "data": "data/process-replays/authored-constrained-transport-60b4a35f5a3f/v002-replay-e000048.json",
+          "sha256": "401f18719a279a6fb19ac55667ecb5a0ee723f5a08154f543359b2fc5af836d9",
+          "candidateId": "v002",
+          "cellsSha256": "b46f9dea0102e29d193cd32e82556ec5cc292e8b235068adabffa9b1e05be49c",
+          "contractSha256": "3dd1b0cd716beae7c231a972e8e0c321424695666ac54587066e6b7e132cf3fe",
+          "sourceSha256": "d53c82f9a7f5142f46ac63639cad85bf95323a4d1e626b0feea868538b456551",
+          "route": "DDLLDDRRUDRRDDRLUULLLLUUUURR",
+          "frameCount": 29,
+          "binding": "exact-artifact",
+          "sourceKind": "saved-replay"
+        }
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "graphNodeId": "test-t001",
+      "candidateId": "v001",
+      "label": "Initial ordinary witness and independent search",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "prospective_witness",
+          "status": "passed"
+        },
+        {
+          "name": "ordinary_engine_search",
+          "status": "passed"
+        }
+      ],
+      "scope": "Report-specific check; no broader mechanism or difficulty claim.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    },
+    {
+      "id": "t002",
+      "graphNodeId": "test-t002",
+      "candidateId": "v001",
+      "label": "verify-complex.cjs",
+      "status": "failed",
+      "checks": [
+        {
+          "name": "blocked_M1_R_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "blocked_M2_D_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Offset crossbar displacement",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Recover the tool from shared space",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Release the gem doorway",
+          "status": "passed"
+        },
+        {
+          "name": "initial_frozen_walking",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M0",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M1",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M2",
+          "status": "passed"
+        },
+        {
+          "name": "forbid_mechanism",
+          "status": "failed"
+        },
+        {
+          "name": "prefix_positive_prep_to_contact",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_prep_to_contact",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_contact_to_shuttle",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_contact_to_shuttle",
+          "status": "failed"
+        },
+        {
+          "name": "prefix_positive_recover_to_shuttle",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_recover_to_shuttle",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_shuttle_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_shuttle_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_contact_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_contact_to_goal",
+          "status": "failed"
+        },
+        {
+          "name": "prefix_positive_postWork_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_postWork_to_goal",
+          "status": "failed"
+        },
+        {
+          "name": "opposing_M0_D_before_shuttle",
+          "status": "passed"
+        },
+        {
+          "name": "opposing_M0_U_before_shuttle",
+          "status": "passed"
+        },
+        {
+          "name": "reuse_positive_contact_recover",
+          "status": "passed"
+        },
+        {
+          "name": "without_ordered_reuse_contact_recover",
+          "status": "failed"
+        },
+        {
+          "name": "at_most_one_push_then_walk",
+          "status": "passed"
+        },
+        {
+          "name": "one_same_direction_translation_process",
+          "status": "passed"
+        },
+        {
+          "name": "first_mechanism_then_walking_only_all_histories",
+          "status": "failed"
+        },
+        {
+          "name": "walking_to_predocked_use",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M0_after_any_first_contact",
+          "status": "failed"
+        },
+        {
+          "name": "freeze_M1_after_any_first_contact",
+          "status": "failed"
+        }
+      ],
+      "scope": "Author self-test; ordinary official physics; exhaustive restricted push-state graph, frozen walking components; no human-difficulty or independent-author claim.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    },
+    {
+      "id": "t003",
+      "graphNodeId": "test-t003",
+      "candidateId": "v002",
+      "label": "Revised ordinary witness and search",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "prospective_witness",
+          "status": "passed"
+        },
+        {
+          "name": "ordinary_engine_search",
+          "status": "passed"
+        }
+      ],
+      "scope": "Report-specific check; no broader mechanism or difficulty claim.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    },
+    {
+      "id": "t004",
+      "graphNodeId": "test-t004",
+      "candidateId": "v002",
+      "label": "verify-complex.cjs",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "blocked_M1_R_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "blocked_M2_D_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "blocked_M0_D_step_1",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Offset crossbar displacement",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Recover the tool from shared space",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Release the gem doorway",
+          "status": "passed"
+        },
+        {
+          "name": "initial_frozen_walking",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M0",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M1",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M2",
+          "status": "passed"
+        },
+        {
+          "name": "forbid_mechanism",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_prep_to_contact",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_prep_to_contact",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_contact_to_shuttle",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_contact_to_shuttle",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_recover_to_shuttle",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_recover_to_shuttle",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_shuttle_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_shuttle_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_contact_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_contact_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_postWork_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_postWork_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "opposing_M0_D_before_shuttle",
+          "status": "passed"
+        },
+        {
+          "name": "opposing_M0_U_before_shuttle",
+          "status": "passed"
+        },
+        {
+          "name": "reuse_positive_contact_recover",
+          "status": "passed"
+        },
+        {
+          "name": "without_ordered_reuse_contact_recover",
+          "status": "passed"
+        },
+        {
+          "name": "at_most_one_push_then_walk",
+          "status": "passed"
+        },
+        {
+          "name": "one_same_direction_translation_process",
+          "status": "passed"
+        },
+        {
+          "name": "first_mechanism_then_walking_only_all_histories",
+          "status": "passed"
+        },
+        {
+          "name": "walking_to_predocked_use",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M0_after_any_first_contact",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M1_after_any_first_contact",
+          "status": "passed"
+        }
+      ],
+      "scope": "Author self-test; ordinary official physics; exhaustive restricted push-state graph, frozen walking components; no human-difficulty or independent-author claim.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    },
+    {
+      "id": "t005",
+      "graphNodeId": "test-t005",
+      "candidateId": "v002",
+      "label": "Saved build ordinary replay and full endpoint",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "saved_build_exact_cells",
+          "status": "passed"
+        },
+        {
+          "name": "ordinary_and_search_all_transitions",
+          "status": "passed"
+        },
+        {
+          "name": "gem_and_return_endpoint",
+          "status": "passed"
+        }
+      ],
+      "scope": "Ordinary official-engine replay of the actual saved build, including collection and return. Every ordinary transition is compared with moveForSearch. Browser input and editor persistence are separate tests.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    },
+    {
+      "id": "t006",
+      "graphNodeId": "test-t006",
+      "candidateId": "v002",
+      "label": "Browser play, recorded frames and editor round-trip",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "saved_build_matches_current_spec",
+          "status": "passed"
+        },
+        {
+          "name": "first_object_push_undo_and_reset",
+          "status": "passed"
+        },
+        {
+          "name": "every_browser_frame_matches_ordinary_engine",
+          "status": "passed"
+        },
+        {
+          "name": "complete_goal_in_browser",
+          "status": "passed"
+        },
+        {
+          "name": "editor_save_and_export_preserve_cells",
+          "status": "passed"
+        },
+        {
+          "name": "editor_3d_rendered",
+          "status": "passed"
+        }
+      ],
+      "scope": "Author self-play through the ordinary browser Play handler; each observed browser actor frame matched the official engine. First-push Undo/Reset and unchanged-cells editor save/export are separate checks. This is not a blind model evaluation or human difficulty measurement.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    }
+  ],
+  "notes": [
+    {
+      "id": "n001",
+      "graphNodeId": "note-n001",
+      "candidateId": null,
+      "label": "Create a genuinely new constrained-transport room with a connected tool-use, recovery, and shared-passage release sequence, collecting a gem and returning to the initial entry.",
+      "goal": "Create a genuinely new constrained-transport room with a connected tool-use, recovery, and shared-passage release sequence, collecting a gem and returning to the initial entry.",
+      "change": "Prospective design: independently lay out a broad-headed, offset working-toe tool, a two-member passage shuttle, and a three-member target crossbar. The tool approaches a void-constrained target from above. After contact, its toe occupies the shuttle destination; the tool must retreat upward before the shuttle can move right to open the gem passage. Keep a west-side recovery route and an explicit gem-and-return endpoint.",
+      "reason": "This changes the original workspace topology and rigid shapes. It uses a forced post-contact recovery followed by lateral shuttle release, rather than reproducing the official room's large helper exchanges. Claims remain hypotheses until ordinary-engine and restriction checks finish. Raw reference states were delivered through recorded read but the console display was truncated; targeted state projections will be recorded separately. An attempted read of the guessed filename scripts/complex-core.cjs failed; the actual helper is complex-runtime.cjs. Initial observer viewer launch failed with EADDRINUSE; subsequent recording uses the existing run with viewer startup disabled.",
+      "sources": [
+        "references/mechanism-logic.md",
+        "references/planning-depth.md",
+        "references/complex-validation.md",
+        "references/official-gxg-case.md",
+        "references/official-gxg-world-map.txt",
+        "references/official-gxg-states.json",
+        "references/official-gxg-checks.json",
+        "references/design.md"
+      ],
+      "expectedChecks": [
+        "Complete ordinary gem-and-return route",
+        "Actual offset member contact",
+        "Each of the three roles necessary",
+        "Independent tool motion before contact",
+        "Tool down/up ordered recovery before usable shuttle-right opportunity",
+        "No walking-only completion after first contact",
+        "A saved replay bound to the exact final cells and contract",
+        "Actual browser play, Undo/Reset and editor save/export"
+      ],
+      "origin": "agent_statement",
+      "retrospective": false
+    },
+    {
+      "id": "n002",
+      "graphNodeId": "note-n002",
+      "candidateId": "v001",
+      "label": "Remove the actual axial-input bypass exposed by the first complete structural verification.",
+      "goal": "Remove the actual axial-input bypass exposed by the first complete structural verification.",
+      "change": "Replace floor beneath the initial eastern tool-head member at (9,8) with void, preserving the connected tool footprint and its other supporting members. Record both voids and the inaccessible axial stance explicitly.",
+      "reason": "The ordinary witness and all three role freezes passed, but forbidding lateral contact still yielded a complete solution: the player could stand in the toe column and perform an axial push of the same tool. That bypass also invalidated the ordered contact-recovery and post-contact-only claims. The revised terrain removes that specific player stance while retaining supported offset delivery from the western head. This is an observed counterexample-driven revision, not a claim that the original geometry already required lateral contact.",
+      "sources": [
+        "verification.json",
+        "probe-01.json",
+        "references/mechanism-logic.md"
+      ],
+      "expectedChecks": [
+        "Replay the same prospective route with ordinary moves",
+        "Exhaust the no-lateral-contact search",
+        "Check the ordered contact then upward recovery before shuttle opportunity",
+        "Recheck all dependencies and post-contact work from the revised initial state"
+      ],
+      "origin": "agent_statement",
+      "retrospective": false
+    },
+    {
+      "id": "n003",
+      "graphNodeId": "note-n003",
+      "candidateId": "v002",
+      "label": "Hand off the final structurally verified candidate for independent browser Play and editor persistence QA.",
+      "goal": "Hand off the final structurally verified candidate for independent browser Play and editor persistence QA.",
+      "change": "Candidate v002 passes all 33 complex structural checks. Retain the earlier axial bypass, the failed first verification, and the geometry revision. The verified route is DDLLDDRRUDRRDDRLUULLLLUUUURR: 28 inputs, five object-moving inputs, and three dependent functional stages.",
+      "reason": "Offset contact moves the target crossbar at input 2; upward tool recovery at input 9 clears the shared shuttle row; shuttle movement at inputs 11-12 opens the gem pocket. Collection occurs at input 15 and the route returns to (6,7,0). Search exhaustion supports only the declared restrictions; this compact puzzle has no human-difficulty or independent-author claim. Browser play/save/export remains pending the batch runner.",
+      "sources": [
+        "verification.json",
+        "verification.json",
+        "world.json"
+      ],
+      "expectedChecks": [
+        "Saved-build ordinary replay and fingerprints",
+        "Batch browser Play compares every saved frame",
+        "Pre-collection Undo/Reset",
+        "Editor unchanged save and export",
+        "Final run audit after browser evidence is attached"
+      ],
+      "origin": "agent_statement",
+      "retrospective": false
+    }
+  ],
+  "resources": [
+    {
+      "id": "r001",
+      "graphNodeId": "resource-r001",
+      "label": "mazebench-constrained-transport/SKILL.md",
+      "displayPath": "mazebench-constrained-transport/SKILL.md",
+      "basename": "SKILL.md",
+      "sha256": "dd8952749a5af243fefe5b730f38009f1de6a036fae2dca55779223f40e30616",
+      "kind": "skill",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r002",
+      "graphNodeId": "resource-r002",
+      "label": "mazebench-constrained-transport/references/mechanism-logic.md",
+      "displayPath": "mazebench-constrained-transport/references/mechanism-logic.md",
+      "basename": "mechanism-logic.md",
+      "sha256": "58160bf7ea100982d52b93731f9ab46c5969db3dda039a1c074458471ef6742b",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r003",
+      "graphNodeId": "resource-r003",
+      "label": "mazebench-constrained-transport/references/planning-depth.md",
+      "displayPath": "mazebench-constrained-transport/references/planning-depth.md",
+      "basename": "planning-depth.md",
+      "sha256": "223ad6a184ace04a032f3a22cd44cd5baf090208ec177d4f8ce410bf83c05f14",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r004",
+      "graphNodeId": "resource-r004",
+      "label": "mazebench-constrained-transport/references/complex-validation.md",
+      "displayPath": "mazebench-constrained-transport/references/complex-validation.md",
+      "basename": "complex-validation.md",
+      "sha256": "ccb33c3a8da1469f6dea194ee2f129d43a1816f9bf590c0110f503c16ebfb038",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r005",
+      "graphNodeId": "resource-r005",
+      "label": "mazebench-constrained-transport/references/design-template.json",
+      "displayPath": "mazebench-constrained-transport/references/design-template.json",
+      "basename": "design-template.json",
+      "sha256": "51dcef0d90e6acad8965291a42a49c3304852615de7370f5e74eb9eb1ca89ea1",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r006",
+      "graphNodeId": "resource-r006",
+      "label": "mazebench-constrained-transport/references/official-gxg-case.md",
+      "displayPath": "mazebench-constrained-transport/references/official-gxg-case.md",
+      "basename": "official-gxg-case.md",
+      "sha256": "a80989b4ef11b4e4f1c00c0d3ef4e9c742b084f04ff0e73b57d2331cbd042463",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r007",
+      "graphNodeId": "resource-r007",
+      "label": "mazebench-constrained-transport/references/official-gxg-world-map.txt",
+      "displayPath": "mazebench-constrained-transport/references/official-gxg-world-map.txt",
+      "basename": "official-gxg-world-map.txt",
+      "sha256": "d88f529e34a54459508c119552dd0384b84f24d02b28fe046014be1497b5a914",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r008",
+      "graphNodeId": "resource-r008",
+      "label": "mazebench-constrained-transport/references/official-gxg-states.json",
+      "displayPath": "mazebench-constrained-transport/references/official-gxg-states.json",
+      "basename": "official-gxg-states.json",
+      "sha256": "053750c097947301002a5e0993bf3aa77a3d1c42a8e13d356266828d76ff3923",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r009",
+      "graphNodeId": "resource-r009",
+      "label": "mazebench-constrained-transport/references/design.md",
+      "displayPath": "mazebench-constrained-transport/references/design.md",
+      "basename": "design.md",
+      "sha256": "b59ecc9dafd10e8a1c01e0b2f830a3fcdc49e91c8a33a61772558a7472dafe73",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r010",
+      "graphNodeId": "resource-r010",
+      "label": "mazebench-constrained-transport/references/official-design.json",
+      "displayPath": "mazebench-constrained-transport/references/official-design.json",
+      "basename": "official-design.json",
+      "sha256": "be5d66f2295829bca165450f491d203edbac4919c0555bcad47ca48a25efdc94",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r011",
+      "graphNodeId": "resource-r011",
+      "label": "mazebench-constrained-transport/references/official-gxg-checks.json",
+      "displayPath": "mazebench-constrained-transport/references/official-gxg-checks.json",
+      "basename": "official-gxg-checks.json",
+      "sha256": "2ac7140129aa774bce735e8d83ee9f9ca9b2bf07b575bd8583ca2a4d790e5a60",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r012",
+      "graphNodeId": "resource-r012",
+      "label": "mazebench-constrained-transport/references/official-case.md",
+      "displayPath": "mazebench-constrained-transport/references/official-case.md",
+      "basename": "official-case.md",
+      "sha256": "5e689dbbe29fcbb99eea0a0e3dc95f1fe971ea93c6e85d29b9012af6b729370a",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r013",
+      "graphNodeId": "resource-r013",
+      "label": "mazebench-constrained-transport/references/official-world-map.txt",
+      "displayPath": "mazebench-constrained-transport/references/official-world-map.txt",
+      "basename": "official-world-map.txt",
+      "sha256": "493020c70b983b3a93fa4df871eb118c5fb8a0621f8ab09111b6d3653433ef33",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "snapshot-e000003",
+      "graphNodeId": "resource-snapshot-e000003",
+      "label": "Skill attached: mazebench-constrained-transport/SKILL.md",
+      "displayPath": "mazebench-constrained-transport/SKILL.md",
+      "basename": "SKILL.md",
+      "sha256": "dd8952749a5af243fefe5b730f38009f1de6a036fae2dca55779223f40e30616",
+      "kind": "skill",
+      "origin": "observed",
+      "delivery": "snapshot"
+    }
+  ],
+  "operations": [
+    {
+      "id": "operation-e000018",
+      "graphNodeId": "operation-e000018",
+      "candidateId": null,
+      "inputCandidateId": null,
+      "outputCandidateId": null,
+      "label": "Project actual original states for inspection",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000020",
+      "graphNodeId": "operation-e000020",
+      "candidateId": "v001",
+      "inputCandidateId": null,
+      "outputCandidateId": "v001",
+      "label": "Construct first candidate from empty template",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000023",
+      "graphNodeId": "operation-e000023",
+      "candidateId": "v001",
+      "inputCandidateId": "v001",
+      "outputCandidateId": "v001",
+      "label": "Initial ordinary witness and independent search",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000026",
+      "graphNodeId": "operation-e000026",
+      "candidateId": "v001",
+      "inputCandidateId": "v001",
+      "outputCandidateId": "v001",
+      "label": "build-complex.cjs",
+      "kind": "build",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000033",
+      "graphNodeId": "operation-e000033",
+      "candidateId": "v002",
+      "inputCandidateId": "v001",
+      "outputCandidateId": "v002",
+      "label": "Revise geometry from axial bypass",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000036",
+      "graphNodeId": "operation-e000036",
+      "candidateId": "v002",
+      "inputCandidateId": "v002",
+      "outputCandidateId": "v002",
+      "label": "Revised ordinary witness and search",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000039",
+      "graphNodeId": "operation-e000039",
+      "candidateId": "v002",
+      "inputCandidateId": "v002",
+      "outputCandidateId": "v002",
+      "label": "verify-complex.cjs",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000042",
+      "graphNodeId": "operation-e000042",
+      "candidateId": "v002",
+      "inputCandidateId": "v002",
+      "outputCandidateId": "v002",
+      "label": "build-complex.cjs",
+      "kind": "build",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000045",
+      "graphNodeId": "operation-e000045",
+      "candidateId": "v002",
+      "inputCandidateId": "v002",
+      "outputCandidateId": "v002",
+      "label": "Saved build ordinary replay and full endpoint",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    },
+    {
+      "id": "operation-e000050",
+      "graphNodeId": "operation-e000050",
+      "candidateId": "v002",
+      "inputCandidateId": "v002",
+      "outputCandidateId": "v002",
+      "label": "Browser play, recorded frames and editor round-trip",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+    }
+  ],
+  "replays": [
+    {
+      "id": "replay-e000048",
+      "graphNodeId": "replay-e000048",
+      "candidateId": "v002",
+      "label": "Saved ordinary gameplay replay",
+      "route": "DDLLDDRRUDRRDDRLUULLLLUUUURR",
+      "frameCount": 29,
+      "binding": "exact-artifact",
+      "sourceKind": "saved-replay",
+      "sourceSha256": "d53c82f9a7f5142f46ac63639cad85bf95323a4d1e626b0feea868538b456551",
+      "cellsSha256": "b46f9dea0102e29d193cd32e82556ec5cc292e8b235068adabffa9b1e05be49c",
+      "contractSha256": "3dd1b0cd716beae7c231a972e8e0c321424695666ac54587066e6b7e132cf3fe",
+      "data": "data/process-replays/authored-constrained-transport-60b4a35f5a3f/v002-replay-e000048.json",
+      "sha256": "401f18719a279a6fb19ac55667ecb5a0ee723f5a08154f543359b2fc5af836d9"
+    },
+    {
+      "id": "replay-e000053",
+      "graphNodeId": "replay-e000053",
+      "candidateId": "v002",
+      "label": "Saved browser playthrough",
+      "route": "DDLLDDRRUDRRDDRLUULLLLUUUURR",
+      "frameCount": 29,
+      "binding": "exact-artifact",
+      "sourceKind": "saved-replay",
+      "sourceSha256": "9bedde5469df067c178bcb3a6b47ed7cb31afc22c87c1789b89d6010f051d2f8",
+      "cellsSha256": "b46f9dea0102e29d193cd32e82556ec5cc292e8b235068adabffa9b1e05be49c",
+      "contractSha256": "3dd1b0cd716beae7c231a972e8e0c321424695666ac54587066e6b7e132cf3fe",
+      "data": "data/process-replays/authored-constrained-transport-60b4a35f5a3f/v002-replay-e000053.json",
+      "sha256": "9e690c37c226067a0b08134e77992ea08478ae7fd5d73b0a54e780fafcb25bf5"
+    }
+  ]
+}
