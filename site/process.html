@@ -17,15 +17,14 @@
   <main id="main" class="process-page">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="./index.html">Library</a><span>/</span><a id="skill-link" href="./index.html#skills">Skill</a><span>/</span>Build process</nav>
     <header class="process-intro">
-      <div><div class="eyebrow">BUILD PROCESS</div><h1 id="process-title">From a skill to a room.</h1><p id="process-summary">Loading the recorded production process...</p></div>
+      <div><h1 id="process-title">From a skill to a room.</h1><p id="process-summary">Loading the recorded production process...</p></div>
       <div class="process-actions"><a id="play-room" class="button primary" href="./player.html">Play final room <span aria-hidden="true">&#8599;</span></a><a id="process-data" class="text-link" href="#" download>Public record &#8595;</a></div>
     </header>
     <div class="process-record-line"><span id="record-mode" class="record-mode">SAVED RECORD</span><span id="record-summary"></span></div>
     <div class="process-workspace">
       <aside class="timeline-column" aria-label="Recorded production timeline">
-        <div class="timeline-heading"><h2>Recorded activity</h2><span id="timeline-count" class="mono"></span></div>
-        <p id="timeline-context" class="timeline-context">Select an operation to see its evidence and associated version.</p>
-        <ol id="process-timeline" class="process-timeline"></ol>
+        <header class="timeline-toolbar"><div class="timeline-heading"><h2>Build timeline</h2><span id="timeline-count" class="mono"></span></div><p id="timeline-context" class="timeline-context">Select an operation to see its evidence and associated version.</p></header>
+        <ol id="process-timeline" class="process-timeline timeline-scroll"></ol>
       </aside>
       <article id="operation-detail" class="operation-detail" aria-label="Selected operation">
         <div class="operation-heading-line"><div id="operation-meta" class="operation-meta"></div><nav class="operation-navigation" aria-label="Adjacent recorded operations"><button id="previous-operation" type="button" aria-label="Previous operation">&#8592;</button><button id="next-operation" type="button" aria-label="Next operation">&#8594;</button></nav></div>
@@ -45,8 +44,8 @@
       </article>
     </div>
     <details class="process-coverage"><summary>Record coverage and limits</summary><p id="coverage-description"></p><ul id="coverage-limitations"></ul><p>The timeline follows saved record order. References, public explanations, executed checks, and gameplay replay are different kinds of evidence. Missing activity remains unknown; these records are not a model's internal thought transcript.</p></details>
-    <div id="preview-backdrop" class="preview-backdrop" hidden></div>
   </main>
+  <div id="preview-backdrop" class="preview-backdrop" hidden></div>
   <footer id="site-footer"></footer>
   <div id="toast" class="toast" role="status"></div>
 </body>

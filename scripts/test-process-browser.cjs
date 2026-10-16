@@ -33,6 +33,71 @@ const ready = async frame => {
   await idle(frame);
 };
 const snapshot = async frame => actors(await frame.evaluate(() => window.__MAZEBENCH_APP__.state.actors));
+const chartGeometry = async page => page.evaluate(async () => {
+  await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+  const rect = element => {const r = element.getBoundingClientRect(); return {x:r.x,y:r.y,width:r.width,height:r.height,right:r.right,bottom:r.bottom};};
+  const nodes = [...document.querySelectorAll('.timeline-node')].map(button => {
+    const label = button.querySelector('.timeline-label'), style = getComputedStyle(label);
+    return {id:button.dataset.nodeId,rect:rect(button),label:label.textContent.trim(),labelRect:rect(label),
+      lineHeight:parseFloat(style.lineHeight) || parseFloat(style.fontSize) * 1.2,
+      clipped:label.scrollHeight > label.clientHeight + 2 || label.scrollWidth > label.clientWidth + 2,
+      disabled:button.disabled,display:getComputedStyle(button).display};
+  });
+  return {timeline:rect(document.querySelector('.timeline-column')),detail:rect(document.querySelector('#operation-detail')),nodes};
+});
+function assertChartGeometry(layout, mode) {
+  if (mode === 'desktop') {
+    assert(layout.timeline.width / layout.detail.width > 1.6, 'The desktop process diagram must be wider than the phone-sized detail column');
+    assert(layout.detail.width >= 330 && layout.detail.width <= 420, 'Desktop details should occupy a phone-sized 330-420 px column');
+    assert(layout.timeline.right <= layout.detail.x + 1, 'Desktop details belong to the right of the diagram');
+  }
+  for (const node of layout.nodes) {
+    assert(node.label && node.rect.width > 0 && node.rect.height > 0 && node.display !== 'none' && !node.disabled, mode + ' node is available: ' + node.id);
+    assert(node.labelRect.height <= node.lineHeight * 2 + 2, mode + ' node label must fit in at most two lines: ' + node.id);
+    assert(!node.clipped, mode + ' short node label must not be clipped: ' + node.id);
+  }
+  for (let i = 0; i < layout.nodes.length; i++) for (let j = i + 1; j < layout.nodes.length; j++) {
+    const a = layout.nodes[i], b = layout.nodes[j];
+    const overlapX = Math.min(a.rect.right,b.rect.right) - Math.max(a.rect.x,b.rect.x);
+    const overlapY = Math.min(a.rect.bottom,b.rect.bottom) - Math.max(a.rect.y,b.rect.y);
+    assert(overlapX <= 1 || overlapY <= 1, mode + ' diagram nodes overlap: ' + a.id + ' / ' + b.id);
+  }
+}
+const assertMonochromeDetails = async page => {
+  const tinted = await page.locator('#operation-detail').evaluate(host => {
+    const results = [];
+    const isGray = color => {
+      const parts = color.match(/[\d.]+/g)?.map(Number);
+      if (!parts || parts.length < 3 || parts[3] === 0) return true;
+      return Math.max(...parts.slice(0,3)) - Math.min(...parts.slice(0,3)) <= 2;
+    };
+    for (const element of [host,...host.querySelectorAll('*')]) {
+      if (element.matches('iframe,img,canvas') || !element.getClientRects().length) continue;
+      const style = getComputedStyle(element);
+      if (style.visibility !== 'visible') continue;
+      const colors = {color:style.color,backgroundColor:style.backgroundColor};
+      for (const side of ['Top','Right','Bottom','Left']) if (parseFloat(style['border' + side + 'Width']) > 0) colors['border' + side + 'Color'] = style['border' + side + 'Color'];
+      for (const [property,value] of Object.entries(colors)) if (!isGray(value)) results.push({element:element.id || element.className || element.tagName,property,value});
+    }
+    return results;
+  });
+  assert.deepEqual(tinted, [], 'The details UI must remain monochrome; the real maze and reference images retain their colors');
+};
+const assertExpandedViewport = async page => {
+  const geometry = await page.evaluate(() => {
+    const shell = document.querySelector('#preview-shell'), frame = document.querySelector('#preview-frame');
+    const outer = shell.getBoundingClientRect(), inner = frame.getBoundingClientRect();
+    return {position:getComputedStyle(shell).position,width:outer.width,height:outer.height,x:outer.x,y:outer.y,right:outer.right,bottom:outer.bottom,
+      viewportWidth:innerWidth,viewportHeight:innerHeight,frameWidth:inner.width,frameHeight:inner.height,
+      frameUncovered:document.elementFromPoint(inner.x + inner.width / 2,inner.y + inner.height / 2) === frame};
+  });
+  assert.equal(geometry.position, 'fixed', 'Expanded preview must be fixed to the viewport');
+  assert(geometry.width >= geometry.viewportWidth * 0.85 && geometry.height >= geometry.viewportHeight * 0.85, 'Expansion must escape the phone-sized detail column');
+  assert(geometry.x >= 0 && geometry.y >= 0 && geometry.right <= geometry.viewportWidth + 1 && geometry.bottom <= geometry.viewportHeight + 1, 'Expanded preview must fit inside the viewport after scrolling');
+  assert(geometry.frameWidth >= geometry.width * 0.9 && geometry.frameHeight >= geometry.height * 0.65, 'Expanded game must use the available modal area');
+  assert(geometry.frameUncovered, 'Expanded iframe is covered, possibly by a backdrop above a sticky ancestor');
+  return geometry;
+};
 
 (async () => {
   let server, browser;
@@ -99,6 +164,16 @@ const snapshot = async frame => actors(await frame.evaluate(() => window.__MAZEB
     await page.goto(base + 'process.html?' + new URLSearchParams({case: selected.id}));
     await page.waitForSelector('.timeline-node');
     assert.equal(await page.locator('.timeline-node').count(), record.nodes.length, 'Every recorded operation is available without enabling hidden resource lanes');
+    await page.evaluate(() => document.fonts.ready);
+    const desktopLayout = await chartGeometry(page);
+    assertChartGeometry(desktopLayout, 'desktop');
+    const clickableNodes = await page.locator('.timeline-node').evaluateAll(nodes => nodes.map(node => node.dataset.nodeId));
+    for (const id of clickableNodes) {
+      await page.locator('.timeline-node[data-node-id="' + id + '"]').click();
+      assert.equal(await page.locator('.timeline-node[aria-current="step"]').getAttribute('data-node-id'), id, 'Every diagram node must select its actual record: ' + id);
+      assert.equal(new URL(page.url()).searchParams.get('node'), id, 'The selected diagram node must retain a direct link');
+      await assertMonochromeDetails(page);
+    }
     const skillResource = record.resources.find(r => r.kind === 'skill');
     assert(skillResource, 'Fixture should contain an actual skill read');
     await page.locator('.timeline-node[data-node-id="' + skillResource.graphNodeId + '"]').click();
@@ -121,6 +196,7 @@ const snapshot = async frame => actors(await frame.evaluate(() => window.__MAZEB
     await frame.locator('#maze-canvas').focus(); await page.keyboard.press('ArrowUp'); await idle(frame);
     const beforeExpand = await snapshot(frame);
     await page.locator('#expand-preview').click(); await page.waitForTimeout(150);
+    const desktopExpanded = await assertExpandedViewport(page);
     assert.equal(await frame.evaluate(() => performance.timeOrigin), clock, 'Expansion must retain the same game instance');
     assert.deepEqual(await snapshot(frame), beforeExpand, 'Expansion must preserve progress');
     await page.screenshot({path: path.join(output, 'timeline-expanded.png')});
@@ -130,10 +206,24 @@ const snapshot = async frame => actors(await frame.evaluate(() => window.__MAZEB
     await page.evaluate(() => document.fonts.ready);
     await page.screenshot({path: path.join(output, 'timeline-desktop.png'), fullPage: true});
     await page.setViewportSize({width: 390, height: 844});
+    const mobileLayout = await chartGeometry(page);
+    assertChartGeometry(mobileLayout, 'mobile');
     assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'Timeline mobile overflow');
     assert(await frame.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'Embedded player mobile overflow');
+    await assertMonochromeDetails(page);
     await page.screenshot({path: path.join(output, 'timeline-mobile.png'), fullPage: true});
-    report.timeline = {allNodesVisible: true, skillReadVisible: true, directSourceReadStatus: true, sourceCitationNavigates: true, unboundReadDoesNotBorrowMap: true, expandRetainsInstance: true, expandRetainsProgress: true, mobileNoOverflow: true};
+    const beforeMobileExpand = await snapshot(frame);
+    await page.locator('#expand-preview').click(); await page.waitForTimeout(150);
+    const mobileExpanded = await assertExpandedViewport(page);
+    assert.equal(await frame.evaluate(() => performance.timeOrigin), clock, 'Mobile expansion must retain the same game instance');
+    assert.deepEqual(await snapshot(frame), beforeMobileExpand, 'Mobile expansion must preserve progress');
+    await page.screenshot({path: path.join(output, 'timeline-mobile-expanded.png')});
+    await page.locator('#close-preview').click();
+    assert.deepEqual(await snapshot(frame), beforeMobileExpand, 'Closing mobile expansion must preserve progress');
+    report.timeline = {allNodesVisible: true, allNodesClickable: clickableNodes.length, shortLabels: true, nonOverlappingNodes: true,
+      desktopColumns:{timeline:desktopLayout.timeline.width,detail:desktopLayout.detail.width,ratio:desktopLayout.timeline.width / desktopLayout.detail.width},
+      monochromeDetails:true,skillReadVisible: true, directSourceReadStatus: true, sourceCitationNavigates: true, unboundReadDoesNotBorrowMap: true,
+      expandRetainsInstance: true, expandRetainsProgress: true, desktopExpanded, mobileExpanded, mobileNoOverflow: true};
     assert.deepEqual(report.errors, []); assert.deepEqual(report.failedResponses, []);
     report.passed = true;
   } catch (error) {report.failure = error.stack; throw error;}

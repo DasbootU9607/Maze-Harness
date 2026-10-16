@@ -1,7 +1,7 @@
 import { loadCatalog, shell, playUrl, showError } from './ui.js';
 
 const $ = id => document.getElementById(id);
-const state = { data: null, catalog: null, entry: null, skill: null, nodes: [], selectedId: null, candidateId: null, previewCandidateId: null, expanded: false, returnFocus: null, previousOverflow: '' };
+const state = { data: null, catalog: null, entry: null, skill: null, nodes: [], selectedId: null, candidateId: null, previewCandidateId: null, expanded: false, returnFocus: null, previousOverflow: '', revisionBranches: [] };
 const kindNames = { resource: 'READ', candidate: 'VERSION', test: 'TEST', note: 'DESIGN NOTE', operation: 'OPERATION', replay: 'REPLAY', delivery: 'DELIVERY' };
 const statusNames = { passed: 'Passed', failed: 'Failed', unknown: 'Unknown', error: 'Error' };
 const resourceNames = { 'SKILL.md': 'Read skill instructions', 'mechanism-logic.md': 'Read extracted mechanism', 'planning-depth.md': 'Read planning guidance', 'complex-validation.md': 'Read verification guidance', 'design-template.json': 'Read design template', 'complex-runtime.cjs': 'Inspect mechanism runtime', 'verify-complex.cjs': 'Inspect the verifier', 'design.md': 'Read design conventions', 'browser-check.cjs': 'Inspect browser replay checks' };
@@ -35,6 +35,46 @@ function nodeTitle(node) {
   return node.label || node.id;
 }
 function nodeCategory(node) { const record = recordFor(node); if (node.kind === 'resource' && (record?.delivery === 'snapshot' || record?.origin === 'historical')) return 'SOURCE SNAPSHOT'; return record?.category === 'diagnostic' ? 'DIAGNOSTIC' : kindNames[node.kind] || String(node.kind).toUpperCase(); }
+function nodeAction(node) {
+  const record = recordFor(node), label = node.label || '', goal = record?.goal || label;
+  if (node.kind === 'resource') {
+    if (record?.delivery === 'snapshot' || record?.origin === 'historical') return 'Save source snapshot';
+    const previousRead = state.nodes.some(other => other.sourceIndex < node.sourceIndex && other.kind === 'resource' && recordFor(other)?.basename === record?.basename);
+    if (record?.basename === 'mechanism-logic.md' && previousRead) return 'Read mechanism again';
+    return resourceNames[record?.basename] || 'Read reference material';
+  }
+  if (node.kind === 'candidate') return `Save candidate ${record?.id || node.details?.candidateId || ''}`;
+  if (node.kind === 'note') {
+    if (/three-stage.*recoverable access guard/i.test(goal)) return 'Plan three-stage room';
+    if (/repair.*unsolved layout/i.test(goal)) return 'Repair latch clearance';
+    if (/eliminate.*bypass/i.test(goal)) return 'Remove passage bypass';
+    if (/finalize.*preserve replayable/i.test(goal)) return 'Finalize room and replay';
+    if (/undo.*pre-collection/i.test(goal)) return 'Check pre-collection Undo';
+    return 'Record design decision';
+  }
+  if (node.kind === 'replay') return 'Save gameplay replay';
+  if (node.kind === 'delivery') return `Publish final candidate ${candidateFor(node)?.id || ''}`.trim();
+  const actions = {
+    'author-first-layout': 'Build first layout',
+    'solve-first-layout': 'Solve first layout',
+    'inspect-first-layout-obstruction': 'Inspect first-layout obstruction',
+    'revise-latch-clearance': 'Revise latch clearance',
+    'solve-revised-layout': 'Solve revised layout',
+    'close-northeast-bypass': 'Close northeast bypass',
+    'solve-and-bind-stage-witnesses': 'Bind solution stage witnesses',
+    'formal-complex-verification-01': node.kind === 'test' ? 'Mechanism verification' : 'Run complex verifier',
+    'build-verified-rooflock-draft': 'Build verified room',
+    'Local preview service started': 'Start local preview',
+    'saved-build-ordinary-replay': node.kind === 'test' ? 'Verify saved-build replay' : 'Run saved-build replay',
+    'Browser replay and editor export': 'Browser replay and export',
+    'Browser replay, pre-collection undo, and editor export': 'Browser undo and export',
+    'Browser validation completed': 'Run browser checks'
+  };
+  if (actions[label]) return actions[label];
+  const words = label.replace(/[-_]/g, ' ').trim().split(/\s+/);
+  if (words.length >= 2 && words.length <= 6 && label.length < 48) return words.join(' ').replace(/^./, character => character.toUpperCase());
+  return node.kind === 'test' ? 'Inspect recorded test' : 'Run recorded operation';
+}
 function resourceCategory(record) {
   const name = record?.basename || '';
   if (name === 'SKILL.md' || record?.kind === 'skill') return 'Skill instructions';
@@ -72,7 +112,7 @@ async function start() {
   const mode = data.coverage?.mode || data.mode || 'unknown'; $('record-mode').textContent = mode === 'observed' ? 'OBSERVED RECORD' : mode === 'historical' ? 'HISTORICAL IMPORT' : 'PARTIAL RECORD'; $('record-mode').classList.toggle('historical', mode === 'historical');
   $('record-summary').textContent = `${state.data.candidates.length} versions / ${state.data.resources.length} recorded references / ${state.data.tests.length} test records`;
   $('timeline-count').textContent = `${state.nodes.length} records`;
-  $('timeline-context').textContent = mode === 'historical' ? 'Original event times are unknown. The list follows imported record order.' : 'Recorded order. Select a step to inspect its evidence and the version it actually used.';
+  $('timeline-context').textContent = mode === 'historical' ? 'Imported record order. Original event times are unknown.' : 'Recorded order. Select an event to inspect its evidence.';
   $('coverage-description').textContent = data.coverage?.description || 'This view contains saved operations, references, maps, test outcomes, and public author explanations. It does not reconstruct unrecorded activity.';
   const limits = [...(data.coverage?.limitations || []), ...(data.limitations || []), data.coverage?.sources?.scope].filter(Boolean).map(text).filter((item, index, all) => all.indexOf(item) === index);
   limits.forEach(item => $('coverage-limitations').append(el('li', '', item)));
@@ -85,15 +125,48 @@ async function start() {
 
 function renderTimeline() {
   const timeline = clear($('process-timeline'));
+  state.revisionBranches = recordedRevisionBranches();
+  timeline.dataset.branchCount = String(state.revisionBranches.length);
+  if (state.revisionBranches.length) {
+    const layer = el('li', 'revision-layer'); layer.setAttribute('aria-hidden', 'true');
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); svg.id = 'revision-branches'; svg.setAttribute('aria-hidden', 'true'); layer.append(svg); timeline.append(layer);
+  }
   for (const node of state.nodes) {
-    const item = el('li', 'timeline-item'), button = el('button', `timeline-node ${node.kind} ${node.status || ''}`); button.type = 'button'; button.dataset.nodeId = node.id; button.dataset.kind = node.kind;
-    const body = el('span', 'timeline-body'), meta = el('span', 'timeline-meta'); meta.append(el('span', '', nodeCategory(node)));
-    if (['test', 'operation'].includes(node.kind) && statusNames[node.status]) meta.append(el('span', `timeline-status ${node.status}`, statusNames[node.status]));
-    meta.append(el('span', 'timeline-order', `#${String(node.order ?? node.sourceIndex + 1).padStart(2, '0')}`)); body.append(meta, el('span', 'timeline-label', short(nodeTitle(node), node.kind === 'note' ? 105 : 85)));
-    const record = recordFor(node), candidate = candidateFor(node);
-    const description = node.kind === 'resource' ? record?.basename || node.label : node.kind === 'candidate' ? diffText(record || {}) : candidate ? `Bound to ${candidate.id}` : node.kind === 'note' ? 'Public author explanation' : null;
-    if (description) body.append(el('span', 'timeline-description', description));
-    button.append(el('span', 'timeline-dot'), body); button.addEventListener('click', () => selectNode(node.id)); item.append(button); timeline.append(item);
+    const item = el('li', `timeline-item ${node.kind} ${node.status || ''}`), button = el('button', `timeline-node ${node.kind} ${node.status || ''}`); button.type = 'button'; button.dataset.nodeId = node.id; button.dataset.kind = node.kind; button.title = nodeTitle(node);
+    const body = el('span', 'timeline-body'); body.append(el('span', 'timeline-label', nodeAction(node)));
+    if (node.kind === 'test' && statusNames[node.status]) body.append(el('span', `timeline-state ${node.status}`, recordFor(node)?.category === 'diagnostic' && node.status === 'failed' ? 'Process failed' : statusNames[node.status]));
+    const circle = el('span', 'timeline-dot'), ring = el('img', 'timeline-ring'), dot = el('img', 'timeline-center');
+    ring.src = './assets/process-ring.svg'; ring.alt = ''; ring.width = 42; ring.height = 42;
+    dot.src = './assets/process-node.svg'; dot.alt = ''; dot.width = 34; dot.height = 34;
+    circle.append(ring, dot, el('span', 'timeline-number', String(node.order ?? node.sourceIndex + 1).padStart(2, '0')));
+    button.append(el('span', 'timeline-kind', nodeCategory(node)), circle, el('span', 'timeline-connector'), body); button.addEventListener('click', () => selectNode(node.id)); item.append(button); timeline.append(item);
+  }
+  requestAnimationFrame(renderRevisionBranches);
+}
+function recordedRevisionBranches() {
+  const candidates = new Map(state.data.candidates.map(candidate => [candidate.graphNodeId, candidate])), children = new Map();
+  for (const edge of state.data.edges) {
+    const parent = candidates.get(edge.from), child = candidates.get(edge.to);
+    if (edge.kind !== 'revision' || edge.inferred !== false || !parent || !child || !Array.isArray(child.parentIds) || !child.parentIds.includes(parent.id)) continue;
+    if (!children.has(parent.graphNodeId)) children.set(parent.graphNodeId, new Map());
+    children.get(parent.graphNodeId).set(child.id, { from: parent.graphNodeId, to: child.graphNodeId });
+  }
+  return [...children.values()].filter(group => group.size > 1).flatMap(group => [...group.values()].map((edge, lane) => ({ ...edge, lane, laneCount: group.size })));
+}
+function renderRevisionBranches() {
+  const svg = $('revision-branches'); if (!svg) return;
+  const timeline = $('process-timeline'), rect = timeline.getBoundingClientRect(), circles = new Map();
+  for (const button of timeline.querySelectorAll('.timeline-node')) {
+    const circle = button.querySelector('.timeline-dot').getBoundingClientRect();
+    circles.set(button.dataset.nodeId, { x: circle.left - rect.left + timeline.scrollLeft, y: circle.top - rect.top + timeline.scrollTop + circle.height / 2 });
+  }
+  clear(svg); svg.setAttribute('width', String(timeline.clientWidth)); svg.setAttribute('height', String(Math.max(timeline.clientHeight, ...[...circles.values()].map(circle => circle.y + 76))));
+  for (const edge of state.revisionBranches) {
+    const start = circles.get(edge.from), end = circles.get(edge.to); if (!start || !end) continue;
+    const direction = end.y >= start.y ? 1 : -1, radius = Math.min(18, Math.abs(end.y - start.y) / 3), gap = Math.max(3, Math.min(16, parseFloat(getComputedStyle(timeline.querySelector('.timeline-kind')).paddingRight) - 2)), offset = 3 + (gap - 3) * edge.lane / Math.max(1, edge.laneCount - 1), lane = Math.max(3, Math.min(start.x, end.x) - offset);
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path'); path.classList.add('revision-branch'); path.dataset.from = edge.from; path.dataset.to = edge.to; path.dataset.kind = 'revision';
+    path.setAttribute('d', `M ${start.x} ${start.y} C ${lane} ${start.y} ${lane} ${start.y} ${lane} ${start.y + direction * radius} L ${lane} ${end.y - direction * radius} C ${lane} ${end.y} ${lane} ${end.y} ${end.x} ${end.y}`);
+    const title = document.createElementNS('http://www.w3.org/2000/svg', 'title'); title.textContent = `Recorded revision: ${nodeAction(byId(edge.from))} to ${nodeAction(byId(edge.to))}`; path.append(title); svg.append(path);
   }
 }
 function selectNode(id, { initial = false } = {}) {
@@ -105,13 +178,14 @@ function selectNode(id, { initial = false } = {}) {
   const meta = clear($('operation-meta')); meta.append(el('span', '', nodeCategory(node)), el('span', '', `/ RECORD ${node.order ?? index + 1}`));
   if (candidate) meta.append(el('span', '', `/ ${candidate.id}`));
   if (statusNames[node.status]) meta.append(el('span', `status-label ${node.status}`, statusNames[node.status]));
-  $('operation-title').textContent = nodeTitle(node);
+  $('operation-title').textContent = nodeAction(node);
   $('operation-summary').textContent = node.kind === 'resource' ? `${resourceCategory(record)} / ${record?.delivery === 'snapshot' || record?.origin === 'historical' ? 'Saved source snapshot' : 'Recorded file read'}` : node.kind === 'note' ? 'Public author explanation' : node.summary || record?.summary || '';
   renderPreview(candidate); renderSources(node, record, candidate); renderExplanation(node, record, candidate); renderChecks(node, record); renderRelations(node);
   const safeRecord = record ? Object.fromEntries(Object.entries(record).filter(([key]) => !['cells', 'diff'].includes(key))) : null;
   $('operation-evidence-body').textContent = JSON.stringify({ node: Object.fromEntries(Object.entries(node).filter(([key]) => key !== 'sourceIndex')), ...(safeRecord ? { record: safeRecord } : {}) }, null, 2); $('operation-evidence').open = false;
   const url = new URL(location.href); url.searchParams.set('node', node.id); if (candidate) url.searchParams.set('candidate', candidate.id); else url.searchParams.delete('candidate'); history.replaceState(null, '', url);
-  if (!initial) {
+  if (!initial) $('operation-detail').scrollTop = 0;
+  {
     const button = [...$('process-timeline').querySelectorAll('.timeline-node')].find(item => item.dataset.nodeId === id);
     if (button) { const list = $('process-timeline'), rect = button.getBoundingClientRect(), listRect = list.getBoundingClientRect(); if (rect.top < listRect.top || rect.bottom > listRect.bottom) list.scrollTop += rect.top - listRect.top - list.clientHeight / 3; }
   }
@@ -161,7 +235,7 @@ function explanationPart(host, title, value) {
 function renderExplanation(node, record, candidate) {
   const host = clear($('operation-explanation'));
   if (candidate && !candidate.preview?.levelPath) explanationPart(host, 'Saved candidate', `${candidate.id} is bound to this record, but an interactive 3D preview has not been published for that snapshot.`);
-  if (node.kind === 'note' && record) { explanationPart(host, 'Proposed change', record.change); explanationPart(host, 'Public explanation', record.reason); explanationPart(host, 'Checks the author intended to run', record.expectedChecks); if (record.retrospective) explanationPart(host, 'Recording context', 'This explanation was recorded retrospectively.'); }
+  if (node.kind === 'note' && record) { explanationPart(host, 'Design goal', record.goal); explanationPart(host, 'Proposed change', record.change); explanationPart(host, 'Public explanation', record.reason); explanationPart(host, 'Checks the author intended to run', record.expectedChecks); if (record.retrospective) explanationPart(host, 'Recording context', 'This explanation was recorded retrospectively.'); }
   else if (node.kind === 'operation' && record) { explanationPart(host, 'What this operation establishes', record.scope); if (record.inputCandidateId || record.outputCandidateId) explanationPart(host, 'Saved input and output', `Input: ${record.inputCandidateId || 'not associated'}. Output: ${record.outputCandidateId || 'not associated'}. These are recorded boundaries, not a reconstruction of intermediate in-memory states.`); }
   else if (node.kind === 'candidate' && candidate) { explanationPart(host, 'Version change', diffText(candidate)); const parentEdges = state.data.edges.filter(edge => edge.to === node.id && edge.kind === 'revision'); if (parentEdges.some(edge => edge.inferred)) explanationPart(host, 'Version order', 'This parent relationship is inferred from historical file order. It is not an observed causal sequence.'); }
   else if (node.kind === 'replay' && record) { explanationPart(host, 'Saved replay evidence', `${record.frameCount || 0} recorded states${record.route ? ` / ${record.route.length} saved actions` : ''}. The preview uses the replay attached to this candidate; no route is invented for an unverified version.`); explanationPart(host, 'Replay binding', record.binding); }
@@ -177,7 +251,7 @@ function renderChecks(node, record) {
   for (const check of checks) { const status = check.status || 'unknown', item = el('li'), body = el('div', 'check-body', check.name || check.label || 'Unnamed check'); item.append(el('span', `check-mark ${status}`, status === 'passed' ? '+' : ['failed', 'error'].includes(status) ? 'x' : '?')); if (check.detail || check.details) { const detail = el('details'); detail.append(el('summary', '', 'Check detail'), el('pre', '', text(check.detail || check.details))); body.append(detail); } item.append(body); list.append(item); } host.append(list);
 }
 function relationButton(other, inferred) {
-  const button = el('button', `relation-chip${inferred ? ' inferred' : ''}`); button.type = 'button'; button.dataset.nodeId = other.id; button.append(el('span', '', short(nodeTitle(other), 105)), el('span', 'relation-arrow', '\u2197')); button.addEventListener('click', () => selectNode(other.id)); return button;
+  const button = el('button', `relation-chip${inferred ? ' inferred' : ''}`); button.type = 'button'; button.dataset.nodeId = other.id; button.title = nodeTitle(other); button.append(el('span', '', nodeAction(other)), el('span', 'relation-arrow', '\u2197')); button.addEventListener('click', () => selectNode(other.id)); return button;
 }
 function renderRelations(node) {
   const host = clear($('operation-relations')), edges = state.data.edges.filter(edge => edge.from === node.id || edge.to === node.id); host.hidden = !edges.length; if (!edges.length) return;
@@ -190,15 +264,24 @@ function renderRelations(node) {
 
 function expandPreview() {
   if ($('preview-shell').hidden || state.expanded) return;
-  state.expanded = true; state.returnFocus = document.activeElement; state.previousOverflow = document.body.style.overflow; document.body.style.overflow = 'hidden';
+  state.expanded = true; state.returnFocus = document.activeElement; state.previousOverflow = document.body.style.overflow; document.body.style.overflow = 'hidden'; document.body.classList.add('preview-open');
   $('preview-shell').classList.add('expanded'); $('preview-shell').setAttribute('role', 'dialog'); $('preview-shell').setAttribute('aria-modal', 'true'); $('preview-backdrop').hidden = false; $('expand-preview').hidden = true; $('close-preview').hidden = false; $('close-preview').focus();
 }
 function closePreview() {
   if (!state.expanded) return;
-  state.expanded = false; $('preview-shell').classList.remove('expanded'); $('preview-shell').removeAttribute('role'); $('preview-shell').removeAttribute('aria-modal'); $('preview-backdrop').hidden = true; $('expand-preview').hidden = false; $('close-preview').hidden = true; document.body.style.overflow = state.previousOverflow; state.returnFocus?.focus();
+  state.expanded = false; $('preview-shell').classList.remove('expanded'); $('preview-shell').removeAttribute('role'); $('preview-shell').removeAttribute('aria-modal'); $('preview-backdrop').hidden = true; $('expand-preview').hidden = false; $('close-preview').hidden = true; document.body.style.overflow = state.previousOverflow; document.body.classList.remove('preview-open'); state.returnFocus?.focus();
 }
 function handleEscape(event) { if (event.key === 'Escape' && state.expanded) { event.preventDefault(); closePreview(); } }
 function installInteractions() {
+  new ResizeObserver(renderRevisionBranches).observe($('process-timeline'));
+  document.fonts?.ready.then(renderRevisionBranches);
+  $('process-timeline').addEventListener('keydown', event => {
+    const button = event.target.closest('.timeline-node'); if (!button) return;
+    const index = state.nodes.findIndex(node => node.id === button.dataset.nodeId), next = { ArrowDown: index + 1, ArrowRight: index + 1, ArrowUp: index - 1, ArrowLeft: index - 1, Home: 0, End: state.nodes.length - 1 }[event.key];
+    if (next === undefined) return; event.preventDefault();
+    const selected = state.nodes[Math.max(0, Math.min(state.nodes.length - 1, next))]; selectNode(selected.id);
+    [...$('process-timeline').querySelectorAll('.timeline-node')].find(item => item.dataset.nodeId === selected.id)?.focus({ preventScroll: true });
+  });
   $('previous-operation').addEventListener('click', () => { const i = state.nodes.findIndex(node => node.id === state.selectedId); if (i > 0) selectNode(state.nodes[i - 1].id); });
   $('next-operation').addEventListener('click', () => { const i = state.nodes.findIndex(node => node.id === state.selectedId); if (i < state.nodes.length - 1) selectNode(state.nodes[i + 1].id); });
   $('candidate-version').addEventListener('change', () => { const candidate = state.data.candidates.find(item => item.id === $('candidate-version').value); if (candidate) selectNode(candidate.graphNodeId); });
@@ -209,7 +292,7 @@ function installInteractions() {
     if (event.origin !== location.origin || event.source !== $('preview-frame').contentWindow || message?.source !== 'mazebench-process-player' || message.caseId !== state.entry.id || message.candidateId !== state.previewCandidateId) return;
     if (message.type === 'ready') { $('preview-error').hidden = true; $('preview-status').textContent = message.hasReplay ? 'Interactive version / bound replay available' : 'Interactive saved version / no bound replay'; }
     else if (message.type === 'error') { $('preview-error').textContent = message.message || 'The saved preview could not be opened.'; $('preview-error').hidden = false; $('preview-status').textContent = 'Preview unavailable'; }
-    else if (message.type === 'replay-state') $('preview-status').textContent = `Saved replay / ${message.step || 0} of ${message.total || 0}${message.playing ? ' / playing' : message.status ? ' / ' + message.status : ' / paused'}`;
+    else if (message.type === 'replay-state') $('preview-status').textContent = message.total > 0 ? `Saved replay / ${message.step || 0} of ${message.total}${message.playing ? ' / playing' : message.status ? ' / ' + message.status : ' / paused'}` : 'Interactive saved version / no bound replay';
   });
 }
 
