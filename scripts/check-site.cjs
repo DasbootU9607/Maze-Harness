@@ -128,6 +128,8 @@ const read = relative => JSON.parse(fs.readFileSync(path.join(site, relative), '
 const sha = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
 const catalog = read('data/catalog.json');
 const provenance = read('data/provenance.json');
+const thumbnails = require('./process-thumbnails.cjs');
+const rendererSha256 = catalog.cases.some(entry => entry.process) ? thumbnails.rendererFingerprint(site) : null;
 const context = { window: {}, console, structuredClone };
 vm.runInNewContext(fs.readFileSync(path.join(site, 'runtime/maze-engine.js'), 'utf8'), context);
 const createEngine = context.window.MazeEngine.createEngine;
@@ -180,7 +182,10 @@ for (const entry of catalog.cases) {
   inputs += entry.witness.length;
   const record = provenance.cases.find(c => c.id === entry.id);
   assert(record);
-  checkAuthoringProcess(site, entry, record);
+  const process = checkAuthoringProcess(site, entry, record);
+  if (process) for (const candidate of process.candidates.filter(candidate => candidate.preview)) {
+    thumbnails.verifyThumbnail(site,process,candidate,rendererSha256);
+  }
   if (record.witnessSha256) assert.equal(sha(entry.witness), record.witnessSha256);
   if (record.goalSha256) assert.equal(sha(JSON.stringify(entry.goal)), record.goalSha256);
   if (record.completeObjectiveSha256) assert.equal(sha(JSON.stringify(entry.completeObjective)), record.completeObjectiveSha256);

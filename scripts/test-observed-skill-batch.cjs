@@ -38,6 +38,9 @@ function actualDiff(before,after){
   return diff;
 }
 async function playerFrame(page,mode,candidateId,replayId){
+  assert.equal(await page.locator('#preview-frame:visible').count(),0,'The compact card is a static screenshot');
+  const image=page.locator('#preview-image');await image.waitFor({state:'visible'});await image.evaluate(element=>element.decode());
+  await page.locator('#expand-preview').click();
   const element=page.locator('#preview-frame');await element.waitFor({state:'visible'});
   const frame=await(await element.elementHandle()).contentFrame();
   await frame.waitForURL(url=>url.searchParams.get('mode')===mode&&url.searchParams.get('candidate')===candidateId&&(!replayId||url.searchParams.get('replay')===replayId));
@@ -123,6 +126,7 @@ async function capture(page,file){
       page.on('pageerror',error=>report.errors.push({caseId:trial.publicId,message:error.message}));
       page.on('response',response=>{if(response.status()>=400)report.failedResponses.push({caseId:trial.publicId,status:response.status(),url:response.url()});});
       await page.goto(base+'process.html?'+new URLSearchParams({case:trial.publicId}));await page.waitForSelector('.timeline-node');
+      assert.equal(await page.locator('#preview-frame').count(),0,'The timeline does not load a player before expansion');
       assert.equal(await page.locator('.timeline-node').count(),record.nodes.length);
       const keyCount=await page.locator('.timeline-node[data-key-event="true"]').count();
       assert.equal(await page.locator('.timeline-node:visible').count(),keyCount);assert(keyCount<record.nodes.length);assert(await page.locator('.timeline-group-toggle[aria-expanded="false"]').count());
@@ -135,12 +139,15 @@ async function capture(page,file){
       assert(noBorrowedMaps.every(result=>result.selected&&result.hidden),'Resources, tests, notes, commands, and delivery must not borrow a candidate map');
       await setGroups(page,false);row.timeline={keyEvents:keyCount,allRecords:record.nodes.length,expandCollapse:true,supportingDeepLink:true,nonMapEventsChecked:nonMaps.length};
       for(const candidate of record.candidates){
-        await page.locator(idSelector(candidate.graphNodeId)).click();const frame=await playerFrame(page,'play',candidate.id),level=levels.get(candidate.id);
+        await page.locator(idSelector(candidate.graphNodeId)).click();
+        assert.equal(new URL(await page.locator('#preview-image').getAttribute('src'),base).href,new URL(candidate.preview.thumbnailPath,base).href,'Static image belongs to this exact candidate');
+        const frame=await playerFrame(page,'play',candidate.id),level=levels.get(candidate.id);
         assert.equal(await frame.locator('#replay-controls').isVisible(),false);assert.equal(await frame.locator('#replay-play').isVisible(),false);
         const initial=actors(level.actors);assert.deepEqual(await snapshot(frame),initial,'Selected version loads its actual initial actors');
         const move=await frame.evaluate(data=>{const e=window.MazeEngine.createEngine(data),directions={ArrowUp:[0,-1],ArrowDown:[0,1],ArrowLeft:[-1,0],ArrowRight:[1,0]},player=e.actorTypes.findIndex(type=>['player','circle_player'].includes(type));for(const [key,vector]of Object.entries(directions)){const state=e.cloneState(e.initialState);if(e.move(state,...vector).moved&&!state.actorRemoved[player])return{key,actors:data.actors.map((actor,i)=>({...actor,x:state.actorX[i],y:state.actorY[i],elevation:state.actorElevation[i],removed:!!state.actorRemoved[i]}))};}return null;},level);
         assert(move,'A version preview must permit an ordinary living-player move');await frame.locator('#maze-canvas').focus();await page.keyboard.press(move.key);await idle(frame);assert.deepEqual(await snapshot(frame),actors(move.actors));
         await frame.locator('#reset-room').click();await idle(frame);assert.deepEqual(await snapshot(frame),initial);
+        await page.locator('#close-preview').click();
         row.previews.push({candidateId:candidate.id,mode:'play',actualInitialState:true,keyboardMove:true,reset:true,noReplayControls:true});
       }
       await capture(page,trial.skill+'-desktop.png');save();
@@ -150,9 +157,10 @@ async function capture(page,file){
         assert(await frame.locator('#replay-controls').isVisible());assert.deepEqual(await snapshot(frame),actors(saved.frames[0].actors));
         for(let i=1;i<saved.frames.length;i++){await frame.locator('#replay-step').click();await frame.waitForFunction(step=>window.__PROCESS_PLAYER_STATE__.step===step,i);await idle(frame);assert.deepEqual(await snapshot(frame),actors(saved.frames[i].actors),replay.id+' saved frame '+i);if(i===1)await readOnlyInput(page,frame);}
         const timeOrigin=await frame.evaluate(()=>performance.timeOrigin),before=await snapshot(frame);
-        await page.locator('#expand-preview').click();await frame.waitForFunction(()=>Math.abs(window.__MAZEBENCH_APP__.threeRenderer.getDebugCameraYaw())<0.001);
-        assert.equal(await frame.evaluate(()=>performance.timeOrigin),timeOrigin);assert.deepEqual(await snapshot(frame),before);assert.equal(await frame.evaluate(()=>window.__PROCESS_PLAYER_STATE__.step),saved.frames.length-1);await page.locator('#close-preview').click();
-        row.replays.push({id:replay.id,candidateId:replay.candidateId,mode:'replay',savedFramesCompared:saved.frames.length,readOnlyKeyboardAndTouch:true,expandedRetainsState:true});save();
+        await page.locator('#close-preview').click();
+        const reopened=await playerFrame(page,'replay',replay.candidateId,replay.id);
+        assert.equal(await reopened.evaluate(()=>performance.timeOrigin),timeOrigin);assert.deepEqual(await snapshot(reopened),before);assert.equal(await reopened.evaluate(()=>window.__PROCESS_PLAYER_STATE__.step),saved.frames.length-1);await page.locator('#close-preview').click();
+        row.replays.push({id:replay.id,candidateId:replay.candidateId,mode:'replay',savedFramesCompared:saved.frames.length,readOnlyKeyboardAndTouch:true,closeReopenRetainsState:true});save();
       }
       await page.setViewportSize({width:390,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Mobile document stays within the viewport');await capture(page,trial.skill+'-mobile-replay.png');
       await page.close();row.passed=true;save();

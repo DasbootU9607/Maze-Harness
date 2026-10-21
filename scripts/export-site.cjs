@@ -41,7 +41,7 @@ const runtimeFiles = [
   'play-rules.js', 'play-core.js', 'play-render-effects.js', 'play-render-terrain.js',
   'play-render-actors.js', 'play-render-three.js', 'play-render-compositor.js',
   'play-render.js', 'maze-engine.js', 'play-movement.js', 'play-world-transitions.js',
-  'play-gameplay.js', 'play.js'
+  'play-gameplay.js', 'play.js', 'styles.css', 'site.css', 'play-theme.css'
 ];
 const runtime = [];
 for (const file of runtimeFiles) {

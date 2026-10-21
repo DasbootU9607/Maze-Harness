@@ -144,7 +144,8 @@ function assertPublicPrivacy(document, identities = []) {
   for (const candidate of document.candidates) {
     fields(candidate, ['id', 'graphNodeId', 'label', 'parentId', 'parentIds', 'cells', 'sha256', 'cellsSha256', 'contractSha256', 'origin', 'parentBasis', 'diff', 'preview'], 'candidate');
     if (candidate.preview) {
-      fields(candidate.preview, ['levelPath', 'levelSha256', 'cellsSha256', 'status', 'replay', 'replays'], 'preview');
+      fields(candidate.preview, ['levelPath', 'levelSha256', 'cellsSha256', 'status', 'replay', 'replays', 'thumbnailPath'], 'preview');
+      if (candidate.preview.thumbnailPath !== undefined) assert(/^assets\/process-thumbnails\/[a-z0-9-]+\/[a-z0-9-]+\.png$/i.test(candidate.preview.thumbnailPath), 'Invalid candidate screenshot path');
       assert.equal(candidate.preview.status, 'iteration');
       for (const key of ['levelPath', 'levelSha256', 'cellsSha256']) assert(typeof candidate.preview[key] === 'string');
       const replayFields = ['id', 'data', 'sha256', 'candidateId', 'cellsSha256', 'contractSha256', 'sourceSha256', 'route', 'frameCount', 'binding', 'sourceKind'];

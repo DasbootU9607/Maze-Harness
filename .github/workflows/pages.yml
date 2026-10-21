@@ -41,6 +41,8 @@ jobs:
         run: node scripts/check-site.cjs
       - name: Verify incremental skill discovery
         run: node scripts/test-site-sync.cjs
+      - name: Verify candidate screenshot bindings
+        run: node scripts/test-process-thumbnails.cjs
       - name: Verify authoring recorder and public evidence projection
         run: |
           node --test tools/authoring-observatory/tests/*.test.cjs

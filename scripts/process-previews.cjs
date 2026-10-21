@@ -6,6 +6,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const assert = require('node:assert/strict');
 const { hash } = require('./site-content.cjs');
+const { thumbnailPath, rendererFingerprint } = require('./process-thumbnails.cjs');
 const vectors = { U: [0, -1], D: [0, 1], L: [-1, 0], R: [1, 0] };
 const bytes = value => Buffer.from(JSON.stringify(value, null, 2) + '\n');
 const read = file => JSON.parse(fs.readFileSync(file, 'utf8'));
@@ -89,12 +90,14 @@ function attachProcessPreviews(document, runDir, { engineRoot, runtime, emit }) 
   const normalizedRuntime = file => fs.readFileSync(file, 'utf8').replace(/\r\n/g, '\n');
   assert.equal(hash(normalizedRuntime(path.join(engineRoot, 'public/maze-engine.js'))), hash(normalizedRuntime(runtime)), 'Iteration preview engine differs from the website runtime');
   const createEngine = engineFactory(runtime);
+  const rendererSha256 = rendererFingerprint(path.dirname(path.dirname(runtime)));
   const events = fs.readFileSync(path.join(runDir, 'events.jsonl'), 'utf8').trim().split(/\r?\n/).map(JSON.parse);
   for (const candidate of document.candidates) {
     const level = buildLevel(engineRoot, candidate, document.caseId), levelBytes = bytes(level);
     assert.equal(createEngine(level).loadWarnings.length, 0, 'Official engine rejects the candidate preview');
     const levelPath = `data/process-levels/${document.caseId}/${candidate.id}.json`;
     candidate.preview = { levelPath, levelSha256: hash(levelBytes), cellsSha256: candidate.cellsSha256, status: 'iteration' };
+    candidate.preview.thumbnailPath = thumbnailPath(document.caseId, candidate, rendererSha256);
     emit(levelPath, levelBytes);
     const records = document.replays.filter(replay => replay.candidateId === candidate.id);
     if (!records.length) continue;

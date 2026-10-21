@@ -36,5 +36,8 @@ const {createServer, prefix} = require('./serve-site.cjs');
       console.log('Captured ' + entry.id);
       await page.close();
     }
+    await require('./process-thumbnails.cjs').captureProcessThumbnails({
+      site:path.join(root,'site'),context,origin,missingOnly:args.includes('--missing')
+    });
   } finally { await browser?.close(); await new Promise(resolve => server.close(resolve)); }
 })().catch(error => {console.error(error); process.exitCode=1;});
