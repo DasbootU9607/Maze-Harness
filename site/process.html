@@ -30,11 +30,10 @@
         <div class="operation-heading-line"><div id="operation-meta" class="operation-meta"></div><nav class="operation-navigation" aria-label="Adjacent recorded operations"><button id="previous-operation" type="button" aria-label="Previous operation">&#8592;</button><button id="next-operation" type="button" aria-label="Next operation">&#8594;</button></nav></div>
         <h2 id="operation-title">Choose an operation</h2>
         <p id="operation-summary" class="operation-summary"></p>
-        <section id="preview-shell" class="preview-shell" aria-labelledby="preview-title" hidden>
-          <header class="preview-toolbar"><span id="preview-title">Playable map</span><div class="preview-actions"><button id="expand-preview" type="button">Expand <span aria-hidden="true">&#8599;</span></button><button id="close-preview" type="button" hidden>Close <span aria-hidden="true">&#215;</span></button></div></header>
-          <iframe id="preview-frame" class="preview-frame" title="Interactive saved maze version" allow="fullscreen" loading="eager"></iframe>
-          <span id="preview-status" class="process-sr-only" role="status">Loading saved version...</span>
-          <p id="preview-error" class="preview-error" role="alert" hidden></p>
+        <section id="preview-shell" class="preview-shell" aria-label="Map preview" hidden>
+          <img id="preview-image" class="preview-image" alt="" hidden>
+          <p id="preview-placeholder" class="preview-placeholder" hidden>Map preview unavailable</p>
+          <button id="expand-preview" class="expand-preview" type="button" aria-haspopup="dialog">Expand to play <span aria-hidden="true">&#8599;</span></button>
         </section>
         <section id="source-overview" class="source-overview" hidden></section>
         <section id="operation-explanation" class="operation-explanation"></section>
@@ -45,7 +44,12 @@
     </div>
     <details class="process-coverage"><summary>Record coverage and limits</summary><p id="coverage-description"></p><ul id="coverage-limitations"></ul><p>The timeline follows saved record order. References, public explanations, executed checks, and gameplay replay are different kinds of evidence. Missing activity remains unknown; these records are not a model's internal thought transcript.</p></details>
   </main>
-  <div id="preview-backdrop" class="preview-backdrop" hidden></div>
+  <dialog id="preview-modal" class="preview-modal" aria-labelledby="preview-title">
+    <header class="preview-modal-toolbar"><h2 id="preview-title">Play map</h2><button id="close-preview" type="button" aria-label="Close player">Close <span aria-hidden="true">&#215;</span></button></header>
+    <div id="preview-player-host" class="preview-player-host"></div>
+    <span id="preview-status" class="process-sr-only" role="status"></span>
+    <p id="preview-error" class="preview-error" role="alert" hidden></p>
+  </dialog>
   <footer id="site-footer"></footer>
   <div id="toast" class="toast" role="status"></div>
 </body>

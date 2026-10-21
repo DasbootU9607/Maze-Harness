@@ -11,7 +11,6 @@ const state = window.__PROCESS_PLAYER_STATE__ = {caseId,candidateId,mode,replayI
 let initialLevel, candidate, replayRecord, savedReplay, expectedFrames, replayEngine, expectedFinalSolved = false;
 let busy = false, seeking = false, replayDirty = false, ready = false, disposed = false, token = 0, statsTimer = null;
 let actionQueue = Promise.resolve();
-let orientationLockUntil = 0, orientationTimer = null;
 let runtimeInputLock = true;
 // The original runtime refreshes this flag when overlays change. A replay
 // remains read-only across those writes, pauses, completion, and resizing.
@@ -29,7 +28,8 @@ function sync() {
   const locked = !ready || busy || seeking || state.replaying;
   Object.assign(state, {busy,seeking,ready});
   window.__MAZEBENCH_INPUT_LOCKED__ = locked;
-  for (const button of document.querySelectorAll('[data-move],[data-camera],#undo-move')) button.disabled = replayOnly || locked;
+  for (const button of document.querySelectorAll('[data-move],#undo-move')) button.disabled = replayOnly || locked;
+  for (const button of document.querySelectorAll('[data-camera]')) button.disabled = !ready;
   $('reset-room').disabled = replayOnly || !ready || busy || seeking;
   $('replay-play').disabled = !replayOnly || !ready || !state.hasReplay || seeking || (busy && !state.replaying);
   $('replay-play').textContent = state.replaying ? 'Pause replay' : state.step === state.total && state.total ? 'Replay again' : state.step ? 'Resume recorded replay' : 'Watch recorded replay';
@@ -58,45 +58,6 @@ function actorsKey(actors) {
 function engineActors(physical) {
   return initialLevel.actors.map((actor,index) => ({...actor,x:physical.actorX[index],y:physical.actorY[index],
     elevation:physical.actorElevation[index],removed:!!physical.actorRemoved[index]}));
-}
-function framePlayableArea() {
-  const cells = [];
-  initialLevel.terrain.forEach((row,y) => row.forEach((cell,x) => {
-    if (cell?.type && !['wall','empty','void'].includes(cell.type)) cells.push({x,y,elevation:cell.elevation || 0});
-  }));
-  cells.push(...initialLevel.actors.filter(actor => !actor.removed));
-  if (!cells.length) return;
-  const unit = app().TILE_SIZE;
-  // Use the renderer's existing fit hook to frame the passage, not the solid
-  // wall margin around it. This changes only the camera, never level geometry.
-  app().cameraFlightFitOptions = {
-    minX:(Math.min(...cells.map(cell => cell.x)) - 0.5) * unit,
-    maxX:(Math.max(...cells.map(cell => cell.x)) + 1.5) * unit,
-    minZ:(Math.min(...cells.map(cell => cell.y)) - 0.5) * unit,
-    maxZ:(Math.max(...cells.map(cell => cell.y)) + 1.5) * unit,
-    stableHeight:(Math.max(0,...cells.map(cell => cell.elevation || 0)) + 1.5) * unit,
-    centerY:0.25 * unit
-  };
-  app().threeRenderer.setDebugCameraView?.({mode:'isometric',yaw:0,tilt:0.85,zoom:1,animate:false,preserveSceneCache:true});
-  app().render();
-}
-function installOrientationGuard() {
-  const renderer = app().threeRenderer, setView = renderer.setDebugCameraView.bind(renderer);
-  // The runtime owns a separate 400 ms camera-key animation. Let that finish
-  // internally while keeping its stale writes from rotating an expanded room.
-  renderer.setDebugCameraView = options => setView(performance.now() < orientationLockUntil
-    ? {...options,yaw:0,tilt:0.85,animate:false} : options);
-}
-function orient() {
-  window.dispatchEvent(new Event('blur'));
-  orientationLockUntil = performance.now() + 650;
-  clearTimeout(orientationTimer);
-  framePlayableArea();
-  orientationTimer = setTimeout(() => {
-    if (disposed || !ready) return;
-    framePlayableArea();
-    notify('oriented',{yaw:app().threeRenderer.getDebugCameraYaw(),tilt:app().threeRenderer.getDebugCameraTilt()});
-  }, 660);
 }
 async function idle() {
   const deadline = performance.now() + 15000;
@@ -257,19 +218,21 @@ $('replay-play').addEventListener('click', playReplay);
 $('replay-step').addEventListener('click', () => {if (!replayOnly || !ready || busy || seeking) return; stopReplay(); queue(takeReplayStep);});
 $('replay-restart').addEventListener('click', () => seekReplay(0));
 $('replay-progress').addEventListener('change', event => seekReplay(Number(event.target.value)));
-$('reset-room').addEventListener('click', reset);
-$('undo-move').addEventListener('click', () => {
-  if (replayOnly || !ready || busy || seeking) return;
-  stopReplay();
-  queue(async () => {busy=true;sync();try{await idle();app().undoMove();await idle();replayDirty=true;state.status='manual';status('Move undone.');}finally{busy=false;sync();}});
-});
+$('reset-room').addEventListener('click', event => {
+  // Consume this action before the official nav's delegated reset handler so
+  // the authored draft restores its collected gems exactly once.
+  event.preventDefault(); event.stopImmediatePropagation(); reset();
+}, true);
 window.addEventListener('keydown', event => {
   if (replayOnly) {
-    // Keep native replay buttons, range/select controls, Tab, and parent Escape
-    // usable while preventing every keyboard route into the game runtime.
+    // Camera viewing is independent of the recorded world-space route. Keep
+    // official camera controls while rejecting mutations of the board.
     if (event.key === 'Escape' || event.key === 'Tab') return;
     if (event.target.closest?.('#replay-controls,#replay-play')) {event.stopImmediatePropagation();return;}
-    if (['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','KeyZ','KeyU','KeyR','KeyW','KeyA','KeyS','KeyD'].includes(event.code)) event.preventDefault();
+    const configured = window.__MAZEBENCH_CONTROLS__?.keys;
+    const cameraKeys = configured ? ['cameraUp','cameraDown','cameraLeft','cameraRight'].flatMap(key => configured[key] || []) : ['KeyW','KeyA','KeyS','KeyD'];
+    if (cameraKeys.includes(event.code)) return;
+    if (['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','KeyZ','KeyU','KeyR'].includes(event.code)) event.preventDefault();
     event.stopImmediatePropagation(); return;
   }
   if (event.target.matches('input,select,textarea')) {event.stopImmediatePropagation();return;}
@@ -288,20 +251,23 @@ document.querySelectorAll('[data-move]').forEach(button => {
 // of visibility so synthetic clicks and pointer events cannot move the board.
 for (const type of ['pointerdown','pointermove','touchstart','touchmove','click','dblclick','contextmenu']) {
   window.addEventListener(type, event => {
-    if (!replayOnly || !event.target.closest?.('#game-root,#manual-controls')) return;
+    if (!replayOnly || !event.target.closest?.('#maze-canvas,#manual-controls,[data-action="undo"],[data-action="reset"]')) return;
     event.preventDefault(); event.stopImmediatePropagation();
   }, {capture:true,passive:false});
 }
 window.addEventListener('message', event => {
   if (event.origin !== location.origin || event.source !== window.parent || event.data?.source !== 'mazebench-process') return;
-  if (event.data.type === 'pause') stopReplay();
-  else if (event.data.type === 'orient' && ready) orient();
+  if (event.data.type === 'pause') {
+    window.dispatchEvent(new Event('blur'));
+    app()?.cancelQueuedAction?.();
+    stopReplay();
+  }
+  else if (['orient','resize'].includes(event.data.type) && ready) window.dispatchEvent(new Event('resize'));
 });
 document.addEventListener('visibilitychange', () => {if(document.hidden)stopReplay();});
 window.addEventListener('pagehide', event => {
   stopReplay();
   clearInterval(statsTimer);
-  clearTimeout(orientationTimer);
   if (!event.persisted) {disposed=true;app()?.threeRenderer?.dispose?.();}
 });
 
@@ -310,6 +276,8 @@ try {
   if (!caseId || !candidateId) throw new Error('Choose a recorded candidate to open its preview.');
   document.body.dataset.mode = mode;
   $('manual-controls').hidden = replayOnly; $('manual-controls').inert = replayOnly;
+  $('undo-move').hidden = replayOnly; $('reset-room').hidden = replayOnly;
+  if (replayOnly) $('controls-note').textContent = 'A / D rotate · W / S tilt. Use the replay controls to view saved inputs; movement, undo, and reset are disabled.';
   document.querySelector('.candidate-player').setAttribute('aria-label', replayOnly ? 'Recorded gameplay replay' : 'Interactive candidate preview');
   $('maze-canvas').setAttribute('aria-label', replayOnly ? 'Read-only recorded maze replay. Use the replay controls to view saved actions.' : 'Interactive maze. Arrow keys move. Z undoes. R resets, including gems. A and D rotate the camera. W and S tilt it.');
   const catalog = await loadCatalog(), entry = catalog.cases.find(item => item.id === caseId);
@@ -325,7 +293,7 @@ try {
   document.title = `${candidateId} · ${entry.title} — Maze Harness`;
   $('preview-status').textContent = replayOnly ? 'Loading recorded replay' : 'Playable draft';
   initialLevel = {...await jsonAsset(candidate.preview.levelPath,candidate.preview.levelSha256),
-    hostOwnsPlayHud:true,hostOwnsWorldMapNavigation:true,disableHorizontalNeighborFetches:true,ignoreSavedGemProgress:true};
+    hostOwnsPlayHud:false,hostOwnsWorldMapNavigation:true,disableHorizontalNeighborFetches:true,ignoreSavedGemProgress:true};
   window.__PLAY_DATA__ = structuredClone(initialLevel);
   window.__PLAY_WORLD_DATA__ = {game:{id:initialLevel.gameId},worldColumns:['A'],worldRows:['A'],existingLevels:[{id:initialLevel.levelId,label:candidateId}]};
   const url = new URL(location.href);
@@ -336,14 +304,13 @@ try {
   if (!app().threeRenderer?.isReady()) throw new Error('This preview requires WebGL. Enable hardware acceleration to play.');
   await app().threeRenderer.whenLevelStateModelsReady(initialLevel);
   app().playSurroundingRadius = 0;
-  installOrientationGuard();
-  framePlayableArea();
+  app().threeRenderer.setDebugCameraView({mode:'perspective',yaw:0,tilt:0.22,zoom:1,animate:false,preserveSceneCache:true});
   await idle();
   if (replayOnly) await loadReplay();
   ready = true;
   state.status = 'ready';
   sync();
-  // Replay controls change the canvas height after the runtime's first layout.
+  // The official full-bleed canvas retains its viewport behind the overlay HUD.
   window.dispatchEvent(new Event('resize'));
   app().render();
   status(replayOnly ? 'Read-only recording · play, pause, or step through saved actions.' : 'Playable iteration · arrow keys to move · Z undo · R reset.');

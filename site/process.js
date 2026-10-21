@@ -1,7 +1,7 @@
 import { loadCatalog, shell, playUrl, showError } from './ui.js';
 
 const $ = id => document.getElementById(id);
-const state = { data: null, catalog: null, entry: null, skill: null, nodes: [], selectedId: null, candidateId: null, previewCandidateId: null, previewKey: null, previewMode: null, expanded: false, returnFocus: null, previousOverflow: '', revisionBranches: [], keyNodeIds: new Set(), timelineGroups: [], nodeGroups: new Map() };
+const state = { data: null, catalog: null, entry: null, skill: null, nodes: [], selectedId: null, candidateId: null, previewCandidateId: null, previewKey: null, previewMode: null, previewUrl: null, previewLabel: null, expanded: false, returnFocus: null, previousOverflow: '', revisionBranches: [], keyNodeIds: new Set(), timelineGroups: [], nodeGroups: new Map() };
 const kindNames = { resource: 'READ', candidate: 'VERSION', test: 'TEST', note: 'DESIGN NOTE', operation: 'OPERATION', replay: 'REPLAY', delivery: 'DELIVERY' };
 const statusNames = { passed: 'Passed', failed: 'Failed', unknown: 'Unknown', error: 'Error' };
 const resourceNames = { 'SKILL.md': 'Read skill instructions', 'mechanism-logic.md': 'Read extracted mechanism', 'planning-depth.md': 'Read planning guidance', 'complex-validation.md': 'Read verification guidance', 'design-template.json': 'Read design template', 'complex-runtime.cjs': 'Inspect mechanism runtime', 'verify-complex.cjs': 'Inspect the verifier', 'design.md': 'Read design conventions', 'browser-check.cjs': 'Inspect browser replay checks' };
@@ -229,7 +229,8 @@ function renderRevisionBranches() {
 }
 function selectNode(id, { initial = false, focus = true } = {}) {
   const node = byId(id); if (!node) return;
-  if (state.expanded) closePreview(); state.selectedId = id;
+  if (state.expanded) closePreview({ restoreFocus: false });
+  if (state.selectedId !== id) disposePreview(); state.selectedId = id;
   const group = state.nodeGroups.get(id); if (group && !group.expanded) toggleTimelineGroup(group.id, true);
   for (const button of $('process-timeline').querySelectorAll('.timeline-node')) { if (button.dataset.nodeId === id) button.setAttribute('aria-current', 'step'); else button.removeAttribute('aria-current'); }
   syncGroupSelection();
@@ -272,14 +273,42 @@ function renderPreview(node, record, candidate) {
   state.candidateId = candidate?.id || null;
   const replay = exactReplayFor(node, record, candidate), mode = node.kind === 'candidate' && candidate?.preview?.levelPath ? 'play' : replay ? 'replay' : null;
   const available = Boolean(mode); $('preview-shell').hidden = !available;
-  if (!available) { $('preview-frame').contentWindow?.postMessage({ source: 'mazebench-process', type: 'pause' }, location.origin); return; }
-  $('preview-title').textContent = mode === 'play' ? 'Playable map' : 'Recorded replay';
-  const key = `${mode}:${candidate.id}:${replay?.id || ''}`;
+  if (!available) return;
+  $('preview-title').textContent = mode === 'play' ? 'Play map' : 'Replay';
+  const button = clear($('expand-preview')), arrow = el('span', '', '\u2197'); arrow.setAttribute('aria-hidden', 'true');
+  button.append(document.createTextNode(mode === 'play' ? 'Expand to play ' : 'Expand replay '), arrow);
+  const key = `${node.id}:${mode}:${candidate.id}:${replay?.id || ''}`;
   if (state.previewKey !== key) {
-    state.previewKey = key; state.previewCandidateId = candidate.id; state.previewMode = mode; $('preview-status').textContent = 'Loading map...'; $('preview-error').hidden = true;
-    $('preview-frame').title = mode === 'play' ? `Try saved version ${candidate.id}` : `Watch saved replay ${record.id}`;
-    $('preview-frame').src = './process-player.html?' + new URLSearchParams({ case: state.entry.id, candidate: candidate.id, mode, ...(replay ? { replay: replay.id } : {}) });
+    state.previewKey = key; state.previewCandidateId = candidate.id; state.previewMode = mode; $('preview-status').textContent = ''; $('preview-error').hidden = true;
+    state.previewLabel = mode === 'play' ? `Play saved version ${candidate.id}` : `Watch saved replay ${record.id}`;
+    state.previewUrl = './process-player.html?' + new URLSearchParams({ case: state.entry.id, candidate: candidate.id, mode, ...(replay ? { replay: replay.id } : {}) });
+    const image = $('preview-image'), imageUrl = thumbnailUrl(candidate.preview.thumbnailPath);
+    image.alt = mode === 'play' ? `Saved map ${candidate.id}` : `Initial map ${candidate.id} for replay ${record.id}`;
+    image.dataset.candidateId = candidate.id; image.hidden = !imageUrl; $('preview-placeholder').hidden = Boolean(imageUrl);
+    if (imageUrl) image.src = imageUrl; else image.removeAttribute('src');
   }
+}
+function thumbnailUrl(path) {
+  if (typeof path !== 'string' || !path || path.includes('\\')) return null;
+  try {
+    const base = new URL('./', location.href), url = new URL(path, base);
+    return url.origin === base.origin && url.pathname.startsWith(base.pathname) && /\.(?:png|jpe?g|webp|avif)$/i.test(url.pathname) && !url.search && !url.hash ? url.href : null;
+  } catch (_) { return null; }
+}
+function pausePreview() { $('preview-frame')?.contentWindow?.postMessage({ source: 'mazebench-process', type: 'pause' }, location.origin); }
+function disposePreview() {
+  pausePreview(); clear($('preview-player-host'));
+  state.previewKey = null; state.previewCandidateId = null; state.previewMode = null; state.previewUrl = null; state.previewLabel = null;
+}
+function ensurePreviewFrame() {
+  if ($('preview-frame')) return;
+  const frame = el('iframe', 'preview-frame'); frame.id = 'preview-frame'; frame.title = state.previewLabel; frame.allow = 'fullscreen';
+  frame.addEventListener('load', () => {
+    try { frame.contentWindow.addEventListener('keydown', handleEscape, true); } catch (_) { /* Only a same-origin player receives keyboard handling. */ }
+    if (!state.expanded) pausePreview();
+  });
+  $('preview-status').textContent = 'Loading map...'; $('preview-error').hidden = true;
+  frame.src = state.previewUrl; $('preview-player-host').append(frame);
 }
 function sourceCases() {
   const indirect = state.data.coverage?.sources?.indirect;
@@ -348,14 +377,14 @@ function renderRelations(node) {
 }
 
 function expandPreview() {
-  if ($('preview-shell').hidden || state.expanded) return;
-  state.expanded = true; state.returnFocus = document.activeElement; state.previousOverflow = document.body.style.overflow; document.body.style.overflow = 'hidden'; document.body.classList.add('preview-open');
-  $('preview-shell').classList.add('expanded'); $('preview-shell').setAttribute('role', 'dialog'); $('preview-shell').setAttribute('aria-modal', 'true'); $('preview-backdrop').hidden = false; $('expand-preview').hidden = true; $('close-preview').hidden = false; $('close-preview').focus();
-  $('preview-frame').contentWindow?.postMessage({ source: 'mazebench-process', type: 'orient' }, location.origin);
+  if ($('preview-shell').hidden || !state.previewUrl || state.expanded) return;
+  state.expanded = true; state.returnFocus = document.activeElement; state.previousOverflow = document.body.style.overflow; document.body.style.overflow = 'hidden';
+  $('preview-modal').showModal(); ensurePreviewFrame(); $('close-preview').focus();
 }
-function closePreview() {
+function closePreview({ restoreFocus = true } = {}) {
   if (!state.expanded) return;
-  state.expanded = false; $('preview-shell').classList.remove('expanded'); $('preview-shell').removeAttribute('role'); $('preview-shell').removeAttribute('aria-modal'); $('preview-backdrop').hidden = true; $('expand-preview').hidden = false; $('close-preview').hidden = true; document.body.style.overflow = state.previousOverflow; document.body.classList.remove('preview-open'); state.returnFocus?.focus();
+  pausePreview(); state.expanded = false; $('preview-modal').close(); document.body.style.overflow = state.previousOverflow;
+  if (restoreFocus && state.returnFocus?.isConnected) state.returnFocus.focus({ preventScroll: true });
 }
 function handleEscape(event) { if (event.key === 'Escape' && state.expanded) { event.preventDefault(); closePreview(); } }
 function installInteractions() {
@@ -370,12 +399,19 @@ function installInteractions() {
   });
   $('previous-operation').addEventListener('click', () => { const i = state.nodes.findIndex(node => node.id === state.selectedId); if (i > 0) selectNode(state.nodes[i - 1].id); });
   $('next-operation').addEventListener('click', () => { const i = state.nodes.findIndex(node => node.id === state.selectedId); if (i < state.nodes.length - 1) selectNode(state.nodes[i + 1].id); });
-  $('expand-preview').addEventListener('click', expandPreview); $('close-preview').addEventListener('click', closePreview); $('preview-backdrop').addEventListener('click', closePreview); window.addEventListener('keydown', handleEscape);
-  $('preview-frame').addEventListener('load', () => { try { $('preview-frame').contentWindow.addEventListener('keydown', handleEscape); } catch (_) { /* The iframe is expected to remain same-origin. */ } });
+  $('expand-preview').addEventListener('click', expandPreview); $('close-preview').addEventListener('click', closePreview); window.addEventListener('keydown', handleEscape);
+  $('preview-modal').addEventListener('cancel', event => { event.preventDefault(); closePreview(); });
+  $('preview-modal').addEventListener('close', () => { if (state.expanded && !$('preview-modal').open) closePreview(); });
+  $('preview-modal').addEventListener('click', event => {
+    if (event.target !== $('preview-modal')) return;
+    const rect = $('preview-modal').getBoundingClientRect();
+    if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) closePreview();
+  });
+  $('preview-image').addEventListener('error', () => { $('preview-image').hidden = true; $('preview-placeholder').hidden = false; });
   window.addEventListener('message', event => {
-    const message = event.data;
-    if (event.origin !== location.origin || event.source !== $('preview-frame').contentWindow || message?.source !== 'mazebench-process-player' || message.caseId !== state.entry.id || message.candidateId !== state.previewCandidateId) return;
-    if (message.type === 'ready') { $('preview-error').hidden = true; $('preview-status').textContent = state.previewMode === 'play' ? 'Playable map ready' : 'Recorded replay ready'; }
+    const message = event.data, frame = $('preview-frame');
+    if (!frame || event.origin !== location.origin || event.source !== frame.contentWindow || message?.source !== 'mazebench-process-player' || message.caseId !== state.entry.id || message.candidateId !== state.previewCandidateId) return;
+    if (message.type === 'ready') { $('preview-error').hidden = true; $('preview-status').textContent = state.previewMode === 'play' ? 'Playable map ready' : 'Recorded replay ready'; if (!state.expanded) pausePreview(); }
     else if (message.type === 'error') { $('preview-error').textContent = message.message || 'The saved preview could not be opened.'; $('preview-error').hidden = false; $('preview-status').textContent = 'Preview unavailable'; }
     else if (message.type === 'replay-state' && state.previewMode === 'replay') $('preview-status').textContent = message.total > 0 ? `Saved replay / ${message.step || 0} of ${message.total}${message.playing ? ' / playing' : message.status ? ' / ' + message.status : ' / paused'}` : 'Recorded replay ready';
   });

@@ -85,6 +85,24 @@
       "adaptations": [
         "Skip the overview intro, retain a static fallback room URL, and recognize individual touch-control buttons."
       ]
+    },
+    {
+      "file": "styles.css",
+      "sourceSha256": "909e32f9f169ad72b1e0e6980293a62c7765ec5919f9a1947a18511f89f101d1",
+      "sha256": "97981be3246fe63854859e8fbc054cc43ad9b5c49474e500bbe62228928dfbe1",
+      "adaptations": []
+    },
+    {
+      "file": "site.css",
+      "sourceSha256": "07815b243a9506b5cdd2f4ddd05aac6cda67c14946122169a22cc21e74bcbe03",
+      "sha256": "f16a807868a7fea15455fbb8fb7a4de5a78aededa338ee7efa508c72db7d799b",
+      "adaptations": []
+    },
+    {
+      "file": "play-theme.css",
+      "sourceSha256": "38a7e0987e3f25dbddda273b51d6d83d28ea778b8c25d14dc6567eda47b20d28",
+      "sha256": "b21905cb4e8d33bdad5b6120dfc3e0e0556b280b867a360330ce37292053202f",
+      "adaptations": []
     }
   ],
   "cases": [
@@ -481,7 +499,7 @@
       "authoringProcess": {
         "schemaVersion": 1,
         "data": "data/processes/authored-boundary-stagger-2f126bf137c6.json",
-        "sha256": "e9c368085c771b38a4028682d220fc2d4d59e5f1b906caf7e910f6bf995167d8",
+        "sha256": "4ab5c9f00f0c836431acebbe4cb14d004bc2d6e2e6a3c219076ff7b274912554",
         "cellsSha256": "e2e55f6e600628399bbbd530f5cf6c544850cec8bd958a84b6bc230b3fbdddb5",
         "contractSha256": "9de56feb2119d9a83c079096eea4d12b0f7a0f425af2339d39e25020b7395bb6"
       }
@@ -504,7 +522,7 @@
       "authoringProcess": {
         "schemaVersion": 1,
         "data": "data/processes/authored-boundary-stagger-2f5622cc46de.json",
-        "sha256": "5e69601d4422dfb6b3d887a745fe1197131950179222bfbc9fd4bf2e6c09b8db",
+        "sha256": "cc9a57c9d589c8e480baf58de7c9393e3b4eb3b10fde610fe9bd7f3a0f1c7cf5",
         "cellsSha256": "d063758257b5dc32bb08e380a14c7f1beaa841b56d8386ea172ff450c03d1756",
         "contractSha256": "234f84a1b69a985ef244608613992808e3a39c510f4024c7264f2e55e9b9ca3a"
       }
@@ -527,7 +545,7 @@
       "authoringProcess": {
         "schemaVersion": 1,
         "data": "data/processes/authored-hook-transfer-5e3a324db881.json",
-        "sha256": "85a5ac3bff4ae9985e853a34b228950009ef2c9d3687d9f921e59d2f9104f7db",
+        "sha256": "f66e7579b6e1fdbfbc8299638c53c6707e5d766267f14b24504eaa13b02cca53",
         "cellsSha256": "af5e61cda9d1f42d8de1e75ed0a3721aeb6cf875003c422d000c76bc245a66cc",
         "contractSha256": "639d62a260b2932561d53fe8a6d531c657787049e72d6212beccdcd299a83e95"
       }
@@ -550,7 +568,7 @@
       "authoringProcess": {
         "schemaVersion": 1,
         "data": "data/processes/authored-constrained-transport-60b4a35f5a3f.json",
-        "sha256": "593dc3b5b09b8e034a375d2f2c79e76b562a00b7a4a2fc33aab905169b281605",
+        "sha256": "837b517852880e2452547f4e1db8fa075ce48f895fea5e21eacc25f04cbc8cac",
         "cellsSha256": "b46f9dea0102e29d193cd32e82556ec5cc292e8b235068adabffa9b1e05be49c",
         "contractSha256": "3dd1b0cd716beae7c231a972e8e0c321424695666ac54587066e6b7e132cf3fe"
       }
@@ -573,7 +591,7 @@
       "authoringProcess": {
         "schemaVersion": 1,
         "data": "data/processes/authored-skating-cross-942ab792fe79.json",
-        "sha256": "10e03fba4e141472ed073746d5614c597532af92c200e43cb33133d1568a1898",
+        "sha256": "cc8c48ca8ca7f06639e318f32a6f66bd814accdb7748c5c9362ada0562effb50",
         "cellsSha256": "34251ad0b4c255fc41fff00aa66631c8791453ac6c2872d07e968364013ddaa1",
         "contractSha256": "8a9a9fea6c7636cf80dd16d45daf1d4811a7c959e7c20958d1a5261dac73b0a7"
       }
@@ -596,7 +614,7 @@
       "authoringProcess": {
         "schemaVersion": 1,
         "data": "data/processes/authored-block-coordination-030c8da1aa61.json",
-        "sha256": "84c3dd3e85ed27823df6c4004f3c060bc6fbeab9f402d2a993e8caca1ccb20bf",
+        "sha256": "2e0397a0c13c9874dee1b678e6e0df729569e89f291ac96ee0ca519411aa075a",
         "cellsSha256": "b4e52a74e76463438e8380c288905ff38a1076bc2342073a6b1cd4662e8b64e7",
         "contractSha256": "5c2a46f1284297b8d276fe862e558dac46ca0d563447aa9db2c64f7ffa2dfdf4"
       }

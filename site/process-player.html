@@ -1,54 +1,78 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="play-mode">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#070811">
   <title>Candidate preview — Maze Harness</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./runtime/styles.css">
+  <link rel="stylesheet" href="./runtime/site.css">
+  <link rel="stylesheet" href="./runtime/play-theme.css">
   <link rel="stylesheet" href="./process-player.css">
   <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
   <script type="module" src="./process-player.js"></script>
 </head>
-<body class="process-player">
-  <main class="candidate-player mazebench-controls" aria-label="Interactive candidate preview">
-    <header class="preview-toolbar">
-      <div class="preview-label"><span id="preview-status">Loading preview</span></div>
-      <button id="replay-play" class="replay-primary" type="button" hidden>Watch recorded replay</button>
-    </header>
-    <div id="game-root" class="is-loading">
-      <div class="play-shell">
-        <div class="play-header" hidden></div>
-        <div class="mazebench-runtime-toggles" hidden><button id="fuzzy-toggle" type="button" aria-pressed="false"></button><button id="edge-toggle" type="button" aria-pressed="true"></button></div>
-        <section class="play-stage" aria-label="3D candidate board">
-          <div class="maze-frame is-loading">
-            <canvas id="maze-canvas" class="maze-canvas" width="900" height="680" tabindex="0" aria-label="Interactive maze. Arrow keys move. Z undoes. R resets, including gems. A and D rotate the camera. W and S tilt it."></canvas>
-            <div class="game-loading" role="status"><span class="loading-mark" aria-hidden="true"></span><span id="loading-message">Opening recorded candidate…</span></div>
+<body class="process-player play-body play-mode">
+  <!-- Play controls and HUD follow MazeBenchEngine server/pages.js at
+       0ac96b8a2648db09f375989cd7bc33699222c1e6. The host supplies saved data
+       and replay controls; the original runtime owns rendering and input. -->
+  <main id="game-root" class="candidate-player is-fullbleed is-loading" aria-label="Interactive candidate preview">
+    <div class="play-shell">
+      <div class="play-header" aria-hidden="true"></div>
+      <div class="mazebench-runtime-toggles" aria-hidden="true"><button id="fuzzy-toggle" type="button" aria-pressed="true"></button><button id="edge-toggle" type="button" aria-pressed="true"></button></div>
+      <section class="play-stage" aria-label="3D candidate board">
+        <div class="maze-frame is-loading">
+          <canvas id="maze-canvas" class="maze-canvas" width="1024" height="1024" tabindex="0" aria-label="Interactive maze"></canvas>
+          <div class="maze-load-art" role="status"><span id="loading-message" class="maze-load-label">Loading</span><span class="maze-load-progress"><span></span></span></div>
+        </div>
+      </section>
+      <nav class="mazebench-controls" aria-label="Game controls">
+        <div class="top-play-controls">
+          <div class="top-play-actions"><span id="preview-status" class="preview-mode">Loading preview</span></div>
+          <div id="play-hud" class="play-hud" aria-live="polite">
+            <span id="play-hud-rooms" class="play-hud-stat play-hud-stat--rooms" aria-label="1 room visited"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 20H2"></path><path d="M11 4.562v16.157a1 1 0 0 0 1.242.97L19 20V5.562a2 2 0 0 0-1.515-1.94l-4-1A2 2 0 0 0 11 4.561z"></path><path d="M11 4H8a2 2 0 0 0-2 2v14"></path><path d="M14 12h.01"></path><path d="M22 20h-3"></path></svg><strong data-play-hud-value>1</strong></span>
+            <span id="play-hud-gems" class="play-hud-stat play-hud-stat--gems" aria-label="0 gems collected"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.5 3 8 9l4 13 4-13-2.5-6"></path><path d="M17 3a2 2 0 0 1 1.6.8l3 4a2 2 0 0 1 .013 2.382l-7.99 10.986a2 2 0 0 1-3.247 0l-7.99-10.986A2 2 0 0 1 2.4 7.8l2.998-3.997A2 2 0 0 1 7 3z"></path><path d="M2 9h20"></path></svg><strong data-play-hud-value>0</strong></span>
           </div>
-        </section>
-      </div>
+          <div class="top-play-right"><div class="top-play-actions">
+            <button id="undo-move" class="control-button" type="button" data-action="undo" aria-label="Undo last action">Undo</button>
+            <button id="reset-room" class="control-button" type="button" data-action="reset" aria-label="Reset level and restore gems">Reset</button>
+            <button class="control-button play-icon-button" type="button" data-action="controls" aria-label="Controls settings" title="Controls"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h9"></path><circle cx="16" cy="7" r="2.5"></circle><path d="M18.5 7H20"></path><path d="M4 17h2.5"></path><circle cx="9.5" cy="17" r="2.5"></circle><path d="M12 17h8"></path></svg></button>
+          </div></div>
+        </div>
+        <div id="manual-controls" class="control-pad" data-quadrant-pad="move" aria-label="Move controls">
+          <button class="control-button dpad-button" type="button" data-move="up" aria-label="Move up" tabindex="-1"></button>
+          <button class="control-button dpad-button" type="button" data-move="left" aria-label="Move left" tabindex="-1"></button>
+          <span class="dpad-center" aria-hidden="true">MOVE</span>
+          <button class="control-button dpad-button" type="button" data-move="right" aria-label="Move right" tabindex="-1"></button>
+          <button class="control-button dpad-button" type="button" data-move="down" aria-label="Move down" tabindex="-1"></button>
+        </div>
+        <div class="camera-pad control-pad" data-quadrant-pad="camera" aria-label="Camera controls">
+          <button class="control-button dpad-button" type="button" data-camera="up" aria-label="Camera up" tabindex="-1"></button>
+          <button class="control-button dpad-button" type="button" data-camera="left" aria-label="Rotate camera left" tabindex="-1"></button>
+          <span class="dpad-center" aria-hidden="true">CAM</span>
+          <button class="control-button dpad-button" type="button" data-camera="right" aria-label="Rotate camera right" tabindex="-1"></button>
+          <button class="control-button dpad-button" type="button" data-camera="down" aria-label="Camera down" tabindex="-1"></button>
+        </div>
+      </nav>
+      <section id="controls-settings-overlay" class="world-map-overlay controls-overlay" aria-label="Controls settings" hidden>
+        <div class="controls-panel"><div class="controls-panel-bar"><h2 class="world-map-title">Controls</h2><button class="control-button" type="button" data-controls-close>Close</button></div>
+          <section class="controls-section" aria-label="Keyboard controls"><h3>Keyboard</h3><p id="controls-note" class="controls-note">Arrow keys move · A / D rotate · W / S tilt · Z or U undo · R resets the complete draft, including gems.</p></section>
+        </div>
+      </section>
     </div>
-    <section id="replay-controls" class="replay-controls" aria-label="Recorded replay controls" hidden>
-      <div class="replay-actions">
-        <button id="replay-step" type="button" aria-label="Advance recorded replay one step">Step →</button>
-        <button id="replay-restart" type="button" aria-label="Restart recorded replay">Restart</button>
-        <label for="replay-speed">Speed <select id="replay-speed" aria-label="Replay speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select></label>
-        <span id="replay-counter" class="replay-counter">0 / 0</span>
-      </div>
-      <label class="replay-progress-label"><span class="sr-only">Recorded replay progress</span><input id="replay-progress" type="range" min="0" max="0" value="0" step="1" aria-label="Recorded replay progress"></label>
-    </section>
-    <div id="manual-controls" class="preview-controls">
-      <div class="control-pad" data-quadrant-pad="move" aria-label="Movement controls">
-        <button type="button" data-move="left" aria-label="Move left">←</button><button type="button" data-move="up" aria-label="Move up">↑</button><button type="button" data-move="down" aria-label="Move down">↓</button><button type="button" data-move="right" aria-label="Move right">→</button>
-      </div>
-      <div class="control-pad camera-pad" data-quadrant-pad="camera" aria-label="Camera controls">
-        <button type="button" data-camera="left" aria-label="Rotate camera left">↶</button><button type="button" data-camera="right" aria-label="Rotate camera right">↷</button><button type="button" data-camera="up" aria-label="Tilt camera up">↑</button><button type="button" data-camera="down" aria-label="Tilt camera down">↓</button>
-      </div>
-      <div class="edit-controls"><button id="undo-move" type="button" aria-label="Undo last action">Undo</button><button id="reset-room" type="button" aria-label="Reset level and restore gems">Reset</button></div>
-    </div>
-    <div class="preview-footer"><p id="game-status" role="status" aria-live="polite">Loading the original MazeBench engine…</p><span id="move-stat">0 moves</span></div>
   </main>
+  <section id="replay-controls" class="replay-controls" aria-label="Recorded replay controls" hidden>
+    <div class="replay-actions">
+      <button id="replay-play" class="control-button" type="button" hidden>Watch recorded replay</button>
+      <button id="replay-step" class="control-button" type="button" aria-label="Advance recorded replay one step">Step →</button>
+      <button id="replay-restart" class="control-button" type="button" aria-label="Restart recorded replay">Restart</button>
+      <label for="replay-speed">Speed <select id="replay-speed" aria-label="Replay speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select></label>
+      <span id="replay-counter">0 / 0</span>
+    </div>
+    <label class="replay-progress-label"><span class="sr-only">Recorded replay progress</span><input id="replay-progress" type="range" min="0" max="0" value="0" step="1" aria-label="Recorded replay progress"></label>
+  </section>
+  <p id="game-status" class="sr-only" role="status" aria-live="polite">Loading the original MazeBench engine…</p><span id="move-stat" class="sr-only">0 moves</span>
   <noscript>Enable JavaScript to play this candidate.</noscript>
 </body>
 </html>
