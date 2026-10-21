@@ -6,6 +6,7 @@ const crypto = require('node:crypto');
 const assert = require('node:assert/strict');
 const { assertPublicPrivacy, assertAcyclic } = require('./export-authoring-process.cjs');
 const { assertEventCoverage } = require('./process-events.cjs');
+const { assertExplanations } = require('./process-explanations.cjs');
 const { hash } = require('./site-content.cjs');
 const { validatePreviewFiles } = require('./process-previews.cjs');
 
@@ -26,7 +27,7 @@ function checkAuthoringProcess(site, entry, record) {
   const bytes = fs.readFileSync(file);
   assert.equal(hash(bytes), evidence.sha256, 'Process bytes SHA-256 mismatch');
   const process = JSON.parse(bytes.toString('utf8'));
-  assertPublicPrivacy(process); assertAcyclic(process.nodes, process.edges); assertEventCoverage(process);
+  assertPublicPrivacy(process); assertAcyclic(process.nodes, process.edges); assertEventCoverage(process); assertExplanations(process);
   assert.equal(process.schemaVersion, 1); assert.equal(process.caseId, entry.id); assert.equal(process.skill, entry.skill); assert.equal(process.title, entry.title);
   assert.equal(process.coverage.audit.failed, 0);
   const audit = process.coverage.audit, exceptions = audit.exceptions || [];

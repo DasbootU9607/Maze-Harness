@@ -206,6 +206,10 @@ const assertNaturalCamera = async frame => {
     // flag does not cover that host clock, so do not sample an intermediate view.
     await frame.waitForTimeout(500);
     await frame.waitForFunction(()=>!window.__MAZEBENCH_APP__.threeRenderer.isDebugCameraAnimating());await idle(frame);
+    // The official scene-cache key rounds yaw to 0.001 radians and can retain
+    // the preceding animation frame. Sample a fresh render of the settled yaw,
+    // just as observeCamera does for the initial measurement.
+    await frame.evaluate(()=>{const app=window.__MAZEBENCH_APP__;app.threeRenderer.invalidateSceneCache();app.render();});
     const current=await cameraSample(frame);samples.push(current);
     assert(current.perspective);assert.equal(current.debugZoom,initial.debugZoom,'Camera rotation preserves user zoom');
     assert.equal(current.fov,initial.fov,'Camera rotation preserves the camera lens');

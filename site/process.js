@@ -12,6 +12,7 @@ function clear(node) { node.replaceChildren(); return node; }
 function text(value) { return typeof value === 'string' ? value : value === undefined || value === null ? '' : JSON.stringify(value, null, 2); }
 function short(value, max = 150) { const s = text(value); return s.length > max ? s.slice(0, max - 3) + '...' : s; }
 function byId(id) { return state.nodes.find(node => node.id === id); }
+function explanationFor(node) { return state.data.explanations?.find(row => row.nodeId === node.id); }
 function recordFor(node) {
   const key = { candidate: 'candidates', test: 'tests', note: 'notes', resource: 'resources', operation: 'operations', replay: 'replays', record: 'records' }[node.kind];
   return key ? (state.data[key] || []).find(record => record.graphNodeId === node.id || record.id === node.id || (node.kind === 'candidate' && record.id === node.details?.candidateId)) : null;
@@ -216,7 +217,7 @@ function renderTimeline() {
     button.dataset.keyEvent = String(state.keyNodeIds.has(node.id)); if (group) item.dataset.groupId = group.id;
     const body = el('span', 'timeline-body'), content = el('span', 'timeline-text');
     content.append(el('span', 'timeline-kind-inline', nodeCategory(node)), el('span', 'timeline-label', nodeAction(node))); body.append(content);
-    if (node.kind === 'test' && statusNames[node.status]) body.append(el('span', `timeline-state ${node.status}`, recordFor(node)?.category === 'diagnostic' && node.status === 'failed' ? 'Process failed' : statusNames[node.status]));
+    if (node.kind === 'test' && statusNames[node.status]) body.append(el('span', `timeline-state ${node.status}`, explanationFor(node)?.badge || (recordFor(node)?.category === 'diagnostic' && node.status === 'failed' ? 'Process failed' : statusNames[node.status])));
     if (node.kind === 'record' && ['failed', 'unknown'].includes(node.status)) body.append(el('span', 'timeline-state', node.eventType === 'command.completed' && node.status === 'failed' ? 'Process failed' : statusNames[node.status]));
     const circle = el('span', 'timeline-dot'), ring = el('span', 'timeline-ring'), dot = el('span', 'timeline-center');
     ring.setAttribute('aria-hidden', 'true'); dot.setAttribute('aria-hidden', 'true');
@@ -291,6 +292,7 @@ function selectNode(id, { initial = false, focus = true } = {}) {
   else if (node.kind === 'record' && record?.files.length) summary = record.files.map(file => file.name).join(' · ');
   else if (node.kind === 'operation') summary = 'Execution completed · exit code 0';
   else if (node.kind === 'delivery') summary = node.summary || '';
+  if (node.kind === 'test' && explanationFor(node)) summary = explanationFor(node).headline;
   $('operation-summary').textContent = summary; $('operation-summary').hidden = !summary;
   renderPreview(node, record, candidate); renderSources(node, record); renderExplanation(node, record, candidate); renderChecks(node, record); renderRelations(node);
   const safeRecord = record ? Object.fromEntries(Object.entries(record).filter(([key]) => !['cells', 'diff'].includes(key))) : null;
@@ -387,6 +389,25 @@ function explanationPart(host, title, value) {
 }
 function renderExplanation(node, record, candidate) {
   const host = clear($('operation-explanation'));
+  const review = explanationFor(node);
+  if (review) {
+    host.dataset.explainedNode = node.id;
+    host.append(el('div', 'evidence-review-label', 'EVIDENCE REVIEW'));
+    host.append(el('p', 'check-scope', 'Summary of saved evidence, including later results. This review is separate from the original author notes.'));
+    explanationPart(host, 'What happened', review.action);
+    explanationPart(host, 'What the result means', review.result);
+    explanationPart(host, 'Why continue or finish', review.decision);
+    explanationPart(host, 'Recorded observations', review.observations.map(fact => `${fact.label}: ${fact.value}`));
+    if (node.kind === 'test') {
+      const scope = el('details', 'review-scope'); scope.append(el('summary', '', 'Test scope and interpretation'));
+      explanationPart(scope, 'Recorded scope', record?.scope);
+      explanationPart(scope, 'How to read results', 'A positive goal test expects a solution. A restriction test may expect no solution: finding a route then disproves the stated necessity. A limit, exception or unsupported condition remains unknown. Process exit status and test verdict are different records.');
+      host.append(scope);
+    }
+    if (node.kind === 'note') explanationPart(host, 'Original author note', record.retrospective ? 'This author note was recorded retrospectively.' : 'The original goal, proposed change, reason and planned checks are retained in Record details and fingerprints below.');
+    return;
+  }
+  delete host.dataset.explainedNode;
   if (node.kind === 'candidate' && candidate && !candidate.preview?.levelPath) explanationPart(host, 'Saved candidate', `${candidate.id} is bound to this record, but an interactive 3D preview has not been published for that snapshot.`);
   if (node.kind === 'note' && record) { explanationPart(host, 'Design goal', record.goal); explanationPart(host, 'Proposed change', record.change); explanationPart(host, 'Public explanation', record.reason); explanationPart(host, 'Checks the author intended to run', record.expectedChecks); if (record.retrospective) explanationPart(host, 'Recording context', 'This explanation was recorded retrospectively.'); }
   else if (node.kind === 'operation' && record) { explanationPart(host, 'Execution status', record.scope); if (!record.resultNodeId) explanationPart(host, 'Test result', 'No separate test verdict is attached to this command. Completing a diagnostic does not mean the map passed.'); if (record.inputCandidateId || record.outputCandidateId) explanationPart(host, 'Saved input and output', record.inputCandidateId === record.outputCandidateId ? `The saved version remains ${record.inputCandidateId}. This operation did not save a new map version.` : `Input: ${record.inputCandidateId || 'not associated'}. Output: ${record.outputCandidateId || 'not associated'}.`); }
@@ -405,8 +426,21 @@ function renderChecks(node, record) {
   const binding = record?.bindingBasis === 'command-boundaries-only' ? 'Associated at execution boundaries; the report does not declare input fingerprints.' : record?.bindingBasis === 'report-fingerprints-and-command-boundaries' ? 'Report fingerprints match the saved execution-boundary version.' : record?.binding === 'historical' ? 'Historical association. Original execution binding was not observed.' : record?.binding === 'observed-command-association' ? 'A recorded diagnostic execution outcome; this is not a formal mechanism verdict.' : 'Results retain the scope and input association of the saved report.';
   host.append(el('p', 'check-scope', binding));
   if (!checks.length) { host.append(el('p', 'check-scope', 'No individual checks were published for this record.')); return; }
-  const list = el('ul', 'process-checks');
-  for (const check of checks) { const status = check.status || 'unknown', item = el('li'), body = el('div', 'check-body', check.name || check.label || 'Unnamed check'); item.append(el('span', `check-mark ${status}`, status === 'passed' ? '+' : ['failed', 'error'].includes(status) ? 'x' : '?')); if (check.detail || check.details) { const detail = el('details'); detail.append(el('summary', '', 'Check detail'), el('pre', '', text(check.detail || check.details))); body.append(detail); } item.append(body); list.append(item); } host.append(list);
+  const list = el('ul', 'process-checks'), explained = explanationFor(node)?.checks || [];
+  for (const check of checks) {
+    const status = check.status || 'unknown', item = el('li'), body = el('div', 'check-body', check.name || check.label || 'Unnamed check');
+    item.append(el('span', `check-mark ${status}`, status === 'passed' ? '+' : ['failed', 'error'].includes(status) ? 'x' : '?'));
+    const meaning = explained.find(row => row.name === check.name);
+    if (meaning) {
+      const detail = el('details', 'check-meaning'); detail.open = status !== 'passed';
+      detail.append(el('summary', '', 'What this check means'), el('p', '', meaning.meaning));
+      if (meaning.expected || meaning.observed) detail.append(el('p', '', `Expected: ${meaning.expected || 'see declared assertion'}. Observed: ${meaning.observed || status}. Verdict: ${status}.`));
+      body.append(detail);
+    }
+    item.append(body); list.append(item);
+  }
+  const all = el('details', 'recorded-check-list'); all.open = checks.some(check => check.status !== 'passed');
+  all.append(el('summary', '', `${checks.length} individual checks`), list); host.append(all);
 }
 function relationButton(other, inferred) {
   const button = el('button', `relation-chip${inferred ? ' inferred' : ''}`); button.type = 'button'; button.dataset.nodeId = other.id; button.title = nodeTitle(other); button.append(el('span', '', nodeAction(other)), el('span', 'relation-arrow', '\u2197')); button.addEventListener('click', () => selectNode(other.id)); return button;
@@ -418,6 +452,9 @@ function renderRelations(node) {
   for (const edge of edges) { const outgoing = edge.from === node.id, other = byId(outgoing ? edge.to : edge.from); if (!other) continue; const title = titles[edge.kind]?.[outgoing ? 0 : 1] || `${edge.kind} / ${outgoing ? 'outgoing' : 'incoming'}`; if (!groups.has(title)) groups.set(title, []); groups.get(title).push({ edge, other }); }
   const candidate = candidateFor(node), linkedNodes = new Set([...groups.values()].flat().map(item => item.other.id));
   const record = recordFor(node);
+  const review = explanationFor(node);
+  const evidence = review?.evidence.map(id => byId(id)).filter(other => other && other.id !== node.id) || [];
+  if (evidence.length) groups.set('Evidence behind this explanation', evidence.map(other => ({ edge: { kind: 'saved-evidence-review', inferred: false }, other })));
   for (const [field, title] of [['relatedNodeId', node.eventType === 'command.started' ? 'Command completion' : 'Command start'], ['startNodeId', 'Command start'], ['resultNodeId', 'Recorded test result']]) {
     const other = byId(record?.[field]); if (other) groups.set(title, [{ edge: { kind: 'recorded-command-association', inferred: false }, other }]);
   }
