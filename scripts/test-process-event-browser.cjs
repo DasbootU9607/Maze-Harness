@@ -48,10 +48,17 @@ const report = { scope: 'Every public source event is selectable, ordered and re
         assert.equal(await page.locator('.timeline-node[aria-current="step"]').getAttribute('data-node-id'), node.id);
         assert((await page.locator('#operation-title').innerText()).trim(), 'Every event has a detail title');
         const review = doc.explanations.find(row => row.nodeId === node.id);
-        assert.equal(await page.locator('#operation-explanation').getAttribute('data-explained-node'), node.id);
         const explanation = await page.locator('#operation-explanation').innerText();
-        for (const key of ['action', 'result', 'decision']) assert(explanation.includes(review[key]), 'Visible explanation includes ' + key + ': ' + node.id);
-        assert.equal(await page.locator('.check-meaning').count(), review.checks.length);
+        assert.equal(await page.locator('.evidence-review-label,.check-meaning,.recorded-check-list').count(), 0, 'Detail cards keep the original presentation');
+        if (node.kind === 'note') {
+          const note = doc.notes.find(row => row.graphNodeId === node.id || row.id === node.id);
+          for (const key of ['goal', 'change', 'reason']) if (note[key]) assert(explanation.includes(note[key]), 'Original author note remains visible: ' + key);
+        }
+        if (node.kind === 'test') {
+          const result = doc.tests.find(row => row.graphNodeId === node.id || row.id === node.id);
+          if (result.scope) assert(explanation.includes(result.scope), 'The original test scope remains visible');
+          assert.equal(await page.locator('.process-checks > li').count(), result.checks?.length || 0, 'Individual recorded checks remain visible');
+        }
         if (review.badge) assert.equal(await page.locator(`.timeline-node[data-node-id="${node.id}"] .timeline-state`).innerText(), review.badge);
         if (!['candidate', 'replay'].includes(node.kind)) assert(await page.locator('#preview-shell').isHidden(), 'Supporting records must not repeat map previews');
       }
@@ -77,18 +84,17 @@ const report = { scope: 'Every public source event is selectable, ordered and re
         for (const order of [17, 18, 19, 20]) { await page.locator('#next-operation').click(); assert.equal(await page.locator('.timeline-node[aria-current="step"]').getAttribute('data-record-order'), String(order)); }
         await visit('test-diagnostic-e000024');
         const diagnosis = await page.locator('#operation-explanation').innerText();
-        assert.match(diagnosis, /17-input solution/); assert.match(diagnosis, /Missing stage lift-passage-bolt/);
-        assert.match(await page.locator('#operation-summary').innerText(), /Solution found; required stage missing/);
-        await page.screenshot({path: path.join(output, 'rooflock-stage-explanation.png')});
+        assert.match(diagnosis, /Diagnostic scope/);
+        assert.equal(await page.locator('#operation-summary').innerText(), 'Diagnostic process failed.');
+        await page.screenshot({path: path.join(output, 'rooflock-restored-diagnostic.png')});
       }
       const result = doc.explanations.find(row => row.checks.some(check => check.expected === 'unsolved' && check.observed === 'unsolved' && check.verdict === 'passed'));
-      assert(result, 'Every current case has a passed negative-control result to explain');
+      assert(result, 'Every current case retains a passed negative-control result');
       await visit(result.nodeId);
-      if (!(await page.locator('.recorded-check-list').evaluate(element => element.open))) await page.locator('.recorded-check-list > summary').click();
       const check = result.checks.find(check => check.expected === 'unsolved' && check.observed === 'unsolved' && check.verdict === 'passed');
-      const meaning = page.locator('.check-body').filter({hasText:check.name}).first().locator('.check-meaning');
-      if (!(await meaning.evaluate(element => element.open))) await meaning.locator('summary').click();
-      assert.match(await meaning.innerText(), /Expected: unsolved\. Observed: unsolved\. Verdict: passed/);
+      const recorded = page.locator('.check-body').filter({hasText:check.name}).first();
+      assert(await recorded.isVisible(), 'The recorded negative-control check is visible');
+      assert.equal(await recorded.locator('..').locator('.check-mark').innerText(), '+', 'Its original passed verdict is unchanged');
       const evidenceLink = page.locator('#operation-relations .relation-chip').first();
       const destination = await evidenceLink.getAttribute('data-node-id'); await evidenceLink.click();
       assert.equal(await page.locator('.timeline-node[aria-current="step"]').getAttribute('data-node-id'), destination);
@@ -96,7 +102,7 @@ const report = { scope: 'Every public source event is selectable, ordered and re
       assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'Mobile page must not overflow horizontally');
       assert.equal(await page.locator('#preview-frame').count(), 0, 'Supporting events do not instantiate a game');
       if (entry.title === 'Rooflock Workshop') await page.screenshot({ path: path.join(output, 'rooflock-restored-mobile.png'), fullPage: true });
-      report.cases.push({ id: entry.id, title: entry.title, sourceEvents: doc.coverage.events.sourceCount, selectedNodes: doc.nodes.length, explainedNodes:doc.explanations.length, explainedChecks:doc.explanations.reduce((sum,row)=>sum+row.checks.length,0), keyEvents: keyCount, collapseAndDeepLinks: true, negativeControlMeaning:true, mobile: true });
+      report.cases.push({ id: entry.id, title: entry.title, sourceEvents: doc.coverage.events.sourceCount, selectedNodes: doc.nodes.length, keyEvents: keyCount, collapseAndDeepLinks: true, originalDetails: true, negativeControlVerdict: true, mobile: true });
       console.log(JSON.stringify(report.cases.at(-1)));
     }
     assert.equal(report.errors.length, 0); assert.equal(report.failedResponses.length, 0); report.passed = true;
