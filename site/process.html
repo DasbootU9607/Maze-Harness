@@ -24,6 +24,7 @@
     <div class="process-workspace">
       <aside class="timeline-column" aria-label="Recorded production timeline">
         <header class="timeline-toolbar"><div class="timeline-heading"><h2>Build timeline</h2><span id="timeline-count" class="mono"></span></div><p id="timeline-context" class="timeline-context">Select an operation to see its evidence and associated version.</p><details class="timeline-grouping-rule"><summary>How events are grouped</summary><p>The first skill, mechanism, and original-case reads, the first design note, every saved version, the first and last formal result for each version, formal failures or unknown results, saved replays, and delivery remain visible. Other consecutive records can be expanded in place. This is a display grouping; recorded order is unchanged.</p></details></header>
+        <div class="timeline-view-controls" role="group" aria-label="Timeline detail"><button id="show-all-records" type="button">Show all records</button><button id="show-key-records" type="button">Key events only</button></div>
         <ol id="process-timeline" class="process-timeline timeline-scroll"></ol>
       </aside>
       <article id="operation-detail" class="operation-detail" aria-label="Selected operation">

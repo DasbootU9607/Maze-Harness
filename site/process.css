@@ -24,6 +24,12 @@
 .timeline-item.test{--node-color:#146c7c;--node-tint:#eaf7fa}
 .timeline-item.replay{--node-color:#95517e;--node-tint:#fbeef6}
 .timeline-item.delivery{--node-color:#475569;--node-tint:#edf1f5}
+.timeline-item.record{--node-color:#596579;--node-tint:#f0f3f7}
+.timeline-item.record[data-event-type="command.started"]{--node-color:#8d571a;--node-tint:#fff3e3}
+.timeline-item.record[data-event-type="artifact.saved"],.timeline-item.record[data-event-type="build.saved"]{--node-color:#4a628d;--node-tint:#eef3fa}
+.timeline-view-controls{display:flex;gap:8px;padding:0 24px 14px;flex-wrap:wrap}
+.timeline-view-controls button{font-size:14px;padding:7px 11px;border:1px solid #ccc;border-radius:7px;background:#fff;color:#333}
+.timeline-view-controls button:hover{background:#eee}
 .timeline-item:before,.timeline-item:after{content:'';position:absolute;left:140px;width:1px;background:#333;opacity:.65;pointer-events:none}
 .timeline-item:before{top:0;bottom:calc(50% + 21px)}
 .timeline-item:after{top:calc(50% + 21px);bottom:0}

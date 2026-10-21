@@ -39,9 +39,94 @@
       "Automatic CLI boundaries record supported build and verification commands. Other commands and resource reads require the skill observer helper.",
       "Snapshots describe saved versions at operation boundaries, not every editor keystroke. Design notes are author statements, not internal reasoning.",
       "A started task remains running until the author records finish. An interrupted task may therefore remain open."
-    ]
+    ],
+    "events": {
+      "sourceCount": 52,
+      "representedCount": 52,
+      "sequenceSha256": "782b07b9940a80f19623080f7724be6d96af7928b33b9c9452e01d3a81e997d1",
+      "types": [
+        {
+          "type": "artifact.saved",
+          "count": 1
+        },
+        {
+          "type": "build.saved",
+          "count": 1
+        },
+        {
+          "type": "candidate.saved",
+          "count": 4
+        },
+        {
+          "type": "collector.started",
+          "count": 1
+        },
+        {
+          "type": "command.completed",
+          "count": 10
+        },
+        {
+          "type": "command.started",
+          "count": 10
+        },
+        {
+          "type": "design.note",
+          "count": 4
+        },
+        {
+          "type": "resource.read",
+          "count": 13
+        },
+        {
+          "type": "run.created",
+          "count": 1
+        },
+        {
+          "type": "run.finished",
+          "count": 1
+        },
+        {
+          "type": "skill.attached",
+          "count": 1
+        },
+        {
+          "type": "test.completed",
+          "count": 5
+        }
+      ]
+    }
   },
   "nodes": [
+    {
+      "id": "event-e000001",
+      "kind": "record",
+      "label": "Start authoring run",
+      "status": "neutral",
+      "order": 1,
+      "eventId": "e000001",
+      "eventType": "run.created",
+      "summary": "The recorder opened this authoring run. This does not establish an empty prior conversation context.",
+      "details": {
+        "recordId": "event-e000001",
+        "candidateId": null,
+        "eventType": "run.created"
+      }
+    },
+    {
+      "id": "event-e000002",
+      "kind": "record",
+      "label": "Start automatic capture",
+      "status": "neutral",
+      "order": 2,
+      "eventId": "e000002",
+      "eventType": "collector.started",
+      "summary": "The automatic collector started. Recorded command boundaries, reads and saved artifacts are shown in sequence.",
+      "details": {
+        "recordId": "event-e000002",
+        "candidateId": null,
+        "eventType": "collector.started"
+      }
+    },
     {
       "id": "resource-snapshot-e000003",
       "kind": "resource",
@@ -55,7 +140,9 @@
         "sha256": "76de8b9575c0845503fc01c2022fe931b201ff1556d11fd569f0e69d93c0191d",
         "kind": "skill",
         "delivery": "snapshot"
-      }
+      },
+      "eventId": "e000003",
+      "eventType": "skill.attached"
     },
     {
       "id": "resource-r001",
@@ -70,7 +157,9 @@
         "sha256": "76de8b9575c0845503fc01c2022fe931b201ff1556d11fd569f0e69d93c0191d",
         "kind": "skill",
         "delivery": "recorded-read"
-      }
+      },
+      "eventId": "e000004",
+      "eventType": "resource.read"
     },
     {
       "id": "resource-r002",
@@ -85,7 +174,9 @@
         "sha256": "7dace0cba93c48cbca55a6f429b993220e516e18064c52c8f8a0876aefa41f08",
         "kind": "mechanism",
         "delivery": "recorded-read"
-      }
+      },
+      "eventId": "e000005",
+      "eventType": "resource.read"
     },
     {
       "id": "resource-r003",
@@ -100,7 +191,9 @@
         "sha256": "a2a586bfcdb3e89f97d4338e6e4084ebbf5e08da6fbcef899412f5876595de21",
         "kind": "reference",
         "delivery": "recorded-read"
-      }
+      },
+      "eventId": "e000006",
+      "eventType": "resource.read"
     },
     {
       "id": "resource-r004",
@@ -115,7 +208,9 @@
         "sha256": "42971d1f8ec2b97904dbdfe8aa91c32b48be176610120ba16378fe2f2eb73369",
         "kind": "reference",
         "delivery": "recorded-read"
-      }
+      },
+      "eventId": "e000007",
+      "eventType": "resource.read"
     },
     {
       "id": "resource-r005",
@@ -130,7 +225,9 @@
         "sha256": "c06355d2eebe6615900090772e89028044cd21bd2a58452cb4a301dc0bea2f11",
         "kind": "reference",
         "delivery": "recorded-read"
-      }
+      },
+      "eventId": "e000008",
+      "eventType": "resource.read"
     },
     {
       "id": "resource-r006",
@@ -145,7 +242,9 @@
         "sha256": "8cb85228fe706a35e7800358301d8eaeb60d4f4b8abc0e3c5a78c8ef17cd976f",
         "kind": "reference",
         "delivery": "recorded-read"
-      }
+      },
+      "eventId": "e000009",
+      "eventType": "resource.read"
     },
     {
       "id": "resource-r007",
@@ -160,7 +259,9 @@
         "sha256": "4c2a18742e7949e815a620aa6c1cff8f79ed2ff8aa93801b0d63261238caa1df",
         "kind": "reference",
         "delivery": "recorded-read"
-      }
+      },
+      "eventId": "e000010",
+      "eventType": "resource.read"
     },
     {
       "id": "resource-r008",
@@ -175,7 +276,9 @@
         "sha256": "1ae8cd45b040b56eaa08faedb57ba28a1750a1e223e02f25c71dfab6a26f9abf",
         "kind": "reference",
         "delivery": "recorded-read"
-      }
+      },
+      "eventId": "e000011",
+      "eventType": "resource.read"
     },
     {
       "id": "resource-r009",
@@ -190,7 +293,9 @@
         "sha256": "daf043e74815d0e20388d5d98479ef6942c4be934a9f48852610d4c7c8fb43cb",
         "kind": "reference",
         "delivery": "recorded-read"
-      }
+      },
+      "eventId": "e000012",
+      "eventType": "resource.read"
     },
     {
       "id": "resource-r010",
@@ -205,7 +310,9 @@
         "sha256": "44b1af4f5184df1d636d21396abe732495a8a3b7effaa5841c724f0f6eebbc43",
         "kind": "reference",
         "delivery": "recorded-read"
-      }
+      },
+      "eventId": "e000013",
+      "eventType": "resource.read"
     },
     {
       "id": "resource-r011",
@@ -220,7 +327,9 @@
         "sha256": "555b9a533dcf1fc55f67074edd57c89013e9c8f33b96a40b44d5e7c60a6125e9",
         "kind": "reference",
         "delivery": "recorded-read"
-      }
+      },
+      "eventId": "e000014",
+      "eventType": "resource.read"
     },
     {
       "id": "resource-r012",
@@ -235,7 +344,9 @@
         "sha256": "21c7563b22af07ac6e01d3a15bb3e90575bdf3ec56e6a10da9f8e941d52fc591",
         "kind": "reference",
         "delivery": "recorded-read"
-      }
+      },
+      "eventId": "e000015",
+      "eventType": "resource.read"
     },
     {
       "id": "note-n001",
@@ -249,6 +360,23 @@
         "candidateId": null,
         "origin": "agent_statement",
         "retrospective": false
+      },
+      "eventId": "e000016",
+      "eventType": "design.note"
+    },
+    {
+      "id": "event-e000017",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 17,
+      "eventId": "e000017",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000017",
+        "candidateId": null,
+        "eventType": "command.started"
       }
     },
     {
@@ -263,7 +391,9 @@
         "cellsSha256": "11cf103df335c692d1df7443e3062e0e78565b1f1ff779c90492738a982518c7",
         "contractSha256": "2242c55e0a4017b4e8ca1de18b3620fb30c63ee69b8be767472ab5025f6e8fb0",
         "parentBasis": "observed-snapshot-order"
-      }
+      },
+      "eventId": "e000018",
+      "eventType": "candidate.saved"
     },
     {
       "id": "operation-e000017",
@@ -271,7 +401,7 @@
       "label": "node",
       "status": "neutral",
       "order": 19,
-      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
       "details": {
         "operationId": "operation-e000017",
         "candidateId": "v001",
@@ -279,6 +409,23 @@
         "outputCandidateId": "v001",
         "kind": "command",
         "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000019",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "event-e000020",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 20,
+      "eventId": "e000020",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000020",
+        "candidateId": "v001",
+        "eventType": "command.started"
       }
     },
     {
@@ -287,7 +434,7 @@
       "label": "node",
       "status": "neutral",
       "order": 21,
-      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
       "details": {
         "operationId": "operation-e000020",
         "candidateId": "v001",
@@ -295,7 +442,9 @@
         "outputCandidateId": "v001",
         "kind": "test",
         "binding": "recorded-command-boundaries"
-      }
+      },
+      "eventId": "e000021",
+      "eventType": "command.completed"
     },
     {
       "id": "test-t001",
@@ -309,7 +458,9 @@
         "candidateId": "v001",
         "binding": "exact",
         "category": "test"
-      }
+      },
+      "eventId": "e000022",
+      "eventType": "test.completed"
     },
     {
       "id": "note-n002",
@@ -323,6 +474,23 @@
         "candidateId": "v001",
         "origin": "agent_statement",
         "retrospective": false
+      },
+      "eventId": "e000023",
+      "eventType": "design.note"
+    },
+    {
+      "id": "event-e000024",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 24,
+      "eventId": "e000024",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000024",
+        "candidateId": "v001",
+        "eventType": "command.started"
       }
     },
     {
@@ -337,7 +505,9 @@
         "cellsSha256": "11cf103df335c692d1df7443e3062e0e78565b1f1ff779c90492738a982518c7",
         "contractSha256": "cdc9a96917e9950f62c548d0f4957cc49d01ae15f11be29ac1cb70b09742c2f5",
         "parentBasis": "observed-snapshot-order"
-      }
+      },
+      "eventId": "e000025",
+      "eventType": "candidate.saved"
     },
     {
       "id": "operation-e000024",
@@ -345,7 +515,7 @@
       "label": "node",
       "status": "neutral",
       "order": 26,
-      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
       "details": {
         "operationId": "operation-e000024",
         "candidateId": "v002",
@@ -353,6 +523,38 @@
         "outputCandidateId": "v002",
         "kind": "command",
         "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000026",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "event-e000027",
+      "kind": "record",
+      "label": "Start: verify-complex.cjs",
+      "status": "neutral",
+      "order": 27,
+      "eventId": "e000027",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000027",
+        "candidateId": "v002",
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "event-e000028",
+      "kind": "record",
+      "label": "Finish: verify-complex.cjs",
+      "status": "failed",
+      "order": 28,
+      "eventId": "e000028",
+      "eventType": "command.completed",
+      "summary": "Command execution ended with exit code 1. See the associated test result for its recorded verdict.",
+      "details": {
+        "recordId": "event-e000028",
+        "candidateId": "v002",
+        "eventType": "command.completed"
       }
     },
     {
@@ -367,7 +569,9 @@
         "candidateId": "v002",
         "binding": "observed-command-association",
         "category": "test"
-      }
+      },
+      "eventId": "e000029",
+      "eventType": "test.completed"
     },
     {
       "id": "resource-r013",
@@ -382,7 +586,9 @@
         "sha256": "44b1af4f5184df1d636d21396abe732495a8a3b7effaa5841c724f0f6eebbc43",
         "kind": "reference",
         "delivery": "recorded-read"
-      }
+      },
+      "eventId": "e000030",
+      "eventType": "resource.read"
     },
     {
       "id": "note-n003",
@@ -396,6 +602,23 @@
         "candidateId": "v002",
         "origin": "agent_statement",
         "retrospective": false
+      },
+      "eventId": "e000031",
+      "eventType": "design.note"
+    },
+    {
+      "id": "event-e000032",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 32,
+      "eventId": "e000032",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000032",
+        "candidateId": "v002",
+        "eventType": "command.started"
       }
     },
     {
@@ -410,7 +633,9 @@
         "cellsSha256": "11cf103df335c692d1df7443e3062e0e78565b1f1ff779c90492738a982518c7",
         "contractSha256": "1f3189f42366c7281f960882c6146c9504c1b6310b7b58d2faecde45bc46ee3a",
         "parentBasis": "observed-snapshot-order"
-      }
+      },
+      "eventId": "e000033",
+      "eventType": "candidate.saved"
     },
     {
       "id": "operation-e000032",
@@ -418,7 +643,7 @@
       "label": "node",
       "status": "neutral",
       "order": 34,
-      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
       "details": {
         "operationId": "operation-e000032",
         "candidateId": "v003",
@@ -426,6 +651,23 @@
         "outputCandidateId": "v003",
         "kind": "command",
         "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000034",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "event-e000035",
+      "kind": "record",
+      "label": "Start: verify-complex.cjs",
+      "status": "neutral",
+      "order": 35,
+      "eventId": "e000035",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000035",
+        "candidateId": "v003",
+        "eventType": "command.started"
       }
     },
     {
@@ -434,7 +676,7 @@
       "label": "verify-complex.cjs",
       "status": "neutral",
       "order": 36,
-      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
       "details": {
         "operationId": "operation-e000035",
         "candidateId": "v003",
@@ -442,7 +684,9 @@
         "outputCandidateId": "v003",
         "kind": "test",
         "binding": "recorded-command-boundaries"
-      }
+      },
+      "eventId": "e000036",
+      "eventType": "command.completed"
     },
     {
       "id": "test-t003",
@@ -456,7 +700,9 @@
         "candidateId": "v003",
         "binding": "exact",
         "category": "test"
-      }
+      },
+      "eventId": "e000037",
+      "eventType": "test.completed"
     },
     {
       "id": "note-n004",
@@ -470,6 +716,23 @@
         "candidateId": "v003",
         "origin": "agent_statement",
         "retrospective": false
+      },
+      "eventId": "e000038",
+      "eventType": "design.note"
+    },
+    {
+      "id": "event-e000039",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 39,
+      "eventId": "e000039",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000039",
+        "candidateId": "v003",
+        "eventType": "command.started"
       }
     },
     {
@@ -484,7 +747,9 @@
         "cellsSha256": "af5e61cda9d1f42d8de1e75ed0a3721aeb6cf875003c422d000c76bc245a66cc",
         "contractSha256": "639d62a260b2932561d53fe8a6d531c657787049e72d6212beccdcd299a83e95",
         "parentBasis": "observed-snapshot-order"
-      }
+      },
+      "eventId": "e000040",
+      "eventType": "candidate.saved"
     },
     {
       "id": "operation-e000039",
@@ -492,7 +757,7 @@
       "label": "node",
       "status": "neutral",
       "order": 41,
-      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
       "details": {
         "operationId": "operation-e000039",
         "candidateId": "v004",
@@ -500,6 +765,23 @@
         "outputCandidateId": "v004",
         "kind": "command",
         "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000041",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "event-e000042",
+      "kind": "record",
+      "label": "Start: verify-complex.cjs",
+      "status": "neutral",
+      "order": 42,
+      "eventId": "e000042",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000042",
+        "candidateId": "v004",
+        "eventType": "command.started"
       }
     },
     {
@@ -508,7 +790,7 @@
       "label": "verify-complex.cjs",
       "status": "neutral",
       "order": 43,
-      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
       "details": {
         "operationId": "operation-e000042",
         "candidateId": "v004",
@@ -516,7 +798,9 @@
         "outputCandidateId": "v004",
         "kind": "test",
         "binding": "recorded-command-boundaries"
-      }
+      },
+      "eventId": "e000043",
+      "eventType": "command.completed"
     },
     {
       "id": "test-t004",
@@ -530,6 +814,23 @@
         "candidateId": "v004",
         "binding": "exact",
         "category": "test"
+      },
+      "eventId": "e000044",
+      "eventType": "test.completed"
+    },
+    {
+      "id": "event-e000045",
+      "kind": "record",
+      "label": "Start: build-complex.cjs",
+      "status": "neutral",
+      "order": 45,
+      "eventId": "e000045",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000045",
+        "candidateId": "v004",
+        "eventType": "command.started"
       }
     },
     {
@@ -538,7 +839,7 @@
       "label": "build-complex.cjs",
       "status": "neutral",
       "order": 46,
-      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
       "details": {
         "operationId": "operation-e000045",
         "candidateId": "v004",
@@ -546,6 +847,38 @@
         "outputCandidateId": "v004",
         "kind": "build",
         "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000046",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "event-e000047",
+      "kind": "record",
+      "label": "Save build files",
+      "status": "neutral",
+      "order": 47,
+      "eventId": "e000047",
+      "eventType": "build.saved",
+      "summary": "Build files were archived for this candidate. The file list and fingerprints identify the saved output; verification appears separately.",
+      "details": {
+        "recordId": "event-e000047",
+        "candidateId": "v004",
+        "eventType": "build.saved"
+      }
+    },
+    {
+      "id": "event-e000048",
+      "kind": "record",
+      "label": "Start: Browser play, recorded frames and editor round-trip",
+      "status": "neutral",
+      "order": 48,
+      "eventId": "e000048",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000048",
+        "candidateId": "v004",
+        "eventType": "command.started"
       }
     },
     {
@@ -554,7 +887,7 @@
       "label": "Browser play, recorded frames and editor round-trip",
       "status": "neutral",
       "order": 49,
-      "summary": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict.",
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
       "details": {
         "operationId": "operation-e000048",
         "candidateId": "v004",
@@ -562,7 +895,9 @@
         "outputCandidateId": "v004",
         "kind": "test",
         "binding": "recorded-command-boundaries"
-      }
+      },
+      "eventId": "e000049",
+      "eventType": "command.completed"
     },
     {
       "id": "test-t005",
@@ -576,7 +911,9 @@
         "candidateId": "v004",
         "binding": "exact",
         "category": "test"
-      }
+      },
+      "eventId": "e000050",
+      "eventType": "test.completed"
     },
     {
       "id": "replay-e000051",
@@ -590,6 +927,23 @@
         "candidateId": "v004",
         "binding": "exact-artifact",
         "sourceKind": "saved-replay"
+      },
+      "eventId": "e000051",
+      "eventType": "artifact.saved"
+    },
+    {
+      "id": "event-e000052",
+      "kind": "record",
+      "label": "Finish authoring run",
+      "status": "neutral",
+      "order": 52,
+      "eventId": "e000052",
+      "eventType": "run.finished",
+      "summary": "The recorder closed the run. Test verdicts and publication are separate records.",
+      "details": {
+        "recordId": "event-e000052",
+        "candidateId": null,
+        "eventType": "run.finished"
       }
     },
     {
@@ -4432,7 +4786,10 @@
       "kind": "command",
       "status": "completed",
       "binding": "recorded-command-boundaries",
-      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000017",
+      "resultNodeId": null,
+      "exitCode": 0
     },
     {
       "id": "operation-e000020",
@@ -4444,7 +4801,10 @@
       "kind": "test",
       "status": "completed",
       "binding": "recorded-command-boundaries",
-      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000020",
+      "resultNodeId": "test-t001",
+      "exitCode": 0
     },
     {
       "id": "operation-e000024",
@@ -4456,7 +4816,10 @@
       "kind": "command",
       "status": "completed",
       "binding": "recorded-command-boundaries",
-      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000024",
+      "resultNodeId": null,
+      "exitCode": 0
     },
     {
       "id": "operation-e000032",
@@ -4468,7 +4831,10 @@
       "kind": "command",
       "status": "completed",
       "binding": "recorded-command-boundaries",
-      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000032",
+      "resultNodeId": null,
+      "exitCode": 0
     },
     {
       "id": "operation-e000035",
@@ -4480,7 +4846,10 @@
       "kind": "test",
       "status": "completed",
       "binding": "recorded-command-boundaries",
-      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000035",
+      "resultNodeId": "test-t003",
+      "exitCode": 0
     },
     {
       "id": "operation-e000039",
@@ -4492,7 +4861,10 @@
       "kind": "command",
       "status": "completed",
       "binding": "recorded-command-boundaries",
-      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000039",
+      "resultNodeId": null,
+      "exitCode": 0
     },
     {
       "id": "operation-e000042",
@@ -4504,7 +4876,10 @@
       "kind": "test",
       "status": "completed",
       "binding": "recorded-command-boundaries",
-      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000042",
+      "resultNodeId": "test-t004",
+      "exitCode": 0
     },
     {
       "id": "operation-e000045",
@@ -4516,7 +4891,10 @@
       "kind": "build",
       "status": "completed",
       "binding": "recorded-command-boundaries",
-      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000045",
+      "resultNodeId": null,
+      "exitCode": 0
     },
     {
       "id": "operation-e000048",
@@ -4528,7 +4906,10 @@
       "kind": "test",
       "status": "completed",
       "binding": "recorded-command-boundaries",
-      "scope": "The recorded process exited successfully. This does not by itself establish a gameplay or mechanism verdict."
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000048",
+      "resultNodeId": "test-t005",
+      "exitCode": 0
     }
   ],
   "replays": [
@@ -4546,6 +4927,239 @@
       "contractSha256": "639d62a260b2932561d53fe8a6d531c657787049e72d6212beccdcd299a83e95",
       "data": "data/process-replays/authored-hook-transfer-5e3a324db881/v004-replay-e000051.json",
       "sha256": "f3763088dff241c37374bc5a4750dc738ff7bc7418edbbd03135c48910ea4f4b"
+    }
+  ],
+  "records": [
+    {
+      "id": "event-e000001",
+      "graphNodeId": "event-e000001",
+      "candidateId": null,
+      "eventType": "run.created",
+      "label": "Start authoring run",
+      "status": "neutral",
+      "scope": "The recorder opened this authoring run. This does not establish an empty prior conversation context.",
+      "relatedNodeId": null,
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000002",
+      "graphNodeId": "event-e000002",
+      "candidateId": null,
+      "eventType": "collector.started",
+      "label": "Start automatic capture",
+      "status": "neutral",
+      "scope": "The automatic collector started. Recorded command boundaries, reads and saved artifacts are shown in sequence.",
+      "relatedNodeId": null,
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000017",
+      "graphNodeId": "event-e000017",
+      "candidateId": null,
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000017",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000020",
+      "graphNodeId": "event-e000020",
+      "candidateId": "v001",
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000020",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000024",
+      "graphNodeId": "event-e000024",
+      "candidateId": "v001",
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000024",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000027",
+      "graphNodeId": "event-e000027",
+      "candidateId": "v002",
+      "eventType": "command.started",
+      "label": "Start: verify-complex.cjs",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "event-e000028",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000028",
+      "graphNodeId": "event-e000028",
+      "candidateId": "v002",
+      "eventType": "command.completed",
+      "label": "Finish: verify-complex.cjs",
+      "status": "failed",
+      "scope": "Command execution ended with exit code 1. See the associated test result for its recorded verdict.",
+      "relatedNodeId": "event-e000027",
+      "files": [],
+      "facts": [
+        {
+          "label": "Process exit code",
+          "value": "1"
+        },
+        {
+          "label": "Elapsed milliseconds",
+          "value": "176"
+        }
+      ],
+      "resultNodeId": "test-t002"
+    },
+    {
+      "id": "event-e000032",
+      "graphNodeId": "event-e000032",
+      "candidateId": "v002",
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000032",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000035",
+      "graphNodeId": "event-e000035",
+      "candidateId": "v003",
+      "eventType": "command.started",
+      "label": "Start: verify-complex.cjs",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000035",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000039",
+      "graphNodeId": "event-e000039",
+      "candidateId": "v003",
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000039",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000042",
+      "graphNodeId": "event-e000042",
+      "candidateId": "v004",
+      "eventType": "command.started",
+      "label": "Start: verify-complex.cjs",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000042",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000045",
+      "graphNodeId": "event-e000045",
+      "candidateId": "v004",
+      "eventType": "command.started",
+      "label": "Start: build-complex.cjs",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000045",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000047",
+      "graphNodeId": "event-e000047",
+      "candidateId": "v004",
+      "eventType": "build.saved",
+      "label": "Save build files",
+      "status": "neutral",
+      "scope": "Build files were archived for this candidate. The file list and fingerprints identify the saved output; verification appears separately.",
+      "relatedNodeId": null,
+      "files": [
+        {
+          "name": "manifest.json",
+          "sha256": "91f832a3a8774c952c189197a5aa56874184ff9faf431256cc38a792d98ef9a7"
+        },
+        {
+          "name": "world.json",
+          "sha256": "c2d52253d67dc28b21d7e9de2a49e2c849cffd4a7c2a9b2463c202aad1c732de"
+        },
+        {
+          "name": "contract.json",
+          "sha256": "571d11c74a57dd3df390e008a4436ed094ef9ea9b470df962d9a826197850716"
+        },
+        {
+          "name": "spec.json",
+          "sha256": "d3202353c1b8b958a61dfa31535c00dfc75e6c5124e7c8ea4996de00395015ec"
+        },
+        {
+          "name": "draft.json",
+          "sha256": "884aba2489a3f7546d490d4d6cbb95048e8086146bb286ef64ccfb58c364dcfb"
+        },
+        {
+          "name": "level_AxA.txt",
+          "sha256": "e0b6dced664741963a3573af596aee6644b3b63ad7caf161824156c34bd3757d"
+        },
+        {
+          "name": "level_parsing.json",
+          "sha256": "54cb1bc6d2e545a89abe860e2c84e45ed5fd31b244b828b8424d2693d05b780d"
+        },
+        {
+          "name": "toolbox.json",
+          "sha256": "c36ac5ee0a6a8e7b69d73613e3dde029afdc84681b146fbdfe75a1c52b81a330"
+        },
+        {
+          "name": "world_map.json",
+          "sha256": "615bed0185123455144b43872f1d68652b193af598afb450cf3abbb249723806"
+        },
+        {
+          "name": "world_parsing.json",
+          "sha256": "7e250cc0e0dccadf087fc5717567e059f1e6b604a3e3f8315bd1d29f192c3202"
+        }
+      ],
+      "facts": []
+    },
+    {
+      "id": "event-e000048",
+      "graphNodeId": "event-e000048",
+      "candidateId": "v004",
+      "eventType": "command.started",
+      "label": "Start: Browser play, recorded frames and editor round-trip",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000048",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000052",
+      "graphNodeId": "event-e000052",
+      "candidateId": null,
+      "eventType": "run.finished",
+      "label": "Finish authoring run",
+      "status": "neutral",
+      "scope": "The recorder closed the run. Test verdicts and publication are separate records.",
+      "relatedNodeId": null,
+      "files": [],
+      "facts": []
     }
   ]
 }

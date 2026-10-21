@@ -2,7 +2,7 @@ import { loadCatalog, shell, playUrl, showError } from './ui.js';
 
 const $ = id => document.getElementById(id);
 const state = { data: null, catalog: null, entry: null, skill: null, nodes: [], selectedId: null, candidateId: null, previewCandidateId: null, previewKey: null, previewMode: null, previewUrl: null, previewLabel: null, expanded: false, returnFocus: null, previousOverflow: '', revisionBranches: [], keyNodeIds: new Set(), timelineGroups: [], nodeGroups: new Map() };
-const kindNames = { resource: 'READ', candidate: 'VERSION', test: 'TEST', note: 'DESIGN NOTE', operation: 'OPERATION', replay: 'REPLAY', delivery: 'DELIVERY' };
+const kindNames = { resource: 'READ', candidate: 'VERSION', test: 'TEST', note: 'DESIGN NOTE', operation: 'OPERATION', replay: 'REPLAY', delivery: 'DELIVERY', record: 'RECORD' };
 const statusNames = { passed: 'Passed', failed: 'Failed', unknown: 'Unknown', error: 'Error' };
 const resourceNames = { 'SKILL.md': 'Read skill instructions', 'mechanism-logic.md': 'Read extracted mechanism', 'planning-depth.md': 'Read planning guidance', 'complex-validation.md': 'Read verification guidance', 'design-template.json': 'Read design template', 'complex-runtime.cjs': 'Inspect mechanism runtime', 'verify-complex.cjs': 'Inspect the verifier', 'design.md': 'Read design conventions', 'browser-check.cjs': 'Inspect browser replay checks' };
 
@@ -12,7 +12,7 @@ function text(value) { return typeof value === 'string' ? value : value === unde
 function short(value, max = 150) { const s = text(value); return s.length > max ? s.slice(0, max - 3) + '...' : s; }
 function byId(id) { return state.nodes.find(node => node.id === id); }
 function recordFor(node) {
-  const key = { candidate: 'candidates', test: 'tests', note: 'notes', resource: 'resources', operation: 'operations', replay: 'replays' }[node.kind];
+  const key = { candidate: 'candidates', test: 'tests', note: 'notes', resource: 'resources', operation: 'operations', replay: 'replays', record: 'records' }[node.kind];
   return key ? (state.data[key] || []).find(record => record.graphNodeId === node.id || record.id === node.id || (node.kind === 'candidate' && record.id === node.details?.candidateId)) : null;
 }
 function candidateFor(node) {
@@ -34,9 +34,10 @@ function nodeTitle(node) {
   if (node.kind === 'note') return record?.goal || node.label || 'Record a design note';
   return node.label || node.id;
 }
-function nodeCategory(node) { const record = recordFor(node); if (node.kind === 'resource' && (record?.delivery === 'snapshot' || record?.origin === 'historical')) return 'SOURCE SNAPSHOT'; return record?.category === 'diagnostic' ? 'DIAGNOSTIC' : kindNames[node.kind] || String(node.kind).toUpperCase(); }
+function nodeCategory(node) { const record = recordFor(node); if (node.kind === 'record') return ({ 'command.started': 'START', 'command.completed': 'FINISH', 'artifact.saved': 'ARTIFACT', 'build.saved': 'BUILD FILES', 'run.created': 'SESSION', 'run.finished': 'SESSION', 'collector.started': 'CAPTURE', 'capture.gap': 'CAPTURE GAP' })[node.eventType] || 'RECORD'; if (node.kind === 'resource' && (record?.delivery === 'snapshot' || record?.origin === 'historical')) return 'SOURCE SNAPSHOT'; return record?.category === 'diagnostic' ? 'DIAGNOSTIC' : kindNames[node.kind] || String(node.kind).toUpperCase(); }
 function nodeAction(node) {
   const record = recordFor(node), label = node.label || '', goal = record?.goal || label;
+  if (node.kind === 'record') return record?.label || label;
   if (node.kind === 'resource') {
     if (record?.delivery === 'snapshot' || record?.origin === 'historical') return 'Save source snapshot';
     const previousRead = state.nodes.some(other => other.sourceIndex < node.sourceIndex && other.kind === 'resource' && recordFor(other)?.basename === record?.basename);
@@ -97,6 +98,7 @@ function classifyTimeline() {
   for (const node of state.nodes) {
     const record = recordFor(node);
     if (['candidate', 'replay', 'delivery'].includes(node.kind)) keyIds.add(node.id);
+    if (node.eventType === 'capture.gap') keyIds.add(node.id);
     if (node.kind === 'resource') {
       const category = resourceCategory(record);
       if (['Skill instructions', 'Extracted mechanism', 'Original case material'].includes(category) && !seenReadKinds.has(category)) { keyIds.add(node.id); seenReadKinds.add(category); }
@@ -126,7 +128,7 @@ async function start() {
   const response = await fetch('./' + entry.process.data); if (!response.ok) throw new Error('The published build record could not be loaded.');
   const data = await response.json();
   if (data.schemaVersion !== 1 || !Array.isArray(data.nodes) || !Array.isArray(data.edges)) throw new Error('This build record uses an unsupported format.');
-  state.data = { ...data, candidates: data.candidates || [], tests: data.tests || [], notes: data.notes || [], resources: data.resources || [], operations: data.operations || [], replays: data.replays || [] };
+  state.data = { ...data, candidates: data.candidates || [], tests: data.tests || [], notes: data.notes || [], resources: data.resources || [], operations: data.operations || [], replays: data.replays || [], records: data.records || [] };
   state.catalog = catalog; state.entry = entry; state.skill = catalog.skills.find(skill => skill.id === data.skill || skill.id === entry.skill);
   state.nodes = data.nodes.map((node, index) => ({ ...node, sourceIndex: index })).sort((a, b) => (Number.isFinite(a.order) ? a.order : a.sourceIndex) - (Number.isFinite(b.order) ? b.order : b.sourceIndex));
   document.title = `${entry.title} - Build process - Maze Harness`;
@@ -135,14 +137,17 @@ async function start() {
   $('play-room').href = playUrl(entry); $('process-data').href = './' + entry.process.data;
   $('skill-link').textContent = state.skill?.name || 'Skill library'; $('skill-link').href = state.skill ? './skill.html?id=' + encodeURIComponent(state.skill.id) : './index.html#skills';
   const mode = data.coverage?.mode || data.mode || 'unknown'; $('record-mode').textContent = mode === 'observed' ? 'OBSERVED RECORD' : mode === 'historical' ? 'HISTORICAL IMPORT' : 'PARTIAL RECORD'; $('record-mode').classList.toggle('historical', mode === 'historical');
-  $('record-summary').textContent = `${state.data.candidates.length} versions / ${state.data.resources.length} recorded references / ${state.data.tests.length} test records`;
+  const coverage = data.coverage?.events;
+  $('record-summary').textContent = `${state.data.candidates.length} versions / ${state.data.resources.length} recorded references / ${state.data.tests.length} test records${coverage ? ` / ${coverage.representedCount} of ${coverage.sourceCount} source records` : ''}`;
   classifyTimeline();
   $('timeline-count').textContent = `${state.keyNodeIds.size} key / ${state.nodes.length} total`;
-  $('timeline-context').textContent = `${state.nodes.length - state.keyNodeIds.size} supporting records are grouped in their original order.${mode === 'historical' ? ' Original times are unknown.' : ''}`;
+  $('timeline-context').textContent = `${coverage ? 'Every source event is included. ' : ''}${state.nodes.length - state.keyNodeIds.size} supporting records can be expanded in order.${mode === 'historical' ? ' Original times are unknown.' : ''}`;
   $('coverage-description').textContent = data.coverage?.description || 'This view contains saved operations, references, maps, test outcomes, and public author explanations. It does not reconstruct unrecorded activity.';
   const limits = [...(data.coverage?.limitations || []), ...(data.limitations || []), data.coverage?.sources?.scope].filter(Boolean).map(text).filter((item, index, all) => all.indexOf(item) === index);
   limits.forEach(item => $('coverage-limitations').append(el('li', '', item)));
   renderTimeline(); installInteractions();
+  $('show-all-records').addEventListener('click', () => { for (const group of state.timelineGroups) toggleTimelineGroup(group.id, true); });
+  $('show-key-records').addEventListener('click', () => { for (const group of state.timelineGroups) toggleTimelineGroup(group.id, false); });
   const requested = byId(query.get('node')), requestedCandidate = state.data.candidates.find(candidate => candidate.id === query.get('candidate'));
   const firstCandidate = state.data.candidates.find(candidate => candidate.preview?.levelPath) || state.data.candidates[0];
   selectNode(requested?.id || requestedCandidate?.graphNodeId || firstCandidate?.graphNodeId || state.nodes[0]?.id, { initial: true, focus: Boolean(requested || requestedCandidate) });
@@ -171,10 +176,12 @@ function renderTimeline() {
       parent = $(`events-${group.id}`);
     }
     const item = el('li', `timeline-item ${node.kind} ${node.status || ''}`), button = el('button', `timeline-node ${node.kind} ${node.status || ''}`); button.type = 'button'; button.dataset.nodeId = node.id; button.dataset.kind = node.kind; button.title = nodeTitle(node);
+    item.dataset.eventType = node.eventType || ''; button.dataset.eventId = node.eventId || ''; button.dataset.recordOrder = String(node.order);
     button.dataset.keyEvent = String(state.keyNodeIds.has(node.id)); if (group) item.dataset.groupId = group.id;
     const body = el('span', 'timeline-body'), content = el('span', 'timeline-text');
     content.append(el('span', 'timeline-kind-inline', nodeCategory(node)), el('span', 'timeline-label', nodeAction(node))); body.append(content);
     if (node.kind === 'test' && statusNames[node.status]) body.append(el('span', `timeline-state ${node.status}`, recordFor(node)?.category === 'diagnostic' && node.status === 'failed' ? 'Process failed' : statusNames[node.status]));
+    if (node.kind === 'record' && ['failed', 'unknown'].includes(node.status)) body.append(el('span', 'timeline-state', node.eventType === 'command.completed' && node.status === 'failed' ? 'Process failed' : statusNames[node.status]));
     const circle = el('span', 'timeline-dot'), ring = el('span', 'timeline-ring'), dot = el('span', 'timeline-center');
     ring.setAttribute('aria-hidden', 'true'); dot.setAttribute('aria-hidden', 'true');
     circle.append(ring, dot, el('span', 'timeline-number', String(node.order ?? node.sourceIndex + 1).padStart(2, '0')));
@@ -236,7 +243,7 @@ function selectNode(id, { initial = false, focus = true } = {}) {
   syncGroupSelection();
   const record = recordFor(node), candidate = candidateFor(node), index = state.nodes.indexOf(node);
   $('previous-operation').disabled = index === 0; $('next-operation').disabled = index === state.nodes.length - 1;
-  const meta = clear($('operation-meta')); meta.append(el('span', '', nodeCategory(node)), el('span', '', `/ RECORD ${node.order ?? index + 1}`));
+  const meta = clear($('operation-meta')); meta.append(el('span', '', nodeCategory(node)), el('span', '', node.kind === 'delivery' ? '/ PUBLICATION BINDING' : `/ RECORD ${node.order ?? index + 1}`));
   if (candidate && node.kind !== 'candidate') meta.append(el('span', '', `/ ${candidate.id}`));
   if (statusNames[node.status] && node.kind !== 'test') meta.append(el('span', `status-label ${node.status}`, statusNames[node.status]));
   $('operation-title').textContent = nodeAction(node);
@@ -245,6 +252,8 @@ function selectNode(id, { initial = false, focus = true } = {}) {
   else if (node.kind === 'candidate' && candidate) summary = diffText(candidate);
   else if (node.kind === 'test') { const checks = record?.checks || [], passed = checks.filter(check => check.status === 'passed').length; summary = record?.category === 'diagnostic' ? `Diagnostic process ${node.status || 'outcome unknown'}.` : `${statusNames[node.status] || 'Result unknown'}${checks.length ? ` · ${passed} of ${checks.length} checks passed` : ''}.`; }
   else if (node.kind === 'replay' && record) summary = `${record.frameCount || 0} saved frames · ${record.route?.length || 0} recorded inputs`;
+  else if (node.kind === 'record' && record?.files.length) summary = record.files.map(file => file.name).join(' · ');
+  else if (node.kind === 'operation') summary = 'Execution completed · exit code 0';
   else if (node.kind === 'delivery') summary = node.summary || '';
   $('operation-summary').textContent = summary; $('operation-summary').hidden = !summary;
   renderPreview(node, record, candidate); renderSources(node, record); renderExplanation(node, record, candidate); renderChecks(node, record); renderRelations(node);
@@ -344,7 +353,12 @@ function renderExplanation(node, record, candidate) {
   const host = clear($('operation-explanation'));
   if (node.kind === 'candidate' && candidate && !candidate.preview?.levelPath) explanationPart(host, 'Saved candidate', `${candidate.id} is bound to this record, but an interactive 3D preview has not been published for that snapshot.`);
   if (node.kind === 'note' && record) { explanationPart(host, 'Design goal', record.goal); explanationPart(host, 'Proposed change', record.change); explanationPart(host, 'Public explanation', record.reason); explanationPart(host, 'Checks the author intended to run', record.expectedChecks); if (record.retrospective) explanationPart(host, 'Recording context', 'This explanation was recorded retrospectively.'); }
-  else if (node.kind === 'operation' && record) { explanationPart(host, 'What this operation establishes', record.scope); if (record.inputCandidateId || record.outputCandidateId) explanationPart(host, 'Saved input and output', `Input: ${record.inputCandidateId || 'not associated'}. Output: ${record.outputCandidateId || 'not associated'}. These are recorded boundaries, not a reconstruction of intermediate in-memory states.`); }
+  else if (node.kind === 'operation' && record) { explanationPart(host, 'Execution status', record.scope); if (!record.resultNodeId) explanationPart(host, 'Test result', 'No separate test verdict is attached to this command. Completing a diagnostic does not mean the map passed.'); if (record.inputCandidateId || record.outputCandidateId) explanationPart(host, 'Saved input and output', record.inputCandidateId === record.outputCandidateId ? `The saved version remains ${record.inputCandidateId}. This operation did not save a new map version.` : `Input: ${record.inputCandidateId || 'not associated'}. Output: ${record.outputCandidateId || 'not associated'}.`); }
+  else if (node.kind === 'record' && record) {
+    explanationPart(host, 'Recorded step', record.scope);
+    explanationPart(host, 'Saved observations', record.facts.map(fact => `${fact.label}: ${fact.value}`));
+    explanationPart(host, 'Archived files', record.files.map(file => file.name));
+  }
   else if (node.kind === 'candidate' && candidate) { const parentEdges = state.data.edges.filter(edge => edge.to === node.id && edge.kind === 'revision'); if (parentEdges.some(edge => edge.inferred)) explanationPart(host, 'Version order', 'This parent relationship is inferred from historical file order. It is not an observed causal sequence.'); }
   else if (node.kind === 'replay' && record && !exactReplayFor(node, record, candidate)) explanationPart(host, 'Replay availability', 'This event has no published replay artifact that matches its saved candidate and contract. Its recorded metadata is available below.');
   if (node.kind === 'test') explanationPart(host, record?.category === 'diagnostic' ? 'Diagnostic scope' : 'Test scope', record?.scope || 'This result applies only to its recorded scope and associated input.');
@@ -367,6 +381,18 @@ function renderRelations(node) {
   const titles = { revision: ['Next saved versions', 'Previous saved versions'], tested: ['Tests of this version', 'Version tested'], cites: ['Cited by public notes', 'References cited in this note'], annotation: ['Public notes on this version', 'Version associated with this note'], supports: ['Supported records', 'Supporting records'], produced: ['Produced records', 'Producing operation'], replay: ['Replay evidence', 'Version replayed'] };
   for (const edge of edges) { const outgoing = edge.from === node.id, other = byId(outgoing ? edge.to : edge.from); if (!other) continue; const title = titles[edge.kind]?.[outgoing ? 0 : 1] || `${edge.kind} / ${outgoing ? 'outgoing' : 'incoming'}`; if (!groups.has(title)) groups.set(title, []); groups.get(title).push({ edge, other }); }
   const candidate = candidateFor(node), linkedNodes = new Set([...groups.values()].flat().map(item => item.other.id));
+  const record = recordFor(node);
+  for (const [field, title] of [['relatedNodeId', node.eventType === 'command.started' ? 'Command completion' : 'Command start'], ['startNodeId', 'Command start'], ['resultNodeId', 'Recorded test result']]) {
+    const other = byId(record?.[field]); if (other) groups.set(title, [{ edge: { kind: 'recorded-command-association', inferred: false }, other }]);
+  }
+  if (node.kind === 'note') {
+    const cited = state.data.records.filter(item => item.files.some(file => record.sources.some(source => source.split('/').at(-1) === file.name)) && byId(item.graphNodeId)?.order <= node.order);
+    if (cited.length) groups.set('Cited saved evidence', cited.map(item => ({ edge: { kind: 'explicit-filename-citation', inferred: false }, other: byId(item.graphNodeId) })));
+  }
+  if (node.kind === 'operation' && candidate) {
+    const saved = state.data.records.filter(item => item.candidateId === candidate.id && item.eventType === 'artifact.saved');
+    if (saved.length) groups.set(`Saved evidence for ${candidate.id}`, saved.map(item => ({ edge: { kind: 'recorded-candidate-association', inferred: false }, other: byId(item.graphNodeId) })));
+  }
   if (candidate && node.kind !== 'candidate' && !linkedNodes.has(candidate.graphNodeId)) { const other = byId(candidate.graphNodeId); if (other) groups.set('Recorded version', [{ edge: { kind: 'recorded-candidate-association', inferred: false }, other }]); }
   if (node.kind === 'candidate' && candidate) {
     const replays = state.data.replays.map(record => ({ record, other: byId(record.graphNodeId) })).filter(item => item.other && exactReplayFor(item.other, item.record, candidate));
