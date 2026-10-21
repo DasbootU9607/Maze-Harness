@@ -317,7 +317,7 @@ const screenshot = async (page, name) => {
     // Parent-page checks are kept below the embedded-player checks so errors remain attributable.
     runtimeRequests.length=0;
     await page.goto(base + 'process.html?' + new URLSearchParams({case: selected.id}));
-    await page.waitForSelector('.timeline-node');
+    await page.waitForSelector('.timeline-node:visible');
     if(modalUIOnly){
       const candidate=record.candidates.at(-1);report.layouts=[];
       await page.locator('.timeline-node[data-node-id="'+candidate.graphNodeId+'"]').click();

@@ -5,6 +5,7 @@ const vm = require('node:vm');
 const crypto = require('node:crypto');
 const assert = require('node:assert/strict');
 const { assertPublicPrivacy, assertAcyclic } = require('./export-authoring-process.cjs');
+const { assertEventCoverage } = require('./process-events.cjs');
 const { hash } = require('./site-content.cjs');
 const { validatePreviewFiles } = require('./process-previews.cjs');
 
@@ -25,7 +26,7 @@ function checkAuthoringProcess(site, entry, record) {
   const bytes = fs.readFileSync(file);
   assert.equal(hash(bytes), evidence.sha256, 'Process bytes SHA-256 mismatch');
   const process = JSON.parse(bytes.toString('utf8'));
-  assertPublicPrivacy(process); assertAcyclic(process.nodes, process.edges);
+  assertPublicPrivacy(process); assertAcyclic(process.nodes, process.edges); assertEventCoverage(process);
   assert.equal(process.schemaVersion, 1); assert.equal(process.caseId, entry.id); assert.equal(process.skill, entry.skill); assert.equal(process.title, entry.title);
   assert.equal(process.coverage.audit.failed, 0);
   const audit = process.coverage.audit, exceptions = audit.exceptions || [];
@@ -68,7 +69,7 @@ function checkAuthoringProcess(site, entry, record) {
     assert(test.checks.every(check => typeof check.name === 'string' && ['passed', 'failed', 'unknown', 'error'].includes(check.status)));
     if (test.candidateId) { assert(candidates.has(test.candidateId), 'Test references a missing candidate'); assert(hasEdge(candidates.get(test.candidateId).graphNodeId, test.graphNodeId, 'tested'), 'Missing tested edge'); }
   }
-  for (const [kind, list, key] of [['note', process.notes, 'noteId'], ['resource', process.resources, 'resourceId'], ['operation', process.operations || [], 'operationId'], ['replay', process.replays || [], 'replayId']]) {
+  for (const [kind, list, key] of [['note', process.notes, 'noteId'], ['resource', process.resources, 'resourceId'], ['operation', process.operations || [], 'operationId'], ['replay', process.replays || [], 'replayId'], ['record', process.records || [], 'recordId']]) {
     assert.equal(new Set(list.map(row => row.id)).size, list.length, 'Duplicate public record');
     for (const row of list) {
       const node = nodeFor(row, kind, key); assert(!occupiedNodes.has(row.graphNodeId)); occupiedNodes.add(row.graphNodeId);

@@ -78,8 +78,10 @@ async function branchRecords(page) {
     const lastNode = original.nodes.at(-1).id;
     await visit(lastNode);
     assert.equal(await page.locator('.timeline-node').count(),original.nodes.length,'All supporting records must remain available in the DOM');
-    assert.equal(await page.locator('.timeline-node:visible').count(),12,'Default view keeps only key events');
-    assert.equal(await page.locator('.timeline-group-toggle[aria-expanded="false"]').count(),8);
+    const keyCount = await page.locator('.timeline-node[data-key-event="true"]').count();
+    const groupCount = await page.locator('.timeline-group-toggle[aria-expanded="false"]').count();
+    assert.equal(await page.locator('.timeline-node:visible').count(),keyCount,'Default view keeps only key events');
+    assert(groupCount > 0, 'Supporting records begin in collapsible groups');
     const support = await page.locator('.timeline-node[data-key-event="false"]').first().getAttribute('data-node-id');
     const supportGroup = await page.locator('.timeline-node[data-node-id="'+support+'"]').evaluate(button=>button.closest('li').dataset.groupId);
     const groupToggle = page.locator('.timeline-group-toggle[data-group-id="'+supportGroup+'"]');
@@ -130,7 +132,7 @@ async function branchRecords(page) {
     const mobileDeepLink = await assertSelectedInView(page,lastNode);
     await visit(support);await page.reload();await assertSelectedInView(page,support);
     report.deepLinks = {desktopReload:desktopDeepLink,mobileReload:mobileDeepLink,supportingReload:supportingDeepLink,supportingMobileAutoExpand:true,sourceQueryDoesNotBorrowMap:true,keyboardNavigation:true};
-    report.grouping={defaultKeyEvents:12,supportingEvents:original.nodes.length-12,groups:8,clickExpandCollapse:true,keyboardGroupToggle:true,collapseRetainsSelectedRecord:true,diagnosticFailuresDisclosed:true};
+    report.grouping={defaultKeyEvents:keyCount,supportingEvents:original.nodes.length-keyCount,groups:groupCount,clickExpandCollapse:true,keyboardGroupToggle:true,collapseRetainsSelectedRecord:true,diagnosticFailuresDisclosed:true};
     report.realRecordBranchCount = 0;
 
     fixture = structuredClone(original);

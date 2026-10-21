@@ -5,6 +5,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const assert = require('node:assert/strict');
 const { hash } = require('./site-content.cjs');
+const { completeRecordedEvents } = require('./process-events.cjs');
 
 const read = file => JSON.parse(fs.readFileSync(file, 'utf8'));
 const statusOf = value => ['passed', 'failed', 'unknown', 'error'].includes(value) ? value : 'unknown';
@@ -116,9 +117,13 @@ function assertPublicPrivacy(document, identities = []) {
   };
   const strings = value => assert(Array.isArray(value) && value.every(item => typeof item === 'string'), 'Expected public text array');
   const flat = value => assert(Object.values(value).every(item => item === null || ['string', 'number', 'boolean'].includes(typeof item)), 'Nested unreviewed public data');
-  fields(document, ['schemaVersion', 'caseId', 'title', 'skill', 'finalCandidateId', 'summary', 'coverage', 'nodes', 'edges', 'candidates', 'tests', 'notes', 'resources', 'operations', 'replays'], 'process');
+  fields(document, ['schemaVersion', 'caseId', 'title', 'skill', 'finalCandidateId', 'summary', 'coverage', 'nodes', 'edges', 'candidates', 'tests', 'notes', 'resources', 'operations', 'replays', 'records'], 'process');
   for (const key of ['caseId', 'title', 'skill', 'finalCandidateId', 'summary']) assert(typeof document[key] === 'string', 'Invalid public text: ' + key);
-  fields(document.coverage, ['mode', 'audit', 'limitations', 'sources'], 'coverage');
+  fields(document.coverage, ['mode', 'audit', 'limitations', 'sources', 'events'], 'coverage');
+  if (document.coverage.events) {
+    fields(document.coverage.events, ['sourceCount', 'representedCount', 'sequenceSha256', 'types'], 'coverage.events');
+    for (const item of document.coverage.events.types) { fields(item, ['type', 'count'], 'coverage.events.type'); flat(item); }
+  }
   if (document.coverage.sources) {
     fields(document.coverage.sources, ['directOriginalCaseRead', 'originalCaseResourceIds', 'indirect', 'scope'], 'coverage.sources');
     assert(['recorded', 'not-recorded'].includes(document.coverage.sources.directOriginalCaseRead));
@@ -134,8 +139,8 @@ function assertPublicPrivacy(document, identities = []) {
   assert(Array.isArray(document.coverage.limitations) && document.coverage.limitations.every(value => typeof value === 'string'));
   for (const key of ['nodes', 'edges', 'candidates', 'tests', 'notes', 'resources']) assert(Array.isArray(document[key]), 'Missing public array: ' + key);
   for (const node of document.nodes) {
-    fields(node, ['id', 'kind', 'label', 'status', 'order', 'summary', 'details'], 'node');
-    const detailFields = { candidate: ['candidateId', 'cellsSha256', 'contractSha256', 'parentBasis'], test: ['testId', 'candidateId', 'binding', 'category'], note: ['noteId', 'candidateId', 'origin', 'retrospective'], resource: ['resourceId', 'displayPath', 'sha256', 'kind', 'delivery'], operation: ['operationId', 'candidateId', 'inputCandidateId', 'outputCandidateId', 'kind', 'binding'], replay: ['replayId', 'candidateId', 'binding', 'sourceKind'], delivery: ['caseId', 'candidateId', 'cellsSha256', 'contractSha256'] };
+    fields(node, ['id', 'kind', 'label', 'status', 'order', 'summary', 'details', 'eventId', 'eventType'], 'node');
+    const detailFields = { candidate: ['candidateId', 'cellsSha256', 'contractSha256', 'parentBasis'], test: ['testId', 'candidateId', 'binding', 'category'], note: ['noteId', 'candidateId', 'origin', 'retrospective'], resource: ['resourceId', 'displayPath', 'sha256', 'kind', 'delivery'], operation: ['operationId', 'candidateId', 'inputCandidateId', 'outputCandidateId', 'kind', 'binding'], replay: ['replayId', 'candidateId', 'binding', 'sourceKind'], delivery: ['caseId', 'candidateId', 'cellsSha256', 'contractSha256'], record: ['recordId', 'candidateId', 'eventType'] };
     assert(detailFields[node.kind], 'Invalid public node kind'); fields(node.details, detailFields[node.kind], 'node.details');
     assert(typeof node.label === 'string' && typeof node.summary === 'string');
     assert(Object.values(node.details).every(value => value === null || ['string', 'boolean', 'number'].includes(typeof value)), 'Nested data is not allowed in public node details');
@@ -168,7 +173,13 @@ function assertPublicPrivacy(document, identities = []) {
   for (const note of document.notes) { fields(note, ['id', 'graphNodeId', 'candidateId', 'label', 'goal', 'change', 'reason', 'sources', 'expectedChecks', 'origin', 'retrospective'], 'note'); assert(['label', 'goal', 'change', 'reason'].every(key => typeof note[key] === 'string')); assert(['sources', 'expectedChecks'].every(key => Array.isArray(note[key]) && note[key].every(value => typeof value === 'string'))); }
   for (const resource of document.resources) { fields(resource, ['id', 'graphNodeId', 'label', 'displayPath', 'basename', 'sha256', 'kind', 'origin', 'delivery'], 'resource'); flat(resource); }
   for (const key of ['operations', 'replays']) if (document[key] !== undefined) assert(Array.isArray(document[key]));
-  for (const operation of document.operations || []) { fields(operation, ['id', 'graphNodeId', 'candidateId', 'inputCandidateId', 'outputCandidateId', 'label', 'kind', 'status', 'binding', 'scope'], 'operation'); flat(operation); }
+  for (const operation of document.operations || []) { fields(operation, ['id', 'graphNodeId', 'candidateId', 'inputCandidateId', 'outputCandidateId', 'label', 'kind', 'status', 'binding', 'scope', 'startNodeId', 'resultNodeId', 'exitCode'], 'operation'); flat(operation); }
+  for (const record of document.records || []) {
+    fields(record, ['id', 'graphNodeId', 'candidateId', 'eventType', 'label', 'status', 'scope', 'relatedNodeId', 'resultNodeId', 'files', 'facts'], 'record');
+    flat(Object.fromEntries(Object.entries(record).filter(([key]) => !['files', 'facts'].includes(key))));
+    for (const file of record.files) { fields(file, ['name', 'sha256'], 'record.file'); flat(file); hashOf(file.sha256); }
+    for (const fact of record.facts) { fields(fact, ['label', 'value'], 'record.fact'); assert(typeof fact.label === 'string' && typeof fact.value === 'string'); }
+  }
   for (const replay of document.replays || []) { fields(replay, ['id', 'graphNodeId', 'candidateId', 'label', 'route', 'frameCount', 'binding', 'sourceKind', 'sourceSha256', 'cellsSha256', 'contractSha256', 'data', 'sha256'], 'replay'); flat(replay); }
   const serialized = JSON.stringify(document);
   assert(!/[A-Za-z]:[\\/]|\\\\(?:Users|home)|\/(?:Users|home|tmp|private|workspace|var|etc|opt|mnt|root)\//i.test(serialized), 'Public process contains a local absolute path');
@@ -330,6 +341,7 @@ function exportProcess(runDirectory, { caseId, expectedCellsSha256, expectedCont
       ...(auditExceptions.length ? ['Non-passed tests ' + auditExceptions.map(item => item.testId).join(', ') + ' have command-boundary association only. Their report input identity remains unknown; they are retained as production history, not acceptance evidence.'] : []),
       ...(manifest.limitations || []).map(value => clean(value))
     ] }, nodes, edges, candidates, tests, notes, resources, operations, replays };
+  completeRecordedEvents(document, events, { clean, savedFile, runDir });
   assertAcyclic(nodes, edges); assertPublicPrivacy(document, identities);
   return document;
 }

@@ -11,6 +11,7 @@ const { synchronize, parseArgs } = require('./sync-site.cjs');
 const { checkAuthoringProcess } = require('./check-site.cjs');
 const { validatePreviewFiles } = require('./process-previews.cjs');
 const { hash, read } = require('./site-content.cjs');
+const { assertEventCoverage } = require('./process-events.cjs');
 const root = path.resolve(__dirname, '..');
 const outputs = path.join(root, 'outputs');
 fs.mkdirSync(outputs, { recursive: true });
@@ -24,6 +25,7 @@ const get = flag => argv.includes(flag) ? path.resolve(argv[argv.indexOf(flag) +
 
 function syntheticRun() {
   const runDir = store.createRun({ root: temporary, id: 'synthetic-record-fixture', title: 'Record integrity fixture', task: 'ORIGINAL-HUMAN-MESSAGE must stay private', mode: 'observed' });
+  store.appendEvent(runDir, 'collector.started', { mode: 'synthetic-fixture' });
   const reference = path.join(temporary, 'skills/mazebench-fixture/references/mechanism-logic.md');
   write(reference, 'PRIVATE-RESOURCE-CONTENTS');
   store.recordResource(runDir, reference, { kind: 'mechanism' });
@@ -43,6 +45,13 @@ function syntheticRun() {
   const report = { overall: 'passed', replayPassed: true, fingerprints: { cells: final.cellsSha256, contract: final.contractSha256 }, checks: [{ name: 'synthetic_integrity', verdict: 'passed', private: 'PRIVATE-REPORT-CONTENTS' }], scope: 'Synthetic record fixture only; no gameplay was executed.' };
   const reportFile = path.join(temporary, 'private-report.json'); write(reportFile, report);
   store.addTest(runDir, { candidateId: final.id, status: 'passed', label: 'Synthetic report', scope: report.scope, binding: 'exact', bindingBasis: 'report-fingerprints-and-command-boundaries', inputSha256: final.sha256, inputCellsSha256: final.cellsSha256, inputContractSha256: final.contractSha256, processExitCode: 0, commandEventId: started.id, reportPath: store.saveArtifact(runDir, reportFile), reportSha256: hash(fs.readFileSync(reportFile)), checks: [{ name: 'synthetic_integrity', status: 'passed', detail: report }] });
+  const searchFile = path.join(temporary, 'search-fixture.json');
+  write(searchFile, { status: 'unsolved', expanded: 17, private: 'PRIVATE-REPORT-CONTENTS' });
+  const archive = store.saveArtifact(runDir, searchFile);
+  store.appendEvent(runDir, 'artifact.saved', { kind: 'search', artifactPath: archive }, { candidateId: first.id, evidenceRefs: [archive] });
+  store.appendEvent(runDir, 'build.saved', { files: [{ path: searchFile, artifactPath: archive, sha256: hash(fs.readFileSync(searchFile)) }] }, { candidateId: final.id, evidenceRefs: [archive] });
+  store.appendEvent(runDir, 'extension.observation', { private: 'PRIVATE-REPORT-CONTENTS', command: 'PRIVATE-COMMAND' });
+  store.appendEvent(runDir, 'run.finished', { status: 'complete' });
   // The path label is synthetic metadata; its artifact remains inside the fixture.
   const index = read(path.join(runDir, 'index.json'));
   index.resources[0].path = 'C:/Users/PersonalUser/.codex/skills/mazebench-fixture/references/mechanism-logic.md';
@@ -55,6 +64,23 @@ try {
   const fixture = syntheticRun();
   const options = { caseId: 'authored-process-fixture', title: fixture.spec.title, skill: 'fixture', expectedCellsSha256: fixture.final.cellsSha256, expectedContractSha256: fixture.final.contractSha256 };
   const doc = exportProcess(fixture.runDir, options);
+  const events = fs.readFileSync(path.join(fixture.runDir, 'events.jsonl'), 'utf8').trim().split(/\r?\n/).map(JSON.parse);
+  assertEventCoverage(doc, events);
+  for (const event of events) assert.equal(doc.nodes.filter(node => node.eventId === event.id).length, 1, 'Every source event has exactly one public node');
+  assert(doc.records.some(record => record.eventType === 'extension.observation' && record.status === 'neutral'), 'Unrecognized event types must remain visible');
+  assert(doc.records.some(record => record.eventType === 'build.saved' && record.files.length === 1));
+  const archiveRecord = doc.records.find(record => record.eventType === 'artifact.saved');
+  assert.deepEqual(archiveRecord.facts, [{ label: 'Recorded search outcome', value: 'unsolved' }, { label: 'Expanded states', value: '17' }]);
+  for (const event of events.filter(event => event.type === 'command.started')) {
+    const node = doc.nodes.find(node => node.eventId === event.id), row = doc.records.find(row => row.graphNodeId === node.id);
+    assert(row.relatedNodeId, 'A start must link to its recorded completion');
+  }
+  const missing = structuredClone(doc); missing.nodes = missing.nodes.filter(node => node.eventType !== 'command.started');
+  assert.throws(() => assertEventCoverage(missing), /missing/);
+  const duplicate = structuredClone(doc); duplicate.nodes.push(structuredClone(duplicate.nodes[0]));
+  assert.throws(() => assertEventCoverage(duplicate), /Duplicate/);
+  const reordered = structuredClone(doc); reordered.nodes[0].eventType = 'different.type';
+  assert.throws(() => assertEventCoverage(reordered), /identities differ/);
   assert.equal(doc.candidates.length, 2);
   assert.equal(doc.tests.length, 2);
   assert(doc.tests.some(test => test.category === 'diagnostic' && test.status === 'failed'));
@@ -188,7 +214,7 @@ try {
     synchronize({}, siteRoot);
     assert.deepEqual(read(catalogFile).cases.find(item => item.id === entry.id).process, entry.process, 'Unrelated synchronization preserves an existing process');
   }
-  console.log(JSON.stringify({ passed: true, syntheticPrivacyAndIntegrity: true, multiSpecMarker: true, realRun: !!real, websiteIntegration: !!engine }));
+  console.log(JSON.stringify({ passed: true, syntheticPrivacyAndIntegrity: true, everySourceEventRepresented: true, missingDuplicateAndChangedEventsRejected: true, multiSpecMarker: true, realRun: !!real, websiteIntegration: !!engine }));
 } finally {
   const relative = path.relative(outputs, path.resolve(temporary));
   assert(relative && !relative.startsWith('..') && !path.isAbsolute(relative), 'Temporary cleanup escaped the intended outputs directory');
