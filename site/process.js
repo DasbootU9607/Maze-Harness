@@ -1,4 +1,5 @@
 import { loadCatalog, shell, playUrl, showError } from './ui.js';
+import { createOrbitTimeline } from './process-orbit.js';
 
 const $ = id => document.getElementById(id);
 const state = { data: null, catalog: null, entry: null, skill: null, nodes: [], selectedId: null, candidateId: null, previewCandidateId: null, previewKey: null, previewMode: null, previewUrl: null, previewLabel: null, expanded: false, returnFocus: null, previousOverflow: '', revisionBranches: [], keyNodeIds: new Set(), timelineGroups: [], nodeGroups: new Map() };
@@ -93,6 +94,40 @@ function diffText(candidate) {
   const changed = diff.changed?.length || 0, added = diff.added?.length || 0, removed = diff.removed?.length || 0;
   return changed || added || removed ? `${changed} changed / ${added} added / ${removed} removed vs ${parent}` : `Cells unchanged from ${parent}; declarations may differ`;
 }
+function orbitSummary(node) {
+  const record = recordFor(node), candidate = candidateFor(node);
+  if (node.kind === 'resource') return `${record?.basename || node.label} · ${record?.delivery === 'snapshot' || record?.origin === 'historical' ? 'Saved source snapshot' : 'Recorded file read'}`;
+  if (node.kind === 'candidate' && candidate) return diffText(candidate);
+  if (node.kind === 'note') return record?.change || record?.goal || node.summary || '';
+  if (node.kind === 'test') {
+    if (record?.category === 'diagnostic') return `Diagnostic process ${node.status || 'outcome unknown'}${candidate ? ` · ${candidate.id}` : ''}. ${node.summary || record?.scope || ''}`;
+    const checks = record?.checks || [], passed = checks.filter(check => check.status === 'passed').length;
+    return `${statusNames[node.status] || 'Result unknown'}${candidate ? ` · ${candidate.id}` : ''}${checks.length ? ` · ${passed} of ${checks.length} checks passed` : ''}. ${record?.scope || ''}`;
+  }
+  if (node.kind === 'replay') return `${record?.route?.length || 0} recorded inputs · ${record?.frameCount || 0} saved frames${candidate ? ` · ${candidate.id}` : ''}`;
+  return node.summary || record?.scope || nodeTitle(node);
+}
+function installOrbitTimeline() {
+  createOrbitTimeline({
+    opener: $('expand-timeline'),
+    getData: () => ({
+      title: state.data.title || state.entry.title,
+      selectedId: state.selectedId,
+      events: state.nodes.map(node => ({
+        id: node.id, kind: node.kind, category: nodeCategory(node), label: nodeAction(node),
+        summary: short(orbitSummary(node).replace(/\s+/g, ' '), 190),
+        ordinal: node.order ?? node.sourceIndex + 1, status: node.status || 'neutral',
+        statusLabel: node.status === 'failed' && (recordFor(node)?.category === 'diagnostic' || node.eventType === 'command.completed') ? 'Process failed' : statusNames[node.status] || '',
+        isKey: state.keyNodeIds.has(node.id)
+      }))
+    }),
+    onSelect: (id, { details = false } = {}) => {
+      selectNode(id, { focus: details });
+      if (details) $('operation-detail').scrollIntoView({ block: 'nearest', behavior: 'instant' });
+    }
+  });
+  $('expand-timeline').disabled = false;
+}
 function classifyTimeline() {
   const keyIds = new Set(), seenReadKinds = new Set(), formalTests = new Map(); let firstNote = false;
   for (const node of state.nodes) {
@@ -151,6 +186,7 @@ async function start() {
   const requested = byId(query.get('node')), requestedCandidate = state.data.candidates.find(candidate => candidate.id === query.get('candidate'));
   const firstCandidate = state.data.candidates.find(candidate => candidate.preview?.levelPath) || state.data.candidates[0];
   selectNode(requested?.id || requestedCandidate?.graphNodeId || firstCandidate?.graphNodeId || state.nodes[0]?.id, { initial: true, focus: Boolean(requested || requestedCandidate) });
+  installOrbitTimeline();
 }
 
 function renderTimeline() {

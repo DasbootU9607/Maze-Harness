@@ -134,6 +134,8 @@ The lighter diagram check verifies collapsed supporting-event groups, direct-lin
 
 The event browser check visits every process case, selects every recorded event, verifies source-sequence coverage, and checks expand-all, collapse, deep links, and mobile access. Add `--base-url URL` to compare the deployed records with the locally audited exports.
 
+Every process timeline also offers **Expand timeline**, an interactive arc view of the same recorded events. Wheel, drag, touch, arrow keys and a position slider move the points along the arc while their upright summary cards travel with them. Key events and all records use the existing classification and source order; the view stops at the first and last record instead of looping or inventing events. Selection updates the underlying event details and deep link, and **View event details** returns to that record. Reduced-motion preferences disable animated interpolation. This view loads no maze player until the separate map preview is expanded. `node scripts/test-process-orbit.cjs --engine PATH_TO_ENGINE` exercises the shared arc view across the published process cases; `--base-url URL` checks a deployment.
+
 ## Refreshing the engine bundle
 
 Routine skill and example additions use the publisher above. Refresh the complete engine bundle only when intentionally updating its pinned version:
