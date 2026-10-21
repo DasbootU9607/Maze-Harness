@@ -6,6 +6,7 @@ const path = require('node:path');
 const assert = require('node:assert/strict');
 const { hash } = require('./site-content.cjs');
 const { completeRecordedEvents } = require('./process-events.cjs');
+const { explainProcess } = require('./process-explanations.cjs');
 
 const read = file => JSON.parse(fs.readFileSync(file, 'utf8'));
 const statusOf = value => ['passed', 'failed', 'unknown', 'error'].includes(value) ? value : 'unknown';
@@ -117,7 +118,7 @@ function assertPublicPrivacy(document, identities = []) {
   };
   const strings = value => assert(Array.isArray(value) && value.every(item => typeof item === 'string'), 'Expected public text array');
   const flat = value => assert(Object.values(value).every(item => item === null || ['string', 'number', 'boolean'].includes(typeof item)), 'Nested unreviewed public data');
-  fields(document, ['schemaVersion', 'caseId', 'title', 'skill', 'finalCandidateId', 'summary', 'coverage', 'nodes', 'edges', 'candidates', 'tests', 'notes', 'resources', 'operations', 'replays', 'records'], 'process');
+  fields(document, ['schemaVersion', 'caseId', 'title', 'skill', 'finalCandidateId', 'summary', 'coverage', 'nodes', 'edges', 'candidates', 'tests', 'notes', 'resources', 'operations', 'replays', 'records', 'explanations'], 'process');
   for (const key of ['caseId', 'title', 'skill', 'finalCandidateId', 'summary']) assert(typeof document[key] === 'string', 'Invalid public text: ' + key);
   fields(document.coverage, ['mode', 'audit', 'limitations', 'sources', 'events'], 'coverage');
   if (document.coverage.events) {
@@ -181,6 +182,13 @@ function assertPublicPrivacy(document, identities = []) {
     for (const fact of record.facts) { fields(fact, ['label', 'value'], 'record.fact'); assert(typeof fact.label === 'string' && typeof fact.value === 'string'); }
   }
   for (const replay of document.replays || []) { fields(replay, ['id', 'graphNodeId', 'candidateId', 'label', 'route', 'frameCount', 'binding', 'sourceKind', 'sourceSha256', 'cellsSha256', 'contractSha256', 'data', 'sha256'], 'replay'); flat(replay); }
+  for (const explanation of document.explanations || []) {
+    fields(explanation, ['nodeId', 'basis', 'headline', 'action', 'result', 'decision', 'badge', 'evidence', 'observations', 'checks'], 'explanation');
+    for (const key of ['nodeId', 'basis', 'headline', 'action', 'result', 'decision', 'badge']) assert(typeof explanation[key] === 'string');
+    strings(explanation.evidence);
+    for (const fact of explanation.observations) { fields(fact, ['label', 'value'], 'explanation.observation'); assert(typeof fact.label === 'string' && typeof fact.value === 'string'); }
+    for (const check of explanation.checks) { fields(check, ['name', 'verdict', 'meaning', 'expected', 'observed'], 'explanation.check'); assert(Object.values(check).every(value => typeof value === 'string')); }
+  }
   const serialized = JSON.stringify(document);
   assert(!/[A-Za-z]:[\\/]|\\\\(?:Users|home)|\/(?:Users|home|tmp|private|workspace|var|etc|opt|mnt|root)\//i.test(serialized), 'Public process contains a local absolute path');
   assert(!/\b(?:sk-[A-Za-z0-9_-]{12,}|gh[pousr]_[A-Za-z0-9_]+|github_pat_[A-Za-z0-9_]+|AKIA[A-Z0-9]{16})\b/.test(serialized), 'Public process contains a credential-like value');
@@ -342,6 +350,7 @@ function exportProcess(runDirectory, { caseId, expectedCellsSha256, expectedCont
       ...(manifest.limitations || []).map(value => clean(value))
     ] }, nodes, edges, candidates, tests, notes, resources, operations, replays };
   completeRecordedEvents(document, events, { clean, savedFile, runDir });
+  explainProcess(document, { index, events, savedFile, runDir });
   assertAcyclic(nodes, edges); assertPublicPrivacy(document, identities);
   return document;
 }
