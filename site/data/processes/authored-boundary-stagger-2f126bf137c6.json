@@ -5346,5 +5346,1287 @@
       "files": [],
       "facts": []
     }
+  ],
+  "explanations": [
+    {
+      "nodeId": "event-e000001",
+      "basis": "saved-evidence-review",
+      "headline": "Start authoring run",
+      "action": "Start authoring run.",
+      "result": "The recorder opened this authoring run. This does not establish an empty prior conversation context.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r001",
+      "basis": "saved-evidence-review",
+      "headline": "mechanism-logic.md",
+      "action": "Read mazebench-boundary-stagger/references/mechanism-logic.md. Extracted functional roles, contact relationships and preparation dependencies to realize in a new layout.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r002",
+      "basis": "saved-evidence-review",
+      "headline": "SKILL.md",
+      "action": "Read mazebench-boundary-stagger/SKILL.md. Authoring workflow, supported mechanism and required delivery checks.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r003",
+      "basis": "saved-evidence-review",
+      "headline": "complex-validation.md",
+      "action": "Read mazebench-boundary-stagger/references/complex-validation.md. Verification rules or implementations defining what the checks can and cannot establish.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r003",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r004",
+      "basis": "saved-evidence-review",
+      "headline": "planning-depth.md",
+      "action": "Read mazebench-boundary-stagger/references/planning-depth.md. Guidance for connected stages, usable recovery and avoiding trivial completions.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r004",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r005",
+      "basis": "saved-evidence-review",
+      "headline": "design-template.json",
+      "action": "Read mazebench-boundary-stagger/references/design-template.json. The design contract scaffold; reading it does not establish that a complete reference map was copied.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r005"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r006",
+      "basis": "saved-evidence-review",
+      "headline": "mechanism-logic.md",
+      "action": "Read mazebench-boundary-stagger/references/mechanism-logic.md. Extracted functional roles, contact relationships and preparation dependencies to realize in a new layout.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r006",
+        "note-n001",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r007",
+      "basis": "saved-evidence-review",
+      "headline": "complex-runtime.cjs",
+      "action": "Read mazebench-boundary-stagger/scripts/complex-runtime.cjs. Runtime implementation used to inspect motion, contact and supported verification behavior.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r007"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r008",
+      "basis": "saved-evidence-review",
+      "headline": "verify-complex.cjs",
+      "action": "Read mazebench-boundary-stagger/scripts/verify-complex.cjs. Verification rules or implementations defining what the checks can and cannot establish.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r008"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "note-n001",
+      "basis": "saved-evidence-review",
+      "headline": "Build a new three-stage boundary-release room with a recoverable access guard, a lateral latch and a vertical exit bolt.",
+      "action": "Use a vertical preparation guard to occupy both possible right-push faces of an L latch. Its downward parking should expose the latch input; lateral latch displacement should detach a roof-blocked contact cluster; lifting the bolt should open the gem passage.",
+      "result": "This introduces a reusable floor parking bay and a face-access dependency rather than reproducing the official disposal sequence or its staircase silhouettes. Every stage will be checked against complete-goal bypasses and first-opportunity exclusions.",
+      "decision": "Planned checks: ordinary complete-goal replay; all three necessary roles; guard-down before latch-right; latch-right before bolt-up; bolt-up before goal; same roof removal enables blocked cluster push and bypasses latch-right.",
+      "badge": "",
+      "evidence": [
+        "note-n001",
+        "resource-r006",
+        "resource-r004",
+        "resource-r003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000011",
+      "basis": "saved-evidence-review",
+      "headline": "Start: author-first-layout",
+      "action": "Start: author-first-layout.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000011",
+        "operation-e000011"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "candidate-v001",
+      "basis": "saved-evidence-review",
+      "headline": "No solution; unintended block recruitment",
+      "action": "Create a guard-parking, latch-release and bolt-lift sequence.",
+      "result": "Search exhausted 1,052 action states without a solution. The probe shows M0 moving M1 sideways with it, carrying the bolt toward the eastern dead end.",
+      "decision": "Move the lower latch prong to the upper-right corner and provide eastward clearance. This repairs the obstruction before testing necessity.",
+      "badge": "",
+      "evidence": [
+        "event-e000018",
+        "event-e000019",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000011",
+      "basis": "saved-evidence-review",
+      "headline": "author-first-layout",
+      "action": "author-first-layout. Saved input: none; output: v001.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "The subsequent author note states: The official solver exhausted 1,052 action states without a solution. Ordinary probing shows that the lower prong recruits the bolt during each rightward latch push, carrying it into the eastern dead end instead of detaching it. The upper prong avoids that unwanted lateral contact while retaining roof restriction and a blocked leftward shift.",
+      "badge": "",
+      "evidence": [
+        "operation-e000011",
+        "candidate-v001",
+        "event-e000011",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000014",
+      "basis": "saved-evidence-review",
+      "headline": "Start: solve-first-layout",
+      "action": "Start: solve-first-layout.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000014",
+        "candidate-v001",
+        "test-diagnostic-e000014"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-diagnostic-e000014",
+      "basis": "saved-evidence-review",
+      "headline": "Search exhausted without a solution",
+      "action": "Run the complete-goal solver on v001.",
+      "result": "The search report says unsolved after 1,052 states. The solve script then exited with code 1 because it required a solved result.",
+      "decision": "Inspect ordinary pushes to locate the obstruction; the later probe and design note identify unwanted lateral recruitment of the bolt.",
+      "badge": "No solution",
+      "evidence": [
+        "event-e000018",
+        "event-e000019",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000016",
+      "basis": "saved-evidence-review",
+      "headline": "Start: inspect-first-layout-obstruction",
+      "action": "Start: inspect-first-layout-obstruction.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000016",
+        "candidate-v001",
+        "operation-e000016"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000016",
+      "basis": "saved-evidence-review",
+      "headline": "Diagnostic executed; obstruction observed",
+      "action": "Replay selected ordinary pushes on v001 to inspect contact between the latch and bolt.",
+      "result": "Exit code 0 means the diagnostic completed. Its saved observations show M0 and M1 translating together at inputs 10 and 11; completing a diagnostic does not mean the map passed.",
+      "decision": "The subsequent author note uses this observation to change the latch shape.",
+      "badge": "",
+      "evidence": [
+        "event-e000019",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000018",
+      "basis": "saved-evidence-review",
+      "headline": "Save search report",
+      "action": "Save search report. Saved files: search-01.json.",
+      "result": "The recorder archived this file. Saving evidence does not itself establish a passing test.",
+      "decision": "Archiving preserves evidence and file identity. It does not rerun the test or establish that the map passed.",
+      "badge": "",
+      "evidence": [
+        "event-e000018",
+        "candidate-v001"
+      ],
+      "observations": [
+        {
+          "label": "Recorded search outcome",
+          "value": "unsolved"
+        },
+        {
+          "label": "Expanded states",
+          "value": "1052"
+        }
+      ],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000019",
+      "basis": "saved-evidence-review",
+      "headline": "Save diagnostic report",
+      "action": "Save diagnostic report. Saved files: probe-01.json.",
+      "result": "The recorder archived this file. Saving evidence does not itself establish a passing test.",
+      "decision": "Archiving preserves evidence and file identity. It does not rerun the test or establish that the map passed.",
+      "badge": "",
+      "evidence": [
+        "event-e000019",
+        "candidate-v001"
+      ],
+      "observations": [
+        {
+          "label": "Input observations",
+          "value": "19"
+        },
+        {
+          "label": "Groups translated at input 10",
+          "value": "M0, M1"
+        },
+        {
+          "label": "Groups translated at input 11",
+          "value": "M0, M1"
+        }
+      ],
+      "checks": []
+    },
+    {
+      "nodeId": "note-n002",
+      "basis": "saved-evidence-review",
+      "headline": "Repair the unsolved layout while retaining the guard-parking, release and bolt-lift dependency.",
+      "action": "Move the latch's lower prong to its upper-right corner and supply its eastward swept clearance. Move the matched roof stops to (7,4) and (8,3).",
+      "result": "The official solver exhausted 1,052 action states without a solution. Ordinary probing shows that the lower prong recruits the bolt during each rightward latch push, carrying it into the eastern dead end instead of detaching it. The upper prong avoids that unwanted lateral contact while retaining roof restriction and a blocked leftward shift.",
+      "decision": "Planned checks: official solver finds complete solution; rightward latch displacement is independent of the bolt; all three declared first-opportunity dependencies; matched boundary control.",
+      "badge": "",
+      "evidence": [
+        "note-n002",
+        "candidate-v001",
+        "resource-r006"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000021",
+      "basis": "saved-evidence-review",
+      "headline": "Start: revise-latch-clearance",
+      "action": "Start: revise-latch-clearance.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000021",
+        "candidate-v001",
+        "operation-e000021"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "candidate-v002",
+      "basis": "saved-evidence-review",
+      "headline": "Solvable; required upward stage bypassed",
+      "action": "Change four cells to separate lateral latch movement from the bolt.",
+      "result": "Search found a legal 17-input completion after expanding 511 states. The route pushes the bolt downward and uses the northeast shoulder, omitting the required upward lift.",
+      "decision": "Close the two northeast floor cells so the intended passage becomes the connection to the gem.",
+      "badge": "",
+      "evidence": [
+        "event-e000026",
+        "test-diagnostic-e000024",
+        "note-n003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000021",
+      "basis": "saved-evidence-review",
+      "headline": "revise-latch-clearance",
+      "action": "revise-latch-clearance. Saved input: v001; output: v002.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "The subsequent author note states: Official search found and ordinary replay confirmed a 17-input completion with a downward bolt push. The newly free top of the bolt allowed the player to bypass via the open northeast shoulder. Closing those unused cells makes the intended y=7 passage the only connection to the gem branch.",
+      "badge": "",
+      "evidence": [
+        "operation-e000021",
+        "candidate-v002",
+        "event-e000021",
+        "note-n003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000024",
+      "basis": "saved-evidence-review",
+      "headline": "Start: solve-revised-layout",
+      "action": "Start: solve-revised-layout.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000024",
+        "candidate-v002",
+        "test-diagnostic-e000024"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-diagnostic-e000024",
+      "basis": "saved-evidence-review",
+      "headline": "Solution found; required stage missing",
+      "action": "Solve v002, replay the route, then check that every declared stage occurs.",
+      "result": "The solver found a 17-input solution. The later assertion failed with Missing stage lift-passage-bolt: the route used a downward bolt push. Exit code 1 belongs to the combined script, not an unsolved search.",
+      "decision": "Revise the northeast shoulder to remove this mechanism bypass. The solved report is retained separately.",
+      "badge": "Stage missing",
+      "evidence": [
+        "event-e000026",
+        "note-n003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000026",
+      "basis": "saved-evidence-review",
+      "headline": "Save search report",
+      "action": "Save search report. Saved files: search-02.json.",
+      "result": "The recorder archived this file. Saving evidence does not itself establish a passing test.",
+      "decision": "Archiving preserves evidence and file identity. It does not rerun the test or establish that the map passed.",
+      "badge": "",
+      "evidence": [
+        "event-e000026",
+        "candidate-v002"
+      ],
+      "observations": [
+        {
+          "label": "Recorded search outcome",
+          "value": "solved"
+        },
+        {
+          "label": "Expanded states",
+          "value": "511"
+        },
+        {
+          "label": "Solution inputs",
+          "value": "17"
+        }
+      ],
+      "checks": []
+    },
+    {
+      "nodeId": "note-n003",
+      "basis": "saved-evidence-review",
+      "headline": "Eliminate the complete-goal bypass that avoids lifting the passage bolt.",
+      "action": "Close the two unused northeast cells (9,6) and (10,6), which are no longer needed after relocating the latch prong.",
+      "result": "Official search found and ordinary replay confirmed a 17-input completion with a downward bolt push. The newly free top of the bolt allowed the player to bypass via the open northeast shoulder. Closing those unused cells makes the intended y=7 passage the only connection to the gem branch.",
+      "decision": "Planned checks: bolt-up before the complete gem goal; ordinary replay of the complete revised route; all first-opportunity and boundary controls.",
+      "badge": "",
+      "evidence": [
+        "note-n003",
+        "candidate-v002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000028",
+      "basis": "saved-evidence-review",
+      "headline": "Start: close-northeast-bypass",
+      "action": "Start: close-northeast-bypass.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000028",
+        "candidate-v002",
+        "operation-e000028"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "candidate-v003",
+      "basis": "saved-evidence-review",
+      "headline": "21-input solution; ready to bind stage evidence",
+      "action": "Replace floor at (9,6) and (10,6) with walls to close the bypass.",
+      "result": "Search found a 21-input solution after expanding 462 states. The search report belongs to v003 even though its archive event was recorded later.",
+      "decision": "Keep these cells. Save the route and stage inputs 9, 11 and 17, with their next usable stances, as v004.",
+      "badge": "",
+      "evidence": [
+        "event-e000052",
+        "operation-e000031",
+        "candidate-v004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000028",
+      "basis": "saved-evidence-review",
+      "headline": "close-northeast-bypass",
+      "action": "close-northeast-bypass. Saved input: v002; output: v003.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "operation-e000028",
+        "candidate-v003",
+        "event-e000028"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000031",
+      "basis": "saved-evidence-review",
+      "headline": "Start: solve-and-bind-stage-witnesses",
+      "action": "Start: solve-and-bind-stage-witnesses.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000031",
+        "candidate-v003",
+        "operation-e000031"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "candidate-v004",
+      "basis": "saved-evidence-review",
+      "headline": "Same layout; executable verification completed",
+      "action": "Keep v003 geometry and add the witness and stage-access declarations. This is a contract revision, not a fourth geometry.",
+      "result": "All 20 formal checks passed. Saved-build replay passed 3 checks. Browser play matched all 21 inputs; the first Undo assumption failed, then 4 checks passed in the corrected pre-collection setup.",
+      "decision": "Finalize the three-stage design after the scoped checks. No fixed four-version rule or measured human-difficulty threshold is recorded.",
+      "badge": "",
+      "evidence": [
+        "test-t001",
+        "test-t002",
+        "test-t003",
+        "note-n005",
+        "test-t004",
+        "note-n004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000031",
+      "basis": "saved-evidence-review",
+      "headline": "solve-and-bind-stage-witnesses",
+      "action": "solve-and-bind-stage-witnesses. Saved input: v003; output: v004.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "The subsequent author note states: The formal complex verifier reports passed on all 20 checks, including first-opportunity dependencies, necessary-role exclusions and the matched roof intervention. A legal witness uses two downward guard pushes, two eastward latch pushes and one upward bolt push. This is author-side structural evidence, not an independent model evaluation or measured human difficulty.",
+      "badge": "",
+      "evidence": [
+        "operation-e000031",
+        "candidate-v004",
+        "event-e000031",
+        "note-n004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000034",
+      "basis": "saved-evidence-review",
+      "headline": "Start: formal-complex-verification-01",
+      "action": "Start: formal-complex-verification-01.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000034",
+        "candidate-v004",
+        "operation-e000034"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000034",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; formal-complex-verification-01",
+      "action": "formal-complex-verification-01. Saved input: v004; output: v004.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict. Report interpretation: The report is passed; 20 of 20 individual checks passed.",
+      "decision": "The subsequent author note states: The formal complex verifier reports passed on all 20 checks, including first-opportunity dependencies, necessary-role exclusions and the matched roof intervention. A legal witness uses two downward guard pushes, two eastward latch pushes and one upward bolt push. This is author-side structural evidence, not an independent model evaluation or measured human difficulty.",
+      "badge": "",
+      "evidence": [
+        "operation-e000034",
+        "candidate-v004",
+        "test-t001",
+        "event-e000034",
+        "note-n004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t001",
+      "basis": "saved-evidence-review",
+      "headline": "formal-complex-verification-01",
+      "action": "Execute formal-complex-verification-01 against v004.",
+      "result": "The report is passed; 20 of 20 individual checks passed.",
+      "decision": "The subsequent author note states: The formal complex verifier reports passed on all 20 checks, including first-opportunity dependencies, necessary-role exclusions and the matched roof intervention. A legal witness uses two downward guard pushes, two eastward latch pushes and one upward bolt push. This is author-side structural evidence, not an independent model evaluation or measured human difficulty.",
+      "badge": "",
+      "evidence": [
+        "test-t001",
+        "candidate-v004",
+        "note-n004"
+      ],
+      "observations": [
+        {
+          "label": "Saved goal search",
+          "value": "solved"
+        },
+        {
+          "label": "Solution inputs",
+          "value": "21"
+        },
+        {
+          "label": "Expanded search states",
+          "value": "462"
+        },
+        {
+          "label": "Search limit",
+          "value": "100000"
+        },
+        {
+          "label": "Recorded ordinary replay",
+          "value": "passed"
+        }
+      ],
+      "checks": [
+        {
+          "name": "blocked_M1_U_step_0",
+          "verdict": "passed",
+          "meaning": "At the declared state, check the actual pushing stance or whole-group push obstruction using ordinary physics.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "blocked_M0_R_step_0",
+          "verdict": "passed",
+          "meaning": "At the declared state, check the actual pushing stance or whole-group push obstruction using ordinary physics.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_access_park-input-guard",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_access_detach-latch",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_access_lift-passage-bolt",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "initial_frozen_walking",
+          "verdict": "passed",
+          "meaning": "Keep all objects fixed and search for a walking-only completion from the initial state.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze_M0",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze_M1",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze_M2",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "forbid_mechanism",
+          "verdict": "passed",
+          "meaning": "Forbid the declared mechanism event and search for the complete objective. A solution is a mechanism bypass.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_park_to_release",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_park_to_release",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_release_to_open",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_release_to_open",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_open_to_goal",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_open_to_goal",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "at_most_one_push_then_walk",
+          "verdict": "passed",
+          "meaning": "Restrict the allowed number of object-moving inputs and search for a complete goal, testing whether a simpler completion exists.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "one_same_direction_translation_process",
+          "verdict": "passed",
+          "meaning": "Allow object movement in only one compass direction and search for completion.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "first_mechanism_then_walking_only_all_histories",
+          "verdict": "passed",
+          "meaning": "Search all supported first-use histories for a completion requiring no further object movement.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "matched_boundary_roof-release",
+          "verdict": "passed",
+          "meaning": "Remove only the declared boundary at a matched stance. Test that the blocked push becomes possible and the excluded preparation can be bypassed; record walking side effects.",
+          "expected": "solved",
+          "observed": "solved"
+        }
+      ]
+    },
+    {
+      "nodeId": "resource-r009",
+      "basis": "saved-evidence-review",
+      "headline": "design.md",
+      "action": "Read mazebench-boundary-stagger/references/design.md. Supporting design or reference material identified by the saved filename and fingerprint.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r009"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r010",
+      "basis": "saved-evidence-review",
+      "headline": "browser-check.cjs",
+      "action": "Read mazebench-boundary-stagger/scripts/browser-check.cjs. Verification rules or implementations defining what the checks can and cannot establish.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r010",
+        "note-n005"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000039",
+      "basis": "saved-evidence-review",
+      "headline": "Start: build-verified-rooflock-draft",
+      "action": "Start: build-verified-rooflock-draft.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000039",
+        "candidate-v004",
+        "operation-e000039"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000039",
+      "basis": "saved-evidence-review",
+      "headline": "build-verified-rooflock-draft",
+      "action": "build-verified-rooflock-draft. Saved input: v004; output: v004.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "The subsequent author note states: The formal complex verifier reports passed on all 20 checks, including first-opportunity dependencies, necessary-role exclusions and the matched roof intervention. A legal witness uses two downward guard pushes, two eastward latch pushes and one upward bolt push. This is author-side structural evidence, not an independent model evaluation or measured human difficulty.",
+      "badge": "",
+      "evidence": [
+        "operation-e000039",
+        "candidate-v004",
+        "event-e000039",
+        "note-n004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000041",
+      "basis": "saved-evidence-review",
+      "headline": "Start: recorded operation",
+      "action": "Start: recorded operation.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000041",
+        "candidate-v004",
+        "operation-e000041"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000041",
+      "basis": "saved-evidence-review",
+      "headline": "Local preview service started",
+      "action": "Local preview service started. Saved input: v004; output: v004.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "The subsequent author note states: The formal complex verifier reports passed on all 20 checks, including first-opportunity dependencies, necessary-role exclusions and the matched roof intervention. A legal witness uses two downward guard pushes, two eastward latch pushes and one upward bolt push. This is author-side structural evidence, not an independent model evaluation or measured human difficulty.",
+      "badge": "",
+      "evidence": [
+        "operation-e000041",
+        "candidate-v004",
+        "event-e000041",
+        "note-n004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000043",
+      "basis": "saved-evidence-review",
+      "headline": "Start: saved-build-ordinary-replay",
+      "action": "Start: saved-build-ordinary-replay.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000043",
+        "candidate-v004",
+        "operation-e000043"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000043",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; saved-build-ordinary-replay",
+      "action": "saved-build-ordinary-replay. Saved input: v004; output: v004.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict. Report interpretation: The report is passed; 3 of 3 individual checks passed.",
+      "decision": "The subsequent author note states: The formal complex verifier reports passed on all 20 checks, including first-opportunity dependencies, necessary-role exclusions and the matched roof intervention. A legal witness uses two downward guard pushes, two eastward latch pushes and one upward bolt push. This is author-side structural evidence, not an independent model evaluation or measured human difficulty.",
+      "badge": "",
+      "evidence": [
+        "operation-e000043",
+        "candidate-v004",
+        "test-t002",
+        "event-e000043",
+        "note-n004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t002",
+      "basis": "saved-evidence-review",
+      "headline": "saved-build-ordinary-replay",
+      "action": "Execute saved-build-ordinary-replay against v004.",
+      "result": "The report is passed; 3 of 3 individual checks passed.",
+      "decision": "The subsequent author note states: The formal complex verifier reports passed on all 20 checks, including first-opportunity dependencies, necessary-role exclusions and the matched roof intervention. A legal witness uses two downward guard pushes, two eastward latch pushes and one upward bolt push. This is author-side structural evidence, not an independent model evaluation or measured human difficulty.",
+      "badge": "",
+      "evidence": [
+        "test-t002",
+        "candidate-v004",
+        "note-n004"
+      ],
+      "observations": [
+        {
+          "label": "Recorded ordinary replay",
+          "value": "passed"
+        }
+      ],
+      "checks": [
+        {
+          "name": "saved_build_matches_design",
+          "verdict": "passed",
+          "meaning": "Compare the saved build cells with the recorded design so the replay tests the delivered map.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "ordinary_and_search_transitions_match",
+          "verdict": "passed",
+          "meaning": "Compare each ordinary-engine transition with the search transition on the saved route.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "complete_gem_objective",
+          "verdict": "passed",
+          "meaning": "Positive control: find or replay the complete declared objective, including a doorway return when required.",
+          "expected": "",
+          "observed": ""
+        }
+      ]
+    },
+    {
+      "nodeId": "replay-e000046",
+      "basis": "saved-evidence-review",
+      "headline": "Saved ordinary gameplay replay",
+      "action": "Archive 21 recorded inputs and 22 actor frames for v004.",
+      "result": "This artifact contains an ordinary-engine route replay. It is not by itself a recorded browser play session or a blind solving experiment.",
+      "decision": "The subsequent author note states: The formal complex verifier reports passed on all 20 checks, including first-opportunity dependencies, necessary-role exclusions and the matched roof intervention. A legal witness uses two downward guard pushes, two eastward latch pushes and one upward bolt push. This is author-side structural evidence, not an independent model evaluation or measured human difficulty.",
+      "badge": "",
+      "evidence": [
+        "replay-e000046",
+        "candidate-v004",
+        "note-n004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "note-n004",
+      "basis": "saved-evidence-review",
+      "headline": "Finalize the locally verified three-stage room and preserve replayable evidence.",
+      "action": "Retain the third geometric layout and bind the legal 21-input route to stage inputs 9, 11 and 17. Build it with the installed complex builder and collect complete ordinary-engine replay frames from the saved build.",
+      "result": "The formal complex verifier reports passed on all 20 checks, including first-opportunity dependencies, necessary-role exclusions and the matched roof intervention. A legal witness uses two downward guard pushes, two eastward latch pushes and one upward bolt push. This is author-side structural evidence, not an independent model evaluation or measured human difficulty.",
+      "decision": "Planned checks: saved build cells equal verified design; ordinary and search transitions agree at every input; full gem objective replay; browser checks performed separately.",
+      "badge": "",
+      "evidence": [
+        "note-n004",
+        "candidate-v004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000048",
+      "basis": "saved-evidence-review",
+      "headline": "Save build artifact",
+      "action": "Save build artifact. Saved files: manifest.json.",
+      "result": "The recorder archived this file. Saving evidence does not itself establish a passing test.",
+      "decision": "Archiving preserves evidence and file identity. It does not rerun the test or establish that the map passed.",
+      "badge": "",
+      "evidence": [
+        "event-e000048",
+        "candidate-v004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000049",
+      "basis": "saved-evidence-review",
+      "headline": "Save build artifact",
+      "action": "Save build artifact. Saved files: world.json.",
+      "result": "The recorder archived this file. Saving evidence does not itself establish a passing test.",
+      "decision": "Archiving preserves evidence and file identity. It does not rerun the test or establish that the map passed.",
+      "badge": "",
+      "evidence": [
+        "event-e000049",
+        "candidate-v004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000050",
+      "basis": "saved-evidence-review",
+      "headline": "Save build artifact",
+      "action": "Save build artifact. Saved files: contract.json.",
+      "result": "The recorder archived this file. Saving evidence does not itself establish a passing test.",
+      "decision": "Archiving preserves evidence and file identity. It does not rerun the test or establish that the map passed.",
+      "badge": "",
+      "evidence": [
+        "event-e000050",
+        "candidate-v004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000051",
+      "basis": "saved-evidence-review",
+      "headline": "Save build artifact",
+      "action": "Save build artifact. Saved files: level_AxA.txt.",
+      "result": "The recorder archived this file. Saving evidence does not itself establish a passing test.",
+      "decision": "Archiving preserves evidence and file identity. It does not rerun the test or establish that the map passed.",
+      "badge": "",
+      "evidence": [
+        "event-e000051",
+        "candidate-v004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000052",
+      "basis": "saved-evidence-review",
+      "headline": "Save search report",
+      "action": "Save search report. Saved files: search-03.json.",
+      "result": "The recorder archived this file. Saving evidence does not itself establish a passing test.",
+      "decision": "Archiving preserves evidence and file identity. It does not rerun the test or establish that the map passed.",
+      "badge": "",
+      "evidence": [
+        "event-e000052",
+        "candidate-v003"
+      ],
+      "observations": [
+        {
+          "label": "Recorded search outcome",
+          "value": "solved"
+        },
+        {
+          "label": "Expanded states",
+          "value": "462"
+        },
+        {
+          "label": "Solution inputs",
+          "value": "21"
+        }
+      ],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000053",
+      "basis": "saved-evidence-review",
+      "headline": "Start: recorded operation",
+      "action": "Start: recorded operation.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000053",
+        "candidate-v004",
+        "event-e000054"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000054",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; Playthrough passed; Undo expectation failed",
+      "action": "Finish: recorded operation.",
+      "result": "Command execution ended with exit code 1. See the associated test result for its recorded verdict. Report interpretation: All 21 play inputs matched. The next assertion expected the collected gem to reappear after Undo, but the browser retained its collected state. Later checks in this attempt did not all complete.",
+      "decision": "Use a fresh storage context and test Undo/Reset after the first push, before gem collection. This changes the test setup, not the map.",
+      "badge": "",
+      "evidence": [
+        "event-e000054",
+        "candidate-v004",
+        "event-e000053",
+        "test-t003"
+      ],
+      "observations": [
+        {
+          "label": "Process exit code",
+          "value": "1"
+        },
+        {
+          "label": "Elapsed milliseconds",
+          "value": "8119"
+        }
+      ],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t003",
+      "basis": "saved-evidence-review",
+      "headline": "Playthrough passed; Undo expectation failed",
+      "action": "Compare browser play with every saved engine state, then test Undo and editor persistence.",
+      "result": "All 21 play inputs matched. The next assertion expected the collected gem to reappear after Undo, but the browser retained its collected state. Later checks in this attempt did not all complete.",
+      "decision": "Use a fresh storage context and test Undo/Reset after the first push, before gem collection. This changes the test setup, not the map.",
+      "badge": "Undo mismatch",
+      "evidence": [
+        "note-n005",
+        "test-t004"
+      ],
+      "observations": [],
+      "checks": [
+        {
+          "name": "normal_play_all_21_inputs_match_saved_engine_states",
+          "verdict": "passed",
+          "meaning": "Perform the recorded browser inputs and compare every observed actor state with the ordinary-engine replay.",
+          "expected": "",
+          "observed": ""
+        }
+      ]
+    },
+    {
+      "nodeId": "note-n005",
+      "basis": "saved-evidence-review",
+      "headline": "Verify browser Undo and Reset under the supported pre-collection conditions.",
+      "action": "Run Undo/Reset in a fresh browser storage context after the first push, before collecting the gem.",
+      "result": "The first browser test matched all 21 ordinary play states, then failed because it expected a collected gem to reappear after Undo. The existing browser checker explicitly uses a fresh storage context to avoid gem persistence. This is a correction to the test setup, not a map change.",
+      "decision": "Planned checks: All 21 browser states match official replay; First-push Undo and Reset match saved pre-collection states; Unchanged editor save/export matches verified cells.",
+      "badge": "",
+      "evidence": [
+        "note-n005",
+        "candidate-v004",
+        "resource-r010"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000057",
+      "basis": "saved-evidence-review",
+      "headline": "Start: recorded operation",
+      "action": "Start: recorded operation.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000057",
+        "candidate-v004",
+        "operation-e000057"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000057",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; Browser checks passed within the revised scope",
+      "action": "Browser validation completed. Saved input: v004; output: v004.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict. Report interpretation: All 4 recorded checks passed. The Undo/Reset result applies before gem collection; it does not establish post-collection gem restoration.",
+      "decision": "Complete the run with the same v004 map and preserve the earlier failed browser attempt.",
+      "badge": "",
+      "evidence": [
+        "operation-e000057",
+        "candidate-v004",
+        "test-t004",
+        "event-e000057"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t004",
+      "basis": "saved-evidence-review",
+      "headline": "Browser checks passed within the revised scope",
+      "action": "Replay all inputs, check pre-collection Undo/Reset, and render, save and export the unchanged editor map.",
+      "result": "All 4 recorded checks passed. The Undo/Reset result applies before gem collection; it does not establish post-collection gem restoration.",
+      "decision": "Complete the run with the same v004 map and preserve the earlier failed browser attempt.",
+      "badge": "",
+      "evidence": [
+        "test-t003",
+        "note-n005",
+        "event-e000061"
+      ],
+      "observations": [
+        {
+          "label": "Recorded ordinary replay",
+          "value": "passed"
+        }
+      ],
+      "checks": [
+        {
+          "name": "normal_play_all_21_inputs_match_saved_engine_states",
+          "verdict": "passed",
+          "meaning": "Perform the recorded browser inputs and compare every observed actor state with the ordinary-engine replay.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "pre_collection_first_push_undo_and_reset_match_recorded_states",
+          "verdict": "passed",
+          "meaning": "Check Undo and Reset at the recorded first-push or pre-collection state; use the stated test scope for collection persistence.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "editor_unchanged_save_and_export_match_design",
+          "verdict": "passed",
+          "meaning": "Save and export the unchanged editor map, then compare its cells with the tested design.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "editor_renders_saved_draft",
+          "verdict": "passed",
+          "meaning": "Check that the editor renders the saved map in the real browser.",
+          "expected": "",
+          "observed": ""
+        }
+      ]
+    },
+    {
+      "nodeId": "event-e000060",
+      "basis": "saved-evidence-review",
+      "headline": "Save viewer validation",
+      "action": "Save viewer validation. Saved files: observed-verification.json.",
+      "result": "The recorder archived this file. Saving evidence does not itself establish a passing test.",
+      "decision": "Archiving preserves evidence and file identity. It does not rerun the test or establish that the map passed.",
+      "badge": "",
+      "evidence": [
+        "event-e000060",
+        "candidate-v004"
+      ],
+      "observations": [
+        {
+          "label": "Recorded viewer result",
+          "value": "passed"
+        },
+        {
+          "label": "Saved versions checked",
+          "value": "4"
+        },
+        {
+          "label": "Saved frames checked",
+          "value": "22"
+        }
+      ],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000061",
+      "basis": "saved-evidence-review",
+      "headline": "Finish authoring run",
+      "action": "Finish authoring run.",
+      "result": "The recorder marked the run complete. Later evidence review: The final evidence includes 20 structural checks, 3 saved-build checks and 4 scoped browser checks. Three geometries were saved in four versions.",
+      "decision": "The recorded finalization note and completed run support acceptance within these scopes. There is no recorded fixed iteration count, blind-agent evaluation or human-difficulty score.",
+      "badge": "",
+      "evidence": [
+        "event-e000061",
+        "note-n004",
+        "test-t001",
+        "test-t002",
+        "test-t004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "delivery-final",
+      "basis": "saved-evidence-review",
+      "headline": "Accepted after structure, replay and browser checks",
+      "action": "Deliver v004: guard down, latch right, bolt up, then reach the gem.",
+      "result": "The final evidence includes 20 structural checks, 3 saved-build checks and 4 scoped browser checks. Three geometries were saved in four versions.",
+      "decision": "The recorded finalization note and completed run support acceptance within these scopes. There is no recorded fixed iteration count, blind-agent evaluation or human-difficulty score.",
+      "badge": "",
+      "evidence": [
+        "note-n004",
+        "test-t001",
+        "test-t002",
+        "test-t004",
+        "event-e000061"
+      ],
+      "observations": [],
+      "checks": []
+    }
   ]
 }

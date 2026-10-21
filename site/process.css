@@ -149,3 +149,8 @@ body[data-page=process] .header-nav{font-size:14px}
 .timeline-group-toggle.contains-selection .timeline-group-marker{border-color:#222;box-shadow:0 0 0 2px #222;color:#222}.timeline-group-toggle.contains-selection .timeline-group-label{color:#222}.timeline-group-selected{flex-basis:100%;font-size:12px;font-weight:600;line-height:1.6;color:#222}.timeline-group-selected[hidden]{display:none}
 
 @media(max-width:600px){.preview-modal{inset:8px;width:calc(100% - 16px);height:calc(100dvh - 16px);border-radius:9px}.preview-modal-toolbar{padding:7px 12px;min-height:44px}}
+.evidence-review-label { font-family: var(--mono, monospace); font-size: 12px; letter-spacing: .07em; color: #666; }
+.review-scope, .recorded-check-list { margin-top: 20px; }
+.review-scope summary, .recorded-check-list > summary, .check-meaning summary { cursor: pointer; line-height: 1.6; }
+.check-meaning { margin-top: 8px; font-family: inherit; }
+.check-meaning p { font-family: var(--sans, sans-serif); font-size: 16px; line-height: 1.65; color: #4a4a4a; overflow-wrap: anywhere; }

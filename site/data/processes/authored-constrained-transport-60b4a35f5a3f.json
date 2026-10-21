@@ -4738,5 +4738,1513 @@
       "files": [],
       "facts": []
     }
+  ],
+  "explanations": [
+    {
+      "nodeId": "event-e000001",
+      "basis": "saved-evidence-review",
+      "headline": "Start authoring run",
+      "action": "Start authoring run.",
+      "result": "The recorder opened this authoring run. This does not establish an empty prior conversation context.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000002",
+      "basis": "saved-evidence-review",
+      "headline": "Start automatic capture",
+      "action": "Start automatic capture.",
+      "result": "The automatic collector started. Recorded command boundaries, reads and saved artifacts are shown in sequence.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-snapshot-e000003",
+      "basis": "saved-evidence-review",
+      "headline": "Skill attached: mazebench-constrained-transport/SKILL.md",
+      "action": "Capture a version snapshot of mazebench-constrained-transport/SKILL.md. Authoring workflow, supported mechanism and required delivery checks.",
+      "result": "The dependency version was saved. This event does not record a document read.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-snapshot-e000003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r001",
+      "basis": "saved-evidence-review",
+      "headline": "SKILL.md",
+      "action": "Read mazebench-constrained-transport/SKILL.md. Authoring workflow, supported mechanism and required delivery checks.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r002",
+      "basis": "saved-evidence-review",
+      "headline": "mechanism-logic.md",
+      "action": "Read mazebench-constrained-transport/references/mechanism-logic.md. Extracted functional roles, contact relationships and preparation dependencies to realize in a new layout.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r002",
+        "note-n001",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r003",
+      "basis": "saved-evidence-review",
+      "headline": "planning-depth.md",
+      "action": "Read mazebench-constrained-transport/references/planning-depth.md. Guidance for connected stages, usable recovery and avoiding trivial completions.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r003",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r004",
+      "basis": "saved-evidence-review",
+      "headline": "complex-validation.md",
+      "action": "Read mazebench-constrained-transport/references/complex-validation.md. Verification rules or implementations defining what the checks can and cannot establish.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r004",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r005",
+      "basis": "saved-evidence-review",
+      "headline": "design-template.json",
+      "action": "Read mazebench-constrained-transport/references/design-template.json. The design contract scaffold; reading it does not establish that a complete reference map was copied.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r005"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r006",
+      "basis": "saved-evidence-review",
+      "headline": "official-gxg-case.md",
+      "action": "Read mazebench-constrained-transport/references/official-gxg-case.md. The source case explanation and its scoped mechanism evidence.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r006",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r007",
+      "basis": "saved-evidence-review",
+      "headline": "official-gxg-world-map.txt",
+      "action": "Read mazebench-constrained-transport/references/official-gxg-world-map.txt. Original source geometry for checking actual members, terrain and boundaries.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r007",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r008",
+      "basis": "saved-evidence-review",
+      "headline": "official-gxg-states.json",
+      "action": "Read mazebench-constrained-transport/references/official-gxg-states.json. Recorded reference poses and moves for checking how the source mechanism operates.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r008",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r009",
+      "basis": "saved-evidence-review",
+      "headline": "design.md",
+      "action": "Read mazebench-constrained-transport/references/design.md. Supporting design or reference material identified by the saved filename and fingerprint.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r009",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r010",
+      "basis": "saved-evidence-review",
+      "headline": "official-design.json",
+      "action": "Read mazebench-constrained-transport/references/official-design.json. Supporting design or reference material identified by the saved filename and fingerprint.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r010"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r011",
+      "basis": "saved-evidence-review",
+      "headline": "official-gxg-checks.json",
+      "action": "Read mazebench-constrained-transport/references/official-gxg-checks.json. Verification rules or implementations defining what the checks can and cannot establish.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r011",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "note-n001",
+      "basis": "saved-evidence-review",
+      "headline": "Create a genuinely new constrained-transport room with a connected tool-use, recovery, and shared-passage release sequence, collecting a gem and returning to the initial entry.",
+      "action": "Prospective design: independently lay out a broad-headed, offset working-toe tool, a two-member passage shuttle, and a three-member target crossbar. The tool approaches a void-constrained target from above. After contact, its toe occupies the shuttle destination; the tool must retreat upward before the shuttle can move right to open the gem passage. Keep a west-side recovery route and an explicit gem-and-return endpoint.",
+      "result": "This changes the original workspace topology and rigid shapes. It uses a forced post-contact recovery followed by lateral shuttle release, rather than reproducing the official room's large helper exchanges. Claims remain hypotheses until ordinary-engine and restriction checks finish. Raw reference states were delivered through recorded read but the console display was truncated; targeted state projections will be recorded separately. An attempted read of the guessed filename scripts/complex-core.cjs failed; the actual helper is complex-runtime.cjs. Initial observer viewer launch failed with EADDRINUSE; subsequent recording uses the existing run with viewer startup disabled.",
+      "decision": "Planned checks: Complete ordinary gem-and-return route; Actual offset member contact; Each of the three roles necessary; Independent tool motion before contact; Tool down/up ordered recovery before usable shuttle-right opportunity; No walking-only completion after first contact; A saved replay bound to the exact final cells and contract; Actual browser play, Undo/Reset and editor save/export.",
+      "badge": "",
+      "evidence": [
+        "note-n001",
+        "resource-r002",
+        "resource-r003",
+        "resource-r004",
+        "resource-r006",
+        "resource-r007",
+        "resource-r008",
+        "resource-r011",
+        "resource-r009"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r012",
+      "basis": "saved-evidence-review",
+      "headline": "official-case.md",
+      "action": "Read mazebench-constrained-transport/references/official-case.md. The source case explanation and its scoped mechanism evidence.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r012"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r013",
+      "basis": "saved-evidence-review",
+      "headline": "official-world-map.txt",
+      "action": "Read mazebench-constrained-transport/references/official-world-map.txt. Original source geometry for checking actual members, terrain and boundaries.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r013"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000018",
+      "basis": "saved-evidence-review",
+      "headline": "Start: Project actual original states for inspection",
+      "action": "Start: Project actual original states for inspection.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000018",
+        "operation-e000018"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000018",
+      "basis": "saved-evidence-review",
+      "headline": "Project actual original states for inspection",
+      "action": "Project actual original states for inspection. Saved input: none; output: none.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "operation-e000018",
+        "event-e000018"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000020",
+      "basis": "saved-evidence-review",
+      "headline": "Start: Construct first candidate from empty template",
+      "action": "Start: Construct first candidate from empty template.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000020",
+        "operation-e000020"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "candidate-v001",
+      "basis": "saved-evidence-review",
+      "headline": "Solvable; axial-input bypass defeats the mechanism",
+      "action": "Create offset contact, tool recovery and shuttle release, with gem collection and return to the entry.",
+      "result": "Positive replay/search pass, but 8 of 32 structural checks fail. An accessible axial pushing stance permits completion without the required lateral contact and undermines the declared recovery dependencies.",
+      "decision": "Replace floor beneath the eastern tool head at (9,8) with void, removing that player stance while retaining support for the offset tool.",
+      "badge": "",
+      "evidence": [
+        "test-t001",
+        "test-t002",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000020",
+      "basis": "saved-evidence-review",
+      "headline": "Construct first candidate from empty template",
+      "action": "Construct first candidate from empty template. Saved input: none; output: v001.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "The subsequent author note states: The ordinary witness and all three role freezes passed, but forbidding lateral contact still yielded a complete solution: the player could stand in the toe column and perform an axial push of the same tool. That bypass also invalidated the ordered contact-recovery and post-contact-only claims. The revised terrain removes that specific player stance while retaining supported offset delivery from the western head. This is an observed counterexample-driven revision, not a claim that the original geometry already required lateral contact.",
+      "badge": "",
+      "evidence": [
+        "operation-e000020",
+        "candidate-v001",
+        "event-e000020",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000023",
+      "basis": "saved-evidence-review",
+      "headline": "Start: Initial ordinary witness and independent search",
+      "action": "Start: Initial ordinary witness and independent search.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000023",
+        "candidate-v001",
+        "operation-e000023"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000023",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; Initial ordinary witness and independent search",
+      "action": "Initial ordinary witness and independent search. Saved input: v001; output: v001.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict. Report interpretation: The report is passed; 2 of 2 individual checks passed.",
+      "decision": "The subsequent author note states: The ordinary witness and all three role freezes passed, but forbidding lateral contact still yielded a complete solution: the player could stand in the toe column and perform an axial push of the same tool. That bypass also invalidated the ordered contact-recovery and post-contact-only claims. The revised terrain removes that specific player stance while retaining supported offset delivery from the western head. This is an observed counterexample-driven revision, not a claim that the original geometry already required lateral contact.",
+      "badge": "",
+      "evidence": [
+        "operation-e000023",
+        "candidate-v001",
+        "test-t001",
+        "event-e000023",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t001",
+      "basis": "saved-evidence-review",
+      "headline": "Initial ordinary witness and independent search",
+      "action": "Execute Initial ordinary witness and independent search against v001.",
+      "result": "The report is passed; 2 of 2 individual checks passed.",
+      "decision": "The subsequent author note states: The ordinary witness and all three role freezes passed, but forbidding lateral contact still yielded a complete solution: the player could stand in the toe column and perform an axial push of the same tool. That bypass also invalidated the ordered contact-recovery and post-contact-only claims. The revised terrain removes that specific player stance while retaining supported offset delivery from the western head. This is an observed counterexample-driven revision, not a claim that the original geometry already required lateral contact.",
+      "badge": "",
+      "evidence": [
+        "test-t001",
+        "candidate-v001",
+        "note-n002"
+      ],
+      "observations": [
+        {
+          "label": "Saved goal search",
+          "value": "solved"
+        },
+        {
+          "label": "Expanded search states",
+          "value": "10"
+        }
+      ],
+      "checks": [
+        {
+          "name": "prospective_witness",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: prospective witness. Its result is limited to the saved test scope.",
+          "expected": "",
+          "observed": "passed"
+        },
+        {
+          "name": "ordinary_engine_search",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: ordinary engine search. Its result is limited to the saved test scope.",
+          "expected": "",
+          "observed": "passed"
+        }
+      ]
+    },
+    {
+      "nodeId": "event-e000026",
+      "basis": "saved-evidence-review",
+      "headline": "Start: build-complex.cjs",
+      "action": "Start: build-complex.cjs.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000026",
+        "candidate-v001",
+        "operation-e000026"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000026",
+      "basis": "saved-evidence-review",
+      "headline": "build-complex.cjs",
+      "action": "build-complex.cjs. Saved input: v001; output: v001.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "The subsequent author note states: The ordinary witness and all three role freezes passed, but forbidding lateral contact still yielded a complete solution: the player could stand in the toe column and perform an axial push of the same tool. That bypass also invalidated the ordered contact-recovery and post-contact-only claims. The revised terrain removes that specific player stance while retaining supported offset delivery from the western head. This is an observed counterexample-driven revision, not a claim that the original geometry already required lateral contact.",
+      "badge": "",
+      "evidence": [
+        "operation-e000026",
+        "candidate-v001",
+        "event-e000026",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000028",
+      "basis": "saved-evidence-review",
+      "headline": "Save build files",
+      "action": "Save build files. Saved files: manifest.json, world.json, contract.json, spec.json, draft.json, level_AxA.txt, level_parsing.json, toolbox.json, world_map.json, world_parsing.json.",
+      "result": "Build files were archived for this candidate. The file list and fingerprints identify the saved output; verification appears separately.",
+      "decision": "Archiving preserves evidence and file identity. It does not rerun the test or establish that the map passed.",
+      "badge": "",
+      "evidence": [
+        "event-e000028",
+        "candidate-v001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000029",
+      "basis": "saved-evidence-review",
+      "headline": "Start: verify-complex.cjs",
+      "action": "Start: verify-complex.cjs.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000029",
+        "candidate-v001",
+        "event-e000030"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000030",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; Legal counterexamples invalidate eight restrictions",
+      "action": "Finish: verify-complex.cjs.",
+      "result": "Command execution ended with exit code 1. See the associated test result for its recorded verdict. Report interpretation: 24 of 32 checks pass. Eight fail because restricted searches still find complete routes, including an axial-input route that avoids lateral contact. A successful positive route alone was insufficient.",
+      "decision": "Remove the specific bypass stance and rerun both positive replay and the full structural checks.",
+      "badge": "",
+      "evidence": [
+        "event-e000030",
+        "candidate-v001",
+        "event-e000029",
+        "test-t002"
+      ],
+      "observations": [
+        {
+          "label": "Process exit code",
+          "value": "1"
+        },
+        {
+          "label": "Elapsed milliseconds",
+          "value": "1595"
+        }
+      ],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t002",
+      "basis": "saved-evidence-review",
+      "headline": "Legal counterexamples invalidate eight restrictions",
+      "action": "Check whether lateral contact and the following tool-recovery work are necessary.",
+      "result": "24 of 32 checks pass. Eight fail because restricted searches still find complete routes, including an axial-input route that avoids lateral contact. A successful positive route alone was insufficient.",
+      "decision": "Remove the specific bypass stance and rerun both positive replay and the full structural checks.",
+      "badge": "Bypass found",
+      "evidence": [
+        "test-t001",
+        "note-n002",
+        "test-t003",
+        "test-t004"
+      ],
+      "observations": [
+        {
+          "label": "Saved goal search",
+          "value": "solved"
+        },
+        {
+          "label": "Solution inputs",
+          "value": "28"
+        },
+        {
+          "label": "Expanded search states",
+          "value": "735"
+        },
+        {
+          "label": "Search limit",
+          "value": "1000000"
+        },
+        {
+          "label": "Recorded ordinary replay",
+          "value": "passed"
+        }
+      ],
+      "checks": [
+        {
+          "name": "blocked_M1_R_step_0",
+          "verdict": "passed",
+          "meaning": "At the declared state, check the actual pushing stance or whole-group push obstruction using ordinary physics.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "blocked_M2_D_step_0",
+          "verdict": "passed",
+          "meaning": "At the declared state, check the actual pushing stance or whole-group push obstruction using ordinary physics.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_access_Offset crossbar displacement",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_access_Recover the tool from shared space",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_access_Release the gem doorway",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "initial_frozen_walking",
+          "verdict": "passed",
+          "meaning": "Keep all objects fixed and search for a walking-only completion from the initial state.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze_M0",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze_M1",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze_M2",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "forbid_mechanism",
+          "verdict": "failed",
+          "meaning": "Forbid the declared mechanism event and search for the complete objective. A solution is a mechanism bypass.",
+          "expected": "unsolved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_positive_prep_to_contact",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_prep_to_contact",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_contact_to_shuttle",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_contact_to_shuttle",
+          "verdict": "failed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_positive_recover_to_shuttle",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_recover_to_shuttle",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_shuttle_to_goal",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_shuttle_to_goal",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_contact_to_goal",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_contact_to_goal",
+          "verdict": "failed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_positive_postWork_to_goal",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_postWork_to_goal",
+          "verdict": "failed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "solved"
+        },
+        {
+          "name": "opposing_M0_D_before_shuttle",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: opposing M0 D before shuttle. Its result is limited to the saved test scope.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "opposing_M0_U_before_shuttle",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: opposing M0 U before shuttle. Its result is limited to the saved test scope.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "reuse_positive_contact_recover",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: reuse positive contact recover. Its result is limited to the saved test scope.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "without_ordered_reuse_contact_recover",
+          "verdict": "failed",
+          "meaning": "Search for a complete route that omits the declared ordered reuse or direction change.",
+          "expected": "unsolved",
+          "observed": "solved"
+        },
+        {
+          "name": "at_most_one_push_then_walk",
+          "verdict": "passed",
+          "meaning": "Restrict the allowed number of object-moving inputs and search for a complete goal, testing whether a simpler completion exists.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "one_same_direction_translation_process",
+          "verdict": "passed",
+          "meaning": "Allow object movement in only one compass direction and search for completion.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "first_mechanism_then_walking_only_all_histories",
+          "verdict": "failed",
+          "meaning": "Search all supported first-use histories for a completion requiring no further object movement.",
+          "expected": "unsolved",
+          "observed": "solved"
+        },
+        {
+          "name": "walking_to_predocked_use",
+          "verdict": "passed",
+          "meaning": "Test whether the initial arrangement already permits tool use without independent preparation.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze_M0_after_any_first_contact",
+          "verdict": "failed",
+          "meaning": "Across first-contact histories, freeze this group and search for completion. Exhaustion excludes a completion with that group frozen; it does not prove every contact state is recoverable.",
+          "expected": "unsolved",
+          "observed": "solved"
+        },
+        {
+          "name": "freeze_M1_after_any_first_contact",
+          "verdict": "failed",
+          "meaning": "Across first-contact histories, freeze this group and search for completion. Exhaustion excludes a completion with that group frozen; it does not prove every contact state is recoverable.",
+          "expected": "unsolved",
+          "observed": "solved"
+        }
+      ]
+    },
+    {
+      "nodeId": "note-n002",
+      "basis": "saved-evidence-review",
+      "headline": "Remove the actual axial-input bypass exposed by the first complete structural verification.",
+      "action": "Replace floor beneath the initial eastern tool-head member at (9,8) with void, preserving the connected tool footprint and its other supporting members. Record both voids and the inaccessible axial stance explicitly.",
+      "result": "The ordinary witness and all three role freezes passed, but forbidding lateral contact still yielded a complete solution: the player could stand in the toe column and perform an axial push of the same tool. That bypass also invalidated the ordered contact-recovery and post-contact-only claims. The revised terrain removes that specific player stance while retaining supported offset delivery from the western head. This is an observed counterexample-driven revision, not a claim that the original geometry already required lateral contact.",
+      "decision": "Planned checks: Replay the same prospective route with ordinary moves; Exhaust the no-lateral-contact search; Check the ordered contact then upward recovery before shuttle opportunity; Recheck all dependencies and post-contact work from the revised initial state.",
+      "badge": "",
+      "evidence": [
+        "note-n002",
+        "candidate-v001",
+        "resource-r002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000033",
+      "basis": "saved-evidence-review",
+      "headline": "Start: Revise geometry from axial bypass",
+      "action": "Start: Revise geometry from axial bypass.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000033",
+        "candidate-v001",
+        "operation-e000033"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "candidate-v002",
+      "basis": "saved-evidence-review",
+      "headline": "Specific bypass removed; complete return verified",
+      "action": "Change one terrain cell to void and declare the inaccessible axial stance.",
+      "result": "All 33 structural checks pass. The 28-input witness collects the gem at input 15 and returns to the entry; saved-build replay and browser/editor checks also pass.",
+      "decision": "Accept the corrected offset-contact, recovery and shuttle sequence. The handoff note precedes browser QA; final browser acceptance is a separate later record.",
+      "badge": "",
+      "evidence": [
+        "test-t003",
+        "test-t004",
+        "test-t005",
+        "note-n003",
+        "test-t006"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000033",
+      "basis": "saved-evidence-review",
+      "headline": "Revise geometry from axial bypass",
+      "action": "Revise geometry from axial bypass. Saved input: v001; output: v002.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "The subsequent author note states: Offset contact moves the target crossbar at input 2; upward tool recovery at input 9 clears the shared shuttle row; shuttle movement at inputs 11-12 opens the gem pocket. Collection occurs at input 15 and the route returns to (6,7,0). Search exhaustion supports only the declared restrictions; this compact puzzle has no human-difficulty or independent-author claim. Browser play/save/export remains pending the batch runner.",
+      "badge": "",
+      "evidence": [
+        "operation-e000033",
+        "candidate-v002",
+        "event-e000033",
+        "note-n003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000036",
+      "basis": "saved-evidence-review",
+      "headline": "Start: Revised ordinary witness and search",
+      "action": "Start: Revised ordinary witness and search.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000036",
+        "candidate-v002",
+        "operation-e000036"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000036",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; Revised ordinary witness and search",
+      "action": "Revised ordinary witness and search. Saved input: v002; output: v002.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict. Report interpretation: The report is passed; 2 of 2 individual checks passed.",
+      "decision": "The subsequent author note states: Offset contact moves the target crossbar at input 2; upward tool recovery at input 9 clears the shared shuttle row; shuttle movement at inputs 11-12 opens the gem pocket. Collection occurs at input 15 and the route returns to (6,7,0). Search exhaustion supports only the declared restrictions; this compact puzzle has no human-difficulty or independent-author claim. Browser play/save/export remains pending the batch runner.",
+      "badge": "",
+      "evidence": [
+        "operation-e000036",
+        "candidate-v002",
+        "test-t003",
+        "event-e000036",
+        "note-n003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t003",
+      "basis": "saved-evidence-review",
+      "headline": "Revised ordinary witness and search",
+      "action": "Execute Revised ordinary witness and search against v002.",
+      "result": "The report is passed; 2 of 2 individual checks passed.",
+      "decision": "The subsequent author note states: Offset contact moves the target crossbar at input 2; upward tool recovery at input 9 clears the shared shuttle row; shuttle movement at inputs 11-12 opens the gem pocket. Collection occurs at input 15 and the route returns to (6,7,0). Search exhaustion supports only the declared restrictions; this compact puzzle has no human-difficulty or independent-author claim. Browser play/save/export remains pending the batch runner.",
+      "badge": "",
+      "evidence": [
+        "test-t003",
+        "candidate-v002",
+        "note-n003"
+      ],
+      "observations": [
+        {
+          "label": "Saved goal search",
+          "value": "solved"
+        },
+        {
+          "label": "Expanded search states",
+          "value": "10"
+        }
+      ],
+      "checks": [
+        {
+          "name": "prospective_witness",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: prospective witness. Its result is limited to the saved test scope.",
+          "expected": "",
+          "observed": "passed"
+        },
+        {
+          "name": "ordinary_engine_search",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: ordinary engine search. Its result is limited to the saved test scope.",
+          "expected": "",
+          "observed": "passed"
+        }
+      ]
+    },
+    {
+      "nodeId": "event-e000039",
+      "basis": "saved-evidence-review",
+      "headline": "Start: verify-complex.cjs",
+      "action": "Start: verify-complex.cjs.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000039",
+        "candidate-v002",
+        "operation-e000039"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000039",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; verify-complex.cjs",
+      "action": "verify-complex.cjs. Saved input: v002; output: v002.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict. Report interpretation: The report is passed; 33 of 33 individual checks passed.",
+      "decision": "The subsequent author note states: Offset contact moves the target crossbar at input 2; upward tool recovery at input 9 clears the shared shuttle row; shuttle movement at inputs 11-12 opens the gem pocket. Collection occurs at input 15 and the route returns to (6,7,0). Search exhaustion supports only the declared restrictions; this compact puzzle has no human-difficulty or independent-author claim. Browser play/save/export remains pending the batch runner.",
+      "badge": "",
+      "evidence": [
+        "operation-e000039",
+        "candidate-v002",
+        "test-t004",
+        "event-e000039",
+        "note-n003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t004",
+      "basis": "saved-evidence-review",
+      "headline": "verify-complex.cjs",
+      "action": "Execute verify-complex.cjs against v002.",
+      "result": "The report is passed; 33 of 33 individual checks passed.",
+      "decision": "The subsequent author note states: Offset contact moves the target crossbar at input 2; upward tool recovery at input 9 clears the shared shuttle row; shuttle movement at inputs 11-12 opens the gem pocket. Collection occurs at input 15 and the route returns to (6,7,0). Search exhaustion supports only the declared restrictions; this compact puzzle has no human-difficulty or independent-author claim. Browser play/save/export remains pending the batch runner.",
+      "badge": "",
+      "evidence": [
+        "test-t004",
+        "candidate-v002",
+        "note-n003"
+      ],
+      "observations": [
+        {
+          "label": "Saved goal search",
+          "value": "solved"
+        },
+        {
+          "label": "Solution inputs",
+          "value": "28"
+        },
+        {
+          "label": "Expanded search states",
+          "value": "735"
+        },
+        {
+          "label": "Search limit",
+          "value": "1000000"
+        },
+        {
+          "label": "Recorded ordinary replay",
+          "value": "passed"
+        }
+      ],
+      "checks": [
+        {
+          "name": "blocked_M1_R_step_0",
+          "verdict": "passed",
+          "meaning": "At the declared state, check the actual pushing stance or whole-group push obstruction using ordinary physics.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "blocked_M2_D_step_0",
+          "verdict": "passed",
+          "meaning": "At the declared state, check the actual pushing stance or whole-group push obstruction using ordinary physics.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "blocked_M0_D_step_1",
+          "verdict": "passed",
+          "meaning": "At the declared state, check the actual pushing stance or whole-group push obstruction using ordinary physics.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_access_Offset crossbar displacement",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_access_Recover the tool from shared space",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_access_Release the gem doorway",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "initial_frozen_walking",
+          "verdict": "passed",
+          "meaning": "Keep all objects fixed and search for a walking-only completion from the initial state.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze_M0",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze_M1",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze_M2",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "forbid_mechanism",
+          "verdict": "passed",
+          "meaning": "Forbid the declared mechanism event and search for the complete objective. A solution is a mechanism bypass.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_prep_to_contact",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_prep_to_contact",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_contact_to_shuttle",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_contact_to_shuttle",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_recover_to_shuttle",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_recover_to_shuttle",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_shuttle_to_goal",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_shuttle_to_goal",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_contact_to_goal",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_contact_to_goal",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_postWork_to_goal",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_postWork_to_goal",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "opposing_M0_D_before_shuttle",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: opposing M0 D before shuttle. Its result is limited to the saved test scope.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "opposing_M0_U_before_shuttle",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: opposing M0 U before shuttle. Its result is limited to the saved test scope.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "reuse_positive_contact_recover",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: reuse positive contact recover. Its result is limited to the saved test scope.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "without_ordered_reuse_contact_recover",
+          "verdict": "passed",
+          "meaning": "Search for a complete route that omits the declared ordered reuse or direction change.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "at_most_one_push_then_walk",
+          "verdict": "passed",
+          "meaning": "Restrict the allowed number of object-moving inputs and search for a complete goal, testing whether a simpler completion exists.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "one_same_direction_translation_process",
+          "verdict": "passed",
+          "meaning": "Allow object movement in only one compass direction and search for completion.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "first_mechanism_then_walking_only_all_histories",
+          "verdict": "passed",
+          "meaning": "Search all supported first-use histories for a completion requiring no further object movement.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "walking_to_predocked_use",
+          "verdict": "passed",
+          "meaning": "Test whether the initial arrangement already permits tool use without independent preparation.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze_M0_after_any_first_contact",
+          "verdict": "passed",
+          "meaning": "Across first-contact histories, freeze this group and search for completion. Exhaustion excludes a completion with that group frozen; it does not prove every contact state is recoverable.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze_M1_after_any_first_contact",
+          "verdict": "passed",
+          "meaning": "Across first-contact histories, freeze this group and search for completion. Exhaustion excludes a completion with that group frozen; it does not prove every contact state is recoverable.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        }
+      ]
+    },
+    {
+      "nodeId": "event-e000042",
+      "basis": "saved-evidence-review",
+      "headline": "Start: build-complex.cjs",
+      "action": "Start: build-complex.cjs.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000042",
+        "candidate-v002",
+        "operation-e000042"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000042",
+      "basis": "saved-evidence-review",
+      "headline": "build-complex.cjs",
+      "action": "build-complex.cjs. Saved input: v002; output: v002.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "The subsequent author note states: Offset contact moves the target crossbar at input 2; upward tool recovery at input 9 clears the shared shuttle row; shuttle movement at inputs 11-12 opens the gem pocket. Collection occurs at input 15 and the route returns to (6,7,0). Search exhaustion supports only the declared restrictions; this compact puzzle has no human-difficulty or independent-author claim. Browser play/save/export remains pending the batch runner.",
+      "badge": "",
+      "evidence": [
+        "operation-e000042",
+        "candidate-v002",
+        "event-e000042",
+        "note-n003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000044",
+      "basis": "saved-evidence-review",
+      "headline": "Save build files",
+      "action": "Save build files. Saved files: manifest.json, world.json, contract.json, spec.json, draft.json, level_AxA.txt, level_parsing.json, toolbox.json, world_map.json, world_parsing.json.",
+      "result": "Build files were archived for this candidate. The file list and fingerprints identify the saved output; verification appears separately.",
+      "decision": "Archiving preserves evidence and file identity. It does not rerun the test or establish that the map passed.",
+      "badge": "",
+      "evidence": [
+        "event-e000044",
+        "candidate-v002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000045",
+      "basis": "saved-evidence-review",
+      "headline": "Start: Saved build ordinary replay and full endpoint",
+      "action": "Start: Saved build ordinary replay and full endpoint.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000045",
+        "candidate-v002",
+        "operation-e000045"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000045",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; Saved build ordinary replay and full endpoint",
+      "action": "Saved build ordinary replay and full endpoint. Saved input: v002; output: v002.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict. Report interpretation: The report is passed; 3 of 3 individual checks passed.",
+      "decision": "The subsequent author note states: Offset contact moves the target crossbar at input 2; upward tool recovery at input 9 clears the shared shuttle row; shuttle movement at inputs 11-12 opens the gem pocket. Collection occurs at input 15 and the route returns to (6,7,0). Search exhaustion supports only the declared restrictions; this compact puzzle has no human-difficulty or independent-author claim. Browser play/save/export remains pending the batch runner.",
+      "badge": "",
+      "evidence": [
+        "operation-e000045",
+        "candidate-v002",
+        "test-t005",
+        "event-e000045",
+        "note-n003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t005",
+      "basis": "saved-evidence-review",
+      "headline": "Saved build ordinary replay and full endpoint",
+      "action": "Execute Saved build ordinary replay and full endpoint against v002.",
+      "result": "The report is passed; 3 of 3 individual checks passed.",
+      "decision": "The subsequent author note states: Offset contact moves the target crossbar at input 2; upward tool recovery at input 9 clears the shared shuttle row; shuttle movement at inputs 11-12 opens the gem pocket. Collection occurs at input 15 and the route returns to (6,7,0). Search exhaustion supports only the declared restrictions; this compact puzzle has no human-difficulty or independent-author claim. Browser play/save/export remains pending the batch runner.",
+      "badge": "",
+      "evidence": [
+        "test-t005",
+        "candidate-v002",
+        "note-n003"
+      ],
+      "observations": [
+        {
+          "label": "Recorded ordinary replay",
+          "value": "passed"
+        }
+      ],
+      "checks": [
+        {
+          "name": "saved_build_exact_cells",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: saved build exact cells. Its result is limited to the saved test scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "ordinary_and_search_all_transitions",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: ordinary and search all transitions. Its result is limited to the saved test scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "gem_and_return_endpoint",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: gem and return endpoint. Its result is limited to the saved test scope.",
+          "expected": "",
+          "observed": ""
+        }
+      ]
+    },
+    {
+      "nodeId": "replay-e000048",
+      "basis": "saved-evidence-review",
+      "headline": "Saved ordinary gameplay replay",
+      "action": "Archive 28 recorded inputs and 29 actor frames for v002.",
+      "result": "This artifact contains an ordinary-engine route replay. It is not by itself a recorded browser play session or a blind solving experiment.",
+      "decision": "The subsequent author note states: Offset contact moves the target crossbar at input 2; upward tool recovery at input 9 clears the shared shuttle row; shuttle movement at inputs 11-12 opens the gem pocket. Collection occurs at input 15 and the route returns to (6,7,0). Search exhaustion supports only the declared restrictions; this compact puzzle has no human-difficulty or independent-author claim. Browser play/save/export remains pending the batch runner.",
+      "badge": "",
+      "evidence": [
+        "replay-e000048",
+        "candidate-v002",
+        "note-n003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "note-n003",
+      "basis": "saved-evidence-review",
+      "headline": "Hand off the final structurally verified candidate for independent browser Play and editor persistence QA.",
+      "action": "Candidate v002 passes all 33 complex structural checks. Retain the earlier axial bypass, the failed first verification, and the geometry revision. The verified route is DDLLDDRRUDRRDDRLUULLLLUUUURR: 28 inputs, five object-moving inputs, and three dependent functional stages.",
+      "result": "Offset contact moves the target crossbar at input 2; upward tool recovery at input 9 clears the shared shuttle row; shuttle movement at inputs 11-12 opens the gem pocket. Collection occurs at input 15 and the route returns to (6,7,0). Search exhaustion supports only the declared restrictions; this compact puzzle has no human-difficulty or independent-author claim. Browser play/save/export remains pending the batch runner.",
+      "decision": "Planned checks: Saved-build ordinary replay and fingerprints; Batch browser Play compares every saved frame; Pre-collection Undo/Reset; Editor unchanged save and export; Final run audit after browser evidence is attached.",
+      "badge": "",
+      "evidence": [
+        "note-n003",
+        "candidate-v002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000050",
+      "basis": "saved-evidence-review",
+      "headline": "Start: Browser play, recorded frames and editor round-trip",
+      "action": "Start: Browser play, recorded frames and editor round-trip.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000050",
+        "candidate-v002",
+        "operation-e000050"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000050",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; Browser play, recorded frames and editor round-trip",
+      "action": "Browser play, recorded frames and editor round-trip. Saved input: v002; output: v002.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict. Report interpretation: The report is passed; 6 of 6 individual checks passed.",
+      "decision": "Use this result only within its recorded scope and alongside the other required checks. These are author-side checks of the declared conditions, not a human-difficulty score or a blind independent-agent evaluation.",
+      "badge": "",
+      "evidence": [
+        "operation-e000050",
+        "candidate-v002",
+        "test-t006",
+        "event-e000050"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t006",
+      "basis": "saved-evidence-review",
+      "headline": "Browser play, recorded frames and editor round-trip",
+      "action": "Execute Browser play, recorded frames and editor round-trip against v002.",
+      "result": "The report is passed; 6 of 6 individual checks passed.",
+      "decision": "Use this result only within its recorded scope and alongside the other required checks. These are author-side checks of the declared conditions, not a human-difficulty score or a blind independent-agent evaluation.",
+      "badge": "",
+      "evidence": [
+        "test-t006",
+        "candidate-v002"
+      ],
+      "observations": [
+        {
+          "label": "Recorded ordinary replay",
+          "value": "passed"
+        }
+      ],
+      "checks": [
+        {
+          "name": "saved_build_matches_current_spec",
+          "verdict": "passed",
+          "meaning": "Compare the saved build cells with the recorded design so the replay tests the delivered map.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "first_object_push_undo_and_reset",
+          "verdict": "passed",
+          "meaning": "Check Undo and Reset at the recorded first-push or pre-collection state; use the stated test scope for collection persistence.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "every_browser_frame_matches_ordinary_engine",
+          "verdict": "passed",
+          "meaning": "Perform the recorded browser inputs and compare every observed actor state with the ordinary-engine replay.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "complete_goal_in_browser",
+          "verdict": "passed",
+          "meaning": "Positive control: find or replay the complete declared objective, including a doorway return when required.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "editor_save_and_export_preserve_cells",
+          "verdict": "passed",
+          "meaning": "Save and export the unchanged editor map, then compare its cells with the tested design.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "editor_3d_rendered",
+          "verdict": "passed",
+          "meaning": "Check that the editor renders the saved map in the real browser.",
+          "expected": "",
+          "observed": ""
+        }
+      ]
+    },
+    {
+      "nodeId": "replay-e000053",
+      "basis": "saved-evidence-review",
+      "headline": "Saved browser playthrough",
+      "action": "Archive 28 recorded inputs and 29 actor frames for v002.",
+      "result": "These are saved browser actor observations compared with the ordinary engine, bound to this exact map and contract.",
+      "decision": "Use replay mode to inspect this exact recorded sequence. Structural necessity and browser QA have separate result records.",
+      "badge": "",
+      "evidence": [
+        "replay-e000053",
+        "candidate-v002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000054",
+      "basis": "saved-evidence-review",
+      "headline": "Finish authoring run",
+      "action": "Finish authoring run.",
+      "result": "The recorder marked the run complete. Later evidence review: 33 structural, 3 saved-build and 6 browser/editor checks pass, with a 28-input recorded route. The original failed restrictions remain part of the history.",
+      "decision": "The final evidence supports the declared offset delivery and ordered recovery within the tested state space; browser self-play is not an independent blind evaluation.",
+      "badge": "",
+      "evidence": [
+        "event-e000054",
+        "note-n003",
+        "test-t004",
+        "test-t005",
+        "test-t006"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "delivery-final",
+      "basis": "saved-evidence-review",
+      "headline": "Accepted after the axial bypass was removed",
+      "action": "Deliver v002 with a complete gem-and-return objective.",
+      "result": "33 structural, 3 saved-build and 6 browser/editor checks pass, with a 28-input recorded route. The original failed restrictions remain part of the history.",
+      "decision": "The final evidence supports the declared offset delivery and ordered recovery within the tested state space; browser self-play is not an independent blind evaluation.",
+      "badge": "",
+      "evidence": [
+        "note-n003",
+        "test-t004",
+        "test-t005",
+        "test-t006"
+      ],
+      "observations": [],
+      "checks": []
+    }
   ]
 }

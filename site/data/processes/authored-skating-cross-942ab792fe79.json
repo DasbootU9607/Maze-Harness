@@ -4704,5 +4704,1123 @@
       "files": [],
       "facts": []
     }
+  ],
+  "explanations": [
+    {
+      "nodeId": "event-e000001",
+      "basis": "saved-evidence-review",
+      "headline": "Start authoring run",
+      "action": "Start authoring run.",
+      "result": "The recorder opened this authoring run. This does not establish an empty prior conversation context.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000002",
+      "basis": "saved-evidence-review",
+      "headline": "Start automatic capture",
+      "action": "Start automatic capture.",
+      "result": "The automatic collector started. Recorded command boundaries, reads and saved artifacts are shown in sequence.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-snapshot-e000003",
+      "basis": "saved-evidence-review",
+      "headline": "Skill attached: mazebench-skating-cross/SKILL.md",
+      "action": "Capture a version snapshot of mazebench-skating-cross/SKILL.md. Authoring workflow, supported mechanism and required delivery checks.",
+      "result": "The dependency version was saved. This event does not record a document read.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-snapshot-e000003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r001",
+      "basis": "saved-evidence-review",
+      "headline": "SKILL.md",
+      "action": "Read mazebench-skating-cross/SKILL.md. Authoring workflow, supported mechanism and required delivery checks.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r002",
+      "basis": "saved-evidence-review",
+      "headline": "mechanism-logic.md",
+      "action": "Read mazebench-skating-cross/references/mechanism-logic.md. Extracted functional roles, contact relationships and preparation dependencies to realize in a new layout.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r002",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r003",
+      "basis": "saved-evidence-review",
+      "headline": "planning-depth.md",
+      "action": "Read mazebench-skating-cross/references/planning-depth.md. Guidance for connected stages, usable recovery and avoiding trivial completions.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r003",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r004",
+      "basis": "saved-evidence-review",
+      "headline": "complex-validation.md",
+      "action": "Read mazebench-skating-cross/references/complex-validation.md. Verification rules or implementations defining what the checks can and cannot establish.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r004",
+        "note-n001",
+        "note-n003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r005",
+      "basis": "saved-evidence-review",
+      "headline": "design-template.json",
+      "action": "Read mazebench-skating-cross/references/design-template.json. The design contract scaffold; reading it does not establish that a complete reference map was copied.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r005"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r006",
+      "basis": "saved-evidence-review",
+      "headline": "official-case.md",
+      "action": "Read mazebench-skating-cross/references/official-case.md. The source case explanation and its scoped mechanism evidence.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r006",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r007",
+      "basis": "saved-evidence-review",
+      "headline": "official-world-map.txt",
+      "action": "Read mazebench-skating-cross/references/official-world-map.txt. Original source geometry for checking actual members, terrain and boundaries.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r007",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r008",
+      "basis": "saved-evidence-review",
+      "headline": "official-states.json",
+      "action": "Read mazebench-skating-cross/references/official-states.json. Recorded reference poses and moves for checking how the source mechanism operates.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r008",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r009",
+      "basis": "saved-evidence-review",
+      "headline": "design.md",
+      "action": "Read mazebench-skating-cross/references/design.md. Supporting design or reference material identified by the saved filename and fingerprint.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r009",
+        "note-n001",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r010",
+      "basis": "saved-evidence-review",
+      "headline": "verification.md",
+      "action": "Read mazebench-skating-cross/references/verification.md. Verification rules or implementations defining what the checks can and cannot establish.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r010",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "note-n001",
+      "basis": "saved-evidence-review",
+      "headline": "Create a new ice room with at least three connected cross repositioning stages, a cross-braked turn onto the gem route, and an alive return to the starting doorway.",
+      "action": "Start from the empty template with a smaller inset ice basin, an asymmetric seven-member cross, and three interior pier stops. Place the gem inside the stopping graph rather than at a trivial boundary stop. Derive useful docking poses from this new footprint and verify them through ordinary engine motion.",
+      "result": "The longer upper and right arms change remote collision stops and usable input sides. A lower interior gem needs a stopping turn; the same cross must make that turn usable while preserving a return path. Do not transfer the source's pose coordinates or direction order.",
+      "decision": "Planned checks: Complete gem-and-return solution; Frozen cross and forbidden cross braking each exclude completion; At least three functional motions supported by prefix dependencies; Directed stopping graphs and actual next pushes; Saved-build ordinary replay and separate browser play/save/export.",
+      "badge": "",
+      "evidence": [
+        "note-n001",
+        "resource-r002",
+        "resource-r003",
+        "resource-r004",
+        "resource-r006",
+        "resource-r007",
+        "resource-r008",
+        "resource-r009",
+        "resource-r010"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000015",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000015",
+        "operation-e000015"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "candidate-v001",
+      "basis": "saved-evidence-review",
+      "headline": "No reachable first cross input",
+      "action": "Place an asymmetric seven-member cross in an ice basin with an interior gem and doorway-return objective.",
+      "result": "The positive objective fails after exhausting four stopping states: no player sliding ray reaches a useful cross input. The three negative diagnostic checks do not establish a usable puzzle without a positive solution.",
+      "decision": "Add a top-edge pier at (9,2) to stop the first rightward slide at (8,2), creating a downward approach to the cross.",
+      "badge": "",
+      "evidence": [
+        "test-t001",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000015",
+      "basis": "saved-evidence-review",
+      "headline": "node",
+      "action": "node. Saved input: none; output: v001.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "The subsequent author note states: The first diagnostic exhausts just four corner stops: no player ray meets the cross. The new pier should create a downward approach to a real arm face and let ordinary search evaluate the resulting preparation chain.",
+      "badge": "",
+      "evidence": [
+        "operation-e000015",
+        "candidate-v001",
+        "event-e000015",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000018",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000018",
+        "candidate-v001",
+        "event-e000019"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000019",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; Positive objective fails despite negative checks",
+      "action": "Finish: node.",
+      "result": "Command execution ended with exit code 1. See the associated test result for its recorded verdict. Report interpretation: The complete objective is unsolved after four stopping states. The other three negative results also find no route, which is not evidence of a working mechanism when the base map has no solution.",
+      "decision": "Create a reachable first cross input using the new pier, then repeat the positive and negative tests.",
+      "badge": "",
+      "evidence": [
+        "event-e000019",
+        "candidate-v001",
+        "event-e000018",
+        "test-t001"
+      ],
+      "observations": [
+        {
+          "label": "Process exit code",
+          "value": "1"
+        },
+        {
+          "label": "Elapsed milliseconds",
+          "value": "607"
+        }
+      ],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t001",
+      "basis": "saved-evidence-review",
+      "headline": "Positive objective fails despite negative checks",
+      "action": "Search for gem collection and a live return, then probe motion and braking restrictions.",
+      "result": "The complete objective is unsolved after four stopping states. The other three negative results also find no route, which is not evidence of a working mechanism when the base map has no solution.",
+      "decision": "Create a reachable first cross input using the new pier, then repeat the positive and negative tests.",
+      "badge": "No solution",
+      "evidence": [
+        "note-n002",
+        "test-t002"
+      ],
+      "observations": [],
+      "checks": [
+        {
+          "name": "complete_gem_and_return",
+          "verdict": "failed",
+          "meaning": "Positive control: find or replay the complete declared objective, including a doorway return when required.",
+          "expected": "solved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "cross_movement_required",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "static_cross_braking_required",
+          "verdict": "passed",
+          "meaning": "Exclude stopping against the stationary cross and search for the full gem-and-return objective.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "more_than_two_motions",
+          "verdict": "passed",
+          "meaning": "Restrict the allowed number of object-moving inputs and search for a complete goal, testing whether a simpler completion exists.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        }
+      ]
+    },
+    {
+      "nodeId": "note-n002",
+      "basis": "saved-evidence-review",
+      "headline": "Make the first cross input reachable from the doorway without adding floor-based free turning.",
+      "action": "Add a top-edge pier at (9,2), stopping the initial rightward slide at (8,2), aligned with the cross's longer right arm.",
+      "result": "The first diagnostic exhausts just four corner stops: no player ray meets the cross. The new pier should create a downward approach to a real arm face and let ordinary search evaluate the resulting preparation chain.",
+      "decision": "Planned checks: A usable initial cross input exists; Complete gem-and-return solution; Braking and multiple cross motions remain necessary.",
+      "badge": "",
+      "evidence": [
+        "note-n002",
+        "candidate-v001",
+        "resource-r009"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000022",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000022",
+        "candidate-v001",
+        "operation-e000022"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "candidate-v002",
+      "basis": "saved-evidence-review",
+      "headline": "Playable basin; refine claims from counterexamples",
+      "action": "Add the single pier cell that makes the first useful input reachable.",
+      "result": "The 19-input gem-and-return route passes. Directional probes show upward motion is required for docking, while the first downward parking pose and an exact upper-left pose can be bypassed.",
+      "decision": "Keep the geometry and declare only the supported upward-preparation, right-docking and lower-alignment dependencies.",
+      "badge": "",
+      "evidence": [
+        "test-t002",
+        "test-t003",
+        "note-n003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000022",
+      "basis": "saved-evidence-review",
+      "headline": "node",
+      "action": "node. Saved input: v001; output: v002.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "The subsequent author note states: The first downward parking pose and the exact upper-left pose each have bypasses, so neither is declared necessary. The separate directional prefix search excludes docking without upward motion. Docking is necessary before lower alignment, and lower alignment is necessary for the full objective. Long static brakes are required somewhere in every completion, but the gem is collected during the final cross push in this witness.",
+      "badge": "",
+      "evidence": [
+        "operation-e000022",
+        "candidate-v002",
+        "event-e000022",
+        "note-n003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000025",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000025",
+        "candidate-v002",
+        "operation-e000025"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000025",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; diagnostic-02.json",
+      "action": "node. Saved input: v002; output: v002.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict. Report interpretation: The report is passed; 4 of 4 individual checks passed.",
+      "decision": "The subsequent author note states: The first downward parking pose and the exact upper-left pose each have bypasses, so neither is declared necessary. The separate directional prefix search excludes docking without upward motion. Docking is necessary before lower alignment, and lower alignment is necessary for the full objective. Long static brakes are required somewhere in every completion, but the gem is collected during the final cross push in this witness.",
+      "badge": "",
+      "evidence": [
+        "operation-e000025",
+        "candidate-v002",
+        "test-t002",
+        "event-e000025",
+        "note-n003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t002",
+      "basis": "saved-evidence-review",
+      "headline": "diagnostic-02.json",
+      "action": "Execute diagnostic-02.json against v002.",
+      "result": "The report is passed; 4 of 4 individual checks passed.",
+      "decision": "The subsequent author note states: The first downward parking pose and the exact upper-left pose each have bypasses, so neither is declared necessary. The separate directional prefix search excludes docking without upward motion. Docking is necessary before lower alignment, and lower alignment is necessary for the full objective. Long static brakes are required somewhere in every completion, but the gem is collected during the final cross push in this witness.",
+      "badge": "",
+      "evidence": [
+        "test-t002",
+        "candidate-v002",
+        "note-n003"
+      ],
+      "observations": [],
+      "checks": [
+        {
+          "name": "complete_gem_and_return",
+          "verdict": "passed",
+          "meaning": "Positive control: find or replay the complete declared objective, including a doorway return when required.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "cross_movement_required",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "static_cross_braking_required",
+          "verdict": "passed",
+          "meaning": "Exclude stopping against the stationary cross and search for the full gem-and-return objective.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "more_than_two_motions",
+          "verdict": "passed",
+          "meaning": "Restrict the allowed number of object-moving inputs and search for a complete goal, testing whether a simpler completion exists.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        }
+      ]
+    },
+    {
+      "nodeId": "event-e000028",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000028",
+        "candidate-v002",
+        "operation-e000028"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000028",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; Upward preparation supported; other directions bypassable",
+      "action": "node. Saved input: v002; output: v002.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict. Report interpretation: Docking remains possible without D, L or R, but not without U. The passed probe report records those outcomes; it does not say all four directions are necessary.",
+      "decision": "Use the upward-preparation dependency and remove unsupported pose-necessity claims from the final contract.",
+      "badge": "",
+      "evidence": [
+        "operation-e000028",
+        "candidate-v002",
+        "test-t003",
+        "event-e000028",
+        "note-n003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t003",
+      "basis": "saved-evidence-review",
+      "headline": "Upward preparation supported; other directions bypassable",
+      "action": "Probe docking while separately excluding each movement direction.",
+      "result": "Docking remains possible without D, L or R, but not without U. The passed probe report records those outcomes; it does not say all four directions are necessary.",
+      "decision": "Use the upward-preparation dependency and remove unsupported pose-necessity claims from the final contract.",
+      "badge": "",
+      "evidence": [
+        "note-n003",
+        "test-t004"
+      ],
+      "observations": [],
+      "checks": [
+        {
+          "name": "dock_without_D",
+          "verdict": "passed",
+          "meaning": "Directional probe: test docking without this direction. A solved probe means that direction can be bypassed; read the recorded expected outcome before interpreting Passed.",
+          "expected": "",
+          "observed": "solved"
+        },
+        {
+          "name": "dock_without_U",
+          "verdict": "passed",
+          "meaning": "Directional probe: test docking without this direction. A solved probe means that direction can be bypassed; read the recorded expected outcome before interpreting Passed.",
+          "expected": "",
+          "observed": "unsolved"
+        },
+        {
+          "name": "dock_without_L",
+          "verdict": "passed",
+          "meaning": "Directional probe: test docking without this direction. A solved probe means that direction can be bypassed; read the recorded expected outcome before interpreting Passed.",
+          "expected": "",
+          "observed": "solved"
+        },
+        {
+          "name": "dock_without_R",
+          "verdict": "passed",
+          "meaning": "Directional probe: test docking without this direction. A solved probe means that direction can be bypassed; read the recorded expected outcome before interpreting Passed.",
+          "expected": "",
+          "observed": "solved"
+        }
+      ]
+    },
+    {
+      "nodeId": "note-n003",
+      "basis": "saved-evidence-review",
+      "headline": "Bind the three functional stages to the dependencies actually demonstrated by the new basin.",
+      "action": "Declare upward preparation, right docking at center (8,4), and lower alignment at center (8,9). Use the 19-input complete route as the ordinary witness, with next input faces at (5,5) and (10,3).",
+      "result": "The first downward parking pose and the exact upper-left pose each have bypasses, so neither is declared necessary. The separate directional prefix search excludes docking without upward motion. Docking is necessary before lower alignment, and lower alignment is necessary for the full objective. Long static brakes are required somewhere in every completion, but the gem is collected during the final cross push in this witness.",
+      "decision": "Planned checks: Positive and restricted upward-preparation-to-docking prefix; Positive and restricted docking-to-lower-alignment prefix; Lower alignment required for gem-and-return; Directed next-stance access after each stage; No completion using at most two cross motions.",
+      "badge": "",
+      "evidence": [
+        "note-n003",
+        "candidate-v002",
+        "resource-r004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000032",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000032",
+        "candidate-v002",
+        "operation-e000032"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "candidate-v003",
+      "basis": "saved-evidence-review",
+      "headline": "Same basin; supported dependencies verified",
+      "action": "Bind the supported stages and next input faces to the 19-input witness without changing cells.",
+      "result": "All 19 formal checks pass, followed by 3 saved-build and 6 browser/editor checks. The objective includes surviving the return to the initial doorway after collecting the gem.",
+      "decision": "Accept these scoped dependencies and braking requirements. Do not promote bypassed poses into required stages or claim the gem is collected by a static brake in this witness.",
+      "badge": "",
+      "evidence": [
+        "note-n003",
+        "test-t004",
+        "test-t005",
+        "test-t006"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000032",
+      "basis": "saved-evidence-review",
+      "headline": "node",
+      "action": "node. Saved input: v002; output: v003.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "operation-e000032",
+        "candidate-v003",
+        "event-e000032"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000035",
+      "basis": "saved-evidence-review",
+      "headline": "Start: verify.cjs",
+      "action": "Start: verify.cjs.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000035",
+        "candidate-v003",
+        "operation-e000035"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000035",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; verify.cjs",
+      "action": "verify.cjs. Saved input: v003; output: v003.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict. Report interpretation: The report is passed; 19 of 19 individual checks passed.",
+      "decision": "Use this result only within its recorded scope and alongside the other required checks. These are author-side checks of the declared conditions, not a human-difficulty score or a blind independent-agent evaluation.",
+      "badge": "",
+      "evidence": [
+        "operation-e000035",
+        "candidate-v003",
+        "test-t004",
+        "event-e000035"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t004",
+      "basis": "saved-evidence-review",
+      "headline": "verify.cjs",
+      "action": "Execute verify.cjs against v003.",
+      "result": "The report is passed; 19 of 19 individual checks passed.",
+      "decision": "Use this result only within its recorded scope and alongside the other required checks. These are author-side checks of the declared conditions, not a human-difficulty score or a blind independent-agent evaluation.",
+      "badge": "",
+      "evidence": [
+        "test-t004",
+        "candidate-v003"
+      ],
+      "observations": [
+        {
+          "label": "Saved goal search",
+          "value": "solved"
+        },
+        {
+          "label": "Expanded search states",
+          "value": "329"
+        },
+        {
+          "label": "Search limit",
+          "value": "300000"
+        },
+        {
+          "label": "Recorded ordinary replay",
+          "value": "passed"
+        }
+      ],
+      "checks": [
+        {
+          "name": "complete_objective",
+          "verdict": "passed",
+          "meaning": "Positive control: find or replay the complete declared objective, including a doorway return when required.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "official_solver_positive",
+          "verdict": "passed",
+          "meaning": "Positive control: find or replay the complete declared objective, including a doorway return when required.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "freeze_cross",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "forbid_static_cross_brake",
+          "verdict": "passed",
+          "meaning": "Exclude stopping against the stationary cross and search for the full gem-and-return objective.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "at_most_1_cross_motions",
+          "verdict": "passed",
+          "meaning": "Restrict the allowed number of object-moving inputs and search for a complete goal, testing whether a simpler completion exists.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "at_most_2_cross_motions",
+          "verdict": "passed",
+          "meaning": "Restrict the allowed number of object-moving inputs and search for a complete goal, testing whether a simpler completion exists.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "single_direction_cross_motion",
+          "verdict": "passed",
+          "meaning": "Allow object movement in only one compass direction and search for completion.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "first_cross_motion_then_frozen",
+          "verdict": "passed",
+          "meaning": "Search all supported first-use histories for a completion requiring no further object movement.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "dependency_1_positive",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "dependency_1_without_preparation",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "dependency_2_positive",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "dependency_2_without_preparation",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "dependency_3_positive",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "dependency_3_without_preparation",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "stage_Lift into the upper workspace",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_Dock against the entry pier",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_Align the gem descent",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "selected_8_cross_frozen",
+          "verdict": "passed",
+          "meaning": "Apply the restriction at the selected witness state only. This does not quantify over every reachable state.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "selected_9_cross_frozen",
+          "verdict": "passed",
+          "meaning": "Apply the restriction at the selected witness state only. This does not quantify over every reachable state.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        }
+      ]
+    },
+    {
+      "nodeId": "event-e000038",
+      "basis": "saved-evidence-review",
+      "headline": "Start: build.cjs",
+      "action": "Start: build.cjs.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000038",
+        "candidate-v003",
+        "operation-e000038"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000038",
+      "basis": "saved-evidence-review",
+      "headline": "build.cjs",
+      "action": "build.cjs. Saved input: v003; output: v003.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "operation-e000038",
+        "candidate-v003",
+        "event-e000038"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000040",
+      "basis": "saved-evidence-review",
+      "headline": "Save build files",
+      "action": "Save build files. Saved files: manifest.json, world.json, contract.json, spec.json, draft.json, level_AxA.txt, level_parsing.json, toolbox.json, world_map.json, world_parsing.json.",
+      "result": "Build files were archived for this candidate. The file list and fingerprints identify the saved output; verification appears separately.",
+      "decision": "Archiving preserves evidence and file identity. It does not rerun the test or establish that the map passed.",
+      "badge": "",
+      "evidence": [
+        "event-e000040",
+        "candidate-v003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000041",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000041",
+        "candidate-v003",
+        "operation-e000041"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000041",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; replay-check-01.json",
+      "action": "node. Saved input: v003; output: v003.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict. Report interpretation: The report is passed; 3 of 3 individual checks passed.",
+      "decision": "Use this result only within its recorded scope and alongside the other required checks. These are author-side checks of the declared conditions, not a human-difficulty score or a blind independent-agent evaluation.",
+      "badge": "",
+      "evidence": [
+        "operation-e000041",
+        "candidate-v003",
+        "test-t005",
+        "event-e000041"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t005",
+      "basis": "saved-evidence-review",
+      "headline": "replay-check-01.json",
+      "action": "Execute replay-check-01.json against v003.",
+      "result": "The report is passed; 3 of 3 individual checks passed.",
+      "decision": "Use this result only within its recorded scope and alongside the other required checks. These are author-side checks of the declared conditions, not a human-difficulty score or a blind independent-agent evaluation.",
+      "badge": "",
+      "evidence": [
+        "test-t005",
+        "candidate-v003"
+      ],
+      "observations": [
+        {
+          "label": "Recorded ordinary replay",
+          "value": "passed"
+        }
+      ],
+      "checks": [
+        {
+          "name": "saved_build_matches_design",
+          "verdict": "passed",
+          "meaning": "Compare the saved build cells with the recorded design so the replay tests the delivered map.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "ordinary_and_search_transitions_match",
+          "verdict": "passed",
+          "meaning": "Compare each ordinary-engine transition with the search transition on the saved route.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "gem_collected_and_alive_doorway_return",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: gem collected and alive doorway return. Its result is limited to the saved test scope.",
+          "expected": "",
+          "observed": ""
+        }
+      ]
+    },
+    {
+      "nodeId": "replay-e000044",
+      "basis": "saved-evidence-review",
+      "headline": "Saved ordinary gameplay replay",
+      "action": "Archive 19 recorded inputs and 20 actor frames for v003.",
+      "result": "This artifact contains an ordinary-engine route replay. It is not by itself a recorded browser play session or a blind solving experiment.",
+      "decision": "Use replay mode to inspect this exact recorded sequence. Structural necessity and browser QA have separate result records.",
+      "badge": "",
+      "evidence": [
+        "replay-e000044",
+        "candidate-v003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000045",
+      "basis": "saved-evidence-review",
+      "headline": "Start: Browser play, recorded frames and editor round-trip",
+      "action": "Start: Browser play, recorded frames and editor round-trip.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000045",
+        "candidate-v003",
+        "operation-e000045"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000045",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; Browser play, recorded frames and editor round-trip",
+      "action": "Browser play, recorded frames and editor round-trip. Saved input: v003; output: v003.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict. Report interpretation: The report is passed; 6 of 6 individual checks passed.",
+      "decision": "Use this result only within its recorded scope and alongside the other required checks. These are author-side checks of the declared conditions, not a human-difficulty score or a blind independent-agent evaluation.",
+      "badge": "",
+      "evidence": [
+        "operation-e000045",
+        "candidate-v003",
+        "test-t006",
+        "event-e000045"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t006",
+      "basis": "saved-evidence-review",
+      "headline": "Browser play, recorded frames and editor round-trip",
+      "action": "Execute Browser play, recorded frames and editor round-trip against v003.",
+      "result": "The report is passed; 6 of 6 individual checks passed.",
+      "decision": "Use this result only within its recorded scope and alongside the other required checks. These are author-side checks of the declared conditions, not a human-difficulty score or a blind independent-agent evaluation.",
+      "badge": "",
+      "evidence": [
+        "test-t006",
+        "candidate-v003"
+      ],
+      "observations": [
+        {
+          "label": "Recorded ordinary replay",
+          "value": "passed"
+        }
+      ],
+      "checks": [
+        {
+          "name": "saved_build_matches_current_spec",
+          "verdict": "passed",
+          "meaning": "Compare the saved build cells with the recorded design so the replay tests the delivered map.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "first_object_push_undo_and_reset",
+          "verdict": "passed",
+          "meaning": "Check Undo and Reset at the recorded first-push or pre-collection state; use the stated test scope for collection persistence.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "every_browser_frame_matches_ordinary_engine",
+          "verdict": "passed",
+          "meaning": "Perform the recorded browser inputs and compare every observed actor state with the ordinary-engine replay.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "complete_goal_in_browser",
+          "verdict": "passed",
+          "meaning": "Positive control: find or replay the complete declared objective, including a doorway return when required.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "editor_save_and_export_preserve_cells",
+          "verdict": "passed",
+          "meaning": "Save and export the unchanged editor map, then compare its cells with the tested design.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "editor_3d_rendered",
+          "verdict": "passed",
+          "meaning": "Check that the editor renders the saved map in the real browser.",
+          "expected": "",
+          "observed": ""
+        }
+      ]
+    },
+    {
+      "nodeId": "replay-e000048",
+      "basis": "saved-evidence-review",
+      "headline": "Saved browser playthrough",
+      "action": "Archive 19 recorded inputs and 20 actor frames for v003.",
+      "result": "These are saved browser actor observations compared with the ordinary engine, bound to this exact map and contract.",
+      "decision": "Use replay mode to inspect this exact recorded sequence. Structural necessity and browser QA have separate result records.",
+      "badge": "",
+      "evidence": [
+        "replay-e000048",
+        "candidate-v003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000049",
+      "basis": "saved-evidence-review",
+      "headline": "Finish authoring run",
+      "action": "Finish authoring run.",
+      "result": "The recorder marked the run complete. Later evidence review: 19 structural, 3 saved-build and 6 browser/editor checks pass for a 19-input witness. Unsupported pose-necessity claims were excluded from the final declaration.",
+      "decision": "Acceptance is based on the tested completion, braking and dependency conditions. It does not establish human difficulty or a unique route.",
+      "badge": "",
+      "evidence": [
+        "event-e000049",
+        "note-n003",
+        "test-t004",
+        "test-t005",
+        "test-t006"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "delivery-final",
+      "basis": "saved-evidence-review",
+      "headline": "Accepted with gem-and-return and supported ice stages",
+      "action": "Deliver the second geometry, saved as v003 after contract refinement.",
+      "result": "19 structural, 3 saved-build and 6 browser/editor checks pass for a 19-input witness. Unsupported pose-necessity claims were excluded from the final declaration.",
+      "decision": "Acceptance is based on the tested completion, braking and dependency conditions. It does not establish human difficulty or a unique route.",
+      "badge": "",
+      "evidence": [
+        "note-n003",
+        "test-t004",
+        "test-t005",
+        "test-t006"
+      ],
+      "observations": [],
+      "checks": []
+    }
   ]
 }
