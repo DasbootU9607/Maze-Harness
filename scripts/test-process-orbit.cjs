@@ -8,7 +8,7 @@ assert(get('engine'),'Supply --engine ENGINE to locate playwright-core');
 const root=path.resolve(__dirname,'..'),output=path.resolve(get('out')||path.join(root,'outputs/process-orbit'));
 const {chromium}=require(require.resolve('playwright-core',{paths:[path.resolve(get('engine'))]}));
 const {createServer,prefix}=require('./serve-site.cjs');
-const report={scope:'Actual process records in the inline arc timeline: complete event access, linked selection, real progress-slider input, arc geometry and normal page accessibility. No game or WebGL preview is opened.',cases:[],errors:[],failedResponses:[],runtimeRequests:[]};
+const report={scope:'Actual process records in the inline arc timeline: complete event access, key-event markers, linked selection, real progress-slider input, measured card separation during animation and responsive layouts, and normal page accessibility. No game or WebGL preview is opened.',cases:[],errors:[],failedResponses:[],runtimeRequests:[]};
 const save=()=>fs.writeFileSync(path.join(output,'report.json'),JSON.stringify(report,null,2)+'\n');
 const eventSelector=id=>'.orbit-event[data-event-id="'+id+'"]';
 const settle=async page=>{
@@ -47,24 +47,35 @@ async function geometry(page){
   return page.locator('.orbit-stage').evaluate(stage=>{
     const outer=stage.getBoundingClientRect(),rect=element=>{const r=element.getBoundingClientRect();return{x:r.x,y:r.y,right:r.right,bottom:r.bottom,width:r.width,height:r.height,cx:r.x+r.width/2,cy:r.y+r.height/2};};
     const circle=stage.querySelector('.orbit-track-circle'),matrix=circle.getScreenCTM(),center=new DOMPoint(circle.cx.baseVal.value,circle.cy.baseVal.value).matrixTransform(matrix),edge=new DOMPoint(circle.cx.baseVal.value+circle.r.baseVal.value,circle.cy.baseVal.value).matrixTransform(matrix);
-    return {stage:rect(stage),arc:{cx:center.x,cy:center.y,radius:Math.hypot(edge.x-center.x,edge.y-center.y)},events:[...stage.querySelectorAll('.orbit-event')].map(event=>{
+    const all=[...stage.querySelectorAll('.orbit-event')].map(event=>{
       const point=event.querySelector('.orbit-event-point'),card=event.querySelector('.orbit-event-card');
       const p=rect(point),c=rect(card),style=getComputedStyle(event);
-      return {id:event.dataset.eventId,point:p,card:c,visible:style.visibility!=='hidden'&&style.display!=='none'&&p.height>0&&p.cy>outer.top+5&&p.cy<outer.bottom-5};
-    }).filter(event=>event.visible)};
+      return {id:event.dataset.eventId,point:p,card:c,selected:event.getAttribute('aria-current')==='step',painted:style.visibility!=='hidden'&&style.display!=='none'&&c.height>0&&c.bottom>outer.top&&c.y<outer.bottom&&c.right>outer.left&&c.x<outer.right,visible:style.visibility!=='hidden'&&style.display!=='none'&&p.height>0&&p.cy>outer.top+5&&p.cy<outer.bottom-5};
+    });
+    return {stage:rect(stage),stageCssHeight:stage.clientHeight,animating:stage.dataset.animating,arc:{cx:center.x,cy:center.y,radius:Math.hypot(edge.x-center.x,edge.y-center.y)},events:all.filter(event=>event.visible),cards:all.filter(event=>event.painted)};
   });
 }
+function assertCardSeparation(sample,label){
+  assert(sample.cards.length>=2,label+' contains neighboring readable cards, including partial cards');
+  const cards=[...sample.cards].sort((a,b)=>a.card.y-b.card.y);let minGap=Infinity,pairs=0;
+  for(let i=0;i<cards.length;i++)for(let j=i+1;j<cards.length;j++){
+    const a=cards[i],b=cards[j];if(Math.min(a.card.right,b.card.right)<=Math.max(a.card.x,b.card.x))continue;
+    const gap=b.card.y-a.card.bottom;minGap=Math.min(minGap,gap);pairs++;
+    assert(gap>=4,label+' card gap must remain positive: '+a.id+' -> '+b.id+' = '+gap.toFixed(3)+'px');
+  }
+  assert(pairs>0,label+' checks actual adjacent card rectangles');
+  return {cards:cards.length,pairs,minGap,partialCards:cards.filter(event=>event.card.y<sample.stage.y||event.card.bottom>sample.stage.bottom).length};
+}
 function assertAligned(sample,label){
-  assert(sample.events.length>=3,label+' must show several actual records on the arc');
-  for(const event of sample.events){
+  assert(sample.events.length>=1,label+' keeps a readable centered record');
+  for(const event of sample.cards){
     assert(Math.abs(event.point.cy-event.card.cy)<=2,label+' point and card must share the same vertical position: '+event.id);
     assert(Math.abs(Math.hypot(event.point.cx-sample.arc.cx,event.point.cy-sample.arc.cy)-sample.arc.radius)<=2,label+' points remain attached to the rendered arc: '+event.id);
   }
-  const xs=sample.events.map(event=>event.point.cx);
-  assert(Math.max(...xs)-Math.min(...xs)>4,label+' points follow an arc, not a straight vertical line');
+  assertCardSeparation(sample,label);
 }
 function assertMovedTogether(before,after,label){
-  const old=new Map(before.events.map(event=>[event.id,event])),shared=after.events.filter(event=>old.has(event.id));
+  const old=new Map(before.cards.map(event=>[event.id,event])),shared=after.cards.filter(event=>old.has(event.id));
   assert(shared.length>=2,label+' must retain overlapping records for a meaningful geometry comparison');
   let moved=0;
   for(const event of shared){
@@ -108,6 +119,73 @@ async function testProgressSlider(page,ids){
   await page.mouse.move(box.x+box.width/2,y);await page.mouse.down();await page.mouse.move(box.x+box.width-1,y,{steps:12});await page.mouse.up();await assertSelection(page,ids.at(-1));
   await page.mouse.move(box.x+box.width-2,y);await page.mouse.down();await page.mouse.move(box.x+1,y,{steps:18});await page.mouse.up();await assertSelection(page,ids[0]);
   return {pointerStart:0,pointerMiddle:middle,pointerEnd:ids.length-1,nativeKeyboard:true,width:box.width,height:box.height};
+}
+async function assertMarkerPositions(page,keys,activeIds){
+  const snapshot=await page.locator('#orbit-markers').evaluate(band=>{
+    const range=document.querySelector('#orbit-position'),r=range.getBoundingClientRect(),rect=e=>{const b=e.getBoundingClientRect();return{x:b.x,y:b.y,right:b.right,bottom:b.bottom,width:b.width,height:b.height,cx:b.x+b.width/2};};
+    return{range:rect(range),scale:r.width/range.clientWidth,selected:document.querySelector('#process-orbit').dataset.selectedId,markers:[...band.querySelectorAll('.orbit-key-marker')].map(e=>({id:e.dataset.eventId,index:Number(e.dataset.index),position:Number(e.dataset.position),lane:Number(e.dataset.lane),label:e.getAttribute('aria-label'),description:e.getAttribute('aria-describedby'),pressed:e.getAttribute('aria-pressed'),current:e.getAttribute('aria-current'),rect:rect(e)}))};
+  });
+  assert.deepEqual(snapshot.markers.map(marker=>marker.id),keys.filter(id=>activeIds.includes(id)),'Every active key event has one marker in recorded order');
+  for(const marker of snapshot.markers){
+    const index=activeIds.indexOf(marker.id),position=index/Math.max(1,activeIds.length-1);
+    assert.equal(marker.index,index,'Marker index follows the active filter');assert(Math.abs(marker.position-position)<1e-8);
+    const x=snapshot.range.x+9*snapshot.scale+position*(snapshot.range.width-18*snapshot.scale);
+    assert(Math.abs(marker.rect.cx-x)<=1.1,'Marker center aligns with its exact native-slider position: '+marker.id);
+    assert(marker.rect.width>=23.5*snapshot.scale&&marker.rect.height>=23.5*snapshot.scale,'Each marker has a usable independent target');
+    assert.equal(marker.description,'orbit-marker-tooltip');assert(marker.label&&marker.label.length>10);
+    assert.equal(marker.pressed,String(marker.id===snapshot.selected));assert.equal(marker.current,marker.id===snapshot.selected?'step':null);
+  }
+  for(let i=0;i<snapshot.markers.length;i++)for(let j=i+1;j<snapshot.markers.length;j++){
+    const a=snapshot.markers[i],b=snapshot.markers[j],overlapX=Math.min(a.rect.right,b.rect.right)-Math.max(a.rect.x,b.rect.x),overlapY=Math.min(a.rect.bottom,b.rect.bottom)-Math.max(a.rect.y,b.rect.y);
+    assert(overlapX<=.5||overlapY<=.5,'Dense marker targets remain individually clickable: '+a.id+' / '+b.id);
+  }
+  return{count:snapshot.markers.length,lanes:new Set(snapshot.markers.map(marker=>marker.lane)).size};
+}
+async function exerciseMarkers(page,keys,activeIds){
+  const result=await assertMarkerPositions(page,keys,activeIds),names=[];
+  for(const id of keys.filter(id=>activeIds.includes(id))){
+    const marker=page.locator('.orbit-key-marker[data-event-id="'+id+'"]'),tooltip=page.locator('#orbit-marker-tooltip');
+    await marker.hover();await tooltip.waitFor({state:'visible'});const name=(await tooltip.innerText()).trim();assert(name.length>0,'Hover exposes the complete event name');
+    await marker.focus();await page.mouse.move(1,1);assert(await tooltip.isVisible(),'Keyboard focus also exposes the marker name');assert.equal((await tooltip.innerText()).trim(),name);
+    await marker.click();await assertSelection(page,id);assert(name.includes((await page.locator(eventSelector(id)+' .orbit-event-label').innerText()).trim()),'The marker name belongs to the selected actual event');names.push({id,name});
+  }
+  if(keys.length>1){const first=page.locator('.orbit-key-marker[data-event-id="'+keys[0]+'"]');await first.focus();await page.keyboard.press('Enter');await assertSelection(page,keys[0]);}
+  await assertMarkerPositions(page,keys,activeIds);return{...result,clicked:names.length,names};
+}
+async function checkEdgeTooltips(page){
+  const result=[];
+  for(const edge of ['first','last']){
+    const marker=edge==='first'?page.locator('.orbit-key-marker').first():page.locator('.orbit-key-marker').last(),tooltip=page.locator('#orbit-marker-tooltip');
+    await marker.scrollIntoViewIfNeeded();await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));await page.mouse.move(1,1);await marker.hover();await tooltip.waitFor({state:'visible'});
+    const name=(await tooltip.innerText()).trim();assert(name.length>0);const before=await selectedId(page);
+    const bounds=async()=>{const b=await tooltip.evaluate(tip=>{const r=tip.getBoundingClientRect();return{x:r.x,y:r.y,right:r.right,bottom:r.bottom,width:r.width,height:r.height,viewportWidth:innerWidth,viewportHeight:innerHeight};});assert(b.x>=0&&b.y>=0&&b.right<=b.viewportWidth+1&&b.bottom<=b.viewportHeight+1,'The full '+edge+' tooltip stays inside the viewport, including CSS zoom: '+JSON.stringify(b));return b;};
+    const hover=await bounds();await marker.focus();await page.mouse.move(1,1);assert(await tooltip.isVisible());assert.equal((await tooltip.innerText()).trim(),name);const focus=await bounds();
+    await page.keyboard.press('Escape');assert(await tooltip.isHidden(),'Escape dismisses only the tooltip');assert.equal(await selectedId(page),before,'Tooltip inspection does not change the selected record');result.push({edge,name,hover,focus});
+  }
+  return result;
+}
+async function sampleCardAnimation(page,label){
+  await page.emulateMedia({reducedMotion:'no-preference'});await settle(page);const stage=page.locator('.orbit-stage');await stage.scrollIntoViewIfNeeded();
+  await stage.hover();await page.mouse.wheel(0,83);const samples=[];
+  for(let frame=0;frame<12;frame++){await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(resolve)));samples.push(await geometry(page));}
+  const checks=samples.map((sample,index)=>assertCardSeparation(sample,label+' frame'+index));
+  for(const sample of samples)for(const event of sample.cards)assert(Math.abs(event.point.cy-event.card.cy)<=2,'Animated point/card alignment remains exact');
+  assert(samples.some(sample=>sample.animating==='true'&&sample.cards.some(event=>event.selected&&Math.abs(event.point.cy-sample.stage.cy)>1)),label+' samples fractional animation positions');
+  const first=new Map(samples[0].cards.map(event=>[event.id,event]));assert(samples.at(-1).cards.some(event=>first.has(event.id)&&Math.abs(event.point.cy-first.get(event.id).point.cy)>1),label+' observes actual movement');
+  await settle(page);await page.emulateMedia({reducedMotion:'reduce'});await settle(page);
+  return{frames:samples.length,minGap:Math.min(...checks.map(check=>check.minGap)),partialCardsChecked:checks.reduce((sum,check)=>sum+check.partialCards,0)};
+}
+async function responsiveCardChecks(page,ids,keys,outputPrefix){
+  const results=[];
+  for(const scenario of [{name:'short-desktop',width:1440,height:768,zoom:1},{name:'mobile',width:390,height:844,zoom:1},{name:'css-zoom-125',width:1440,height:1000,zoom:1.25},{name:'css-zoom-150',width:1440,height:1000,zoom:1.5}]){
+    await page.setViewportSize({width:scenario.width,height:scenario.height});await page.evaluate(zoom=>{document.documentElement.style.zoom=String(zoom);},scenario.zoom);await settle(page);
+    await page.locator('#orbit-mode').selectOption('all');await setPosition(page,Math.floor(ids.length/2));const sample=await geometry(page);
+    if(scenario.name==='short-desktop')assert(sample.stageCssHeight<360,'The regression exercises the short-stage layout that previously overlapped');
+    const staticGeometry=assertCardSeparation(sample,scenario.name),markers=await assertMarkerPositions(page,keys,ids),animation=await sampleCardAnimation(page,scenario.name),tooltips=await checkEdgeTooltips(page);
+    await page.locator('#orbit-position').scrollIntoViewIfNeeded();await page.screenshot({path:outputPrefix+'-'+scenario.name+'.png'});
+    results.push({...scenario,stageCssHeight:sample.stageCssHeight,staticGeometry,animation,markers,tooltips});
+  }
+  await page.evaluate(()=>{document.documentElement.style.zoom='';});await page.setViewportSize({width:1440,height:1000});await settle(page);return results;
 }
 async function swipe(page,stage){
   const cdp=await page.context().newCDPSession(page),x=stage.x+stage.width*.85,y=stage.y+stage.height*.72;
@@ -159,10 +237,15 @@ async function swipe(page,stage){
       assert.deepEqual(keys,ids.filter(id=>keys.includes(id)),'The key filter preserves the public source order');
       for(const node of ordered.filter(node=>['candidate','replay','delivery'].includes(node.kind)))assert(keys.includes(node.id),'Key events retain every version, replay and delivery');
       for(const kind of ['skill','mechanism']){const first=ordered.find(node=>node.kind==='resource'&&node.details?.kind===kind);if(first)assert(keys.includes(first.id),'Key events retain the first recorded '+kind+' source');}
+      const resources=new Map(data.resources.map(resource=>[resource.graphNodeId,resource]));
+      for(const [category,predicate] of [['skill',resource=>resource.basename==='SKILL.md'],['mechanism',resource=>resource.basename==='mechanism-logic.md'],['original',resource=>/^official-/.test(resource.basename||'')]]){
+        const firstRead=ordered.find(node=>{const resource=resources.get(node.id);return resource&&resource.delivery==='recorded-read'&&resource.origin!=='historical'&&predicate(resource);});
+        if(firstRead)assert(keys.includes(firstRead.id),'The first actual '+category+' read remains key even when a source snapshot came earlier');
+      }
       const firstNote=ordered.find(node=>node.kind==='note');if(firstNote)assert(keys.includes(firstNote.id),'The first public design note remains a key event');
       for(const result of data.tests.filter(test=>test.category!=='diagnostic'&&['failed','error','unknown'].includes(test.status)))assert(keys.includes(result.graphNodeId),'Non-passing formal evidence remains visible among key events');
       const support=ids.find(id=>!keys.includes(id));assert(support,'Each current case has supporting records');
-      await assertWindow(page,keys);row.keyEvents=keys.length;
+      await assertWindow(page,keys);row.keyEvents=keys.length;row.keyMarkers=await exerciseMarkers(page,keys,keys);
       await page.locator('#orbit-mode').selectOption('all');await settle(page);
       await assertWindow(page,ids);
       assert.equal(Number(await page.locator('#orbit-position').getAttribute('min')),0);assert.equal(Number(await page.locator('#orbit-position').getAttribute('max')),ids.length-1);
@@ -170,6 +253,7 @@ async function swipe(page,stage){
       for(let i=1;i<ids.length;i++){await page.keyboard.press('ArrowDown');await assertSelection(page,ids[i]);await assertWindow(page,ids);}
       row.allEvents=ids.length;row.supportingEventsReached=ids.length-keys.length;row.finalEventReached=ids.at(-1);
       save();console.log(JSON.stringify({caseId:entry.id,stage:'all-events-reached',events:ids.length}));
+      row.allMarkers=await exerciseMarkers(page,keys,ids);await stage.focus();
       await page.keyboard.press('End');await page.keyboard.press('ArrowDown');await assertSelection(page,ids.at(-1));
       assert(await page.locator('#orbit-next').isDisabled(),'End of the saved record cannot invent a next event');
       await stage.hover();await page.mouse.wheel(0,5000);await settle(page);await assertSelection(page,ids.at(-1));
@@ -208,26 +292,29 @@ async function swipe(page,stage){
       const precedingKey=keys.find(id=>{const index=ids.indexOf(id);return index<ids.length-1&&!keys.includes(ids[index+1]);});assert(precedingKey);
       await setPosition(page,keys.indexOf(precedingKey));await assertSelection(page,precedingKey);
       const following=ids[ids.indexOf(precedingKey)+1];await page.locator('#next-operation').click();await assertSelection(page,following);
-      assert.equal(await page.locator('#orbit-mode').inputValue(),'all','Detail navigation to a support record automatically exposes All');await assertWindow(page,ids);
-      await page.locator('#previous-operation').click();await assertSelection(page,precedingKey);
+      assert.equal(await page.locator('#orbit-mode').inputValue(),'all','Detail navigation to a support record automatically exposes All');await assertWindow(page,ids);await assertMarkerPositions(page,keys,ids);
+      await page.locator('#previous-operation').click();await assertSelection(page,precedingKey);await assertMarkerPositions(page,keys,ids);
       const relatedKey=ordered.find(node=>node.kind==='candidate');assert(relatedKey);await setPosition(page,ids.indexOf(relatedKey.id));await assertSelection(page,relatedKey.id);
       const relation=page.locator('#operation-relations .relation-chip').first();assert(await relation.count());const destination=await relation.getAttribute('data-node-id');
-      await relation.click();await assertSelection(page,destination);row.detailNavigation=true;
+      await relation.click();await assertSelection(page,destination);await assertMarkerPositions(page,keys,ids);row.detailNavigation=true;
       await visit(keys.at(-1));assert.equal(await page.locator('#orbit-mode').inputValue(),'keys');
       await visit(support);assert.equal(await page.locator('#orbit-mode').inputValue(),'all','A support deep link mounts the correct unfiltered selection');
       await page.reload();await assertSelection(page,support);row.keyAndSupportDeepLinks=true;
       await page.setViewportSize({width:390,height:844});await settle(page);row.mobile=await assertInline(page);
+      await assertMarkerPositions(page,keys,ids);
+      for(const id of keys.slice(0,3)){await page.locator('.orbit-key-marker[data-event-id="'+id+'"]').tap();await assertSelection(page,id);}
       await setPosition(page,middle);await stage.scrollIntoViewIfNeeded();before=await geometry(page);const touchTrace=await swipe(page,before.stage);after=await geometry(page);
       try{row.touch=assertMovedTogether(before,after,'Touch dragging');}catch(error){row.touchDiagnostic=touchTrace;throw error;}
       const mobileSelected=await selectedId(page);
-      const mobileTarget=after.events.find(event=>event.id!==mobileSelected&&event.card.x>=after.stage.x+1&&event.card.right<=after.stage.right-1&&event.card.y>=after.stage.y+1&&event.card.bottom<=after.stage.bottom-1);
-      assert(mobileTarget);
+      const mobileTarget=after.cards.find(event=>event.id!==mobileSelected&&Math.min(event.card.bottom,after.stage.bottom)-Math.max(event.card.y,after.stage.y)>=26&&Math.min(event.card.right,after.stage.right)-Math.max(event.card.x,after.stage.x)>=40);
+      assert(mobileTarget,'A neighboring card retains a visible touch target even when its edge is clipped');
+      const tapPosition={x:(Math.max(mobileTarget.card.x,after.stage.x)+Math.min(mobileTarget.card.right,after.stage.right))/2-mobileTarget.card.x,y:(Math.max(mobileTarget.card.y,after.stage.y)+Math.min(mobileTarget.card.bottom,after.stage.bottom))/2-mobileTarget.card.y};
       await page.evaluate(()=>{
         window.__ORBIT_TAP_TRACE__=[];
         window.__ORBIT_TAP_LISTENER__=event=>window.__ORBIT_TAP_TRACE__.push({type:event.type,time:performance.now(),target:event.target.className,eventId:event.target.closest('.orbit-event')?.dataset.eventId,pointerId:event.pointerId,primary:event.isPrimary,button:event.button,x:event.clientX,y:event.clientY,selected:document.querySelector('#process-orbit').dataset.selectedId,stageScroll:document.querySelector('.orbit-stage').scrollTop});
         for(const type of ['pointerdown','pointerup','pointercancel','gotpointercapture','lostpointercapture','click'])document.addEventListener(type,window.__ORBIT_TAP_LISTENER__,true);
       });
-      try{await page.locator(eventSelector(mobileTarget.id)+' .orbit-event-card').tap();await assertSelection(page,mobileTarget.id);}
+      try{await page.locator(eventSelector(mobileTarget.id)+' .orbit-event-card').tap({position:tapPosition});await assertSelection(page,mobileTarget.id);}
       catch(error){row.tapDiagnostic={target:mobileTarget,trace:await page.evaluate(()=>window.__ORBIT_TAP_TRACE__)};throw error;}
       finally{await page.evaluate(()=>{for(const type of ['pointerdown','pointerup','pointercancel','gotpointercapture','lostpointercapture','click'])document.removeEventListener(type,window.__ORBIT_TAP_LISTENER__,true);});}
       await assertNoStageScroll(page);
@@ -245,20 +332,10 @@ async function swipe(page,stage){
         await page.setViewportSize({width:844,height:390});await settle(page);row.landscape=await assertInline(page);await page.locator('#orbit-position').scrollIntoViewIfNeeded();
         const controls=await page.locator('#orbit-position').boundingBox();assert(controls.y>=-1&&controls.y+controls.height<=391,'The progress slider remains reachable in short landscape pages');
         await page.screenshot({path:path.join(output,entry.id+'-landscape.png')});
-        await page.setViewportSize({width:1440,height:1000});await page.emulateMedia({reducedMotion:'no-preference'});
-        await page.locator('#orbit-mode').selectOption('all');await setPosition(page,middle);
-        const samples=await page.evaluate(async()=>{
-          const stage=document.querySelector('.orbit-stage'),rows=[];stage.dispatchEvent(new WheelEvent('wheel',{deltaY:140,bubbles:true,cancelable:true}));
-          for(let frame=0;frame<8;frame++){
-            await new Promise(resolve=>requestAnimationFrame(resolve));
-            const bounds=stage.getBoundingClientRect();
-            rows.push([...stage.querySelectorAll('.orbit-event')].filter(event=>{const point=event.querySelector('.orbit-event-point').getBoundingClientRect();return point.height>0&&point.y+point.height/2>=bounds.top&&point.y+point.height/2<=bounds.bottom;}).map(event=>{const p=event.querySelector('.orbit-event-point').getBoundingClientRect(),c=event.querySelector('.orbit-event-card').getBoundingClientRect();return{id:event.dataset.eventId,pointY:p.y+p.height/2,cardY:c.y+c.height/2};}));
-          }return rows;
-        });
-        for(const sample of samples){assert(sample.length>=3,'Animation samples contain visible point/card pairs');for(const event of sample)assert(Math.abs(event.pointY-event.cardY)<=2,'Point and card remain joined during animated movement');}
-        const first=new Map(samples[0].map(event=>[event.id,event]));assert(samples.at(-1).some(event=>first.has(event.id)&&Math.abs(event.pointY-first.get(event.id).pointY)>1),'Normal-motion sampling observes real movement rather than only static alignment');
-        await settle(page);row.animationFramesChecked=samples.length;await noGame(page);
+        await page.setViewportSize({width:1440,height:1000});await page.locator('#orbit-mode').selectOption('all');await setPosition(page,middle);
+        row.animation=await sampleCardAnimation(page,'Ordinary desktop');await noGame(page);
       }
+      row.responsiveCards=await responsiveCardChecks(page,ids,keys,path.join(output,entry.id));await noGame(page);
       row.passed=true;save();await page.close();page=null;
     }
     assert.deepEqual(report.errors,[]);assert.deepEqual(report.failedResponses,[]);assert.deepEqual(report.runtimeRequests,[]);report.passed=true;

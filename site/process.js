@@ -138,7 +138,10 @@ function classifyTimeline() {
     if (node.eventType === 'capture.gap') keyIds.add(node.id);
     if (node.kind === 'resource') {
       const category = resourceCategory(record);
-      if (['Skill instructions', 'Extracted mechanism', 'Original case material'].includes(category) && !seenReadKinds.has(category)) { keyIds.add(node.id); seenReadKinds.add(category); }
+      const access = record?.delivery === 'snapshot' || record?.origin === 'historical' ? 'snapshot' : 'read';
+      const readKind = `${category}:${access}`;
+      // A dependency snapshot must not hide the later, independently recorded read.
+      if (['Skill instructions', 'Extracted mechanism', 'Original case material'].includes(category) && !seenReadKinds.has(readKind)) { keyIds.add(node.id); seenReadKinds.add(readKind); }
     }
     if (node.kind === 'note' && !firstNote) { keyIds.add(node.id); firstNote = true; }
     if (node.kind === 'test' && record?.category !== 'diagnostic') {

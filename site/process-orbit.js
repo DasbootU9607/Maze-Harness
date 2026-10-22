@@ -39,18 +39,69 @@ export function createOrbitTimeline({ container, getData, onSelect, onDetails })
   const positionCopy = element('span', 'orbit-count'); positionCopy.id = 'orbit-count';
   const scrubber = element('div', 'orbit-scrubber'), range = element('input'); range.id = 'orbit-position'; range.type = 'range'; range.min = '0'; range.step = '1';
   const progressLabel = element('label', 'orbit-progress-label', 'Timeline progress'); progressLabel.htmlFor = range.id;
+  const markers = element('div', 'orbit-markers'); markers.id = 'orbit-markers'; markers.setAttribute('role', 'group'); markers.setAttribute('aria-label', 'Jump to a key event');
+  const markerTooltip = element('div', 'orbit-marker-tooltip'); markerTooltip.id = 'orbit-marker-tooltip'; markerTooltip.setAttribute('role', 'tooltip'); markerTooltip.hidden = true;
   const hint = element('p', 'orbit-hint', 'Scroll or drag to browse \u00b7 Arrow keys to step');
-  scrubber.append(progressLabel, range); navigation.append(previous, next, positionCopy);
+  scrubber.append(progressLabel, markers, range); navigation.append(previous, next, positionCopy);
   const details = button('orbit-view-details', 'orbit-details', 'View event details');
   const detailsArrow = element('span', '', '\u2197'); detailsArrow.setAttribute('aria-hidden', 'true'); details.append(detailsArrow);
   details.hidden = typeof onDetails !== 'function';
   const footerTop = element('div', 'orbit-footer-top'); footerTop.append(navigation, hint, details); footer.append(footerTop, scrubber);
   const live = element('span', 'orbit-sr-only'); live.setAttribute('role', 'status'); live.setAttribute('aria-live', 'polite');
   timeline.append(header, stage, footer, live); container.replaceChildren(timeline);
+  document.body.append(markerTooltip);
 
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  const state = { all: [], events: [], selectedId: null, selectedIndex: 0, position: 0, target: 0, frame: 0, lastTime: 0, snapTimer: null, dragging: null, suppressClickUntil: 0, items: new Map() };
-  let geometry = { width: 1, height: 1, radius: 600, centerX: -360, centerY: 1, step: .2, row: 132, leader: 64, cardWidth: 500 };
+  const state = { all: [], events: [], selectedId: null, selectedIndex: 0, position: 0, target: 0, frame: 0, lastTime: 0, snapTimer: null, dragging: null, suppressClickUntil: 0, items: new Map(), markers: [], tooltipTarget: null };
+  let geometry = { width: 1, height: 1, radius: 600, centerX: -360, centerY: 1, step: .2, row: 132, leader: 64, cardWidth: 500, cardHeight: 116, visibleAngle: .5 };
+
+  function hideMarkerTooltip() { markerTooltip.hidden = true; state.tooltipTarget = null; }
+  function showMarkerTooltip(marker) {
+    if (!marker?.isConnected) return hideMarkerTooltip();
+    state.tooltipTarget = marker; markerTooltip.textContent = marker.dataset.label; markerTooltip.hidden = false;
+    // Fixed offsets use local CSS units, whereas client rectangles include any
+    // inherited CSS zoom. Preserve the enlarged text and convert the position.
+    const initialBox = markerTooltip.getBoundingClientRect(), cssWidth = Number.parseFloat(getComputedStyle(markerTooltip).width);
+    const scale = cssWidth > 0 ? initialBox.width / cssWidth : 1;
+    const margin = 8;
+    markerTooltip.style.maxWidth = `${Math.min(360, (innerWidth - 2 * margin) / scale)}px`;
+    const rect = marker.getBoundingClientRect(), box = markerTooltip.getBoundingClientRect();
+    const left = clamp(rect.left + rect.width / 2 - box.width / 2, margin, Math.max(margin, innerWidth - box.width - margin));
+    const top = rect.top - box.height - 10 >= margin ? rect.top - box.height - 10 : Math.min(innerHeight - box.height - margin, rect.bottom + 10);
+    markerTooltip.style.left = `${left / scale}px`; markerTooltip.style.top = `${Math.max(margin, top) / scale}px`;
+  }
+  function layoutMarkers() {
+    const width = range.clientWidth, thumb = 18, lanes = [];
+    for (const marker of state.markers) {
+      const position = state.events.length > 1 ? Number(marker.dataset.index) / (state.events.length - 1) : 0;
+      const x = thumb / 2 + position * Math.max(0, width - thumb);
+      // Keep each 24px hit target independent, including adjacent initial reads.
+      let lane = lanes.findIndex(lastX => x - lastX >= 26);
+      if (lane < 0) lane = lanes.length;
+      lanes[lane] = x; marker.dataset.position = String(position); marker.dataset.lane = String(lane);
+      marker.style.left = `${x}px`; marker.style.top = `${lane * 24}px`;
+    }
+    markers.style.height = `${lanes.length * 24}px`; markers.hidden = !state.markers.length;
+    for (const marker of state.markers) marker.style.setProperty('--orbit-marker-stem', `${(lanes.length - Number(marker.dataset.lane) - 1) * 24 + 12}px`);
+    if (state.tooltipTarget) showMarkerTooltip(state.tooltipTarget);
+  }
+  function makeMarkers() {
+    hideMarkerTooltip(); markers.replaceChildren(); state.markers = [];
+    state.events.forEach((event, index) => {
+      if (!event.isKey) return;
+      const marker = element('button', 'orbit-key-marker'); marker.type = 'button';
+      const sourceName = event.kind === 'resource' ? String(event.summary || '').split(' \u00b7 ')[0] : '';
+      const label = sourceName && /^(Read reference material|Save source snapshot)$/.test(event.label) ? `${event.label} \u00b7 ${sourceName}` : event.label || 'Recorded event';
+      marker.dataset.eventId = event.id; marker.dataset.index = String(index); marker.dataset.label = label; marker.dataset.kind = kinds[event.kind] ? event.kind : 'record';
+      marker.setAttribute('aria-label', `Jump to event ${event.ordinal ?? index + 1}: ${label}`); marker.setAttribute('aria-describedby', markerTooltip.id);
+      const dot = element('span', 'orbit-key-marker-dot'); dot.setAttribute('aria-hidden', 'true'); marker.append(dot);
+      marker.addEventListener('pointerenter', () => showMarkerTooltip(marker)); marker.addEventListener('pointerleave', () => { if (document.activeElement !== marker) hideMarkerTooltip(); });
+      marker.addEventListener('focus', () => showMarkerTooltip(marker)); marker.addEventListener('blur', hideMarkerTooltip);
+      marker.addEventListener('click', () => go(index));
+      state.markers.push(marker); markers.append(marker);
+    });
+    layoutMarkers();
+  }
 
   function current() { return state.events[state.selectedIndex]; }
   function updateSelection(index, notify = true) {
@@ -63,6 +114,7 @@ export function createOrbitTimeline({ container, getData, onSelect, onDetails })
     range.setAttribute('aria-valuetext', selected ? `${index + 1} of ${state.events.length}: ${selected.label}` : 'No events');
     positionCopy.textContent = `${selected ? String(index + 1).padStart(2, '0') : '0'} / ${state.events.length}`;
     previous.disabled = !selected || index === 0; next.disabled = !selected || index === state.events.length - 1; details.disabled = !selected;
+    for (const marker of state.markers) { const active = marker.dataset.eventId === state.selectedId; marker.setAttribute('aria-pressed', String(active)); if (active) marker.setAttribute('aria-current', 'step'); else marker.removeAttribute('aria-current'); }
     if (changed && selected) {
       live.textContent = `Event ${selected.ordinal ?? index + 1}: ${selected.label}`;
       if (notify) onSelect?.(selected.id);
@@ -89,14 +141,15 @@ export function createOrbitTimeline({ container, getData, onSelect, onDetails })
   }
   function render() {
     if (!timeline.isConnected) return;
-    const { width, height, radius, centerX, centerY, step, leader, cardWidth } = geometry;
+    const { width, height, radius, centerX, centerY, step, leader, cardWidth, cardHeight, visibleAngle } = geometry;
     track.setAttribute('viewBox', `0 0 ${width} ${height}`); circle.setAttribute('cx', String(centerX)); circle.setAttribute('cy', String(centerY)); circle.setAttribute('r', String(radius));
     const visible = new Set(), center = Math.round(state.position);
     // Keep the DOM bounded, including for long raw-record histories.
-    for (let index = Math.max(0, center - 3); index <= Math.min(state.events.length - 1, center + 3); index++) {
+    const windowSize = Math.ceil(visibleAngle / step) + 1;
+    for (let index = Math.max(0, center - windowSize); index <= Math.min(state.events.length - 1, center + windowSize); index++) {
       const event = state.events[index], angle = (index - state.position) * step;
       const x = centerX + radius * Math.cos(angle), y = centerY + radius * Math.sin(angle);
-      if (y < -72 || y > height + 72 || Math.abs(angle) >= Math.PI / 2) continue;
+      if (y < -cardHeight / 2 || y > height + cardHeight / 2 || Math.abs(angle) >= Math.PI / 2) continue;
       visible.add(event.id); const item = state.items.get(event.id) || makeEvent(event);
       item.style.transform = `translate(${x.toFixed(3)}px, ${y.toFixed(3)}px)`;
       item.style.setProperty('--orbit-leader', `${leader}px`); item.style.setProperty('--orbit-card-width', `${cardWidth}px`);
@@ -105,7 +158,7 @@ export function createOrbitTimeline({ container, getData, onSelect, onDetails })
       if (selected) item.setAttribute('aria-current', 'step'); else item.removeAttribute('aria-current');
       const point = item.querySelector('.orbit-event-point'), card = item.querySelector('.orbit-event-card');
       point.setAttribute('aria-pressed', String(selected)); card.setAttribute('aria-pressed', String(selected));
-      point.tabIndex = card.tabIndex = y >= 64 && y <= height - 64 ? 0 : -1;
+      point.tabIndex = card.tabIndex = y >= cardHeight / 2 + 4 && y <= height - cardHeight / 2 - 4 ? 0 : -1;
     }
     for (const [id, item] of state.items) if (!visible.has(id)) {
       if (item.contains(document.activeElement)) stage.focus({ preventScroll: true });
@@ -122,8 +175,15 @@ export function createOrbitTimeline({ container, getData, onSelect, onDetails })
     const width = stage.clientWidth, height = stage.clientHeight, mobile = width <= 640;
     const radius = Math.max(mobile ? 900 : 520, height * (mobile ? 1.7 : 1.05));
     const arcX = mobile ? 52 : clamp(width * .19, 115, 165), leader = mobile ? 28 : 42;
-    const row = height < 360 ? 112 : 132;
-    geometry = { width, height, radius, centerX: arcX - radius, centerY: height / 2, step: row / radius, row, leader, cardWidth: Math.max(140, width - arcX - leader - (mobile ? 16 : 24)) };
+    // Measure layout pixels, so browser/CSS zoom does not scale the spacing twice.
+    const sample = state.items.values().next().value?.querySelector('.orbit-event-card');
+    const cardHeight = sample?.offsetHeight || Number.parseFloat(getComputedStyle(timeline).getPropertyValue('--orbit-card-height')) || 116;
+    const gap = 14, visibleAngle = Math.asin(clamp((height / 2 + cardHeight / 2) / radius, 0, .95));
+    // The smallest projected gap is at the visible arc edges. This bound also
+    // holds between fractional animation positions and partially clipped cards.
+    const step = 2 * Math.asin(clamp((cardHeight + gap) / (2 * radius * Math.cos(visibleAngle)), 0, .95));
+    geometry = { width, height, radius, centerX: arcX - radius, centerY: height / 2, step, row: radius * Math.sin(step), leader, cardWidth: Math.max(140, width - arcX - leader - (mobile ? 16 : 24)), cardHeight, visibleAngle };
+    layoutMarkers();
     render();
   }
   function animate(time) {
@@ -153,9 +213,9 @@ export function createOrbitTimeline({ container, getData, onSelect, onDetails })
       let distance = Infinity; index = 0;
       state.events.forEach((event, i) => { const delta = Math.abs(order.get(event.id) - original); if (delta < distance) { index = i; distance = delta; } });
     }
-    cancelSnap(); updateSelection(Math.max(0, index), notify); state.position = state.target = state.selectedIndex;
+    cancelSnap(); makeMarkers(); updateSelection(Math.max(0, index), notify); state.position = state.target = state.selectedIndex;
     for (const item of state.items.values()) item.remove(); state.items.clear();
-    stage.dataset.animating = 'false'; render();
+    stage.dataset.animating = 'false'; measure();
   }
   function select(id, { focus = false } = {}) {
     const event = state.all.find(item => item.id === id); if (!event) return;
@@ -175,6 +235,7 @@ export function createOrbitTimeline({ container, getData, onSelect, onDetails })
   previous.addEventListener('click', () => go(state.selectedIndex - 1)); next.addEventListener('click', () => go(state.selectedIndex + 1));
   range.addEventListener('input', () => go(Number(range.value)));
   timeline.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !markerTooltip.hidden) { hideMarkerTooltip(); event.preventDefault(); return; }
     if (event.target.matches('input,select') || event.ctrlKey || event.metaKey || event.altKey) return;
     const index = { ArrowDown: state.selectedIndex + 1, ArrowRight: state.selectedIndex + 1, ArrowUp: state.selectedIndex - 1, ArrowLeft: state.selectedIndex - 1, PageDown: state.selectedIndex + 5, PageUp: state.selectedIndex - 5, Home: 0, End: state.events.length - 1 }[event.key];
     if (index === undefined) return; event.preventDefault(); go(index);
@@ -217,6 +278,7 @@ export function createOrbitTimeline({ container, getData, onSelect, onDetails })
   stage.addEventListener('lostpointercapture', event => { if (event.target === stage) endDrag(event); });
   window.addEventListener('pointerup', endDrag); window.addEventListener('pointercancel', endDrag);
   window.addEventListener('blur', () => { if (state.dragging) endDrag({ pointerId: state.dragging.id }); });
+  window.addEventListener('scroll', hideMarkerTooltip, { capture: true, passive: true });
   new ResizeObserver(measure).observe(stage);
   reducedMotion.addEventListener('change', () => { if (timeline.isConnected) requestRender(); });
   const data = getData?.() || {}, seen = new Set();
