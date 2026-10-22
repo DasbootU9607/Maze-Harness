@@ -17,6 +17,7 @@ const catalog = read(path.join(root, 'site/data/catalog.json'));
 const selected = catalog.cases.find(entry => entry.id === (get('case') || 'authored-boundary-stagger-2f126bf137c6'));
 assert(selected?.process, 'Select a case with a public authoring process');
 const record = read(path.join(root, 'site', selected.process.data));
+const orderedNodes = record.nodes.map((node,index)=>({...node,sourceIndex:index})).sort((a,b)=>(Number.isFinite(a.order)?a.order:a.sourceIndex)-(Number.isFinite(b.order)?b.order:b.sourceIndex));
 const sandbox = {window: {}, console, structuredClone};
 vm.runInNewContext(fs.readFileSync(path.join(root, 'site/runtime/maze-engine.js'), 'utf8'), sandbox);
 const D = {U: [0, -1], D: [0, 1], L: [-1, 0], R: [1, 0]};
@@ -34,17 +35,26 @@ const ready = async frame => {
   await idle(frame);
 };
 const snapshot = async frame => actors(await frame.evaluate(() => window.__MAZEBENCH_APP__.state.actors));
+const settleTimeline = async page => page.waitForFunction(() => document.querySelector('.orbit-stage')?.dataset.animating === 'false');
+const assertSelectedEvent = async (page,id) => {
+  await page.waitForFunction(value => document.querySelector('#process-orbit')?.dataset.selectedId === value,id);
+  await settleTimeline(page);
+  assert.equal(new URL(page.url()).searchParams.get('node'),id,'Selection retains the actual record deep link');
+  const evidence=JSON.parse(await page.locator('#operation-evidence-body').textContent());
+  assert.equal(evidence.node.id,id,'The inline arc and details select the same saved record');
+};
+const selectEvent = async (page,id) => {
+  const index=orderedNodes.findIndex(node=>node.id===id);assert(index>=0,'Select an existing recorded event: '+id);
+  if(await page.locator('#orbit-mode').inputValue()!=='all')await page.locator('#orbit-mode').selectOption('all');
+  await page.locator('#orbit-position').evaluate((input,value)=>{input.value=String(value);input.dispatchEvent(new Event('input',{bubbles:true}));},index);
+  await assertSelectedEvent(page,id);
+  await page.locator('.orbit-event[data-event-id="'+id+'"] .orbit-event-card').click();
+  await assertSelectedEvent(page,id);
+};
 const chartGeometry = async page => page.evaluate(async () => {
   await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
   const rect = element => {const r = element.getBoundingClientRect(); return {x:r.x,y:r.y,width:r.width,height:r.height,right:r.right,bottom:r.bottom};};
-  const nodes = [...document.querySelectorAll('.timeline-node')].map(button => {
-    const label = button.querySelector('.timeline-label'), style = getComputedStyle(label);
-    return {id:button.dataset.nodeId,rect:rect(button),label:label.textContent.trim(),labelRect:rect(label),
-      lineHeight:parseFloat(style.lineHeight) || parseFloat(style.fontSize) * 1.2,
-      clipped:label.scrollHeight > label.clientHeight + 2 || label.scrollWidth > label.clientWidth + 2,
-      fontSize:parseFloat(style.fontSize),disabled:button.disabled,visible:button.getClientRects().length > 0 && button.getBoundingClientRect().height > 0};
-  });
-  return {timeline:rect(document.querySelector('.timeline-column')),detail:rect(document.querySelector('#operation-detail')),nodes};
+  return {timeline:rect(document.querySelector('.timeline-column')),detail:rect(document.querySelector('#operation-detail')),arc:rect(document.querySelector('#process-orbit'))};
 });
 function assertChartGeometry(layout, mode) {
   if (mode === 'desktop') {
@@ -52,19 +62,8 @@ function assertChartGeometry(layout, mode) {
     assert(layout.detail.width >= 480 && layout.detail.width <= 520, 'Desktop details should occupy about 500 px');
     assert(layout.timeline.right <= layout.detail.x + 1, 'Desktop details belong to the right of the diagram');
   }
-  const visible = layout.nodes.filter(node => node.visible);
-  for (const node of visible) {
-    assert(node.label && node.rect.width > 0 && !node.disabled, mode + ' node is available: ' + node.id);
-    assert(node.fontSize >= 18, mode + ' node text should remain at least 18 px: ' + node.id);
-    assert(node.labelRect.height <= node.lineHeight * 2 + 2, mode + ' node label must fit in at most two lines: ' + node.id);
-    assert(!node.clipped, mode + ' short node label must not be clipped: ' + node.id);
-  }
-  for (let i = 0; i < visible.length; i++) for (let j = i + 1; j < visible.length; j++) {
-    const a = visible[i], b = visible[j];
-    const overlapX = Math.min(a.rect.right,b.rect.right) - Math.max(a.rect.x,b.rect.x);
-    const overlapY = Math.min(a.rect.bottom,b.rect.bottom) - Math.max(a.rect.y,b.rect.y);
-    assert(overlapX <= 1 || overlapY <= 1, mode + ' diagram nodes overlap: ' + a.id + ' / ' + b.id);
-  }
+  assert(layout.arc.width>0&&layout.arc.height>0,mode+' exposes the timeline directly in the page');
+  assert(layout.arc.x>=layout.timeline.x-1&&layout.arc.right<=layout.timeline.right+1,mode+' inline arc fits its timeline column');
 }
 const assertMonochromeDetails = async page => {
   const tinted = await page.locator('#operation-detail').evaluate(host => {
@@ -101,10 +100,6 @@ const assertExpandedViewport = async page => {
   assert(geometry.frameWidth >= geometry.width * 0.9 && geometry.frameHeight >= geometry.height * 0.65, 'Expanded game must use the available modal area');
   assert(geometry.frameUncovered, 'Expanded iframe is covered, possibly by a backdrop above a sticky ancestor');
   return geometry;
-};
-const setGroups = async (page,expanded) => {
-  const toggles=page.locator('.timeline-group-toggle[aria-expanded="'+!expanded+'"]');
-  while (await toggles.count()) await toggles.first().click();
 };
 const assertReadability = async page => {
   const sample = await page.evaluate(() => {
@@ -321,10 +316,10 @@ const screenshot = async (page, name) => {
     // Parent-page checks are kept below the embedded-player checks so errors remain attributable.
     runtimeRequests.length=0;
     await page.goto(base + 'process.html?' + new URLSearchParams({case: selected.id}));
-    await page.waitForSelector('.timeline-node:visible');
+    await page.waitForSelector('#process-orbit .orbit-event-card');await settleTimeline(page);
     if(modalUIOnly){
       const candidate=record.candidates.at(-1);report.layouts=[];
-      await page.locator('.timeline-node[data-node-id="'+candidate.graphNodeId+'"]').click();
+      await selectEvent(page,candidate.graphNodeId);
       for(const viewport of [{width:1440,height:1000,name:'desktop'},{width:1024,height:900,name:'medium'},{width:390,height:844,name:'mobile'}]){
         await page.setViewportSize({width:viewport.width,height:viewport.height});
         await assertStaticPreview(page,candidate,base);await assertReadability(page);await screenshot(page,'timeline-'+viewport.name+'.png');
@@ -332,28 +327,24 @@ const screenshot = async (page, name) => {
         const expanded=await assertExpandedViewport(page);await page.screenshot({path:path.join(output,'timeline-'+viewport.name+'-expanded.png')});
         report.layouts.push({viewport,expanded,officialHudNoOverlap:true,staticPreview:true});await page.locator('#close-preview').click();
       }
-      const replay=record.replays[0];await page.locator('.timeline-node[data-node-id="'+replay.graphNodeId+'"]').click();
+      const replay=record.replays[0];await selectEvent(page,replay.graphNodeId);
       const replayFrame=await openPreview(page,replay.candidateId,'replay',replay.id);await assertOfficialUI(replayFrame,true);await assertPlayerFits(replayFrame);
       await page.screenshot({path:path.join(output,'timeline-mobile-replay-expanded.png')});
       assert.deepEqual(report.errors,[]);assert.deepEqual(report.failedResponses,[]);report.passed=true;return;
     }
-    assert.equal(await page.locator('.timeline-node').count(), record.nodes.length, 'Every recorded operation remains in the DOM');
-    const collapsed = await chartGeometry(page);
-    const keyCount=await page.locator('.timeline-node[data-key-event="true"]').count(),groupCount=await page.locator('.timeline-group-toggle[aria-expanded="false"]').count();
-    assert.equal(collapsed.nodes.filter(node => node.visible).length,keyCount,'The default timeline shows only key events');
-    assert(groupCount>0&&keyCount<record.nodes.length,'Supporting records start collapsed');
+    assert.equal(await page.locator('#expand-timeline,.timeline-node,.timeline-group-toggle').count(),0,'The inline arc replaces the retired expansion action and straight timeline');
+    assert.equal(await page.locator('#orbit-mode').inputValue(),'keys','The inline timeline starts with the existing key-event classification');
+    const keyCount=Number(await page.locator('#orbit-position').getAttribute('max'))+1;
+    assert(keyCount>0&&keyCount<record.nodes.length,'The key view distinguishes supporting records');
     assert.equal(await page.locator('#preview-frame').count(),0,'The timeline must not create a game iframe before expansion');
-    for (const candidate of record.candidates) assert(await page.locator('.timeline-node[data-node-id="'+candidate.graphNodeId+'"]').isVisible(),'Saved versions are always key events');
-    await setGroups(page,true);
+    await page.locator('#orbit-mode').selectOption('all');await settleTimeline(page);
+    assert.equal(Number(await page.locator('#orbit-position').getAttribute('max'))+1,record.nodes.length,'All saved records remain accessible through the virtualized arc');
     await page.evaluate(() => document.fonts.ready);
     const desktopLayout = await chartGeometry(page);
     assertChartGeometry(desktopLayout, 'desktop');
-    assert.equal(desktopLayout.nodes.filter(node=>node.visible).length,record.nodes.length,'All records can be expanded');
-    const clickableNodes = await page.locator('.timeline-node').evaluateAll(nodes => nodes.map(node => node.dataset.nodeId));
+    const clickableNodes = orderedNodes.map(node=>node.id);
     for (const id of clickableNodes) {
-      await page.locator('.timeline-node[data-node-id="' + id + '"]').click();
-      assert.equal(await page.locator('.timeline-node[aria-current="step"]').getAttribute('data-node-id'), id, 'Every diagram node must select its actual record: ' + id);
-      assert.equal(new URL(page.url()).searchParams.get('node'), id, 'The selected diagram node must retain a direct link');
+      await selectEvent(page,id);
       const node = record.nodes.find(item => item.id === id), shouldPreview = node.kind === 'candidate' || node.kind === 'replay';
       assert.equal(await page.locator('#preview-image').isVisible(),shouldPreview,'Only saved candidate and exact replay events may show a static map: '+id);
       if (shouldPreview) {
@@ -366,9 +357,9 @@ const screenshot = async (page, name) => {
     }
     assert.deepEqual(runtimeRequests,[],'Compact browsing must not request the live player or runtime scripts');
     const compactRuntimeRequests=runtimeRequests.length;
-    const skillResource = record.resources.find(r => r.kind === 'skill');
+    const skillResource = record.resources.find(r => r.kind === 'skill'&&r.delivery!=='snapshot');
     assert(skillResource, 'Fixture should contain an actual skill read');
-    await page.locator('.timeline-node[data-node-id="' + skillResource.graphNodeId + '"]').click();
+    await selectEvent(page,skillResource.graphNodeId);
     await page.waitForTimeout(100);
     assert.match(await page.locator('#operation-detail').innerText(), /skill/i);
     assert.match(await page.locator('#operation-detail').innerText(), /read|recorded/i);
@@ -377,12 +368,11 @@ const screenshot = async (page, name) => {
     await page.screenshot({path: path.join(output, 'timeline-skill-read.png'), fullPage: true});
     const citation = record.edges.find(edge => edge.kind === 'cites');
     assert(citation, 'Fixture should retain an explicit design-note citation');
-    await page.locator('.timeline-node[data-node-id="' + citation.from + '"]').click();
+    await selectEvent(page,citation.from);
     await page.locator('#source-overview .relation-chip[data-node-id="' + citation.to + '"]').click();
-    assert.equal(await page.locator('.timeline-node[aria-current="step"]').getAttribute('data-node-id'), citation.to, 'Source citation opens its actual design note');
-    await setGroups(page,false);
+    await assertSelectedEvent(page,citation.to);
     const candidate = record.candidates.at(-1);
-    await page.locator('.timeline-node[data-node-id="' + candidate.graphNodeId + '"]').click();
+    await selectEvent(page,candidate.graphNodeId);
     const staticPreview=await assertStaticPreview(page,candidate,base);
     await screenshot(page,'timeline-desktop.png');
     const frame=await openPreview(page,candidate.id);
@@ -441,7 +431,7 @@ const screenshot = async (page, name) => {
     await page.screenshot({path:path.join(output,'timeline-mobile-expanded.png')});
     await page.locator('#close-preview').click();
     const replay=record.replays[0],replayCandidate=record.candidates.find(item=>item.id===replay.candidateId);
-    await page.locator('.timeline-node[data-node-id="'+replay.graphNodeId+'"]').click();
+    await selectEvent(page,replay.graphNodeId);
     assert.equal(await page.locator('#preview-frame').count(),0,'Selecting another event releases the previous live player');
     await assertStaticPreview(page,replayCandidate,base);
     const replayFrame=await openPreview(page,replay.candidateId,'replay',replay.id);
@@ -459,7 +449,7 @@ const screenshot = async (page, name) => {
     assert.deepEqual(await snapshot(reopenedReplay),pausedActors);await assertReplayReadOnly(page,reopenedReplay);await assertPlayerFits(reopenedReplay);
     await page.screenshot({path:path.join(output,'timeline-mobile-replay-expanded.png')});
     await page.locator('#close-preview').click();
-    report.timeline={defaultKeyEvents:keyCount,collapsedGroups:groupCount,allNodesExpandable:true,allNodesClickable:clickableNodes.length,shortLabels:true,nonOverlappingNodes:true,
+    report.timeline={inlineArc:true,defaultKeyEvents:keyCount,allRecordsAvailable:true,recordsChecked:clickableNodes.length,
       desktopColumns:{timeline:desktopLayout.timeline.width,detail:desktopLayout.detail.width,ratio:desktopLayout.timeline.width/desktopLayout.detail.width},
       monochromeDetails:true,skillReadVisible:true,sourceCitationNavigates:true,unboundReadDoesNotBorrowMap:true,
       staticPreview,compactRuntimeRequests,ordinaryRouteInputs:finalRecording.route.length,resetRestoresCollectedGem:true,

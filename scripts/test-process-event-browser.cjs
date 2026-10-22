@@ -1,6 +1,6 @@
 'use strict';
 
-// Check every public source event and the actual expand/select/deep-link UI.
+// Check every public source event and the inline filter/select/deep-link UI.
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -11,7 +11,7 @@ const args = process.argv.slice(2), get = key => { const i = args.indexOf('--' +
 assert(get('engine'), 'Supply --engine ENGINE to locate playwright-core');
 const { chromium } = require(require.resolve('playwright-core', { paths: [path.resolve(get('engine'))] }));
 const root = path.resolve(__dirname, '..'), output = path.resolve(get('out') || path.join(root, 'outputs/process-event-browser'));
-const report = { scope: 'Every public source event is selectable, ordered and retained through collapse and deep links. Gameplay has separate regression coverage.', cases: [], errors: [], failedResponses: [] };
+const report = { scope: 'Every public source event is selectable and ordered in the inline timeline, with original detail evidence and exact deep-link identity. Gameplay has separate regression coverage.', cases: [], errors: [], failedResponses: [] };
 
 (async () => {
   let server, browser;
@@ -32,20 +32,31 @@ const report = { scope: 'Every public source event is selectable, ordered and re
       const local = JSON.parse(fs.readFileSync(path.join(root, 'site', entry.process.data), 'utf8'));
       assert.equal(doc.coverage.events.sequenceSha256, local.coverage.events.sequenceSha256, 'Served event sequence matches the audited export');
       assert.deepEqual(doc.explanations, local.explanations, 'The served explanations match the reviewed export');
+      const ordered = doc.nodes.map((node, index) => ({ ...node, sourceIndex: index })).sort((a, b) => (Number.isFinite(a.order) ? a.order : a.sourceIndex) - (Number.isFinite(b.order) ? b.order : b.sourceIndex));
+      const selected = async id => {
+        await page.waitForFunction(value => document.querySelector('#process-orbit')?.dataset.selectedId === value && document.querySelector('.orbit-stage')?.dataset.animating === 'false', id);
+        assert.equal(new URL(page.url()).searchParams.get('node'), id);
+        assert.equal(JSON.parse(await page.locator('#operation-evidence-body').textContent()).node.id, id);
+        const card = page.locator(`.orbit-event[data-event-id="${id}"][aria-current="step"]`);
+        await card.waitFor({state: 'attached'});
+        assert.equal(await page.locator('#orbit-position').inputValue(), await card.getAttribute('data-index'), 'The detail selection and progress slider remain synchronized');
+      };
       const visit = async id => {
         await page.goto(base + 'process.html?' + new URLSearchParams({ case: entry.id, node: id }));
-        await page.locator(`.timeline-node[data-node-id="${id}"][aria-current="step"]`).waitFor({ state: 'visible' });
+        await selected(id);
       };
       await page.setViewportSize({ width: 1440, height: 1000 }); await visit('delivery-final');
-      const keyCount = await page.locator('.timeline-node[data-key-event="true"]').count();
-      assert.equal(await page.locator('.timeline-node:visible').count(), keyCount, 'Supporting source records start collapsed');
-      await page.locator('#show-all-records').click();
-      assert.equal(await page.locator('.timeline-node:visible').count(), doc.nodes.length, 'Expand all must reveal every node');
-      const visibleIds = await page.locator('.timeline-node').evaluateAll(buttons => buttons.map(button => button.dataset.eventId).filter(Boolean));
-      assert.deepEqual(visibleIds, doc.nodes.filter(node => node.eventId).map(node => node.eventId));
-      for (const node of doc.nodes) {
-        await page.locator(`.timeline-node[data-node-id="${node.id}"]`).evaluate(button => button.click());
-        assert.equal(await page.locator('.timeline-node[aria-current="step"]').getAttribute('data-node-id'), node.id);
+      assert.equal(await page.locator('#orbit-mode').inputValue(), 'keys', 'A key deep link initializes the key filter');
+      const keyCount = Number(await page.locator('#orbit-position').getAttribute('max')) + 1;
+      await page.locator('#orbit-mode').selectOption('all');
+      assert.equal(Number(await page.locator('#orbit-position').getAttribute('max')) + 1, doc.nodes.length, 'All records expose the entire public sequence');
+      assert.equal(await page.locator('.timeline-node,#expand-timeline,#process-orbit-dialog').count(), 0, 'No obsolete timeline or expansion flow remains');
+      const visitedEventIds = [];
+      await page.locator('#orbit-position').focus(); await page.keyboard.press('Home');
+      for (const [index, node] of ordered.entries()) {
+        if (index) await page.keyboard.press('ArrowRight');
+        await selected(node.id);
+        if (node.eventId) visitedEventIds.push(node.eventId);
         assert((await page.locator('#operation-title').innerText()).trim(), 'Every event has a detail title');
         const review = doc.explanations.find(row => row.nodeId === node.id);
         const explanation = await page.locator('#operation-explanation').innerText();
@@ -59,18 +70,16 @@ const report = { scope: 'Every public source event is selectable, ordered and re
           if (result.scope) assert(explanation.includes(result.scope), 'The original test scope remains visible');
           assert.equal(await page.locator('.process-checks > li').count(), result.checks?.length || 0, 'Individual recorded checks remain visible');
         }
-        if (review.badge) assert.equal(await page.locator(`.timeline-node[data-node-id="${node.id}"] .timeline-state`).innerText(), review.badge);
+        if (review.badge) assert.equal(await page.locator(`.orbit-event[data-event-id="${node.id}"] .orbit-event-status`).innerText(), review.badge);
         if (!['candidate', 'replay'].includes(node.kind)) assert(await page.locator('#preview-shell').isHidden(), 'Supporting records must not repeat map previews');
       }
+      assert.deepEqual(visitedEventIds, ordered.filter(node => node.eventId).map(node => node.eventId), 'Every original source event remains reachable in the audited order');
       const added = doc.records.find(record => record.eventType === 'artifact.saved') || doc.records.find(record => record.eventType === 'build.saved');
       assert(added); await visit(added.graphNodeId);
-      assert(await page.locator(`.timeline-node[data-node-id="${added.graphNodeId}"]`).isVisible(), 'A deep link expands the archived event');
-      const detail = await page.locator('#operation-detail').innerText();
-      await page.locator('#show-key-records').click();
-      assert.equal(await page.locator('.timeline-node:visible').count(), keyCount);
-      assert.equal(await page.locator('#operation-detail').innerText(), detail, 'Collapse retains selected detail');
-      assert.equal(await page.locator('.timeline-group-toggle[data-contains-selection="true"]').count(), 1);
-      await page.reload(); await page.locator(`.timeline-node[data-node-id="${added.graphNodeId}"]`).waitFor({ state: 'visible' });
+      assert.equal(await page.locator('#orbit-mode').inputValue(), 'all', 'An archived support deep link initializes All records');
+      await page.locator('#orbit-mode').selectOption('keys');
+      assert.equal(Number(await page.locator('#orbit-position').getAttribute('max')) + 1, keyCount);
+      await visit(added.graphNodeId); await page.reload(); await selected(added.graphNodeId);
       if (entry.title === 'Rooflock Workshop') {
         for (const order of [16, 17, 18, 19]) {
           const node = doc.nodes.find(node => node.order === order); assert(node);
@@ -81,7 +90,7 @@ const report = { scope: 'Every public source event is selectable, ordered and re
           if (order === 19) { assert.match(text, /M0, M1/); await page.screenshot({ path: path.join(output, 'rooflock-restored-diagnostic.png') }); }
         }
         const start = doc.nodes.find(node => node.order === 16); await visit(start.id);
-        for (const order of [17, 18, 19, 20]) { await page.locator('#next-operation').click(); assert.equal(await page.locator('.timeline-node[aria-current="step"]').getAttribute('data-record-order'), String(order)); }
+        for (const order of [17, 18, 19, 20]) { await page.locator('#next-operation').click(); await selected(doc.nodes.find(node => node.order === order).id); }
         await visit('test-diagnostic-e000024');
         const diagnosis = await page.locator('#operation-explanation').innerText();
         assert.match(diagnosis, /Diagnostic scope/);
@@ -97,12 +106,12 @@ const report = { scope: 'Every public source event is selectable, ordered and re
       assert.equal(await recorded.locator('..').locator('.check-mark').innerText(), '+', 'Its original passed verdict is unchanged');
       const evidenceLink = page.locator('#operation-relations .relation-chip').first();
       const destination = await evidenceLink.getAttribute('data-node-id'); await evidenceLink.click();
-      assert.equal(await page.locator('.timeline-node[aria-current="step"]').getAttribute('data-node-id'), destination);
+      await selected(destination);
       await page.setViewportSize({ width: 430, height: 900 }); await visit(added.graphNodeId);
       assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'Mobile page must not overflow horizontally');
       assert.equal(await page.locator('#preview-frame').count(), 0, 'Supporting events do not instantiate a game');
       if (entry.title === 'Rooflock Workshop') await page.screenshot({ path: path.join(output, 'rooflock-restored-mobile.png'), fullPage: true });
-      report.cases.push({ id: entry.id, title: entry.title, sourceEvents: doc.coverage.events.sourceCount, selectedNodes: doc.nodes.length, keyEvents: keyCount, collapseAndDeepLinks: true, originalDetails: true, negativeControlVerdict: true, mobile: true });
+      report.cases.push({ id: entry.id, title: entry.title, sourceEvents: doc.coverage.events.sourceCount, selectedNodes: doc.nodes.length, keyEvents: keyCount, filtersAndDeepLinks: true, originalDetails: true, negativeControlVerdict: true, mobile: true });
       console.log(JSON.stringify(report.cases.at(-1)));
     }
     assert.equal(report.errors.length, 0); assert.equal(report.failedResponses.length, 0); report.passed = true;

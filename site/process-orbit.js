@@ -17,17 +17,14 @@ function svgNode(tag, attributes) {
 }
 
 /** A view of recorded order; no causal edges or invented intermediate events. */
-export function createOrbitTimeline({ opener, getData, onSelect }) {
-  const dialog = element('dialog', 'orbit-dialog'); dialog.id = 'process-orbit-dialog'; dialog.setAttribute('aria-labelledby', 'orbit-title');
+export function createOrbitTimeline({ container, getData, onSelect, onDetails }) {
+  const timeline = element('section', 'orbit-timeline'); timeline.id = 'process-orbit'; timeline.setAttribute('aria-labelledby', 'orbit-title');
   const header = element('header', 'orbit-header'), heading = element('div', 'orbit-heading');
-  const eyebrow = element('p', 'orbit-eyebrow', 'BUILD TIMELINE'), title = element('h2'); title.id = 'orbit-title';
-  heading.append(eyebrow, title);
+  const title = element('h2', '', 'Build timeline'); title.id = 'orbit-title'; heading.append(title);
   const headerActions = element('div', 'orbit-header-actions'), modeLabel = element('label', 'orbit-mode-label', 'Show');
   const mode = element('select'); mode.id = 'orbit-mode'; mode.setAttribute('aria-label', 'Events to show');
   const keysOption = element('option', '', 'Key events'), allOption = element('option', '', 'All records'); keysOption.value = 'keys'; allOption.value = 'all'; mode.append(keysOption, allOption); modeLabel.append(mode);
-  const closeButton = button('orbit-close', 'orbit-close', 'Close'); closeButton.setAttribute('aria-label', 'Close expanded timeline');
-  const closeMark = element('span', '', '\u00d7'); closeMark.setAttribute('aria-hidden', 'true'); closeButton.append(closeMark);
-  headerActions.append(modeLabel, closeButton); header.append(heading, headerActions);
+  headerActions.append(modeLabel); header.append(heading, headerActions);
 
   const stage = element('div', 'orbit-stage'); stage.tabIndex = 0; stage.setAttribute('role', 'region'); stage.setAttribute('aria-label', 'Recorded events on a curved timeline. Scroll, drag, or use the arrow keys to select an event.');
   const track = svgNode('svg', { class: 'orbit-track', 'aria-hidden': 'true', focusable: 'false' });
@@ -40,17 +37,19 @@ export function createOrbitTimeline({ opener, getData, onSelect }) {
   const footer = element('footer', 'orbit-footer'), navigation = element('div', 'orbit-navigation');
   const previous = button('orbit-prev', 'orbit-step', '\u2191'), next = button('orbit-next', 'orbit-step', '\u2193'); previous.setAttribute('aria-label', 'Previous event'); next.setAttribute('aria-label', 'Next event');
   const positionCopy = element('span', 'orbit-count'); positionCopy.id = 'orbit-count';
-  const scrubber = element('div', 'orbit-scrubber'), range = element('input'); range.id = 'orbit-position'; range.type = 'range'; range.min = '0'; range.step = '1'; range.setAttribute('aria-label', 'Selected event position');
+  const scrubber = element('div', 'orbit-scrubber'), range = element('input'); range.id = 'orbit-position'; range.type = 'range'; range.min = '0'; range.step = '1';
+  const progressLabel = element('label', 'orbit-progress-label', 'Timeline progress'); progressLabel.htmlFor = range.id;
   const hint = element('p', 'orbit-hint', 'Scroll or drag to browse \u00b7 Arrow keys to step');
-  scrubber.append(range, hint); navigation.append(previous, next, positionCopy);
+  scrubber.append(progressLabel, range); navigation.append(previous, next, positionCopy);
   const details = button('orbit-view-details', 'orbit-details', 'View event details');
   const detailsArrow = element('span', '', '\u2197'); detailsArrow.setAttribute('aria-hidden', 'true'); details.append(detailsArrow);
-  footer.append(navigation, scrubber, details);
+  details.hidden = typeof onDetails !== 'function';
+  const footerTop = element('div', 'orbit-footer-top'); footerTop.append(navigation, hint, details); footer.append(footerTop, scrubber);
   const live = element('span', 'orbit-sr-only'); live.setAttribute('role', 'status'); live.setAttribute('aria-live', 'polite');
-  dialog.append(header, stage, footer, live); document.body.append(dialog);
+  timeline.append(header, stage, footer, live); container.replaceChildren(timeline);
 
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  const state = { all: [], events: [], selectedId: null, selectedIndex: 0, position: 0, target: 0, frame: 0, lastTime: 0, snapTimer: null, dragging: null, suppressClickUntil: 0, previousOverflow: '', returnFocus: null, items: new Map() };
+  const state = { all: [], events: [], selectedId: null, selectedIndex: 0, position: 0, target: 0, frame: 0, lastTime: 0, snapTimer: null, dragging: null, suppressClickUntil: 0, items: new Map() };
   let geometry = { width: 1, height: 1, radius: 600, centerX: -360, centerY: 1, step: .2, row: 132, leader: 64, cardWidth: 500 };
 
   function current() { return state.events[state.selectedIndex]; }
@@ -58,14 +57,15 @@ export function createOrbitTimeline({ opener, getData, onSelect }) {
     index = clamp(Math.round(index), 0, Math.max(0, state.events.length - 1));
     const selected = state.events[index], changed = state.selectedId !== selected?.id;
     state.selectedIndex = index; state.selectedId = selected?.id || null;
-    dialog.dataset.selectedId = state.selectedId || ''; dialog.dataset.currentIndex = String(index); dialog.dataset.eventCount = String(state.events.length);
+    timeline.dataset.selectedId = state.selectedId || ''; timeline.dataset.currentIndex = String(index); timeline.dataset.eventCount = String(state.events.length);
     range.max = String(Math.max(0, state.events.length - 1)); range.value = String(index); range.disabled = !selected;
+    range.style.setProperty('--orbit-progress', `${state.events.length > 1 ? index / (state.events.length - 1) * 100 : 0}%`);
     range.setAttribute('aria-valuetext', selected ? `${index + 1} of ${state.events.length}: ${selected.label}` : 'No events');
     positionCopy.textContent = `${selected ? String(index + 1).padStart(2, '0') : '0'} / ${state.events.length}`;
     previous.disabled = !selected || index === 0; next.disabled = !selected || index === state.events.length - 1; details.disabled = !selected;
     if (changed && selected) {
       live.textContent = `Event ${selected.ordinal ?? index + 1}: ${selected.label}`;
-      if (notify) onSelect?.(selected.id, { details: false });
+      if (notify) onSelect?.(selected.id);
     }
   }
   function makeEvent(event) {
@@ -88,7 +88,7 @@ export function createOrbitTimeline({ opener, getData, onSelect }) {
     state.items.set(event.id, wrapper); eventLayer.append(wrapper); return wrapper;
   }
   function render() {
-    if (!dialog.open) return;
+    if (!timeline.isConnected) return;
     const { width, height, radius, centerX, centerY, step, leader, cardWidth } = geometry;
     track.setAttribute('viewBox', `0 0 ${width} ${height}`); circle.setAttribute('cx', String(centerX)); circle.setAttribute('cy', String(centerY)); circle.setAttribute('r', String(radius));
     const visible = new Set(), center = Math.round(state.position);
@@ -118,16 +118,16 @@ export function createOrbitTimeline({ opener, getData, onSelect }) {
     empty.hidden = Boolean(state.events.length);
   }
   function measure() {
-    if (!dialog.open) return;
+    if (!timeline.isConnected) return;
     const width = stage.clientWidth, height = stage.clientHeight, mobile = width <= 640;
-    const radius = Math.max(mobile ? 1000 : 600, height * (mobile ? 1.9 : 1.05));
-    const arcX = mobile ? 52 : clamp(width * .235, 160, 300), leader = mobile ? 28 : 64;
+    const radius = Math.max(mobile ? 900 : 520, height * (mobile ? 1.7 : 1.05));
+    const arcX = mobile ? 52 : clamp(width * .19, 115, 165), leader = mobile ? 28 : 42;
     const row = height < 360 ? 112 : 132;
-    geometry = { width, height, radius, centerX: arcX - radius, centerY: height / 2, step: row / radius, row, leader, cardWidth: Math.max(160, Math.min(650, width - arcX - leader - (mobile ? 16 : 40))) };
+    geometry = { width, height, radius, centerX: arcX - radius, centerY: height / 2, step: row / radius, row, leader, cardWidth: Math.max(140, width - arcX - leader - (mobile ? 16 : 24)) };
     render();
   }
   function animate(time) {
-    state.frame = 0; if (!dialog.open) return;
+    state.frame = 0; if (!timeline.isConnected) return;
     const elapsed = state.lastTime ? Math.min(64, time - state.lastTime) : 16; state.lastTime = time;
     const difference = state.target - state.position;
     state.position = reducedMotion.matches || Math.abs(difference) < .001 ? state.target : state.position + difference * (1 - Math.exp(-elapsed / 76));
@@ -157,44 +157,24 @@ export function createOrbitTimeline({ opener, getData, onSelect }) {
     for (const item of state.items.values()) item.remove(); state.items.clear();
     stage.dataset.animating = 'false'; render();
   }
-  function open() {
-    if (dialog.open) return;
-    const data = getData?.() || {}, seen = new Set();
-    state.all = (Array.isArray(data.events) ? data.events : []).filter(event => event && typeof event.id === 'string' && !seen.has(event.id) && seen.add(event.id));
-    title.textContent = data.title || 'Recorded build process';
-    const keyCount = state.all.filter(event => event.isKey).length;
-    keysOption.textContent = `Key events (${keyCount})`; keysOption.disabled = !keyCount; allOption.textContent = `All records (${state.all.length})`;
-    state.returnFocus = document.activeElement; state.previousOverflow = document.body.style.overflow; document.body.style.overflow = 'hidden';
-    dialog.showModal(); measure();
-    const selected = state.all.find(event => event.id === data.selectedId);
-    chooseMode(selected && !selected.isKey ? 'all' : 'keys', data.selectedId, false);
-    stage.focus({ preventScroll: true });
-  }
-  function close({ restoreFocus = true } = {}) {
-    if (!dialog.open) return;
-    cancelSnap(); if (state.frame) cancelAnimationFrame(state.frame); state.frame = 0; state.lastTime = 0;
-    const drag = state.dragging; state.dragging = null; if (drag && stage.hasPointerCapture(drag.id)) stage.releasePointerCapture(drag.id);
-    stage.dataset.animating = 'false'; stage.classList.remove('is-dragging'); dialog.close(); document.body.style.overflow = state.previousOverflow;
-    if (restoreFocus) (opener?.isConnected ? opener : state.returnFocus)?.focus({ preventScroll: true });
+  function select(id, { focus = false } = {}) {
+    const event = state.all.find(item => item.id === id); if (!event) return;
+    if (state.selectedId !== id) {
+      cancelSnap(); if (state.frame) cancelAnimationFrame(state.frame); state.frame = 0; state.lastTime = 0;
+      const drag = state.dragging; state.dragging = null; if (drag && stage.hasPointerCapture(drag.id)) stage.releasePointerCapture(drag.id);
+      stage.classList.remove('is-dragging');
+      if (mode.value === 'keys' && !event.isKey) chooseMode('all', id, false);
+      else { const index = state.events.findIndex(item => item.id === id); updateSelection(index, false); state.position = state.target = index; render(); }
+      stage.dataset.animating = 'false';
+    }
+    if (focus) (state.items.get(id)?.querySelector('.orbit-event-card') || stage).focus({ preventScroll: true });
   }
 
-  opener?.addEventListener('click', open);
-  closeButton.addEventListener('click', () => close());
-  dialog.addEventListener('cancel', event => { event.preventDefault(); close(); });
-  dialog.addEventListener('click', event => { if (event.target === dialog) { const rect = dialog.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) close(); } });
-  details.addEventListener('click', () => { const event = current(); close({ restoreFocus: false }); if (event) onSelect?.(event.id, { details: true }); });
+  details.addEventListener('click', () => { const event = current(); if (event) onDetails?.(event.id); });
   mode.addEventListener('change', () => chooseMode(mode.value));
   previous.addEventListener('click', () => go(state.selectedIndex - 1)); next.addEventListener('click', () => go(state.selectedIndex + 1));
   range.addEventListener('input', () => go(Number(range.value)));
-  dialog.addEventListener('keydown', event => {
-    if (event.key === 'Tab') {
-      const focusable = [...dialog.querySelectorAll('button,input,select,[tabindex]')].filter(node => node.tabIndex >= 0 && !node.disabled && node.getClientRects().length && getComputedStyle(node).visibility !== 'hidden');
-      const index = focusable.indexOf(document.activeElement);
-      if (focusable.length && (index < 0 || (event.shiftKey ? index === 0 : index === focusable.length - 1))) {
-        event.preventDefault(); focusable[event.shiftKey ? focusable.length - 1 : 0].focus({ preventScroll: true });
-      }
-      return;
-    }
+  timeline.addEventListener('keydown', event => {
     if (event.target.matches('input,select') || event.ctrlKey || event.metaKey || event.altKey) return;
     const index = { ArrowDown: state.selectedIndex + 1, ArrowRight: state.selectedIndex + 1, ArrowUp: state.selectedIndex - 1, ArrowLeft: state.selectedIndex - 1, PageDown: state.selectedIndex + 5, PageUp: state.selectedIndex - 5, Home: 0, End: state.events.length - 1 }[event.key];
     if (index === undefined) return; event.preventDefault(); go(index);
@@ -238,6 +218,12 @@ export function createOrbitTimeline({ opener, getData, onSelect }) {
   window.addEventListener('pointerup', endDrag); window.addEventListener('pointercancel', endDrag);
   window.addEventListener('blur', () => { if (state.dragging) endDrag({ pointerId: state.dragging.id }); });
   new ResizeObserver(measure).observe(stage);
-  reducedMotion.addEventListener('change', () => { if (dialog.open) requestRender(); });
-  return { open, close };
+  reducedMotion.addEventListener('change', () => { if (timeline.isConnected) requestRender(); });
+  const data = getData?.() || {}, seen = new Set();
+  state.all = (Array.isArray(data.events) ? data.events : []).filter(event => event && typeof event.id === 'string' && !seen.has(event.id) && seen.add(event.id));
+  const keyCount = state.all.filter(event => event.isKey).length;
+  keysOption.textContent = `Key events (${keyCount})`; keysOption.disabled = !keyCount; allOption.textContent = `All records (${state.all.length})`;
+  const initial = state.all.find(event => event.id === data.selectedId);
+  measure(); chooseMode(initial && !initial.isKey ? 'all' : 'keys', data.selectedId, false);
+  return { select };
 }

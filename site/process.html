@@ -24,11 +24,9 @@
     <div class="process-record-line"><span id="record-mode" class="record-mode">SAVED RECORD</span><span id="record-summary"></span></div>
     <div class="process-workspace">
       <aside class="timeline-column" aria-label="Recorded production timeline">
-        <header class="timeline-toolbar"><div class="timeline-heading"><h2>Build timeline</h2><div class="timeline-heading-actions"><span id="timeline-count" class="mono"></span><button id="expand-timeline" type="button" aria-haspopup="dialog" disabled><svg viewBox="0 0 44 32" aria-hidden="true"><path d="M8 1Q27 16 8 31" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="13.2" cy="6" r="3" fill="#b8c9ee"/><circle cx="17.5" cy="16" r="3" fill="#c6bce8"/><circle cx="13.2" cy="26" r="3" fill="#b7d9db"/><path d="M24 6h17M28 16h13M24 26h17" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg><span>Expand timeline</span><span aria-hidden="true">&#8599;</span></button></div></div><p id="timeline-context" class="timeline-context">Select an operation to see its evidence and associated version.</p><details class="timeline-grouping-rule"><summary>How events are grouped</summary><p>The first skill, mechanism, and original-case reads, the first design note, every saved version, the first and last formal result for each version, formal failures or unknown results, saved replays, and delivery remain visible. Other consecutive records can be expanded in place. This is a display grouping; recorded order is unchanged.</p></details></header>
-        <div class="timeline-view-controls" role="group" aria-label="Timeline detail"><button id="show-all-records" type="button">Show all records</button><button id="show-key-records" type="button">Key events only</button></div>
-        <ol id="process-timeline" class="process-timeline timeline-scroll"></ol>
+        <div id="process-timeline" class="process-timeline"><p class="process-empty">Loading the build timeline...</p></div>
       </aside>
-      <article id="operation-detail" class="operation-detail" aria-label="Selected operation">
+      <article id="operation-detail" class="operation-detail" tabindex="-1" aria-label="Selected operation">
         <div class="operation-heading-line"><div id="operation-meta" class="operation-meta"></div><nav class="operation-navigation" aria-label="Adjacent recorded operations"><button id="previous-operation" type="button" aria-label="Previous operation">&#8592;</button><button id="next-operation" type="button" aria-label="Next operation">&#8594;</button></nav></div>
         <h2 id="operation-title">Choose an operation</h2>
         <p id="operation-summary" class="operation-summary"></p>

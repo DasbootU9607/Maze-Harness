@@ -1,6 +1,6 @@
 'use strict';
 
-// Exercise the optional arc timeline against actual published process records.
+// Exercise the inline arc timeline against actual published process records.
 // This suite never opens a maze; gameplay belongs to the separate player suite.
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const args=process.argv.slice(2),get=key=>{const i=args.indexOf('--'+key);return i<0?null:args[i+1];};
@@ -8,31 +8,33 @@ assert(get('engine'),'Supply --engine ENGINE to locate playwright-core');
 const root=path.resolve(__dirname,'..'),output=path.resolve(get('out')||path.join(root,'outputs/process-orbit'));
 const {chromium}=require(require.resolve('playwright-core',{paths:[path.resolve(get('engine'))]}));
 const {createServer,prefix}=require('./serve-site.cjs');
-const report={scope:'Actual process records in the optional arc timeline: complete event access, linked selection, arc geometry, input and accessibility. No game or WebGL preview is opened.',cases:[],errors:[],failedResponses:[],runtimeRequests:[]};
+const report={scope:'Actual process records in the inline arc timeline: complete event access, linked selection, real progress-slider input, arc geometry and normal page accessibility. No game or WebGL preview is opened.',cases:[],errors:[],failedResponses:[],runtimeRequests:[]};
 const save=()=>fs.writeFileSync(path.join(output,'report.json'),JSON.stringify(report,null,2)+'\n');
 const eventSelector=id=>'.orbit-event[data-event-id="'+id+'"]';
 const settle=async page=>{
   await page.waitForFunction(()=>document.querySelector('.orbit-stage')?.dataset.animating==='false');
   await page.evaluate(async()=>{await document.fonts.ready;await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));});
 };
-const selectedId=page=>page.locator('#process-orbit-dialog').getAttribute('data-selected-id');
+const selectedId=page=>page.locator('#process-orbit').getAttribute('data-selected-id');
 async function assertWindow(page,ids){
   const rendered=await page.locator('.orbit-event').evaluateAll(events=>events.map(event=>({id:event.dataset.eventId,index:Number(event.dataset.index)})));
   assert(rendered.length>0,'The virtualized arc has visible actual events');assert.equal(new Set(rendered.map(event=>event.id)).size,rendered.length);
   assert.deepEqual(rendered.map(event=>event.index),rendered.map(event=>event.index).sort((a,b)=>a-b),'Virtualized DOM order preserves chronological Tab navigation after scrolling backwards');
   for(const event of rendered)assert.equal(event.id,ids[event.index],'Virtualized event identity preserves its exact recorded position');
-  assert.equal(Number(await page.locator('#process-orbit-dialog').getAttribute('data-event-count')),ids.length);
+  assert.equal(Number(await page.locator('#process-orbit').getAttribute('data-event-count')),ids.length);
   assert.match(await page.locator('#orbit-count').innerText(),new RegExp('/\\s*'+ids.length+'$'),'The visible event count reflects the selected record filter');
 }
 async function assertSelection(page,id){
-  try{await page.waitForFunction(value=>document.querySelector('#process-orbit-dialog')?.dataset.selectedId===value,id);}
+  try{await page.waitForFunction(value=>document.querySelector('#process-orbit')?.dataset.selectedId===value,id);}
   catch(error){throw new Error('Expected selected event '+id+', actual '+await selectedId(page)+': '+error.message);}
   await settle(page);
   assert.equal(new URL(page.url()).searchParams.get('node'),id,'The arc selection updates the actual direct link');
-  assert.equal(await page.locator('.timeline-node[aria-current="step"]').getAttribute('data-node-id'),id,'The original timeline selects the same actual record');
+  const selected=page.locator('.orbit-event[aria-current="step"]');
+  assert.equal(await selected.getAttribute('data-event-id'),id,'The selected arc card is the actual record');
+  assert.equal(await page.locator('#orbit-position').inputValue(),await selected.getAttribute('data-index'),'Progress slider follows the selected record');
   const evidence=JSON.parse(await page.locator('#operation-evidence-body').textContent());
   assert.equal(evidence.node.id,id,'Main details retain the selected record identity');
-  const title=await page.locator('.timeline-node[data-node-id="'+id+'"] .timeline-label').textContent();
+  const title=await selected.locator('.orbit-event-label').textContent();
   assert.equal(await page.locator('#operation-title').textContent(),title,'The arc updates the actual record details');
 }
 async function setPosition(page,index){
@@ -80,27 +82,38 @@ async function noGame(page){
 async function assertNoStageScroll(page){
   assert.deepEqual(await page.locator('.orbit-stage').evaluate(stage=>({left:stage.scrollLeft,top:stage.scrollTop})),{left:0,top:0},'Focusing arc controls must not scroll the clipped stage independently of its point/card geometry');
 }
-async function assertModalFits(page){
-  const result=await page.locator('#process-orbit-dialog').evaluate(dialog=>{
-    const r=dialog.getBoundingClientRect();return{x:r.x,y:r.y,right:r.right,bottom:r.bottom,width:r.width,height:r.height,viewportWidth:innerWidth,viewportHeight:innerHeight,documentWidth:document.documentElement.scrollWidth,dialogWidth:dialog.clientWidth,dialogScrollWidth:dialog.scrollWidth};
+async function assertInline(page){
+  const result=await page.locator('#process-orbit').evaluate(timeline=>{
+    const r=timeline.getBoundingClientRect(),style=getComputedStyle(timeline);return{x:r.x,right:r.right,width:r.width,viewportWidth:innerWidth,documentWidth:document.documentElement.scrollWidth,clientWidth:timeline.clientWidth,scrollWidth:timeline.scrollWidth,position:style.position,bodyOverflow:getComputedStyle(document.body).overflow,modal:timeline.matches('dialog,[role=dialog]'),inTimeline:Boolean(timeline.closest('#process-timeline'))};
   });
-  assert(result.x>=-1&&result.y>=-1&&result.right<=result.viewportWidth+1&&result.bottom<=result.viewportHeight+1,'Arc dialog remains inside the viewport');
-  assert(result.documentWidth<=result.viewportWidth+1&&result.dialogScrollWidth<=result.dialogWidth+1,'Arc dialog must not create horizontal overflow');
+  assert(result.inTimeline&&!result.modal&&result.position!=='fixed','The arc is mounted inline in the original timeline column');
+  assert.notEqual(result.bodyOverflow,'hidden','Inline browsing does not lock page scrolling');
+  assert(result.x>=-1&&result.right<=result.viewportWidth+1&&result.documentWidth<=result.viewportWidth+1&&result.scrollWidth<=result.clientWidth+1,'Inline timeline remains bounded without horizontal overflow');
+  assert.equal(await page.locator('#expand-timeline,#process-orbit-dialog,.timeline-node').count(),0,'The replaced expansion flow and straight timeline are absent');
+  assert.equal(await page.locator('dialog[open]').count(),0,'Timeline browsing never opens a modal');
   return result;
 }
-async function open(page,expected){
-  await page.locator('#expand-timeline').click();await page.locator('#process-orbit-dialog').waitFor({state:'visible'});await assertSelection(page,expected);
-  assert(await page.locator('#process-orbit-dialog').evaluate(dialog=>dialog.contains(document.activeElement)),'Opening the dialog moves focus inside it');
-}
-async function closeEscape(page){
-  await page.keyboard.press('Escape');await page.locator('#process-orbit-dialog').waitFor({state:'hidden'});
-  assert.equal(await page.evaluate(()=>document.activeElement?.id),'expand-timeline','Escape restores focus to the expansion action');
+async function testProgressSlider(page,ids){
+  const slider=page.locator('#orbit-position');await slider.scrollIntoViewIfNeeded();await slider.focus();
+  await page.keyboard.press('Home');await assertSelection(page,ids[0]);
+  await page.keyboard.press('ArrowRight');await assertSelection(page,ids[1]);
+  await page.keyboard.press('End');await assertSelection(page,ids.at(-1));
+  await page.keyboard.press('ArrowLeft');await assertSelection(page,ids.at(-2));
+  await page.keyboard.press('Home');await assertSelection(page,ids[0]);
+  const box=await slider.boundingBox();assert(box.width>=180&&box.height>=24,'The labelled progress slider has a usable visible target');
+  assert((await slider.getAttribute('aria-label'))||(await page.locator('label[for="orbit-position"]').count()),'The progress slider has an accessible label');
+  const y=box.y+box.height/2;
+  await page.mouse.move(box.x+2,y);await page.mouse.down();await page.mouse.move(box.x+box.width/2,y,{steps:12});await page.mouse.up();await settle(page);
+  const middle=Number(await slider.inputValue());assert(Math.abs(middle-(ids.length-1)/2)<=1,'Real pointer dragging reaches the middle of the recorded sequence');await assertSelection(page,ids[middle]);
+  await page.mouse.move(box.x+box.width/2,y);await page.mouse.down();await page.mouse.move(box.x+box.width-1,y,{steps:12});await page.mouse.up();await assertSelection(page,ids.at(-1));
+  await page.mouse.move(box.x+box.width-2,y);await page.mouse.down();await page.mouse.move(box.x+1,y,{steps:18});await page.mouse.up();await assertSelection(page,ids[0]);
+  return {pointerStart:0,pointerMiddle:middle,pointerEnd:ids.length-1,nativeKeyboard:true,width:box.width,height:box.height};
 }
 async function swipe(page,stage){
   const cdp=await page.context().newCDPSession(page),x=stage.x+stage.width*.85,y=stage.y+stage.height*.72;
   await page.evaluate(()=>{
     const stage=document.querySelector('.orbit-stage');window.__ORBIT_TOUCH_TRACE__=[];
-    window.__ORBIT_TOUCH_LISTENER__=event=>window.__ORBIT_TOUCH_TRACE__.push({type:event.type,target:event.target.className,id:event.pointerId,y:event.clientY,stageCapture:stage.hasPointerCapture(event.pointerId),selected:document.querySelector('#process-orbit-dialog').dataset.selectedId});
+    window.__ORBIT_TOUCH_LISTENER__=event=>window.__ORBIT_TOUCH_TRACE__.push({type:event.type,target:event.target.className,id:event.pointerId,y:event.clientY,stageCapture:stage.hasPointerCapture(event.pointerId),selected:document.querySelector('#process-orbit').dataset.selectedId});
     for(const type of ['pointerdown','pointermove','pointerup','pointercancel','gotpointercapture','lostpointercapture'])stage.addEventListener(type,window.__ORBIT_TOUCH_LISTENER__,true);
   });
   try{
@@ -135,16 +148,21 @@ async function swipe(page,stage){
       page=await context.newPage();page.on('pageerror',error=>report.errors.push({caseId:entry.id,message:error.message}));
       page.on('response',response=>{if(response.status()>=400)report.failedResponses.push({caseId:entry.id,status:response.status(),url:response.url()});});
       page.on('request',request=>{if(/\/process-player\.(?:html|js)|\/runtime\/|\/vendor\/three/.test(new URL(request.url()).pathname))report.runtimeRequests.push({caseId:entry.id,url:request.url()});});
-      await page.goto(base+'process.html?'+new URLSearchParams({case:entry.id}));await page.waitForSelector('.timeline-node:visible');
-      assert.equal(await page.locator('.timeline-node').count(),ids.length,'The original timeline still exposes every actual event');
-      const keys=await page.locator('.timeline-node[data-key-event="true"]').evaluateAll(nodes=>nodes.map(node=>node.dataset.nodeId));
-      const support=ids.find(id=>!keys.includes(id));assert(support,'Each case has supporting events to exercise');
-      const initial=await page.locator('.timeline-node[aria-current="step"]').getAttribute('data-node-id');
-      await open(page,initial);assert.equal(await page.locator('#orbit-mode').inputValue(),'keys');
-      await assertWindow(page,keys);
-      assert.equal(Number(await page.locator('#orbit-position').getAttribute('max')),keys.length-1);row.keyEvents=keys.length;
-      const stage=page.locator('.orbit-stage');await stage.focus();await page.keyboard.press('Home');await assertSelection(page,keys[0]);
-      for(let i=1;i<keys.length;i++){await page.keyboard.press('ArrowDown');await assertSelection(page,keys[i]);await assertWindow(page,keys);}
+      const visit=async id=>{await page.goto(base+'process.html?'+new URLSearchParams({case:entry.id,...(id?{node:id}:{})}));await page.locator('#process-orbit').waitFor({state:'visible'});await settle(page);if(id)await assertSelection(page,id);};
+      await visit();assert.equal(await page.locator('#orbit-mode').inputValue(),'keys');await assertInline(page);
+      const stage=page.locator('.orbit-stage'),keys=[],keyCount=Number(await page.locator('#orbit-position').getAttribute('max'))+1;
+      assert(keyCount>0&&keyCount<=ids.length);await stage.focus();await page.keyboard.press('Home');await settle(page);
+      for(let i=0;i<keyCount;i++){
+        if(i)await page.keyboard.press('ArrowDown');await settle(page);const id=await selectedId(page);keys.push(id);await assertSelection(page,id);
+      }
+      assert.equal(new Set(keys).size,keys.length,'Every key index exposes a different actual record');
+      assert.deepEqual(keys,ids.filter(id=>keys.includes(id)),'The key filter preserves the public source order');
+      for(const node of ordered.filter(node=>['candidate','replay','delivery'].includes(node.kind)))assert(keys.includes(node.id),'Key events retain every version, replay and delivery');
+      for(const kind of ['skill','mechanism']){const first=ordered.find(node=>node.kind==='resource'&&node.details?.kind===kind);if(first)assert(keys.includes(first.id),'Key events retain the first recorded '+kind+' source');}
+      const firstNote=ordered.find(node=>node.kind==='note');if(firstNote)assert(keys.includes(firstNote.id),'The first public design note remains a key event');
+      for(const result of data.tests.filter(test=>test.category!=='diagnostic'&&['failed','error','unknown'].includes(test.status)))assert(keys.includes(result.graphNodeId),'Non-passing formal evidence remains visible among key events');
+      const support=ids.find(id=>!keys.includes(id));assert(support,'Each current case has supporting records');
+      await assertWindow(page,keys);row.keyEvents=keys.length;
       await page.locator('#orbit-mode').selectOption('all');await settle(page);
       await assertWindow(page,ids);
       assert.equal(Number(await page.locator('#orbit-position').getAttribute('min')),0);assert.equal(Number(await page.locator('#orbit-position').getAttribute('max')),ids.length-1);
@@ -159,7 +177,9 @@ async function swipe(page,stage){
       assert(await page.locator('#orbit-prev').isDisabled(),'Start of the saved record cannot wrap to the end');
       await stage.hover();await page.mouse.wheel(0,-5000);await settle(page);await assertSelection(page,ids[0]);row.boundedHistory=true;
       await assertWindow(page,ids);
+      row.slider=await testProgressSlider(page,ids);
       const middle=Math.floor(ids.length/2);await setPosition(page,middle);await assertSelection(page,ids[middle]);
+      await stage.scrollIntoViewIfNeeded();
       let before=await geometry(page);assertAligned(before,'Initial arc');await stage.hover();await page.mouse.wheel(0,140);await settle(page);
       let after=await geometry(page);row.wheel=assertMovedTogether(before,after,'Wheel movement');
       await setPosition(page,middle);before=await geometry(page);
@@ -171,32 +191,40 @@ async function swipe(page,stage){
       after=await geometry(page);target=after.events.find(event=>event.id!==target.id&&event.point.cy>after.stage.y+50&&event.point.cy<after.stage.bottom-50);
       assert(target);await page.locator(eventSelector(target.id)+' .orbit-event-point').click();await assertSelection(page,target.id);row.realCardAndPointClicks=true;
       await assertNoStageScroll(page);
-      await page.screenshot({path:path.join(output,entry.id+'-desktop.png')});await noGame(page);await assertModalFits(page);
-      row.tabFocus=[];
-      for(let i=0;i<10;i++){
-        await page.keyboard.press('Tab');const focus=await page.locator('#process-orbit-dialog').evaluate(dialog=>({inside:dialog.contains(document.activeElement),tag:document.activeElement?.tagName,id:document.activeElement?.id,className:document.activeElement?.className,open:dialog.open}));
-        row.tabFocus.push(focus);assert(focus.inside,'Tab focus remains inside the modal: '+JSON.stringify(focus));
+      await page.screenshot({path:path.join(output,entry.id+'-desktop.png')});await noGame(page);row.desktop=await assertInline(page);
+      await page.locator('#process-orbit').evaluate(timeline=>{
+        const controls=[...timeline.querySelectorAll('button,input,select,[tabindex]')].filter(node=>node.tabIndex>=0&&!node.disabled&&node.getClientRects().length&&getComputedStyle(node).visibility!=='hidden');
+        controls.at(-1).focus({preventScroll:true});
+      });
+      row.tabFocus=[];let reachedDetails=false;
+      for(let i=0;i<20&&!reachedDetails;i++){
+        await page.keyboard.press('Tab');const focus=await page.evaluate(()=>({id:document.activeElement?.id,className:document.activeElement?.className,inTimeline:document.querySelector('#process-orbit').contains(document.activeElement),inDetails:document.querySelector('#operation-detail').contains(document.activeElement)}));
+        row.tabFocus.push(focus);reachedDetails=focus.inDetails;
       }
-      await page.locator('#orbit-mode').focus();await page.keyboard.press('Shift+Tab');
-      assert.equal(await page.evaluate(()=>document.activeElement?.id),'orbit-view-details','Shift+Tab wraps from the first to the last modal control');
-      await page.keyboard.press('Tab');assert.equal(await page.evaluate(()=>document.activeElement?.id),'orbit-mode','Tab wraps from the last to the first modal control');
-      await assertNoStageScroll(page);
-      await closeEscape(page);
-      // Select a previously hidden support record with the original timeline.
-      await page.locator('#show-all-records').click();await page.locator('.timeline-node[data-node-id="'+support+'"]').click();
-      assert.equal(new URL(page.url()).searchParams.get('node'),support);await open(page,support);
-      assert.equal(await page.locator('#orbit-mode').inputValue(),'all','Opening a supporting selection must not silently replace it with a key event');
-      await page.locator('#orbit-view-details').click();await page.locator('#process-orbit-dialog').waitFor({state:'hidden'});
-      assert.equal(await page.locator('.timeline-node:focus').getAttribute('data-node-id'),support,'View details focuses the actual main timeline record');row.originalTimelineAndDetails=true;
-      await page.setViewportSize({width:390,height:844});await open(page,support);row.mobile=await assertModalFits(page);
-      await setPosition(page,middle);before=await geometry(page);const touchTrace=await swipe(page,before.stage);after=await geometry(page);
+      assert(reachedDetails,'Normal Tab navigation moves from the timeline to detail controls without a focus trap');await assertNoStageScroll(page);
+      const beforeEscape=await selectedId(page);await page.keyboard.press('Escape');assert(await page.locator('#process-orbit').isVisible());await assertSelection(page,beforeEscape);
+      // External detail controls must synchronize the inline arc and its filter.
+      await page.locator('#orbit-mode').selectOption('keys');await settle(page);
+      const precedingKey=keys.find(id=>{const index=ids.indexOf(id);return index<ids.length-1&&!keys.includes(ids[index+1]);});assert(precedingKey);
+      await setPosition(page,keys.indexOf(precedingKey));await assertSelection(page,precedingKey);
+      const following=ids[ids.indexOf(precedingKey)+1];await page.locator('#next-operation').click();await assertSelection(page,following);
+      assert.equal(await page.locator('#orbit-mode').inputValue(),'all','Detail navigation to a support record automatically exposes All');await assertWindow(page,ids);
+      await page.locator('#previous-operation').click();await assertSelection(page,precedingKey);
+      const relatedKey=ordered.find(node=>node.kind==='candidate');assert(relatedKey);await setPosition(page,ids.indexOf(relatedKey.id));await assertSelection(page,relatedKey.id);
+      const relation=page.locator('#operation-relations .relation-chip').first();assert(await relation.count());const destination=await relation.getAttribute('data-node-id');
+      await relation.click();await assertSelection(page,destination);row.detailNavigation=true;
+      await visit(keys.at(-1));assert.equal(await page.locator('#orbit-mode').inputValue(),'keys');
+      await visit(support);assert.equal(await page.locator('#orbit-mode').inputValue(),'all','A support deep link mounts the correct unfiltered selection');
+      await page.reload();await assertSelection(page,support);row.keyAndSupportDeepLinks=true;
+      await page.setViewportSize({width:390,height:844});await settle(page);row.mobile=await assertInline(page);
+      await setPosition(page,middle);await stage.scrollIntoViewIfNeeded();before=await geometry(page);const touchTrace=await swipe(page,before.stage);after=await geometry(page);
       try{row.touch=assertMovedTogether(before,after,'Touch dragging');}catch(error){row.touchDiagnostic=touchTrace;throw error;}
       const mobileSelected=await selectedId(page);
       const mobileTarget=after.events.find(event=>event.id!==mobileSelected&&event.card.x>=after.stage.x+1&&event.card.right<=after.stage.right-1&&event.card.y>=after.stage.y+1&&event.card.bottom<=after.stage.bottom-1);
       assert(mobileTarget);
       await page.evaluate(()=>{
         window.__ORBIT_TAP_TRACE__=[];
-        window.__ORBIT_TAP_LISTENER__=event=>window.__ORBIT_TAP_TRACE__.push({type:event.type,time:performance.now(),target:event.target.className,eventId:event.target.closest('.orbit-event')?.dataset.eventId,pointerId:event.pointerId,primary:event.isPrimary,button:event.button,x:event.clientX,y:event.clientY,selected:document.querySelector('#process-orbit-dialog').dataset.selectedId,stageScroll:document.querySelector('.orbit-stage').scrollTop,dialogScroll:document.querySelector('#process-orbit-dialog').scrollTop});
+        window.__ORBIT_TAP_LISTENER__=event=>window.__ORBIT_TAP_TRACE__.push({type:event.type,time:performance.now(),target:event.target.className,eventId:event.target.closest('.orbit-event')?.dataset.eventId,pointerId:event.pointerId,primary:event.isPrimary,button:event.button,x:event.clientX,y:event.clientY,selected:document.querySelector('#process-orbit').dataset.selectedId,stageScroll:document.querySelector('.orbit-stage').scrollTop});
         for(const type of ['pointerdown','pointerup','pointercancel','gotpointercapture','lostpointercapture','click'])document.addEventListener(type,window.__ORBIT_TAP_LISTENER__,true);
       });
       try{await page.locator(eventSelector(mobileTarget.id)+' .orbit-event-card').tap();await assertSelection(page,mobileTarget.id);}
@@ -206,14 +234,18 @@ async function swipe(page,stage){
       await stage.focus();await page.keyboard.press('End');await assertSelection(page,ids.at(-1));await page.keyboard.press('Home');await assertSelection(page,ids[0]);
       assert(await page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches));
       assert.equal(await stage.getAttribute('data-animating'),'false');
-      assert.equal(await page.locator('#process-orbit-dialog').evaluate(dialog=>dialog.getAnimations({subtree:true}).filter(animation=>animation.playState==='running').length),0,'Reduced motion does not leave autonomous animation running');
-      await page.screenshot({path:path.join(output,entry.id+'-mobile.png')});await noGame(page);await closeEscape(page);row.reducedMotion=true;row.focusAndEscape=true;
+      assert.equal(await page.locator('#process-orbit').evaluate(timeline=>timeline.getAnimations({subtree:true}).filter(animation=>animation.playState==='running').length),0,'Reduced motion does not leave autonomous animation running');
+      await setPosition(page,middle);await stage.scrollIntoViewIfNeeded();await page.screenshot({path:path.join(output,entry.id+'-mobile.png')});await noGame(page);
+      const detailJump=page.locator('#orbit-view-details');if(await detailJump.isVisible())await detailJump.click();else await page.locator('#operation-detail').scrollIntoViewIfNeeded();
+      assert(await page.locator('#operation-title').isVisible(),'The selected detail remains accessible below the mobile timeline');
+      const detailBounds=await page.locator('#operation-title').boundingBox();assert(detailBounds.y>=-1&&detailBounds.y<844,'Mobile users can reach the selected detail');
+      await assertSelection(page,ids[middle]);row.reducedMotion=true;row.mobileDetails=true;
       if(report.cases.length===1){
-        await page.setViewportSize({width:844,height:390});await open(page,ids[0]);row.landscape=await assertModalFits(page);
-        const controls=await page.locator('#process-orbit-dialog').evaluate(dialog=>{const d=dialog.getBoundingClientRect(),f=dialog.querySelector('.orbit-footer').getBoundingClientRect(),b=dialog.querySelector('#orbit-view-details').getBoundingClientRect();return{dialogBottom:d.bottom,footerBottom:f.bottom,buttonBottom:b.bottom,buttonTop:b.top};});
-        assert(controls.footerBottom<=controls.dialogBottom+1&&controls.buttonBottom<=controls.dialogBottom+1&&controls.buttonTop>=0,'Short landscape view keeps the footer and details action visible');
-        await page.screenshot({path:path.join(output,entry.id+'-landscape.png')});await closeEscape(page);
-        await page.setViewportSize({width:1440,height:1000});await page.emulateMedia({reducedMotion:'no-preference'});await open(page,ids[0]);
+        await page.setViewportSize({width:1024,height:900});await settle(page);row.medium=await assertInline(page);await stage.scrollIntoViewIfNeeded();await page.screenshot({path:path.join(output,entry.id+'-medium.png')});
+        await page.setViewportSize({width:844,height:390});await settle(page);row.landscape=await assertInline(page);await page.locator('#orbit-position').scrollIntoViewIfNeeded();
+        const controls=await page.locator('#orbit-position').boundingBox();assert(controls.y>=-1&&controls.y+controls.height<=391,'The progress slider remains reachable in short landscape pages');
+        await page.screenshot({path:path.join(output,entry.id+'-landscape.png')});
+        await page.setViewportSize({width:1440,height:1000});await page.emulateMedia({reducedMotion:'no-preference'});
         await page.locator('#orbit-mode').selectOption('all');await setPosition(page,middle);
         const samples=await page.evaluate(async()=>{
           const stage=document.querySelector('.orbit-stage'),rows=[];stage.dispatchEvent(new WheelEvent('wheel',{deltaY:140,bubbles:true,cancelable:true}));
@@ -225,7 +257,7 @@ async function swipe(page,stage){
         });
         for(const sample of samples){assert(sample.length>=3,'Animation samples contain visible point/card pairs');for(const event of sample)assert(Math.abs(event.pointY-event.cardY)<=2,'Point and card remain joined during animated movement');}
         const first=new Map(samples[0].map(event=>[event.id,event]));assert(samples.at(-1).some(event=>first.has(event.id)&&Math.abs(event.pointY-first.get(event.id).pointY)>1),'Normal-motion sampling observes real movement rather than only static alignment');
-        await settle(page);row.animationFramesChecked=samples.length;await noGame(page);await closeEscape(page);
+        await settle(page);row.animationFramesChecked=samples.length;await noGame(page);
       }
       row.passed=true;save();await page.close();page=null;
     }

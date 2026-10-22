@@ -2,7 +2,8 @@ import { loadCatalog, shell, playUrl, showError } from './ui.js';
 import { createOrbitTimeline } from './process-orbit.js';
 
 const $ = id => document.getElementById(id);
-const state = { data: null, catalog: null, entry: null, skill: null, nodes: [], selectedId: null, candidateId: null, previewCandidateId: null, previewKey: null, previewMode: null, previewUrl: null, previewLabel: null, expanded: false, returnFocus: null, previousOverflow: '', revisionBranches: [], keyNodeIds: new Set(), timelineGroups: [], nodeGroups: new Map() };
+const state = { data: null, catalog: null, entry: null, skill: null, nodes: [], selectedId: null, candidateId: null, previewCandidateId: null, previewKey: null, previewMode: null, previewUrl: null, previewLabel: null, expanded: false, returnFocus: null, previousOverflow: '', keyNodeIds: new Set() };
+let orbitTimeline;
 const kindNames = { resource: 'READ', candidate: 'VERSION', test: 'TEST', note: 'DESIGN NOTE', operation: 'OPERATION', replay: 'REPLAY', delivery: 'DELIVERY', record: 'RECORD' };
 const statusNames = { passed: 'Passed', failed: 'Failed', unknown: 'Unknown', error: 'Error' };
 const resourceNames = { 'SKILL.md': 'Read skill instructions', 'mechanism-logic.md': 'Read extracted mechanism', 'planning-depth.md': 'Read planning guidance', 'complex-validation.md': 'Read verification guidance', 'design-template.json': 'Read design template', 'complex-runtime.cjs': 'Inspect mechanism runtime', 'verify-complex.cjs': 'Inspect the verifier', 'design.md': 'Read design conventions', 'browser-check.cjs': 'Inspect browser replay checks' };
@@ -109,8 +110,8 @@ function orbitSummary(node) {
   return node.summary || record?.scope || nodeTitle(node);
 }
 function installOrbitTimeline() {
-  createOrbitTimeline({
-    opener: $('expand-timeline'),
+  orbitTimeline = createOrbitTimeline({
+    container: $('process-timeline'),
     getData: () => ({
       title: state.data.title || state.entry.title,
       selectedId: state.selectedId,
@@ -118,16 +119,16 @@ function installOrbitTimeline() {
         id: node.id, kind: node.kind, category: nodeCategory(node), label: nodeAction(node),
         summary: short(orbitSummary(node).replace(/\s+/g, ' '), 190),
         ordinal: node.order ?? node.sourceIndex + 1, status: node.status || 'neutral',
-        statusLabel: node.status === 'failed' && (recordFor(node)?.category === 'diagnostic' || node.eventType === 'command.completed') ? 'Process failed' : statusNames[node.status] || '',
+        statusLabel: explanationFor(node)?.badge || (node.status === 'failed' && (recordFor(node)?.category === 'diagnostic' || node.eventType === 'command.completed') ? 'Process failed' : statusNames[node.status] || ''),
         isKey: state.keyNodeIds.has(node.id)
       }))
     }),
-    onSelect: (id, { details = false } = {}) => {
-      selectNode(id, { focus: details });
-      if (details) $('operation-detail').scrollIntoView({ block: 'nearest', behavior: 'instant' });
+    onSelect: id => selectNode(id, { focus: false, fromTimeline: true }),
+    onDetails: () => {
+      $('operation-detail').scrollIntoView({ block: 'start', behavior: 'instant' });
+      $('operation-detail').focus({ preventScroll: true });
     }
   });
-  $('expand-timeline').disabled = false;
 }
 function classifyTimeline() {
   const keyIds = new Set(), seenReadKinds = new Set(), formalTests = new Map(); let firstNote = false;
@@ -148,12 +149,7 @@ function classifyTimeline() {
   }
   for (const tests of formalTests.values()) { keyIds.add(tests[0].id); keyIds.add(tests[tests.length - 1].id); }
   if (!keyIds.size && state.nodes.length) keyIds.add(state.nodes[0].id);
-  state.keyNodeIds = keyIds; state.timelineGroups = []; state.nodeGroups.clear(); let group = null;
-  for (const node of state.nodes) {
-    if (keyIds.has(node.id)) { group = null; continue; }
-    if (!group) { group = { id: `group-${node.id}`, nodes: [], expanded: false }; state.timelineGroups.push(group); }
-    group.nodes.push(node); state.nodeGroups.set(node.id, group);
-  }
+  state.keyNodeIds = keyIds;
 }
 
 async function start() {
@@ -176,108 +172,20 @@ async function start() {
   const coverage = data.coverage?.events;
   $('record-summary').textContent = `${state.data.candidates.length} versions / ${state.data.resources.length} recorded references / ${state.data.tests.length} test records${coverage ? ` / ${coverage.representedCount} of ${coverage.sourceCount} source records` : ''}`;
   classifyTimeline();
-  $('timeline-count').textContent = `${state.keyNodeIds.size} key / ${state.nodes.length} total`;
-  $('timeline-context').textContent = `${coverage ? 'Every source event is included. ' : ''}${state.nodes.length - state.keyNodeIds.size} supporting records can be expanded in order.${mode === 'historical' ? ' Original times are unknown.' : ''}`;
   $('coverage-description').textContent = data.coverage?.description || 'This view contains saved operations, references, maps, test outcomes, and public author explanations. It does not reconstruct unrecorded activity.';
   const limits = [...(data.coverage?.limitations || []), ...(data.limitations || []), data.coverage?.sources?.scope].filter(Boolean).map(text).filter((item, index, all) => all.indexOf(item) === index);
   limits.forEach(item => $('coverage-limitations').append(el('li', '', item)));
-  renderTimeline(); installInteractions();
-  $('show-all-records').addEventListener('click', () => { for (const group of state.timelineGroups) toggleTimelineGroup(group.id, true); });
-  $('show-key-records').addEventListener('click', () => { for (const group of state.timelineGroups) toggleTimelineGroup(group.id, false); });
+  installInteractions();
   const requested = byId(query.get('node')), requestedCandidate = state.data.candidates.find(candidate => candidate.id === query.get('candidate'));
   const firstCandidate = state.data.candidates.find(candidate => candidate.preview?.levelPath) || state.data.candidates[0];
-  selectNode(requested?.id || requestedCandidate?.graphNodeId || firstCandidate?.graphNodeId || state.nodes[0]?.id, { initial: true, focus: Boolean(requested || requestedCandidate) });
+  selectNode(requested?.id || requestedCandidate?.graphNodeId || firstCandidate?.graphNodeId || state.nodes[0]?.id, { initial: true, focus: false });
   installOrbitTimeline();
 }
 
-function renderTimeline() {
-  const timeline = clear($('process-timeline'));
-  state.revisionBranches = recordedRevisionBranches();
-  timeline.dataset.branchCount = String(state.revisionBranches.length);
-  if (state.revisionBranches.length) {
-    const layer = el('li', 'revision-layer'); layer.setAttribute('aria-hidden', 'true');
-    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); svg.id = 'revision-branches'; svg.setAttribute('aria-hidden', 'true'); layer.append(svg); timeline.append(layer);
-  }
-  for (const node of state.nodes) {
-    const group = state.nodeGroups.get(node.id); let parent = timeline;
-    if (group) {
-      if (group.nodes[0].id === node.id) {
-        const container = el('li', 'timeline-group'), toggle = el('button', 'timeline-group-toggle'), events = el('ol', 'timeline-group-events'); container.dataset.groupId = group.id; toggle.type = 'button'; toggle.dataset.groupId = group.id; toggle.setAttribute('aria-expanded', String(group.expanded)); events.id = `events-${group.id}`; events.hidden = !group.expanded; toggle.setAttribute('aria-controls', events.id);
-        const label = el('span', 'timeline-group-copy'), first = group.nodes[0], last = group.nodes[group.nodes.length - 1], failed = group.nodes.filter(item => ['failed', 'error'].includes(item.status)), diagnostics = failed.filter(item => recordFor(item)?.category === 'diagnostic');
-        label.append(el('span', 'timeline-group-label', `${group.nodes.length} supporting ${group.nodes.length === 1 ? 'event' : 'events'}`));
-        label.append(el('span', 'timeline-group-range', `Records ${first.order ?? first.sourceIndex + 1}${first.id === last.id ? '' : `–${last.order ?? last.sourceIndex + 1}`}`));
-        if (failed.length) label.append(el('span', 'timeline-group-failures', diagnostics.length === failed.length ? `${diagnostics.length} failed diagnostic ${diagnostics.length === 1 ? 'process' : 'processes'}` : `${failed.length} failed ${failed.length === 1 ? 'event' : 'events'}`));
-        const selected = el('span', 'timeline-group-selected', 'Selected event'); selected.hidden = true; label.append(selected);
-        toggle.append(el('span', 'timeline-group-marker', '···'), label, el('span', 'timeline-group-action', group.expanded ? 'Hide' : 'Show')); toggle.addEventListener('click', () => toggleTimelineGroup(group.id, !group.expanded)); container.append(toggle, events); timeline.append(container);
-      }
-      parent = $(`events-${group.id}`);
-    }
-    const item = el('li', `timeline-item ${node.kind} ${node.status || ''}`), button = el('button', `timeline-node ${node.kind} ${node.status || ''}`); button.type = 'button'; button.dataset.nodeId = node.id; button.dataset.kind = node.kind; button.title = nodeTitle(node);
-    item.dataset.eventType = node.eventType || ''; button.dataset.eventId = node.eventId || ''; button.dataset.recordOrder = String(node.order);
-    button.dataset.keyEvent = String(state.keyNodeIds.has(node.id)); if (group) item.dataset.groupId = group.id;
-    const body = el('span', 'timeline-body'), content = el('span', 'timeline-text');
-    content.append(el('span', 'timeline-kind-inline', nodeCategory(node)), el('span', 'timeline-label', nodeAction(node))); body.append(content);
-    if (node.kind === 'test' && statusNames[node.status]) body.append(el('span', `timeline-state ${node.status}`, explanationFor(node)?.badge || (recordFor(node)?.category === 'diagnostic' && node.status === 'failed' ? 'Process failed' : statusNames[node.status])));
-    if (node.kind === 'record' && ['failed', 'unknown'].includes(node.status)) body.append(el('span', 'timeline-state', node.eventType === 'command.completed' && node.status === 'failed' ? 'Process failed' : statusNames[node.status]));
-    const circle = el('span', 'timeline-dot'), ring = el('span', 'timeline-ring'), dot = el('span', 'timeline-center');
-    ring.setAttribute('aria-hidden', 'true'); dot.setAttribute('aria-hidden', 'true');
-    circle.append(ring, dot, el('span', 'timeline-number', String(node.order ?? node.sourceIndex + 1).padStart(2, '0')));
-    button.append(el('span', 'timeline-kind', nodeCategory(node)), circle, el('span', 'timeline-connector'), body); button.addEventListener('click', () => selectNode(node.id)); item.append(button); parent.append(item);
-  }
-  requestAnimationFrame(renderRevisionBranches);
-}
-function toggleTimelineGroup(id, expanded) {
-  const group = state.timelineGroups.find(item => item.id === id); if (!group) return;
-  group.expanded = expanded; const toggle = [...$('process-timeline').querySelectorAll('.timeline-group-toggle')].find(button => button.dataset.groupId === id);
-  $(`events-${id}`).hidden = !expanded; toggle.setAttribute('aria-expanded', String(expanded)); toggle.querySelector('.timeline-group-action').textContent = expanded ? 'Hide' : 'Show';
-  if (!expanded && group.nodes.some(node => node.id === state.selectedId)) {
-    toggle.focus({ preventScroll: true });
-  }
-  syncGroupSelection();
-  requestAnimationFrame(renderRevisionBranches);
-}
-function syncGroupSelection() {
-  for (const toggle of $('process-timeline').querySelectorAll('.timeline-group-toggle')) {
-    const group = state.timelineGroups.find(item => item.id === toggle.dataset.groupId), containsSelection = !group.expanded && group.nodes.some(node => node.id === state.selectedId);
-    toggle.classList.toggle('contains-selection', containsSelection); toggle.dataset.containsSelection = String(containsSelection);
-    if (containsSelection) toggle.setAttribute('aria-current', 'step'); else toggle.removeAttribute('aria-current');
-    toggle.querySelector('.timeline-group-selected').hidden = !containsSelection;
-  }
-}
-function recordedRevisionBranches() {
-  const candidates = new Map(state.data.candidates.map(candidate => [candidate.graphNodeId, candidate])), children = new Map();
-  for (const edge of state.data.edges) {
-    const parent = candidates.get(edge.from), child = candidates.get(edge.to);
-    if (edge.kind !== 'revision' || edge.inferred !== false || !parent || !child || !Array.isArray(child.parentIds) || !child.parentIds.includes(parent.id)) continue;
-    if (!children.has(parent.graphNodeId)) children.set(parent.graphNodeId, new Map());
-    children.get(parent.graphNodeId).set(child.id, { from: parent.graphNodeId, to: child.graphNodeId });
-  }
-  return [...children.values()].filter(group => group.size > 1).flatMap(group => [...group.values()].map((edge, lane) => ({ ...edge, lane, laneCount: group.size })));
-}
-function renderRevisionBranches() {
-  const svg = $('revision-branches'); if (!svg) return;
-  const timeline = $('process-timeline'), rect = timeline.getBoundingClientRect(), circles = new Map();
-  for (const button of timeline.querySelectorAll('.timeline-node')) {
-    if (!button.getClientRects().length) continue;
-    const circle = button.querySelector('.timeline-dot').getBoundingClientRect();
-    circles.set(button.dataset.nodeId, { x: circle.left - rect.left + timeline.scrollLeft, y: circle.top - rect.top + timeline.scrollTop + circle.height / 2 });
-  }
-  clear(svg); svg.setAttribute('width', String(timeline.clientWidth)); svg.setAttribute('height', String(Math.max(timeline.clientHeight, ...[...circles.values()].map(circle => circle.y + 76))));
-  for (const edge of state.revisionBranches) {
-    const start = circles.get(edge.from), end = circles.get(edge.to); if (!start || !end) continue;
-    const direction = end.y >= start.y ? 1 : -1, radius = Math.min(18, Math.abs(end.y - start.y) / 3), gap = Math.max(3, Math.min(16, parseFloat(getComputedStyle(timeline.querySelector('.timeline-kind')).paddingRight) - 2)), offset = 3 + (gap - 3) * edge.lane / Math.max(1, edge.laneCount - 1), lane = Math.max(3, Math.min(start.x, end.x) - offset);
-    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path'); path.classList.add('revision-branch'); path.dataset.from = edge.from; path.dataset.to = edge.to; path.dataset.kind = 'revision';
-    path.setAttribute('d', `M ${start.x} ${start.y} C ${lane} ${start.y} ${lane} ${start.y} ${lane} ${start.y + direction * radius} L ${lane} ${end.y - direction * radius} C ${lane} ${end.y} ${lane} ${end.y} ${end.x} ${end.y}`);
-    const title = document.createElementNS('http://www.w3.org/2000/svg', 'title'); title.textContent = `Recorded revision: ${nodeAction(byId(edge.from))} to ${nodeAction(byId(edge.to))}`; path.append(title); svg.append(path);
-  }
-}
-function selectNode(id, { initial = false, focus = true } = {}) {
+function selectNode(id, { initial = false, focus = true, fromTimeline = false } = {}) {
   const node = byId(id); if (!node) return;
   if (state.expanded) closePreview({ restoreFocus: false });
   if (state.selectedId !== id) disposePreview(); state.selectedId = id;
-  const group = state.nodeGroups.get(id); if (group && !group.expanded) toggleTimelineGroup(group.id, true);
-  for (const button of $('process-timeline').querySelectorAll('.timeline-node')) { if (button.dataset.nodeId === id) button.setAttribute('aria-current', 'step'); else button.removeAttribute('aria-current'); }
-  syncGroupSelection();
   const record = recordFor(node), candidate = candidateFor(node), index = state.nodes.indexOf(node);
   $('previous-operation').disabled = index === 0; $('next-operation').disabled = index === state.nodes.length - 1;
   const meta = clear($('operation-meta')); meta.append(el('span', '', nodeCategory(node)), el('span', '', node.kind === 'delivery' ? '/ PUBLICATION BINDING' : `/ RECORD ${node.order ?? index + 1}`));
@@ -298,10 +206,7 @@ function selectNode(id, { initial = false, focus = true } = {}) {
   $('operation-evidence-body').textContent = JSON.stringify({ node: Object.fromEntries(Object.entries(node).filter(([key]) => key !== 'sourceIndex')), ...(safeRecord ? { record: safeRecord } : {}) }, null, 2); $('operation-evidence').open = false;
   const url = new URL(location.href); url.searchParams.set('node', node.id); if (candidate) url.searchParams.set('candidate', candidate.id); else url.searchParams.delete('candidate'); history.replaceState(null, '', url);
   if (!initial) $('operation-detail').scrollTop = 0;
-  {
-    const button = [...$('process-timeline').querySelectorAll('.timeline-node')].find(item => item.dataset.nodeId === id);
-    if (button) { const list = $('process-timeline'), rect = button.getBoundingClientRect(), listRect = list.getBoundingClientRect(); if (rect.top < listRect.top || rect.bottom > listRect.bottom) list.scrollTop += rect.top - listRect.top - list.clientHeight / 3; if (focus) button.focus({ preventScroll: true }); }
-  }
+  if (!fromTimeline) orbitTimeline?.select(id, { focus });
 }
 
 function exactReplayFor(node, record, candidate) {
@@ -451,17 +356,8 @@ function closePreview({ restoreFocus = true } = {}) {
 }
 function handleEscape(event) { if (event.key === 'Escape' && state.expanded) { event.preventDefault(); closePreview(); } }
 function installInteractions() {
-  new ResizeObserver(renderRevisionBranches).observe($('process-timeline'));
-  document.fonts?.ready.then(renderRevisionBranches);
-  $('process-timeline').addEventListener('keydown', event => {
-    const button = event.target.closest('.timeline-node'); if (!button) return;
-    const index = state.nodes.findIndex(node => node.id === button.dataset.nodeId), next = { ArrowDown: index + 1, ArrowRight: index + 1, ArrowUp: index - 1, ArrowLeft: index - 1, Home: 0, End: state.nodes.length - 1 }[event.key];
-    if (next === undefined) return; event.preventDefault();
-    const selected = state.nodes[Math.max(0, Math.min(state.nodes.length - 1, next))]; selectNode(selected.id);
-    [...$('process-timeline').querySelectorAll('.timeline-node')].find(item => item.dataset.nodeId === selected.id)?.focus({ preventScroll: true });
-  });
-  $('previous-operation').addEventListener('click', () => { const i = state.nodes.findIndex(node => node.id === state.selectedId); if (i > 0) selectNode(state.nodes[i - 1].id); });
-  $('next-operation').addEventListener('click', () => { const i = state.nodes.findIndex(node => node.id === state.selectedId); if (i < state.nodes.length - 1) selectNode(state.nodes[i + 1].id); });
+  $('previous-operation').addEventListener('click', () => { const i = state.nodes.findIndex(node => node.id === state.selectedId); if (i > 0) selectNode(state.nodes[i - 1].id, { focus: false }); });
+  $('next-operation').addEventListener('click', () => { const i = state.nodes.findIndex(node => node.id === state.selectedId); if (i < state.nodes.length - 1) selectNode(state.nodes[i + 1].id, { focus: false }); });
   $('expand-preview').addEventListener('click', expandPreview); $('close-preview').addEventListener('click', closePreview); window.addEventListener('keydown', handleEscape);
   $('preview-modal').addEventListener('cancel', event => { event.preventDefault(); closePreview(); });
   $('preview-modal').addEventListener('close', () => { if (state.expanded && !$('preview-modal').open) closePreview(); });
