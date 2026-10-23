@@ -174,6 +174,7 @@ async function start() {
   const mode = data.coverage?.mode || data.mode || 'unknown'; $('record-mode').textContent = mode === 'observed' ? 'OBSERVED RECORD' : mode === 'historical' ? 'HISTORICAL IMPORT' : 'PARTIAL RECORD'; $('record-mode').classList.toggle('historical', mode === 'historical');
   const coverage = data.coverage?.events;
   $('record-summary').textContent = `${state.data.candidates.length} versions / ${state.data.resources.length} recorded references / ${state.data.tests.length} test records${coverage ? ` / ${coverage.representedCount} of ${coverage.sourceCount} source records` : ''}`;
+  renderUsage(data.usage);
   classifyTimeline();
   $('coverage-description').textContent = data.coverage?.description || 'This view contains saved operations, references, maps, test outcomes, and public author explanations. It does not reconstruct unrecorded activity.';
   const limits = [...(data.coverage?.limitations || []), ...(data.limitations || []), data.coverage?.sources?.scope].filter(Boolean).map(text).filter((item, index, all) => all.indexOf(item) === index);
@@ -380,3 +381,19 @@ function installInteractions() {
 }
 
 start().catch(error => showError(error));
+
+function renderUsage(usage) {
+  const host = clear($('build-usage')), values = usage?.observedTokens || {};
+  const metric = (label, value) => { const cell = el('div', 'usage-metric'); cell.append(el('span', '', label), el('strong', '', value ?? 'Not provided')); return cell; };
+  const count = n => Number.isSafeInteger(n) ? n.toLocaleString() : 'Not provided';
+  const duration = Number.isFinite(usage?.elapsedMs) ? `${Math.floor(usage.elapsedMs / 60000)}m ${Math.floor(usage.elapsedMs / 1000) % 60}s` : 'Not provided';
+  const modelNames = usage?.models?.map(m => m.model || 'Not provided').join(', ') || 'Not provided';
+  host.append(metric('Model', modelNames), metric('Client', usage?.runtime), metric('Build wall time', duration), metric('Observed tokens', count(values.total_tokens)));
+  const details = el('details', 'usage-details'); details.append(el('summary', '', 'Usage details · ' + (usage?.status || 'Not provided')));
+  details.append(el('p', '', usage?.scope || 'This historical build has no runtime usage record. Missing values are not zero.'));
+  const table = el('dl', 'usage-breakdown');
+  for (const [key, label] of [['input_tokens', 'Input'], ['cached_input_tokens', 'Cached input (included)'], ['cache_write_input_tokens', 'Cache write (included)'], ['output_tokens', 'Output'], ['reasoning_output_tokens', 'Reasoning output (included)']]) table.append(el('dt', '', label), el('dd', '', count(values[key])));
+  details.append(table);
+  for (const model of usage?.models || []) details.append(el('p', '', `${model.provider || 'Not provided'} / ${model.model || 'Not provided'}: ${count(model.tokens.total_tokens)} observed tokens`));
+  details.append(el('p', '', 'Wall time includes tools and waiting. An observed interval is not a complete billed task total.')); host.append(details);
+}

@@ -86,6 +86,7 @@ function session({skillRoot, spec, cwd = process.cwd(), config = {}, fresh = fal
         configuration: {skill: skillRoot ? path.basename(skillRoot) : null, integration: 'automatic-skill-cli'}});
       writeMarkerUnlocked(path.dirname(spec), selectedRun, spec);
       S.appendEvent(selectedRun, 'collector.started', {mode: 'automatic-skill-cli'});
+      require('./lib/session-usage.cjs').begin(selectedRun, {binding: config.usageBinding});
     }
     if (skillRoot) {
       const entrypoint = path.join(skillRoot, 'SKILL.md');
@@ -193,8 +194,13 @@ function main({skillRoot, argv, cwd = process.cwd(), config = {}}) {
   const command = separator < 0 ? [] : args.slice(separator + 1);
   const spec = absolute(cwd, option(options, 'spec'));
   if (!action || action === 'help') {
-    console.log('Skill observer: start --spec FILE [--title TEXT]; read/note/exec/snapshot/artifact/finish --spec FILE. The agent invokes these automatically.');
+    console.log('Skill observer: run --spec NEW_FILE --request TASK_JSON; start --spec FILE [--title TEXT]; read/note/exec/snapshot/artifact/finish --spec FILE. The agent invokes these automatically in its current session; no model is launched.');
     return {handled: true, exitCode: 0};
+  }
+  if (action === 'run') {
+    if (!spec) throw new Error('Managed authoring requires --spec NEW_FILE.');
+    return require('./lib/managed-authoring.cjs').run({skillRoot, spec, cwd, config,
+      requestFile: absolute(cwd, option(options, 'request')), createSession: session});
   }
   const current = session({skillRoot, spec, cwd, config, fresh: action === 'start',
     title: option(options, 'title'), task: option(options, 'task')});

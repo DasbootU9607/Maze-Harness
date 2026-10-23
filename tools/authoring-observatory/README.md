@@ -54,3 +54,28 @@ node tools/authoring-observatory/audit-run.cjs --run RUN_DIRECTORY --out NEW_REP
 ```
 
 The local server accepts GET only, checks loopback Host headers, and prevents traversal and symlink escapes. It serves its viewer, configured run APIs and optional checked public site. It has no write, command-execution or upload API.
+
+## Passive usage and duration collection
+
+All eight mechanism skills keep the caller's current model and client. The normal observer `start` binds the current session; reads, builds, tests and `finish` refresh runtime usage. Nothing launches a model, chooses a model, changes authentication or delegates the maze. The legacy `run` command is now an alias for starting a passive record; its caller must continue authoring.
+
+| Runtime | Automatic binding and source | Limits |
+| --- | --- | --- |
+| Codex CLI / Desktop | Current session ID and matching rollout usage counters / turn model metadata | Ambiguous active segments, resets and missing metadata remain partial or unavailable. |
+| Claude Code CLI / its compatible clients | PreToolUse hook supplies transcript identity; process ancestry binds the exact client; assistant message usage is deduplicated | A client must run the hook and expose its transcript. Subagents are excluded. |
+| Gemini CLI / its compatible clients | BeforeTool hook supplies transcript identity; JSON and JSONL message/token records | Missing fields, unknown schema and inaccessible transcripts stay unavailable. |
+| Other CLI, SDK or desktop client | Optional normalized usage JSONL adapter, bound by session ID | Closed clients without usage export cannot supply real token counts. Wall time still records. |
+
+Install the runtime and skill bridge with `scripts/install-authoring-observer.cjs`. Merge the two client hooks once with `node scripts/install-usage-hooks.cjs --runtime RUNTIME_DIRECTORY --backup NEW_BACKUP_DIRECTORY`. This preserves model settings, permissions and unrelated hooks. Add `--skills-source EXISTING_SKILLS_DIRECTORY` to expose the same installed skill packages in Claude Code and Gemini CLI through directory links; existing packages are preserved. Existing clients may need a restart to load changed hook settings. Skill use then requires no extra command from the user. Client-global settings and paths are kept outside distributed skills.
+
+An SDK or another client can export newline-terminated records with `type: "usage"`, `sessionId`, stable `requestId`, runtime-reported `model` and `provider`, `timestamp`, and `usage` containing actual `input_tokens`, `output_tokens` and optional cache/reasoning/total fields. Set `MAZEBENCH_USAGE_LOG`, `MAZEBENCH_SESSION_ID`, and `MAZEBENCH_USAGE_RUNTIME=usage-jsonl` in that integration. Repeated request snapshots replace rather than add. This adapter is an integration contract, not a claim to intercept every proprietary app. No token estimates are accepted.
+
+`token-usage.json` and `token-usage.md` record per-model observed usage and wall time. Start establishes a baseline; finish seals the observed interval. Earlier history, other agents, delayed usage and the in-flight final response are excluded, so `scopeComplete` remains false and complete-task `tokens` stay null. `observedTokens` contains actual reported increments. Missing fields stay null, even when some other metrics exist. Interrupted records stay collecting until explicitly finished. Wall time includes tools and waiting; model inference time is not inferred.
+
+Codex cached input and reasoning output are subsets. Claude total input includes uncached input plus cache reads and cache creation exactly once. Gemini output includes candidate and thought tokens when both are provided, while its provider total may also include tool tokens. Runtime totals are not invoices or subscription quota estimates. Historical records are not backfilled with invented counts.
+
+Local records store only usage/model metadata and source fingerprints, not copied conversation content. The public exporter emits an allowlisted summary with per-model values and duration. Transcript paths, session IDs, prompts and raw responses remain private. The local and public viewers explicitly show unavailable fields. Usage failure does not invalidate unrelated maze evidence.
+
+Protocol validation: `node --test tools/authoring-observatory/tests/session-usage.test.cjs tools/authoring-observatory/tests/token-usage.test.cjs scripts/test-token-usage-install.cjs`. Synthetic fixtures validate adapters, not live calls to other models. See the actual published construction for current-client verification.
+
+Schema references: [Claude hooks](https://code.claude.com/docs/en/hooks), [Claude cache accounting](https://platform.claude.com/docs/en/build-with-claude/prompt-caching), [Gemini hooks](https://geminicli.com/docs/hooks/reference/), and [Gemini recording types](https://github.com/google-gemini/gemini-cli/blob/main/packages/core/src/services/chatRecordingTypes.ts). Codex rollout parsing is grounded in the installed runtime's current session records; unknown future schemas fail closed.

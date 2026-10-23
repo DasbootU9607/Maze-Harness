@@ -163,8 +163,9 @@ try {
     const spec = read(specPath), before = hash(fs.readFileSync(path.join(run, 'index.json')));
     real = exportProcess(run, { caseId: 'authored-real-process-check', title: spec.title, skill: 'boundary-stagger', expectedCellsSha256: hash(spec.cells), expectedContractSha256: hash(spec.contract) });
     assert.equal(real.finalCandidateId, real.candidates.at(-1).id);
-    assert(real.tests.some(test => test.category === 'test' && test.status === 'failed'), 'Keep actual failed tests in the public projection');
-    assert(real.tests.some(test => test.category === 'diagnostic' && test.status === 'failed'), 'Keep actual diagnostic failures');
+    const sourceTests = read(path.join(run, 'index.json')).tests;
+    for (const source of sourceTests) assert(real.tests.some(test => test.id === source.id && test.status === source.status), 'Preserve each actual test verdict, including unknown and failed attempts');
+    if (fs.existsSync(path.join(run, 'usage-session.json'))) assert.deepEqual(real.usage, require('../tools/authoring-observatory/lib/session-usage.cjs').publicSummary(run));
     assert.equal(before, hash(fs.readFileSync(path.join(run, 'index.json'))), 'Export must not mutate the source run');
     assertPublicPrivacy(real); assertAcyclic(real.nodes, real.edges);
     write(path.join(temporary, 'real-public-process.json'), real);
@@ -195,9 +196,9 @@ try {
     assertPublicPrivacy(publicDoc);
     assert(publicDoc.candidates.every(candidate => candidate.preview), 'Every real candidate needs its own official parser output');
     assert.equal(publicDoc.candidates.filter(candidate => candidate.preview.replay).length, 1, 'Do not borrow the final replay for earlier versions');
-    assert.equal(publicDoc.candidates.find(candidate => candidate.preview.replay).id, 'v004');
-    assert.equal(publicDoc.coverage.sources.directOriginalCaseRead, 'not-recorded');
-    assert(publicDoc.coverage.sources.indirect.some(source => source.caseId === 'HxH'));
+    assert.equal(publicDoc.candidates.find(candidate => candidate.preview.replay).id, real.replays[0].candidateId);
+    assert.equal(publicDoc.coverage.sources.directOriginalCaseRead, real.coverage.sources.directOriginalCaseRead);
+    assert.deepEqual(publicDoc.coverage.sources, real.coverage.sources);
     const site = path.join(siteRoot, 'site');
     validatePreviewFiles(site, publicDoc);
     const first = publicDoc.candidates[0], levelFile = path.join(site, first.preview.levelPath), originalLevel = fs.readFileSync(levelFile);

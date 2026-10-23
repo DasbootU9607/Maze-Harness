@@ -67,10 +67,10 @@ async function execute(run) {
       let error;
       child.on('error', e => {error = e.message;});
       child.stdout.on('data', chunk => {
-        fs.writeSync(stdout, chunk); process.stdout.write(chunk);
+        fs.writeSync(stdout, chunk); if (!options.includes('--silent-stream')) process.stdout.write(chunk);
         if (kind === 'codex') {fs.appendFileSync(path.join(run, rawPath), chunk); parseCodex(decoder.write(chunk));}
       });
-      child.stderr.on('data', chunk => {fs.writeSync(stderr, chunk); process.stderr.write(chunk);});
+      child.stderr.on('data', chunk => {fs.writeSync(stderr, chunk); if (!options.includes('--silent-stream')) process.stderr.write(chunk);});
       child.on('close', (code, signal) => resolve({code: code ?? 1, signal, error}));
     });
   } finally {fs.closeSync(stdout); fs.closeSync(stderr);}
@@ -84,6 +84,7 @@ async function execute(run) {
   }
   S.appendEvent(run, 'command.completed', {commandEventId: start.id, ...result, durationMs: Date.now() - started,
     stdoutPath, stderrPath}, {candidateId: after?.id, evidenceRefs: [stdoutPath, stderrPath]});
+  if (kind === 'codex') require('./lib/token-usage.cjs').writeReport(run, S.readRun(run));
   if (kind === 'test') {
     let report, reportPath, data = {status: 'error', checks: [], scope: 'No readable report was generated.'};
     let binding = before ? 'exact' : 'missing', reason;
@@ -117,6 +118,7 @@ async function main() {
     limitations: ['Only recorder-mediated commands and named resource reads are observed. Saved candidates are captured at command boundaries; transient in-memory layouts are not captured.']})});
   if (action === 'help' || !action) return console.log('Commands: init, read, note, exec, snapshot, artifact, finish, inspect. See README.md.');
   const run = path.resolve(requireOption('run'));
+  require('./lib/session-usage.cjs').refresh(run);
   if (action === 'read') {
     const r = S.recordResource(run, path.resolve(requireOption('file')), {kind: get('kind')});
     process.stdout.write(fs.readFileSync(path.join(run, r.artifactPath))); return;
@@ -131,7 +133,9 @@ async function main() {
   }
   if (action === 'finish') {
     S.appendEvent(run, 'run.finished', {status: get('status') || 'complete'});
-    return output(S.updateManifest(run, {status: get('status') || 'complete', finishedAt: new Date().toISOString()}));
+    const manifest = S.updateManifest(run, {status: get('status') || 'complete', finishedAt: new Date().toISOString()});
+    require('./lib/session-usage.cjs').refresh(run, {finish: true});
+    return output(manifest);
   }
   if (action === 'inspect') return output(S.readRun(run));
   throw new Error('Unknown command ' + action);

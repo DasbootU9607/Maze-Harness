@@ -9,6 +9,10 @@ A rigid body places shielding members beside a player-sized cavity. The player p
 
 ## Automatic authoring record
 
+Token usage, runtime-reported model names, and build wall time are default deliverables. Keep the current model, CLI or desktop client and perform the work in this conversation. Never launch a Codex worker, switch models, or delegate merely to collect usage. The ordinary `start` command binds a passive adapter to the current session; build, read, test and finish boundaries refresh its measurements. Client hooks supply exact session identity when available. Unsupported clients still record duration; absent model or token fields must be reported as "Not provided", never estimated or replaced with zero.
+
+After `finish`, deliver the room and `token-usage.json` / `token-usage.md`. Distinguish the measured session interval from a complete task total: the current in-flight response, delayed usage, earlier conversation and other agents are excluded. Cached input and reasoning output are subsets. If several models appear in actual runtime records, retain each model's measured usage. No extra user command is required.
+
 For new authored work, choose the absolute design-spec path before reading mechanism references or laying out cells. Start its local recording session and viewer through the packaged bridge; this is part of the agent's workflow and requires no extra command from the user:
 
 ```text

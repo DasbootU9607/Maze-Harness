@@ -24,7 +24,8 @@
       "authoredCases": [
         "authored-boundary-stagger",
         "authored-boundary-stagger-2f126bf137c6",
-        "authored-boundary-stagger-2f5622cc46de"
+        "authored-boundary-stagger-2f5622cc46de",
+        "authored-boundary-stagger-32113b438880"
       ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-boundary-stagger"
     },
@@ -802,6 +803,25 @@
       },
       "process": {
         "data": "data/processes/authored-block-coordination-030c8da1aa61.json",
+        "schemaVersion": 1
+      }
+    },
+    {
+      "id": "authored-boundary-stagger-32113b438880",
+      "kind": "authored",
+      "title": "Switchback Foundry",
+      "skill": "boundary-stagger",
+      "world": "authored-boundary-stagger-32113b438880",
+      "room": "AxA",
+      "description": "Shift rigid groups around fixed boundaries, make room for the next move, and release the path to the gem.",
+      "thumbnail": "assets/thumbnails/authored-boundary-stagger-32113b438880.png",
+      "map": "data/maps/authored-boundary-stagger-32113b438880-world-map.txt",
+      "witness": "ULLUURUULLDLRURRDDDDDLLLULLL",
+      "goal": {
+        "kind": "gem"
+      },
+      "process": {
+        "data": "data/processes/authored-boundary-stagger-32113b438880.json",
         "schemaVersion": 1
       }
     }

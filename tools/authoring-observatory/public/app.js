@@ -39,7 +39,11 @@ async function refresh() {
     $('runs').replaceChildren(...runs.map(r => {const o = node('option', `${r.title} (${r.status})`); o.value = r.id; return o;})); $('runs').value = state.id || '';
     $('connection').textContent = 'Live / ' + runs.length + ' tasks';
     if (!state.id) return;
-    const run = await request(base()), digest = JSON.stringify(run);
+    const run = await request(base());
+    if (!run.tokenUsage && run.manifest.usageReport) {
+      try {run.tokenUsage = await request(base() + '/artifact?path=token-usage.json');} catch { /* Pending report remains unavailable. */ }
+    }
+    const digest = JSON.stringify(run);
     if (digest === state.digest) return; state.digest = digest; state.run = run;
     const url = new URL(location.href); url.searchParams.set('run', state.id); history.replaceState(null, '', url);
     $('title').textContent = run.manifest.title;
@@ -48,6 +52,16 @@ async function refresh() {
     if (run.processUrl) $('process-link').href = run.processUrl; else $('process-link').removeAttribute('href');
     $('summary').textContent = `${run.manifest.status} / ${run.candidates.length} versions / ${run.tests.length} tests / ${run.events.length} events`;
     $('coverage').textContent = run.coverage.description;
+    const usage = run.tokenUsage;
+    $('token-usage').hidden = false;
+    {
+      $('token-status').textContent = (usage?.status || 'Not provided') + ' / observed interval only';
+      const values = usage?.scopeComplete ? usage.tokens : usage?.observedTokens;
+      $('token-values').replaceChildren(...[['input_tokens', 'Input'], ['cached_input_tokens', 'Cached input'], ['output_tokens', 'Output'], ['reasoning_output_tokens', 'Reasoning output'], ['total_tokens', 'Total']].map(([key, label]) => node('p', label + ': ' + (values?.[key] ?? 'Not provided'))));
+      $('token-values').prepend(node('p', 'Model: ' + (usage?.models?.map(m => m.model || 'Not provided').join(', ') || usage?.model || 'Not provided')), node('p', 'Client: ' + (usage?.runtime || 'Not provided')), node('p', 'Build wall time: ' + (Number.isFinite(usage?.elapsedMs) ? (usage.elapsedMs / 1000).toFixed(1) + ' s' : 'Not provided')));
+      $('token-report').hidden = !usage;
+      $('token-report').onclick = () => evidence('token-usage.json').catch(showError);
+    }
     $('versions').replaceChildren();
     for (const c of run.candidates) {const b = node('button', `${c.id} / ${c.label}`, 'card version'); b.dataset.id = c.id; b.onclick = () => selectCandidate(c.id).catch(showError); $('versions').append(b);}
     $('timeline').replaceChildren(...run.events.map(e => card('#' + e.seq + ' ' + e.type, `${e.at || 'Time not observed'} / ${e.origin}`)));

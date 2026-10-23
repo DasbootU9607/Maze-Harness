@@ -161,10 +161,19 @@ function readRun(dir) {
   const expected = events.length ? events.at(-1).seq + 1 : 1;
   if (index.nextSeq !== expected) gaps.push('Event journal and index differ; interrupted write requires audit.');
   for (const event of events) if (event.type === 'capture.gap') gaps.push(event.details?.reason || 'An observed capture gap was recorded.');
-  return {manifest, events, candidates: index.candidates, tests: index.tests, resources: index.resources, notes: index.notes,
+  let tokenUsage = null;
+  try {
+    const file = path.join(dir, 'token-usage.json');
+    const relative = path.relative(fs.realpathSync(dir), fs.realpathSync(file));
+    if (relative.startsWith('..') || path.isAbsolute(relative)) throw new Error('Usage report is outside the run.');
+    tokenUsage = json(file);
+  } catch (error) {
+    if (error.code !== 'ENOENT') gaps.push('Token usage report is unreadable; no usage total can be claimed.');
+  }
+  return {manifest, events, candidates: index.candidates, tests: index.tests, resources: index.resources, notes: index.notes, tokenUsage,
     coverage: {mode: manifest.mode, description: manifest.mode === 'historical'
       ? 'Historical artifacts only. Event times and actual resource reads were not observed.'
       : 'Observed recorder-mediated commands, explicit reads, saved candidate boundaries and generated reports. Internal model reasoning and unwrapped actions are outside coverage.',
     gaps, counts: {events: events.length, candidates: index.candidates.length, tests: index.tests.length, resources: index.resources.length, notes: index.notes.length}}};
 }
-module.exports = {createRun, readRun, appendEvent, captureSpec, recordResource, recordNote, addTest, saveArtifact, updateManifest, hash, cellDiff};
+module.exports = {mutate, createRun, readRun, appendEvent, captureSpec, recordResource, recordNote, addTest, saveArtifact, updateManifest, hash, cellDiff};

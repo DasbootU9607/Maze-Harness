@@ -118,7 +118,20 @@ function assertPublicPrivacy(document, identities = []) {
   };
   const strings = value => assert(Array.isArray(value) && value.every(item => typeof item === 'string'), 'Expected public text array');
   const flat = value => assert(Object.values(value).every(item => item === null || ['string', 'number', 'boolean'].includes(typeof item)), 'Nested unreviewed public data');
-  fields(document, ['schemaVersion', 'caseId', 'title', 'skill', 'finalCandidateId', 'summary', 'coverage', 'nodes', 'edges', 'candidates', 'tests', 'notes', 'resources', 'operations', 'replays', 'records', 'explanations'], 'process');
+  fields(document, ['schemaVersion', 'caseId', 'title', 'skill', 'finalCandidateId', 'summary', 'coverage', 'nodes', 'edges', 'candidates', 'tests', 'notes', 'resources', 'operations', 'replays', 'records', 'explanations', 'usage'], 'process');
+  if (document.usage) {
+    const usage = document.usage;
+    fields(usage, ['schemaVersion', 'status', 'runtime', 'elapsedMs', 'scope', 'scopeComplete', 'observedTokens', 'models', 'evidenceSha256'], 'usage');
+    assert.equal(usage.schemaVersion, 2); assert.equal(usage.scopeComplete, false);
+    assert(['measured', 'partial', 'unavailable'].includes(usage.status));
+    assert(Number.isFinite(usage.elapsedMs) && usage.elapsedMs >= 0); hashOf(usage.evidenceSha256);
+    const metrics = value => {
+      fields(value, require('../tools/authoring-observatory/lib/session-usage.cjs').fields, 'usage.tokens');
+      assert(Object.values(value).every(n => n === null || Number.isSafeInteger(n) && n >= 0));
+    };
+    metrics(usage.observedTokens); assert(Array.isArray(usage.models));
+    for (const model of usage.models) { fields(model, ['model', 'provider', 'tokens', 'observations'], 'usage.model'); metrics(model.tokens); }
+  }
   for (const key of ['caseId', 'title', 'skill', 'finalCandidateId', 'summary']) assert(typeof document[key] === 'string', 'Invalid public text: ' + key);
   fields(document.coverage, ['mode', 'audit', 'limitations', 'sources', 'events'], 'coverage');
   if (document.coverage.events) {
@@ -349,6 +362,8 @@ function exportProcess(runDirectory, { caseId, expectedCellsSha256, expectedCont
       ...(auditExceptions.length ? ['Non-passed tests ' + auditExceptions.map(item => item.testId).join(', ') + ' have command-boundary association only. Their report input identity remains unknown; they are retained as production history, not acceptance evidence.'] : []),
       ...(manifest.limitations || []).map(value => clean(value))
     ] }, nodes, edges, candidates, tests, notes, resources, operations, replays };
+  const usage = require('../tools/authoring-observatory/lib/session-usage.cjs').publicSummary(runDir);
+  if (usage) document.usage = usage;
   completeRecordedEvents(document, events, { clean, savedFile, runDir });
   explainProcess(document, { index, events, savedFile, runDir });
   assertAcyclic(nodes, edges); assertPublicPrivacy(document, identities);

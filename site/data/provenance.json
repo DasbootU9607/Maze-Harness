@@ -618,6 +618,29 @@
         "cellsSha256": "b4e52a74e76463438e8380c288905ff38a1076bc2342073a6b1cd4662e8b64e7",
         "contractSha256": "5c2a46f1284297b8d276fe862e558dac46ca0d563447aa9db2c64f7ffa2dfdf4"
       }
+    },
+    {
+      "id": "authored-boundary-stagger-32113b438880",
+      "kind": "authored",
+      "originalDraftId": "draft-depth-17578089a8",
+      "title": "Switchback Foundry",
+      "sourceMapSha256": "32113b438880d101a9e7dbadd8ddf9b8dbc74e6bcdcc87ceab16c8e95977d54f",
+      "witnessSha256": "1dfdd8c35f918eecb93f5db728bf454a7804917ffa5fdc76ca4b2c0fb26d9531",
+      "source": "Agent-authored trial; verified design and saved draft matched before publication.",
+      "verification": {
+        "overall": "passed",
+        "profile": "planar-boundary-preparation-v2",
+        "cellsSha256": "38475a9decc6714a038c47a2e5b911c67f983b36cf469f0c4890b5002794d50b",
+        "contractSha256": "0171f4c1365f5f8bf4b236d7e99357d3e5cccbccacc6985a3dd38d9799ca5a36",
+        "reportSha256": "2aae318efd9cfdcda281a8bdd1ce854212f4057b3056093c26602a686d9a8678"
+      },
+      "authoringProcess": {
+        "schemaVersion": 1,
+        "data": "data/processes/authored-boundary-stagger-32113b438880.json",
+        "sha256": "7966d030deb3a2a7c465016b76061cc1ff66a00958c5024130830022fc276f85",
+        "cellsSha256": "38475a9decc6714a038c47a2e5b911c67f983b36cf469f0c4890b5002794d50b",
+        "contractSha256": "0171f4c1365f5f8bf4b236d7e99357d3e5cccbccacc6985a3dd38d9799ca5a36"
+      }
     }
   ],
   "directEntryPolicy": "Rooms without an authored player get a temporary arrival actor only when opened directly. Entries are open, matching floor boundaries with an ordinary legal inward move. Raw maps, exported room states, and normal doorway traversal remain unchanged.",
