@@ -1,0 +1,3734 @@
+{
+  "schemaVersion": 1,
+  "caseId": "authored-boundary-stagger-46b924adfc38",
+  "title": "Roofed Boundary Key",
+  "skill": "boundary-stagger",
+  "finalCandidateId": "v001",
+  "summary": "1 recorded candidates, 2 tests, 0 failed diagnostics, and 2 agent annotations.",
+  "coverage": {
+    "mode": "observed",
+    "audit": {
+      "status": "passed",
+      "failed": 0,
+      "unknown": 0
+    },
+    "sources": {
+      "directOriginalCaseRead": "recorded",
+      "originalCaseResourceIds": [
+        "r002",
+        "r003",
+        "r004"
+      ],
+      "indirect": [],
+      "scope": "Direct reading is reported only for captured read events. A source named by a skill is indirect provenance, not evidence that this run opened or used the original case."
+    },
+    "limitations": [
+      "Only recorded operations and saved snapshots are shown; transient in-memory drafts and unrecorded activity remain unknown.",
+      "Snapshot parent links show recorded version order, not proof of causal reasoning. No unrecorded branches or merges are reconstructed.",
+      "Agent annotations are concise explanations, not internal thought transcripts. Recorded resource delivery does not prove comprehension or use.",
+      "Test outcomes retain their own scope. Author self-tests do not establish independent-agent effectiveness or human difficulty.",
+      "Automatic CLI boundaries record supported build and verification commands. Other commands and resource reads require the skill observer helper.",
+      "Snapshots describe saved versions at operation boundaries, not every editor keystroke. Design notes are author statements, not internal reasoning.",
+      "A started task remains running until the author records finish. An interrupted task may therefore remain open."
+    ],
+    "events": {
+      "sourceCount": 23,
+      "representedCount": 23,
+      "sequenceSha256": "978aaa359768d4d23f84b7012e6af0a3c6148b2305bd8e815d38c9e3a7166f6f",
+      "types": [
+        {
+          "type": "build.saved",
+          "count": 1
+        },
+        {
+          "type": "candidate.saved",
+          "count": 1
+        },
+        {
+          "type": "collector.started",
+          "count": 1
+        },
+        {
+          "type": "command.completed",
+          "count": 3
+        },
+        {
+          "type": "command.started",
+          "count": 3
+        },
+        {
+          "type": "design.note",
+          "count": 2
+        },
+        {
+          "type": "resource.read",
+          "count": 7
+        },
+        {
+          "type": "run.created",
+          "count": 1
+        },
+        {
+          "type": "run.finished",
+          "count": 1
+        },
+        {
+          "type": "skill.attached",
+          "count": 1
+        },
+        {
+          "type": "test.completed",
+          "count": 2
+        }
+      ]
+    }
+  },
+  "nodes": [
+    {
+      "id": "event-e000001",
+      "kind": "record",
+      "label": "Start authoring run",
+      "status": "neutral",
+      "order": 1,
+      "eventId": "e000001",
+      "eventType": "run.created",
+      "summary": "The recorder opened this authoring run. This does not establish an empty prior conversation context.",
+      "details": {
+        "recordId": "event-e000001",
+        "candidateId": null,
+        "eventType": "run.created"
+      }
+    },
+    {
+      "id": "event-e000002",
+      "kind": "record",
+      "label": "Start automatic capture",
+      "status": "neutral",
+      "order": 2,
+      "eventId": "e000002",
+      "eventType": "collector.started",
+      "summary": "The automatic collector started. Recorded command boundaries, reads and saved artifacts are shown in sequence.",
+      "details": {
+        "recordId": "event-e000002",
+        "candidateId": null,
+        "eventType": "collector.started"
+      }
+    },
+    {
+      "id": "resource-snapshot-e000003",
+      "kind": "resource",
+      "label": "Skill attached: mazebench-boundary-stagger/SKILL.md",
+      "status": "neutral",
+      "order": 3,
+      "summary": "Skill version captured as a dependency. This event does not record a reading.",
+      "details": {
+        "resourceId": "snapshot-e000003",
+        "displayPath": "mazebench-boundary-stagger/SKILL.md",
+        "sha256": "ee2f15cdc646a3180124afa58ed23bbec1bf087e3892bceb3af6151bf138e07c",
+        "kind": "skill",
+        "delivery": "snapshot"
+      },
+      "eventId": "e000003",
+      "eventType": "skill.attached"
+    },
+    {
+      "id": "resource-r001",
+      "kind": "resource",
+      "label": "mechanism-logic.md",
+      "status": "neutral",
+      "order": 4,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r001",
+        "displayPath": "mazebench-boundary-stagger/references/mechanism-logic.md",
+        "sha256": "c4953095eff5b1525a1c56ec59bf219dcde17bef352e4b0b76f80b27085cf5ac",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000004",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r002",
+      "kind": "resource",
+      "label": "official-case.md",
+      "status": "neutral",
+      "order": 5,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r002",
+        "displayPath": "mazebench-boundary-stagger/references/official-case.md",
+        "sha256": "5e3b828ab3d28796d49fdd823ded46731ef733b7852f48b7fb85ed2fd958f3c9",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000005",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r003",
+      "kind": "resource",
+      "label": "official-states.json",
+      "status": "neutral",
+      "order": 6,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r003",
+        "displayPath": "mazebench-boundary-stagger/references/official-states.json",
+        "sha256": "c5de3355f34f068d24a8676a8b15220fbf81535b01767ae0920175143581bbe9",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000006",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r004",
+      "kind": "resource",
+      "label": "official-checks.json",
+      "status": "neutral",
+      "order": 7,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r004",
+        "displayPath": "mazebench-boundary-stagger/references/official-checks.json",
+        "sha256": "c2d9c68441fae67b69937638bb84e3d114cb70595d2601bc5fc29574afb1fe96",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000007",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r005",
+      "kind": "resource",
+      "label": "planning-depth.md",
+      "status": "neutral",
+      "order": 8,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r005",
+        "displayPath": "mazebench-boundary-stagger/references/planning-depth.md",
+        "sha256": "f9cfed13dc075bd564871941bff6218fa6dfee5d9809218bdb261379cfec9033",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000008",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r006",
+      "kind": "resource",
+      "label": "complex-validation.md",
+      "status": "neutral",
+      "order": 9,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r006",
+        "displayPath": "mazebench-boundary-stagger/references/complex-validation.md",
+        "sha256": "da036b7b63e615abddf7ee4f5e007926cc1d603f873d55ac25c6cf6948144244",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000009",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r007",
+      "kind": "resource",
+      "label": "design.md",
+      "status": "neutral",
+      "order": 10,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r007",
+        "displayPath": "mazebench-boundary-stagger/references/design.md",
+        "sha256": "c3014fd8c193475d870875a07886dfe7a894b87f37e4e55ed286ee2307a8daa6",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000010",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "note-n001",
+      "kind": "note",
+      "label": "Record a clean final revalidation and publish the unchanged Roofed Boundary Key example.",
+      "status": "neutral",
+      "order": 11,
+      "summary": "Keep all 256 cells, the three movable groups, the contract, and the 21-input witness unchanged. Begin a fresh recorded session so each test report can independently identify its exact map input and contract.",
+      "details": {
+        "noteId": "n001",
+        "candidateId": null,
+        "origin": "agent_statement",
+        "retrospective": false
+      },
+      "eventId": "e000011",
+      "eventType": "design.note"
+    },
+    {
+      "id": "candidate-v001",
+      "kind": "candidate",
+      "label": "v001 · Roofed Boundary Key",
+      "status": "neutral",
+      "order": 12,
+      "summary": "0 changed cells; 256 added; 0 removed.",
+      "details": {
+        "candidateId": "v001",
+        "cellsSha256": "05986cabf85fa935c0c1f4c67c966e4f9d918817922dc1e0fd9362eabc4f7884",
+        "contractSha256": "72a3231f334570099e7c7125b0fb470d116d85decdbd9609e7c7e5fbc9d74d40",
+        "parentBasis": "observed-snapshot-order"
+      },
+      "eventId": "e000012",
+      "eventType": "candidate.saved"
+    },
+    {
+      "id": "event-e000013",
+      "kind": "record",
+      "label": "Start: build-complex.cjs",
+      "status": "neutral",
+      "order": 13,
+      "eventId": "e000013",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000013",
+        "candidateId": "v001",
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000013",
+      "kind": "operation",
+      "label": "build-complex.cjs",
+      "status": "neutral",
+      "order": 14,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000013",
+        "candidateId": "v001",
+        "inputCandidateId": "v001",
+        "outputCandidateId": "v001",
+        "kind": "build",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000014",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "event-e000015",
+      "kind": "record",
+      "label": "Save build files",
+      "status": "neutral",
+      "order": 15,
+      "eventId": "e000015",
+      "eventType": "build.saved",
+      "summary": "Build files were archived for this candidate. The file list and fingerprints identify the saved output; verification appears separately.",
+      "details": {
+        "recordId": "event-e000015",
+        "candidateId": "v001",
+        "eventType": "build.saved"
+      }
+    },
+    {
+      "id": "event-e000016",
+      "kind": "record",
+      "label": "Start: verify-complex.cjs",
+      "status": "neutral",
+      "order": 16,
+      "eventId": "e000016",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000016",
+        "candidateId": "v001",
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000016",
+      "kind": "operation",
+      "label": "verify-complex.cjs",
+      "status": "neutral",
+      "order": 17,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000016",
+        "candidateId": "v001",
+        "inputCandidateId": "v001",
+        "outputCandidateId": "v001",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000017",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "test-t001",
+      "kind": "test",
+      "label": "verify-complex.cjs",
+      "status": "passed",
+      "order": 18,
+      "summary": "Author self-test; ordinary official physics; exhaustive restricted push-state graph, frozen walking components; no human-difficulty or independent-author claim.",
+      "details": {
+        "testId": "t001",
+        "candidateId": "v001",
+        "binding": "exact",
+        "category": "test"
+      },
+      "eventId": "e000018",
+      "eventType": "test.completed"
+    },
+    {
+      "id": "event-e000019",
+      "kind": "record",
+      "label": "Start: rendered-playtest-publication-2",
+      "status": "neutral",
+      "order": 19,
+      "eventId": "e000019",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000019",
+        "candidateId": "v001",
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000019",
+      "kind": "operation",
+      "label": "rendered-playtest-publication-2",
+      "status": "neutral",
+      "order": 20,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000019",
+        "candidateId": "v001",
+        "inputCandidateId": "v001",
+        "outputCandidateId": "v001",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000020",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "test-t002",
+      "kind": "test",
+      "label": "rendered-playtest-publication-2",
+      "status": "passed",
+      "order": 21,
+      "summary": "One rendered room playthrough from the built initial state to the gem; stage poses and final collection checked. No claim about difficulty, optimality, or other routes.",
+      "details": {
+        "testId": "t002",
+        "candidateId": "v001",
+        "binding": "exact",
+        "category": "test"
+      },
+      "eventId": "e000021",
+      "eventType": "test.completed"
+    },
+    {
+      "id": "note-n002",
+      "kind": "note",
+      "label": "Seal the clean revalidation and publish the verified Roofed Boundary Key example.",
+      "status": "neutral",
+      "order": 22,
+      "summary": "Retain the unchanged 16x16 map with 256 cells, three movable groups, the validated contract, and witness UUUULULLRRDDDLLULLLLL. Bind the final recording to draft-depth-ce332851c2 and its exact verification and rendered-playtest reports.",
+      "details": {
+        "noteId": "n002",
+        "candidateId": "v001",
+        "origin": "agent_statement",
+        "retrospective": false
+      },
+      "eventId": "e000022",
+      "eventType": "design.note"
+    },
+    {
+      "id": "event-e000023",
+      "kind": "record",
+      "label": "Finish authoring run",
+      "status": "neutral",
+      "order": 23,
+      "eventId": "e000023",
+      "eventType": "run.finished",
+      "summary": "The recorder closed the run. Test verdicts and publication are separate records.",
+      "details": {
+        "recordId": "event-e000023",
+        "candidateId": null,
+        "eventType": "run.finished"
+      }
+    },
+    {
+      "id": "delivery-final",
+      "kind": "delivery",
+      "label": "Published final candidate v001",
+      "status": "passed",
+      "order": 24,
+      "summary": "Final map and contract hashes match the published design. Earlier failed attempts remain visible.",
+      "details": {
+        "caseId": "authored-boundary-stagger-46b924adfc38",
+        "candidateId": "v001",
+        "cellsSha256": "05986cabf85fa935c0c1f4c67c966e4f9d918817922dc1e0fd9362eabc4f7884",
+        "contractSha256": "72a3231f334570099e7c7125b0fb470d116d85decdbd9609e7c7e5fbc9d74d40"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "candidate-v001",
+      "to": "test-t001",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v001",
+      "to": "test-t002",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "resource-r001",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r002",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r003",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r004",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r005",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r006",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r007",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v001",
+      "to": "note-n002",
+      "kind": "annotation",
+      "label": "Agent annotation about this candidate",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v001",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Published cells and contract match",
+      "inferred": false
+    },
+    {
+      "from": "test-t001",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Passed within the stated test scope",
+      "inferred": false
+    },
+    {
+      "from": "test-t002",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Passed within the stated test scope",
+      "inferred": false
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "graphNodeId": "candidate-v001",
+      "label": "Roofed Boundary Key",
+      "parentId": null,
+      "parentIds": [],
+      "cells": [
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          "M1",
+          ".",
+          "M2",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          "M0",
+          ".+#",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".",
+          "G",
+          ".",
+          ".",
+          ".",
+          ".",
+          "M0",
+          ".+#",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".+#",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".+#",
+          ".+#",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".+#",
+          ".",
+          ".",
+          ".",
+          "p",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".+#",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ]
+      ],
+      "sha256": "d1cd581e02cdedb456ace16fcf9d2f6114d2380772d9d27fbb72c9180046d7f4",
+      "cellsSha256": "05986cabf85fa935c0c1f4c67c966e4f9d918817922dc1e0fd9362eabc4f7884",
+      "contractSha256": "72a3231f334570099e7c7125b0fb470d116d85decdbd9609e7c7e5fbc9d74d40",
+      "origin": "observed",
+      "parentBasis": "observed-snapshot-order",
+      "diff": {
+        "added": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 10,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 10,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 10,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "p"
+          },
+          {
+            "x": 10,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 10,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 11,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 11,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 11,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 11,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 11,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 11,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 12,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 12,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 12,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 12,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 12,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 12,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 13,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 13,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 13,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 13,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 13,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 13,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 14,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 14,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 14,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 14,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 14,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 14,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 15,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "G"
+          },
+          {
+            "x": 2,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 2,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 2,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 2,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 2,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 3,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 3,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 3,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 3,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 3,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "M0"
+          },
+          {
+            "x": 7,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 7,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 7,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 7,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "M1"
+          },
+          {
+            "x": 7,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "M0"
+          },
+          {
+            "x": 8,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 9,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 9,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 9,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 9,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 9,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 9,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "M2"
+          },
+          {
+            "x": 9,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          }
+        ],
+        "removed": [],
+        "changed": []
+      },
+      "preview": {
+        "levelPath": "data/process-levels/authored-boundary-stagger-46b924adfc38/v001.json",
+        "levelSha256": "8f8f93226d140fc06f5d1e25b7f39eef8c7b0d614294e0a3c3efb69b22d61b14",
+        "cellsSha256": "05986cabf85fa935c0c1f4c67c966e4f9d918817922dc1e0fd9362eabc4f7884",
+        "status": "iteration",
+        "thumbnailPath": "assets/process-thumbnails/authored-boundary-stagger-46b924adfc38/v001-8f8f93226d140fc0-6ce268de9e786607.png"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "graphNodeId": "test-t001",
+      "candidateId": "v001",
+      "label": "verify-complex.cjs",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "blocked_M0_U_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "blocked_M1_L_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Expose the release face",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Shift the boundary key",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Clear the lower crossing",
+          "status": "passed"
+        },
+        {
+          "name": "initial_frozen_walking",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M0",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M1",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M2",
+          "status": "passed"
+        },
+        {
+          "name": "forbid_mechanism",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_prepare_to_release",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_prepare_to_release",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_release_to_open",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_release_to_open",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_open_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_open_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "at_most_one_push_then_walk",
+          "status": "passed"
+        },
+        {
+          "name": "one_same_direction_translation_process",
+          "status": "passed"
+        },
+        {
+          "name": "first_mechanism_then_walking_only_all_histories",
+          "status": "passed"
+        },
+        {
+          "name": "matched_boundary_roofed-crossing",
+          "status": "passed"
+        }
+      ],
+      "scope": "Author self-test; ordinary official physics; exhaustive restricted push-state graph, frozen walking components; no human-difficulty or independent-author claim.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    },
+    {
+      "id": "t002",
+      "graphNodeId": "test-t002",
+      "candidateId": "v001",
+      "label": "rendered-playtest-publication-2",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "check",
+          "status": "passed"
+        },
+        {
+          "name": "check",
+          "status": "passed"
+        },
+        {
+          "name": "check",
+          "status": "passed"
+        },
+        {
+          "name": "check",
+          "status": "passed"
+        }
+      ],
+      "scope": "One rendered room playthrough from the built initial state to the gem; stage poses and final collection checked. No claim about difficulty, optimality, or other routes.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    }
+  ],
+  "notes": [
+    {
+      "id": "n001",
+      "graphNodeId": "note-n001",
+      "candidateId": null,
+      "label": "Record a clean final revalidation and publish the unchanged Roofed Boundary Key example.",
+      "goal": "Record a clean final revalidation and publish the unchanged Roofed Boundary Key example.",
+      "change": "Keep all 256 cells, the three movable groups, the contract, and the 21-input witness unchanged. Begin a fresh recorded session so each test report can independently identify its exact map input and contract.",
+      "reason": "The preceding revalidation passed build, verification, and rendered playtest, but its playtest report lacked top-level map fingerprints. The recorder could associate that test only through command boundaries, so the publication audit remained unknown despite a passing process. This run preserves that attempt and records the same evidence with an exact report binding.",
+      "sources": [
+        "references/mechanism-logic.md",
+        "references/official-case.md",
+        "references/official-states.json",
+        "references/official-checks.json",
+        "references/planning-depth.md",
+        "references/complex-validation.md",
+        "references/design.md",
+        "design.json",
+        "verification.json",
+        "playtest.json"
+      ],
+      "expectedChecks": [
+        "The fresh candidate preserves the final cell and contract hashes and the 21-input witness.",
+        "Fresh complex verification passes all 20 checks with the 1,000,000-state cap and replayPassed true.",
+        "The fresh rendered 3D playtest includes exact input fingerprints, passes all four stage checks, and collects the gem.",
+        "The read-only authoring audit reports passed with no failed or unknown checks.",
+        "Serialized publication reports live with a commit and successful Pages deployment."
+      ],
+      "origin": "agent_statement",
+      "retrospective": false
+    },
+    {
+      "id": "n002",
+      "graphNodeId": "note-n002",
+      "candidateId": "v001",
+      "label": "Seal the clean revalidation and publish the verified Roofed Boundary Key example.",
+      "goal": "Seal the clean revalidation and publish the verified Roofed Boundary Key example.",
+      "change": "Retain the unchanged 16x16 map with 256 cells, three movable groups, the validated contract, and witness UUUULULLRRDDDLLULLLLL. Bind the final recording to draft-depth-ce332851c2 and its exact verification and rendered-playtest reports.",
+      "reason": "Fresh complex verification passed all 20 checks with replayPassed true, and the fresh 3D keyboard playtest passed all four stages with exact input fingerprints, zero errors, and the gem collected. The read-only authoring audit now reports passed with zero failed and zero unknown checks.",
+      "sources": [
+        "design.json",
+        "manifest.json",
+        "verification.json",
+        "playtest.json",
+        "publication2-note-01.json"
+      ],
+      "expectedChecks": [
+        "The final authoring audit remains passed with no failed or unknown checks.",
+        "The final candidate preserves cells 05986cabf85fa935c0c1f4c67c966e4f9d918817922dc1e0fd9362eabc4f7884 and contract 72a3231f334570099e7c7125b0fb470d116d85decdbd9609e7c7e5fbc9d74d40.",
+        "Serialized publication reports live, published true, a commit, and a successful Pages deployment."
+      ],
+      "origin": "agent_statement",
+      "retrospective": false
+    }
+  ],
+  "resources": [
+    {
+      "id": "r001",
+      "graphNodeId": "resource-r001",
+      "label": "mazebench-boundary-stagger/references/mechanism-logic.md",
+      "displayPath": "mazebench-boundary-stagger/references/mechanism-logic.md",
+      "basename": "mechanism-logic.md",
+      "sha256": "c4953095eff5b1525a1c56ec59bf219dcde17bef352e4b0b76f80b27085cf5ac",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r002",
+      "graphNodeId": "resource-r002",
+      "label": "mazebench-boundary-stagger/references/official-case.md",
+      "displayPath": "mazebench-boundary-stagger/references/official-case.md",
+      "basename": "official-case.md",
+      "sha256": "5e3b828ab3d28796d49fdd823ded46731ef733b7852f48b7fb85ed2fd958f3c9",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r003",
+      "graphNodeId": "resource-r003",
+      "label": "mazebench-boundary-stagger/references/official-states.json",
+      "displayPath": "mazebench-boundary-stagger/references/official-states.json",
+      "basename": "official-states.json",
+      "sha256": "c5de3355f34f068d24a8676a8b15220fbf81535b01767ae0920175143581bbe9",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r004",
+      "graphNodeId": "resource-r004",
+      "label": "mazebench-boundary-stagger/references/official-checks.json",
+      "displayPath": "mazebench-boundary-stagger/references/official-checks.json",
+      "basename": "official-checks.json",
+      "sha256": "c2d9c68441fae67b69937638bb84e3d114cb70595d2601bc5fc29574afb1fe96",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r005",
+      "graphNodeId": "resource-r005",
+      "label": "mazebench-boundary-stagger/references/planning-depth.md",
+      "displayPath": "mazebench-boundary-stagger/references/planning-depth.md",
+      "basename": "planning-depth.md",
+      "sha256": "f9cfed13dc075bd564871941bff6218fa6dfee5d9809218bdb261379cfec9033",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r006",
+      "graphNodeId": "resource-r006",
+      "label": "mazebench-boundary-stagger/references/complex-validation.md",
+      "displayPath": "mazebench-boundary-stagger/references/complex-validation.md",
+      "basename": "complex-validation.md",
+      "sha256": "da036b7b63e615abddf7ee4f5e007926cc1d603f873d55ac25c6cf6948144244",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r007",
+      "graphNodeId": "resource-r007",
+      "label": "mazebench-boundary-stagger/references/design.md",
+      "displayPath": "mazebench-boundary-stagger/references/design.md",
+      "basename": "design.md",
+      "sha256": "c3014fd8c193475d870875a07886dfe7a894b87f37e4e55ed286ee2307a8daa6",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "snapshot-e000003",
+      "graphNodeId": "resource-snapshot-e000003",
+      "label": "Skill attached: mazebench-boundary-stagger/SKILL.md",
+      "displayPath": "mazebench-boundary-stagger/SKILL.md",
+      "basename": "SKILL.md",
+      "sha256": "ee2f15cdc646a3180124afa58ed23bbec1bf087e3892bceb3af6151bf138e07c",
+      "kind": "skill",
+      "origin": "observed",
+      "delivery": "snapshot"
+    }
+  ],
+  "operations": [
+    {
+      "id": "operation-e000013",
+      "graphNodeId": "operation-e000013",
+      "candidateId": "v001",
+      "inputCandidateId": "v001",
+      "outputCandidateId": "v001",
+      "label": "build-complex.cjs",
+      "kind": "build",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000013",
+      "resultNodeId": null,
+      "exitCode": 0
+    },
+    {
+      "id": "operation-e000016",
+      "graphNodeId": "operation-e000016",
+      "candidateId": "v001",
+      "inputCandidateId": "v001",
+      "outputCandidateId": "v001",
+      "label": "verify-complex.cjs",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000016",
+      "resultNodeId": "test-t001",
+      "exitCode": 0
+    },
+    {
+      "id": "operation-e000019",
+      "graphNodeId": "operation-e000019",
+      "candidateId": "v001",
+      "inputCandidateId": "v001",
+      "outputCandidateId": "v001",
+      "label": "rendered-playtest-publication-2",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000019",
+      "resultNodeId": "test-t002",
+      "exitCode": 0
+    }
+  ],
+  "replays": [],
+  "usage": {
+    "schemaVersion": 2,
+    "status": "measured",
+    "runtime": "codex-tui",
+    "elapsedMs": 194466,
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 1765264,
+      "cached_input_tokens": 1736704,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 11905,
+      "reasoning_output_tokens": 5343,
+      "total_tokens": 1777169
+    },
+    "models": [
+      {
+        "model": "deepseek-v4.1-flash-1017",
+        "provider": "maze_bailian",
+        "tokens": {
+          "input_tokens": 1765264,
+          "cached_input_tokens": 1736704,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 11905,
+          "reasoning_output_tokens": 5343,
+          "total_tokens": 1777169
+        },
+        "observations": 13
+      }
+    ],
+    "evidenceSha256": "93ca64699aa87b94f547bd62fc35729d3794fc3c9921bd9d540240e93bbeaaa6"
+  },
+  "records": [
+    {
+      "id": "event-e000001",
+      "graphNodeId": "event-e000001",
+      "candidateId": null,
+      "eventType": "run.created",
+      "label": "Start authoring run",
+      "status": "neutral",
+      "scope": "The recorder opened this authoring run. This does not establish an empty prior conversation context.",
+      "relatedNodeId": null,
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000002",
+      "graphNodeId": "event-e000002",
+      "candidateId": null,
+      "eventType": "collector.started",
+      "label": "Start automatic capture",
+      "status": "neutral",
+      "scope": "The automatic collector started. Recorded command boundaries, reads and saved artifacts are shown in sequence.",
+      "relatedNodeId": null,
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000013",
+      "graphNodeId": "event-e000013",
+      "candidateId": "v001",
+      "eventType": "command.started",
+      "label": "Start: build-complex.cjs",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000013",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000015",
+      "graphNodeId": "event-e000015",
+      "candidateId": "v001",
+      "eventType": "build.saved",
+      "label": "Save build files",
+      "status": "neutral",
+      "scope": "Build files were archived for this candidate. The file list and fingerprints identify the saved output; verification appears separately.",
+      "relatedNodeId": null,
+      "files": [
+        {
+          "name": "manifest.json",
+          "sha256": "2a418cfca66057d42e1ff24ee7f51c837ffcaeabcf3935950d7a990899cb7893"
+        },
+        {
+          "name": "world.json",
+          "sha256": "54dcfecb30de5c1dbe2089b5f17c49f3d1fbc512e21c9209ecd2e8a5bdde84c9"
+        },
+        {
+          "name": "contract.json",
+          "sha256": "89badb27896bf4e28763d118a8261c86cfea26fa31187026db075aeb4e69a80e"
+        },
+        {
+          "name": "spec.json",
+          "sha256": "d1cd581e02cdedb456ace16fcf9d2f6114d2380772d9d27fbb72c9180046d7f4"
+        },
+        {
+          "name": "draft.json",
+          "sha256": "c0ed45939622bc214d788b98536db46d346add458e26d6cd6ab7861a55613f04"
+        },
+        {
+          "name": "level_AxA.txt",
+          "sha256": "46b924adfc384fca5e87abc56c65ccc80f9eec63f329392059bd5e1a41dc9534"
+        },
+        {
+          "name": "level_parsing.json",
+          "sha256": "54cb1bc6d2e545a89abe860e2c84e45ed5fd31b244b828b8424d2693d05b780d"
+        },
+        {
+          "name": "toolbox.json",
+          "sha256": "c36ac5ee0a6a8e7b69d73613e3dde029afdc84681b146fbdfe75a1c52b81a330"
+        },
+        {
+          "name": "world_map.json",
+          "sha256": "615bed0185123455144b43872f1d68652b193af598afb450cf3abbb249723806"
+        },
+        {
+          "name": "world_parsing.json",
+          "sha256": "7e250cc0e0dccadf087fc5717567e059f1e6b604a3e3f8315bd1d29f192c3202"
+        }
+      ],
+      "facts": []
+    },
+    {
+      "id": "event-e000016",
+      "graphNodeId": "event-e000016",
+      "candidateId": "v001",
+      "eventType": "command.started",
+      "label": "Start: verify-complex.cjs",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000016",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000019",
+      "graphNodeId": "event-e000019",
+      "candidateId": "v001",
+      "eventType": "command.started",
+      "label": "Start: rendered-playtest-publication-2",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000019",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000023",
+      "graphNodeId": "event-e000023",
+      "candidateId": null,
+      "eventType": "run.finished",
+      "label": "Finish authoring run",
+      "status": "neutral",
+      "scope": "The recorder closed the run. Test verdicts and publication are separate records.",
+      "relatedNodeId": null,
+      "files": [],
+      "facts": []
+    }
+  ],
+  "explanations": [
+    {
+      "nodeId": "event-e000001",
+      "basis": "saved-evidence-review",
+      "headline": "Start authoring run",
+      "action": "Start authoring run.",
+      "result": "The recorder opened this authoring run. This does not establish an empty prior conversation context.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000002",
+      "basis": "saved-evidence-review",
+      "headline": "Start automatic capture",
+      "action": "Start automatic capture.",
+      "result": "The automatic collector started. Recorded command boundaries, reads and saved artifacts are shown in sequence.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-snapshot-e000003",
+      "basis": "saved-evidence-review",
+      "headline": "Skill attached: mazebench-boundary-stagger/SKILL.md",
+      "action": "Capture a version snapshot of mazebench-boundary-stagger/SKILL.md. Authoring workflow, supported mechanism and required delivery checks.",
+      "result": "The dependency version was saved. This event does not record a document read.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-snapshot-e000003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r001",
+      "basis": "saved-evidence-review",
+      "headline": "mechanism-logic.md",
+      "action": "Read mazebench-boundary-stagger/references/mechanism-logic.md. Extracted functional roles, contact relationships and preparation dependencies to realize in a new layout.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r001",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r002",
+      "basis": "saved-evidence-review",
+      "headline": "official-case.md",
+      "action": "Read mazebench-boundary-stagger/references/official-case.md. The source case explanation and its scoped mechanism evidence.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r002",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r003",
+      "basis": "saved-evidence-review",
+      "headline": "official-states.json",
+      "action": "Read mazebench-boundary-stagger/references/official-states.json. Recorded reference poses and moves for checking how the source mechanism operates.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r003",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r004",
+      "basis": "saved-evidence-review",
+      "headline": "official-checks.json",
+      "action": "Read mazebench-boundary-stagger/references/official-checks.json. Verification rules or implementations defining what the checks can and cannot establish.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r004",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r005",
+      "basis": "saved-evidence-review",
+      "headline": "planning-depth.md",
+      "action": "Read mazebench-boundary-stagger/references/planning-depth.md. Guidance for connected stages, usable recovery and avoiding trivial completions.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r005",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r006",
+      "basis": "saved-evidence-review",
+      "headline": "complex-validation.md",
+      "action": "Read mazebench-boundary-stagger/references/complex-validation.md. Verification rules or implementations defining what the checks can and cannot establish.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r006",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r007",
+      "basis": "saved-evidence-review",
+      "headline": "design.md",
+      "action": "Read mazebench-boundary-stagger/references/design.md. Supporting design or reference material identified by the saved filename and fingerprint.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r007",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "note-n001",
+      "basis": "saved-evidence-review",
+      "headline": "Record a clean final revalidation and publish the unchanged Roofed Boundary Key example.",
+      "action": "Keep all 256 cells, the three movable groups, the contract, and the 21-input witness unchanged. Begin a fresh recorded session so each test report can independently identify its exact map input and contract.",
+      "result": "The preceding revalidation passed build, verification, and rendered playtest, but its playtest report lacked top-level map fingerprints. The recorder could associate that test only through command boundaries, so the publication audit remained unknown despite a passing process. This run preserves that attempt and records the same evidence with an exact report binding.",
+      "decision": "Planned checks: The fresh candidate preserves the final cell and contract hashes and the 21-input witness.; Fresh complex verification passes all 20 checks with the 1,000,000-state cap and replayPassed true.; The fresh rendered 3D playtest includes exact input fingerprints, passes all four stage checks, and collects the gem.; The read-only authoring audit reports passed with no failed or unknown checks.; Serialized publication reports live with a commit and successful Pages deployment..",
+      "badge": "",
+      "evidence": [
+        "note-n001",
+        "resource-r001",
+        "resource-r002",
+        "resource-r003",
+        "resource-r004",
+        "resource-r005",
+        "resource-r006",
+        "resource-r007"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "candidate-v001",
+      "basis": "saved-evidence-review",
+      "headline": "v001 · Roofed Boundary Key",
+      "action": "Save the first captured map and contract for this run.",
+      "result": "Later associated results: verify-complex.cjs: passed; rendered-playtest-publication-2: passed.",
+      "decision": "The subsequent author note states: Fresh complex verification passed all 20 checks with replayPassed true, and the fresh 3D keyboard playtest passed all four stages with exact input fingerprints, zero errors, and the gem collected. The read-only authoring audit now reports passed with zero failed and zero unknown checks.",
+      "badge": "",
+      "evidence": [
+        "candidate-v001",
+        "test-t001",
+        "test-t002",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000013",
+      "basis": "saved-evidence-review",
+      "headline": "Start: build-complex.cjs",
+      "action": "Start: build-complex.cjs.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000013",
+        "candidate-v001",
+        "operation-e000013"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000013",
+      "basis": "saved-evidence-review",
+      "headline": "build-complex.cjs",
+      "action": "build-complex.cjs. Saved input: v001; output: v001.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "The subsequent author note states: Fresh complex verification passed all 20 checks with replayPassed true, and the fresh 3D keyboard playtest passed all four stages with exact input fingerprints, zero errors, and the gem collected. The read-only authoring audit now reports passed with zero failed and zero unknown checks.",
+      "badge": "",
+      "evidence": [
+        "operation-e000013",
+        "candidate-v001",
+        "event-e000013",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000015",
+      "basis": "saved-evidence-review",
+      "headline": "Save build files",
+      "action": "Save build files. Saved files: manifest.json, world.json, contract.json, spec.json, draft.json, level_AxA.txt, level_parsing.json, toolbox.json, world_map.json, world_parsing.json.",
+      "result": "Build files were archived for this candidate. The file list and fingerprints identify the saved output; verification appears separately.",
+      "decision": "Archiving preserves evidence and file identity. It does not rerun the test or establish that the map passed.",
+      "badge": "",
+      "evidence": [
+        "event-e000015",
+        "candidate-v001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000016",
+      "basis": "saved-evidence-review",
+      "headline": "Start: verify-complex.cjs",
+      "action": "Start: verify-complex.cjs.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000016",
+        "candidate-v001",
+        "operation-e000016"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000016",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; verify-complex.cjs",
+      "action": "verify-complex.cjs. Saved input: v001; output: v001.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict. Report interpretation: The report is passed; 20 of 20 individual checks passed.",
+      "decision": "The subsequent author note states: Fresh complex verification passed all 20 checks with replayPassed true, and the fresh 3D keyboard playtest passed all four stages with exact input fingerprints, zero errors, and the gem collected. The read-only authoring audit now reports passed with zero failed and zero unknown checks.",
+      "badge": "",
+      "evidence": [
+        "operation-e000016",
+        "candidate-v001",
+        "test-t001",
+        "event-e000016",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t001",
+      "basis": "saved-evidence-review",
+      "headline": "verify-complex.cjs",
+      "action": "Execute verify-complex.cjs against v001.",
+      "result": "The report is passed; 20 of 20 individual checks passed.",
+      "decision": "The subsequent author note states: Fresh complex verification passed all 20 checks with replayPassed true, and the fresh 3D keyboard playtest passed all four stages with exact input fingerprints, zero errors, and the gem collected. The read-only authoring audit now reports passed with zero failed and zero unknown checks.",
+      "badge": "",
+      "evidence": [
+        "test-t001",
+        "candidate-v001",
+        "note-n002"
+      ],
+      "observations": [
+        {
+          "label": "Saved goal search",
+          "value": "solved"
+        },
+        {
+          "label": "Solution inputs",
+          "value": "21"
+        },
+        {
+          "label": "Expanded search states",
+          "value": "203"
+        },
+        {
+          "label": "Search limit",
+          "value": "1000000"
+        },
+        {
+          "label": "Recorded ordinary replay",
+          "value": "passed"
+        }
+      ],
+      "checks": [
+        {
+          "name": "blocked_M0_U_step_0",
+          "verdict": "passed",
+          "meaning": "At the declared state, check the actual pushing stance or whole-group push obstruction using ordinary physics.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "blocked_M1_L_step_0",
+          "verdict": "passed",
+          "meaning": "At the declared state, check the actual pushing stance or whole-group push obstruction using ordinary physics.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_access_Expose the release face",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_access_Shift the boundary key",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_access_Clear the lower crossing",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "initial_frozen_walking",
+          "verdict": "passed",
+          "meaning": "Keep all objects fixed and search for a walking-only completion from the initial state.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze_M0",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze_M1",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze_M2",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "forbid_mechanism",
+          "verdict": "passed",
+          "meaning": "Forbid the declared mechanism event and search for the complete objective. A solution is a mechanism bypass.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_prepare_to_release",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_prepare_to_release",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_release_to_open",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_release_to_open",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_open_to_goal",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_open_to_goal",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "at_most_one_push_then_walk",
+          "verdict": "passed",
+          "meaning": "Restrict the allowed number of object-moving inputs and search for a complete goal, testing whether a simpler completion exists.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "one_same_direction_translation_process",
+          "verdict": "passed",
+          "meaning": "Allow object movement in only one compass direction and search for completion.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "first_mechanism_then_walking_only_all_histories",
+          "verdict": "passed",
+          "meaning": "Search all supported first-use histories for a completion requiring no further object movement.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "matched_boundary_roofed-crossing",
+          "verdict": "passed",
+          "meaning": "Remove only the declared boundary at a matched stance. Test that the blocked push becomes possible and the excluded preparation can be bypassed; record walking side effects.",
+          "expected": "solved",
+          "observed": "solved"
+        }
+      ]
+    },
+    {
+      "nodeId": "event-e000019",
+      "basis": "saved-evidence-review",
+      "headline": "Start: rendered-playtest-publication-2",
+      "action": "Start: rendered-playtest-publication-2.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000019",
+        "candidate-v001",
+        "operation-e000019"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000019",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; rendered-playtest-publication-2",
+      "action": "rendered-playtest-publication-2. Saved input: v001; output: v001.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict. Report interpretation: The report is passed; 4 of 4 individual checks passed.",
+      "decision": "The subsequent author note states: Fresh complex verification passed all 20 checks with replayPassed true, and the fresh 3D keyboard playtest passed all four stages with exact input fingerprints, zero errors, and the gem collected. The read-only authoring audit now reports passed with zero failed and zero unknown checks.",
+      "badge": "",
+      "evidence": [
+        "operation-e000019",
+        "candidate-v001",
+        "test-t002",
+        "event-e000019",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t002",
+      "basis": "saved-evidence-review",
+      "headline": "rendered-playtest-publication-2",
+      "action": "Execute rendered-playtest-publication-2 against v001.",
+      "result": "The report is passed; 4 of 4 individual checks passed.",
+      "decision": "The subsequent author note states: Fresh complex verification passed all 20 checks with replayPassed true, and the fresh 3D keyboard playtest passed all four stages with exact input fingerprints, zero errors, and the gem collected. The read-only authoring audit now reports passed with zero failed and zero unknown checks.",
+      "badge": "",
+      "evidence": [
+        "test-t002",
+        "candidate-v001",
+        "note-n002"
+      ],
+      "observations": [
+        {
+          "label": "Recorded ordinary replay",
+          "value": "passed"
+        }
+      ],
+      "checks": [
+        {
+          "name": "check",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: check. Its result is limited to the saved test scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "check",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: check. Its result is limited to the saved test scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "check",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: check. Its result is limited to the saved test scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "check",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: check. Its result is limited to the saved test scope.",
+          "expected": "",
+          "observed": ""
+        }
+      ]
+    },
+    {
+      "nodeId": "note-n002",
+      "basis": "saved-evidence-review",
+      "headline": "Seal the clean revalidation and publish the verified Roofed Boundary Key example.",
+      "action": "Retain the unchanged 16x16 map with 256 cells, three movable groups, the validated contract, and witness UUUULULLRRDDDLLULLLLL. Bind the final recording to draft-depth-ce332851c2 and its exact verification and rendered-playtest reports.",
+      "result": "Fresh complex verification passed all 20 checks with replayPassed true, and the fresh 3D keyboard playtest passed all four stages with exact input fingerprints, zero errors, and the gem collected. The read-only authoring audit now reports passed with zero failed and zero unknown checks.",
+      "decision": "Planned checks: The final authoring audit remains passed with no failed or unknown checks.; The final candidate preserves cells 05986cabf85fa935c0c1f4c67c966e4f9d918817922dc1e0fd9362eabc4f7884 and contract 72a3231f334570099e7c7125b0fb470d116d85decdbd9609e7c7e5fbc9d74d40.; Serialized publication reports live, published true, a commit, and a successful Pages deployment..",
+      "badge": "",
+      "evidence": [
+        "note-n002",
+        "candidate-v001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000023",
+      "basis": "saved-evidence-review",
+      "headline": "Finish authoring run",
+      "action": "Finish authoring run.",
+      "result": "The recorder closed the run. Test verdicts and publication are separate records.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000023"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "delivery-final",
+      "basis": "saved-evidence-review",
+      "headline": "Published final candidate v001",
+      "action": "Bind the published map and contract to the final recorded candidate.",
+      "result": "The final candidate has 2 exactly associated passed reports, retained alongside earlier failed or unknown attempts.",
+      "decision": "These reports explain the recorded basis for delivery. A fixed iteration count or an unrecorded stopping policy cannot be inferred. These are author-side checks of the declared conditions, not a human-difficulty score or a blind independent-agent evaluation.",
+      "badge": "",
+      "evidence": [
+        "delivery-final",
+        "candidate-v001",
+        "test-t001",
+        "test-t002"
+      ],
+      "observations": [],
+      "checks": []
+    }
+  ]
+}

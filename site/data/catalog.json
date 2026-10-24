@@ -26,7 +26,8 @@
         "authored-boundary-stagger-2f126bf137c6",
         "authored-boundary-stagger-2f5622cc46de",
         "authored-boundary-stagger-32113b438880",
-        "authored-boundary-stagger-2fbbb5d092b8"
+        "authored-boundary-stagger-2fbbb5d092b8",
+        "authored-boundary-stagger-46b924adfc38"
       ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-boundary-stagger"
     },
@@ -842,6 +843,25 @@
       },
       "process": {
         "data": "data/processes/authored-boundary-stagger-2fbbb5d092b8.json",
+        "schemaVersion": 1
+      }
+    },
+    {
+      "id": "authored-boundary-stagger-46b924adfc38",
+      "kind": "authored",
+      "title": "Roofed Boundary Key",
+      "skill": "boundary-stagger",
+      "world": "authored-boundary-stagger-46b924adfc38",
+      "room": "AxA",
+      "description": "Shift rigid groups around fixed boundaries, make room for the next move, and release the path to the gem.",
+      "thumbnail": "assets/thumbnails/authored-boundary-stagger-46b924adfc38.png",
+      "map": "data/maps/authored-boundary-stagger-46b924adfc38-world-map.txt",
+      "witness": "UUUULULLRRDDDLLULLLLL",
+      "goal": {
+        "kind": "gem"
+      },
+      "process": {
+        "data": "data/processes/authored-boundary-stagger-46b924adfc38.json",
         "schemaVersion": 1
       }
     }

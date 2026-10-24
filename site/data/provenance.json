@@ -664,6 +664,29 @@
         "cellsSha256": "7ca44de778b5f39d038672f015f2155428dfb54c76cd316fb6afff95eaa59384",
         "contractSha256": "9e561f371fff934998ad9d02d782a263caa3346091018889e1b2c1bce31049db"
       }
+    },
+    {
+      "id": "authored-boundary-stagger-46b924adfc38",
+      "kind": "authored",
+      "originalDraftId": "draft-depth-ce332851c2",
+      "title": "Roofed Boundary Key",
+      "sourceMapSha256": "46b924adfc384fca5e87abc56c65ccc80f9eec63f329392059bd5e1a41dc9534",
+      "witnessSha256": "c687095be4bb1346acaa3c88160928c511455443e305f0b55e1513dd24f8b239",
+      "source": "Agent-authored trial; verified design and saved draft matched before publication.",
+      "verification": {
+        "overall": "passed",
+        "profile": "planar-boundary-preparation-v2",
+        "cellsSha256": "05986cabf85fa935c0c1f4c67c966e4f9d918817922dc1e0fd9362eabc4f7884",
+        "contractSha256": "72a3231f334570099e7c7125b0fb470d116d85decdbd9609e7c7e5fbc9d74d40",
+        "reportSha256": "5bb7aa3c3376b930d53261435e0e98cc4c1e9519a7ad0935d1931ca98736dabf"
+      },
+      "authoringProcess": {
+        "schemaVersion": 1,
+        "data": "data/processes/authored-boundary-stagger-46b924adfc38.json",
+        "sha256": "570fbdb1e3ba1f579c4ec9020d562ca97af1cacc0b18cc700067181ba6fe5c8b",
+        "cellsSha256": "05986cabf85fa935c0c1f4c67c966e4f9d918817922dc1e0fd9362eabc4f7884",
+        "contractSha256": "72a3231f334570099e7c7125b0fb470d116d85decdbd9609e7c7e5fbc9d74d40"
+      }
     }
   ],
   "directEntryPolicy": "Rooms without an authored player get a temporary arrival actor only when opened directly. Entries are open, matching floor boundaries with an ordinary legal inward move. Raw maps, exported room states, and normal doorway traversal remain unchanged.",
