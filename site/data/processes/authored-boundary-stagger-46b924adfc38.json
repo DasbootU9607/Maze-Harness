@@ -2999,33 +2999,33 @@
     "schemaVersion": 2,
     "status": "measured",
     "runtime": "codex-tui",
-    "elapsedMs": 194466,
-    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "elapsedMs": 2490283,
+    "scope": "Original map authoring interval, from 10:21:33 to 11:03:03 on 2026-10-24 (UTC+08:00), including tools and waiting. These duration and token metrics come from the original three-candidate build; the event timeline below covers a later final publication revalidation. Later revalidations and deployment are excluded. Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
     "scopeComplete": false,
     "observedTokens": {
-      "input_tokens": 1765264,
-      "cached_input_tokens": 1736704,
+      "input_tokens": 11441175,
+      "cached_input_tokens": 10934272,
       "cache_write_input_tokens": 0,
-      "output_tokens": 11905,
-      "reasoning_output_tokens": 5343,
-      "total_tokens": 1777169
+      "output_tokens": 172660,
+      "reasoning_output_tokens": 122770,
+      "total_tokens": 11613835
     },
     "models": [
       {
         "model": "deepseek-v4.1-flash-1017",
         "provider": "maze_bailian",
         "tokens": {
-          "input_tokens": 1765264,
-          "cached_input_tokens": 1736704,
+          "input_tokens": 11441175,
+          "cached_input_tokens": 10934272,
           "cache_write_input_tokens": 0,
-          "output_tokens": 11905,
-          "reasoning_output_tokens": 5343,
-          "total_tokens": 1777169
+          "output_tokens": 172660,
+          "reasoning_output_tokens": 122770,
+          "total_tokens": 11613835
         },
-        "observations": 13
+        "observations": 106
       }
     ],
-    "evidenceSha256": "93ca64699aa87b94f547bd62fc35729d3794fc3c9921bd9d540240e93bbeaaa6"
+    "evidenceSha256": "f5cf4a34f66743f04dce79a53b1a904a38050cd33c378f1bbef8974192dd4093"
   },
   "records": [
     {

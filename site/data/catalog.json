@@ -1227,18 +1227,18 @@
           }
         ],
         "runtime": "codex-tui",
-        "elapsedMs": 194466,
+        "elapsedMs": 2490283,
         "usageStatus": "measured",
         "tokens": {
-          "input_tokens": 1765264,
-          "cached_input_tokens": 1736704,
+          "input_tokens": 11441175,
+          "cached_input_tokens": 10934272,
           "cache_write_input_tokens": 0,
-          "output_tokens": 11905,
-          "reasoning_output_tokens": 5343,
-          "total_tokens": 1777169
+          "output_tokens": 172660,
+          "reasoning_output_tokens": 122770,
+          "total_tokens": 11613835
         },
         "scopeComplete": false,
-        "evidenceSha256": "93ca64699aa87b94f547bd62fc35729d3794fc3c9921bd9d540240e93bbeaaa6"
+        "evidenceSha256": "f5cf4a34f66743f04dce79a53b1a904a38050cd33c378f1bbef8974192dd4093"
       }
     }
   ],
