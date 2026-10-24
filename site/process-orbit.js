@@ -278,7 +278,11 @@ export function createOrbitTimeline({ container, getData, onSelect, onDetails })
   stage.addEventListener('lostpointercapture', event => { if (event.target === stage) endDrag(event); });
   window.addEventListener('pointerup', endDrag); window.addEventListener('pointercancel', endDrag);
   window.addEventListener('blur', () => { if (state.dragging) endDrag({ pointerId: state.dragging.id }); });
-  window.addEventListener('scroll', hideMarkerTooltip, { capture: true, passive: true });
+  window.addEventListener('scroll', () => {
+    const marker = state.tooltipTarget, rect = marker?.getBoundingClientRect();
+    if (marker && rect.bottom > 0 && rect.top < innerHeight && (marker.matches(':hover') || document.activeElement === marker)) showMarkerTooltip(marker);
+    else hideMarkerTooltip();
+  }, { capture: true, passive: true });
   new ResizeObserver(measure).observe(stage);
   reducedMotion.addEventListener('change', () => { if (timeline.isConnected) requestRender(); });
   const data = getData?.() || {}, seen = new Set();

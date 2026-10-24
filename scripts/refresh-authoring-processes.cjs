@@ -8,6 +8,8 @@ const assert = require('node:assert/strict');
 const { exportProcess, assertPublicPrivacy } = require('./export-authoring-process.cjs');
 const { validatePreviewFiles } = require('./process-previews.cjs');
 const { hash, read } = require('./site-content.cjs');
+const { summarizeBuild } = require('./build-metrics.cjs');
+const { runIdentity } = require('./build-identity.cjs');
 
 function refreshProcesses(runsDirectory, { root = path.resolve(__dirname, '..'), check = false } = {}) {
   const runsRoot = path.resolve(runsDirectory), site = path.join(root, 'site');
@@ -19,7 +21,9 @@ function refreshProcesses(runsDirectory, { root = path.resolve(__dirname, '..'),
   for (const entry of catalog.cases.filter(entry => entry.process)) {
     assert.equal(entry.process.data, `data/processes/${entry.id}.json`);
     const file = path.join(site, entry.process.data), previous = read(file);
-    const matches = runs.filter(run => JSON.stringify(chain(run.index.candidates)) === JSON.stringify(chain(previous.candidates)));
+    const source = provenance.cases.find(item => item.id === entry.id);
+    const matches = runs.filter(run => (!source?.authoringRunSha256 || runIdentity(read(path.join(run.directory, 'manifest.json'))) === source.authoringRunSha256)
+      && JSON.stringify(chain(run.index.candidates)) === JSON.stringify(chain(previous.candidates)));
     assert.equal(matches.length, 1, `Expected one original run with the complete saved candidate chain for ${entry.id}; found ${matches.length}`);
     const run = matches[0], final = previous.candidates.at(-1);
     const next = exportProcess(run.directory, { caseId: entry.id, title: entry.title, skill: entry.skill, expectedCellsSha256: final.cellsSha256, expectedContractSha256: final.contractSha256 });
@@ -34,15 +38,19 @@ function refreshProcesses(runsDirectory, { root = path.resolve(__dirname, '..'),
       if (original.data) { replay.data = original.data; replay.sha256 = original.sha256; }
     }
     assertPublicPrivacy(next); validatePreviewFiles(site, next);
+    entry.build = summarizeBuild(next.usage);
     const bytes = JSON.stringify(next, null, 2) + '\n';
-    const source = provenance.cases.find(item => item.id === entry.id);
     assert(source?.authoringProcess, 'Missing existing process provenance');
+    source.authoringRunSha256 = runIdentity(read(path.join(run.directory, 'manifest.json')));
     source.authoringProcess.sha256 = hash(bytes);
     if (fs.readFileSync(file, 'utf8') !== bytes) pending.push({ file, bytes });
     results.push({ caseId: entry.id, title: entry.title, sourceEvents: next.coverage.events.sourceCount, representedEvents: next.coverage.events.representedCount,
       previousNodes: previous.nodes.length, currentNodes: next.nodes.length, addedNodes: next.nodes.length - previous.nodes.length });
   }
   const bytes = JSON.stringify(provenance, null, 2) + '\n';
+  for (const entry of catalog.cases.filter(entry => entry.kind === 'authored' && !entry.process)) entry.build = summarizeBuild();
+  const catalogFile = path.join(site, 'data/catalog.json'), catalogBytes = JSON.stringify(catalog, null, 2) + '\n';
+  if (fs.readFileSync(catalogFile, 'utf8') !== catalogBytes) pending.push({file: catalogFile, bytes: catalogBytes});
   if (fs.readFileSync(provenanceFile, 'utf8') !== bytes) pending.push({ file: provenanceFile, bytes });
   if (check) assert.equal(pending.length, 0, 'Public process exports are stale; refresh from the original runs');
   else for (const item of pending) fs.writeFileSync(item.file, item.bytes);

@@ -102,6 +102,20 @@ Authored single-room trials start with their full gem objective. Reset and repea
 
 `node scripts/test-authored-gates.cjs --repo ENGINE` checks directed gate walking, ordinary/search parity, floating-floor consumption, unsupported tokens and the complete enclosure regression. Gate analysis merges only mutually reachable walking states.
 
+## Model categories and build comparison
+
+Each skill's authored examples have a **Built with which model** selector. Publication and process refresh automatically project the public runtime evidence into each catalog entry's `build` summary. New runtime-reported model IDs become options without a frontend edit. The selected model is preserved in the page URL. Requested models, filenames and map titles are not attribution evidence: missing model names remain **Not provided**, and runs with multiple or partly unknown models have a separate **Mixed / partial attribution** category.
+
+Recorded builds with identical map geometry retain separate case IDs and process records when their run identities differ. Repeating publication of the same recorded run remains idempotent. Only an opaque run fingerprint is published; private run names and paths stay local. Legacy cases are associated with a run only when their draft identity and recorded evidence match. Original maps without process evidence remain available, with an explicitly unavailable Build process action instead of an invented history.
+
+The **Build comparison** panel plots individual recorded builds, with a client filter, wall time in minutes and selectable total, input, output, cached-input or reasoning-output tokens. The expandable data table retains exact values and links to each build and process. Missing values are omitted from the charts and counted, never replaced with zero. Cache and reasoning counts are subsets of their parent totals; they are not added twice. Different maps, clients and run conditions make these descriptive comparisons, not controlled model rankings. Observed tokens cover the captured interval and are not a complete billed task total; wall time includes tools and waiting.
+
+Process pages use four consistent overview fields: model, client, wall time and observed total tokens. Detailed token counts, runtime model/provider identities and collection scope are grouped in an expandable section. Playable authored maps provide a Build process action in the player header. Existing timeline, replay and engine behavior is unchanged.
+
+`node scripts/test-build-models.cjs` checks attribution, mixed/missing values and run identity. `node scripts/test-site-sync.cjs` checks automatic discovery of a previously unseen model through publication. `node scripts/test-build-models-browser.cjs --engine PATH_TO_ENGINE` exercises every skill's filters, exact chart values, deep links, desktop/mobile layouts and player-to-process navigation. Add `--base-url URL` to check the deployed site.
+
+To test duplicate publication using a completed, already-published Boundary Stagger trial, run `node scripts/test-build-model-publication.cjs --engine ENGINE --spec DESIGN.json --build BUILD/manifest.json --verification CHECKS/verification.json --authoring-run RUN_DIRECTORY`. It reimports the real evidence in a disposable site, then makes an explicitly synthetic copy with another run identity to test identical-map preservation and idempotence. It never edits the original run or publishes the fixture.
+
 ## Local preview
 
 Run from the repository root:

@@ -6,6 +6,8 @@ const assert = require('node:assert/strict');
 const { hash, read, createReplay } = require('./site-content.cjs');
 const { exportProcess, discoverAuthoringRun } = require('./export-authoring-process.cjs');
 const { attachProcessPreviews } = require('./process-previews.cjs');
+const { runIdentity, findAuthoredRun } = require('./build-identity.cjs');
+const { summarizeBuild } = require('./build-metrics.cjs');
 const defaultRoot = path.resolve(__dirname, '..');
 function synchronize(options = {}, root = defaultRoot) {
   const site = path.join(root, 'site');
@@ -111,7 +113,14 @@ function synchronize(options = {}, root = defaultRoot) {
     const cells = bytes.toString('utf8').trim().split(/\r?\n/).map(row => row.trim().split(/\s+/));
     assert.deepEqual(cells, spec.cells, 'The saved draft is different from the verified design');
     const sourceMapSha256 = hash(bytes);
-    const existing = catalog.cases.find(c => c.kind === 'authored' && c.skill === skillId && records.get(c.id)?.sourceMapSha256 === sourceMapSha256);
+    const authoringRun = discoverAuthoringRun(options);
+    const runKey = authoringRun ? runIdentity(read(path.join(authoringRun, 'manifest.json'))) : null;
+    const baseId = 'authored-' + skillId + '-' + sourceMapSha256.slice(0, 12);
+    const process = authoringRun ? exportProcess(authoringRun, {caseId: baseId, title: spec.title, skill: skillId,
+      expectedCellsSha256: hash(spec.cells), expectedContractSha256: hash(spec.contract)}) : null;
+    const sameMap = catalog.cases.filter(c => c.kind === 'authored' && c.skill === skillId && records.get(c.id)?.sourceMapSha256 === sourceMapSha256);
+    const existing = findAuthoredRun(sameMap, records, {runKey, draftId: manifest.id, process,
+      readProcess: entry => read(path.join(site, entry.process.data))});
     let publishedEntry = existing;
     if (existing) {
       replay(read(path.join(site, 'data/levels/' + existing.world + '/level_' + existing.room + '.json')), { ...existing, witness: spec.witness, goal: spec.contract.goal });
@@ -119,7 +128,8 @@ function synchronize(options = {}, root = defaultRoot) {
       assert.deepEqual(existing.goal, spec.contract.goal, 'An existing case has a different objective; review it explicitly');
       console.log('Already published: ' + existing.id);
     } else {
-      const id = 'authored-' + skillId + '-' + sourceMapSha256.slice(0, 12);
+      const id = sameMap.length && runKey ? baseId + '-' + runKey.slice(0, 12) : baseId;
+      assert(!catalog.cases.some(entry => entry.id === id), 'Published case identity collision');
       // Content-addressed static world IDs keep earlier links immutable, even if
       // a local authoring service reuses its draft ID for a later edit.
       const world = id;
@@ -142,15 +152,15 @@ function synchronize(options = {}, root = defaultRoot) {
         source: 'Agent-authored trial; verified design and saved draft matched before publication.',
         verification: { overall: report.overall, profile: report.profile, cellsSha256: report.fingerprints.cells, contractSha256: report.fingerprints.contract, reportSha256: hash(fs.readFileSync(options.verification)) } });
     }
-    const authoringRun = discoverAuthoringRun(options);
     if (authoringRun) {
-      const process = exportProcess(authoringRun, { caseId: publishedEntry.id, title: spec.title, skill: skillId,
-        expectedCellsSha256: hash(spec.cells), expectedContractSha256: hash(spec.contract) });
+      process.caseId = publishedEntry.id;
+      for (const node of process.nodes.filter(node => node.kind === 'delivery')) node.details.caseId = publishedEntry.id;
       attachProcessPreviews(process, authoringRun, { engineRoot, runtime: path.join(site, 'runtime/maze-engine.js'), emit: (file, bytes) => pending.set(file, bytes) });
       require('./export-authoring-process.cjs').assertPublicPrivacy(process);
       const file = 'data/processes/' + publishedEntry.id + '.json';
       json(file, process);
       publishedEntry.process = { data: file, schemaVersion: 1 };
+      records.get(publishedEntry.id).authoringRunSha256 = runKey;
       records.get(publishedEntry.id).authoringProcess = { schemaVersion: 1, data: file, sha256: hash(JSON.stringify(process, null, 2) + '\n'),
         cellsSha256: hash(spec.cells), contractSha256: hash(spec.contract) };
     }
@@ -159,6 +169,18 @@ function synchronize(options = {}, root = defaultRoot) {
     const skills = catalog.skills.filter(s => s.rooms.includes(room.id)).map(s => s.id);
     room.skill = skills[0] || null;
     if (skills.length > 1) room.skills = skills; else delete room.skills;
+  }
+  // Run on every publication, including newly imported and historical cases.
+  for (const entry of catalog.cases.filter(entry => entry.kind === 'authored')) {
+    let usage;
+    if (entry.process) {
+      assert.equal(entry.process.data, `data/processes/${entry.id}.json`);
+      const bytes = pending.get(entry.process.data) || fs.readFileSync(path.join(site, entry.process.data));
+      const process = JSON.parse(bytes.toString('utf8'));
+      assert.equal(process.caseId, entry.id, 'Build metrics must belong to this case');
+      usage = process.usage;
+    }
+    entry.build = summarizeBuild(usage);
   }
   provenance.cases = catalog.cases.map(c => records.get(c.id));
   json('data/catalog.json', catalog);

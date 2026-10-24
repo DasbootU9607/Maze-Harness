@@ -7,6 +7,7 @@ on:
       - 'skills/**'
       - 'site/**'
       - 'scripts/*site*.cjs'
+      - 'scripts/*build*.cjs'
       - 'scripts/*authoring*.cjs'
       - 'scripts/*process*.cjs'
       - 'tools/authoring-observatory/**'
@@ -16,6 +17,7 @@ on:
       - 'skills/**'
       - 'site/**'
       - 'scripts/*site*.cjs'
+      - 'scripts/*build*.cjs'
       - 'scripts/*authoring*.cjs'
       - 'scripts/*process*.cjs'
       - 'tools/authoring-observatory/**'
@@ -41,6 +43,8 @@ jobs:
         run: node scripts/check-site.cjs
       - name: Verify incremental skill discovery
         run: node scripts/test-site-sync.cjs
+      - name: Verify model attribution and build identity
+        run: node scripts/test-build-models.cjs
       - name: Verify candidate screenshot bindings
         run: node scripts/test-process-thumbnails.cjs
       - name: Verify authoring recorder and public evidence projection

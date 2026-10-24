@@ -185,6 +185,7 @@ for (const entry of catalog.cases) {
   const record = provenance.cases.find(c => c.id === entry.id);
   assert(record);
   const process = checkAuthoringProcess(site, entry, record);
+  if (entry.kind === 'authored') assert.deepEqual(entry.build, require('./build-metrics.cjs').summarizeBuild(process?.usage), 'Catalog model/usage summary differs from recorded evidence: ' + entry.id);
   if (process) for (const candidate of process.candidates.filter(candidate => candidate.preview)) {
     thumbnails.verifyThumbnail(site,process,candidate,rendererSha256);
   }

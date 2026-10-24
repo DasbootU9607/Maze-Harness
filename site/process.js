@@ -1,3 +1,4 @@
+import {modelLabel, clientLabel, duration, tokenCount} from './build-data.js';
 import { loadCatalog, shell, playUrl, showError } from './ui.js';
 import { createOrbitTimeline } from './process-orbit.js';
 
@@ -384,16 +385,32 @@ start().catch(error => showError(error));
 
 function renderUsage(usage) {
   const host = clear($('build-usage')), values = usage?.observedTokens || {};
-  const metric = (label, value) => { const cell = el('div', 'usage-metric'); cell.append(el('span', '', label), el('strong', '', value ?? 'Not provided')); return cell; };
-  const count = n => Number.isSafeInteger(n) ? n.toLocaleString() : 'Not provided';
-  const duration = Number.isFinite(usage?.elapsedMs) ? `${Math.floor(usage.elapsedMs / 60000)}m ${Math.floor(usage.elapsedMs / 1000) % 60}s` : 'Not provided';
-  const modelNames = usage?.models?.map(m => m.model || 'Not provided').join(', ') || 'Not provided';
-  host.append(metric('Model', modelNames), metric('Client', usage?.runtime), metric('Build wall time', duration), metric('Observed tokens', count(values.total_tokens)));
-  const details = el('details', 'usage-details'); details.append(el('summary', '', 'Usage details · ' + (usage?.status || 'Not provided')));
-  details.append(el('p', '', usage?.scope || 'This historical build has no runtime usage record. Missing values are not zero.'));
+  const heading = el('div', 'usage-heading');
+  heading.append(el('h2', '', 'Build overview'), el('span', 'usage-status', ({measured:'Measured interval', partial:'Partial record', unavailable:'Usage not provided'})[usage?.status] || 'Usage not provided'));
+  const grid = el('dl', 'usage-metrics');
+  const metric = (label, value) => { const cell = el('div', 'usage-metric'); cell.append(el('dt', '', label), el('dd', '', value ?? 'Not provided')); return cell; };
+  const names = [...new Set(usage?.models?.map(m => modelLabel(m.model)) || [])].join(', ') || 'Not provided';
+  grid.append(metric('Model', names), metric('Client', clientLabel(usage?.runtime)), metric('Build wall time', duration(usage?.elapsedMs)), metric('Observed total tokens', tokenCount(values.total_tokens)));
+  host.append(heading, grid);
+  const details = el('details', 'usage-details');
+  details.append(el('summary', '', 'Token breakdown and provenance'));
+  const columns = el('div', 'usage-detail-columns'), tokens = el('section'), sources = el('section');
+  tokens.append(el('h3', '', 'Token breakdown'));
   const table = el('dl', 'usage-breakdown');
-  for (const [key, label] of [['input_tokens', 'Input'], ['cached_input_tokens', 'Cached input (included)'], ['cache_write_input_tokens', 'Cache write (included)'], ['output_tokens', 'Output'], ['reasoning_output_tokens', 'Reasoning output (included)']]) table.append(el('dt', '', label), el('dd', '', count(values[key])));
-  details.append(table);
-  for (const model of usage?.models || []) details.append(el('p', '', `${model.provider || 'Not provided'} / ${model.model || 'Not provided'}: ${count(model.tokens.total_tokens)} observed tokens`));
-  details.append(el('p', '', 'Wall time includes tools and waiting. An observed interval is not a complete billed task total.')); host.append(details);
+  for (const [key, label] of [['input_tokens', 'Input'], ['cached_input_tokens', 'Cached input'], ['cache_write_input_tokens', 'Cache write'], ['output_tokens', 'Output'], ['reasoning_output_tokens', 'Reasoning output']]) {
+    const row = el('div'); row.append(el('dt', '', label), el('dd', '', tokenCount(values[key]))); table.append(row);
+  }
+  tokens.append(table, el('p', 'usage-caption', 'Cache counts are included in input. Reasoning counts are included in output.'));
+  sources.append(el('h3', '', 'Runtime attribution'));
+  if (!usage?.models?.length) sources.append(el('p', 'usage-caption', 'Model and provider not provided.'));
+  for (const model of usage?.models || []) {
+    const item = el('dl', 'usage-source');
+    for (const [label, value] of [['Model ID', model.model], ['Provider', model.provider], ['Observed tokens', tokenCount(model.tokens?.total_tokens)]]) {
+      const row = el('div'); row.append(el('dt', '', label), el('dd', '', value ?? 'Not provided')); item.append(row);
+    }
+    sources.append(item);
+  }
+  columns.append(tokens, sources); details.append(columns);
+  details.append(el('p', 'usage-scope', usage?.scope || 'No runtime usage record was captured for this historical build. Missing values are not zero.'));
+  host.append(details, el('p', 'usage-footnote', 'Wall time includes tools and waiting. Observed tokens are not a complete billed task total.'));
 }

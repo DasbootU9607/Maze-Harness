@@ -1,3 +1,4 @@
+import { buildLabel } from './build-data.js';
 export const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export async function loadCatalog() {
   const response = await fetch('./data/catalog.json');
@@ -43,7 +44,7 @@ export function goalText(entry) {
 export function caseCard(entry) {
   const e = escapeHtml;
   const processLink = entry.process?.data ? `<a class="case-process-link" href="./process.html?${e(new URLSearchParams({case: entry.id}).toString())}" aria-label="Build process for ${e(entry.title)}">Build process ↗</a>` : '';
-  return `<article class="case-card"><a href="${playUrl(entry)}" aria-label="Play ${e(entry.title)}"><div class="case-preview"><img src="./${e(entry.thumbnail)}" alt="3D preview of ${e(entry.title)}" width="720" height="440" loading="lazy"><span class="preview-badge">${entry.kind === 'official' ? 'OFFICIAL / ' + entry.room : 'AGENT AUTHORED'}</span><span class="preview-play">↗ PLAY ROOM</span></div><div class="case-card-body"><h3>${e(entry.title)}</h3><p>${e(entry.description)} ${e(goalText(entry))}</p><div class="case-card-foot"><span class="play-link">Play room</span><span>${entry.witness?.length || 0} inputs in saved route</span></div></div></a><div class="case-secondary"><a href="${playUrl(entry, true)}">Watch solution ↗</a>${processLink}<a href="./${e(entry.map)}" download>Map ↓</a></div></article>`;
+  return `<article class="case-card" data-case="${e(entry.id)}"><a href="${playUrl(entry)}" aria-label="Play ${e(entry.title)}"><div class="case-preview"><img src="./${e(entry.thumbnail)}" alt="3D preview of ${e(entry.title)}" width="720" height="440" loading="lazy"><span class="preview-badge">${entry.kind === 'official' ? 'OFFICIAL / ' + entry.room : 'AGENT AUTHORED'}</span><span class="preview-play">↗ PLAY ROOM</span></div><div class="case-card-body">${entry.kind === 'authored' ? `<div class="case-build-model">Built with <span>${e(buildLabel(entry.build))}</span></div>` : ''}<h3>${e(entry.title)}</h3><p>${e(entry.description)} ${e(goalText(entry))}</p><div class="case-card-foot"><span class="play-link">Play room</span><span>${entry.witness?.length || 0} inputs in saved route</span></div></div></a><div class="case-secondary"><a href="${playUrl(entry, true)}">Watch solution ↗</a>${processLink}<a href="./${e(entry.map)}" download>Map ↓</a></div></article>`;
 }
 function silhouette(room) {
   const colors = room.skill ? ['#eee','#969696','#5c5c5c'] : ['#7f7f7f','#a4a4a4','#e3e3e3'];
