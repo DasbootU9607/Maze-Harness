@@ -7,10 +7,11 @@ const { hash, read, createReplay } = require('./site-content.cjs');
 const { exportProcess, discoverAuthoringRun } = require('./export-authoring-process.cjs');
 const { attachProcessPreviews } = require('./process-previews.cjs');
 const { runIdentity, findAuthoredRun } = require('./build-identity.cjs');
-const { summarizeBuild } = require('./build-metrics.cjs');
+const { summarizeBuild, readAttributions } = require('./build-metrics.cjs');
 const defaultRoot = path.resolve(__dirname, '..');
 function synchronize(options = {}, root = defaultRoot) {
   const site = path.join(root, 'site');
+  const attributions = readAttributions(site);
   const catalog = read(path.join(site, 'data/catalog.json'));
   const provenance = read(path.join(site, 'data/provenance.json'));
   const replay = createReplay(path.join(site, 'runtime/maze-engine.js'));
@@ -180,7 +181,7 @@ function synchronize(options = {}, root = defaultRoot) {
       assert.equal(process.caseId, entry.id, 'Build metrics must belong to this case');
       usage = process.usage;
     }
-    entry.build = summarizeBuild(usage);
+    entry.build = summarizeBuild(usage, attributions[entry.id]);
   }
   provenance.cases = catalog.cases.map(c => records.get(c.id));
   json('data/catalog.json', catalog);

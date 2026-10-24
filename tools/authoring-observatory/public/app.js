@@ -58,7 +58,7 @@ async function refresh() {
       $('token-status').textContent = (usage?.status || 'Not provided') + ' / observed interval only';
       const values = usage?.scopeComplete ? usage.tokens : usage?.observedTokens;
       $('token-values').replaceChildren(...[['input_tokens', 'Input'], ['cached_input_tokens', 'Cached input'], ['output_tokens', 'Output'], ['reasoning_output_tokens', 'Reasoning output'], ['total_tokens', 'Total']].map(([key, label]) => node('p', label + ': ' + (values?.[key] ?? 'Not provided'))));
-      $('token-values').prepend(node('p', 'Model: ' + (usage?.models?.map(m => m.model || 'Not provided').join(', ') || usage?.model || 'Not provided')), node('p', 'Client: ' + (usage?.runtime || 'Not provided')), node('p', 'Build wall time: ' + (Number.isFinite(usage?.elapsedMs) ? (usage.elapsedMs / 1000).toFixed(1) + ' s' : 'Not provided')));
+      $('token-values').prepend(node('p', 'Model / reasoning setting: ' + (usage?.models?.map(m => (m.model || 'Not provided') + ' / ' + (m.reasoningEffort || 'Not provided')).join(', ') || usage?.model || 'Not provided')), node('p', 'Client: ' + (usage?.runtime || 'Not provided')), node('p', 'Build wall time: ' + (Number.isFinite(usage?.elapsedMs) ? (usage.elapsedMs / 1000).toFixed(1) + ' s' : 'Not provided')));
       $('token-report').hidden = !usage;
       $('token-report').onclick = () => evidence('token-usage.json').catch(showError);
     }

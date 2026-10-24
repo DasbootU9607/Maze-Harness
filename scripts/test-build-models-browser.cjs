@@ -42,9 +42,18 @@ const report = {errors:[], responses:[], filters:[], screenshots:[]};
     await page.reload(); await page.locator('#build-model').waitFor(); assert.equal(await page.locator('#build-model').inputValue(),entry.build.model);
     const time=page.locator(`#time-chart [data-case="${entry.id}"]`);
     assert.equal(Number(await time.getAttribute('data-value')),entry.build.elapsedMs);
+    const assertLadder=async selector=>{
+      const rows=await page.locator(selector+' .chart-row').evaluateAll(rows=>rows.map(row=>({value:Number(row.dataset.value),color:getComputedStyle(row).getPropertyValue('--model-color'),label:row.querySelector('.chart-row-heading').textContent})));
+      assert.deepEqual(rows.map(row=>row.value),rows.map(row=>row.value).sort((a,b)=>a-b));
+      assert(new Set(rows.map(row=>row.color)).size>=2,'Measured models have distinct colors');
+      assert(rows.every(row=>/xhigh|max/.test(row.label)),'Model and reasoning settings lead each ladder row');
+    };
+    await assertLadder('#time-chart'); await shot('ladder-time-desktop');
+    await page.locator('[data-ladder-view="tokens"]').click();
     for (const field of ['total_tokens','input_tokens','output_tokens','cached_input_tokens','reasoning_output_tokens']) {
       await page.selectOption('#comparison-metric',field);
       assert.equal(Number(await page.locator(`#token-chart [data-case="${entry.id}"]`).getAttribute('data-value')),entry.build.tokens[field]);
+      await assertLadder('#token-chart');
     }
     await page.selectOption('#comparison-metric','total_tokens');
     await page.selectOption('#comparison-client',entry.build.runtime);
@@ -52,12 +61,27 @@ const report = {errors:[], responses:[], filters:[], screenshots:[]};
     const shown=await page.locator('#time-chart .chart-row').evaluateAll(rows=>rows.map(row=>row.dataset.case));
     assert(shown.every(id=>allowed.includes(id)));
     await page.selectOption('#comparison-client','all'); await shot('skill-desktop');
+    const downloadData=async(selector,format)=>{
+      const promise=page.waitForEvent('download');await page.locator(selector).click();const download=await promise;
+      const file=path.join(output,download.suggestedFilename());await download.saveAs(file);
+      const bytes=fs.readFileSync(file,'utf8');return format==='json'?JSON.parse(bytes):bytes;
+    };
+    const allData=await downloadData('[data-build-download="json"]','json');
+    assert.equal(allData.builds.length,catalog.cases.filter(row=>row.kind==='authored'&&row.skill===entry.skill).length);
+    assert(allData.builds.some(row=>row.build.modelBasis==='user-confirmed'&&row.build.reasoningEffort==='ultra'&&row.build.tokens.total_tokens===null));
+    assert((await downloadData('[data-build-download="csv"]','csv')).includes('"reasoning_effort"'));
     await page.setViewportSize({width:390,height:844}); await noOverflow(); await shot('skill-mobile');
     await page.setViewportSize({width:1440,height:1050});
     await page.goto(origin+'process.html?case='+entry.id); await page.locator('.usage-metrics').waitFor();
     assert((await page.locator('.usage-metrics').textContent()).includes(entry.build.tokens.total_tokens.toLocaleString('en-US')));
     const styles=await page.locator('.usage-metric dd').evaluateAll(rows=>rows.map(row=>({font:getComputedStyle(row).fontSize,weight:getComputedStyle(row).fontWeight})));
     assert.equal(new Set(styles.map(style=>JSON.stringify(style))).size,1,'Overview values need a consistent type scale');
+    assert((await page.locator('.usage-metrics').innerText()).includes(entry.build.reasoningEffort));
+    const oneData=await downloadData('[data-usage-download="json"]','json');
+    assert.equal(oneData.builds.length,1);assert.equal(oneData.builds[0].caseId,entry.id);
+    assert.equal(oneData.builds[0].build.tokens.total_tokens,entry.build.tokens.total_tokens);
+    assert.equal(oneData.builds[0].runtimeUsage.scope,require(path.join(root,'site',entry.process.data)).usage.scope);
+    assert((await downloadData('[data-usage-download="csv"]','csv')).includes(String(entry.build.tokens.total_tokens)));
     await page.locator('.usage-details summary').click(); await shot('process-desktop');
     await page.setViewportSize({width:390,height:844}); await noOverflow(); await shot('process-mobile');
     await page.setViewportSize({width:1440,height:1050});

@@ -18,7 +18,7 @@ try {
   synchronize({}, fixture);
   const initial = read(path.join(fixture, 'site/data/catalog.json'));
   assert.equal(synchronize({}, fixture).changed.length, 0, 'Repeated synchronization must be idempotent');
-  const measured = initial.cases.find(entry => entry.build?.model && entry.process);
+  const measured = initial.cases.find(entry => entry.build?.modelBasis === 'runtime-record' && entry.process);
   const processFile = path.join(fixture, 'site', measured.process.data), originalProcess = read(processFile);
   const futureProcess = structuredClone(originalProcess);
   futureProcess.usage.models = [{model:'future-provider-model',provider:'future-provider',tokens:{total_tokens:0}}];

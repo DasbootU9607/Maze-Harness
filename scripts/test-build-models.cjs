@@ -4,6 +4,12 @@ const {summarizeBuild} = require('./build-metrics.cjs');
 const {runIdentity, recordedEvidence, findAuthoredRun} = require('./build-identity.cjs');
 const unknown = summarizeBuild();
 assert.equal(unknown.model, null); assert.equal(unknown.elapsedMs, null);
+const confirmed=summarizeBuild(null,{model:'gpt-6-astra',reasoningEffort:'ultra',basis:'user-confirmed'});
+assert.equal(confirmed.model,'gpt-6-astra');assert.equal(confirmed.modelBasis,'user-confirmed');assert.equal(confirmed.reasoningEffort,'ultra');assert.equal(confirmed.tokens.total_tokens,null);
+const observed=summarizeBuild({models:[{model:'actual',reasoningEffort:'high'}]},{model:'declared',reasoningEffort:'ultra',basis:'user-confirmed'});
+assert.equal(observed.model,'actual');assert.equal(observed.reasoningEffort,'high');assert.equal(observed.reasoningBasis,'runtime-setting');
+assert.equal(summarizeBuild({models:[{model:'another-model'}]},{model:'declared',reasoningEffort:'ultra',basis:'user-confirmed'}).reasoningEffort,null,'An older declaration cannot supply another model\'s setting');
+assert.equal(summarizeBuild({models:[{model:'actual',reasoningEffort:'high'},{model:'actual',reasoningEffort:'xhigh'}]}).reasoningMixed,true);
 assert(Object.values(unknown.tokens).every(value => value === null));
 assert.equal(summarizeBuild({requestedModel: 'a-request-is-not-evidence'}).attribution, 'not-provided');
 const usage = {models:[{model:'example-model',provider:'example-provider'}], elapsedMs:0, status:'partial',

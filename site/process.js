@@ -1,4 +1,5 @@
-import {modelLabel, clientLabel, duration, tokenCount} from './build-data.js';
+import {buildLabel, effortLabel, attributionLabel, buildDate, clientLabel, duration, tokenCount} from './build-data.js';
+import {downloadBuilds} from './build-downloads.js';
 import { loadCatalog, shell, playUrl, showError } from './ui.js';
 import { createOrbitTimeline } from './process-orbit.js';
 
@@ -385,13 +386,24 @@ start().catch(error => showError(error));
 
 function renderUsage(usage) {
   const host = clear($('build-usage')), values = usage?.observedTokens || {};
+  const build = state.entry.build;
   const heading = el('div', 'usage-heading');
-  heading.append(el('h2', '', 'Build overview'), el('span', 'usage-status', ({measured:'Measured interval', partial:'Partial record', unavailable:'Usage not provided'})[usage?.status] || 'Usage not provided'));
+  const actions = el('div', 'usage-actions');
+  actions.append(el('span', 'usage-status', ({measured:'Measured interval', partial:'Partial record', unavailable:'Usage not provided'})[usage?.status] || 'Usage not provided'));
+  const downloads=el('div','build-downloads');
+  for(const format of ['csv','json']) {
+    const button=el('button','',format.toUpperCase()+' ↓'); button.type='button'; button.dataset.usageDownload=format;
+    button.addEventListener('click',()=>downloadBuilds([state.entry],{format,name:state.entry.id+'-metrics',processes:new Map([[state.entry.id,state.data]])}));
+    downloads.append(button);
+  }
+  actions.append(downloads); heading.append(el('h2', '', 'Build overview'), actions);
   const grid = el('dl', 'usage-metrics');
   const metric = (label, value) => { const cell = el('div', 'usage-metric'); cell.append(el('dt', '', label), el('dd', '', value ?? 'Not provided')); return cell; };
-  const names = [...new Set(usage?.models?.map(m => modelLabel(m.model)) || [])].join(', ') || 'Not provided';
-  grid.append(metric('Model', names), metric('Client', clientLabel(usage?.runtime)), metric('Build wall time', duration(usage?.elapsedMs)), metric('Observed total tokens', tokenCount(values.total_tokens)));
+  grid.append(metric('Model', buildLabel(build)), metric('Reasoning setting', effortLabel(build)), metric('Client', clientLabel(usage?.runtime)), metric('Build wall time', duration(usage?.elapsedMs)), metric('Observed total tokens', tokenCount(values.total_tokens)));
   host.append(heading, grid);
+  const meta=el('div','usage-session-line'); meta.append(el('span','',attributionLabel(build)));
+  if(build?.startedAt) meta.append(el('span','',`Started ${buildDate(build.startedAt)}`));
+  host.append(meta);
   const details = el('details', 'usage-details');
   details.append(el('summary', '', 'Token breakdown and provenance'));
   const columns = el('div', 'usage-detail-columns'), tokens = el('section'), sources = el('section');
@@ -402,6 +414,7 @@ function renderUsage(usage) {
   }
   tokens.append(table, el('p', 'usage-caption', 'Cache counts are included in input. Reasoning counts are included in output.'));
   sources.append(el('h3', '', 'Runtime attribution'));
+  if(build?.attributionNote) sources.append(el('p','usage-caption',build.attributionNote));
   if (!usage?.models?.length) sources.append(el('p', 'usage-caption', 'Model and provider not provided.'));
   for (const model of usage?.models || []) {
     const item = el('dl', 'usage-source');
@@ -412,5 +425,6 @@ function renderUsage(usage) {
   }
   columns.append(tokens, sources); details.append(columns);
   details.append(el('p', 'usage-scope', usage?.scope || 'No runtime usage record was captured for this historical build. Missing values are not zero.'));
+  details.append(el('p','usage-caption','Wall time covers the recorded interval. Local command records may include execution durations, but a complete breakdown into reading, design, tests and play is not recorded.'));
   host.append(details, el('p', 'usage-footnote', 'Wall time includes tools and waiting. Observed tokens are not a complete billed task total.'));
 }

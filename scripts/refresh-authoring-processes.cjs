@@ -38,7 +38,7 @@ function refreshProcesses(runsDirectory, { root = path.resolve(__dirname, '..'),
       if (original.data) { replay.data = original.data; replay.sha256 = original.sha256; }
     }
     assertPublicPrivacy(next); validatePreviewFiles(site, next);
-    entry.build = summarizeBuild(next.usage);
+    entry.build = summarizeBuild(next.usage, require('./build-metrics.cjs').readAttributions(site)[entry.id]);
     const bytes = JSON.stringify(next, null, 2) + '\n';
     assert(source?.authoringProcess, 'Missing existing process provenance');
     source.authoringRunSha256 = runIdentity(read(path.join(run.directory, 'manifest.json')));
@@ -48,7 +48,7 @@ function refreshProcesses(runsDirectory, { root = path.resolve(__dirname, '..'),
       previousNodes: previous.nodes.length, currentNodes: next.nodes.length, addedNodes: next.nodes.length - previous.nodes.length });
   }
   const bytes = JSON.stringify(provenance, null, 2) + '\n';
-  for (const entry of catalog.cases.filter(entry => entry.kind === 'authored' && !entry.process)) entry.build = summarizeBuild();
+  for (const entry of catalog.cases.filter(entry => entry.kind === 'authored' && !entry.process)) entry.build = summarizeBuild(null, require('./build-metrics.cjs').readAttributions(site)[entry.id]);
   const catalogFile = path.join(site, 'data/catalog.json'), catalogBytes = JSON.stringify(catalog, null, 2) + '\n';
   if (fs.readFileSync(catalogFile, 'utf8') !== catalogBytes) pending.push({file: catalogFile, bytes: catalogBytes});
   if (fs.readFileSync(provenanceFile, 'utf8') !== bytes) pending.push({ file: provenanceFile, bytes });

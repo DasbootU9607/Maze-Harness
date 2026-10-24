@@ -31,6 +31,20 @@ test('unknown clients have null tokens and real wall time', t => {
   const f = fixture(t, 'unknown-client', []), r = f.refresh(true);
   assert.equal(r.status, 'unavailable'); assert.equal(r.observedTokens.total_tokens, null); assert.ok(r.elapsedMs >= 0);
 });
+test('client reasoning settings are recorded independently of model identity and token totals', t => {
+  const f=fixture(t,'codex',[meta,{type:'turn_context',payload:{model:'model-a',effort:'high'}},counter(100,10)]);
+  f.append(counter(120,14)); f.append({type:'turn_context',payload:{model:'model-a',effort:'xhigh'}}); f.append(counter(150,20));
+  const report=f.refresh(true);
+  assert.deepEqual(report.models.map(row=>[row.model,row.reasoningEffort,row.tokens.total_tokens]),[['model-a','high',24],['model-a','xhigh',36]]);
+  assert.equal(report.observedTokens.total_tokens,60);
+  const summary=U.publicSummary(f.run);assert.equal(summary.models[1].reasoningEffort,'xhigh');
+  assert.equal(Date.parse(summary.finishedAt)-Date.parse(summary.startedAt),summary.elapsedMs);
+});
+test('missing or unsafe effort fields do not inherit another model setting', t => {
+  const f=fixture(t,'codex',[meta,{type:'turn_context',payload:{model:'model-a',effort:'ultra'}},counter(100,10)]);
+  f.append({type:'turn_context',payload:{model:'model-b'}});f.append(counter(110,12));
+  assert.equal(f.refresh(true).models[0].reasoningEffort,null);
+});
 test('identity mismatch and counter reset cannot produce invented complete totals', t => {
   const f = fixture(t, 'codex', [meta, counter(100, 10)]);
   f.append(counter(110, 12)); f.append(counter(2, 1));

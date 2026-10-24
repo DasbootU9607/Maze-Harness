@@ -102,7 +102,11 @@ body[data-page=process] .header-nav{font-size:14px}
 .usage-heading { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:22px; }
 .usage-heading h2 { font-size:16px; font-weight:550; letter-spacing:0; line-height:1.5; }
 .usage-status { font-size:12px; font-weight:400; color:#666; background:#f6f6f6; padding:4px 9px; border:1px solid #e8e8e8; border-radius:5px; }
-.usage-metrics { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; margin:0; }
+.usage-metrics { display:grid; grid-template-columns:1.5fr .9fr 1fr 1fr 1fr; gap:24px; margin:0; }
+.usage-actions { display:flex; align-items:center; flex-wrap:wrap; justify-content:flex-end; gap:12px; }
+.build-downloads { display:flex; gap:8px; }
+.build-downloads button { border:1px solid #ddd; border-radius:5px; padding:6px 10px; font-size:12px; color:#555; background:#fff; }
+.usage-session-line { display:flex; flex-wrap:wrap; gap:8px 24px; margin-top:19px; font-size:12px; line-height:1.7; color:#777; }
 .usage-metric { min-width:0; }
 .usage-metric dt { color:#777; font-size:14px; line-height:1.5; margin-bottom:8px; }
 .usage-metric dd { color:#242424; font-size:18px; line-height:1.5; font-weight:500; margin:0; overflow-wrap:anywhere; font-variant-numeric:tabular-nums; }

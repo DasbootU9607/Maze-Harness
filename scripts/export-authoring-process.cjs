@@ -121,7 +121,8 @@ function assertPublicPrivacy(document, identities = []) {
   fields(document, ['schemaVersion', 'caseId', 'title', 'skill', 'finalCandidateId', 'summary', 'coverage', 'nodes', 'edges', 'candidates', 'tests', 'notes', 'resources', 'operations', 'replays', 'records', 'explanations', 'usage'], 'process');
   if (document.usage) {
     const usage = document.usage;
-    fields(usage, ['schemaVersion', 'status', 'runtime', 'elapsedMs', 'scope', 'scopeComplete', 'observedTokens', 'models', 'evidenceSha256'], 'usage');
+    fields(usage, ['schemaVersion', 'status', 'runtime', 'elapsedMs', 'startedAt', 'finishedAt', 'scope', 'scopeComplete', 'observedTokens', 'models', 'evidenceSha256'], 'usage');
+    for (const key of ['startedAt', 'finishedAt']) if (usage[key] !== undefined) assert(typeof usage[key] === 'string' && /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d\.\d{3}Z$/.test(usage[key]), 'Invalid public usage timestamp');
     assert.equal(usage.schemaVersion, 2); assert.equal(usage.scopeComplete, false);
     assert(['measured', 'partial', 'unavailable'].includes(usage.status));
     assert(Number.isFinite(usage.elapsedMs) && usage.elapsedMs >= 0); hashOf(usage.evidenceSha256);
@@ -130,7 +131,10 @@ function assertPublicPrivacy(document, identities = []) {
       assert(Object.values(value).every(n => n === null || Number.isSafeInteger(n) && n >= 0));
     };
     metrics(usage.observedTokens); assert(Array.isArray(usage.models));
-    for (const model of usage.models) { fields(model, ['model', 'provider', 'tokens', 'observations'], 'usage.model'); metrics(model.tokens); }
+    for (const model of usage.models) {
+      fields(model, ['model', 'provider', 'reasoningEffort', 'tokens', 'observations'], 'usage.model'); metrics(model.tokens);
+      if (model.reasoningEffort != null) assert(typeof model.reasoningEffort === 'string' && /^[a-z][a-z0-9_-]{0,39}$/.test(model.reasoningEffort));
+    }
   }
   for (const key of ['caseId', 'title', 'skill', 'finalCandidateId', 'summary']) assert(typeof document[key] === 'string', 'Invalid public text: ' + key);
   fields(document.coverage, ['mode', 'audit', 'limitations', 'sources', 'events'], 'coverage');

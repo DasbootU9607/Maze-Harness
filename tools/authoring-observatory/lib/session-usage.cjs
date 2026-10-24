@@ -8,6 +8,7 @@ const crypto = require('node:crypto');
 const S = require('./store.cjs');
 const fields = ['input_tokens', 'cached_input_tokens', 'cache_write_input_tokens', 'output_tokens', 'reasoning_output_tokens', 'total_tokens'];
 const empty = () => Object.fromEntries(fields.map(k => [k, null]));
+const effort = value => typeof value === 'string' && /^[a-z][a-z0-9_-]{0,39}$/i.test(value) ? value.toLowerCase() : null;
 const number = n => Number.isSafeInteger(n) && n >= 0 ? n : null;
 const sum = values => values.every(v => number(v) !== null) && Number.isSafeInteger(values.reduce((a, b) => a + b, 0)) ? values.reduce((a, b) => a + b, 0) : null;
 const read = file => JSON.parse(fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, ''));
@@ -49,7 +50,7 @@ function lines(file) {
 function snapshot(binding) {
   const {runtime, file, sessionId} = binding;
   if (!file || !sessionId) throw new Error('The current client did not provide a bound session usage source.');
-  let records, issues = [], rows = [], model = null, provider = null, client = runtime;
+  let records, issues = [], rows = [], model = null, provider = null, reasoningEffort = null, client = runtime;
   if (runtime === 'gemini-cli' && file.endsWith('.json')) {
     const doc = read(file);
     if (doc.sessionId !== sessionId) throw new Error('Session identity mismatch.');
@@ -60,9 +61,9 @@ function snapshot(binding) {
     if (meta?.id !== sessionId) throw new Error('Session identity mismatch.');
     provider = meta.model_provider || null; client = meta.originator || meta.source || 'Codex';
     for (const r of records) {
-      if (r.type === 'turn_context') {model = r.payload?.model || null; provider = r.payload?.model_provider || provider;}
+      if (r.type === 'turn_context') {model = r.payload?.model || null; provider = r.payload?.model_provider || provider; reasoningEffort = effort(r.payload?.effort ?? r.payload?.reasoning_effort ?? r.payload?.reasoning?.effort);}
       if (r.type === 'event_msg' && r.payload?.type === 'token_count' && r.payload.info?.total_token_usage) {
-        rows.push({id: String(rows.length), model, provider, at: r.timestamp || null,
+        rows.push({id: String(rows.length), model, provider, reasoningEffort, at: r.timestamp || null,
           tokens: tokens(r.payload.info.total_token_usage, runtime), evidenceSha256: S.hash(r)});
       }
     }
@@ -70,7 +71,8 @@ function snapshot(binding) {
     if (!records.some(r => r.sessionId === sessionId)) throw new Error('Session identity mismatch.');
     for (const r of records) if (r.type === 'assistant' && r.sessionId === sessionId && !r.isSidechain && r.message?.id) {
       model = r.message.model || null; provider = r.message.provider || null;
-      rows.push({id: r.message.id, model, provider, at: r.timestamp || null, tokens: tokens(r.message.usage, runtime), evidenceSha256: S.hash(r)});
+      reasoningEffort = effort(r.message.reasoning_effort ?? r.reasoningEffort);
+      rows.push({id: r.message.id, model, provider, reasoningEffort, at: r.timestamp || null, tokens: tokens(r.message.usage, runtime), evidenceSha256: S.hash(r)});
     }
   } else if (runtime === 'gemini-cli') {
     if (!file.endsWith('.json') && !records.some(r => r.sessionId === sessionId)) throw new Error('Session identity mismatch.');
@@ -81,18 +83,20 @@ function snapshot(binding) {
     }
     for (const r of messages.values()) {
       model = r.model || null; provider = r.provider || null;
-      rows.push({id: r.id, model, provider, at: r.timestamp || null, tokens: tokens(r.tokens, runtime), evidenceSha256: S.hash(r)});
+      reasoningEffort = effort(r.reasoningEffort ?? r.thinkingLevel);
+      rows.push({id: r.id, model, provider, reasoningEffort, at: r.timestamp || null, tokens: tokens(r.tokens, runtime), evidenceSha256: S.hash(r)});
     }
   } else if (runtime === 'usage-jsonl') {
     if (!records.some(r => r.sessionId === sessionId)) throw new Error('Session identity mismatch.');
     for (const r of records) if (r.type === 'usage' && r.sessionId === sessionId && typeof r.requestId === 'string') {
       model = r.model || null; provider = r.provider || null;
-      rows.push({id: r.requestId, model, provider, at: r.timestamp || null, tokens: tokens(r.usage, runtime), evidenceSha256: S.hash(r)});
+      reasoningEffort = effort(r.reasoningEffort ?? r.reasoning_effort);
+      rows.push({id: r.requestId, model, provider, reasoningEffort, at: r.timestamp || null, tokens: tokens(r.usage, runtime), evidenceSha256: S.hash(r)});
     }
   } else throw new Error('No adapter is installed for this client.');
   // Streaming/repeated message snapshots replace a request, they are not separate requests.
   if (runtime !== 'codex') rows = [...new Map(rows.map(r => [r.id, r])).values()];
-  return {rows, issues, model, provider, client};
+  return {rows, issues, model, provider, reasoningEffort, client};
 }
 function discover({env = process.env, home = os.homedir(), bindingRoot = path.resolve(__dirname, '../bindings')} = {}) {
   if (env.MAZEBENCH_USAGE_LOG && env.MAZEBENCH_SESSION_ID) return {runtime: env.MAZEBENCH_USAGE_RUNTIME || 'usage-jsonl', file: path.resolve(env.MAZEBENCH_USAGE_LOG), sessionId: env.MAZEBENCH_SESSION_ID};
@@ -122,7 +126,7 @@ function begin(dir, options = {}) {
   try {initial = snapshot(binding);} catch (e) {initial.issues.push(e.message);}
   if (binding.issue) initial.issues.push(binding.issue);
   const state = {schemaVersion: 2, binding, startedAt, baseline: initial.rows, observed: [], issues: initial.issues,
-    model: initial.model, provider: initial.provider, client: initial.client, sealed: false};
+    model: initial.model, provider: initial.provider, reasoningEffort: initial.reasoningEffort, client: initial.client, sealed: false};
   atomic(file, state);
   S.updateManifest(dir, {usageReport: 'token-usage.json', usageMode: 'current-session'});
   return refresh(dir);
@@ -133,14 +137,15 @@ function aggregate(rows) {
 function reportFor(state, manifest) {
   const observedTokens = aggregate(state.observed), groups = new Map();
   for (const row of state.observed) {
-    const key = JSON.stringify([row.provider, row.model]); if (!groups.has(key)) groups.set(key, []); groups.get(key).push(row);
+    const key = JSON.stringify([row.provider, row.model, effort(row.reasoningEffort)]); if (!groups.has(key)) groups.set(key, []); groups.get(key).push(row);
   }
-  const models = [...groups.values()].map(rows => ({provider: rows[0].provider, model: rows[0].model, tokens: aggregate(rows), observations: rows.length}));
-  if (!models.length && state.model) models.push({provider: state.provider, model: state.model, tokens: empty(), observations: 0});
+  const models = [...groups.values()].map(rows => ({provider: rows[0].provider, model: rows[0].model, reasoningEffort: effort(rows[0].reasoningEffort), tokens: aggregate(rows), observations: rows.length}));
+  if (!models.length && state.model) models.push({provider: state.provider, model: state.model, reasoningEffort: effort(state.reasoningEffort), tokens: empty(), observations: 0});
+  const modelNames = [...new Set(models.map(row => row.model))];
   const end = state.finishedAt || state.updatedAt;
   return {schemaVersion: 2, runId: manifest.id, source: state.binding.runtime, runtime: state.client || null,
     status: !state.binding.file ? 'unavailable' : !state.sealed ? 'collecting' : !state.observed.length ? 'unavailable' : state.issues.length ? 'partial' : 'measured',
-    model: models.length === 1 ? models[0].model : null, models, provider: state.provider,
+    model: modelNames.length === 1 ? modelNames[0] : null, models, provider: state.provider,
     // Current assistant output and delayed usage are not available at the finish tool boundary.
     scopeComplete: false, scope: 'Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.',
     tokens: empty(), observedTokens, elapsedMs: Math.max(0, Date.parse(end) - Date.parse(manifest.createdAt)),
@@ -161,7 +166,7 @@ function refresh(dir, {finish = false} = {}) {
     if (state.sealed) {report = reportFor(state, manifest); return;}
     if (state.binding.file) try {
       for (const sibling of state.binding.siblingFiles || []) if (fs.statSync(sibling.file).mtimeMs > sibling.mtime) throw new Error('Another segment of this session changed; coverage is ambiguous.');
-      const snap = snapshot(state.binding); state.model = snap.model; state.provider = snap.provider; state.client = snap.client;
+      const snap = snapshot(state.binding); state.model = snap.model; state.provider = snap.provider; state.reasoningEffort = snap.reasoningEffort; state.client = snap.client;
       state.issues.push(...snap.issues);
       if (state.binding.runtime === 'codex') {
         const prefix = state.baseline;
@@ -188,7 +193,7 @@ function refresh(dir, {finish = false} = {}) {
     if (finish) {state.sealed = true; state.finishedAt = manifest.finishedAt || state.updatedAt;}
     atomic(file, state); report = reportFor(state, manifest);
     atomic(path.join(dir, 'token-usage.json'), report);
-    fs.writeFileSync(path.join(dir, 'token-usage.md'), ['# Authoring usage', '', `Model: ${report.models.map(m => m.model || 'Not provided').join(', ') || 'Not provided'}`, `Runtime: ${report.runtime || 'Not provided'}`, `Build wall time: ${report.elapsedMs} ms`, `Status: ${report.status}`, '', report.scope, '', ...fields.map(k => `${k}: ${report.observedTokens[k] ?? 'Not provided'}`), '', ...report.issues, '', ...report.notes, ''].join('\n'));
+    fs.writeFileSync(path.join(dir, 'token-usage.md'), ['# Authoring usage', '', `Model: ${report.models.map(m => m.model || 'Not provided').join(', ') || 'Not provided'}`, `Reasoning setting: ${report.models.map(m => m.reasoningEffort || 'Not provided').join(', ') || 'Not provided'}`, `Runtime: ${report.runtime || 'Not provided'}`, `Build wall time: ${report.elapsedMs} ms`, `Status: ${report.status}`, '', report.scope, '', ...fields.map(k => `${k}: ${report.observedTokens[k] ?? 'Not provided'}`), '', ...report.issues, '', ...report.notes, ''].join('\n'));
   });
   return report;
 }
@@ -204,8 +209,9 @@ function publicSummary(dir) {
   const report = reportFor(state, manifest);
   const label = value => typeof value === 'string' && /^[a-zA-Z0-9 ._:/()-]{1,100}$/.test(value) && !/[:][\\/]|https?:|secret|password/i.test(value) ? value : null;
   return {schemaVersion: 2, status: report.status, runtime: label(report.runtime), elapsedMs: report.elapsedMs,
+    startedAt: manifest.createdAt, finishedAt: state.finishedAt,
     scope: report.scope, scopeComplete: false, observedTokens: report.observedTokens,
-    models: report.models.map(m => ({model: label(m.model), provider: label(m.provider), tokens: m.tokens, observations: m.observations})),
+    models: report.models.map(m => ({model: label(m.model), provider: label(m.provider), reasoningEffort: m.reasoningEffort, tokens: m.tokens, observations: m.observations})),
     evidenceSha256: S.hash({startedAt: state.startedAt, finishedAt: state.finishedAt, baseline: state.baseline, observed: state.observed})};
 }
 module.exports = {fields, tokens, snapshot, discover, begin, refresh, publicSummary, reportFor};
