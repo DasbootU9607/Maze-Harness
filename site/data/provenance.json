@@ -641,6 +641,29 @@
         "cellsSha256": "38475a9decc6714a038c47a2e5b911c67f983b36cf469f0c4890b5002794d50b",
         "contractSha256": "0171f4c1365f5f8bf4b236d7e99357d3e5cccbccacc6985a3dd38d9799ca5a36"
       }
+    },
+    {
+      "id": "authored-boundary-stagger-2fbbb5d092b8",
+      "kind": "authored",
+      "originalDraftId": "draft-depth-406130b555",
+      "title": "Ceiling Tooth",
+      "sourceMapSha256": "2fbbb5d092b8d0b3cb7d567613358e5f2346fe9d14ae0695aa82fe8eb4e270df",
+      "witnessSha256": "ce8de4d8eaa28b70e449fc6a754368db8ef37e77a556d079a164ab9f6f656c58",
+      "source": "Agent-authored trial; verified design and saved draft matched before publication.",
+      "verification": {
+        "overall": "passed",
+        "profile": "planar-boundary-preparation-v2",
+        "cellsSha256": "7ca44de778b5f39d038672f015f2155428dfb54c76cd316fb6afff95eaa59384",
+        "contractSha256": "9e561f371fff934998ad9d02d782a263caa3346091018889e1b2c1bce31049db",
+        "reportSha256": "845698731afbf4bdba178970e5c23b617c425bffc783fb843bce68f3be9816ef"
+      },
+      "authoringProcess": {
+        "schemaVersion": 1,
+        "data": "data/processes/authored-boundary-stagger-2fbbb5d092b8.json",
+        "sha256": "b4653407f887ee68d81584822ad232398208ea058661254bb3e6990bfaf08041",
+        "cellsSha256": "7ca44de778b5f39d038672f015f2155428dfb54c76cd316fb6afff95eaa59384",
+        "contractSha256": "9e561f371fff934998ad9d02d782a263caa3346091018889e1b2c1bce31049db"
+      }
     }
   ],
   "directEntryPolicy": "Rooms without an authored player get a temporary arrival actor only when opened directly. Entries are open, matching floor boundaries with an ordinary legal inward move. Raw maps, exported room states, and normal doorway traversal remain unchanged.",
