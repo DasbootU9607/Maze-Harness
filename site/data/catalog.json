@@ -26,7 +26,8 @@
         "authored-boundary-stagger-2f126bf137c6",
         "authored-boundary-stagger-2f5622cc46de",
         "authored-boundary-stagger-2fbbb5d092b8",
-        "authored-boundary-stagger-46b924adfc38"
+        "authored-boundary-stagger-46b924adfc38",
+        "authored-boundary-stagger-9f926a128dd5"
       ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-boundary-stagger"
     },
@@ -1393,6 +1394,60 @@
         },
         "scopeComplete": false,
         "evidenceSha256": "f5cf4a34f66743f04dce79a53b1a904a38050cd33c378f1bbef8974192dd4093"
+      }
+    },
+    {
+      "id": "authored-boundary-stagger-9f926a128dd5",
+      "kind": "authored",
+      "title": "Shaft Gallery Door Bar",
+      "skill": "boundary-stagger",
+      "world": "authored-boundary-stagger-9f926a128dd5",
+      "room": "AxA",
+      "description": "Shift rigid groups around fixed boundaries, make room for the next move, and release the path to the gem.",
+      "thumbnail": "assets/thumbnails/authored-boundary-stagger-9f926a128dd5.png",
+      "map": "data/maps/authored-boundary-stagger-9f926a128dd5-world-map.txt",
+      "witness": "UUURRRRRRRRURLLLLUUUURRRDRLULLLDDDDRRRRURRDDDR",
+      "goal": {
+        "kind": "gem"
+      },
+      "process": {
+        "data": "data/processes/authored-boundary-stagger-9f926a128dd5.json",
+        "schemaVersion": 1
+      },
+      "build": {
+        "schemaVersion": 1,
+        "attribution": "single-model",
+        "model": "qwen3.8-max",
+        "modelBasis": "runtime-record",
+        "reasoningEffort": "xhigh",
+        "reasoningEfforts": [
+          "xhigh"
+        ],
+        "reasoningBasis": "runtime-setting",
+        "reasoningMixed": false,
+        "attributionNote": null,
+        "attributionEvidenceSha256": null,
+        "startedAt": "2026-10-24T09:32:05.565Z",
+        "finishedAt": "2026-10-24T11:24:17.188Z",
+        "models": [
+          {
+            "model": "qwen3.8-max",
+            "provider": "maze_bailian"
+          }
+        ],
+        "runtime": "codex-tui",
+        "elapsedMs": 6731623,
+        "usageStatus": "measured",
+        "tokens": {
+          "input_tokens": 14856359,
+          "cached_input_tokens": 13992064,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 231187,
+          "reasoning_output_tokens": 183375,
+          "total_tokens": 15087546
+        },
+        "scopeComplete": false,
+        "evidenceSha256": "5f37d15be82ff22c9b7df9a0c570a14b6da2043a6677ecd0edd89405badff595"
       }
     }
   ],

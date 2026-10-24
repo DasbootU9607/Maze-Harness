@@ -664,6 +664,30 @@
         "cellsSha256": "05986cabf85fa935c0c1f4c67c966e4f9d918817922dc1e0fd9362eabc4f7884",
         "contractSha256": "72a3231f334570099e7c7125b0fb470d116d85decdbd9609e7c7e5fbc9d74d40"
       }
+    },
+    {
+      "id": "authored-boundary-stagger-9f926a128dd5",
+      "kind": "authored",
+      "originalDraftId": "draft-depth-f415037c3e",
+      "title": "Shaft Gallery Door Bar",
+      "sourceMapSha256": "9f926a128dd51e3c24029bf138e60375b3d73fcf9b2507bdefaab1fc83464bce",
+      "witnessSha256": "c258f28f2e9abac5bd2e4b04c557731099d0d14907d66bb1e14e73cdf6212776",
+      "source": "Agent-authored trial; verified design and saved draft matched before publication.",
+      "verification": {
+        "overall": "passed",
+        "profile": "planar-boundary-preparation-v2",
+        "cellsSha256": "b916dc5b5f575c388ef11cf22922a49a3e90ebc470b1a8aefaa495ade6169b89",
+        "contractSha256": "44bc5573c761c65b56397af733a0e7491718b7826d046cdb8786612345bc58c0",
+        "reportSha256": "678587279e9070a702677735c0ac4bd1fbc8b759f6b6d3c6b73c236511d07627"
+      },
+      "authoringRunSha256": "4cee510b3b113c154bcb73f70d58a0324957a4b7baa7e81d7d3c8a350880fd92",
+      "authoringProcess": {
+        "schemaVersion": 1,
+        "data": "data/processes/authored-boundary-stagger-9f926a128dd5.json",
+        "sha256": "eda0f1a255b295e1492fa64d787fe39f429fc182e7c5ce090dc85fb7b83bd278",
+        "cellsSha256": "b916dc5b5f575c388ef11cf22922a49a3e90ebc470b1a8aefaa495ade6169b89",
+        "contractSha256": "44bc5573c761c65b56397af733a0e7491718b7826d046cdb8786612345bc58c0"
+      }
     }
   ],
   "directEntryPolicy": "Rooms without an authored player get a temporary arrival actor only when opened directly. Entries are open, matching floor boundaries with an ordinary legal inward move. Raw maps, exported room states, and normal doorway traversal remain unchanged.",
