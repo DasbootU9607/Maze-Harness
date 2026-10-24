@@ -25,7 +25,6 @@
         "authored-boundary-stagger",
         "authored-boundary-stagger-2f126bf137c6",
         "authored-boundary-stagger-2f5622cc46de",
-        "authored-boundary-stagger-32113b438880",
         "authored-boundary-stagger-2fbbb5d092b8",
         "authored-boundary-stagger-46b924adfc38"
       ],
@@ -1286,60 +1285,6 @@
         },
         "scopeComplete": false,
         "evidenceSha256": null
-      }
-    },
-    {
-      "id": "authored-boundary-stagger-32113b438880",
-      "kind": "authored",
-      "title": "Switchback Foundry",
-      "skill": "boundary-stagger",
-      "world": "authored-boundary-stagger-32113b438880",
-      "room": "AxA",
-      "description": "Shift rigid groups around fixed boundaries, make room for the next move, and release the path to the gem.",
-      "thumbnail": "assets/thumbnails/authored-boundary-stagger-32113b438880.png",
-      "map": "data/maps/authored-boundary-stagger-32113b438880-world-map.txt",
-      "witness": "ULLUURUULLDLRURRDDDDDLLLULLL",
-      "goal": {
-        "kind": "gem"
-      },
-      "process": {
-        "data": "data/processes/authored-boundary-stagger-32113b438880.json",
-        "schemaVersion": 1
-      },
-      "build": {
-        "schemaVersion": 1,
-        "attribution": "single-model",
-        "model": "gpt-6-astra",
-        "modelBasis": "runtime-record",
-        "reasoningEffort": "xhigh",
-        "reasoningEfforts": [
-          "xhigh"
-        ],
-        "reasoningBasis": "runtime-setting",
-        "reasoningMixed": false,
-        "attributionNote": "Reasoning setting from the bound client session. This records client configuration, not proof of the provider's internal reasoning depth.",
-        "attributionEvidenceSha256": "e6352329dc97ad309df3d6c171667357e30b36f4dbf9b15d77fde6cb9eaf813f",
-        "startedAt": "2026-10-23T08:22:16.803Z",
-        "finishedAt": "2026-10-23T08:28:32.252Z",
-        "models": [
-          {
-            "model": "gpt-6-astra",
-            "provider": "openai"
-          }
-        ],
-        "runtime": "Codex Desktop",
-        "elapsedMs": 375449,
-        "usageStatus": "measured",
-        "tokens": {
-          "input_tokens": 2288267,
-          "cached_input_tokens": 2244352,
-          "cache_write_input_tokens": 0,
-          "output_tokens": 9177,
-          "reasoning_output_tokens": 2783,
-          "total_tokens": 2297444
-        },
-        "scopeComplete": false,
-        "evidenceSha256": "b8f35a175ef625c53f7b38979c70f6554bc9387f4778c626ad73930def21a85f"
       }
     },
     {

@@ -1,7 +1,0 @@
-# Switchback Foundry
-
-This current-session construction validates passive authoring telemetry without invoking another model. It extends the earlier authored Offset Foundry with a necessary two-member shared-access guard and a four-stage preparation chain. The record includes actual skill, extracted mechanism, original HxH case and contract reads, four candidate snapshots, two unknown contract attempts, a successful 26-check structural verification, and an actual official 3D browser playthrough with 28 inputs and 29 observed frames. Undo and Reset passed. A separately replayed 17-input alternative establishes that upward gate movement is not uniquely required. Input counts are witness lengths, not difficulty scores.
-
-The runtime identified `gpt-6-astra` in Codex Desktop. The sealed observed interval contains 2,288,267 input tokens (2,244,352 cached), 9,177 output tokens (2,783 reasoning), and 2,297,444 total tokens, with 375,449 ms of build wall time. These are reported usage increments, not estimates; cache and reasoning are included subsets. The in-flight final response and delayed usage are excluded. This is not a complete billed-task total.
-
-The run was performed by the current authoring session. Claude Code, Gemini CLI and the generic usage adapter have protocol-fixture tests; this case does not claim live maze construction by those other models. Closed clients without exposed usage remain unavailable. Public data contains only allowlisted model/usage summaries, map revisions and evidence projections.

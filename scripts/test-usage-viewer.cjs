@@ -3,10 +3,16 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const args = process.argv.slice(2), get = name => {const i = args.indexOf('--' + name); return i < 0 ? undefined : args[i + 1];};
-const root = path.resolve(__dirname, '..'), caseId = 'authored-boundary-stagger-32113b438880';
+const root = path.resolve(__dirname, '..');
+const catalog = JSON.parse(fs.readFileSync(path.join(root, 'site/data/catalog.json')));
+const entry = catalog.cases.find(row => row.process && row.build?.usageStatus === 'measured' && row.build?.model === 'gpt-6-astra');
+assert(entry, 'Need a published measured Astra build');
+const caseId = entry.id;
 const {chromium} = require(require.resolve('playwright-core', {paths: [path.resolve(get('engine'))]}));
 const output = path.resolve(get('out') || path.join(root, 'outputs/usage-viewer'));
-const expected = JSON.parse(fs.readFileSync(path.join(root, 'site/data/processes', caseId + '.json'))).usage;
+const record = JSON.parse(fs.readFileSync(path.join(root, 'site', entry.process.data)));
+const expected = record.usage;
+const count = field => expected.observedTokens[field].toLocaleString('en-US');
 (async () => {
   fs.mkdirSync(output, {recursive: true});
   const browser = await chromium.launch({channel: 'chrome', headless: true, args: ['--enable-unsafe-swiftshader']});
@@ -15,13 +21,13 @@ const expected = JSON.parse(fs.readFileSync(path.join(root, 'site/data/processes
     const page = await browser.newPage({viewport: {width: 1440, height: 1050}, reducedMotion: 'reduce'});
     page.on('pageerror', e => result.errors.push(e.message));
     const base = get('base-url') || 'http://127.0.0.1:62760/Maze-Harness/';
-    await page.goto(base + 'process.html?case=' + caseId + '&node=candidate-v004');
+    await page.goto(base + 'process.html?case=' + caseId + '&node=candidate-' + record.finalCandidateId);
     await page.locator('#build-usage .usage-metric').first().waitFor();
-    assert.match(await page.locator('#build-usage').innerText(), /gpt-6-astra/);
-    assert.match(await page.locator('#build-usage').innerText(), /2,297,444/);
+    assert.match(await page.locator('#build-usage').innerText(), /ChatGPT 6 Astra/);
+    assert((await page.locator('#build-usage').innerText()).includes(count('total_tokens')));
     await page.locator('.usage-details summary').click();
     assert.match(await page.locator('#build-usage').innerText(), /observed interval/);
-    assert.match(await page.locator('#build-usage').innerText(), /2,244,352/);
+    assert((await page.locator('#build-usage').innerText()).includes(count('cached_input_tokens')));
     await page.locator('.usage-details summary').click();
     const response = await page.request.get(base + 'data/processes/' + caseId + '.json');
     const data = await response.json(); assert.deepEqual(data.usage, expected);
@@ -39,12 +45,16 @@ const expected = JSON.parse(fs.readFileSync(path.join(root, 'site/data/processes
     await page.locator('#build-usage .usage-metric').first().waitFor();
     assert.match(await page.locator('#build-usage').innerText(), /Not provided/);
     if (!get('base-url')) {
-      await page.goto('http://127.0.0.1:62760/?run=auto-20261023082216800-aa45ba');
-      await page.waitForFunction(() => document.querySelector('#run-title')?.textContent === 'Switchback Foundry');
+      const localBase = get('local-url') || 'http://127.0.0.1:62760/';
+      const {runs} = await (await page.request.get(localBase + 'api/runs')).json();
+      const run = runs.find(row => row.processUrl && new URL(row.processUrl, localBase).searchParams.get('case') === caseId);
+      assert(run, 'Published measured build must be available in the local viewer');
+      await page.goto(localBase + '?run=' + encodeURIComponent(run.id));
+      await page.waitForFunction(title => document.querySelector('#run-title')?.textContent === title, run.title || run.id);
       assert.match(await page.locator('#token-usage-values').innerText(), /gpt-6-astra/);
-      assert.match(await page.locator('#token-usage-values').innerText(), /2,297,444/);
+      assert((await page.locator('#token-usage-values').innerText()).includes(count('total_tokens')));
       const linked = new URL(await page.locator('#process-link').getAttribute('href'), page.url());
-      assert.equal(linked.pathname, '/Maze-Harness/process.html'); assert.equal(linked.searchParams.get('case'), caseId); assert.equal(linked.searchParams.get('candidate'), 'v004');
+      assert.equal(linked.pathname, '/Maze-Harness/process.html'); assert.equal(linked.searchParams.get('case'), caseId); assert.equal(linked.searchParams.get('candidate'), record.finalCandidateId);
       await page.screenshot({path: path.join(output, 'local-usage.png'), fullPage: true}); result.local = true;
     }
     assert.deepEqual(result.errors, []); result.passed = true;

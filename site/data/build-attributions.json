@@ -97,15 +97,6 @@
       "basis": "user-confirmed",
       "note": "Historical model and reasoning setting confirmed by the project owner; token usage and time were not supplied by this confirmation."
     },
-    "authored-boundary-stagger-32113b438880": {
-      "reasoningEffort": "xhigh",
-      "basis": "runtime-setting",
-      "note": "Reasoning setting from the bound client session. This records client configuration, not proof of the provider's internal reasoning depth.",
-      "evidenceSha256": "e6352329dc97ad309df3d6c171667357e30b36f4dbf9b15d77fde6cb9eaf813f",
-      "startedAt": "2026-10-23T08:22:16.803Z",
-      "finishedAt": "2026-10-23T08:28:32.252Z",
-      "model": "gpt-6-astra"
-    },
     "authored-boundary-stagger-2fbbb5d092b8": {
       "reasoningEffort": "xhigh",
       "basis": "runtime-setting",
