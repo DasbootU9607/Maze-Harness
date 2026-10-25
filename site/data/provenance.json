@@ -736,6 +736,30 @@
         "cellsSha256": "b563674f0d709c4204f51df941e660e51a627f8433df0b73228575397af23b1d",
         "contractSha256": "5aff9934fbe9b7f513e6b4e3b205054c136fb5039440ac4cec8c1df247a86900"
       }
+    },
+    {
+      "id": "authored-hook-transfer-e680f2fa65a5",
+      "kind": "authored",
+      "originalDraftId": "draft-depth-dea0324508",
+      "title": "Sluice gate over the void flanks",
+      "sourceMapSha256": "e680f2fa65a57f5a712713b636ca69c6046558dc627cedcd10ae146d52dd09d5",
+      "witnessSha256": "e75c388ac165f18433d40bb14a666b1abd2a011516ec9e70010bff42b954c8f8",
+      "source": "Agent-authored trial; verified design and saved draft matched before publication.",
+      "verification": {
+        "overall": "passed",
+        "profile": "planar-hook-depth-v2",
+        "cellsSha256": "8955b8e8ca15f208a59c9009cf4e9a53b1c07c59d38a52aa2e68cabf4e20c4ba",
+        "contractSha256": "06eb6fa9838b27bf47530da0961eb5f11e696ef129016491003a48a209ebb060",
+        "reportSha256": "3ffad67435bc8681cda1211d6d8b2f745ff1ba2ab5b5b3fcfa3f5dbc22bc1ea3"
+      },
+      "authoringRunSha256": "72e105fadc98ce79a105d27c52ce31c5a14b178f253ba8bd4ec852da045fc0f9",
+      "authoringProcess": {
+        "schemaVersion": 1,
+        "data": "data/processes/authored-hook-transfer-e680f2fa65a5.json",
+        "sha256": "b3decc361fb6394c2088451405f0b53311df5558e18599c9a11d0dd103c917ed",
+        "cellsSha256": "8955b8e8ca15f208a59c9009cf4e9a53b1c07c59d38a52aa2e68cabf4e20c4ba",
+        "contractSha256": "06eb6fa9838b27bf47530da0961eb5f11e696ef129016491003a48a209ebb060"
+      }
     }
   ],
   "directEntryPolicy": "Rooms without an authored player get a temporary arrival actor only when opened directly. Entries are open, matching floor boundaries with an ordinary legal inward move. Raw maps, exported room states, and normal doorway traversal remain unchanged.",

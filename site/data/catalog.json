@@ -57,7 +57,8 @@
         "authored-hook-transfer-1bf88985df5b",
         "authored-hook-transfer-5e3a324db881",
         "authored-hook-transfer-c59e9e846a22",
-        "authored-hook-transfer-3e5c9a02ab20"
+        "authored-hook-transfer-3e5c9a02ab20",
+        "authored-hook-transfer-e680f2fa65a5"
       ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-hook-transfer"
     },
@@ -1568,6 +1569,65 @@
         },
         "scopeComplete": false,
         "evidenceSha256": "25954a2385edc256c7e14e5d3066d3d344df8f07a3bb969d88f8f6d8b0b18e9e"
+      }
+    },
+    {
+      "id": "authored-hook-transfer-e680f2fa65a5",
+      "kind": "authored",
+      "title": "Sluice gate over the void flanks",
+      "skill": "hook-transfer",
+      "world": "authored-hook-transfer-e680f2fa65a5",
+      "room": "AxA",
+      "description": "Line up the offset tool, transfer a push to the restricted target, and keep working to reach the gem.",
+      "thumbnail": "assets/thumbnails/authored-hook-transfer-e680f2fa65a5.png",
+      "map": "data/maps/authored-hook-transfer-e680f2fa65a5-world-map.txt",
+      "witness": "LLLLLLLLUURRRRDDRUUURUULDDLLLUURRUULUUULLLL",
+      "goal": {
+        "kind": "reach",
+        "cell": [
+          3,
+          3,
+          0
+        ]
+      },
+      "process": {
+        "data": "data/processes/authored-hook-transfer-e680f2fa65a5.json",
+        "schemaVersion": 1
+      },
+      "build": {
+        "schemaVersion": 1,
+        "attribution": "single-model",
+        "model": "qwen3.8-max",
+        "modelBasis": "runtime-record",
+        "reasoningEffort": "xhigh",
+        "reasoningEfforts": [
+          "xhigh"
+        ],
+        "reasoningBasis": "runtime-setting",
+        "reasoningMixed": false,
+        "attributionNote": null,
+        "attributionEvidenceSha256": null,
+        "startedAt": "2026-10-25T13:12:54.106Z",
+        "finishedAt": "2026-10-25T17:33:35.521Z",
+        "models": [
+          {
+            "model": "qwen3.8-max",
+            "provider": "maze_bailian"
+          }
+        ],
+        "runtime": "codex-tui",
+        "elapsedMs": 15641415,
+        "usageStatus": "measured",
+        "tokens": {
+          "input_tokens": 20976283,
+          "cached_input_tokens": 19377024,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 421582,
+          "reasoning_output_tokens": 356445,
+          "total_tokens": 21397865
+        },
+        "scopeComplete": false,
+        "evidenceSha256": "dd0e7f980505ae7c3633a4eab958ad6d7cacaf605bfcdc5ba20091d099e537f7"
       }
     }
   ],
