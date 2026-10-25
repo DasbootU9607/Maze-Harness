@@ -712,6 +712,30 @@
         "cellsSha256": "2a378e8fc64b6f00e277a648bdc1c4b076e01a82f3707c0f6e3d725a61176737",
         "contractSha256": "7b6b8be5f21b9f9df563bd84a43ada252067fa3fb41cff8c4342fe9ebc315366"
       }
+    },
+    {
+      "id": "authored-hook-transfer-3e5c9a02ab20",
+      "kind": "authored",
+      "originalDraftId": "draft-depth-7fd80d2472",
+      "title": "Crossbar Hook and Pocket Gate",
+      "sourceMapSha256": "3e5c9a02ab205c427189427e83b0e0f1cb64f351bbfef946f0e3a70c92319006",
+      "witnessSha256": "be5095c728ff9f74464c1896dc604be567c6d543396bb52553ea79bac1c66edc",
+      "source": "Agent-authored trial; verified design and saved draft matched before publication.",
+      "verification": {
+        "overall": "passed",
+        "profile": "planar-hook-depth-v2",
+        "cellsSha256": "b563674f0d709c4204f51df941e660e51a627f8433df0b73228575397af23b1d",
+        "contractSha256": "5aff9934fbe9b7f513e6b4e3b205054c136fb5039440ac4cec8c1df247a86900",
+        "reportSha256": "ba00e86569c2967bf077a93cd8dab3ec876ecece37fc78d05de1a64e7caef5b8"
+      },
+      "authoringRunSha256": "fa49bbc21661c4882ec7de313d1e53dcf652d3d13bea6740abd749ae945244ea",
+      "authoringProcess": {
+        "schemaVersion": 1,
+        "data": "data/processes/authored-hook-transfer-3e5c9a02ab20.json",
+        "sha256": "24fc0ef335cdcaf8fef5ce414b3fbc51223e5a10b690dd28aac57e288f7868dc",
+        "cellsSha256": "b563674f0d709c4204f51df941e660e51a627f8433df0b73228575397af23b1d",
+        "contractSha256": "5aff9934fbe9b7f513e6b4e3b205054c136fb5039440ac4cec8c1df247a86900"
+      }
     }
   ],
   "directEntryPolicy": "Rooms without an authored player get a temporary arrival actor only when opened directly. Entries are open, matching floor boundaries with an ordinary legal inward move. Raw maps, exported room states, and normal doorway traversal remain unchanged.",

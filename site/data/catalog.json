@@ -56,7 +56,8 @@
         "authored-hook-transfer",
         "authored-hook-transfer-1bf88985df5b",
         "authored-hook-transfer-5e3a324db881",
-        "authored-hook-transfer-c59e9e846a22"
+        "authored-hook-transfer-c59e9e846a22",
+        "authored-hook-transfer-3e5c9a02ab20"
       ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-hook-transfer"
     },
@@ -1508,6 +1509,65 @@
         },
         "scopeComplete": false,
         "evidenceSha256": "a2284718f7197710ee36309d00c9189615d8c978ebb99093737f345e3889f563"
+      }
+    },
+    {
+      "id": "authored-hook-transfer-3e5c9a02ab20",
+      "kind": "authored",
+      "title": "Crossbar Hook and Pocket Gate",
+      "skill": "hook-transfer",
+      "world": "authored-hook-transfer-3e5c9a02ab20",
+      "room": "AxA",
+      "description": "Line up the offset tool, transfer a push to the restricted target, and keep working to reach the gem.",
+      "thumbnail": "assets/thumbnails/authored-hook-transfer-3e5c9a02ab20.png",
+      "map": "data/maps/authored-hook-transfer-3e5c9a02ab20-world-map.txt",
+      "witness": "UUUULUURDRRRDRDRUR",
+      "goal": {
+        "kind": "reach",
+        "cell": [
+          11,
+          9,
+          0
+        ]
+      },
+      "process": {
+        "data": "data/processes/authored-hook-transfer-3e5c9a02ab20.json",
+        "schemaVersion": 1
+      },
+      "build": {
+        "schemaVersion": 1,
+        "attribution": "single-model",
+        "model": "deepseek-v4.1-flash-1017",
+        "modelBasis": "runtime-record",
+        "reasoningEffort": "max",
+        "reasoningEfforts": [
+          "max"
+        ],
+        "reasoningBasis": "runtime-setting",
+        "reasoningMixed": false,
+        "attributionNote": null,
+        "attributionEvidenceSha256": null,
+        "startedAt": "2026-10-25T13:12:43.281Z",
+        "finishedAt": "2026-10-25T16:05:35.107Z",
+        "models": [
+          {
+            "model": "deepseek-v4.1-flash-1017",
+            "provider": "maze_bailian"
+          }
+        ],
+        "runtime": "codex-tui",
+        "elapsedMs": 10371826,
+        "usageStatus": "measured",
+        "tokens": {
+          "input_tokens": 37108355,
+          "cached_input_tokens": 34185728,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 773067,
+          "reasoning_output_tokens": 507180,
+          "total_tokens": 37881422
+        },
+        "scopeComplete": false,
+        "evidenceSha256": "25954a2385edc256c7e14e5d3066d3d344df8f07a3bb969d88f8f6d8b0b18e9e"
       }
     }
   ],

@@ -1,0 +1,4915 @@
+{
+  "schemaVersion": 1,
+  "caseId": "authored-hook-transfer-3e5c9a02ab20",
+  "title": "Crossbar Hook and Pocket Gate",
+  "skill": "hook-transfer",
+  "finalCandidateId": "v001",
+  "summary": "1 recorded candidates, 1 tests, 5 failed diagnostics, and 1 agent annotations.",
+  "coverage": {
+    "mode": "observed",
+    "audit": {
+      "status": "passed",
+      "failed": 0,
+      "unknown": 0
+    },
+    "sources": {
+      "directOriginalCaseRead": "recorded",
+      "originalCaseResourceIds": [
+        "r006",
+        "r007",
+        "r008",
+        "r015",
+        "r016",
+        "r021",
+        "r022"
+      ],
+      "indirect": [],
+      "scope": "Direct reading is reported only for captured read events. A source named by a skill is indirect provenance, not evidence that this run opened or used the original case."
+    },
+    "limitations": [
+      "Only recorded operations and saved snapshots are shown; transient in-memory drafts and unrecorded activity remain unknown.",
+      "Snapshot parent links show recorded version order, not proof of causal reasoning. No unrecorded branches or merges are reconstructed.",
+      "Agent annotations are concise explanations, not internal thought transcripts. Recorded resource delivery does not prove comprehension or use.",
+      "Test outcomes retain their own scope. Author self-tests do not establish independent-agent effectiveness or human difficulty.",
+      "Automatic CLI boundaries record supported build and verification commands. Other commands and resource reads require the skill observer helper.",
+      "Snapshots describe saved versions at operation boundaries, not every editor keystroke. Design notes are author statements, not internal reasoning.",
+      "A started task remains running until the author records finish. An interrupted task may therefore remain open."
+    ],
+    "events": {
+      "sourceCount": 52,
+      "representedCount": 52,
+      "sequenceSha256": "389a1c5af110c034c4d34da7417fa084ebc96f04575d49016ed5c36864c12a9b",
+      "types": [
+        {
+          "type": "artifact.saved",
+          "count": 1
+        },
+        {
+          "type": "build.saved",
+          "count": 1
+        },
+        {
+          "type": "candidate.saved",
+          "count": 1
+        },
+        {
+          "type": "collector.started",
+          "count": 1
+        },
+        {
+          "type": "command.completed",
+          "count": 10
+        },
+        {
+          "type": "command.started",
+          "count": 10
+        },
+        {
+          "type": "design.note",
+          "count": 1
+        },
+        {
+          "type": "resource.read",
+          "count": 23
+        },
+        {
+          "type": "run.created",
+          "count": 1
+        },
+        {
+          "type": "run.finished",
+          "count": 1
+        },
+        {
+          "type": "skill.attached",
+          "count": 1
+        },
+        {
+          "type": "test.completed",
+          "count": 1
+        }
+      ]
+    }
+  },
+  "nodes": [
+    {
+      "id": "event-e000001",
+      "kind": "record",
+      "label": "Start authoring run",
+      "status": "neutral",
+      "order": 1,
+      "eventId": "e000001",
+      "eventType": "run.created",
+      "summary": "The recorder opened this authoring run. This does not establish an empty prior conversation context.",
+      "details": {
+        "recordId": "event-e000001",
+        "candidateId": null,
+        "eventType": "run.created"
+      }
+    },
+    {
+      "id": "event-e000002",
+      "kind": "record",
+      "label": "Start automatic capture",
+      "status": "neutral",
+      "order": 2,
+      "eventId": "e000002",
+      "eventType": "collector.started",
+      "summary": "The automatic collector started. Recorded command boundaries, reads and saved artifacts are shown in sequence.",
+      "details": {
+        "recordId": "event-e000002",
+        "candidateId": null,
+        "eventType": "collector.started"
+      }
+    },
+    {
+      "id": "resource-snapshot-e000003",
+      "kind": "resource",
+      "label": "Skill attached: mazebench-hook-transfer/SKILL.md",
+      "status": "neutral",
+      "order": 3,
+      "summary": "Skill version captured as a dependency. This event does not record a reading.",
+      "details": {
+        "resourceId": "snapshot-e000003",
+        "displayPath": "mazebench-hook-transfer/SKILL.md",
+        "sha256": "2aa4da284279652c967b7f619df2322f60e5b2d3e375d3ce4d10e69b622fbfe7",
+        "kind": "skill",
+        "delivery": "snapshot"
+      },
+      "eventId": "e000003",
+      "eventType": "skill.attached"
+    },
+    {
+      "id": "resource-r001",
+      "kind": "resource",
+      "label": "mechanism-logic.md",
+      "status": "neutral",
+      "order": 4,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r001",
+        "displayPath": "mazebench-hook-transfer/references/mechanism-logic.md",
+        "sha256": "7dace0cba93c48cbca55a6f429b993220e516e18064c52c8f8a0876aefa41f08",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000004",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r002",
+      "kind": "resource",
+      "label": "planning-depth.md",
+      "status": "neutral",
+      "order": 5,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r002",
+        "displayPath": "mazebench-hook-transfer/references/planning-depth.md",
+        "sha256": "a2a586bfcdb3e89f97d4338e6e4084ebbf5e08da6fbcef899412f5876595de21",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000005",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r003",
+      "kind": "resource",
+      "label": "complex-validation.md",
+      "status": "neutral",
+      "order": 6,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r003",
+        "displayPath": "mazebench-hook-transfer/references/complex-validation.md",
+        "sha256": "42971d1f8ec2b97904dbdfe8aa91c32b48be176610120ba16378fe2f2eb73369",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000006",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r004",
+      "kind": "resource",
+      "label": "design.md",
+      "status": "neutral",
+      "order": 7,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r004",
+        "displayPath": "mazebench-hook-transfer/references/design.md",
+        "sha256": "1ae8cd45b040b56eaa08faedb57ba28a1750a1e223e02f25c71dfab6a26f9abf",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000007",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r005",
+      "kind": "resource",
+      "label": "verification.md",
+      "status": "neutral",
+      "order": 8,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r005",
+        "displayPath": "mazebench-hook-transfer/references/verification.md",
+        "sha256": "daf043e74815d0e20388d5d98479ef6942c4be934a9f48852610d4c7c8fb43cb",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000008",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r006",
+      "kind": "resource",
+      "label": "official-case.md",
+      "status": "neutral",
+      "order": 9,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r006",
+        "displayPath": "mazebench-hook-transfer/references/official-case.md",
+        "sha256": "8cb85228fe706a35e7800358301d8eaeb60d4f4b8abc0e3c5a78c8ef17cd976f",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000009",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r007",
+      "kind": "resource",
+      "label": "official-fxe-case.md",
+      "status": "neutral",
+      "order": 10,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r007",
+        "displayPath": "mazebench-hook-transfer/references/official-fxe-case.md",
+        "sha256": "ad93227e7c9960031ee2bd42411904495454211e7df63abebb80d64b3014e3f0",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000010",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r008",
+      "kind": "resource",
+      "label": "official-fxg-case.md",
+      "status": "neutral",
+      "order": 11,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r008",
+        "displayPath": "mazebench-hook-transfer/references/official-fxg-case.md",
+        "sha256": "177581c7b25baa89b1d1595d2fed85685baf78e72f1371c94152ffc78b24933d",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000011",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r009",
+      "kind": "resource",
+      "label": "reference-library.md",
+      "status": "neutral",
+      "order": 12,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r009",
+        "displayPath": "mazebench-hook-transfer/references/reference-library.md",
+        "sha256": "5be76620119e51db66f9e650d1ee57c4e4475c7914507b3680900cfa866745e3",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000012",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r010",
+      "kind": "resource",
+      "label": "difficulty.md",
+      "status": "neutral",
+      "order": 13,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r010",
+        "displayPath": "mazebench-hook-transfer/references/difficulty.md",
+        "sha256": "08fee6d8a9ec95a0795957e3fe04e6fba570110af5eca35b48b2f33cc2c05ca7",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000013",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "event-e000014",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 14,
+      "eventId": "e000014",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000014",
+        "candidateId": null,
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "test-diagnostic-e000014",
+      "kind": "test",
+      "label": "node",
+      "status": "failed",
+      "order": 15,
+      "summary": "The diagnostic command ended with exit code 1. Its saved output and subsequent diagnosis explain the result; this status alone is not a mechanism-test verdict.",
+      "details": {
+        "testId": "diagnostic-e000014",
+        "candidateId": null,
+        "category": "diagnostic",
+        "binding": "observed-command-association"
+      },
+      "eventId": "e000015",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "resource-r011",
+      "kind": "resource",
+      "label": "mechanism-logic.md",
+      "status": "neutral",
+      "order": 16,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r011",
+        "displayPath": "mazebench-hook-transfer/references/mechanism-logic.md",
+        "sha256": "7dace0cba93c48cbca55a6f429b993220e516e18064c52c8f8a0876aefa41f08",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000016",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r012",
+      "kind": "resource",
+      "label": "planning-depth.md",
+      "status": "neutral",
+      "order": 17,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r012",
+        "displayPath": "mazebench-hook-transfer/references/planning-depth.md",
+        "sha256": "a2a586bfcdb3e89f97d4338e6e4084ebbf5e08da6fbcef899412f5876595de21",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000017",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r013",
+      "kind": "resource",
+      "label": "complex-validation.md",
+      "status": "neutral",
+      "order": 18,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r013",
+        "displayPath": "mazebench-hook-transfer/references/complex-validation.md",
+        "sha256": "42971d1f8ec2b97904dbdfe8aa91c32b48be176610120ba16378fe2f2eb73369",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000018",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r014",
+      "kind": "resource",
+      "label": "design.md",
+      "status": "neutral",
+      "order": 19,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r014",
+        "displayPath": "mazebench-hook-transfer/references/design.md",
+        "sha256": "1ae8cd45b040b56eaa08faedb57ba28a1750a1e223e02f25c71dfab6a26f9abf",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000019",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r015",
+      "kind": "resource",
+      "label": "official-case.md",
+      "status": "neutral",
+      "order": 20,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r015",
+        "displayPath": "mazebench-hook-transfer/references/official-case.md",
+        "sha256": "8cb85228fe706a35e7800358301d8eaeb60d4f4b8abc0e3c5a78c8ef17cd976f",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000020",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r016",
+      "kind": "resource",
+      "label": "official-fxe-case.md",
+      "status": "neutral",
+      "order": 21,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r016",
+        "displayPath": "mazebench-hook-transfer/references/official-fxe-case.md",
+        "sha256": "ad93227e7c9960031ee2bd42411904495454211e7df63abebb80d64b3014e3f0",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000021",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r017",
+      "kind": "resource",
+      "label": "verification.md",
+      "status": "neutral",
+      "order": 22,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r017",
+        "displayPath": "mazebench-hook-transfer/references/verification.md",
+        "sha256": "daf043e74815d0e20388d5d98479ef6942c4be934a9f48852610d4c7c8fb43cb",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000022",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r018",
+      "kind": "resource",
+      "label": "reference-library.md",
+      "status": "neutral",
+      "order": 23,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r018",
+        "displayPath": "mazebench-hook-transfer/references/reference-library.md",
+        "sha256": "5be76620119e51db66f9e650d1ee57c4e4475c7914507b3680900cfa866745e3",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000023",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r019",
+      "kind": "resource",
+      "label": "difficulty.md",
+      "status": "neutral",
+      "order": 24,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r019",
+        "displayPath": "mazebench-hook-transfer/references/difficulty.md",
+        "sha256": "08fee6d8a9ec95a0795957e3fe04e6fba570110af5eca35b48b2f33cc2c05ca7",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000024",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r020",
+      "kind": "resource",
+      "label": "mechanism-logic.md",
+      "status": "neutral",
+      "order": 25,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r020",
+        "displayPath": "mazebench-hook-transfer/references/mechanism-logic.md",
+        "sha256": "7dace0cba93c48cbca55a6f429b993220e516e18064c52c8f8a0876aefa41f08",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000025",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r021",
+      "kind": "resource",
+      "label": "official-fxg-case.md",
+      "status": "neutral",
+      "order": 26,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r021",
+        "displayPath": "mazebench-hook-transfer/references/official-fxg-case.md",
+        "sha256": "177581c7b25baa89b1d1595d2fed85685baf78e72f1371c94152ffc78b24933d",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000026",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r022",
+      "kind": "resource",
+      "label": "official-fxe-case.md",
+      "status": "neutral",
+      "order": 27,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r022",
+        "displayPath": "mazebench-hook-transfer/references/official-fxe-case.md",
+        "sha256": "ad93227e7c9960031ee2bd42411904495454211e7df63abebb80d64b3014e3f0",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000027",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "event-e000028",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 28,
+      "eventId": "e000028",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000028",
+        "candidateId": null,
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000028",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 29,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000028",
+        "candidateId": null,
+        "inputCandidateId": null,
+        "outputCandidateId": null,
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000029",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "event-e000030",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 30,
+      "eventId": "e000030",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000030",
+        "candidateId": null,
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "test-diagnostic-e000030",
+      "kind": "test",
+      "label": "node",
+      "status": "failed",
+      "order": 31,
+      "summary": "The diagnostic command ended with exit code 1. Its saved output and subsequent diagnosis explain the result; this status alone is not a mechanism-test verdict.",
+      "details": {
+        "testId": "diagnostic-e000030",
+        "candidateId": null,
+        "category": "diagnostic",
+        "binding": "observed-command-association"
+      },
+      "eventId": "e000031",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "event-e000032",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 32,
+      "eventId": "e000032",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000032",
+        "candidateId": null,
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "test-diagnostic-e000032",
+      "kind": "test",
+      "label": "node",
+      "status": "failed",
+      "order": 33,
+      "summary": "The diagnostic command ended with exit code 1. Its saved output and subsequent diagnosis explain the result; this status alone is not a mechanism-test verdict.",
+      "details": {
+        "testId": "diagnostic-e000032",
+        "candidateId": null,
+        "category": "diagnostic",
+        "binding": "observed-command-association"
+      },
+      "eventId": "e000033",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "event-e000034",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 34,
+      "eventId": "e000034",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000034",
+        "candidateId": null,
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "test-diagnostic-e000034",
+      "kind": "test",
+      "label": "node",
+      "status": "failed",
+      "order": 35,
+      "summary": "The diagnostic command ended with exit code 1. Its saved output and subsequent diagnosis explain the result; this status alone is not a mechanism-test verdict.",
+      "details": {
+        "testId": "diagnostic-e000034",
+        "candidateId": null,
+        "category": "diagnostic",
+        "binding": "observed-command-association"
+      },
+      "eventId": "e000035",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "event-e000036",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 36,
+      "eventId": "e000036",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000036",
+        "candidateId": null,
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000036",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 37,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000036",
+        "candidateId": null,
+        "inputCandidateId": null,
+        "outputCandidateId": null,
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000037",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "event-e000038",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 38,
+      "eventId": "e000038",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000038",
+        "candidateId": null,
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "test-diagnostic-e000038",
+      "kind": "test",
+      "label": "node",
+      "status": "failed",
+      "order": 39,
+      "summary": "The diagnostic command ended with exit code 1. Its saved output and subsequent diagnosis explain the result; this status alone is not a mechanism-test verdict.",
+      "details": {
+        "testId": "diagnostic-e000038",
+        "candidateId": null,
+        "category": "diagnostic",
+        "binding": "observed-command-association"
+      },
+      "eventId": "e000039",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "event-e000040",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 40,
+      "eventId": "e000040",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000040",
+        "candidateId": null,
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000040",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 41,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000040",
+        "candidateId": null,
+        "inputCandidateId": null,
+        "outputCandidateId": null,
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000041",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "resource-r023",
+      "kind": "resource",
+      "label": "mechanism-logic.md",
+      "status": "neutral",
+      "order": 42,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r023",
+        "displayPath": "mazebench-hook-transfer/references/mechanism-logic.md",
+        "sha256": "7dace0cba93c48cbca55a6f429b993220e516e18064c52c8f8a0876aefa41f08",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000042",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "candidate-v001",
+      "kind": "candidate",
+      "label": "v001 · Crossbar Hook and Pocket Gate",
+      "status": "neutral",
+      "order": 43,
+      "summary": "0 changed cells; 256 added; 0 removed.",
+      "details": {
+        "candidateId": "v001",
+        "cellsSha256": "b563674f0d709c4204f51df941e660e51a627f8433df0b73228575397af23b1d",
+        "contractSha256": "5aff9934fbe9b7f513e6b4e3b205054c136fb5039440ac4cec8c1df247a86900",
+        "parentBasis": "observed-snapshot-order"
+      },
+      "eventId": "e000043",
+      "eventType": "candidate.saved"
+    },
+    {
+      "id": "event-e000044",
+      "kind": "record",
+      "label": "Start: build-complex.cjs",
+      "status": "neutral",
+      "order": 44,
+      "eventId": "e000044",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000044",
+        "candidateId": "v001",
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000044",
+      "kind": "operation",
+      "label": "build-complex.cjs",
+      "status": "neutral",
+      "order": 45,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000044",
+        "candidateId": "v001",
+        "inputCandidateId": "v001",
+        "outputCandidateId": "v001",
+        "kind": "build",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000045",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "event-e000046",
+      "kind": "record",
+      "label": "Save build files",
+      "status": "neutral",
+      "order": 46,
+      "eventId": "e000046",
+      "eventType": "build.saved",
+      "summary": "Build files were archived for this candidate. The file list and fingerprints identify the saved output; verification appears separately.",
+      "details": {
+        "recordId": "event-e000046",
+        "candidateId": "v001",
+        "eventType": "build.saved"
+      }
+    },
+    {
+      "id": "event-e000047",
+      "kind": "record",
+      "label": "Start: verify-complex.cjs",
+      "status": "neutral",
+      "order": 47,
+      "eventId": "e000047",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000047",
+        "candidateId": "v001",
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000047",
+      "kind": "operation",
+      "label": "verify-complex.cjs",
+      "status": "neutral",
+      "order": 48,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000047",
+        "candidateId": "v001",
+        "inputCandidateId": "v001",
+        "outputCandidateId": "v001",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000048",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "test-t001",
+      "kind": "test",
+      "label": "verify-complex.cjs",
+      "status": "passed",
+      "order": 49,
+      "summary": "Author self-test; ordinary official physics; exhaustive restricted push-state graph, frozen walking components; no human-difficulty or independent-author claim.",
+      "details": {
+        "testId": "t001",
+        "candidateId": "v001",
+        "binding": "exact",
+        "category": "test"
+      },
+      "eventId": "e000049",
+      "eventType": "test.completed"
+    },
+    {
+      "id": "note-n001",
+      "kind": "note",
+      "label": "Deliver a complex planar hook-transfer room with independent crossbar transport, real lateral member contact, obstruction withdrawal, restored crossing, and final pocket-gate work.",
+      "status": "neutral",
+      "order": 50,
+      "summary": "Completed the fresh official 3D keyboard playtest in playtest/005-final-3d: 18 ordinary moves via UUUULUURDRRRDRDRUR, ending at the declared reach goal (11,9,0).",
+      "details": {
+        "noteId": "n001",
+        "candidateId": "v001",
+        "origin": "agent_statement",
+        "retrospective": false
+      },
+      "eventId": "e000050",
+      "eventType": "design.note"
+    },
+    {
+      "id": "event-e000051",
+      "kind": "record",
+      "label": "Save recorded artifact",
+      "status": "neutral",
+      "order": 51,
+      "eventId": "e000051",
+      "eventType": "artifact.saved",
+      "summary": "The recorder archived this file. Saving evidence does not itself establish a passing test.",
+      "details": {
+        "recordId": "event-e000051",
+        "candidateId": "v001",
+        "eventType": "artifact.saved"
+      }
+    },
+    {
+      "id": "event-e000052",
+      "kind": "record",
+      "label": "Finish authoring run",
+      "status": "neutral",
+      "order": 52,
+      "eventId": "e000052",
+      "eventType": "run.finished",
+      "summary": "The recorder closed the run. Test verdicts and publication are separate records.",
+      "details": {
+        "recordId": "event-e000052",
+        "candidateId": null,
+        "eventType": "run.finished"
+      }
+    },
+    {
+      "id": "delivery-final",
+      "kind": "delivery",
+      "label": "Published final candidate v001",
+      "status": "passed",
+      "order": 53,
+      "summary": "Final map and contract hashes match the published design. Earlier failed attempts remain visible.",
+      "details": {
+        "caseId": "authored-hook-transfer-3e5c9a02ab20",
+        "candidateId": "v001",
+        "cellsSha256": "b563674f0d709c4204f51df941e660e51a627f8433df0b73228575397af23b1d",
+        "contractSha256": "5aff9934fbe9b7f513e6b4e3b205054c136fb5039440ac4cec8c1df247a86900"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "candidate-v001",
+      "to": "test-t001",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v001",
+      "to": "note-n001",
+      "kind": "annotation",
+      "label": "Agent annotation about this candidate",
+      "inferred": false
+    },
+    {
+      "from": "resource-r023",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r015",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r022",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r021",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v001",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Published cells and contract match",
+      "inferred": false
+    },
+    {
+      "from": "test-t001",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Passed within the stated test scope",
+      "inferred": false
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "graphNodeId": "candidate-v001",
+      "label": "Crossbar Hook and Pocket Gate",
+      "parentId": null,
+      "parentIds": [],
+      "cells": [
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          "#",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          "M1",
+          "M1",
+          "#",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          "+",
+          ".",
+          ".",
+          "M2",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          "#",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          ".",
+          ".",
+          ".",
+          "M0",
+          "M0",
+          "M0",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          ".",
+          ".",
+          ".",
+          "p",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ]
+      ],
+      "sha256": "72638b90230c04a99a9ba7685c99aabaaf7932ee125b123028d030de1898797e",
+      "cellsSha256": "b563674f0d709c4204f51df941e660e51a627f8433df0b73228575397af23b1d",
+      "contractSha256": "5aff9934fbe9b7f513e6b4e3b205054c136fb5039440ac4cec8c1df247a86900",
+      "origin": "observed",
+      "parentBasis": "observed-snapshot-order",
+      "diff": {
+        "added": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 10,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 10,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 10,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "M2"
+          },
+          {
+            "x": 11,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 12,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 2,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 2,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 2,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 2,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 2,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 2,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 2,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 2,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 3,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 3,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 3,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 3,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 3,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 3,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 3,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 3,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 3,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "M0"
+          },
+          {
+            "x": 5,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "p"
+          },
+          {
+            "x": 5,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "M0"
+          },
+          {
+            "x": 6,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 7,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 7,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 7,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "M0"
+          },
+          {
+            "x": 7,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 7,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 7,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 7,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "M1"
+          },
+          {
+            "x": 7,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "+"
+          },
+          {
+            "x": 8,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "M1"
+          },
+          {
+            "x": 8,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 9,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 9,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          }
+        ],
+        "removed": [],
+        "changed": []
+      },
+      "preview": {
+        "levelPath": "data/process-levels/authored-hook-transfer-3e5c9a02ab20/v001.json",
+        "levelSha256": "2a6cb6880fbef8d0bdab564dc4f29172ca75328516c8cd08eb3eb4d34ce1914b",
+        "cellsSha256": "b563674f0d709c4204f51df941e660e51a627f8433df0b73228575397af23b1d",
+        "status": "iteration",
+        "thumbnailPath": "assets/process-thumbnails/authored-hook-transfer-3e5c9a02ab20/v001-2a6cb6880fbef8d0-6ce268de9e786607.png"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "graphNodeId": "test-t001",
+      "candidateId": "v001",
+      "label": "verify-complex.cjs",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "blocked_M1_R_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "blocked_M2_U_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Independently transport the crossbar",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Transfer force through the lateral member contact",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Withdraw the crossbar to restore passage",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Operate the remaining pocket gate",
+          "status": "passed"
+        },
+        {
+          "name": "initial_frozen_walking",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M0",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M1",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M2",
+          "status": "passed"
+        },
+        {
+          "name": "forbid_mechanism",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_prep_to_contact",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_prep_to_contact",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_contact_to_gate",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_contact_to_gate",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_clearance_to_gate",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_clearance_to_gate",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_gate_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_gate_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_work_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_work_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "at_most_one_push_then_walk",
+          "status": "passed"
+        },
+        {
+          "name": "one_same_direction_translation_process",
+          "status": "passed"
+        },
+        {
+          "name": "first_mechanism_then_walking_only_all_histories",
+          "status": "passed"
+        },
+        {
+          "name": "walking_to_predocked_use",
+          "status": "passed"
+        }
+      ],
+      "scope": "Author self-test; ordinary official physics; exhaustive restricted push-state graph, frozen walking components; no human-difficulty or independent-author claim.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    },
+    {
+      "id": "diagnostic-e000014",
+      "graphNodeId": "test-diagnostic-e000014",
+      "candidateId": null,
+      "label": "node",
+      "status": "failed",
+      "checks": [],
+      "scope": "The diagnostic command ended with exit code 1. Its saved output and subsequent diagnosis explain the result; this status alone is not a mechanism-test verdict.",
+      "binding": "observed-command-association",
+      "origin": "observed",
+      "category": "diagnostic"
+    },
+    {
+      "id": "diagnostic-e000030",
+      "graphNodeId": "test-diagnostic-e000030",
+      "candidateId": null,
+      "label": "node",
+      "status": "failed",
+      "checks": [],
+      "scope": "The diagnostic command ended with exit code 1. Its saved output and subsequent diagnosis explain the result; this status alone is not a mechanism-test verdict.",
+      "binding": "observed-command-association",
+      "origin": "observed",
+      "category": "diagnostic"
+    },
+    {
+      "id": "diagnostic-e000032",
+      "graphNodeId": "test-diagnostic-e000032",
+      "candidateId": null,
+      "label": "node",
+      "status": "failed",
+      "checks": [],
+      "scope": "The diagnostic command ended with exit code 1. Its saved output and subsequent diagnosis explain the result; this status alone is not a mechanism-test verdict.",
+      "binding": "observed-command-association",
+      "origin": "observed",
+      "category": "diagnostic"
+    },
+    {
+      "id": "diagnostic-e000034",
+      "graphNodeId": "test-diagnostic-e000034",
+      "candidateId": null,
+      "label": "node",
+      "status": "failed",
+      "checks": [],
+      "scope": "The diagnostic command ended with exit code 1. Its saved output and subsequent diagnosis explain the result; this status alone is not a mechanism-test verdict.",
+      "binding": "observed-command-association",
+      "origin": "observed",
+      "category": "diagnostic"
+    },
+    {
+      "id": "diagnostic-e000038",
+      "graphNodeId": "test-diagnostic-e000038",
+      "candidateId": null,
+      "label": "node",
+      "status": "failed",
+      "checks": [],
+      "scope": "The diagnostic command ended with exit code 1. Its saved output and subsequent diagnosis explain the result; this status alone is not a mechanism-test verdict.",
+      "binding": "observed-command-association",
+      "origin": "observed",
+      "category": "diagnostic"
+    }
+  ],
+  "notes": [
+    {
+      "id": "n001",
+      "graphNodeId": "note-n001",
+      "candidateId": "v001",
+      "label": "Deliver a complex planar hook-transfer room with independent crossbar transport, real lateral member contact, obstruction withdrawal, restored crossing, and final pocket-gate work.",
+      "goal": "Deliver a complex planar hook-transfer room with independent crossbar transport, real lateral member contact, obstruction withdrawal, restored crossing, and final pocket-gate work.",
+      "change": "Completed the fresh official 3D keyboard playtest in playtest/005-final-3d: 18 ordinary moves via UUUULUURDRRRDRDRUR, ending at the declared reach goal (11,9,0).",
+      "reason": "All six live checkpoints and the final group poses matched the successful build and complex verification; the failed 004 harness attempt remains preserved.",
+      "sources": [
+        "references/mechanism-logic.md",
+        "references/official-case.md",
+        "references/official-fxe-case.md",
+        "references/official-fxg-case.md"
+      ],
+      "expectedChecks": [
+        "builds/001-final/manifest.json",
+        "checks/001-final/verification.json",
+        "playtest/005-final-3d/playtest.json"
+      ],
+      "origin": "agent_statement",
+      "retrospective": false
+    }
+  ],
+  "resources": [
+    {
+      "id": "r001",
+      "graphNodeId": "resource-r001",
+      "label": "mazebench-hook-transfer/references/mechanism-logic.md",
+      "displayPath": "mazebench-hook-transfer/references/mechanism-logic.md",
+      "basename": "mechanism-logic.md",
+      "sha256": "7dace0cba93c48cbca55a6f429b993220e516e18064c52c8f8a0876aefa41f08",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r002",
+      "graphNodeId": "resource-r002",
+      "label": "mazebench-hook-transfer/references/planning-depth.md",
+      "displayPath": "mazebench-hook-transfer/references/planning-depth.md",
+      "basename": "planning-depth.md",
+      "sha256": "a2a586bfcdb3e89f97d4338e6e4084ebbf5e08da6fbcef899412f5876595de21",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r003",
+      "graphNodeId": "resource-r003",
+      "label": "mazebench-hook-transfer/references/complex-validation.md",
+      "displayPath": "mazebench-hook-transfer/references/complex-validation.md",
+      "basename": "complex-validation.md",
+      "sha256": "42971d1f8ec2b97904dbdfe8aa91c32b48be176610120ba16378fe2f2eb73369",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r004",
+      "graphNodeId": "resource-r004",
+      "label": "mazebench-hook-transfer/references/design.md",
+      "displayPath": "mazebench-hook-transfer/references/design.md",
+      "basename": "design.md",
+      "sha256": "1ae8cd45b040b56eaa08faedb57ba28a1750a1e223e02f25c71dfab6a26f9abf",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r005",
+      "graphNodeId": "resource-r005",
+      "label": "mazebench-hook-transfer/references/verification.md",
+      "displayPath": "mazebench-hook-transfer/references/verification.md",
+      "basename": "verification.md",
+      "sha256": "daf043e74815d0e20388d5d98479ef6942c4be934a9f48852610d4c7c8fb43cb",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r006",
+      "graphNodeId": "resource-r006",
+      "label": "mazebench-hook-transfer/references/official-case.md",
+      "displayPath": "mazebench-hook-transfer/references/official-case.md",
+      "basename": "official-case.md",
+      "sha256": "8cb85228fe706a35e7800358301d8eaeb60d4f4b8abc0e3c5a78c8ef17cd976f",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r007",
+      "graphNodeId": "resource-r007",
+      "label": "mazebench-hook-transfer/references/official-fxe-case.md",
+      "displayPath": "mazebench-hook-transfer/references/official-fxe-case.md",
+      "basename": "official-fxe-case.md",
+      "sha256": "ad93227e7c9960031ee2bd42411904495454211e7df63abebb80d64b3014e3f0",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r008",
+      "graphNodeId": "resource-r008",
+      "label": "mazebench-hook-transfer/references/official-fxg-case.md",
+      "displayPath": "mazebench-hook-transfer/references/official-fxg-case.md",
+      "basename": "official-fxg-case.md",
+      "sha256": "177581c7b25baa89b1d1595d2fed85685baf78e72f1371c94152ffc78b24933d",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r009",
+      "graphNodeId": "resource-r009",
+      "label": "mazebench-hook-transfer/references/reference-library.md",
+      "displayPath": "mazebench-hook-transfer/references/reference-library.md",
+      "basename": "reference-library.md",
+      "sha256": "5be76620119e51db66f9e650d1ee57c4e4475c7914507b3680900cfa866745e3",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r010",
+      "graphNodeId": "resource-r010",
+      "label": "mazebench-hook-transfer/references/difficulty.md",
+      "displayPath": "mazebench-hook-transfer/references/difficulty.md",
+      "basename": "difficulty.md",
+      "sha256": "08fee6d8a9ec95a0795957e3fe04e6fba570110af5eca35b48b2f33cc2c05ca7",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r011",
+      "graphNodeId": "resource-r011",
+      "label": "mazebench-hook-transfer/references/mechanism-logic.md",
+      "displayPath": "mazebench-hook-transfer/references/mechanism-logic.md",
+      "basename": "mechanism-logic.md",
+      "sha256": "7dace0cba93c48cbca55a6f429b993220e516e18064c52c8f8a0876aefa41f08",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r012",
+      "graphNodeId": "resource-r012",
+      "label": "mazebench-hook-transfer/references/planning-depth.md",
+      "displayPath": "mazebench-hook-transfer/references/planning-depth.md",
+      "basename": "planning-depth.md",
+      "sha256": "a2a586bfcdb3e89f97d4338e6e4084ebbf5e08da6fbcef899412f5876595de21",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r013",
+      "graphNodeId": "resource-r013",
+      "label": "mazebench-hook-transfer/references/complex-validation.md",
+      "displayPath": "mazebench-hook-transfer/references/complex-validation.md",
+      "basename": "complex-validation.md",
+      "sha256": "42971d1f8ec2b97904dbdfe8aa91c32b48be176610120ba16378fe2f2eb73369",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r014",
+      "graphNodeId": "resource-r014",
+      "label": "mazebench-hook-transfer/references/design.md",
+      "displayPath": "mazebench-hook-transfer/references/design.md",
+      "basename": "design.md",
+      "sha256": "1ae8cd45b040b56eaa08faedb57ba28a1750a1e223e02f25c71dfab6a26f9abf",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r015",
+      "graphNodeId": "resource-r015",
+      "label": "mazebench-hook-transfer/references/official-case.md",
+      "displayPath": "mazebench-hook-transfer/references/official-case.md",
+      "basename": "official-case.md",
+      "sha256": "8cb85228fe706a35e7800358301d8eaeb60d4f4b8abc0e3c5a78c8ef17cd976f",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r016",
+      "graphNodeId": "resource-r016",
+      "label": "mazebench-hook-transfer/references/official-fxe-case.md",
+      "displayPath": "mazebench-hook-transfer/references/official-fxe-case.md",
+      "basename": "official-fxe-case.md",
+      "sha256": "ad93227e7c9960031ee2bd42411904495454211e7df63abebb80d64b3014e3f0",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r017",
+      "graphNodeId": "resource-r017",
+      "label": "mazebench-hook-transfer/references/verification.md",
+      "displayPath": "mazebench-hook-transfer/references/verification.md",
+      "basename": "verification.md",
+      "sha256": "daf043e74815d0e20388d5d98479ef6942c4be934a9f48852610d4c7c8fb43cb",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r018",
+      "graphNodeId": "resource-r018",
+      "label": "mazebench-hook-transfer/references/reference-library.md",
+      "displayPath": "mazebench-hook-transfer/references/reference-library.md",
+      "basename": "reference-library.md",
+      "sha256": "5be76620119e51db66f9e650d1ee57c4e4475c7914507b3680900cfa866745e3",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r019",
+      "graphNodeId": "resource-r019",
+      "label": "mazebench-hook-transfer/references/difficulty.md",
+      "displayPath": "mazebench-hook-transfer/references/difficulty.md",
+      "basename": "difficulty.md",
+      "sha256": "08fee6d8a9ec95a0795957e3fe04e6fba570110af5eca35b48b2f33cc2c05ca7",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r020",
+      "graphNodeId": "resource-r020",
+      "label": "mazebench-hook-transfer/references/mechanism-logic.md",
+      "displayPath": "mazebench-hook-transfer/references/mechanism-logic.md",
+      "basename": "mechanism-logic.md",
+      "sha256": "7dace0cba93c48cbca55a6f429b993220e516e18064c52c8f8a0876aefa41f08",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r021",
+      "graphNodeId": "resource-r021",
+      "label": "mazebench-hook-transfer/references/official-fxg-case.md",
+      "displayPath": "mazebench-hook-transfer/references/official-fxg-case.md",
+      "basename": "official-fxg-case.md",
+      "sha256": "177581c7b25baa89b1d1595d2fed85685baf78e72f1371c94152ffc78b24933d",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r022",
+      "graphNodeId": "resource-r022",
+      "label": "mazebench-hook-transfer/references/official-fxe-case.md",
+      "displayPath": "mazebench-hook-transfer/references/official-fxe-case.md",
+      "basename": "official-fxe-case.md",
+      "sha256": "ad93227e7c9960031ee2bd42411904495454211e7df63abebb80d64b3014e3f0",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r023",
+      "graphNodeId": "resource-r023",
+      "label": "mazebench-hook-transfer/references/mechanism-logic.md",
+      "displayPath": "mazebench-hook-transfer/references/mechanism-logic.md",
+      "basename": "mechanism-logic.md",
+      "sha256": "7dace0cba93c48cbca55a6f429b993220e516e18064c52c8f8a0876aefa41f08",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "snapshot-e000003",
+      "graphNodeId": "resource-snapshot-e000003",
+      "label": "Skill attached: mazebench-hook-transfer/SKILL.md",
+      "displayPath": "mazebench-hook-transfer/SKILL.md",
+      "basename": "SKILL.md",
+      "sha256": "2aa4da284279652c967b7f619df2322f60e5b2d3e375d3ce4d10e69b622fbfe7",
+      "kind": "skill",
+      "origin": "observed",
+      "delivery": "snapshot"
+    }
+  ],
+  "operations": [
+    {
+      "id": "operation-e000028",
+      "graphNodeId": "operation-e000028",
+      "candidateId": null,
+      "inputCandidateId": null,
+      "outputCandidateId": null,
+      "label": "node",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000028",
+      "resultNodeId": null,
+      "exitCode": 0
+    },
+    {
+      "id": "operation-e000036",
+      "graphNodeId": "operation-e000036",
+      "candidateId": null,
+      "inputCandidateId": null,
+      "outputCandidateId": null,
+      "label": "node",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000036",
+      "resultNodeId": null,
+      "exitCode": 0
+    },
+    {
+      "id": "operation-e000040",
+      "graphNodeId": "operation-e000040",
+      "candidateId": null,
+      "inputCandidateId": null,
+      "outputCandidateId": null,
+      "label": "node",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000040",
+      "resultNodeId": null,
+      "exitCode": 0
+    },
+    {
+      "id": "operation-e000044",
+      "graphNodeId": "operation-e000044",
+      "candidateId": "v001",
+      "inputCandidateId": "v001",
+      "outputCandidateId": "v001",
+      "label": "build-complex.cjs",
+      "kind": "build",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000044",
+      "resultNodeId": null,
+      "exitCode": 0
+    },
+    {
+      "id": "operation-e000047",
+      "graphNodeId": "operation-e000047",
+      "candidateId": "v001",
+      "inputCandidateId": "v001",
+      "outputCandidateId": "v001",
+      "label": "verify-complex.cjs",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000047",
+      "resultNodeId": "test-t001",
+      "exitCode": 0
+    }
+  ],
+  "replays": [],
+  "usage": {
+    "schemaVersion": 2,
+    "status": "measured",
+    "runtime": "codex-tui",
+    "elapsedMs": 10371826,
+    "startedAt": "2026-10-25T13:12:43.281Z",
+    "finishedAt": "2026-10-25T16:05:35.107Z",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 37108355,
+      "cached_input_tokens": 34185728,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 773067,
+      "reasoning_output_tokens": 507180,
+      "total_tokens": 37881422
+    },
+    "models": [
+      {
+        "model": "deepseek-v4.1-flash-1017",
+        "provider": "maze_bailian",
+        "reasoningEffort": "max",
+        "tokens": {
+          "input_tokens": 37108355,
+          "cached_input_tokens": 34185728,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 773067,
+          "reasoning_output_tokens": 507180,
+          "total_tokens": 37881422
+        },
+        "observations": 329
+      }
+    ],
+    "evidenceSha256": "25954a2385edc256c7e14e5d3066d3d344df8f07a3bb969d88f8f6d8b0b18e9e"
+  },
+  "records": [
+    {
+      "id": "event-e000001",
+      "graphNodeId": "event-e000001",
+      "candidateId": null,
+      "eventType": "run.created",
+      "label": "Start authoring run",
+      "status": "neutral",
+      "scope": "The recorder opened this authoring run. This does not establish an empty prior conversation context.",
+      "relatedNodeId": null,
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000002",
+      "graphNodeId": "event-e000002",
+      "candidateId": null,
+      "eventType": "collector.started",
+      "label": "Start automatic capture",
+      "status": "neutral",
+      "scope": "The automatic collector started. Recorded command boundaries, reads and saved artifacts are shown in sequence.",
+      "relatedNodeId": null,
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000014",
+      "graphNodeId": "event-e000014",
+      "candidateId": null,
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "test-diagnostic-e000014",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000028",
+      "graphNodeId": "event-e000028",
+      "candidateId": null,
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000028",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000030",
+      "graphNodeId": "event-e000030",
+      "candidateId": null,
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "test-diagnostic-e000030",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000032",
+      "graphNodeId": "event-e000032",
+      "candidateId": null,
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "test-diagnostic-e000032",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000034",
+      "graphNodeId": "event-e000034",
+      "candidateId": null,
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "test-diagnostic-e000034",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000036",
+      "graphNodeId": "event-e000036",
+      "candidateId": null,
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000036",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000038",
+      "graphNodeId": "event-e000038",
+      "candidateId": null,
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "test-diagnostic-e000038",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000040",
+      "graphNodeId": "event-e000040",
+      "candidateId": null,
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000040",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000044",
+      "graphNodeId": "event-e000044",
+      "candidateId": "v001",
+      "eventType": "command.started",
+      "label": "Start: build-complex.cjs",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000044",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000046",
+      "graphNodeId": "event-e000046",
+      "candidateId": "v001",
+      "eventType": "build.saved",
+      "label": "Save build files",
+      "status": "neutral",
+      "scope": "Build files were archived for this candidate. The file list and fingerprints identify the saved output; verification appears separately.",
+      "relatedNodeId": null,
+      "files": [
+        {
+          "name": "manifest.json",
+          "sha256": "fcda0bfb6c58a71e230c8590f70b35b7f88ec3a97f8b6e8e4ca2a029f48d0d6a"
+        },
+        {
+          "name": "world.json",
+          "sha256": "f6cb61b84fe8c560ed12d89087e0252bc524faaa7325207177eec74be23d488c"
+        },
+        {
+          "name": "contract.json",
+          "sha256": "a5a7a819791d9ead78995de23de1ca5e764af3c9f8e0c5b40aa0936b42217c21"
+        },
+        {
+          "name": "spec.json",
+          "sha256": "72638b90230c04a99a9ba7685c99aabaaf7932ee125b123028d030de1898797e"
+        },
+        {
+          "name": "draft.json",
+          "sha256": "5ee7e9eed15f198f06283391a9651ec7a07d310b7c6ce48b94ab1a0c3906771e"
+        },
+        {
+          "name": "level_AxA.txt",
+          "sha256": "3e5c9a02ab205c427189427e83b0e0f1cb64f351bbfef946f0e3a70c92319006"
+        },
+        {
+          "name": "level_parsing.json",
+          "sha256": "54cb1bc6d2e545a89abe860e2c84e45ed5fd31b244b828b8424d2693d05b780d"
+        },
+        {
+          "name": "toolbox.json",
+          "sha256": "c36ac5ee0a6a8e7b69d73613e3dde029afdc84681b146fbdfe75a1c52b81a330"
+        },
+        {
+          "name": "world_map.json",
+          "sha256": "615bed0185123455144b43872f1d68652b193af598afb450cf3abbb249723806"
+        },
+        {
+          "name": "world_parsing.json",
+          "sha256": "7e250cc0e0dccadf087fc5717567e059f1e6b604a3e3f8315bd1d29f192c3202"
+        }
+      ],
+      "facts": []
+    },
+    {
+      "id": "event-e000047",
+      "graphNodeId": "event-e000047",
+      "candidateId": "v001",
+      "eventType": "command.started",
+      "label": "Start: verify-complex.cjs",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000047",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000051",
+      "graphNodeId": "event-e000051",
+      "candidateId": "v001",
+      "eventType": "artifact.saved",
+      "label": "Save recorded artifact",
+      "status": "neutral",
+      "scope": "The recorder archived this file. Saving evidence does not itself establish a passing test.",
+      "relatedNodeId": null,
+      "files": [
+        {
+          "name": "playtest.json",
+          "sha256": "86d34ffabff08aabde5dc1bd521575de5a818f2cf4e458b1c0343122a87e89e1"
+        }
+      ],
+      "facts": []
+    },
+    {
+      "id": "event-e000052",
+      "graphNodeId": "event-e000052",
+      "candidateId": null,
+      "eventType": "run.finished",
+      "label": "Finish authoring run",
+      "status": "neutral",
+      "scope": "The recorder closed the run. Test verdicts and publication are separate records.",
+      "relatedNodeId": null,
+      "files": [],
+      "facts": []
+    }
+  ],
+  "explanations": [
+    {
+      "nodeId": "event-e000001",
+      "basis": "saved-evidence-review",
+      "headline": "Start authoring run",
+      "action": "Start authoring run.",
+      "result": "The recorder opened this authoring run. This does not establish an empty prior conversation context.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000002",
+      "basis": "saved-evidence-review",
+      "headline": "Start automatic capture",
+      "action": "Start automatic capture.",
+      "result": "The automatic collector started. Recorded command boundaries, reads and saved artifacts are shown in sequence.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-snapshot-e000003",
+      "basis": "saved-evidence-review",
+      "headline": "Skill attached: mazebench-hook-transfer/SKILL.md",
+      "action": "Capture a version snapshot of mazebench-hook-transfer/SKILL.md. Authoring workflow, supported mechanism and required delivery checks.",
+      "result": "The dependency version was saved. This event does not record a document read.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-snapshot-e000003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r001",
+      "basis": "saved-evidence-review",
+      "headline": "mechanism-logic.md",
+      "action": "Read mazebench-hook-transfer/references/mechanism-logic.md. Extracted functional roles, contact relationships and preparation dependencies to realize in a new layout.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r002",
+      "basis": "saved-evidence-review",
+      "headline": "planning-depth.md",
+      "action": "Read mazebench-hook-transfer/references/planning-depth.md. Guidance for connected stages, usable recovery and avoiding trivial completions.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r003",
+      "basis": "saved-evidence-review",
+      "headline": "complex-validation.md",
+      "action": "Read mazebench-hook-transfer/references/complex-validation.md. Verification rules or implementations defining what the checks can and cannot establish.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r004",
+      "basis": "saved-evidence-review",
+      "headline": "design.md",
+      "action": "Read mazebench-hook-transfer/references/design.md. Supporting design or reference material identified by the saved filename and fingerprint.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r005",
+      "basis": "saved-evidence-review",
+      "headline": "verification.md",
+      "action": "Read mazebench-hook-transfer/references/verification.md. Verification rules or implementations defining what the checks can and cannot establish.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r005"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r006",
+      "basis": "saved-evidence-review",
+      "headline": "official-case.md",
+      "action": "Read mazebench-hook-transfer/references/official-case.md. The source case explanation and its scoped mechanism evidence.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r006"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r007",
+      "basis": "saved-evidence-review",
+      "headline": "official-fxe-case.md",
+      "action": "Read mazebench-hook-transfer/references/official-fxe-case.md. The source case explanation and its scoped mechanism evidence.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r007"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r008",
+      "basis": "saved-evidence-review",
+      "headline": "official-fxg-case.md",
+      "action": "Read mazebench-hook-transfer/references/official-fxg-case.md. The source case explanation and its scoped mechanism evidence.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r008"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r009",
+      "basis": "saved-evidence-review",
+      "headline": "reference-library.md",
+      "action": "Read mazebench-hook-transfer/references/reference-library.md. Supporting design or reference material identified by the saved filename and fingerprint.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r009"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r010",
+      "basis": "saved-evidence-review",
+      "headline": "difficulty.md",
+      "action": "Read mazebench-hook-transfer/references/difficulty.md. Supporting design or reference material identified by the saved filename and fingerprint.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r010"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000014",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000014",
+        "test-diagnostic-e000014"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-diagnostic-e000014",
+      "basis": "saved-evidence-review",
+      "headline": "node",
+      "action": "Execute node against the recorded input.",
+      "result": "The command ended with exit code 1. A command failure alone does not identify which gameplay claim failed.",
+      "decision": "Retain this result and inspect the subsequent correction or rerun. Unknown outcomes cannot support final acceptance.",
+      "badge": "",
+      "evidence": [
+        "test-diagnostic-e000014"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r011",
+      "basis": "saved-evidence-review",
+      "headline": "mechanism-logic.md",
+      "action": "Read mazebench-hook-transfer/references/mechanism-logic.md. Extracted functional roles, contact relationships and preparation dependencies to realize in a new layout.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r011"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r012",
+      "basis": "saved-evidence-review",
+      "headline": "planning-depth.md",
+      "action": "Read mazebench-hook-transfer/references/planning-depth.md. Guidance for connected stages, usable recovery and avoiding trivial completions.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r012"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r013",
+      "basis": "saved-evidence-review",
+      "headline": "complex-validation.md",
+      "action": "Read mazebench-hook-transfer/references/complex-validation.md. Verification rules or implementations defining what the checks can and cannot establish.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r013"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r014",
+      "basis": "saved-evidence-review",
+      "headline": "design.md",
+      "action": "Read mazebench-hook-transfer/references/design.md. Supporting design or reference material identified by the saved filename and fingerprint.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r014"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r015",
+      "basis": "saved-evidence-review",
+      "headline": "official-case.md",
+      "action": "Read mazebench-hook-transfer/references/official-case.md. The source case explanation and its scoped mechanism evidence.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r015",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r016",
+      "basis": "saved-evidence-review",
+      "headline": "official-fxe-case.md",
+      "action": "Read mazebench-hook-transfer/references/official-fxe-case.md. The source case explanation and its scoped mechanism evidence.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r016"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r017",
+      "basis": "saved-evidence-review",
+      "headline": "verification.md",
+      "action": "Read mazebench-hook-transfer/references/verification.md. Verification rules or implementations defining what the checks can and cannot establish.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r017"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r018",
+      "basis": "saved-evidence-review",
+      "headline": "reference-library.md",
+      "action": "Read mazebench-hook-transfer/references/reference-library.md. Supporting design or reference material identified by the saved filename and fingerprint.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r018"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r019",
+      "basis": "saved-evidence-review",
+      "headline": "difficulty.md",
+      "action": "Read mazebench-hook-transfer/references/difficulty.md. Supporting design or reference material identified by the saved filename and fingerprint.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r019"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r020",
+      "basis": "saved-evidence-review",
+      "headline": "mechanism-logic.md",
+      "action": "Read mazebench-hook-transfer/references/mechanism-logic.md. Extracted functional roles, contact relationships and preparation dependencies to realize in a new layout.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r020"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r021",
+      "basis": "saved-evidence-review",
+      "headline": "official-fxg-case.md",
+      "action": "Read mazebench-hook-transfer/references/official-fxg-case.md. The source case explanation and its scoped mechanism evidence.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r021",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r022",
+      "basis": "saved-evidence-review",
+      "headline": "official-fxe-case.md",
+      "action": "Read mazebench-hook-transfer/references/official-fxe-case.md. The source case explanation and its scoped mechanism evidence.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r022",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000028",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000028",
+        "operation-e000028"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000028",
+      "basis": "saved-evidence-review",
+      "headline": "node",
+      "action": "node. Saved input: none; output: none.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "operation-e000028",
+        "event-e000028"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000030",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000030",
+        "test-diagnostic-e000030"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-diagnostic-e000030",
+      "basis": "saved-evidence-review",
+      "headline": "node",
+      "action": "Execute node against the recorded input.",
+      "result": "The command ended with exit code 1. A command failure alone does not identify which gameplay claim failed.",
+      "decision": "Retain this result and inspect the subsequent correction or rerun. Unknown outcomes cannot support final acceptance.",
+      "badge": "",
+      "evidence": [
+        "test-diagnostic-e000030"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000032",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000032",
+        "test-diagnostic-e000032"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-diagnostic-e000032",
+      "basis": "saved-evidence-review",
+      "headline": "node",
+      "action": "Execute node against the recorded input.",
+      "result": "The command ended with exit code 1. A command failure alone does not identify which gameplay claim failed.",
+      "decision": "Retain this result and inspect the subsequent correction or rerun. Unknown outcomes cannot support final acceptance.",
+      "badge": "",
+      "evidence": [
+        "test-diagnostic-e000032"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000034",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000034",
+        "test-diagnostic-e000034"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-diagnostic-e000034",
+      "basis": "saved-evidence-review",
+      "headline": "node",
+      "action": "Execute node against the recorded input.",
+      "result": "The command ended with exit code 1. A command failure alone does not identify which gameplay claim failed.",
+      "decision": "Retain this result and inspect the subsequent correction or rerun. Unknown outcomes cannot support final acceptance.",
+      "badge": "",
+      "evidence": [
+        "test-diagnostic-e000034"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000036",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000036",
+        "operation-e000036"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000036",
+      "basis": "saved-evidence-review",
+      "headline": "node",
+      "action": "node. Saved input: none; output: none.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "operation-e000036",
+        "event-e000036"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000038",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000038",
+        "test-diagnostic-e000038"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-diagnostic-e000038",
+      "basis": "saved-evidence-review",
+      "headline": "node",
+      "action": "Execute node against the recorded input.",
+      "result": "The command ended with exit code 1. A command failure alone does not identify which gameplay claim failed.",
+      "decision": "Retain this result and inspect the subsequent correction or rerun. Unknown outcomes cannot support final acceptance.",
+      "badge": "",
+      "evidence": [
+        "test-diagnostic-e000038"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000040",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000040",
+        "operation-e000040"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000040",
+      "basis": "saved-evidence-review",
+      "headline": "node",
+      "action": "node. Saved input: none; output: none.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "operation-e000040",
+        "event-e000040"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r023",
+      "basis": "saved-evidence-review",
+      "headline": "mechanism-logic.md",
+      "action": "Read mazebench-hook-transfer/references/mechanism-logic.md. Extracted functional roles, contact relationships and preparation dependencies to realize in a new layout.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r023",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "candidate-v001",
+      "basis": "saved-evidence-review",
+      "headline": "v001 · Crossbar Hook and Pocket Gate",
+      "action": "Save the first captured map and contract for this run.",
+      "result": "Later associated results: verify-complex.cjs: passed.",
+      "decision": "The subsequent author note states: All six live checkpoints and the final group poses matched the successful build and complex verification; the failed 004 harness attempt remains preserved.",
+      "badge": "",
+      "evidence": [
+        "candidate-v001",
+        "test-t001",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000044",
+      "basis": "saved-evidence-review",
+      "headline": "Start: build-complex.cjs",
+      "action": "Start: build-complex.cjs.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000044",
+        "candidate-v001",
+        "operation-e000044"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000044",
+      "basis": "saved-evidence-review",
+      "headline": "build-complex.cjs",
+      "action": "build-complex.cjs. Saved input: v001; output: v001.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "The subsequent author note states: All six live checkpoints and the final group poses matched the successful build and complex verification; the failed 004 harness attempt remains preserved.",
+      "badge": "",
+      "evidence": [
+        "operation-e000044",
+        "candidate-v001",
+        "event-e000044",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000046",
+      "basis": "saved-evidence-review",
+      "headline": "Save build files",
+      "action": "Save build files. Saved files: manifest.json, world.json, contract.json, spec.json, draft.json, level_AxA.txt, level_parsing.json, toolbox.json, world_map.json, world_parsing.json.",
+      "result": "Build files were archived for this candidate. The file list and fingerprints identify the saved output; verification appears separately.",
+      "decision": "Archiving preserves evidence and file identity. It does not rerun the test or establish that the map passed.",
+      "badge": "",
+      "evidence": [
+        "event-e000046",
+        "candidate-v001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000047",
+      "basis": "saved-evidence-review",
+      "headline": "Start: verify-complex.cjs",
+      "action": "Start: verify-complex.cjs.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000047",
+        "candidate-v001",
+        "operation-e000047"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000047",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; verify-complex.cjs",
+      "action": "verify-complex.cjs. Saved input: v001; output: v001.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict. Report interpretation: The report is passed; 25 of 25 individual checks passed.",
+      "decision": "The subsequent author note states: All six live checkpoints and the final group poses matched the successful build and complex verification; the failed 004 harness attempt remains preserved.",
+      "badge": "",
+      "evidence": [
+        "operation-e000047",
+        "candidate-v001",
+        "test-t001",
+        "event-e000047",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t001",
+      "basis": "saved-evidence-review",
+      "headline": "verify-complex.cjs",
+      "action": "Execute verify-complex.cjs against v001.",
+      "result": "The report is passed; 25 of 25 individual checks passed.",
+      "decision": "The subsequent author note states: All six live checkpoints and the final group poses matched the successful build and complex verification; the failed 004 harness attempt remains preserved.",
+      "badge": "",
+      "evidence": [
+        "test-t001",
+        "candidate-v001",
+        "note-n001"
+      ],
+      "observations": [
+        {
+          "label": "Saved goal search",
+          "value": "solved"
+        },
+        {
+          "label": "Solution inputs",
+          "value": "18"
+        },
+        {
+          "label": "Expanded search states",
+          "value": "961"
+        },
+        {
+          "label": "Search limit",
+          "value": "1000000"
+        },
+        {
+          "label": "Recorded ordinary replay",
+          "value": "passed"
+        }
+      ],
+      "checks": [
+        {
+          "name": "blocked_M1_R_step_0",
+          "verdict": "passed",
+          "meaning": "At the declared state, check the actual pushing stance or whole-group push obstruction using ordinary physics.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "blocked_M2_U_step_0",
+          "verdict": "passed",
+          "meaning": "At the declared state, check the actual pushing stance or whole-group push obstruction using ordinary physics.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_access_Independently transport the crossbar",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_access_Transfer force through the lateral member contact",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_access_Withdraw the crossbar to restore passage",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_access_Operate the remaining pocket gate",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "initial_frozen_walking",
+          "verdict": "passed",
+          "meaning": "Keep all objects fixed and search for a walking-only completion from the initial state.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze_M0",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze_M1",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze_M2",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "forbid_mechanism",
+          "verdict": "passed",
+          "meaning": "Forbid the declared mechanism event and search for the complete objective. A solution is a mechanism bypass.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_prep_to_contact",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_prep_to_contact",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_contact_to_gate",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_contact_to_gate",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_clearance_to_gate",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_clearance_to_gate",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_gate_to_goal",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_gate_to_goal",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_work_to_goal",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_work_to_goal",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "at_most_one_push_then_walk",
+          "verdict": "passed",
+          "meaning": "Restrict the allowed number of object-moving inputs and search for a complete goal, testing whether a simpler completion exists.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "one_same_direction_translation_process",
+          "verdict": "passed",
+          "meaning": "Allow object movement in only one compass direction and search for completion.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "first_mechanism_then_walking_only_all_histories",
+          "verdict": "passed",
+          "meaning": "Search all supported first-use histories for a completion requiring no further object movement.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "walking_to_predocked_use",
+          "verdict": "passed",
+          "meaning": "Test whether the initial arrangement already permits tool use without independent preparation.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        }
+      ]
+    },
+    {
+      "nodeId": "note-n001",
+      "basis": "saved-evidence-review",
+      "headline": "Deliver a complex planar hook-transfer room with independent crossbar transport, real lateral member contact, obstruction withdrawal, restored crossing, and final pocket-gate work.",
+      "action": "Completed the fresh official 3D keyboard playtest in playtest/005-final-3d: 18 ordinary moves via UUUULUURDRRRDRDRUR, ending at the declared reach goal (11,9,0).",
+      "result": "All six live checkpoints and the final group poses matched the successful build and complex verification; the failed 004 harness attempt remains preserved.",
+      "decision": "Planned checks: builds/001-final/manifest.json; checks/001-final/verification.json; playtest/005-final-3d/playtest.json.",
+      "badge": "",
+      "evidence": [
+        "note-n001",
+        "candidate-v001",
+        "resource-r023",
+        "resource-r015",
+        "resource-r022",
+        "resource-r021"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000051",
+      "basis": "saved-evidence-review",
+      "headline": "Save recorded artifact",
+      "action": "Save recorded artifact. Saved files: playtest.json.",
+      "result": "The recorder archived this file. Saving evidence does not itself establish a passing test.",
+      "decision": "Archiving preserves evidence and file identity. It does not rerun the test or establish that the map passed.",
+      "badge": "",
+      "evidence": [
+        "event-e000051",
+        "candidate-v001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000052",
+      "basis": "saved-evidence-review",
+      "headline": "Finish authoring run",
+      "action": "Finish authoring run.",
+      "result": "The recorder closed the run. Test verdicts and publication are separate records.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000052"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "delivery-final",
+      "basis": "saved-evidence-review",
+      "headline": "Published final candidate v001",
+      "action": "Bind the published map and contract to the final recorded candidate.",
+      "result": "The final candidate has 1 exactly associated passed reports, retained alongside earlier failed or unknown attempts.",
+      "decision": "These reports explain the recorded basis for delivery. A fixed iteration count or an unrecorded stopping policy cannot be inferred. These are author-side checks of the declared conditions, not a human-difficulty score or a blind independent-agent evaluation.",
+      "badge": "",
+      "evidence": [
+        "delivery-final",
+        "candidate-v001",
+        "test-t001"
+      ],
+      "observations": [],
+      "checks": []
+    }
+  ]
+}
