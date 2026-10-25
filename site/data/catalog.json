@@ -55,7 +55,8 @@
       "authoredCases": [
         "authored-hook-transfer",
         "authored-hook-transfer-1bf88985df5b",
-        "authored-hook-transfer-5e3a324db881"
+        "authored-hook-transfer-5e3a324db881",
+        "authored-hook-transfer-c59e9e846a22"
       ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-hook-transfer"
     },
@@ -1448,6 +1449,65 @@
         },
         "scopeComplete": false,
         "evidenceSha256": "5f37d15be82ff22c9b7df9a0c570a14b6da2043a6677ecd0edd89405badff595"
+      }
+    },
+    {
+      "id": "authored-hook-transfer-c59e9e846a22",
+      "kind": "authored",
+      "title": "Offset Loom",
+      "skill": "hook-transfer",
+      "world": "authored-hook-transfer-c59e9e846a22",
+      "room": "AxA",
+      "description": "Line up the offset tool, transfer a push to the restricted target, and keep working to reach the gem.",
+      "thumbnail": "assets/thumbnails/authored-hook-transfer-c59e9e846a22.png",
+      "map": "data/maps/authored-hook-transfer-c59e9e846a22-world-map.txt",
+      "witness": "RUULURRRURDDDDUUURRRUULU",
+      "goal": {
+        "kind": "reach",
+        "cell": [
+          10,
+          6,
+          0
+        ]
+      },
+      "process": {
+        "data": "data/processes/authored-hook-transfer-c59e9e846a22.json",
+        "schemaVersion": 1
+      },
+      "build": {
+        "schemaVersion": 1,
+        "attribution": "single-model",
+        "model": "gpt-6-astra",
+        "modelBasis": "runtime-record",
+        "reasoningEffort": "xhigh",
+        "reasoningEfforts": [
+          "xhigh"
+        ],
+        "reasoningBasis": "runtime-setting",
+        "reasoningMixed": false,
+        "attributionNote": null,
+        "attributionEvidenceSha256": null,
+        "startedAt": "2026-10-25T13:13:09.434Z",
+        "finishedAt": "2026-10-25T13:23:25.447Z",
+        "models": [
+          {
+            "model": "gpt-6-astra",
+            "provider": "openai"
+          }
+        ],
+        "runtime": "codex-tui",
+        "elapsedMs": 616013,
+        "usageStatus": "measured",
+        "tokens": {
+          "input_tokens": 1243705,
+          "cached_input_tokens": 1183488,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 13854,
+          "reasoning_output_tokens": 5678,
+          "total_tokens": 1257559
+        },
+        "scopeComplete": false,
+        "evidenceSha256": "a2284718f7197710ee36309d00c9189615d8c978ebb99093737f345e3889f563"
       }
     }
   ],

@@ -688,6 +688,30 @@
         "cellsSha256": "b916dc5b5f575c388ef11cf22922a49a3e90ebc470b1a8aefaa495ade6169b89",
         "contractSha256": "44bc5573c761c65b56397af733a0e7491718b7826d046cdb8786612345bc58c0"
       }
+    },
+    {
+      "id": "authored-hook-transfer-c59e9e846a22",
+      "kind": "authored",
+      "originalDraftId": "draft-depth-2def5a8c88",
+      "title": "Offset Loom",
+      "sourceMapSha256": "c59e9e846a224131d4ac7018787c82a75776da71e390949aa351b597e922268f",
+      "witnessSha256": "57c1e7d94d9950023b3364a636b23eaf1c9d3ce631acb04c226bb176ea8f6cd6",
+      "source": "Agent-authored trial; verified design and saved draft matched before publication.",
+      "verification": {
+        "overall": "passed",
+        "profile": "planar-hook-depth-v2",
+        "cellsSha256": "2a378e8fc64b6f00e277a648bdc1c4b076e01a82f3707c0f6e3d725a61176737",
+        "contractSha256": "7b6b8be5f21b9f9df563bd84a43ada252067fa3fb41cff8c4342fe9ebc315366",
+        "reportSha256": "3ea4ea75aa457278f2f643931c92596d76fef1bbc6a5e641541f6dc05cc63a61"
+      },
+      "authoringRunSha256": "8ab2be5f6c464116e5e9ffa0b741fe90fdff4c92c5b22fda26e7bbcc15fc1559",
+      "authoringProcess": {
+        "schemaVersion": 1,
+        "data": "data/processes/authored-hook-transfer-c59e9e846a22.json",
+        "sha256": "dcb50cf084a2721e274cb7a250ed601dfe5c0eb2ce48d2caea6606f2e4850a7a",
+        "cellsSha256": "2a378e8fc64b6f00e277a648bdc1c4b076e01a82f3707c0f6e3d725a61176737",
+        "contractSha256": "7b6b8be5f21b9f9df563bd84a43ada252067fa3fb41cff8c4342fe9ebc315366"
+      }
     }
   ],
   "directEntryPolicy": "Rooms without an authored player get a temporary arrival actor only when opened directly. Entries are open, matching floor boundaries with an ordinary legal inward move. Raw maps, exported room states, and normal doorway traversal remain unchanged.",

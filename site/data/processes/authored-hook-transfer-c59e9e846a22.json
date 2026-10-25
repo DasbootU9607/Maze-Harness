@@ -1,0 +1,4860 @@
+{
+  "schemaVersion": 1,
+  "caseId": "authored-hook-transfer-c59e9e846a22",
+  "title": "Offset Loom",
+  "skill": "hook-transfer",
+  "finalCandidateId": "v002",
+  "summary": "2 recorded candidates, 2 tests, 0 failed diagnostics, and 4 agent annotations.",
+  "coverage": {
+    "mode": "observed",
+    "audit": {
+      "status": "passed",
+      "failed": 0,
+      "unknown": 0
+    },
+    "sources": {
+      "directOriginalCaseRead": "recorded",
+      "originalCaseResourceIds": [
+        "r007",
+        "r008",
+        "r011",
+        "r012"
+      ],
+      "indirect": [],
+      "scope": "Direct reading is reported only for captured read events. A source named by a skill is indirect provenance, not evidence that this run opened or used the original case."
+    },
+    "limitations": [
+      "Only recorded operations and saved snapshots are shown; transient in-memory drafts and unrecorded activity remain unknown.",
+      "Snapshot parent links show recorded version order, not proof of causal reasoning. No unrecorded branches or merges are reconstructed.",
+      "Agent annotations are concise explanations, not internal thought transcripts. Recorded resource delivery does not prove comprehension or use.",
+      "Test outcomes retain their own scope. Author self-tests do not establish independent-agent effectiveness or human difficulty.",
+      "Automatic CLI boundaries record supported build and verification commands. Other commands and resource reads require the skill observer helper.",
+      "Snapshots describe saved versions at operation boundaries, not every editor keystroke. Design notes are author statements, not internal reasoning.",
+      "A started task remains running until the author records finish. An interrupted task may therefore remain open."
+    ],
+    "events": {
+      "sourceCount": 36,
+      "representedCount": 36,
+      "sequenceSha256": "085826bd5c7d0dc0a5dad93220d62ba2c8dbd1c58b6f3d29c8df5ec1c9a2766c",
+      "types": [
+        {
+          "type": "artifact.saved",
+          "count": 2
+        },
+        {
+          "type": "build.saved",
+          "count": 1
+        },
+        {
+          "type": "candidate.saved",
+          "count": 2
+        },
+        {
+          "type": "collector.started",
+          "count": 1
+        },
+        {
+          "type": "command.completed",
+          "count": 4
+        },
+        {
+          "type": "command.started",
+          "count": 4
+        },
+        {
+          "type": "design.note",
+          "count": 4
+        },
+        {
+          "type": "publication.metadata-amended",
+          "count": 1
+        },
+        {
+          "type": "resource.read",
+          "count": 12
+        },
+        {
+          "type": "run.created",
+          "count": 1
+        },
+        {
+          "type": "run.finished",
+          "count": 1
+        },
+        {
+          "type": "skill.attached",
+          "count": 1
+        },
+        {
+          "type": "test.completed",
+          "count": 2
+        }
+      ]
+    }
+  },
+  "nodes": [
+    {
+      "id": "event-e000001",
+      "kind": "record",
+      "label": "Start authoring run",
+      "status": "neutral",
+      "order": 1,
+      "eventId": "e000001",
+      "eventType": "run.created",
+      "summary": "The recorder opened this authoring run. This does not establish an empty prior conversation context.",
+      "details": {
+        "recordId": "event-e000001",
+        "candidateId": null,
+        "eventType": "run.created"
+      }
+    },
+    {
+      "id": "event-e000002",
+      "kind": "record",
+      "label": "Start automatic capture",
+      "status": "neutral",
+      "order": 2,
+      "eventId": "e000002",
+      "eventType": "collector.started",
+      "summary": "The automatic collector started. Recorded command boundaries, reads and saved artifacts are shown in sequence.",
+      "details": {
+        "recordId": "event-e000002",
+        "candidateId": null,
+        "eventType": "collector.started"
+      }
+    },
+    {
+      "id": "resource-snapshot-e000003",
+      "kind": "resource",
+      "label": "Skill attached: mazebench-hook-transfer/SKILL.md",
+      "status": "neutral",
+      "order": 3,
+      "summary": "Skill version captured as a dependency. This event does not record a reading.",
+      "details": {
+        "resourceId": "snapshot-e000003",
+        "displayPath": "mazebench-hook-transfer/SKILL.md",
+        "sha256": "2aa4da284279652c967b7f619df2322f60e5b2d3e375d3ce4d10e69b622fbfe7",
+        "kind": "skill",
+        "delivery": "snapshot"
+      },
+      "eventId": "e000003",
+      "eventType": "skill.attached"
+    },
+    {
+      "id": "resource-r001",
+      "kind": "resource",
+      "label": "mechanism-logic.md",
+      "status": "neutral",
+      "order": 4,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r001",
+        "displayPath": "mazebench-hook-transfer/references/mechanism-logic.md",
+        "sha256": "7dace0cba93c48cbca55a6f429b993220e516e18064c52c8f8a0876aefa41f08",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000004",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r002",
+      "kind": "resource",
+      "label": "planning-depth.md",
+      "status": "neutral",
+      "order": 5,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r002",
+        "displayPath": "mazebench-hook-transfer/references/planning-depth.md",
+        "sha256": "a2a586bfcdb3e89f97d4338e6e4084ebbf5e08da6fbcef899412f5876595de21",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000005",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r003",
+      "kind": "resource",
+      "label": "complex-validation.md",
+      "status": "neutral",
+      "order": 6,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r003",
+        "displayPath": "mazebench-hook-transfer/references/complex-validation.md",
+        "sha256": "42971d1f8ec2b97904dbdfe8aa91c32b48be176610120ba16378fe2f2eb73369",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000006",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r004",
+      "kind": "resource",
+      "label": "design.md",
+      "status": "neutral",
+      "order": 7,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r004",
+        "displayPath": "mazebench-hook-transfer/references/design.md",
+        "sha256": "1ae8cd45b040b56eaa08faedb57ba28a1750a1e223e02f25c71dfab6a26f9abf",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000007",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r005",
+      "kind": "resource",
+      "label": "verification.md",
+      "status": "neutral",
+      "order": 8,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r005",
+        "displayPath": "mazebench-hook-transfer/references/verification.md",
+        "sha256": "daf043e74815d0e20388d5d98479ef6942c4be934a9f48852610d4c7c8fb43cb",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000008",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r006",
+      "kind": "resource",
+      "label": "design-template.json",
+      "status": "neutral",
+      "order": 9,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r006",
+        "displayPath": "mazebench-hook-transfer/references/design-template.json",
+        "sha256": "c06355d2eebe6615900090772e89028044cd21bd2a58452cb4a301dc0bea2f11",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000009",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r007",
+      "kind": "resource",
+      "label": "official-case.md",
+      "status": "neutral",
+      "order": 10,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r007",
+        "displayPath": "mazebench-hook-transfer/references/official-case.md",
+        "sha256": "8cb85228fe706a35e7800358301d8eaeb60d4f4b8abc0e3c5a78c8ef17cd976f",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000010",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r008",
+      "kind": "resource",
+      "label": "official-fxe-case.md",
+      "status": "neutral",
+      "order": 11,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r008",
+        "displayPath": "mazebench-hook-transfer/references/official-fxe-case.md",
+        "sha256": "ad93227e7c9960031ee2bd42411904495454211e7df63abebb80d64b3014e3f0",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000011",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r009",
+      "kind": "resource",
+      "label": "reference-library.md",
+      "status": "neutral",
+      "order": 12,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r009",
+        "displayPath": "mazebench-hook-transfer/references/reference-library.md",
+        "sha256": "5be76620119e51db66f9e650d1ee57c4e4475c7914507b3680900cfa866745e3",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000012",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r010",
+      "kind": "resource",
+      "label": "difficulty.md",
+      "status": "neutral",
+      "order": 13,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r010",
+        "displayPath": "mazebench-hook-transfer/references/difficulty.md",
+        "sha256": "08fee6d8a9ec95a0795957e3fe04e6fba570110af5eca35b48b2f33cc2c05ca7",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000013",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r011",
+      "kind": "resource",
+      "label": "official-world-map.txt",
+      "status": "neutral",
+      "order": 14,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r011",
+        "displayPath": "mazebench-hook-transfer/references/official-world-map.txt",
+        "sha256": "4c2a18742e7949e815a620aa6c1cff8f79ed2ff8aa93801b0d63261238caa1df",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000014",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r012",
+      "kind": "resource",
+      "label": "official-fxe-world-map.txt",
+      "status": "neutral",
+      "order": 15,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r012",
+        "displayPath": "mazebench-hook-transfer/references/official-fxe-world-map.txt",
+        "sha256": "31db3aa3e127c359bd909958d038535b7cc805810d90edc43f9cf47e1175d9ec",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000015",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "note-n001",
+      "kind": "note",
+      "label": "Reach the sealed upper pocket at (10,6,0) through a connected preparation, lateral release, withdrawal and blocker-lifting sequence.",
+      "status": "neutral",
+      "order": 16,
+      "summary": "New elbow tool, rib-limited western bay, void-separated working tip, east-facing blocker release, southern withdrawal well and upper goal pocket. The layout is independently derived from stance and contact constraints.",
+      "details": {
+        "noteId": "n001",
+        "candidateId": null,
+        "origin": "agent_statement",
+        "retrospective": false
+      },
+      "eventId": "e000016",
+      "eventType": "design.note"
+    },
+    {
+      "id": "candidate-v001",
+      "kind": "candidate",
+      "label": "v001 · Offset Loom",
+      "status": "neutral",
+      "order": 17,
+      "summary": "0 changed cells; 256 added; 0 removed.",
+      "details": {
+        "candidateId": "v001",
+        "cellsSha256": "2a378e8fc64b6f00e277a648bdc1c4b076e01a82f3707c0f6e3d725a61176737",
+        "contractSha256": "adaf05ec3ca3792792d97c769be54ebeb0c395f171fc0082e76c25748692d31b",
+        "parentBasis": "observed-snapshot-order"
+      },
+      "eventId": "e000017",
+      "eventType": "candidate.saved"
+    },
+    {
+      "id": "event-e000018",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 18,
+      "eventId": "e000018",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000018",
+        "candidateId": "v001",
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000018",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 19,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000018",
+        "candidateId": "v001",
+        "inputCandidateId": "v001",
+        "outputCandidateId": "v001",
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000019",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "note-n002",
+      "kind": "note",
+      "label": "Bind the unchanged first geometry to the ordinary 24-input witness; set exact contact, withdrawal and lifting stage inputs and enumerate all external target input faces.",
+      "status": "neutral",
+      "order": 20,
+      "summary": "Bind the unchanged first geometry to the ordinary 24-input witness; set exact contact, withdrawal and lifting stage inputs and enumerate all external target input faces.",
+      "details": {
+        "noteId": "n002",
+        "candidateId": "v001",
+        "origin": "agent_statement",
+        "retrospective": true
+      },
+      "eventId": "e000020",
+      "eventType": "design.note"
+    },
+    {
+      "id": "candidate-v002",
+      "kind": "candidate",
+      "label": "v002 · Offset Loom",
+      "status": "neutral",
+      "order": 21,
+      "summary": "0 changed cells; 0 added; 0 removed.",
+      "details": {
+        "candidateId": "v002",
+        "cellsSha256": "2a378e8fc64b6f00e277a648bdc1c4b076e01a82f3707c0f6e3d725a61176737",
+        "contractSha256": "7b6b8be5f21b9f9df563bd84a43ada252067fa3fb41cff8c4342fe9ebc315366",
+        "parentBasis": "observed-snapshot-order"
+      },
+      "eventId": "e000021",
+      "eventType": "candidate.saved"
+    },
+    {
+      "id": "event-e000022",
+      "kind": "record",
+      "label": "Start: build-complex.cjs",
+      "status": "neutral",
+      "order": 22,
+      "eventId": "e000022",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000022",
+        "candidateId": "v002",
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000022",
+      "kind": "operation",
+      "label": "build-complex.cjs",
+      "status": "neutral",
+      "order": 23,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000022",
+        "candidateId": "v002",
+        "inputCandidateId": "v002",
+        "outputCandidateId": "v002",
+        "kind": "build",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000023",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "event-e000024",
+      "kind": "record",
+      "label": "Save build files",
+      "status": "neutral",
+      "order": 24,
+      "eventId": "e000024",
+      "eventType": "build.saved",
+      "summary": "Build files were archived for this candidate. The file list and fingerprints identify the saved output; verification appears separately.",
+      "details": {
+        "recordId": "event-e000024",
+        "candidateId": "v002",
+        "eventType": "build.saved"
+      }
+    },
+    {
+      "id": "event-e000025",
+      "kind": "record",
+      "label": "Start: verify-complex.cjs",
+      "status": "neutral",
+      "order": 25,
+      "eventId": "e000025",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000025",
+        "candidateId": "v002",
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000025",
+      "kind": "operation",
+      "label": "verify-complex.cjs",
+      "status": "neutral",
+      "order": 26,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000025",
+        "candidateId": "v002",
+        "inputCandidateId": "v002",
+        "outputCandidateId": "v002",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000026",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "test-t001",
+      "kind": "test",
+      "label": "verify-complex.cjs",
+      "status": "passed",
+      "order": 27,
+      "summary": "Author self-test; ordinary official physics; exhaustive restricted push-state graph, frozen walking components; no human-difficulty or independent-author claim.",
+      "details": {
+        "testId": "t001",
+        "candidateId": "v002",
+        "binding": "exact",
+        "category": "test"
+      },
+      "eventId": "e000027",
+      "eventType": "test.completed"
+    },
+    {
+      "id": "event-e000028",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 28,
+      "eventId": "e000028",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000028",
+        "candidateId": "v002",
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000028",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 29,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000028",
+        "candidateId": "v002",
+        "inputCandidateId": "v002",
+        "outputCandidateId": "v002",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000029",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "test-t002",
+      "kind": "test",
+      "label": "verification.json",
+      "status": "passed",
+      "order": 30,
+      "summary": "Author-guided automated browser playtest. The known verified witness guides input; frames below are observed from the live browser, not generated from the solver.",
+      "details": {
+        "testId": "t002",
+        "candidateId": "v002",
+        "binding": "exact",
+        "category": "test"
+      },
+      "eventId": "e000030",
+      "eventType": "test.completed"
+    },
+    {
+      "id": "replay-e000031",
+      "kind": "replay",
+      "label": "Saved browser playthrough",
+      "status": "neutral",
+      "order": 31,
+      "summary": "24 recorded inputs and 25 saved frames, bound to v002.",
+      "details": {
+        "replayId": "replay-e000031",
+        "candidateId": "v002",
+        "binding": "exact-artifact",
+        "sourceKind": "saved-replay"
+      },
+      "eventId": "e000031",
+      "eventType": "artifact.saved"
+    },
+    {
+      "id": "event-e000032",
+      "kind": "record",
+      "label": "Save recorded artifact",
+      "status": "neutral",
+      "order": 32,
+      "eventId": "e000032",
+      "eventType": "artifact.saved",
+      "summary": "The recorder archived this file. Saving evidence does not itself establish a passing test.",
+      "details": {
+        "recordId": "event-e000032",
+        "candidateId": "v002",
+        "eventType": "artifact.saved"
+      }
+    },
+    {
+      "id": "note-n003",
+      "kind": "note",
+      "label": "Deliver Offset Loom with the full explicit reach goal, default complex verification and an observed official 3D browser replay.",
+      "status": "neutral",
+      "order": 33,
+      "summary": "Completed the unchanged first geometry. Bound the final contract to four interdependent functional stages. Saved the observed 24-input browser playthrough, 25 actor frames, screenshots and video.",
+      "details": {
+        "noteId": "n003",
+        "candidateId": "v002",
+        "origin": "agent_statement",
+        "retrospective": false
+      },
+      "eventId": "e000033",
+      "eventType": "design.note"
+    },
+    {
+      "id": "event-e000034",
+      "kind": "record",
+      "label": "Finish authoring run",
+      "status": "neutral",
+      "order": 34,
+      "eventId": "e000034",
+      "eventType": "run.finished",
+      "summary": "The recorder closed the run. Test verdicts and publication are separate records.",
+      "details": {
+        "recordId": "event-e000034",
+        "candidateId": null,
+        "eventType": "run.finished"
+      }
+    },
+    {
+      "id": "event-e000035",
+      "kind": "record",
+      "label": "Recorded publication.metadata-amended",
+      "status": "neutral",
+      "order": 35,
+      "eventId": "e000035",
+      "eventType": "publication.metadata-amended",
+      "summary": "This recorded step is retained. Its private payload is not published.",
+      "details": {
+        "recordId": "event-e000035",
+        "candidateId": "v002",
+        "eventType": "publication.metadata-amended"
+      }
+    },
+    {
+      "id": "note-n004",
+      "kind": "note",
+      "label": "Complete publication with an explicitly documented retrospective note-heading correction.",
+      "status": "neutral",
+      "order": 36,
+      "summary": "Supply the missing n002 goal heading verbatim from its existing change text and mark that note retrospective. Preserve its original journal entry and a complete copy of the original sealed run.",
+      "details": {
+        "noteId": "n004",
+        "candidateId": "v002",
+        "origin": "agent_statement",
+        "retrospective": true
+      },
+      "eventId": "e000036",
+      "eventType": "design.note"
+    },
+    {
+      "id": "delivery-final",
+      "kind": "delivery",
+      "label": "Published final candidate v002",
+      "status": "passed",
+      "order": 37,
+      "summary": "Final map and contract hashes match the published design. Earlier failed attempts remain visible.",
+      "details": {
+        "caseId": "authored-hook-transfer-c59e9e846a22",
+        "candidateId": "v002",
+        "cellsSha256": "2a378e8fc64b6f00e277a648bdc1c4b076e01a82f3707c0f6e3d725a61176737",
+        "contractSha256": "7b6b8be5f21b9f9df563bd84a43ada252067fa3fb41cff8c4342fe9ebc315366"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "candidate-v001",
+      "to": "candidate-v002",
+      "kind": "revision",
+      "label": "Observed snapshot order; not causal proof",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v002",
+      "to": "test-t001",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v002",
+      "to": "test-t002",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "resource-r001",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r007",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r008",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r002",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v001",
+      "to": "note-n002",
+      "kind": "annotation",
+      "label": "Agent annotation about this candidate",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v002",
+      "to": "note-n003",
+      "kind": "annotation",
+      "label": "Agent annotation about this candidate",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v002",
+      "to": "note-n004",
+      "kind": "annotation",
+      "label": "Agent annotation about this candidate",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v002",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Published cells and contract match",
+      "inferred": false
+    },
+    {
+      "from": "test-t001",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Passed within the stated test scope",
+      "inferred": false
+    },
+    {
+      "from": "test-t002",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Passed within the stated test scope",
+      "inferred": false
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "graphNodeId": "candidate-v001",
+      "label": "Offset Loom",
+      "parentId": null,
+      "parentIds": [],
+      "cells": [
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          "+",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          "+",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          "+",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+M1",
+          ".",
+          "+",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".",
+          ".",
+          "+",
+          "+",
+          ".+M1",
+          ".",
+          "+",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".",
+          ".",
+          "+",
+          "+",
+          ".+M1",
+          ".+M1",
+          ".",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".",
+          ".+M0",
+          ".",
+          ".",
+          ".",
+          ".+#",
+          ".",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".",
+          ".+M0",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".",
+          ".+M0",
+          ".+#",
+          ".",
+          ".",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".+M0",
+          ".+M0",
+          ".+#",
+          ".",
+          ".",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+p",
+          ".",
+          ".",
+          ".+#",
+          ".",
+          ".",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ]
+      ],
+      "sha256": "8382da936bd301d978d7bd09354b00ae68e345223b9901ff41d67a574cf57c11",
+      "cellsSha256": "2a378e8fc64b6f00e277a648bdc1c4b076e01a82f3707c0f6e3d725a61176737",
+      "contractSha256": "adaf05ec3ca3792792d97c769be54ebeb0c395f171fc0082e76c25748692d31b",
+      "origin": "observed",
+      "parentBasis": "observed-snapshot-order",
+      "diff": {
+        "added": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 0,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 1,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 10,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 10,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 10,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 10,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 10,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+M1"
+          },
+          {
+            "x": 10,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 10,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 11,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 11,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "+"
+          },
+          {
+            "x": 11,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "+"
+          },
+          {
+            "x": 11,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "+"
+          },
+          {
+            "x": 11,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "+"
+          },
+          {
+            "x": 11,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "+"
+          },
+          {
+            "x": 11,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 11,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 11,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 12,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 12,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 13,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 14,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 15,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 2,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 3,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+p"
+          },
+          {
+            "x": 4,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": ".+M0"
+          },
+          {
+            "x": 5,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 5,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+M0"
+          },
+          {
+            "x": 6,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": ".+M0"
+          },
+          {
+            "x": 6,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 6,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": ".+M0"
+          },
+          {
+            "x": 6,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": ".+M0"
+          },
+          {
+            "x": 7,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 7,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "+"
+          },
+          {
+            "x": 7,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "+"
+          },
+          {
+            "x": 7,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 7,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 8,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "+"
+          },
+          {
+            "x": 8,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "+"
+          },
+          {
+            "x": 8,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 9,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 9,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 9,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 9,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 9,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": ".+#"
+          },
+          {
+            "x": 9,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": ".+M1"
+          },
+          {
+            "x": 9,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": ".+M1"
+          },
+          {
+            "x": 9,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": ".+M1"
+          },
+          {
+            "x": 9,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 9,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          }
+        ],
+        "removed": [],
+        "changed": []
+      },
+      "preview": {
+        "levelPath": "data/process-levels/authored-hook-transfer-c59e9e846a22/v001.json",
+        "levelSha256": "0ef2a7a58ebaa0038482598c6c0db6b891fef780ff32ba759249eec8d6ff5c98",
+        "cellsSha256": "2a378e8fc64b6f00e277a648bdc1c4b076e01a82f3707c0f6e3d725a61176737",
+        "status": "iteration",
+        "thumbnailPath": "assets/process-thumbnails/authored-hook-transfer-c59e9e846a22/v001-0ef2a7a58ebaa003-6ce268de9e786607.png"
+      }
+    },
+    {
+      "id": "v002",
+      "graphNodeId": "candidate-v002",
+      "label": "Offset Loom",
+      "parentId": "v001",
+      "parentIds": [
+        "v001"
+      ],
+      "cells": [
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          "+",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          "+",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          "+",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+M1",
+          ".",
+          "+",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".",
+          ".",
+          "+",
+          "+",
+          ".+M1",
+          ".",
+          "+",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".",
+          ".",
+          "+",
+          "+",
+          ".+M1",
+          ".+M1",
+          ".",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".",
+          ".+M0",
+          ".",
+          ".",
+          ".",
+          ".+#",
+          ".",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".",
+          ".+M0",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".",
+          ".+M0",
+          ".+#",
+          ".",
+          ".",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".+M0",
+          ".+M0",
+          ".+#",
+          ".",
+          ".",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+p",
+          ".",
+          ".",
+          ".+#",
+          ".",
+          ".",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".",
+          ".",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ],
+        [
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#",
+          ".+#"
+        ]
+      ],
+      "sha256": "3661499e733d2e9f7fc54686a86ba764839e54fc561486f0d3c473fc652495ba",
+      "cellsSha256": "2a378e8fc64b6f00e277a648bdc1c4b076e01a82f3707c0f6e3d725a61176737",
+      "contractSha256": "7b6b8be5f21b9f9df563bd84a43ada252067fa3fb41cff8c4342fe9ebc315366",
+      "origin": "observed",
+      "parentBasis": "observed-snapshot-order",
+      "diff": {
+        "added": [],
+        "removed": [],
+        "changed": []
+      },
+      "preview": {
+        "levelPath": "data/process-levels/authored-hook-transfer-c59e9e846a22/v002.json",
+        "levelSha256": "6c20f27c503217ad27d9d7f8cd47d7fd4a559290f5beca8a0bb9d70d42fb087f",
+        "cellsSha256": "2a378e8fc64b6f00e277a648bdc1c4b076e01a82f3707c0f6e3d725a61176737",
+        "status": "iteration",
+        "thumbnailPath": "assets/process-thumbnails/authored-hook-transfer-c59e9e846a22/v002-6c20f27c503217ad-6ce268de9e786607.png",
+        "replays": [
+          {
+            "id": "replay-e000031",
+            "data": "data/process-replays/authored-hook-transfer-c59e9e846a22/v002-replay-e000031.json",
+            "sha256": "0ef100ff08e471b456a6e7ba3ab3b2d698f03ab3282d69e712bd618560e4d8a9",
+            "candidateId": "v002",
+            "cellsSha256": "2a378e8fc64b6f00e277a648bdc1c4b076e01a82f3707c0f6e3d725a61176737",
+            "contractSha256": "7b6b8be5f21b9f9df563bd84a43ada252067fa3fb41cff8c4342fe9ebc315366",
+            "sourceSha256": "1d723afd77754fd760ccc3b552cba1638663390c939e9eb814e09e3be454fa28",
+            "route": "RUULURRRURDDDDUUURRRUULU",
+            "frameCount": 25,
+            "binding": "exact-artifact",
+            "sourceKind": "saved-replay"
+          }
+        ],
+        "replay": {
+          "id": "replay-e000031",
+          "data": "data/process-replays/authored-hook-transfer-c59e9e846a22/v002-replay-e000031.json",
+          "sha256": "0ef100ff08e471b456a6e7ba3ab3b2d698f03ab3282d69e712bd618560e4d8a9",
+          "candidateId": "v002",
+          "cellsSha256": "2a378e8fc64b6f00e277a648bdc1c4b076e01a82f3707c0f6e3d725a61176737",
+          "contractSha256": "7b6b8be5f21b9f9df563bd84a43ada252067fa3fb41cff8c4342fe9ebc315366",
+          "sourceSha256": "1d723afd77754fd760ccc3b552cba1638663390c939e9eb814e09e3be454fa28",
+          "route": "RUULURRRURDDDDUUURRRUULU",
+          "frameCount": 25,
+          "binding": "exact-artifact",
+          "sourceKind": "saved-replay"
+        }
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "graphNodeId": "test-t001",
+      "candidateId": "v002",
+      "label": "verify-complex.cjs",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "blocked_M0_R_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "blocked_M1_R_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "blocked_M1_R_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "blocked_M1_R_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "blocked_M1_U_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "blocked_M1_U_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "blocked_M1_L_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "blocked_M1_L_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "blocked_M1_L_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "blocked_M1_D_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "blocked_M1_D_step_0",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Prepare the elbow",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Release the blocker",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Withdraw the elbow",
+          "status": "passed"
+        },
+        {
+          "name": "stage_access_Lift the pocket gate",
+          "status": "passed"
+        },
+        {
+          "name": "initial_frozen_walking",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M0",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M1",
+          "status": "passed"
+        },
+        {
+          "name": "forbid_mechanism",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_prepare_to_transfer",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_prepare_to_transfer",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_transfer_to_lift",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_transfer_to_lift",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_withdraw_to_lift",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_withdraw_to_lift",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_lift_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_lift_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_positive_work_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "prefix_without_work_to_goal",
+          "status": "passed"
+        },
+        {
+          "name": "at_most_one_push_then_walk",
+          "status": "passed"
+        },
+        {
+          "name": "one_same_direction_translation_process",
+          "status": "passed"
+        },
+        {
+          "name": "first_mechanism_then_walking_only_all_histories",
+          "status": "passed"
+        },
+        {
+          "name": "walking_to_predocked_use",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M0_after_any_first_contact",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_M1_after_any_first_contact",
+          "status": "passed"
+        },
+        {
+          "name": "selected_state_8_walking",
+          "status": "passed"
+        },
+        {
+          "name": "selected_state_8_freeze_M0",
+          "status": "passed"
+        },
+        {
+          "name": "selected_state_8_freeze_M1",
+          "status": "passed"
+        }
+      ],
+      "scope": "Author self-test; ordinary official physics; exhaustive restricted push-state graph, frozen walking components; no human-difficulty or independent-author claim.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    },
+    {
+      "id": "t002",
+      "graphNodeId": "test-t002",
+      "candidateId": "v002",
+      "label": "verification.json",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "initial_actor_identity",
+          "status": "passed"
+        },
+        {
+          "name": "ordinary_keyboard_undo",
+          "status": "passed"
+        },
+        {
+          "name": "ordinary_keyboard_reset",
+          "status": "passed"
+        },
+        {
+          "name": "normal_play_full_goal",
+          "status": "passed"
+        },
+        {
+          "name": "every_browser_actor_frame_matches_official_engine",
+          "status": "passed"
+        },
+        {
+          "name": "page_and_asset_errors",
+          "status": "passed"
+        }
+      ],
+      "scope": "Author-guided automated browser playtest. The known verified witness guides input; frames below are observed from the live browser, not generated from the solver.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    }
+  ],
+  "notes": [
+    {
+      "id": "n001",
+      "graphNodeId": "note-n001",
+      "candidateId": null,
+      "label": "Reach the sealed upper pocket at (10,6,0) through a connected preparation, lateral release, withdrawal and blocker-lifting sequence.",
+      "goal": "Reach the sealed upper pocket at (10,6,0) through a connected preparation, lateral release, withdrawal and blocker-lifting sequence.",
+      "change": "New elbow tool, rib-limited western bay, void-separated working tip, east-facing blocker release, southern withdrawal well and upper goal pocket. The layout is independently derived from stance and contact constraints.",
+      "reason": "Independent preparation must clear a rib; remote contact must release an otherwise immovable target; tool withdrawal must restore access to the newly usable target face. Recorder viewer startup failed with EACCES; recording continues with the viewer disabled in trial-local configuration. The mechanism text was first inspected during diagnosis and subsequently read through the recorder before layout.",
+      "sources": [
+        "references/mechanism-logic.md",
+        "references/official-case.md",
+        "references/official-fxe-case.md",
+        "references/planning-depth.md"
+      ],
+      "expectedChecks": [
+        "Complete reach goal",
+        "Both roles and lateral contact necessary",
+        "Independent preparation before first contact",
+        "Withdrawal before lifting opportunity",
+        "Further object work after any first contact",
+        "Official 3D input playthrough and recorded replay"
+      ],
+      "origin": "agent_statement",
+      "retrospective": false
+    },
+    {
+      "id": "n002",
+      "graphNodeId": "note-n002",
+      "candidateId": "v001",
+      "label": "Bind the unchanged first geometry to the ordinary 24-input witness; set exact contact, withdrawal and lifting stage inputs and enumerate all external target input faces.",
+      "goal": "Bind the unchanged first geometry to the ordinary 24-input witness; set exact contact, withdrawal and lifting stage inputs and enumerate all external target input faces.",
+      "change": "Bind the unchanged first geometry to the ordinary 24-input witness; set exact contact, withdrawal and lifting stage inputs and enumerate all external target input faces.",
+      "reason": "The official-physics search found a complete route. Initial target stances are inaccessible, so the contract describes them as stance restrictions rather than claiming reachable blocked pushes. This is a contract correction, not a geometry revision.",
+      "sources": [],
+      "expectedChecks": [
+        "Run the full complex verifier",
+        "Confirm each stage's exact next legal input",
+        "Exhaust declared bypass and post-contact restrictions"
+      ],
+      "origin": "agent_statement",
+      "retrospective": true
+    },
+    {
+      "id": "n003",
+      "graphNodeId": "note-n003",
+      "candidateId": "v002",
+      "label": "Deliver Offset Loom with the full explicit reach goal, default complex verification and an observed official 3D browser replay.",
+      "goal": "Deliver Offset Loom with the full explicit reach goal, default complex verification and an observed official 3D browser replay.",
+      "change": "Completed the unchanged first geometry. Bound the final contract to four interdependent functional stages. Saved the observed 24-input browser playthrough, 25 actor frames, screenshots and video.",
+      "reason": "All 38 complex checks passed with exhausted restrictions and successful controls. The official browser reached the goal, matched every ordinary engine frame, and passed Undo/Reset. The known route guided automated keyboard inputs; this is not a human-difficulty test. The recorder viewer was unavailable, but the passive recording and artifacts are complete for the declared interval.",
+      "sources": [],
+      "expectedChecks": [
+        "Seal the authoring record before waiting for publication",
+        "Publish the matching final build and verification through the serialized command",
+        "Report the actual Pages result"
+      ],
+      "origin": "agent_statement",
+      "retrospective": false
+    },
+    {
+      "id": "n004",
+      "graphNodeId": "note-n004",
+      "candidateId": "v002",
+      "label": "Complete publication with an explicitly documented retrospective note-heading correction.",
+      "goal": "Complete publication with an explicitly documented retrospective note-heading correction.",
+      "change": "Supply the missing n002 goal heading verbatim from its existing change text and mark that note retrospective. Preserve its original journal entry and a complete copy of the original sealed run.",
+      "reason": "The first publication attempt stopped at Incomplete explanation: note-n002. This addendum repairs display metadata only. Maze geometry, contract, verification reports, browser replay and sealed usage are unchanged; no new gameplay checks are claimed.",
+      "sources": [],
+      "expectedChecks": [
+        "Run the standard serialized publisher with the same final build and verification.",
+        "Report its actual commit and Pages deployment result."
+      ],
+      "origin": "agent_statement",
+      "retrospective": true
+    }
+  ],
+  "resources": [
+    {
+      "id": "r001",
+      "graphNodeId": "resource-r001",
+      "label": "mazebench-hook-transfer/references/mechanism-logic.md",
+      "displayPath": "mazebench-hook-transfer/references/mechanism-logic.md",
+      "basename": "mechanism-logic.md",
+      "sha256": "7dace0cba93c48cbca55a6f429b993220e516e18064c52c8f8a0876aefa41f08",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r002",
+      "graphNodeId": "resource-r002",
+      "label": "mazebench-hook-transfer/references/planning-depth.md",
+      "displayPath": "mazebench-hook-transfer/references/planning-depth.md",
+      "basename": "planning-depth.md",
+      "sha256": "a2a586bfcdb3e89f97d4338e6e4084ebbf5e08da6fbcef899412f5876595de21",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r003",
+      "graphNodeId": "resource-r003",
+      "label": "mazebench-hook-transfer/references/complex-validation.md",
+      "displayPath": "mazebench-hook-transfer/references/complex-validation.md",
+      "basename": "complex-validation.md",
+      "sha256": "42971d1f8ec2b97904dbdfe8aa91c32b48be176610120ba16378fe2f2eb73369",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r004",
+      "graphNodeId": "resource-r004",
+      "label": "mazebench-hook-transfer/references/design.md",
+      "displayPath": "mazebench-hook-transfer/references/design.md",
+      "basename": "design.md",
+      "sha256": "1ae8cd45b040b56eaa08faedb57ba28a1750a1e223e02f25c71dfab6a26f9abf",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r005",
+      "graphNodeId": "resource-r005",
+      "label": "mazebench-hook-transfer/references/verification.md",
+      "displayPath": "mazebench-hook-transfer/references/verification.md",
+      "basename": "verification.md",
+      "sha256": "daf043e74815d0e20388d5d98479ef6942c4be934a9f48852610d4c7c8fb43cb",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r006",
+      "graphNodeId": "resource-r006",
+      "label": "mazebench-hook-transfer/references/design-template.json",
+      "displayPath": "mazebench-hook-transfer/references/design-template.json",
+      "basename": "design-template.json",
+      "sha256": "c06355d2eebe6615900090772e89028044cd21bd2a58452cb4a301dc0bea2f11",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r007",
+      "graphNodeId": "resource-r007",
+      "label": "mazebench-hook-transfer/references/official-case.md",
+      "displayPath": "mazebench-hook-transfer/references/official-case.md",
+      "basename": "official-case.md",
+      "sha256": "8cb85228fe706a35e7800358301d8eaeb60d4f4b8abc0e3c5a78c8ef17cd976f",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r008",
+      "graphNodeId": "resource-r008",
+      "label": "mazebench-hook-transfer/references/official-fxe-case.md",
+      "displayPath": "mazebench-hook-transfer/references/official-fxe-case.md",
+      "basename": "official-fxe-case.md",
+      "sha256": "ad93227e7c9960031ee2bd42411904495454211e7df63abebb80d64b3014e3f0",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r009",
+      "graphNodeId": "resource-r009",
+      "label": "mazebench-hook-transfer/references/reference-library.md",
+      "displayPath": "mazebench-hook-transfer/references/reference-library.md",
+      "basename": "reference-library.md",
+      "sha256": "5be76620119e51db66f9e650d1ee57c4e4475c7914507b3680900cfa866745e3",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r010",
+      "graphNodeId": "resource-r010",
+      "label": "mazebench-hook-transfer/references/difficulty.md",
+      "displayPath": "mazebench-hook-transfer/references/difficulty.md",
+      "basename": "difficulty.md",
+      "sha256": "08fee6d8a9ec95a0795957e3fe04e6fba570110af5eca35b48b2f33cc2c05ca7",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r011",
+      "graphNodeId": "resource-r011",
+      "label": "mazebench-hook-transfer/references/official-world-map.txt",
+      "displayPath": "mazebench-hook-transfer/references/official-world-map.txt",
+      "basename": "official-world-map.txt",
+      "sha256": "4c2a18742e7949e815a620aa6c1cff8f79ed2ff8aa93801b0d63261238caa1df",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r012",
+      "graphNodeId": "resource-r012",
+      "label": "mazebench-hook-transfer/references/official-fxe-world-map.txt",
+      "displayPath": "mazebench-hook-transfer/references/official-fxe-world-map.txt",
+      "basename": "official-fxe-world-map.txt",
+      "sha256": "31db3aa3e127c359bd909958d038535b7cc805810d90edc43f9cf47e1175d9ec",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "snapshot-e000003",
+      "graphNodeId": "resource-snapshot-e000003",
+      "label": "Skill attached: mazebench-hook-transfer/SKILL.md",
+      "displayPath": "mazebench-hook-transfer/SKILL.md",
+      "basename": "SKILL.md",
+      "sha256": "2aa4da284279652c967b7f619df2322f60e5b2d3e375d3ce4d10e69b622fbfe7",
+      "kind": "skill",
+      "origin": "observed",
+      "delivery": "snapshot"
+    }
+  ],
+  "operations": [
+    {
+      "id": "operation-e000018",
+      "graphNodeId": "operation-e000018",
+      "candidateId": "v001",
+      "inputCandidateId": "v001",
+      "outputCandidateId": "v001",
+      "label": "node",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000018",
+      "resultNodeId": null,
+      "exitCode": 0
+    },
+    {
+      "id": "operation-e000022",
+      "graphNodeId": "operation-e000022",
+      "candidateId": "v002",
+      "inputCandidateId": "v002",
+      "outputCandidateId": "v002",
+      "label": "build-complex.cjs",
+      "kind": "build",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000022",
+      "resultNodeId": null,
+      "exitCode": 0
+    },
+    {
+      "id": "operation-e000025",
+      "graphNodeId": "operation-e000025",
+      "candidateId": "v002",
+      "inputCandidateId": "v002",
+      "outputCandidateId": "v002",
+      "label": "verify-complex.cjs",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000025",
+      "resultNodeId": "test-t001",
+      "exitCode": 0
+    },
+    {
+      "id": "operation-e000028",
+      "graphNodeId": "operation-e000028",
+      "candidateId": "v002",
+      "inputCandidateId": "v002",
+      "outputCandidateId": "v002",
+      "label": "node",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000028",
+      "resultNodeId": "test-t002",
+      "exitCode": 0
+    }
+  ],
+  "replays": [
+    {
+      "id": "replay-e000031",
+      "graphNodeId": "replay-e000031",
+      "candidateId": "v002",
+      "label": "Saved browser playthrough",
+      "route": "RUULURRRURDDDDUUURRRUULU",
+      "frameCount": 25,
+      "binding": "exact-artifact",
+      "sourceKind": "saved-replay",
+      "sourceSha256": "1d723afd77754fd760ccc3b552cba1638663390c939e9eb814e09e3be454fa28",
+      "cellsSha256": "2a378e8fc64b6f00e277a648bdc1c4b076e01a82f3707c0f6e3d725a61176737",
+      "contractSha256": "7b6b8be5f21b9f9df563bd84a43ada252067fa3fb41cff8c4342fe9ebc315366",
+      "data": "data/process-replays/authored-hook-transfer-c59e9e846a22/v002-replay-e000031.json",
+      "sha256": "0ef100ff08e471b456a6e7ba3ab3b2d698f03ab3282d69e712bd618560e4d8a9"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "status": "measured",
+    "runtime": "codex-tui",
+    "elapsedMs": 616013,
+    "startedAt": "2026-10-25T13:13:09.434Z",
+    "finishedAt": "2026-10-25T13:23:25.447Z",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 1243705,
+      "cached_input_tokens": 1183488,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 13854,
+      "reasoning_output_tokens": 5678,
+      "total_tokens": 1257559
+    },
+    "models": [
+      {
+        "model": "gpt-6-astra",
+        "provider": "openai",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 1243705,
+          "cached_input_tokens": 1183488,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 13854,
+          "reasoning_output_tokens": 5678,
+          "total_tokens": 1257559
+        },
+        "observations": 16
+      }
+    ],
+    "evidenceSha256": "a2284718f7197710ee36309d00c9189615d8c978ebb99093737f345e3889f563"
+  },
+  "records": [
+    {
+      "id": "event-e000001",
+      "graphNodeId": "event-e000001",
+      "candidateId": null,
+      "eventType": "run.created",
+      "label": "Start authoring run",
+      "status": "neutral",
+      "scope": "The recorder opened this authoring run. This does not establish an empty prior conversation context.",
+      "relatedNodeId": null,
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000002",
+      "graphNodeId": "event-e000002",
+      "candidateId": null,
+      "eventType": "collector.started",
+      "label": "Start automatic capture",
+      "status": "neutral",
+      "scope": "The automatic collector started. Recorded command boundaries, reads and saved artifacts are shown in sequence.",
+      "relatedNodeId": null,
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000018",
+      "graphNodeId": "event-e000018",
+      "candidateId": "v001",
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000018",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000022",
+      "graphNodeId": "event-e000022",
+      "candidateId": "v002",
+      "eventType": "command.started",
+      "label": "Start: build-complex.cjs",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000022",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000024",
+      "graphNodeId": "event-e000024",
+      "candidateId": "v002",
+      "eventType": "build.saved",
+      "label": "Save build files",
+      "status": "neutral",
+      "scope": "Build files were archived for this candidate. The file list and fingerprints identify the saved output; verification appears separately.",
+      "relatedNodeId": null,
+      "files": [
+        {
+          "name": "manifest.json",
+          "sha256": "4661d00c9a46a44273f0bf2a418403e069714987f9c7d2fe89dcb83271949126"
+        },
+        {
+          "name": "world.json",
+          "sha256": "80b55f87be9bfa1c65c3ca33619db3fd702c4ce3564a0496f951d11661e15379"
+        },
+        {
+          "name": "contract.json",
+          "sha256": "b551f6e9d3b045949e99e7f88f9a311a7e1268bf89cb57387b8a5dd10ade58cd"
+        },
+        {
+          "name": "spec.json",
+          "sha256": "3661499e733d2e9f7fc54686a86ba764839e54fc561486f0d3c473fc652495ba"
+        },
+        {
+          "name": "draft.json",
+          "sha256": "ee7a7c7f5cb9e65d55600bf82028714ec110b65c1fb417488d968f88f1c84b40"
+        },
+        {
+          "name": "level_AxA.txt",
+          "sha256": "c59e9e846a224131d4ac7018787c82a75776da71e390949aa351b597e922268f"
+        },
+        {
+          "name": "level_parsing.json",
+          "sha256": "54cb1bc6d2e545a89abe860e2c84e45ed5fd31b244b828b8424d2693d05b780d"
+        },
+        {
+          "name": "toolbox.json",
+          "sha256": "c36ac5ee0a6a8e7b69d73613e3dde029afdc84681b146fbdfe75a1c52b81a330"
+        },
+        {
+          "name": "world_map.json",
+          "sha256": "615bed0185123455144b43872f1d68652b193af598afb450cf3abbb249723806"
+        },
+        {
+          "name": "world_parsing.json",
+          "sha256": "7e250cc0e0dccadf087fc5717567e059f1e6b604a3e3f8315bd1d29f192c3202"
+        }
+      ],
+      "facts": []
+    },
+    {
+      "id": "event-e000025",
+      "graphNodeId": "event-e000025",
+      "candidateId": "v002",
+      "eventType": "command.started",
+      "label": "Start: verify-complex.cjs",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000025",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000028",
+      "graphNodeId": "event-e000028",
+      "candidateId": "v002",
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000028",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000032",
+      "graphNodeId": "event-e000032",
+      "candidateId": "v002",
+      "eventType": "artifact.saved",
+      "label": "Save recorded artifact",
+      "status": "neutral",
+      "scope": "The recorder archived this file. Saving evidence does not itself establish a passing test.",
+      "relatedNodeId": null,
+      "files": [
+        {
+          "name": "delivery.txt",
+          "sha256": "1b7c1955300146a2f6fcdfcbda20d101f59fb3e68bd6857ca5ddfdc7940fc5c0"
+        }
+      ],
+      "facts": []
+    },
+    {
+      "id": "event-e000034",
+      "graphNodeId": "event-e000034",
+      "candidateId": null,
+      "eventType": "run.finished",
+      "label": "Finish authoring run",
+      "status": "neutral",
+      "scope": "The recorder closed the run. Test verdicts and publication are separate records.",
+      "relatedNodeId": null,
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000035",
+      "graphNodeId": "event-e000035",
+      "candidateId": "v002",
+      "eventType": "publication.metadata-amended",
+      "label": "Recorded publication.metadata-amended",
+      "status": "neutral",
+      "scope": "This recorded step is retained. Its private payload is not published.",
+      "relatedNodeId": null,
+      "files": [],
+      "facts": []
+    }
+  ],
+  "explanations": [
+    {
+      "nodeId": "event-e000001",
+      "basis": "saved-evidence-review",
+      "headline": "Start authoring run",
+      "action": "Start authoring run.",
+      "result": "The recorder opened this authoring run. This does not establish an empty prior conversation context.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000002",
+      "basis": "saved-evidence-review",
+      "headline": "Start automatic capture",
+      "action": "Start automatic capture.",
+      "result": "The automatic collector started. Recorded command boundaries, reads and saved artifacts are shown in sequence.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-snapshot-e000003",
+      "basis": "saved-evidence-review",
+      "headline": "Skill attached: mazebench-hook-transfer/SKILL.md",
+      "action": "Capture a version snapshot of mazebench-hook-transfer/SKILL.md. Authoring workflow, supported mechanism and required delivery checks.",
+      "result": "The dependency version was saved. This event does not record a document read.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-snapshot-e000003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r001",
+      "basis": "saved-evidence-review",
+      "headline": "mechanism-logic.md",
+      "action": "Read mazebench-hook-transfer/references/mechanism-logic.md. Extracted functional roles, contact relationships and preparation dependencies to realize in a new layout.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r001",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r002",
+      "basis": "saved-evidence-review",
+      "headline": "planning-depth.md",
+      "action": "Read mazebench-hook-transfer/references/planning-depth.md. Guidance for connected stages, usable recovery and avoiding trivial completions.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r002",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r003",
+      "basis": "saved-evidence-review",
+      "headline": "complex-validation.md",
+      "action": "Read mazebench-hook-transfer/references/complex-validation.md. Verification rules or implementations defining what the checks can and cannot establish.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r004",
+      "basis": "saved-evidence-review",
+      "headline": "design.md",
+      "action": "Read mazebench-hook-transfer/references/design.md. Supporting design or reference material identified by the saved filename and fingerprint.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r005",
+      "basis": "saved-evidence-review",
+      "headline": "verification.md",
+      "action": "Read mazebench-hook-transfer/references/verification.md. Verification rules or implementations defining what the checks can and cannot establish.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r005"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r006",
+      "basis": "saved-evidence-review",
+      "headline": "design-template.json",
+      "action": "Read mazebench-hook-transfer/references/design-template.json. The design contract scaffold; reading it does not establish that a complete reference map was copied.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r006"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r007",
+      "basis": "saved-evidence-review",
+      "headline": "official-case.md",
+      "action": "Read mazebench-hook-transfer/references/official-case.md. The source case explanation and its scoped mechanism evidence.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r007",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r008",
+      "basis": "saved-evidence-review",
+      "headline": "official-fxe-case.md",
+      "action": "Read mazebench-hook-transfer/references/official-fxe-case.md. The source case explanation and its scoped mechanism evidence.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r008",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r009",
+      "basis": "saved-evidence-review",
+      "headline": "reference-library.md",
+      "action": "Read mazebench-hook-transfer/references/reference-library.md. Supporting design or reference material identified by the saved filename and fingerprint.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r009"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r010",
+      "basis": "saved-evidence-review",
+      "headline": "difficulty.md",
+      "action": "Read mazebench-hook-transfer/references/difficulty.md. Supporting design or reference material identified by the saved filename and fingerprint.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r010"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r011",
+      "basis": "saved-evidence-review",
+      "headline": "official-world-map.txt",
+      "action": "Read mazebench-hook-transfer/references/official-world-map.txt. Original source geometry for checking actual members, terrain and boundaries.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r011"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r012",
+      "basis": "saved-evidence-review",
+      "headline": "official-fxe-world-map.txt",
+      "action": "Read mazebench-hook-transfer/references/official-fxe-world-map.txt. Original source geometry for checking actual members, terrain and boundaries.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r012"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "note-n001",
+      "basis": "saved-evidence-review",
+      "headline": "Reach the sealed upper pocket at (10,6,0) through a connected preparation, lateral release, withdrawal and blocker-lifting sequence.",
+      "action": "New elbow tool, rib-limited western bay, void-separated working tip, east-facing blocker release, southern withdrawal well and upper goal pocket. The layout is independently derived from stance and contact constraints.",
+      "result": "Independent preparation must clear a rib; remote contact must release an otherwise immovable target; tool withdrawal must restore access to the newly usable target face. Recorder viewer startup failed with EACCES; recording continues with the viewer disabled in trial-local configuration. The mechanism text was first inspected during diagnosis and subsequently read through the recorder before layout.",
+      "decision": "Planned checks: Complete reach goal; Both roles and lateral contact necessary; Independent preparation before first contact; Withdrawal before lifting opportunity; Further object work after any first contact; Official 3D input playthrough and recorded replay.",
+      "badge": "",
+      "evidence": [
+        "note-n001",
+        "resource-r001",
+        "resource-r007",
+        "resource-r008",
+        "resource-r002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "candidate-v001",
+      "basis": "saved-evidence-review",
+      "headline": "v001 · Offset Loom",
+      "action": "Save the first captured map and contract for this run.",
+      "result": "No separate test verdict is bound to this saved version. Saving a candidate does not establish that it passes.",
+      "decision": "The subsequent author note states: The official-physics search found a complete route. Initial target stances are inaccessible, so the contract describes them as stance restrictions rather than claiming reachable blocked pushes. This is a contract correction, not a geometry revision.",
+      "badge": "",
+      "evidence": [
+        "candidate-v001",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000018",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000018",
+        "candidate-v001",
+        "operation-e000018"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000018",
+      "basis": "saved-evidence-review",
+      "headline": "node",
+      "action": "node. Saved input: v001; output: v001.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "The subsequent author note states: The official-physics search found a complete route. Initial target stances are inaccessible, so the contract describes them as stance restrictions rather than claiming reachable blocked pushes. This is a contract correction, not a geometry revision.",
+      "badge": "",
+      "evidence": [
+        "operation-e000018",
+        "candidate-v001",
+        "event-e000018",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "note-n002",
+      "basis": "saved-evidence-review",
+      "headline": "Bind the unchanged first geometry to the ordinary 24-input witness; set exact contact, withdrawal and lifting stage inputs and enumerate all external target input faces.",
+      "action": "Bind the unchanged first geometry to the ordinary 24-input witness; set exact contact, withdrawal and lifting stage inputs and enumerate all external target input faces.",
+      "result": "The official-physics search found a complete route. Initial target stances are inaccessible, so the contract describes them as stance restrictions rather than claiming reachable blocked pushes. This is a contract correction, not a geometry revision.",
+      "decision": "Planned checks: Run the full complex verifier; Confirm each stage's exact next legal input; Exhaust declared bypass and post-contact restrictions.",
+      "badge": "",
+      "evidence": [
+        "note-n002",
+        "candidate-v001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "candidate-v002",
+      "basis": "saved-evidence-review",
+      "headline": "v002 · Offset Loom",
+      "action": "Save v002 with the same map cells as v001; the saved design metadata differs.",
+      "result": "Later associated results: verify-complex.cjs: passed; verification.json: passed.",
+      "decision": "The subsequent author note states: All 38 complex checks passed with exhausted restrictions and successful controls. The official browser reached the goal, matched every ordinary engine frame, and passed Undo/Reset. The known route guided automated keyboard inputs; this is not a human-difficulty test. The recorder viewer was unavailable, but the passive recording and artifacts are complete for the declared interval.",
+      "badge": "",
+      "evidence": [
+        "candidate-v002",
+        "test-t001",
+        "test-t002",
+        "candidate-v001",
+        "note-n003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000022",
+      "basis": "saved-evidence-review",
+      "headline": "Start: build-complex.cjs",
+      "action": "Start: build-complex.cjs.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000022",
+        "candidate-v002",
+        "operation-e000022"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000022",
+      "basis": "saved-evidence-review",
+      "headline": "build-complex.cjs",
+      "action": "build-complex.cjs. Saved input: v002; output: v002.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "The subsequent author note states: All 38 complex checks passed with exhausted restrictions and successful controls. The official browser reached the goal, matched every ordinary engine frame, and passed Undo/Reset. The known route guided automated keyboard inputs; this is not a human-difficulty test. The recorder viewer was unavailable, but the passive recording and artifacts are complete for the declared interval.",
+      "badge": "",
+      "evidence": [
+        "operation-e000022",
+        "candidate-v002",
+        "event-e000022",
+        "note-n003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000024",
+      "basis": "saved-evidence-review",
+      "headline": "Save build files",
+      "action": "Save build files. Saved files: manifest.json, world.json, contract.json, spec.json, draft.json, level_AxA.txt, level_parsing.json, toolbox.json, world_map.json, world_parsing.json.",
+      "result": "Build files were archived for this candidate. The file list and fingerprints identify the saved output; verification appears separately.",
+      "decision": "Archiving preserves evidence and file identity. It does not rerun the test or establish that the map passed.",
+      "badge": "",
+      "evidence": [
+        "event-e000024",
+        "candidate-v002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000025",
+      "basis": "saved-evidence-review",
+      "headline": "Start: verify-complex.cjs",
+      "action": "Start: verify-complex.cjs.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000025",
+        "candidate-v002",
+        "operation-e000025"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000025",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; verify-complex.cjs",
+      "action": "verify-complex.cjs. Saved input: v002; output: v002.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict. Report interpretation: The report is passed; 38 of 38 individual checks passed.",
+      "decision": "The subsequent author note states: All 38 complex checks passed with exhausted restrictions and successful controls. The official browser reached the goal, matched every ordinary engine frame, and passed Undo/Reset. The known route guided automated keyboard inputs; this is not a human-difficulty test. The recorder viewer was unavailable, but the passive recording and artifacts are complete for the declared interval.",
+      "badge": "",
+      "evidence": [
+        "operation-e000025",
+        "candidate-v002",
+        "test-t001",
+        "event-e000025",
+        "note-n003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t001",
+      "basis": "saved-evidence-review",
+      "headline": "verify-complex.cjs",
+      "action": "Execute verify-complex.cjs against v002.",
+      "result": "The report is passed; 38 of 38 individual checks passed.",
+      "decision": "The subsequent author note states: All 38 complex checks passed with exhausted restrictions and successful controls. The official browser reached the goal, matched every ordinary engine frame, and passed Undo/Reset. The known route guided automated keyboard inputs; this is not a human-difficulty test. The recorder viewer was unavailable, but the passive recording and artifacts are complete for the declared interval.",
+      "badge": "",
+      "evidence": [
+        "test-t001",
+        "candidate-v002",
+        "note-n003"
+      ],
+      "observations": [
+        {
+          "label": "Saved goal search",
+          "value": "solved"
+        },
+        {
+          "label": "Solution inputs",
+          "value": "24"
+        },
+        {
+          "label": "Expanded search states",
+          "value": "333"
+        },
+        {
+          "label": "Search limit",
+          "value": "1000000"
+        },
+        {
+          "label": "Recorded ordinary replay",
+          "value": "passed"
+        }
+      ],
+      "checks": [
+        {
+          "name": "blocked_M0_R_step_0",
+          "verdict": "passed",
+          "meaning": "At the declared state, check the actual pushing stance or whole-group push obstruction using ordinary physics.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "blocked_M1_R_step_0",
+          "verdict": "passed",
+          "meaning": "At the declared state, check the actual pushing stance or whole-group push obstruction using ordinary physics.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "blocked_M1_R_step_0",
+          "verdict": "passed",
+          "meaning": "At the declared state, check the actual pushing stance or whole-group push obstruction using ordinary physics.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "blocked_M1_R_step_0",
+          "verdict": "passed",
+          "meaning": "At the declared state, check the actual pushing stance or whole-group push obstruction using ordinary physics.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "blocked_M1_U_step_0",
+          "verdict": "passed",
+          "meaning": "At the declared state, check the actual pushing stance or whole-group push obstruction using ordinary physics.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "blocked_M1_U_step_0",
+          "verdict": "passed",
+          "meaning": "At the declared state, check the actual pushing stance or whole-group push obstruction using ordinary physics.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "blocked_M1_L_step_0",
+          "verdict": "passed",
+          "meaning": "At the declared state, check the actual pushing stance or whole-group push obstruction using ordinary physics.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "blocked_M1_L_step_0",
+          "verdict": "passed",
+          "meaning": "At the declared state, check the actual pushing stance or whole-group push obstruction using ordinary physics.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "blocked_M1_L_step_0",
+          "verdict": "passed",
+          "meaning": "At the declared state, check the actual pushing stance or whole-group push obstruction using ordinary physics.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "blocked_M1_D_step_0",
+          "verdict": "passed",
+          "meaning": "At the declared state, check the actual pushing stance or whole-group push obstruction using ordinary physics.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "blocked_M1_D_step_0",
+          "verdict": "passed",
+          "meaning": "At the declared state, check the actual pushing stance or whole-group push obstruction using ordinary physics.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_access_Prepare the elbow",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_access_Release the blocker",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_access_Withdraw the elbow",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_access_Lift the pocket gate",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "initial_frozen_walking",
+          "verdict": "passed",
+          "meaning": "Keep all objects fixed and search for a walking-only completion from the initial state.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze_M0",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze_M1",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "forbid_mechanism",
+          "verdict": "passed",
+          "meaning": "Forbid the declared mechanism event and search for the complete objective. A solution is a mechanism bypass.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_prepare_to_transfer",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_prepare_to_transfer",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_transfer_to_lift",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_transfer_to_lift",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_withdraw_to_lift",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_withdraw_to_lift",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_lift_to_goal",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_lift_to_goal",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "prefix_positive_work_to_goal",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "prefix_without_work_to_goal",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "at_most_one_push_then_walk",
+          "verdict": "passed",
+          "meaning": "Restrict the allowed number of object-moving inputs and search for a complete goal, testing whether a simpler completion exists.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "one_same_direction_translation_process",
+          "verdict": "passed",
+          "meaning": "Allow object movement in only one compass direction and search for completion.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "first_mechanism_then_walking_only_all_histories",
+          "verdict": "passed",
+          "meaning": "Search all supported first-use histories for a completion requiring no further object movement.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "walking_to_predocked_use",
+          "verdict": "passed",
+          "meaning": "Test whether the initial arrangement already permits tool use without independent preparation.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze_M0_after_any_first_contact",
+          "verdict": "passed",
+          "meaning": "Across first-contact histories, freeze this group and search for completion. Exhaustion excludes a completion with that group frozen; it does not prove every contact state is recoverable.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze_M1_after_any_first_contact",
+          "verdict": "passed",
+          "meaning": "Across first-contact histories, freeze this group and search for completion. Exhaustion excludes a completion with that group frozen; it does not prove every contact state is recoverable.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "selected_state_8_walking",
+          "verdict": "passed",
+          "meaning": "Apply the restriction at the selected witness state only. This does not quantify over every reachable state.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "selected_state_8_freeze_M0",
+          "verdict": "passed",
+          "meaning": "Apply the restriction at the selected witness state only. This does not quantify over every reachable state.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "selected_state_8_freeze_M1",
+          "verdict": "passed",
+          "meaning": "Apply the restriction at the selected witness state only. This does not quantify over every reachable state.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        }
+      ]
+    },
+    {
+      "nodeId": "event-e000028",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000028",
+        "candidate-v002",
+        "operation-e000028"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000028",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; verification.json",
+      "action": "node. Saved input: v002; output: v002.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict. Report interpretation: The report is passed; 6 of 6 individual checks passed.",
+      "decision": "The subsequent author note states: All 38 complex checks passed with exhausted restrictions and successful controls. The official browser reached the goal, matched every ordinary engine frame, and passed Undo/Reset. The known route guided automated keyboard inputs; this is not a human-difficulty test. The recorder viewer was unavailable, but the passive recording and artifacts are complete for the declared interval.",
+      "badge": "",
+      "evidence": [
+        "operation-e000028",
+        "candidate-v002",
+        "test-t002",
+        "event-e000028",
+        "note-n003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t002",
+      "basis": "saved-evidence-review",
+      "headline": "verification.json",
+      "action": "Execute verification.json against v002.",
+      "result": "The report is passed; 6 of 6 individual checks passed.",
+      "decision": "The subsequent author note states: All 38 complex checks passed with exhausted restrictions and successful controls. The official browser reached the goal, matched every ordinary engine frame, and passed Undo/Reset. The known route guided automated keyboard inputs; this is not a human-difficulty test. The recorder viewer was unavailable, but the passive recording and artifacts are complete for the declared interval.",
+      "badge": "",
+      "evidence": [
+        "test-t002",
+        "candidate-v002",
+        "note-n003"
+      ],
+      "observations": [
+        {
+          "label": "Recorded ordinary replay",
+          "value": "passed"
+        }
+      ],
+      "checks": [
+        {
+          "name": "initial_actor_identity",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: initial actor identity. Its result is limited to the saved test scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "ordinary_keyboard_undo",
+          "verdict": "passed",
+          "meaning": "Check Undo and Reset at the recorded first-push or pre-collection state; use the stated test scope for collection persistence.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "ordinary_keyboard_reset",
+          "verdict": "passed",
+          "meaning": "Check Undo and Reset at the recorded first-push or pre-collection state; use the stated test scope for collection persistence.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "normal_play_full_goal",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: normal play full goal. Its result is limited to the saved test scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "every_browser_actor_frame_matches_official_engine",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: every browser actor frame matches official engine. Its result is limited to the saved test scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "page_and_asset_errors",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: page and asset errors. Its result is limited to the saved test scope.",
+          "expected": "",
+          "observed": ""
+        }
+      ]
+    },
+    {
+      "nodeId": "replay-e000031",
+      "basis": "saved-evidence-review",
+      "headline": "Saved browser playthrough",
+      "action": "Archive 24 recorded inputs and 25 actor frames for v002.",
+      "result": "These are saved browser actor observations compared with the ordinary engine, bound to this exact map and contract.",
+      "decision": "The subsequent author note states: All 38 complex checks passed with exhausted restrictions and successful controls. The official browser reached the goal, matched every ordinary engine frame, and passed Undo/Reset. The known route guided automated keyboard inputs; this is not a human-difficulty test. The recorder viewer was unavailable, but the passive recording and artifacts are complete for the declared interval.",
+      "badge": "",
+      "evidence": [
+        "replay-e000031",
+        "candidate-v002",
+        "note-n003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000032",
+      "basis": "saved-evidence-review",
+      "headline": "Save recorded artifact",
+      "action": "Save recorded artifact. Saved files: delivery.txt.",
+      "result": "The recorder archived this file. Saving evidence does not itself establish a passing test.",
+      "decision": "Archiving preserves evidence and file identity. It does not rerun the test or establish that the map passed.",
+      "badge": "",
+      "evidence": [
+        "event-e000032",
+        "candidate-v002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "note-n003",
+      "basis": "saved-evidence-review",
+      "headline": "Deliver Offset Loom with the full explicit reach goal, default complex verification and an observed official 3D browser replay.",
+      "action": "Completed the unchanged first geometry. Bound the final contract to four interdependent functional stages. Saved the observed 24-input browser playthrough, 25 actor frames, screenshots and video.",
+      "result": "All 38 complex checks passed with exhausted restrictions and successful controls. The official browser reached the goal, matched every ordinary engine frame, and passed Undo/Reset. The known route guided automated keyboard inputs; this is not a human-difficulty test. The recorder viewer was unavailable, but the passive recording and artifacts are complete for the declared interval.",
+      "decision": "Planned checks: Seal the authoring record before waiting for publication; Publish the matching final build and verification through the serialized command; Report the actual Pages result.",
+      "badge": "",
+      "evidence": [
+        "note-n003",
+        "candidate-v002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000034",
+      "basis": "saved-evidence-review",
+      "headline": "Finish authoring run",
+      "action": "Finish authoring run.",
+      "result": "The recorder closed the run. Test verdicts and publication are separate records.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000034"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000035",
+      "basis": "saved-evidence-review",
+      "headline": "Recorded publication.metadata-amended",
+      "action": "Recorded publication.metadata-amended.",
+      "result": "This recorded step is retained. Its private payload is not published.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000035",
+        "candidate-v002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "note-n004",
+      "basis": "saved-evidence-review",
+      "headline": "Complete publication with an explicitly documented retrospective note-heading correction.",
+      "action": "Supply the missing n002 goal heading verbatim from its existing change text and mark that note retrospective. Preserve its original journal entry and a complete copy of the original sealed run.",
+      "result": "The first publication attempt stopped at Incomplete explanation: note-n002. This addendum repairs display metadata only. Maze geometry, contract, verification reports, browser replay and sealed usage are unchanged; no new gameplay checks are claimed.",
+      "decision": "Planned checks: Run the standard serialized publisher with the same final build and verification.; Report its actual commit and Pages deployment result..",
+      "badge": "",
+      "evidence": [
+        "note-n004",
+        "candidate-v002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "delivery-final",
+      "basis": "saved-evidence-review",
+      "headline": "Published final candidate v002",
+      "action": "Bind the published map and contract to the final recorded candidate.",
+      "result": "The final candidate has 2 exactly associated passed reports, retained alongside earlier failed or unknown attempts.",
+      "decision": "These reports explain the recorded basis for delivery. A fixed iteration count or an unrecorded stopping policy cannot be inferred. These are author-side checks of the declared conditions, not a human-difficulty score or a blind independent-agent evaluation.",
+      "badge": "",
+      "evidence": [
+        "delivery-final",
+        "candidate-v002",
+        "test-t001",
+        "test-t002"
+      ],
+      "observations": [],
+      "checks": []
+    }
+  ]
+}
