@@ -1,22 +1,7 @@
-import {escapeHtml as e, playUrl} from './ui.js';
-import {buildLabel, effortLabel, configurationLabel, modelColor, modelKey, clientLabel, duration, tokenCount} from './build-data.js';
+import {escapeHtml as e} from './ui.js';
+import {buildLabel, effortLabel, configurationLabel, modelColor, clientLabel, duration, tokenCount} from './build-data.js';
 import {authoredBuilds, homeSummary, rankedGroups} from './home-build-data.js';
 import {buildDataset, downloadBuilds} from './build-downloads.js';
-
-const processUrl = entry => './process.html?' + new URLSearchParams({case: entry.id});
-
-export function mountSkillDirectory(catalog) {
-  const host = document.getElementById('skill-directory');
-  host.innerHTML = catalog.skills.map((skill, index) => {
-    const entries = skill.authoredCases.map(id => catalog.cases.find(entry => entry.id === id)).filter(Boolean);
-    const models = new Set(entries.map(entry => modelKey(entry.build)).filter(key => !key.startsWith('@')));
-    return `<details class="skill-accordion" data-skill="${e(skill.id)}"><summary class="directory-row"><span class="skill-name-cell"><span class="skill-number">${String(index + 1).padStart(2, '0')}</span><span><span class="skill-name">${e(skill.name)}</span><span class="skill-tagline">${e(skill.verb)}</span></span></span><span class="room-chips">${skill.rooms.map(room => `<span class="room-chip">${e(room)}</span>`).join('')}</span><span class="skill-build-count">${entries.length} builds <span class="muted">/ ${models.size} ${models.size === 1 ? 'model' : 'models'}</span><span class="accordion-sign" aria-hidden="true"></span></span></summary>
-      <div class="skill-expanded"><div class="skill-expanded-intro"><p>${e(skill.description)}</p><ol>${skill.steps.map(step => `<li>${e(step)}</li>`).join('')}</ol><a class="button" href="./skill.html?id=${e(skill.id)}">Explore ${e(skill.name)} ↗</a><div class="skill-reference-links">${skill.rooms.map(room => `<a href="./player.html?world=maze&amp;room=${e(room)}">Room ${e(room)} ↗</a>`).join('')}<a href="${e(skill.source)}/SKILL.md">Read skill ↗</a></div></div><div class="skill-expanded-builds"><h3>Built with the skill</h3>${entries.length ? entries.slice().reverse().map(entry => `<article class="skill-build-item"><a class="skill-build-image" href="${playUrl(entry)}" aria-label="Play ${e(entry.title)}"><img src="./${e(entry.thumbnail)}" alt="" loading="lazy" width="96" height="72"></a><div><a class="skill-build-title" href="${playUrl(entry)}">${e(entry.title)} ↗</a><p>${e(configurationLabel(entry.build))}</p><div class="skill-build-links">${entry.process ? `<a href="${processUrl(entry)}">Build process ↗</a>` : '<span>Process not provided</span>'}<span>${e(duration(entry.build?.elapsedMs))}</span></div></div></article>`).join('') : '<p>No published builds yet.</p>'}</div></div></details>`;
-  }).join('');
-  document.querySelectorAll('[data-skills-toggle]').forEach(button => button.addEventListener('click', () => {
-    host.querySelectorAll('details').forEach(details => {details.open = button.dataset.skillsToggle === 'expand';});
-  }));
-}
 
 export function mountHomeBuilds(catalog) {
   const entries = authoredBuilds(catalog.cases), all = homeSummary(entries);
@@ -37,7 +22,7 @@ export function mountHomeBuilds(catalog) {
     document.getElementById('home-board-chart').innerHTML = rows.length ? `<ol class="home-ladder">${rows.map((row, i) => {
       const value = row[metric][statistic], coverage = row[metric], skills = new Set(row.entries.map(entry => entry.skill));
       if (!i || value !== rows[i - 1][metric][statistic]) rank = i + 1;
-      return `<li class="home-ladder-row" data-model="${e(row.build?.model || 'unknown')}" data-effort="${e(effortLabel(row.build))}" data-value="${value}" style="--model-color:${modelColor(row.build)}"><span class="home-rank" aria-label="Position ${rank}">${String(rank).padStart(2, '0')}</span><div class="home-ladder-content"><div class="home-row-top"><span class="home-model">${e(buildLabel(row.build))}<span class="home-effort">${e(effortLabel(row.build))}</span></span><strong>${e(format(value))}</strong></div><div class="home-bar" role="img" aria-label="${e(configurationLabel(row.build))}: ${e(format(value))}"><span style="width:${100 * value / maximum}%"></span></div><div class="home-row-bottom"><span>${coverage.measured} measured / ${row.entries.length} builds · ${skills.size} ${skills.size === 1 ? 'skill' : 'skills'}</span><details><summary>View builds</summary><ul>${row.entries.map(entry => `<li><a href="${entry.process ? processUrl(entry) : playUrl(entry)}">${e(entry.title)} ↗</a><span>${e(entry.skill)} · ${e(clientLabel(entry.build?.runtime))}</span></li>`).join('')}</ul></details></div></div></li>`;
+      return `<li class="home-ladder-row" data-model="${e(row.build?.model || 'unknown')}" data-effort="${e(effortLabel(row.build))}" data-value="${value}" style="--model-color:${modelColor(row.build)}"><span class="home-rank" aria-label="Position ${rank}">${String(rank).padStart(2, '0')}</span><div class="home-ladder-content"><div class="home-row-top"><span class="home-model">${e(buildLabel(row.build))}<span class="home-effort">${e(effortLabel(row.build))}</span></span><strong>${e(format(value))}</strong></div><div class="home-bar" role="img" aria-label="${e(configurationLabel(row.build))}: ${e(format(value))}"><span style="width:${100 * value / maximum}%"></span></div><div class="home-row-bottom"><span>${coverage.measured} measured / ${row.entries.length} builds · ${skills.size} ${skills.size === 1 ? 'skill' : 'skills'}</span></div></div></li>`;
     }).join('')}</ol>` : '<p class="home-board-empty">No recorded values for this selection.</p>';
     const unmeasured = summary.groups.filter(row => !row[metric].measured);
     document.getElementById('home-board-missing').innerHTML = unmeasured.length ? `<span>Not ranked · values not provided</span>${unmeasured.map(row => `<span class="missing-model">${e(configurationLabel(row.build))} <small>${row.entries.length} builds</small></span>`).join('')}` : '';

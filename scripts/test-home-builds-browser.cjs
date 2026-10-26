@@ -23,15 +23,18 @@ const report = {errors: [], failedResponses: [], screenshots: [], checkedClients
     await page.goto(origin); await page.locator('.home-ladder-row').first().waitFor();
     assert.equal(Number(await page.locator('[data-total="time"]').getAttribute('data-value')), total('time'));
     assert.equal(Number(await page.locator('[data-total="tokens"]').getAttribute('data-value')), total('tokens'));
-    assert.equal(await page.locator('.skill-accordion').count(), catalog.skills.length);
-    assert.equal(await page.locator('.skill-accordion[open]').count(), 0);
+    assert.equal(await page.locator('#skill-directory a.directory-row').count(), catalog.skills.length);
+    assert.equal(await page.locator('#skill-directory details, [data-skills-toggle], #leaderboard details').count(), 0);
+    for (const skill of catalog.skills) {
+      const row = page.locator(`#skill-directory a[href="./skill.html?id=${skill.id}"]`);
+      assert.equal(await row.locator('.skill-name').textContent(), skill.id);
+      assert.equal(await row.locator('.example-cell img').count(), 1);
+    }
     await shot('home-desktop');
-    await page.locator('.skill-accordion summary').first().focus(); await page.keyboard.press('Enter');
-    assert.equal(await page.locator('.skill-accordion[open]').count(), 1);
-    const firstSkill = catalog.skills[0];
-    assert.equal(await page.locator('.skill-accordion[open] .skill-build-item').count(), firstSkill.authoredCases.length);
-    await page.locator('[data-skills-toggle="expand"]').click(); assert.equal(await page.locator('.skill-accordion[open]').count(), catalog.skills.length);
-    await page.locator('[data-skills-toggle="collapse"]').click(); assert.equal(await page.locator('.skill-accordion[open]').count(), 0);
+    await page.locator('#skill-directory a.directory-row').first().focus(); await page.keyboard.press('Enter');
+    await page.locator('#build-comparison').waitFor();
+    assert.equal(new URL(page.url()).searchParams.get('id'), catalog.skills[0].id);
+    await page.goto(origin); await page.locator('.home-ladder-row').first().waitFor();
     const validateRows = async metric => {
       const rows = await page.locator('.home-ladder-row').evaluateAll(rows => rows.map(row => ({model: row.dataset.model, effort: row.dataset.effort, value: Number(row.dataset.value), color: getComputedStyle(row).getPropertyValue('--model-color')})));
       const skill = await page.locator('#home-skill').inputValue(), client = await page.locator('#home-client').inputValue(), average = await page.locator('#home-statistic').inputValue() === 'average';
@@ -58,7 +61,6 @@ const report = {errors: [], failedResponses: [], screenshots: [], checkedClients
     assert.equal(json.builds.length, entries.length); assert(json.builds.some(row => row.build.tokens.total_tokens === null));
     const csv = await download('csv'); assert(csv.includes('"Codex CLI"')); assert(!csv.includes('codex_exec'));
     await page.setViewportSize({width: 390, height: 844}); await noOverflow(); await shot('home-mobile');
-    await page.locator('.skill-accordion summary').first().click(); await noOverflow(); await shot('skill-expanded-mobile');
     await page.setViewportSize({width: 1440, height: 1080});
     const batch = entries.filter(entry => entry.build?.startedAt?.startsWith('2026-10-26') && entry.build.model === 'gpt-6-astra');
     assert(batch.length >= 6);

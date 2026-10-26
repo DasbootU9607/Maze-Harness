@@ -1,5 +1,5 @@
 import { mountSkillBuilds } from './skill-builds.js';
-import { mountHomeBuilds, mountSkillDirectory } from './home-builds.js';
+import { mountHomeBuilds } from './home-builds.js';
 import { loadCatalog, shell, installCopy, atlas, caseCard, playUrl, escapeHtml, showError } from './ui.js';
 const page = document.body.dataset.page;
 shell(page);
@@ -14,7 +14,10 @@ try {
       const c = getCase(id);
       return `<a class="feature-case" href="${playUrl(c)}"><div class="feature-case-image"><img src="./${c.thumbnail}" alt="3D preview of ${c.title}" width="360" height="250" fetchpriority="high"></div><div class="case-info"><span class="case-kicker">${c.kind === 'official' ? '01 / OFFICIAL REFERENCE' : '02 / BUILT WITH THE SKILL'}</span><h3>${c.title}</h3><span class="play-link">Play this room</span></div></a>`;
     }).join('');
-    mountSkillDirectory(catalog);
+    document.getElementById('skill-directory').innerHTML = catalog.skills.map((s,i) => {
+      const example = getCase(s.authoredCases.at(-1) || s.officialCases[0]);
+      return `<a class="directory-row" href="./skill.html?id=${s.id}"><div class="skill-name-cell"><span class="skill-number">0${i + 1}</span><div><div class="skill-name">${s.id}</div><div class="skill-tagline">${s.verb}</div></div></div><div class="room-chips">${s.rooms.map(r => `<span class="room-chip">${r}</span>`).join('')}</div><div class="example-cell"><img src="./${example.thumbnail}" alt="" width="70" height="57" loading="lazy"><span>${escapeHtml(example.title)}</span><span class="row-arrow" aria-hidden="true">↗</span></div></a>`;
+    }).join('');
     mountHomeBuilds(catalog);
     document.getElementById('home-atlas').innerHTML = atlas(catalog);
   }
