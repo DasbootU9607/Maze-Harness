@@ -760,6 +760,30 @@
         "cellsSha256": "8955b8e8ca15f208a59c9009cf4e9a53b1c07c59d38a52aa2e68cabf4e20c4ba",
         "contractSha256": "06eb6fa9838b27bf47530da0961eb5f11e696ef129016491003a48a209ebb060"
       }
+    },
+    {
+      "id": "authored-constrained-transport-156ff2570cf3",
+      "kind": "authored",
+      "originalDraftId": "draft-depth-915e28630d",
+      "title": "Switchback Foundry",
+      "sourceMapSha256": "156ff2570cf3e0b5b3609fd480cd22e4fc29f863a0cedd4e64e7fcb5d15fa8dd",
+      "witnessSha256": "c5ef7f8d86e04eab6c8531da2e206b171a542b3d07909bff7bca3fc39dd4192c",
+      "source": "Agent-authored trial; verified design and saved draft matched before publication.",
+      "verification": {
+        "overall": "passed",
+        "profile": "planar-transport-depth-v2",
+        "cellsSha256": "ed87de10234bdbf849322c5171b7f3b9f148a5c9a3684a6a98e0f87a613f5ac1",
+        "contractSha256": "433ff52dd48139b8a15f3bbbde527e379a0f431a41757a9d75565fcf387b6458",
+        "reportSha256": "7e7329e7a8bd46ff1b4ffeac2a5cc29025a1dd72121abeecb1ef9147b06f22d8"
+      },
+      "authoringRunSha256": "8e1af87962ec9a47d494456c82172723c3aabeb8ffc77c267bfa3c9ff1993aa5",
+      "authoringProcess": {
+        "schemaVersion": 1,
+        "data": "data/processes/authored-constrained-transport-156ff2570cf3.json",
+        "sha256": "54cd935d12733d9172ec8bec1aad9f967392bce6d8a756b1f10ea7f9addf2d2d",
+        "cellsSha256": "ed87de10234bdbf849322c5171b7f3b9f148a5c9a3684a6a98e0f87a613f5ac1",
+        "contractSha256": "433ff52dd48139b8a15f3bbbde527e379a0f431a41757a9d75565fcf387b6458"
+      }
     }
   ],
   "directEntryPolicy": "Rooms without an authored player get a temporary arrival actor only when opened directly. Entries are open, matching floor boundaries with an ordinary legal inward move. Raw maps, exported room states, and normal doorway traversal remain unchanged.",

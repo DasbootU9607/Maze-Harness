@@ -86,7 +86,8 @@
       "authoredCases": [
         "authored-constrained-transport",
         "authored-constrained-transport-a6eaf6caf274",
-        "authored-constrained-transport-60b4a35f5a3f"
+        "authored-constrained-transport-60b4a35f5a3f",
+        "authored-constrained-transport-156ff2570cf3"
       ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-constrained-transport"
     },
@@ -1628,6 +1629,65 @@
         },
         "scopeComplete": false,
         "evidenceSha256": "dd0e7f980505ae7c3633a4eab958ad6d7cacaf605bfcdc5ba20091d099e537f7"
+      }
+    },
+    {
+      "id": "authored-constrained-transport-156ff2570cf3",
+      "kind": "authored",
+      "title": "Switchback Foundry",
+      "skill": "constrained-transport",
+      "world": "authored-constrained-transport-156ff2570cf3",
+      "room": "AxA",
+      "description": "Borrow a crowded aisle, move the tool through it, and recover the space needed for its final use.",
+      "thumbnail": "assets/thumbnails/authored-constrained-transport-156ff2570cf3.png",
+      "map": "data/maps/authored-constrained-transport-156ff2570cf3-world-map.txt",
+      "witness": "RRRRDDUULLLLDDRRRRRURDDRRDLDDLLLUUDDRRURULLLLULDDDDLLUDRRUUUUULLUU",
+      "goal": {
+        "kind": "gem-and-return",
+        "cell": [
+          3,
+          3,
+          0
+        ]
+      },
+      "process": {
+        "data": "data/processes/authored-constrained-transport-156ff2570cf3.json",
+        "schemaVersion": 1
+      },
+      "build": {
+        "schemaVersion": 1,
+        "attribution": "single-model",
+        "model": "gpt-6-astra",
+        "modelBasis": "runtime-record",
+        "reasoningEffort": "xhigh",
+        "reasoningEfforts": [
+          "xhigh"
+        ],
+        "reasoningBasis": "runtime-setting",
+        "reasoningMixed": false,
+        "attributionNote": null,
+        "attributionEvidenceSha256": null,
+        "startedAt": "2026-10-26T04:08:43.565Z",
+        "finishedAt": "2026-10-26T04:15:59.559Z",
+        "models": [
+          {
+            "model": "gpt-6-astra",
+            "provider": "openai"
+          }
+        ],
+        "runtime": "codex_exec",
+        "elapsedMs": 435994,
+        "usageStatus": "measured",
+        "tokens": {
+          "input_tokens": 1237670,
+          "cached_input_tokens": 1156864,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 12588,
+          "reasoning_output_tokens": 4482,
+          "total_tokens": 1250258
+        },
+        "scopeComplete": false,
+        "evidenceSha256": "cc371dbb84fddfd09f811c89e4907d4ae6d948a70014f55eee597ebc3622c488"
       }
     }
   ],
