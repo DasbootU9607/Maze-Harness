@@ -1,0 +1,6748 @@
+{
+  "schemaVersion": 1,
+  "caseId": "authored-skating-cross-8dd200de12b7",
+  "title": "Crosswind Ice Relay",
+  "skill": "skating-cross",
+  "finalCandidateId": "v005",
+  "summary": "5 recorded candidates, 3 tests, 0 failed diagnostics, and 6 agent annotations.",
+  "coverage": {
+    "mode": "observed",
+    "audit": {
+      "status": "passed",
+      "failed": 0,
+      "unknown": 0
+    },
+    "sources": {
+      "directOriginalCaseRead": "not-recorded",
+      "originalCaseResourceIds": [],
+      "indirect": [],
+      "scope": "Direct reading is reported only for captured read events. A source named by a skill is indirect provenance, not evidence that this run opened or used the original case."
+    },
+    "limitations": [
+      "Only recorded operations and saved snapshots are shown; transient in-memory drafts and unrecorded activity remain unknown.",
+      "Snapshot parent links show recorded version order, not proof of causal reasoning. No unrecorded branches or merges are reconstructed.",
+      "Agent annotations are concise explanations, not internal thought transcripts. Recorded resource delivery does not prove comprehension or use.",
+      "Test outcomes retain their own scope. Author self-tests do not establish independent-agent effectiveness or human difficulty.",
+      "Automatic CLI boundaries record supported build and verification commands. Other commands and resource reads require the skill observer helper.",
+      "Snapshots describe saved versions at operation boundaries, not every editor keystroke. Design notes are author statements, not internal reasoning.",
+      "A started task remains running until the author records finish. An interrupted task may therefore remain open."
+    ],
+    "events": {
+      "sourceCount": 54,
+      "representedCount": 54,
+      "sequenceSha256": "acb5ca0f837ee7c199b7f07fc0d8bff58d24b4b6e6d3d9427fcd6441a0424f4f",
+      "types": [
+        {
+          "type": "artifact.saved",
+          "count": 2
+        },
+        {
+          "type": "build.saved",
+          "count": 1
+        },
+        {
+          "type": "candidate.saved",
+          "count": 5
+        },
+        {
+          "type": "collector.started",
+          "count": 1
+        },
+        {
+          "type": "command.completed",
+          "count": 10
+        },
+        {
+          "type": "command.started",
+          "count": 10
+        },
+        {
+          "type": "design.note",
+          "count": 6
+        },
+        {
+          "type": "note.metadata-amended",
+          "count": 1
+        },
+        {
+          "type": "resource.read",
+          "count": 9
+        },
+        {
+          "type": "run.created",
+          "count": 1
+        },
+        {
+          "type": "run.finished",
+          "count": 3
+        },
+        {
+          "type": "run.resumed",
+          "count": 1
+        },
+        {
+          "type": "skill.attached",
+          "count": 1
+        },
+        {
+          "type": "test.completed",
+          "count": 3
+        }
+      ]
+    }
+  },
+  "nodes": [
+    {
+      "id": "event-e000001",
+      "kind": "record",
+      "label": "Start authoring run",
+      "status": "neutral",
+      "order": 1,
+      "eventId": "e000001",
+      "eventType": "run.created",
+      "summary": "The recorder opened this authoring run. This does not establish an empty prior conversation context.",
+      "details": {
+        "recordId": "event-e000001",
+        "candidateId": null,
+        "eventType": "run.created"
+      }
+    },
+    {
+      "id": "event-e000002",
+      "kind": "record",
+      "label": "Start automatic capture",
+      "status": "neutral",
+      "order": 2,
+      "eventId": "e000002",
+      "eventType": "collector.started",
+      "summary": "The automatic collector started. Recorded command boundaries, reads and saved artifacts are shown in sequence.",
+      "details": {
+        "recordId": "event-e000002",
+        "candidateId": null,
+        "eventType": "collector.started"
+      }
+    },
+    {
+      "id": "resource-snapshot-e000003",
+      "kind": "resource",
+      "label": "Skill attached: mazebench-skating-cross/SKILL.md",
+      "status": "neutral",
+      "order": 3,
+      "summary": "Skill version captured as a dependency. This event does not record a reading.",
+      "details": {
+        "resourceId": "snapshot-e000003",
+        "displayPath": "mazebench-skating-cross/SKILL.md",
+        "sha256": "5b9e8c4a5a90a0db0b1274de8bf14e7f546636685706da4a83dcc251966eae76",
+        "kind": "skill",
+        "delivery": "snapshot"
+      },
+      "eventId": "e000003",
+      "eventType": "skill.attached"
+    },
+    {
+      "id": "resource-r001",
+      "kind": "resource",
+      "label": "mechanism-logic.md",
+      "status": "neutral",
+      "order": 4,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r001",
+        "displayPath": "mazebench-skating-cross/references/mechanism-logic.md",
+        "sha256": "dec0c88dbf97d94a7c1e429d2cf5371658c5154b62f8884a1f4b21cb182fe599",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000004",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r002",
+      "kind": "resource",
+      "label": "planning-depth.md",
+      "status": "neutral",
+      "order": 5,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r002",
+        "displayPath": "mazebench-skating-cross/references/planning-depth.md",
+        "sha256": "fbb19ded77faa9fd3dce184496a7f63ac4ca10dbfa2e3867e67ff78291316e00",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000005",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r003",
+      "kind": "resource",
+      "label": "design.md",
+      "status": "neutral",
+      "order": 6,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r003",
+        "displayPath": "mazebench-skating-cross/references/design.md",
+        "sha256": "e11d642c7dffcadd426223d71153b4f3e591abc9e2546e0186b0159f2a549d19",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000006",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r004",
+      "kind": "resource",
+      "label": "user-case.md",
+      "status": "neutral",
+      "order": 7,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r004",
+        "displayPath": "mazebench-skating-cross/references/user-case.md",
+        "sha256": "8fac10ffd16b54a373315a555c746f154d1ca692325706a6977206575f4086b7",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000007",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r005",
+      "kind": "resource",
+      "label": "verification.md",
+      "status": "neutral",
+      "order": 8,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r005",
+        "displayPath": "mazebench-skating-cross/references/verification.md",
+        "sha256": "e57233b5b968d848a1c99c96c19c1e1089ebb38371f989df3648752df48bcc21",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000008",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r006",
+      "kind": "resource",
+      "label": "design-template.json",
+      "status": "neutral",
+      "order": 9,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r006",
+        "displayPath": "mazebench-skating-cross/references/design-template.json",
+        "sha256": "c508348d99af852fd1da821b9fbe0e6e6ca412e650a8233b6add83b637da77fb",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000009",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r007",
+      "kind": "resource",
+      "label": "complex-validation.md",
+      "status": "neutral",
+      "order": 10,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r007",
+        "displayPath": "mazebench-skating-cross/references/complex-validation.md",
+        "sha256": "d359002febd35353baa6e68a323486b581e2f4150bb5c05804d8fe22257b38ae",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000010",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r008",
+      "kind": "resource",
+      "label": "user-checks.json",
+      "status": "neutral",
+      "order": 11,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r008",
+        "displayPath": "mazebench-skating-cross/references/user-checks.json",
+        "sha256": "755eac958b2964cde031233c81f90e3e516e1047053525e9c3f6258048e038ff",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000011",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r009",
+      "kind": "resource",
+      "label": "user-states.json",
+      "status": "neutral",
+      "order": 12,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r009",
+        "displayPath": "mazebench-skating-cross/references/user-states.json",
+        "sha256": "cb73d5d3297ea735065171ff41a4981aefd5553845225b2e56a6a61631d91a68",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000012",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "note-n001",
+      "kind": "note",
+      "label": "Create a complex ice room requiring gem collection and a return to the western doorway. A single asymmetric cross must pass through connected docking, side-change and final braking stages.",
+      "status": "neutral",
+      "order": 13,
+      "summary": "Derive an asymmetric seven-member cross and a new western entrance, southern transport lane, eastern alignment pocket and vertical gem ray. The intended final stop lies beside an upper-stem member; the gem route departs vertically from that stop.",
+      "details": {
+        "noteId": "n001",
+        "candidateId": null,
+        "origin": "agent_statement",
+        "retrospective": false
+      },
+      "eventId": "e000013",
+      "eventType": "design.note"
+    },
+    {
+      "id": "candidate-v001",
+      "kind": "candidate",
+      "label": "v001 · Crosswind Ice Relay",
+      "status": "neutral",
+      "order": 14,
+      "summary": "0 changed cells; 256 added; 0 removed.",
+      "details": {
+        "candidateId": "v001",
+        "cellsSha256": "352322d5d2f247dfed13d208974c70db13c388c3e8f6d32fc4d1cdb8501907b1",
+        "contractSha256": "212a9f812cfcfe4ed06105997107168fb74489b2bbd28b0017847be25bc526ea",
+        "parentBasis": "observed-snapshot-order"
+      },
+      "eventId": "e000014",
+      "eventType": "candidate.saved"
+    },
+    {
+      "id": "event-e000015",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 15,
+      "eventId": "e000015",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000015",
+        "candidateId": "v001",
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000015",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 16,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000015",
+        "candidateId": "v001",
+        "inputCandidateId": "v001",
+        "outputCandidateId": "v001",
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000016",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "event-e000017",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 17,
+      "eventId": "e000017",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000017",
+        "candidateId": "v001",
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000017",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 18,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000017",
+        "candidateId": "v001",
+        "inputCandidateId": "v001",
+        "outputCandidateId": "v001",
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000018",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "note-n002",
+      "kind": "note",
+      "label": "Retrospective goal clarification: preserve southern docking while allowing the whole cross to translate east.",
+      "status": "neutral",
+      "order": 19,
+      "summary": "Move the southern collision wall beneath the long left tip rather than the right arm.",
+      "details": {
+        "noteId": "n002",
+        "candidateId": "v001",
+        "origin": "agent_statement",
+        "retrospective": true
+      },
+      "eventId": "e000019",
+      "eventType": "design.note"
+    },
+    {
+      "id": "candidate-v002",
+      "kind": "candidate",
+      "label": "v002 · Crosswind Ice Relay",
+      "status": "neutral",
+      "order": 20,
+      "summary": "2 changed cells; 0 added; 0 removed.",
+      "details": {
+        "candidateId": "v002",
+        "cellsSha256": "0db78ab6d0f7cc989e730947f3b89be2bd2c9a94e109ff14c6d6be68e64dab43",
+        "contractSha256": "c311dbb278f390448df7a5ad33bb9027fad28d4d10262822c2314132156906ee",
+        "parentBasis": "observed-snapshot-order"
+      },
+      "eventId": "e000020",
+      "eventType": "candidate.saved"
+    },
+    {
+      "id": "event-e000021",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 21,
+      "eventId": "e000021",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000021",
+        "candidateId": "v002",
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000021",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 22,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000021",
+        "candidateId": "v002",
+        "inputCandidateId": "v002",
+        "outputCandidateId": "v002",
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000022",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "event-e000023",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 23,
+      "eventId": "e000023",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000023",
+        "candidateId": "v002",
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000023",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 24,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000023",
+        "candidateId": "v002",
+        "inputCandidateId": "v002",
+        "outputCandidateId": "v002",
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000024",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "note-n003",
+      "kind": "note",
+      "label": "Retrospective goal clarification: make the gem collectable at a stopping cell that requires the aligned cross.",
+      "status": "neutral",
+      "order": 25,
+      "summary": "Place the gem at the final directed stopping cell above the aligned cross's long left arm.",
+      "details": {
+        "noteId": "n003",
+        "candidateId": "v002",
+        "origin": "agent_statement",
+        "retrospective": true
+      },
+      "eventId": "e000025",
+      "eventType": "design.note"
+    },
+    {
+      "id": "candidate-v003",
+      "kind": "candidate",
+      "label": "v003 · Crosswind Ice Relay",
+      "status": "neutral",
+      "order": 26,
+      "summary": "2 changed cells; 0 added; 0 removed.",
+      "details": {
+        "candidateId": "v003",
+        "cellsSha256": "3161aea37cb6bb8dacdfd133b8065dd469895f10d0b760907bb3bcd3e31a3fac",
+        "contractSha256": "156accdeab35ca085170a7707c020a5a0a0f31037c2e36291fb0fee6d63ed5d4",
+        "parentBasis": "observed-snapshot-order"
+      },
+      "eventId": "e000026",
+      "eventType": "candidate.saved"
+    },
+    {
+      "id": "event-e000027",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 27,
+      "eventId": "e000027",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000027",
+        "candidateId": "v003",
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000027",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 28,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000027",
+        "candidateId": "v003",
+        "inputCandidateId": "v003",
+        "outputCandidateId": "v003",
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000028",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "candidate-v004",
+      "kind": "candidate",
+      "label": "v004 · Crosswind Ice Relay",
+      "status": "neutral",
+      "order": 29,
+      "summary": "0 changed cells; 0 added; 0 removed.",
+      "details": {
+        "candidateId": "v004",
+        "cellsSha256": "3161aea37cb6bb8dacdfd133b8065dd469895f10d0b760907bb3bcd3e31a3fac",
+        "contractSha256": "681b307baeaa8677251d256984c1687845c12dac0333cfd95f38c68ae683c608",
+        "parentBasis": "observed-snapshot-order"
+      },
+      "eventId": "e000029",
+      "eventType": "candidate.saved"
+    },
+    {
+      "id": "event-e000030",
+      "kind": "record",
+      "label": "Start: verify.cjs",
+      "status": "neutral",
+      "order": 30,
+      "eventId": "e000030",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000030",
+        "candidateId": "v004",
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000030",
+      "kind": "operation",
+      "label": "verify.cjs",
+      "status": "neutral",
+      "order": 31,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000030",
+        "candidateId": "v004",
+        "inputCandidateId": "v004",
+        "outputCandidateId": "v004",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000031",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "test-t001",
+      "kind": "test",
+      "label": "verify.cjs",
+      "status": "passed",
+      "order": 32,
+      "summary": "Report-specific check; no broader mechanism or difficulty claim.",
+      "details": {
+        "testId": "t001",
+        "candidateId": "v004",
+        "binding": "exact",
+        "category": "test"
+      },
+      "eventId": "e000032",
+      "eventType": "test.completed"
+    },
+    {
+      "id": "event-e000033",
+      "kind": "record",
+      "label": "Start: build.cjs",
+      "status": "neutral",
+      "order": 33,
+      "eventId": "e000033",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000033",
+        "candidateId": "v004",
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000033",
+      "kind": "operation",
+      "label": "build.cjs",
+      "status": "neutral",
+      "order": 34,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000033",
+        "candidateId": "v004",
+        "inputCandidateId": "v004",
+        "outputCandidateId": "v004",
+        "kind": "build",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000034",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "event-e000035",
+      "kind": "record",
+      "label": "Save build files",
+      "status": "neutral",
+      "order": 35,
+      "eventId": "e000035",
+      "eventType": "build.saved",
+      "summary": "Build files were archived for this candidate. The file list and fingerprints identify the saved output; verification appears separately.",
+      "details": {
+        "recordId": "event-e000035",
+        "candidateId": "v004",
+        "eventType": "build.saved"
+      }
+    },
+    {
+      "id": "event-e000036",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 36,
+      "eventId": "e000036",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000036",
+        "candidateId": "v004",
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000036",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 37,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000036",
+        "candidateId": "v004",
+        "inputCandidateId": "v004",
+        "outputCandidateId": "v004",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000037",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "test-t002",
+      "kind": "test",
+      "label": "report.json",
+      "status": "passed",
+      "order": 38,
+      "summary": "Actual keyboard play in the unmodified official local 3D browser; all observed actors compared after every input with ordinary engine moves.",
+      "details": {
+        "testId": "t002",
+        "candidateId": "v004",
+        "binding": "exact",
+        "category": "test"
+      },
+      "eventId": "e000038",
+      "eventType": "test.completed"
+    },
+    {
+      "id": "event-e000039",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 39,
+      "eventId": "e000039",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000039",
+        "candidateId": "v004",
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000039",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 40,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000039",
+        "candidateId": "v004",
+        "inputCandidateId": "v004",
+        "outputCandidateId": "v004",
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000040",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "replay-e000041",
+      "kind": "replay",
+      "label": "Saved browser playthrough",
+      "status": "neutral",
+      "order": 41,
+      "summary": "21 recorded inputs and 22 saved frames, bound to v004.",
+      "details": {
+        "replayId": "replay-e000041",
+        "candidateId": "v004",
+        "binding": "exact-artifact",
+        "sourceKind": "saved-replay"
+      },
+      "eventId": "e000041",
+      "eventType": "artifact.saved"
+    },
+    {
+      "id": "note-n004",
+      "kind": "note",
+      "label": "Completed Crosswind Ice Relay: collect the gem at (10,8) and return alive to (0,3).",
+      "status": "neutral",
+      "order": 42,
+      "summary": "Final geometry has a seven-member asymmetric cross, three connected necessary docking stages, and a recorded 21-input browser playthrough. The final contract-only snapshot supplied measured witness steps; no extra geometry revision was made.",
+      "details": {
+        "noteId": "n004",
+        "candidateId": "v004",
+        "origin": "agent_statement",
+        "retrospective": false
+      },
+      "eventId": "e000042",
+      "eventType": "design.note"
+    },
+    {
+      "id": "event-e000043",
+      "kind": "record",
+      "label": "Save recorded artifact",
+      "status": "neutral",
+      "order": 43,
+      "eventId": "e000043",
+      "eventType": "artifact.saved",
+      "summary": "The recorder archived this file. Saving evidence does not itself establish a passing test.",
+      "details": {
+        "recordId": "event-e000043",
+        "candidateId": "v004",
+        "eventType": "artifact.saved"
+      }
+    },
+    {
+      "id": "event-e000044",
+      "kind": "record",
+      "label": "Finish authoring run",
+      "status": "neutral",
+      "order": 44,
+      "eventId": "e000044",
+      "eventType": "run.finished",
+      "summary": "The recorder closed the run. Test verdicts and publication are separate records.",
+      "details": {
+        "recordId": "event-e000044",
+        "candidateId": null,
+        "eventType": "run.finished"
+      }
+    },
+    {
+      "id": "event-e000045",
+      "kind": "record",
+      "label": "Recorded note.metadata-amended",
+      "status": "neutral",
+      "order": 45,
+      "eventId": "e000045",
+      "eventType": "note.metadata-amended",
+      "summary": "This recorded step is retained. Its private payload is not published.",
+      "details": {
+        "recordId": "event-e000045",
+        "candidateId": "v004",
+        "eventType": "note.metadata-amended"
+      }
+    },
+    {
+      "id": "note-n005",
+      "kind": "note",
+      "label": "Repair publication metadata while preserving the original authoring evidence.",
+      "status": "neutral",
+      "order": 46,
+      "summary": "Fill the missing goal labels of n002 and n003 with explicitly retrospective clarifications and mark both notes retrospective. Preserve the original journal as an unchanged prefix and archive the pre-amendment index and journal.",
+      "details": {
+        "noteId": "n005",
+        "candidateId": "v004",
+        "origin": "agent_statement",
+        "retrospective": true
+      },
+      "eventId": "e000046",
+      "eventType": "design.note"
+    },
+    {
+      "id": "event-e000047",
+      "kind": "record",
+      "label": "Finish authoring run",
+      "status": "neutral",
+      "order": 47,
+      "eventId": "e000047",
+      "eventType": "run.finished",
+      "summary": "The recorder closed the run. Test verdicts and publication are separate records.",
+      "details": {
+        "recordId": "event-e000047",
+        "candidateId": null,
+        "eventType": "run.finished"
+      }
+    },
+    {
+      "id": "event-e000048",
+      "kind": "record",
+      "label": "Recorded run.resumed",
+      "status": "neutral",
+      "order": 48,
+      "eventId": "e000048",
+      "eventType": "run.resumed",
+      "summary": "This recorded step is retained. Its private payload is not published.",
+      "details": {
+        "recordId": "event-e000048",
+        "candidateId": null,
+        "eventType": "run.resumed"
+      }
+    },
+    {
+      "id": "note-n006",
+      "kind": "note",
+      "label": "Include the complete recorded route in the published design.",
+      "status": "neutral",
+      "order": 49,
+      "summary": "Add the existing 21-input browser path as top-level witness metadata. Preserve all cells, contract fields and the original playable draft.",
+      "details": {
+        "noteId": "n006",
+        "candidateId": "v004",
+        "origin": "agent_statement",
+        "retrospective": false
+      },
+      "eventId": "e000049",
+      "eventType": "design.note"
+    },
+    {
+      "id": "candidate-v005",
+      "kind": "candidate",
+      "label": "v005 · Crosswind Ice Relay",
+      "status": "neutral",
+      "order": 50,
+      "summary": "0 changed cells; 0 added; 0 removed.",
+      "details": {
+        "candidateId": "v005",
+        "cellsSha256": "3161aea37cb6bb8dacdfd133b8065dd469895f10d0b760907bb3bcd3e31a3fac",
+        "contractSha256": "681b307baeaa8677251d256984c1687845c12dac0333cfd95f38c68ae683c608",
+        "parentBasis": "observed-snapshot-order"
+      },
+      "eventId": "e000050",
+      "eventType": "candidate.saved"
+    },
+    {
+      "id": "event-e000051",
+      "kind": "record",
+      "label": "Start: verify.cjs",
+      "status": "neutral",
+      "order": 51,
+      "eventId": "e000051",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000051",
+        "candidateId": "v005",
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000051",
+      "kind": "operation",
+      "label": "verify.cjs",
+      "status": "neutral",
+      "order": 52,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000051",
+        "candidateId": "v005",
+        "inputCandidateId": "v005",
+        "outputCandidateId": "v005",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000052",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "test-t003",
+      "kind": "test",
+      "label": "verify.cjs",
+      "status": "passed",
+      "order": 53,
+      "summary": "Report-specific check; no broader mechanism or difficulty claim.",
+      "details": {
+        "testId": "t003",
+        "candidateId": "v005",
+        "binding": "exact",
+        "category": "test"
+      },
+      "eventId": "e000053",
+      "eventType": "test.completed"
+    },
+    {
+      "id": "event-e000054",
+      "kind": "record",
+      "label": "Finish authoring run",
+      "status": "neutral",
+      "order": 54,
+      "eventId": "e000054",
+      "eventType": "run.finished",
+      "summary": "The recorder closed the run. Test verdicts and publication are separate records.",
+      "details": {
+        "recordId": "event-e000054",
+        "candidateId": null,
+        "eventType": "run.finished"
+      }
+    },
+    {
+      "id": "delivery-final",
+      "kind": "delivery",
+      "label": "Published final candidate v005",
+      "status": "passed",
+      "order": 55,
+      "summary": "Final map and contract hashes match the published design. Earlier failed attempts remain visible.",
+      "details": {
+        "caseId": "authored-skating-cross-8dd200de12b7",
+        "candidateId": "v005",
+        "cellsSha256": "3161aea37cb6bb8dacdfd133b8065dd469895f10d0b760907bb3bcd3e31a3fac",
+        "contractSha256": "681b307baeaa8677251d256984c1687845c12dac0333cfd95f38c68ae683c608"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "candidate-v001",
+      "to": "candidate-v002",
+      "kind": "revision",
+      "label": "Observed snapshot order; not causal proof",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v002",
+      "to": "candidate-v003",
+      "kind": "revision",
+      "label": "Observed snapshot order; not causal proof",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v003",
+      "to": "candidate-v004",
+      "kind": "revision",
+      "label": "Observed snapshot order; not causal proof",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v004",
+      "to": "candidate-v005",
+      "kind": "revision",
+      "label": "Observed snapshot order; not causal proof",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v004",
+      "to": "test-t001",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v004",
+      "to": "test-t002",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v005",
+      "to": "test-t003",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "resource-r001",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r002",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r007",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r004",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r008",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r009",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v001",
+      "to": "note-n002",
+      "kind": "annotation",
+      "label": "Agent annotation about this candidate",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v002",
+      "to": "note-n003",
+      "kind": "annotation",
+      "label": "Agent annotation about this candidate",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v004",
+      "to": "note-n004",
+      "kind": "annotation",
+      "label": "Agent annotation about this candidate",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v004",
+      "to": "note-n005",
+      "kind": "annotation",
+      "label": "Agent annotation about this candidate",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v004",
+      "to": "note-n006",
+      "kind": "annotation",
+      "label": "Agent annotation about this candidate",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v005",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Published cells and contract match",
+      "inferred": false
+    },
+    {
+      "from": "test-t003",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Passed within the stated test scope",
+      "inferred": false
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "graphNodeId": "candidate-v001",
+      "label": "Crosswind Ice Relay",
+      "parentId": null,
+      "parentIds": [],
+      "cells": [
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          ".+p",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i+M0",
+          "i+M0",
+          "i+M0",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i+G",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ]
+      ],
+      "sha256": "0d1a677a3ddb8d2ef024f45cb044e795f6881fbebf23fa656131e5af254cf387",
+      "cellsSha256": "352322d5d2f247dfed13d208974c70db13c388c3e8f6d32fc4d1cdb8501907b1",
+      "contractSha256": "212a9f812cfcfe4ed06105997107168fb74489b2bbd28b0017847be25bc526ea",
+      "origin": "observed",
+      "parentBasis": "observed-snapshot-order",
+      "diff": {
+        "added": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": ".+p"
+          },
+          {
+            "x": 0,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 1,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 1,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 1,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 1,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 1,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 1,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 1,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 1,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 1,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 1,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 1,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 1,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 10,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 10,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 10,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 10,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 10,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 10,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 10,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 10,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 10,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 10,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i+G"
+          },
+          {
+            "x": 10,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 10,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 10,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 10,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 11,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 11,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 11,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 11,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 11,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 11,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 11,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 11,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 11,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 11,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 11,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 11,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 11,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 12,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 13,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 13,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 13,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 13,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 13,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 13,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 13,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 13,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 13,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 13,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 13,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 13,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 13,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 14,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 14,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 14,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 14,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 14,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 14,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 14,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 14,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 14,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 14,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 14,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 14,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 14,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 15,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 2,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 2,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 2,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 2,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 2,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 2,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 2,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 2,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 2,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 2,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 2,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 2,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 2,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 3,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 3,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 3,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 3,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 3,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 3,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 3,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 3,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 3,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 3,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i+M0"
+          },
+          {
+            "x": 3,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 3,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 3,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 3,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 4,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 4,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 4,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 4,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 4,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 4,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 4,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 4,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 4,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 4,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i+M0"
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 4,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 4,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 4,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 5,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 5,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 5,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 5,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 5,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 5,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 5,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 5,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "i+M0"
+          },
+          {
+            "x": 5,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "i+M0"
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i+M0"
+          },
+          {
+            "x": 5,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "i+M0"
+          },
+          {
+            "x": 5,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 5,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 5,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 6,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 6,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 6,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 6,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 6,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 6,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 6,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 6,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 6,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i+M0"
+          },
+          {
+            "x": 6,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 6,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 6,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 6,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 7,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 7,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 7,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 7,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 7,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 7,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 7,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 7,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 7,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 7,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 7,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 7,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 7,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 7,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 8,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 8,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 8,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 8,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 8,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 8,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 8,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 8,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 8,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 8,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 8,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 8,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 8,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          },
+          {
+            "x": 9,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "i"
+          }
+        ],
+        "removed": [],
+        "changed": []
+      },
+      "preview": {
+        "levelPath": "data/process-levels/authored-skating-cross-8dd200de12b7/v001.json",
+        "levelSha256": "bc61ff521aa77b15057c96bc6f4034093738735c852eeec872083558af04145a",
+        "cellsSha256": "352322d5d2f247dfed13d208974c70db13c388c3e8f6d32fc4d1cdb8501907b1",
+        "status": "iteration",
+        "thumbnailPath": "assets/process-thumbnails/authored-skating-cross-8dd200de12b7/v001-bc61ff521aa77b15-6ce268de9e786607.png"
+      }
+    },
+    {
+      "id": "v002",
+      "graphNodeId": "candidate-v002",
+      "label": "Crosswind Ice Relay",
+      "parentId": "v001",
+      "parentIds": [
+        "v001"
+      ],
+      "cells": [
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          ".+p",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i+M0",
+          "i+M0",
+          "i+M0",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i+G",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ]
+      ],
+      "sha256": "de6262ccb759d70bc552493fd053e9fbd27f75521e57ef5b9ecf577d57850497",
+      "cellsSha256": "0db78ab6d0f7cc989e730947f3b89be2bd2c9a94e109ff14c6d6be68e64dab43",
+      "contractSha256": "c311dbb278f390448df7a5ad33bb9027fad28d4d10262822c2314132156906ee",
+      "origin": "observed",
+      "parentBasis": "observed-snapshot-order",
+      "diff": {
+        "added": [],
+        "removed": [],
+        "changed": [
+          {
+            "x": 3,
+            "y": 13,
+            "z": 0,
+            "before": "i",
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 13,
+            "z": 0,
+            "before": "#",
+            "after": "i"
+          }
+        ]
+      },
+      "preview": {
+        "levelPath": "data/process-levels/authored-skating-cross-8dd200de12b7/v002.json",
+        "levelSha256": "0c060489cafb2695dd59d83f5e469476c72c7f601361ef23ff18f7570c62689f",
+        "cellsSha256": "0db78ab6d0f7cc989e730947f3b89be2bd2c9a94e109ff14c6d6be68e64dab43",
+        "status": "iteration",
+        "thumbnailPath": "assets/process-thumbnails/authored-skating-cross-8dd200de12b7/v002-0c060489cafb2695-6ce268de9e786607.png"
+      }
+    },
+    {
+      "id": "v003",
+      "graphNodeId": "candidate-v003",
+      "label": "Crosswind Ice Relay",
+      "parentId": "v002",
+      "parentIds": [
+        "v002"
+      ],
+      "cells": [
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          ".+p",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i+M0",
+          "i+M0",
+          "i+M0",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+G",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ]
+      ],
+      "sha256": "390e4700f19fb9078e725d3d86e717956638c16e14f444dcf5d36d25fdd1679b",
+      "cellsSha256": "3161aea37cb6bb8dacdfd133b8065dd469895f10d0b760907bb3bcd3e31a3fac",
+      "contractSha256": "156accdeab35ca085170a7707c020a5a0a0f31037c2e36291fb0fee6d63ed5d4",
+      "origin": "observed",
+      "parentBasis": "observed-snapshot-order",
+      "diff": {
+        "added": [],
+        "removed": [],
+        "changed": [
+          {
+            "x": 10,
+            "y": 5,
+            "z": 0,
+            "before": "i+G",
+            "after": "i"
+          },
+          {
+            "x": 10,
+            "y": 8,
+            "z": 0,
+            "before": "i",
+            "after": "i+G"
+          }
+        ]
+      },
+      "preview": {
+        "levelPath": "data/process-levels/authored-skating-cross-8dd200de12b7/v003.json",
+        "levelSha256": "dde118c29bd82cbdfffc7a35bc746e1543750ae3f336e73e908328057843b236",
+        "cellsSha256": "3161aea37cb6bb8dacdfd133b8065dd469895f10d0b760907bb3bcd3e31a3fac",
+        "status": "iteration",
+        "thumbnailPath": "assets/process-thumbnails/authored-skating-cross-8dd200de12b7/v003-dde118c29bd82cbd-6ce268de9e786607.png"
+      }
+    },
+    {
+      "id": "v004",
+      "graphNodeId": "candidate-v004",
+      "label": "Crosswind Ice Relay",
+      "parentId": "v003",
+      "parentIds": [
+        "v003"
+      ],
+      "cells": [
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          ".+p",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i+M0",
+          "i+M0",
+          "i+M0",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+G",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ]
+      ],
+      "sha256": "00eef41bdd80678db4bd7d3bdec114764bc4700edb0caafbb4c99dc608d0c525",
+      "cellsSha256": "3161aea37cb6bb8dacdfd133b8065dd469895f10d0b760907bb3bcd3e31a3fac",
+      "contractSha256": "681b307baeaa8677251d256984c1687845c12dac0333cfd95f38c68ae683c608",
+      "origin": "observed",
+      "parentBasis": "observed-snapshot-order",
+      "diff": {
+        "added": [],
+        "removed": [],
+        "changed": []
+      },
+      "preview": {
+        "levelPath": "data/process-levels/authored-skating-cross-8dd200de12b7/v004.json",
+        "levelSha256": "6e0d62d328e647f99edf342b2846c6431812c64261d3ee9a1c75c8a1d7d4c33a",
+        "cellsSha256": "3161aea37cb6bb8dacdfd133b8065dd469895f10d0b760907bb3bcd3e31a3fac",
+        "status": "iteration",
+        "thumbnailPath": "assets/process-thumbnails/authored-skating-cross-8dd200de12b7/v004-6e0d62d328e647f9-6ce268de9e786607.png",
+        "replays": [
+          {
+            "id": "replay-e000041",
+            "data": "data/process-replays/authored-skating-cross-8dd200de12b7/v004-replay-e000041.json",
+            "sha256": "82e70eb24f86b5e0f2e5c030c02199ccdc509ec03b7dceffb604677cc68d1358",
+            "candidateId": "v004",
+            "cellsSha256": "3161aea37cb6bb8dacdfd133b8065dd469895f10d0b760907bb3bcd3e31a3fac",
+            "contractSha256": "681b307baeaa8677251d256984c1687845c12dac0333cfd95f38c68ae683c608",
+            "sourceSha256": "6a62ee84f749d3d910451f5a311bb0aee2d8bb2085c771db712b8d06abc023c5",
+            "route": "RDDRDLURDLURULDRDURDL",
+            "frameCount": 22,
+            "binding": "exact-artifact",
+            "sourceKind": "saved-replay"
+          }
+        ],
+        "replay": {
+          "id": "replay-e000041",
+          "data": "data/process-replays/authored-skating-cross-8dd200de12b7/v004-replay-e000041.json",
+          "sha256": "82e70eb24f86b5e0f2e5c030c02199ccdc509ec03b7dceffb604677cc68d1358",
+          "candidateId": "v004",
+          "cellsSha256": "3161aea37cb6bb8dacdfd133b8065dd469895f10d0b760907bb3bcd3e31a3fac",
+          "contractSha256": "681b307baeaa8677251d256984c1687845c12dac0333cfd95f38c68ae683c608",
+          "sourceSha256": "6a62ee84f749d3d910451f5a311bb0aee2d8bb2085c771db712b8d06abc023c5",
+          "route": "RDDRDLURDLURULDRDURDL",
+          "frameCount": 22,
+          "binding": "exact-artifact",
+          "sourceKind": "saved-replay"
+        }
+      }
+    },
+    {
+      "id": "v005",
+      "graphNodeId": "candidate-v005",
+      "label": "Crosswind Ice Relay",
+      "parentId": "v004",
+      "parentIds": [
+        "v004"
+      ],
+      "cells": [
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          ".+p",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i+M0",
+          "i+M0",
+          "i+M0",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+M0",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i+G",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "i",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ]
+      ],
+      "sha256": "c423975fbab15378f7a46e91ca6e8ce306b0563a2b35df1582b070e632b97729",
+      "cellsSha256": "3161aea37cb6bb8dacdfd133b8065dd469895f10d0b760907bb3bcd3e31a3fac",
+      "contractSha256": "681b307baeaa8677251d256984c1687845c12dac0333cfd95f38c68ae683c608",
+      "origin": "observed",
+      "parentBasis": "observed-snapshot-order",
+      "diff": {
+        "added": [],
+        "removed": [],
+        "changed": []
+      },
+      "preview": {
+        "levelPath": "data/process-levels/authored-skating-cross-8dd200de12b7/v005.json",
+        "levelSha256": "be07ee1ddc46934249a219b839e9ddb6142b0b8c967006cedf6342fbbcb2b35e",
+        "cellsSha256": "3161aea37cb6bb8dacdfd133b8065dd469895f10d0b760907bb3bcd3e31a3fac",
+        "status": "iteration",
+        "thumbnailPath": "assets/process-thumbnails/authored-skating-cross-8dd200de12b7/v005-be07ee1ddc469342-6ce268de9e786607.png"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "graphNodeId": "test-t001",
+      "candidateId": "v004",
+      "label": "verify.cjs",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "complete_objective",
+          "status": "passed"
+        },
+        {
+          "name": "official_solver_positive",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_cross",
+          "status": "passed"
+        },
+        {
+          "name": "forbid_static_cross_brake",
+          "status": "passed"
+        },
+        {
+          "name": "forbid_cross_motion_D",
+          "status": "passed"
+        },
+        {
+          "name": "forbid_cross_motion_R",
+          "status": "passed"
+        },
+        {
+          "name": "forbid_cross_motion_U",
+          "status": "passed"
+        },
+        {
+          "name": "at_most_1_cross_motions",
+          "status": "passed"
+        },
+        {
+          "name": "at_most_2_cross_motions",
+          "status": "passed"
+        },
+        {
+          "name": "single_direction_cross_motion",
+          "status": "passed"
+        },
+        {
+          "name": "first_cross_motion_then_frozen",
+          "status": "passed"
+        },
+        {
+          "name": "dependency_1_positive",
+          "status": "passed"
+        },
+        {
+          "name": "dependency_1_without_preparation",
+          "status": "passed"
+        },
+        {
+          "name": "dependency_2_positive",
+          "status": "passed"
+        },
+        {
+          "name": "dependency_2_without_preparation",
+          "status": "passed"
+        },
+        {
+          "name": "dependency_3_positive",
+          "status": "passed"
+        },
+        {
+          "name": "dependency_3_without_preparation",
+          "status": "passed"
+        },
+        {
+          "name": "stage_southern-docking",
+          "status": "passed"
+        },
+        {
+          "name": "stage_eastern-docking",
+          "status": "passed"
+        },
+        {
+          "name": "stage_gem-turn-alignment",
+          "status": "passed"
+        },
+        {
+          "name": "selected_3_cross_frozen",
+          "status": "passed"
+        },
+        {
+          "name": "selected_4_cross_frozen",
+          "status": "passed"
+        }
+      ],
+      "scope": "Report-specific check; no broader mechanism or difficulty claim.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    },
+    {
+      "id": "t002",
+      "graphNodeId": "test-t002",
+      "candidateId": "v004",
+      "label": "report.json",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "official_saved_export_matches_design",
+          "status": "passed"
+        },
+        {
+          "name": "complete_browser_gem_and_doorway",
+          "status": "passed"
+        },
+        {
+          "name": "all_browser_actor_frames_match_official_engine",
+          "status": "passed"
+        },
+        {
+          "name": "official_three_dimensional_renderer",
+          "status": "passed"
+        },
+        {
+          "name": "official_editor_opened",
+          "status": "passed"
+        }
+      ],
+      "scope": "Actual keyboard play in the unmodified official local 3D browser; all observed actors compared after every input with ordinary engine moves.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    },
+    {
+      "id": "t003",
+      "graphNodeId": "test-t003",
+      "candidateId": "v005",
+      "label": "verify.cjs",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "complete_objective",
+          "status": "passed"
+        },
+        {
+          "name": "official_solver_positive",
+          "status": "passed"
+        },
+        {
+          "name": "freeze_cross",
+          "status": "passed"
+        },
+        {
+          "name": "forbid_static_cross_brake",
+          "status": "passed"
+        },
+        {
+          "name": "forbid_cross_motion_D",
+          "status": "passed"
+        },
+        {
+          "name": "forbid_cross_motion_R",
+          "status": "passed"
+        },
+        {
+          "name": "forbid_cross_motion_U",
+          "status": "passed"
+        },
+        {
+          "name": "at_most_1_cross_motions",
+          "status": "passed"
+        },
+        {
+          "name": "at_most_2_cross_motions",
+          "status": "passed"
+        },
+        {
+          "name": "single_direction_cross_motion",
+          "status": "passed"
+        },
+        {
+          "name": "first_cross_motion_then_frozen",
+          "status": "passed"
+        },
+        {
+          "name": "dependency_1_positive",
+          "status": "passed"
+        },
+        {
+          "name": "dependency_1_without_preparation",
+          "status": "passed"
+        },
+        {
+          "name": "dependency_2_positive",
+          "status": "passed"
+        },
+        {
+          "name": "dependency_2_without_preparation",
+          "status": "passed"
+        },
+        {
+          "name": "dependency_3_positive",
+          "status": "passed"
+        },
+        {
+          "name": "dependency_3_without_preparation",
+          "status": "passed"
+        },
+        {
+          "name": "stage_southern-docking",
+          "status": "passed"
+        },
+        {
+          "name": "stage_eastern-docking",
+          "status": "passed"
+        },
+        {
+          "name": "stage_gem-turn-alignment",
+          "status": "passed"
+        },
+        {
+          "name": "selected_3_cross_frozen",
+          "status": "passed"
+        },
+        {
+          "name": "selected_4_cross_frozen",
+          "status": "passed"
+        }
+      ],
+      "scope": "Report-specific check; no broader mechanism or difficulty claim.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    }
+  ],
+  "notes": [
+    {
+      "id": "n001",
+      "graphNodeId": "note-n001",
+      "candidateId": null,
+      "label": "Create a complex ice room requiring gem collection and a return to the western doorway. A single asymmetric cross must pass through connected docking, side-change and final braking stages.",
+      "goal": "Create a complex ice room requiring gem collection and a return to the western doorway. A single asymmetric cross must pass through connected docking, side-change and final braking stages.",
+      "change": "Derive an asymmetric seven-member cross and a new western entrance, southern transport lane, eastern alignment pocket and vertical gem ray. The intended final stop lies beside an upper-stem member; the gem route departs vertically from that stop.",
+      "reason": "The whole footprint must change docking and available input faces before it can provide the objective turn. Walls and approach baffles will be checked against directed stop graphs, not visual adjacency.",
+      "sources": [
+        "references/mechanism-logic.md",
+        "references/planning-depth.md",
+        "references/complex-validation.md",
+        "references/user-case.md",
+        "references/user-checks.json",
+        "references/user-states.json"
+      ],
+      "expectedChecks": [
+        "Complete gem-and-doorway replay",
+        "Cross-motion and static-brake necessity",
+        "At least three connected functional stages with ordinary next inputs",
+        "Exhausted preparation exclusions with positive controls",
+        "Official 3D keyboard playthrough and saved replay"
+      ],
+      "origin": "agent_statement",
+      "retrospective": false
+    },
+    {
+      "id": "n002",
+      "graphNodeId": "note-n002",
+      "candidateId": "v001",
+      "label": "Retrospective goal clarification: preserve southern docking while allowing the whole cross to translate east.",
+      "goal": "Retrospective goal clarification: preserve southern docking while allowing the whole cross to translate east.",
+      "change": "Move the southern collision wall beneath the long left tip rather than the right arm.",
+      "reason": "The first exhausted probe found no complete solution: the original southern wall stopped the lower tip from translating east. A left-tip stop preserves the downward endpoint while allowing the next whole-body slide.",
+      "sources": [],
+      "expectedChecks": [
+        "Eastern dock reachable from the southern dock",
+        "Complete objective and no frozen-cross bypass"
+      ],
+      "origin": "agent_statement",
+      "retrospective": true
+    },
+    {
+      "id": "n003",
+      "graphNodeId": "note-n003",
+      "candidateId": "v002",
+      "label": "Retrospective goal clarification: make the gem collectable at a stopping cell that requires the aligned cross.",
+      "goal": "Retrospective goal clarification: make the gem collectable at a stopping cell that requires the aligned cross.",
+      "change": "Place the gem at the final directed stopping cell above the aligned cross's long left arm.",
+      "reason": "The docking sequence became reachable, but the engine collected no gem while sliding through the original ray. The revised endpoint requires the aligned cross and permits a separate post-gem doorway return.",
+      "sources": [],
+      "expectedChecks": [
+        "Actual gem removal at the endpoint",
+        "No two-stage or frozen-cross completion",
+        "Final brake and return route"
+      ],
+      "origin": "agent_statement",
+      "retrospective": true
+    },
+    {
+      "id": "n004",
+      "graphNodeId": "note-n004",
+      "candidateId": "v004",
+      "label": "Completed Crosswind Ice Relay: collect the gem at (10,8) and return alive to (0,3).",
+      "goal": "Completed Crosswind Ice Relay: collect the gem at (10,8) and return alive to (0,3).",
+      "change": "Final geometry has a seven-member asymmetric cross, three connected necessary docking stages, and a recorded 21-input browser playthrough. The final contract-only snapshot supplied measured witness steps; no extra geometry revision was made.",
+      "reason": "All 22 structural checks and five browser/export checks passed. Browser actor frames match ordinary engine moves at every input. The extra southern dip in the shortest-input witness is a route choice, not a claimed mandatory stage. Local arm roles are observed; global arm minimality and human difficulty remain unmeasured.",
+      "sources": [],
+      "expectedChecks": [
+        "Sealed replay with 22 actual browser frames",
+        "Exact final design/build/verification binding",
+        "Serialized publication followed by successful Pages deployment"
+      ],
+      "origin": "agent_statement",
+      "retrospective": false
+    },
+    {
+      "id": "n005",
+      "graphNodeId": "note-n005",
+      "candidateId": "v004",
+      "label": "Repair publication metadata while preserving the original authoring evidence.",
+      "goal": "Repair publication metadata while preserving the original authoring evidence.",
+      "change": "Fill the missing goal labels of n002 and n003 with explicitly retrospective clarifications and mark both notes retrospective. Preserve the original journal as an unchanged prefix and archive the pre-amendment index and journal.",
+      "reason": "The first publication attempt stopped before commit or push with Incomplete explanation: note-n002. Only authored note metadata was amended through the existing store API. No design, build, test report, gameplay claim, recorder source, validator source or engine source changed.",
+      "sources": [],
+      "expectedChecks": [
+        "Publisher evidence audit and final artifact binding",
+        "Serialized publication and Pages result"
+      ],
+      "origin": "agent_statement",
+      "retrospective": true
+    },
+    {
+      "id": "n006",
+      "graphNodeId": "note-n006",
+      "candidateId": "v004",
+      "label": "Include the complete recorded route in the published design.",
+      "goal": "Include the complete recorded route in the published design.",
+      "change": "Add the existing 21-input browser path as top-level witness metadata. Preserve all cells, contract fields and the original playable draft.",
+      "reason": "The second publication attempt required spec.witness; the skill verifier can obtain its own route, but the website importer requires the route in the design. This is delivery metadata, not a new puzzle revision.",
+      "sources": [],
+      "expectedChecks": [
+        "Fresh verifier replay of the explicit witness",
+        "Existing browser replay fingerprints remain matched",
+        "Serialized publication"
+      ],
+      "origin": "agent_statement",
+      "retrospective": false
+    }
+  ],
+  "resources": [
+    {
+      "id": "r001",
+      "graphNodeId": "resource-r001",
+      "label": "mazebench-skating-cross/references/mechanism-logic.md",
+      "displayPath": "mazebench-skating-cross/references/mechanism-logic.md",
+      "basename": "mechanism-logic.md",
+      "sha256": "dec0c88dbf97d94a7c1e429d2cf5371658c5154b62f8884a1f4b21cb182fe599",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r002",
+      "graphNodeId": "resource-r002",
+      "label": "mazebench-skating-cross/references/planning-depth.md",
+      "displayPath": "mazebench-skating-cross/references/planning-depth.md",
+      "basename": "planning-depth.md",
+      "sha256": "fbb19ded77faa9fd3dce184496a7f63ac4ca10dbfa2e3867e67ff78291316e00",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r003",
+      "graphNodeId": "resource-r003",
+      "label": "mazebench-skating-cross/references/design.md",
+      "displayPath": "mazebench-skating-cross/references/design.md",
+      "basename": "design.md",
+      "sha256": "e11d642c7dffcadd426223d71153b4f3e591abc9e2546e0186b0159f2a549d19",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r004",
+      "graphNodeId": "resource-r004",
+      "label": "mazebench-skating-cross/references/user-case.md",
+      "displayPath": "mazebench-skating-cross/references/user-case.md",
+      "basename": "user-case.md",
+      "sha256": "8fac10ffd16b54a373315a555c746f154d1ca692325706a6977206575f4086b7",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r005",
+      "graphNodeId": "resource-r005",
+      "label": "mazebench-skating-cross/references/verification.md",
+      "displayPath": "mazebench-skating-cross/references/verification.md",
+      "basename": "verification.md",
+      "sha256": "e57233b5b968d848a1c99c96c19c1e1089ebb38371f989df3648752df48bcc21",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r006",
+      "graphNodeId": "resource-r006",
+      "label": "mazebench-skating-cross/references/design-template.json",
+      "displayPath": "mazebench-skating-cross/references/design-template.json",
+      "basename": "design-template.json",
+      "sha256": "c508348d99af852fd1da821b9fbe0e6e6ca412e650a8233b6add83b637da77fb",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r007",
+      "graphNodeId": "resource-r007",
+      "label": "mazebench-skating-cross/references/complex-validation.md",
+      "displayPath": "mazebench-skating-cross/references/complex-validation.md",
+      "basename": "complex-validation.md",
+      "sha256": "d359002febd35353baa6e68a323486b581e2f4150bb5c05804d8fe22257b38ae",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r008",
+      "graphNodeId": "resource-r008",
+      "label": "mazebench-skating-cross/references/user-checks.json",
+      "displayPath": "mazebench-skating-cross/references/user-checks.json",
+      "basename": "user-checks.json",
+      "sha256": "755eac958b2964cde031233c81f90e3e516e1047053525e9c3f6258048e038ff",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r009",
+      "graphNodeId": "resource-r009",
+      "label": "mazebench-skating-cross/references/user-states.json",
+      "displayPath": "mazebench-skating-cross/references/user-states.json",
+      "basename": "user-states.json",
+      "sha256": "cb73d5d3297ea735065171ff41a4981aefd5553845225b2e56a6a61631d91a68",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "snapshot-e000003",
+      "graphNodeId": "resource-snapshot-e000003",
+      "label": "Skill attached: mazebench-skating-cross/SKILL.md",
+      "displayPath": "mazebench-skating-cross/SKILL.md",
+      "basename": "SKILL.md",
+      "sha256": "5b9e8c4a5a90a0db0b1274de8bf14e7f546636685706da4a83dcc251966eae76",
+      "kind": "skill",
+      "origin": "observed",
+      "delivery": "snapshot"
+    }
+  ],
+  "operations": [
+    {
+      "id": "operation-e000015",
+      "graphNodeId": "operation-e000015",
+      "candidateId": "v001",
+      "inputCandidateId": "v001",
+      "outputCandidateId": "v001",
+      "label": "node",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000015",
+      "resultNodeId": null,
+      "exitCode": 0
+    },
+    {
+      "id": "operation-e000017",
+      "graphNodeId": "operation-e000017",
+      "candidateId": "v001",
+      "inputCandidateId": "v001",
+      "outputCandidateId": "v001",
+      "label": "node",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000017",
+      "resultNodeId": null,
+      "exitCode": 0
+    },
+    {
+      "id": "operation-e000021",
+      "graphNodeId": "operation-e000021",
+      "candidateId": "v002",
+      "inputCandidateId": "v002",
+      "outputCandidateId": "v002",
+      "label": "node",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000021",
+      "resultNodeId": null,
+      "exitCode": 0
+    },
+    {
+      "id": "operation-e000023",
+      "graphNodeId": "operation-e000023",
+      "candidateId": "v002",
+      "inputCandidateId": "v002",
+      "outputCandidateId": "v002",
+      "label": "node",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000023",
+      "resultNodeId": null,
+      "exitCode": 0
+    },
+    {
+      "id": "operation-e000027",
+      "graphNodeId": "operation-e000027",
+      "candidateId": "v003",
+      "inputCandidateId": "v003",
+      "outputCandidateId": "v003",
+      "label": "node",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000027",
+      "resultNodeId": null,
+      "exitCode": 0
+    },
+    {
+      "id": "operation-e000030",
+      "graphNodeId": "operation-e000030",
+      "candidateId": "v004",
+      "inputCandidateId": "v004",
+      "outputCandidateId": "v004",
+      "label": "verify.cjs",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000030",
+      "resultNodeId": "test-t001",
+      "exitCode": 0
+    },
+    {
+      "id": "operation-e000033",
+      "graphNodeId": "operation-e000033",
+      "candidateId": "v004",
+      "inputCandidateId": "v004",
+      "outputCandidateId": "v004",
+      "label": "build.cjs",
+      "kind": "build",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000033",
+      "resultNodeId": null,
+      "exitCode": 0
+    },
+    {
+      "id": "operation-e000036",
+      "graphNodeId": "operation-e000036",
+      "candidateId": "v004",
+      "inputCandidateId": "v004",
+      "outputCandidateId": "v004",
+      "label": "node",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000036",
+      "resultNodeId": "test-t002",
+      "exitCode": 0
+    },
+    {
+      "id": "operation-e000039",
+      "graphNodeId": "operation-e000039",
+      "candidateId": "v004",
+      "inputCandidateId": "v004",
+      "outputCandidateId": "v004",
+      "label": "node",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000039",
+      "resultNodeId": null,
+      "exitCode": 0
+    },
+    {
+      "id": "operation-e000051",
+      "graphNodeId": "operation-e000051",
+      "candidateId": "v005",
+      "inputCandidateId": "v005",
+      "outputCandidateId": "v005",
+      "label": "verify.cjs",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000051",
+      "resultNodeId": "test-t003",
+      "exitCode": 0
+    }
+  ],
+  "replays": [
+    {
+      "id": "replay-e000041",
+      "graphNodeId": "replay-e000041",
+      "candidateId": "v004",
+      "label": "Saved browser playthrough",
+      "route": "RDDRDLURDLURULDRDURDL",
+      "frameCount": 22,
+      "binding": "exact-artifact",
+      "sourceKind": "saved-replay",
+      "sourceSha256": "6a62ee84f749d3d910451f5a311bb0aee2d8bb2085c771db712b8d06abc023c5",
+      "cellsSha256": "3161aea37cb6bb8dacdfd133b8065dd469895f10d0b760907bb3bcd3e31a3fac",
+      "contractSha256": "681b307baeaa8677251d256984c1687845c12dac0333cfd95f38c68ae683c608",
+      "data": "data/process-replays/authored-skating-cross-8dd200de12b7/v004-replay-e000041.json",
+      "sha256": "82e70eb24f86b5e0f2e5c030c02199ccdc509ec03b7dceffb604677cc68d1358"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "status": "measured",
+    "runtime": "codex_exec",
+    "elapsedMs": 601097,
+    "startedAt": "2026-10-26T04:18:25.366Z",
+    "finishedAt": "2026-10-26T04:28:26.463Z",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 1965825,
+      "cached_input_tokens": 1871232,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 17402,
+      "reasoning_output_tokens": 5647,
+      "total_tokens": 1983227
+    },
+    "models": [
+      {
+        "model": "gpt-6-astra",
+        "provider": "openai",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 1965825,
+          "cached_input_tokens": 1871232,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 17402,
+          "reasoning_output_tokens": 5647,
+          "total_tokens": 1983227
+        },
+        "observations": 25
+      }
+    ],
+    "evidenceSha256": "132bf49cb80c43cdf7acc985ee728bd267fc1dd1e29b5c1d55434bd8622894d9"
+  },
+  "records": [
+    {
+      "id": "event-e000001",
+      "graphNodeId": "event-e000001",
+      "candidateId": null,
+      "eventType": "run.created",
+      "label": "Start authoring run",
+      "status": "neutral",
+      "scope": "The recorder opened this authoring run. This does not establish an empty prior conversation context.",
+      "relatedNodeId": null,
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000002",
+      "graphNodeId": "event-e000002",
+      "candidateId": null,
+      "eventType": "collector.started",
+      "label": "Start automatic capture",
+      "status": "neutral",
+      "scope": "The automatic collector started. Recorded command boundaries, reads and saved artifacts are shown in sequence.",
+      "relatedNodeId": null,
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000015",
+      "graphNodeId": "event-e000015",
+      "candidateId": "v001",
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000015",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000017",
+      "graphNodeId": "event-e000017",
+      "candidateId": "v001",
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000017",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000021",
+      "graphNodeId": "event-e000021",
+      "candidateId": "v002",
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000021",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000023",
+      "graphNodeId": "event-e000023",
+      "candidateId": "v002",
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000023",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000027",
+      "graphNodeId": "event-e000027",
+      "candidateId": "v003",
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000027",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000030",
+      "graphNodeId": "event-e000030",
+      "candidateId": "v004",
+      "eventType": "command.started",
+      "label": "Start: verify.cjs",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000030",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000033",
+      "graphNodeId": "event-e000033",
+      "candidateId": "v004",
+      "eventType": "command.started",
+      "label": "Start: build.cjs",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000033",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000035",
+      "graphNodeId": "event-e000035",
+      "candidateId": "v004",
+      "eventType": "build.saved",
+      "label": "Save build files",
+      "status": "neutral",
+      "scope": "Build files were archived for this candidate. The file list and fingerprints identify the saved output; verification appears separately.",
+      "relatedNodeId": null,
+      "files": [
+        {
+          "name": "manifest.json",
+          "sha256": "7f8d603f59fde260682bca314a8cc8da95976814e8fecc51f812b0f0f2972cf7"
+        },
+        {
+          "name": "world.json",
+          "sha256": "257dc36a25d662319c1f5cf38beaa7d8b442f87ab16257d0fd68841099bd86ea"
+        },
+        {
+          "name": "contract.json",
+          "sha256": "9dd9186e5ec46469910740b395b6a4372ee3e342adf6d58b5d4ffa47ffd083e0"
+        },
+        {
+          "name": "spec.json",
+          "sha256": "00eef41bdd80678db4bd7d3bdec114764bc4700edb0caafbb4c99dc608d0c525"
+        },
+        {
+          "name": "draft.json",
+          "sha256": "bc183eedb20db2b840826d046de648c10e949d21979081c5bfc7d85a4e29c14c"
+        },
+        {
+          "name": "level_AxA.txt",
+          "sha256": "8dd200de12b715aa29a0338480391f1edb9694954215292d3ef0b6958371f1a5"
+        },
+        {
+          "name": "level_parsing.json",
+          "sha256": "54cb1bc6d2e545a89abe860e2c84e45ed5fd31b244b828b8424d2693d05b780d"
+        },
+        {
+          "name": "toolbox.json",
+          "sha256": "c36ac5ee0a6a8e7b69d73613e3dde029afdc84681b146fbdfe75a1c52b81a330"
+        },
+        {
+          "name": "world_map.json",
+          "sha256": "615bed0185123455144b43872f1d68652b193af598afb450cf3abbb249723806"
+        },
+        {
+          "name": "world_parsing.json",
+          "sha256": "7e250cc0e0dccadf087fc5717567e059f1e6b604a3e3f8315bd1d29f192c3202"
+        }
+      ],
+      "facts": []
+    },
+    {
+      "id": "event-e000036",
+      "graphNodeId": "event-e000036",
+      "candidateId": "v004",
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000036",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000039",
+      "graphNodeId": "event-e000039",
+      "candidateId": "v004",
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000039",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000043",
+      "graphNodeId": "event-e000043",
+      "candidateId": "v004",
+      "eventType": "artifact.saved",
+      "label": "Save recorded artifact",
+      "status": "neutral",
+      "scope": "The recorder archived this file. Saving evidence does not itself establish a passing test.",
+      "relatedNodeId": null,
+      "files": [
+        {
+          "name": "result.json",
+          "sha256": "eaa7e617ca314794079e918aab65b1e979048e6e30b6dcb696d3734143a9a446"
+        }
+      ],
+      "facts": []
+    },
+    {
+      "id": "event-e000044",
+      "graphNodeId": "event-e000044",
+      "candidateId": null,
+      "eventType": "run.finished",
+      "label": "Finish authoring run",
+      "status": "neutral",
+      "scope": "The recorder closed the run. Test verdicts and publication are separate records.",
+      "relatedNodeId": null,
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000045",
+      "graphNodeId": "event-e000045",
+      "candidateId": "v004",
+      "eventType": "note.metadata-amended",
+      "label": "Recorded note.metadata-amended",
+      "status": "neutral",
+      "scope": "This recorded step is retained. Its private payload is not published.",
+      "relatedNodeId": null,
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000047",
+      "graphNodeId": "event-e000047",
+      "candidateId": null,
+      "eventType": "run.finished",
+      "label": "Finish authoring run",
+      "status": "neutral",
+      "scope": "The recorder closed the run. Test verdicts and publication are separate records.",
+      "relatedNodeId": null,
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000048",
+      "graphNodeId": "event-e000048",
+      "candidateId": null,
+      "eventType": "run.resumed",
+      "label": "Recorded run.resumed",
+      "status": "neutral",
+      "scope": "This recorded step is retained. Its private payload is not published.",
+      "relatedNodeId": null,
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000051",
+      "graphNodeId": "event-e000051",
+      "candidateId": "v005",
+      "eventType": "command.started",
+      "label": "Start: verify.cjs",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000051",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000054",
+      "graphNodeId": "event-e000054",
+      "candidateId": null,
+      "eventType": "run.finished",
+      "label": "Finish authoring run",
+      "status": "neutral",
+      "scope": "The recorder closed the run. Test verdicts and publication are separate records.",
+      "relatedNodeId": null,
+      "files": [],
+      "facts": []
+    }
+  ],
+  "explanations": [
+    {
+      "nodeId": "event-e000001",
+      "basis": "saved-evidence-review",
+      "headline": "Start authoring run",
+      "action": "Start authoring run.",
+      "result": "The recorder opened this authoring run. This does not establish an empty prior conversation context.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000002",
+      "basis": "saved-evidence-review",
+      "headline": "Start automatic capture",
+      "action": "Start automatic capture.",
+      "result": "The automatic collector started. Recorded command boundaries, reads and saved artifacts are shown in sequence.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-snapshot-e000003",
+      "basis": "saved-evidence-review",
+      "headline": "Skill attached: mazebench-skating-cross/SKILL.md",
+      "action": "Capture a version snapshot of mazebench-skating-cross/SKILL.md. Authoring workflow, supported mechanism and required delivery checks.",
+      "result": "The dependency version was saved. This event does not record a document read.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-snapshot-e000003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r001",
+      "basis": "saved-evidence-review",
+      "headline": "mechanism-logic.md",
+      "action": "Read mazebench-skating-cross/references/mechanism-logic.md. Extracted functional roles, contact relationships and preparation dependencies to realize in a new layout.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r001",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r002",
+      "basis": "saved-evidence-review",
+      "headline": "planning-depth.md",
+      "action": "Read mazebench-skating-cross/references/planning-depth.md. Guidance for connected stages, usable recovery and avoiding trivial completions.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r002",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r003",
+      "basis": "saved-evidence-review",
+      "headline": "design.md",
+      "action": "Read mazebench-skating-cross/references/design.md. Supporting design or reference material identified by the saved filename and fingerprint.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r004",
+      "basis": "saved-evidence-review",
+      "headline": "user-case.md",
+      "action": "Read mazebench-skating-cross/references/user-case.md. The source case explanation and its scoped mechanism evidence.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r004",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r005",
+      "basis": "saved-evidence-review",
+      "headline": "verification.md",
+      "action": "Read mazebench-skating-cross/references/verification.md. Verification rules or implementations defining what the checks can and cannot establish.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r005"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r006",
+      "basis": "saved-evidence-review",
+      "headline": "design-template.json",
+      "action": "Read mazebench-skating-cross/references/design-template.json. The design contract scaffold; reading it does not establish that a complete reference map was copied.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r006"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r007",
+      "basis": "saved-evidence-review",
+      "headline": "complex-validation.md",
+      "action": "Read mazebench-skating-cross/references/complex-validation.md. Verification rules or implementations defining what the checks can and cannot establish.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r007",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r008",
+      "basis": "saved-evidence-review",
+      "headline": "user-checks.json",
+      "action": "Read mazebench-skating-cross/references/user-checks.json. Verification rules or implementations defining what the checks can and cannot establish.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r008",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r009",
+      "basis": "saved-evidence-review",
+      "headline": "user-states.json",
+      "action": "Read mazebench-skating-cross/references/user-states.json. Recorded reference poses and moves for checking how the source mechanism operates.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r009",
+        "note-n001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "note-n001",
+      "basis": "saved-evidence-review",
+      "headline": "Create a complex ice room requiring gem collection and a return to the western doorway. A single asymmetric cross must pass through connected docking, side-change and final braking stages.",
+      "action": "Derive an asymmetric seven-member cross and a new western entrance, southern transport lane, eastern alignment pocket and vertical gem ray. The intended final stop lies beside an upper-stem member; the gem route departs vertically from that stop.",
+      "result": "The whole footprint must change docking and available input faces before it can provide the objective turn. Walls and approach baffles will be checked against directed stop graphs, not visual adjacency.",
+      "decision": "Planned checks: Complete gem-and-doorway replay; Cross-motion and static-brake necessity; At least three connected functional stages with ordinary next inputs; Exhausted preparation exclusions with positive controls; Official 3D keyboard playthrough and saved replay.",
+      "badge": "",
+      "evidence": [
+        "note-n001",
+        "resource-r001",
+        "resource-r002",
+        "resource-r007",
+        "resource-r004",
+        "resource-r008",
+        "resource-r009"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "candidate-v001",
+      "basis": "saved-evidence-review",
+      "headline": "v001 · Crosswind Ice Relay",
+      "action": "Save the first captured map and contract for this run.",
+      "result": "No separate test verdict is bound to this saved version. Saving a candidate does not establish that it passes.",
+      "decision": "The subsequent author note states: The first exhausted probe found no complete solution: the original southern wall stopped the lower tip from translating east. A left-tip stop preserves the downward endpoint while allowing the next whole-body slide.",
+      "badge": "",
+      "evidence": [
+        "candidate-v001",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000015",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000015",
+        "candidate-v001",
+        "operation-e000015"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000015",
+      "basis": "saved-evidence-review",
+      "headline": "node",
+      "action": "node. Saved input: v001; output: v001.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "The subsequent author note states: The first exhausted probe found no complete solution: the original southern wall stopped the lower tip from translating east. A left-tip stop preserves the downward endpoint while allowing the next whole-body slide.",
+      "badge": "",
+      "evidence": [
+        "operation-e000015",
+        "candidate-v001",
+        "event-e000015",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000017",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000017",
+        "candidate-v001",
+        "operation-e000017"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000017",
+      "basis": "saved-evidence-review",
+      "headline": "node",
+      "action": "node. Saved input: v001; output: v001.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "The subsequent author note states: The first exhausted probe found no complete solution: the original southern wall stopped the lower tip from translating east. A left-tip stop preserves the downward endpoint while allowing the next whole-body slide.",
+      "badge": "",
+      "evidence": [
+        "operation-e000017",
+        "candidate-v001",
+        "event-e000017",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "note-n002",
+      "basis": "saved-evidence-review",
+      "headline": "Retrospective goal clarification: preserve southern docking while allowing the whole cross to translate east.",
+      "action": "Move the southern collision wall beneath the long left tip rather than the right arm.",
+      "result": "The first exhausted probe found no complete solution: the original southern wall stopped the lower tip from translating east. A left-tip stop preserves the downward endpoint while allowing the next whole-body slide.",
+      "decision": "Planned checks: Eastern dock reachable from the southern dock; Complete objective and no frozen-cross bypass.",
+      "badge": "",
+      "evidence": [
+        "note-n002",
+        "candidate-v001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "candidate-v002",
+      "basis": "saved-evidence-review",
+      "headline": "v002 · Crosswind Ice Relay",
+      "action": "Save v002 after changing 2 cells relative to v001.",
+      "result": "No separate test verdict is bound to this saved version. Saving a candidate does not establish that it passes.",
+      "decision": "The subsequent author note states: The docking sequence became reachable, but the engine collected no gem while sliding through the original ray. The revised endpoint requires the aligned cross and permits a separate post-gem doorway return.",
+      "badge": "",
+      "evidence": [
+        "candidate-v002",
+        "candidate-v001",
+        "note-n003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000021",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000021",
+        "candidate-v002",
+        "operation-e000021"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000021",
+      "basis": "saved-evidence-review",
+      "headline": "node",
+      "action": "node. Saved input: v002; output: v002.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "The subsequent author note states: The docking sequence became reachable, but the engine collected no gem while sliding through the original ray. The revised endpoint requires the aligned cross and permits a separate post-gem doorway return.",
+      "badge": "",
+      "evidence": [
+        "operation-e000021",
+        "candidate-v002",
+        "event-e000021",
+        "note-n003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000023",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000023",
+        "candidate-v002",
+        "operation-e000023"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000023",
+      "basis": "saved-evidence-review",
+      "headline": "node",
+      "action": "node. Saved input: v002; output: v002.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "The subsequent author note states: The docking sequence became reachable, but the engine collected no gem while sliding through the original ray. The revised endpoint requires the aligned cross and permits a separate post-gem doorway return.",
+      "badge": "",
+      "evidence": [
+        "operation-e000023",
+        "candidate-v002",
+        "event-e000023",
+        "note-n003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "note-n003",
+      "basis": "saved-evidence-review",
+      "headline": "Retrospective goal clarification: make the gem collectable at a stopping cell that requires the aligned cross.",
+      "action": "Place the gem at the final directed stopping cell above the aligned cross's long left arm.",
+      "result": "The docking sequence became reachable, but the engine collected no gem while sliding through the original ray. The revised endpoint requires the aligned cross and permits a separate post-gem doorway return.",
+      "decision": "Planned checks: Actual gem removal at the endpoint; No two-stage or frozen-cross completion; Final brake and return route.",
+      "badge": "",
+      "evidence": [
+        "note-n003",
+        "candidate-v002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "candidate-v003",
+      "basis": "saved-evidence-review",
+      "headline": "v003 · Crosswind Ice Relay",
+      "action": "Save v003 after changing 2 cells relative to v002.",
+      "result": "No separate test verdict is bound to this saved version. Saving a candidate does not establish that it passes.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "candidate-v003",
+        "candidate-v002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000027",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000027",
+        "candidate-v003",
+        "operation-e000027"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000027",
+      "basis": "saved-evidence-review",
+      "headline": "node",
+      "action": "node. Saved input: v003; output: v003.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "operation-e000027",
+        "candidate-v003",
+        "event-e000027"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "candidate-v004",
+      "basis": "saved-evidence-review",
+      "headline": "v004 · Crosswind Ice Relay",
+      "action": "Save v004 with the same map cells as v003; the saved design metadata differs.",
+      "result": "Later associated results: verify.cjs: passed; report.json: passed.",
+      "decision": "The subsequent author note states: All 22 structural checks and five browser/export checks passed. Browser actor frames match ordinary engine moves at every input. The extra southern dip in the shortest-input witness is a route choice, not a claimed mandatory stage. Local arm roles are observed; global arm minimality and human difficulty remain unmeasured.",
+      "badge": "",
+      "evidence": [
+        "candidate-v004",
+        "test-t001",
+        "test-t002",
+        "candidate-v003",
+        "note-n004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000030",
+      "basis": "saved-evidence-review",
+      "headline": "Start: verify.cjs",
+      "action": "Start: verify.cjs.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000030",
+        "candidate-v004",
+        "operation-e000030"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000030",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; verify.cjs",
+      "action": "verify.cjs. Saved input: v004; output: v004.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict. Report interpretation: The report is passed; 22 of 22 individual checks passed.",
+      "decision": "The subsequent author note states: All 22 structural checks and five browser/export checks passed. Browser actor frames match ordinary engine moves at every input. The extra southern dip in the shortest-input witness is a route choice, not a claimed mandatory stage. Local arm roles are observed; global arm minimality and human difficulty remain unmeasured.",
+      "badge": "",
+      "evidence": [
+        "operation-e000030",
+        "candidate-v004",
+        "test-t001",
+        "event-e000030",
+        "note-n004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t001",
+      "basis": "saved-evidence-review",
+      "headline": "verify.cjs",
+      "action": "Execute verify.cjs against v004.",
+      "result": "The report is passed; 22 of 22 individual checks passed.",
+      "decision": "The subsequent author note states: All 22 structural checks and five browser/export checks passed. Browser actor frames match ordinary engine moves at every input. The extra southern dip in the shortest-input witness is a route choice, not a claimed mandatory stage. Local arm roles are observed; global arm minimality and human difficulty remain unmeasured.",
+      "badge": "",
+      "evidence": [
+        "test-t001",
+        "candidate-v004",
+        "note-n004"
+      ],
+      "observations": [
+        {
+          "label": "Saved goal search",
+          "value": "solved"
+        },
+        {
+          "label": "Expanded search states",
+          "value": "513"
+        },
+        {
+          "label": "Search limit",
+          "value": "300000"
+        },
+        {
+          "label": "Recorded ordinary replay",
+          "value": "passed"
+        }
+      ],
+      "checks": [
+        {
+          "name": "complete_objective",
+          "verdict": "passed",
+          "meaning": "Positive control: find or replay the complete declared objective, including a doorway return when required.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "official_solver_positive",
+          "verdict": "passed",
+          "meaning": "Positive control: find or replay the complete declared objective, including a doorway return when required.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "freeze_cross",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "forbid_static_cross_brake",
+          "verdict": "passed",
+          "meaning": "Exclude stopping against the stationary cross and search for the full gem-and-return objective.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "forbid_cross_motion_D",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: forbid cross motion D. Its result is limited to the saved test scope.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "forbid_cross_motion_R",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: forbid cross motion R. Its result is limited to the saved test scope.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "forbid_cross_motion_U",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: forbid cross motion U. Its result is limited to the saved test scope.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "at_most_1_cross_motions",
+          "verdict": "passed",
+          "meaning": "Restrict the allowed number of object-moving inputs and search for a complete goal, testing whether a simpler completion exists.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "at_most_2_cross_motions",
+          "verdict": "passed",
+          "meaning": "Restrict the allowed number of object-moving inputs and search for a complete goal, testing whether a simpler completion exists.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "single_direction_cross_motion",
+          "verdict": "passed",
+          "meaning": "Allow object movement in only one compass direction and search for completion.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "first_cross_motion_then_frozen",
+          "verdict": "passed",
+          "meaning": "Search all supported first-use histories for a completion requiring no further object movement.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "dependency_1_positive",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "dependency_1_without_preparation",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "dependency_2_positive",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "dependency_2_without_preparation",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "dependency_3_positive",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "dependency_3_without_preparation",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "stage_southern-docking",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_eastern-docking",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_gem-turn-alignment",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "selected_3_cross_frozen",
+          "verdict": "passed",
+          "meaning": "Apply the restriction at the selected witness state only. This does not quantify over every reachable state.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "selected_4_cross_frozen",
+          "verdict": "passed",
+          "meaning": "Apply the restriction at the selected witness state only. This does not quantify over every reachable state.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        }
+      ]
+    },
+    {
+      "nodeId": "event-e000033",
+      "basis": "saved-evidence-review",
+      "headline": "Start: build.cjs",
+      "action": "Start: build.cjs.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000033",
+        "candidate-v004",
+        "operation-e000033"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000033",
+      "basis": "saved-evidence-review",
+      "headline": "build.cjs",
+      "action": "build.cjs. Saved input: v004; output: v004.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "The subsequent author note states: All 22 structural checks and five browser/export checks passed. Browser actor frames match ordinary engine moves at every input. The extra southern dip in the shortest-input witness is a route choice, not a claimed mandatory stage. Local arm roles are observed; global arm minimality and human difficulty remain unmeasured.",
+      "badge": "",
+      "evidence": [
+        "operation-e000033",
+        "candidate-v004",
+        "event-e000033",
+        "note-n004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000035",
+      "basis": "saved-evidence-review",
+      "headline": "Save build files",
+      "action": "Save build files. Saved files: manifest.json, world.json, contract.json, spec.json, draft.json, level_AxA.txt, level_parsing.json, toolbox.json, world_map.json, world_parsing.json.",
+      "result": "Build files were archived for this candidate. The file list and fingerprints identify the saved output; verification appears separately.",
+      "decision": "Archiving preserves evidence and file identity. It does not rerun the test or establish that the map passed.",
+      "badge": "",
+      "evidence": [
+        "event-e000035",
+        "candidate-v004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000036",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000036",
+        "candidate-v004",
+        "operation-e000036"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000036",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; report.json",
+      "action": "node. Saved input: v004; output: v004.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict. Report interpretation: The report is passed; 5 of 5 individual checks passed.",
+      "decision": "The subsequent author note states: All 22 structural checks and five browser/export checks passed. Browser actor frames match ordinary engine moves at every input. The extra southern dip in the shortest-input witness is a route choice, not a claimed mandatory stage. Local arm roles are observed; global arm minimality and human difficulty remain unmeasured.",
+      "badge": "",
+      "evidence": [
+        "operation-e000036",
+        "candidate-v004",
+        "test-t002",
+        "event-e000036",
+        "note-n004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t002",
+      "basis": "saved-evidence-review",
+      "headline": "report.json",
+      "action": "Execute report.json against v004.",
+      "result": "The report is passed; 5 of 5 individual checks passed.",
+      "decision": "The subsequent author note states: All 22 structural checks and five browser/export checks passed. Browser actor frames match ordinary engine moves at every input. The extra southern dip in the shortest-input witness is a route choice, not a claimed mandatory stage. Local arm roles are observed; global arm minimality and human difficulty remain unmeasured.",
+      "badge": "",
+      "evidence": [
+        "test-t002",
+        "candidate-v004",
+        "note-n004"
+      ],
+      "observations": [
+        {
+          "label": "Recorded ordinary replay",
+          "value": "passed"
+        }
+      ],
+      "checks": [
+        {
+          "name": "official_saved_export_matches_design",
+          "verdict": "passed",
+          "meaning": "Save and export the unchanged editor map, then compare its cells with the tested design.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "complete_browser_gem_and_doorway",
+          "verdict": "passed",
+          "meaning": "Positive control: find or replay the complete declared objective, including a doorway return when required.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "all_browser_actor_frames_match_official_engine",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: all browser actor frames match official engine. Its result is limited to the saved test scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "official_three_dimensional_renderer",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: official three dimensional renderer. Its result is limited to the saved test scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "official_editor_opened",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: official editor opened. Its result is limited to the saved test scope.",
+          "expected": "",
+          "observed": ""
+        }
+      ]
+    },
+    {
+      "nodeId": "event-e000039",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000039",
+        "candidate-v004",
+        "operation-e000039"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000039",
+      "basis": "saved-evidence-review",
+      "headline": "node",
+      "action": "node. Saved input: v004; output: v004.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "The subsequent author note states: All 22 structural checks and five browser/export checks passed. Browser actor frames match ordinary engine moves at every input. The extra southern dip in the shortest-input witness is a route choice, not a claimed mandatory stage. Local arm roles are observed; global arm minimality and human difficulty remain unmeasured.",
+      "badge": "",
+      "evidence": [
+        "operation-e000039",
+        "candidate-v004",
+        "event-e000039",
+        "note-n004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "replay-e000041",
+      "basis": "saved-evidence-review",
+      "headline": "Saved browser playthrough",
+      "action": "Archive 21 recorded inputs and 22 actor frames for v004.",
+      "result": "These are saved browser actor observations compared with the ordinary engine, bound to this exact map and contract.",
+      "decision": "The subsequent author note states: All 22 structural checks and five browser/export checks passed. Browser actor frames match ordinary engine moves at every input. The extra southern dip in the shortest-input witness is a route choice, not a claimed mandatory stage. Local arm roles are observed; global arm minimality and human difficulty remain unmeasured.",
+      "badge": "",
+      "evidence": [
+        "replay-e000041",
+        "candidate-v004",
+        "note-n004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "note-n004",
+      "basis": "saved-evidence-review",
+      "headline": "Completed Crosswind Ice Relay: collect the gem at (10,8) and return alive to (0,3).",
+      "action": "Final geometry has a seven-member asymmetric cross, three connected necessary docking stages, and a recorded 21-input browser playthrough. The final contract-only snapshot supplied measured witness steps; no extra geometry revision was made.",
+      "result": "All 22 structural checks and five browser/export checks passed. Browser actor frames match ordinary engine moves at every input. The extra southern dip in the shortest-input witness is a route choice, not a claimed mandatory stage. Local arm roles are observed; global arm minimality and human difficulty remain unmeasured.",
+      "decision": "Planned checks: Sealed replay with 22 actual browser frames; Exact final design/build/verification binding; Serialized publication followed by successful Pages deployment.",
+      "badge": "",
+      "evidence": [
+        "note-n004",
+        "candidate-v004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000043",
+      "basis": "saved-evidence-review",
+      "headline": "Save recorded artifact",
+      "action": "Save recorded artifact. Saved files: result.json.",
+      "result": "The recorder archived this file. Saving evidence does not itself establish a passing test.",
+      "decision": "Archiving preserves evidence and file identity. It does not rerun the test or establish that the map passed.",
+      "badge": "",
+      "evidence": [
+        "event-e000043",
+        "candidate-v004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000044",
+      "basis": "saved-evidence-review",
+      "headline": "Finish authoring run",
+      "action": "Finish authoring run.",
+      "result": "The recorder closed the run. Test verdicts and publication are separate records.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000044"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000045",
+      "basis": "saved-evidence-review",
+      "headline": "Recorded note.metadata-amended",
+      "action": "Recorded note.metadata-amended.",
+      "result": "This recorded step is retained. Its private payload is not published.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000045",
+        "candidate-v004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "note-n005",
+      "basis": "saved-evidence-review",
+      "headline": "Repair publication metadata while preserving the original authoring evidence.",
+      "action": "Fill the missing goal labels of n002 and n003 with explicitly retrospective clarifications and mark both notes retrospective. Preserve the original journal as an unchanged prefix and archive the pre-amendment index and journal.",
+      "result": "The first publication attempt stopped before commit or push with Incomplete explanation: note-n002. Only authored note metadata was amended through the existing store API. No design, build, test report, gameplay claim, recorder source, validator source or engine source changed.",
+      "decision": "Planned checks: Publisher evidence audit and final artifact binding; Serialized publication and Pages result.",
+      "badge": "",
+      "evidence": [
+        "note-n005",
+        "candidate-v004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000047",
+      "basis": "saved-evidence-review",
+      "headline": "Finish authoring run",
+      "action": "Finish authoring run.",
+      "result": "The recorder closed the run. Test verdicts and publication are separate records.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000047"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000048",
+      "basis": "saved-evidence-review",
+      "headline": "Recorded run.resumed",
+      "action": "Recorded run.resumed.",
+      "result": "This recorded step is retained. Its private payload is not published.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000048"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "note-n006",
+      "basis": "saved-evidence-review",
+      "headline": "Include the complete recorded route in the published design.",
+      "action": "Add the existing 21-input browser path as top-level witness metadata. Preserve all cells, contract fields and the original playable draft.",
+      "result": "The second publication attempt required spec.witness; the skill verifier can obtain its own route, but the website importer requires the route in the design. This is delivery metadata, not a new puzzle revision.",
+      "decision": "Planned checks: Fresh verifier replay of the explicit witness; Existing browser replay fingerprints remain matched; Serialized publication.",
+      "badge": "",
+      "evidence": [
+        "note-n006",
+        "candidate-v004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "candidate-v005",
+      "basis": "saved-evidence-review",
+      "headline": "v005 · Crosswind Ice Relay",
+      "action": "Save v005 with the same map cells as v004; the saved design metadata differs.",
+      "result": "Later associated results: verify.cjs: passed.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "candidate-v005",
+        "test-t003",
+        "candidate-v004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000051",
+      "basis": "saved-evidence-review",
+      "headline": "Start: verify.cjs",
+      "action": "Start: verify.cjs.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000051",
+        "candidate-v005",
+        "operation-e000051"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000051",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; verify.cjs",
+      "action": "verify.cjs. Saved input: v005; output: v005.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict. Report interpretation: The report is passed; 22 of 22 individual checks passed.",
+      "decision": "Use this result only within its recorded scope and alongside the other required checks. These are author-side checks of the declared conditions, not a human-difficulty score or a blind independent-agent evaluation.",
+      "badge": "",
+      "evidence": [
+        "operation-e000051",
+        "candidate-v005",
+        "test-t003",
+        "event-e000051"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t003",
+      "basis": "saved-evidence-review",
+      "headline": "verify.cjs",
+      "action": "Execute verify.cjs against v005.",
+      "result": "The report is passed; 22 of 22 individual checks passed.",
+      "decision": "Use this result only within its recorded scope and alongside the other required checks. These are author-side checks of the declared conditions, not a human-difficulty score or a blind independent-agent evaluation.",
+      "badge": "",
+      "evidence": [
+        "test-t003",
+        "candidate-v005"
+      ],
+      "observations": [
+        {
+          "label": "Saved goal search",
+          "value": "solved"
+        },
+        {
+          "label": "Expanded search states",
+          "value": "513"
+        },
+        {
+          "label": "Search limit",
+          "value": "300000"
+        },
+        {
+          "label": "Recorded ordinary replay",
+          "value": "passed"
+        }
+      ],
+      "checks": [
+        {
+          "name": "complete_objective",
+          "verdict": "passed",
+          "meaning": "Positive control: find or replay the complete declared objective, including a doorway return when required.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "official_solver_positive",
+          "verdict": "passed",
+          "meaning": "Positive control: find or replay the complete declared objective, including a doorway return when required.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "freeze_cross",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "forbid_static_cross_brake",
+          "verdict": "passed",
+          "meaning": "Exclude stopping against the stationary cross and search for the full gem-and-return objective.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "forbid_cross_motion_D",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: forbid cross motion D. Its result is limited to the saved test scope.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "forbid_cross_motion_R",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: forbid cross motion R. Its result is limited to the saved test scope.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "forbid_cross_motion_U",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: forbid cross motion U. Its result is limited to the saved test scope.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "at_most_1_cross_motions",
+          "verdict": "passed",
+          "meaning": "Restrict the allowed number of object-moving inputs and search for a complete goal, testing whether a simpler completion exists.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "at_most_2_cross_motions",
+          "verdict": "passed",
+          "meaning": "Restrict the allowed number of object-moving inputs and search for a complete goal, testing whether a simpler completion exists.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "single_direction_cross_motion",
+          "verdict": "passed",
+          "meaning": "Allow object movement in only one compass direction and search for completion.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "first_cross_motion_then_frozen",
+          "verdict": "passed",
+          "meaning": "Search all supported first-use histories for a completion requiring no further object movement.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "dependency_1_positive",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "dependency_1_without_preparation",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "dependency_2_positive",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "dependency_2_without_preparation",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "dependency_3_positive",
+          "verdict": "passed",
+          "meaning": "Positive control: the later operation must become usable, or the complete goal reachable, when preparation is allowed.",
+          "expected": "solved",
+          "observed": "solved"
+        },
+        {
+          "name": "dependency_3_without_preparation",
+          "verdict": "passed",
+          "meaning": "Dependency exclusion: search for the later operation opportunity or complete goal while forbidding the named preparation. A found route disproves this necessity claim.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "stage_southern-docking",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_eastern-docking",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "stage_gem-turn-alignment",
+          "verdict": "passed",
+          "meaning": "Replay the declared stage and check its required pose, usable access or next operation within the verifier's stated scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "selected_3_cross_frozen",
+          "verdict": "passed",
+          "meaning": "Apply the restriction at the selected witness state only. This does not quantify over every reachable state.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "selected_4_cross_frozen",
+          "verdict": "passed",
+          "meaning": "Apply the restriction at the selected witness state only. This does not quantify over every reachable state.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        }
+      ]
+    },
+    {
+      "nodeId": "event-e000054",
+      "basis": "saved-evidence-review",
+      "headline": "Finish authoring run",
+      "action": "Finish authoring run.",
+      "result": "The recorder closed the run. Test verdicts and publication are separate records.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000054"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "delivery-final",
+      "basis": "saved-evidence-review",
+      "headline": "Published final candidate v005",
+      "action": "Bind the published map and contract to the final recorded candidate.",
+      "result": "The final candidate has 1 exactly associated passed reports, retained alongside earlier failed or unknown attempts.",
+      "decision": "These reports explain the recorded basis for delivery. A fixed iteration count or an unrecorded stopping policy cannot be inferred. These are author-side checks of the declared conditions, not a human-difficulty score or a blind independent-agent evaluation.",
+      "badge": "",
+      "evidence": [
+        "delivery-final",
+        "candidate-v005",
+        "test-t003"
+      ],
+      "observations": [],
+      "checks": []
+    }
+  ]
+}

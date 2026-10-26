@@ -110,7 +110,8 @@
       ],
       "authoredCases": [
         "authored-skating-cross",
-        "authored-skating-cross-942ab792fe79"
+        "authored-skating-cross-942ab792fe79",
+        "authored-skating-cross-8dd200de12b7"
       ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-skating-cross"
     },
@@ -1688,6 +1689,65 @@
         },
         "scopeComplete": false,
         "evidenceSha256": "cc371dbb84fddfd09f811c89e4907d4ae6d948a70014f55eee597ebc3622c488"
+      }
+    },
+    {
+      "id": "authored-skating-cross-8dd200de12b7",
+      "kind": "authored",
+      "title": "Crosswind Ice Relay",
+      "skill": "skating-cross",
+      "world": "authored-skating-cross-8dd200de12b7",
+      "room": "AxA",
+      "description": "Slide the cross into new stopping positions, collect the gem, then return to the starting doorway.",
+      "thumbnail": "assets/thumbnails/authored-skating-cross-8dd200de12b7.png",
+      "map": "data/maps/authored-skating-cross-8dd200de12b7-world-map.txt",
+      "witness": "RDDRDLURDLURULDRDURDL",
+      "goal": {
+        "kind": "gem-and-return",
+        "cell": [
+          0,
+          3,
+          0
+        ]
+      },
+      "process": {
+        "data": "data/processes/authored-skating-cross-8dd200de12b7.json",
+        "schemaVersion": 1
+      },
+      "build": {
+        "schemaVersion": 1,
+        "attribution": "single-model",
+        "model": "gpt-6-astra",
+        "modelBasis": "runtime-record",
+        "reasoningEffort": "xhigh",
+        "reasoningEfforts": [
+          "xhigh"
+        ],
+        "reasoningBasis": "runtime-setting",
+        "reasoningMixed": false,
+        "attributionNote": null,
+        "attributionEvidenceSha256": null,
+        "startedAt": "2026-10-26T04:18:25.366Z",
+        "finishedAt": "2026-10-26T04:28:26.463Z",
+        "models": [
+          {
+            "model": "gpt-6-astra",
+            "provider": "openai"
+          }
+        ],
+        "runtime": "codex_exec",
+        "elapsedMs": 601097,
+        "usageStatus": "measured",
+        "tokens": {
+          "input_tokens": 1965825,
+          "cached_input_tokens": 1871232,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 17402,
+          "reasoning_output_tokens": 5647,
+          "total_tokens": 1983227
+        },
+        "scopeComplete": false,
+        "evidenceSha256": "132bf49cb80c43cdf7acc985ee728bd267fc1dd1e29b5c1d55434bd8622894d9"
       }
     }
   ],

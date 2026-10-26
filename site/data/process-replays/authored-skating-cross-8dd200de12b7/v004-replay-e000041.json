@@ -1,0 +1,1924 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "v004",
+  "cellsSha256": "3161aea37cb6bb8dacdfd133b8065dd469895f10d0b760907bb3bcd3e31a3fac",
+  "contractSha256": "681b307baeaa8677251d256984c1687845c12dac0333cfd95f38c68ae683c608",
+  "sourceSha256": "6a62ee84f749d3d910451f5a311bb0aee2d8bb2085c771db712b8d06abc023c5",
+  "route": "RDDRDLURDLURULDRDURDL",
+  "frames": [
+    {
+      "step": 0,
+      "direction": null,
+      "actors": [
+        {
+          "id": 0,
+          "type": "player",
+          "groupId": null,
+          "x": 0,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 5,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 3,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 4,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 4,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 5,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 6,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 7,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 8,
+          "type": "gem",
+          "groupId": null,
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "player",
+          "groupId": null,
+          "x": 4,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 5,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 3,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 4,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 4,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 5,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 6,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 7,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 8,
+          "type": "gem",
+          "groupId": null,
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "direction": "D",
+      "actors": [
+        {
+          "id": 0,
+          "type": "player",
+          "groupId": null,
+          "x": 4,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 5,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 3,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 4,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 4,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 5,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 6,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 7,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 8,
+          "type": "gem",
+          "groupId": null,
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "direction": "D",
+      "actors": [
+        {
+          "id": 0,
+          "type": "player",
+          "groupId": null,
+          "x": 4,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 5,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 5,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 3,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 4,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 5,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 5,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 6,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 7,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 5,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 8,
+          "type": "gem",
+          "groupId": null,
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "player",
+          "groupId": null,
+          "x": 10,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 9,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 4,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 10,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 5,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 6,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 12,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 7,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 8,
+          "type": "gem",
+          "groupId": null,
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "step": 5,
+      "direction": "D",
+      "actors": [
+        {
+          "id": 0,
+          "type": "player",
+          "groupId": null,
+          "x": 10,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 9,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 4,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 10,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 5,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 6,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 12,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 7,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 14,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 8,
+          "type": "gem",
+          "groupId": null,
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "step": 6,
+      "direction": "L",
+      "actors": [
+        {
+          "id": 0,
+          "type": "player",
+          "groupId": null,
+          "x": 1,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 9,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 4,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 10,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 5,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 6,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 12,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 7,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 14,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 8,
+          "type": "gem",
+          "groupId": null,
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "step": 7,
+      "direction": "U",
+      "actors": [
+        {
+          "id": 0,
+          "type": "player",
+          "groupId": null,
+          "x": 1,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 9,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 4,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 10,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 5,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 6,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 12,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 7,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 14,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 8,
+          "type": "gem",
+          "groupId": null,
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "step": 8,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "player",
+          "groupId": null,
+          "x": 14,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 9,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 4,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 10,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 5,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 6,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 12,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 7,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 14,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 8,
+          "type": "gem",
+          "groupId": null,
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "step": 9,
+      "direction": "D",
+      "actors": [
+        {
+          "id": 0,
+          "type": "player",
+          "groupId": null,
+          "x": 14,
+          "y": 14,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 9,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 4,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 10,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 5,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 6,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 12,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 7,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 14,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 8,
+          "type": "gem",
+          "groupId": null,
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "step": 10,
+      "direction": "L",
+      "actors": [
+        {
+          "id": 0,
+          "type": "player",
+          "groupId": null,
+          "x": 12,
+          "y": 14,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 9,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 4,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 10,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 5,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 6,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 12,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 7,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 14,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 8,
+          "type": "gem",
+          "groupId": null,
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "step": 11,
+      "direction": "U",
+      "actors": [
+        {
+          "id": 0,
+          "type": "player",
+          "groupId": null,
+          "x": 12,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 9,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 4,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 10,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 5,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 6,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 12,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 7,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 8,
+          "type": "gem",
+          "groupId": null,
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "step": 12,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "player",
+          "groupId": null,
+          "x": 14,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 9,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 4,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 10,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 5,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 6,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 12,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 7,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 8,
+          "type": "gem",
+          "groupId": null,
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "step": 13,
+      "direction": "U",
+      "actors": [
+        {
+          "id": 0,
+          "type": "player",
+          "groupId": null,
+          "x": 14,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 9,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 4,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 10,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 5,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 6,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 12,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 7,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 8,
+          "type": "gem",
+          "groupId": null,
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "step": 14,
+      "direction": "L",
+      "actors": [
+        {
+          "id": 0,
+          "type": "player",
+          "groupId": null,
+          "x": 1,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 9,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 4,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 10,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 5,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 6,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 12,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 7,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 8,
+          "type": "gem",
+          "groupId": null,
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "step": 15,
+      "direction": "D",
+      "actors": [
+        {
+          "id": 0,
+          "type": "player",
+          "groupId": null,
+          "x": 1,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 9,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 4,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 10,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 5,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 6,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 12,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 7,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 8,
+          "type": "gem",
+          "groupId": null,
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "step": 16,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "player",
+          "groupId": null,
+          "x": 10,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 9,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 4,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 10,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 5,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 6,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 12,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 7,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 8,
+          "type": "gem",
+          "groupId": null,
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "step": 17,
+      "direction": "D",
+      "actors": [
+        {
+          "id": 0,
+          "type": "player",
+          "groupId": null,
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 9,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 4,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 10,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 5,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 6,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 12,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 7,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 8,
+          "type": "gem",
+          "groupId": null,
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 18,
+      "direction": "U",
+      "actors": [
+        {
+          "id": 0,
+          "type": "player",
+          "groupId": null,
+          "x": 10,
+          "y": 1,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 9,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 4,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 10,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 5,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 6,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 12,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 7,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 8,
+          "type": "gem",
+          "groupId": null,
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 19,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "player",
+          "groupId": null,
+          "x": 14,
+          "y": 1,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 9,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 4,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 10,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 5,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 6,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 12,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 7,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 8,
+          "type": "gem",
+          "groupId": null,
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 20,
+      "direction": "D",
+      "actors": [
+        {
+          "id": 0,
+          "type": "player",
+          "groupId": null,
+          "x": 14,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 9,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 4,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 10,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 5,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 6,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 12,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 7,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 8,
+          "type": "gem",
+          "groupId": null,
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 21,
+      "direction": "L",
+      "actors": [
+        {
+          "id": 0,
+          "type": "player",
+          "groupId": null,
+          "x": 0,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 9,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 4,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 10,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 5,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 6,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 12,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 7,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 8,
+          "type": "gem",
+          "groupId": null,
+          "x": 10,
+          "y": 8,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    }
+  ]
+}

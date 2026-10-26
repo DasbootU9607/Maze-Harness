@@ -784,6 +784,30 @@
         "cellsSha256": "ed87de10234bdbf849322c5171b7f3b9f148a5c9a3684a6a98e0f87a613f5ac1",
         "contractSha256": "433ff52dd48139b8a15f3bbbde527e379a0f431a41757a9d75565fcf387b6458"
       }
+    },
+    {
+      "id": "authored-skating-cross-8dd200de12b7",
+      "kind": "authored",
+      "originalDraftId": "draft-skating-aa07d092b0",
+      "title": "Crosswind Ice Relay",
+      "sourceMapSha256": "8dd200de12b715aa29a0338480391f1edb9694954215292d3ef0b6958371f1a5",
+      "witnessSha256": "0d5b75219b760d47164e871788f42ebf0fcf56035bdb1728f43786ba374579a7",
+      "source": "Agent-authored trial; verified design and saved draft matched before publication.",
+      "verification": {
+        "overall": "passed",
+        "profile": "planar-skating-cross-v1",
+        "cellsSha256": "3161aea37cb6bb8dacdfd133b8065dd469895f10d0b760907bb3bcd3e31a3fac",
+        "contractSha256": "681b307baeaa8677251d256984c1687845c12dac0333cfd95f38c68ae683c608",
+        "reportSha256": "d42015cddaebdd3ee75d76c25dcb25e2e2b8b65f9273f14e0b42f95ef0c3a918"
+      },
+      "authoringRunSha256": "d8a26696f85b69093d51dfe90232bd7d51725d1d423dbe5c48b1d66d864e9adc",
+      "authoringProcess": {
+        "schemaVersion": 1,
+        "data": "data/processes/authored-skating-cross-8dd200de12b7.json",
+        "sha256": "84d6ff7e13f4265cf1ff48d2cd055b3bd8c67bcfe49d4f204e66c7a23abb2335",
+        "cellsSha256": "3161aea37cb6bb8dacdfd133b8065dd469895f10d0b760907bb3bcd3e31a3fac",
+        "contractSha256": "681b307baeaa8677251d256984c1687845c12dac0333cfd95f38c68ae683c608"
+      }
     }
   ],
   "directEntryPolicy": "Rooms without an authored player get a temporary arrival actor only when opened directly. Entries are open, matching floor boundaries with an ordinary legal inward move. Raw maps, exported room states, and normal doorway traversal remain unchanged.",
