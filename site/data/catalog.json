@@ -155,7 +155,8 @@
         "official-bxe"
       ],
       "authoredCases": [
-        "authored-bridge-convoy-a38898d626b3"
+        "authored-bridge-convoy-a38898d626b3",
+        "authored-bridge-convoy-4f94be93c912"
       ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-bridge-convoy"
     },
@@ -1809,6 +1810,65 @@
         },
         "scopeComplete": false,
         "evidenceSha256": "a41163df6a13a4e462e14c878afd53ce6549f4572795d14c3d6b1c779598f2d3"
+      }
+    },
+    {
+      "id": "authored-bridge-convoy-4f94be93c912",
+      "kind": "authored",
+      "title": "Reserve and Relay",
+      "skill": "bridge-convoy",
+      "world": "authored-bridge-convoy-4f94be93c912",
+      "room": "AxA",
+      "description": "An agent-authored realization built with this skill.",
+      "thumbnail": "assets/thumbnails/authored-bridge-convoy-4f94be93c912.png",
+      "map": "data/maps/authored-bridge-convoy-4f94be93c912-world-map.txt",
+      "witness": "RRRDRUUUUULLLLUURRRDDRUUUULUURURDLLDRRRRRRRRURRD",
+      "goal": {
+        "kind": "reach",
+        "cell": [
+          15,
+          3,
+          0
+        ]
+      },
+      "process": {
+        "data": "data/processes/authored-bridge-convoy-4f94be93c912.json",
+        "schemaVersion": 1
+      },
+      "build": {
+        "schemaVersion": 1,
+        "attribution": "single-model",
+        "model": "gpt-6-astra",
+        "modelBasis": "runtime-record",
+        "reasoningEffort": "xhigh",
+        "reasoningEfforts": [
+          "xhigh"
+        ],
+        "reasoningBasis": "runtime-setting",
+        "reasoningMixed": false,
+        "attributionNote": null,
+        "attributionEvidenceSha256": null,
+        "startedAt": "2026-10-26T05:17:50.006Z",
+        "finishedAt": "2026-10-26T05:28:14.321Z",
+        "models": [
+          {
+            "model": "gpt-6-astra",
+            "provider": "openai"
+          }
+        ],
+        "runtime": "codex_exec",
+        "elapsedMs": 624315,
+        "usageStatus": "measured",
+        "tokens": {
+          "input_tokens": 2166200,
+          "cached_input_tokens": 2073216,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 18616,
+          "reasoning_output_tokens": 5547,
+          "total_tokens": 2184816
+        },
+        "scopeComplete": false,
+        "evidenceSha256": "360bfe83ed4742641f96134aa1ec180eade41288a65999df9a7d9e05ef41bba1"
       }
     }
   ],

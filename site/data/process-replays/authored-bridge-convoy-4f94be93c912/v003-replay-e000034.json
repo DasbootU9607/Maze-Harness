@@ -1,0 +1,2068 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "v003",
+  "cellsSha256": "25d99a70b6056b7637e13c072a63e77ff3286a262645c9cce87e2883db9f65aa",
+  "contractSha256": "27401cb8fdfa4f2ab5f42f013d35cf10cc87641fc3709e15c1fe419a747ff2a5",
+  "sourceSha256": "a81a07727cce58c5561985a1387d6cac779f06e7a2d5f21a816253a04205cf9a",
+  "route": "RRRDRUUUUULLLLUURRRDDRUUUULUURURDLLDRRRRRRRRURRD",
+  "frames": [
+    {
+      "step": 0,
+      "direction": null,
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 3,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 2,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 3,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 3,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 3,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 3,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 3,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 5,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "direction": "D",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 3,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 5,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 5,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 3,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 6,
+          "y": 13,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 6,
+      "direction": "U",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 3,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 6,
+          "y": 12,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 7,
+      "direction": "U",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 3,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 6,
+          "y": 11,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 8,
+      "direction": "U",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 3,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 6,
+          "y": 10,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 9,
+      "direction": "U",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 3,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 6,
+          "y": 9,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 10,
+      "direction": "U",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 3,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 6,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 11,
+      "direction": "L",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 3,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 12,
+      "direction": "L",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 3,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 4,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 13,
+      "direction": "L",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 3,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 3,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 14,
+      "direction": "L",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 3,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 2,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 15,
+      "direction": "U",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 3,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 2,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 16,
+      "direction": "U",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 3,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 2,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 17,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 3,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 18,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 4,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 19,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 6,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 5,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 20,
+      "direction": "D",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 6,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 5,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 21,
+      "direction": "D",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 6,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 5,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 22,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 6,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 6,
+          "y": 8,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 23,
+      "direction": "U",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 6,
+          "y": 7,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 24,
+      "direction": "U",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 6,
+          "y": 6,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 25,
+      "direction": "U",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 6,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 6,
+          "y": 5,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 26,
+      "direction": "U",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 6,
+          "y": 2,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 6,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 27,
+      "direction": "L",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 6,
+          "y": 2,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 5,
+          "y": 4,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 28,
+      "direction": "U",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 6,
+          "y": 2,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 5,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 29,
+      "direction": "U",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 6,
+          "y": 2,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 5,
+          "y": 2,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 30,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 7,
+          "y": 2,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 6,
+          "y": 2,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 31,
+      "direction": "U",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 7,
+          "y": 2,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 6,
+          "y": 1,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 32,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 7,
+          "y": 2,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 7,
+          "y": 1,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 33,
+      "direction": "D",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 7,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 7,
+          "y": 2,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 34,
+      "direction": "L",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 7,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 6,
+          "y": 2,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 35,
+      "direction": "L",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 7,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 5,
+          "y": 2,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 36,
+      "direction": "D",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 7,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 6,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 5,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 37,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 8,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 7,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 6,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 38,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 9,
+          "y": 3,
+          "z": 0,
+          "removed": true
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 8,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 7,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 39,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 9,
+          "y": 3,
+          "z": 0,
+          "removed": true
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 9,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 8,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 40,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 9,
+          "y": 3,
+          "z": 0,
+          "removed": true
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 10,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 9,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 41,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 9,
+          "y": 3,
+          "z": 0,
+          "removed": true
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 11,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 10,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 42,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 9,
+          "y": 3,
+          "z": 0,
+          "removed": true
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 12,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 11,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 43,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 9,
+          "y": 3,
+          "z": 0,
+          "removed": true
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 13,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 12,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 44,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 9,
+          "y": 3,
+          "z": 0,
+          "removed": true
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 14,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 13,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 45,
+      "direction": "U",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 9,
+          "y": 3,
+          "z": 0,
+          "removed": true
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 14,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 13,
+          "y": 2,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 46,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 9,
+          "y": 3,
+          "z": 0,
+          "removed": true
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 14,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 14,
+          "y": 2,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 47,
+      "direction": "R",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 9,
+          "y": 3,
+          "z": 0,
+          "removed": true
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 14,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 15,
+          "y": 2,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    },
+    {
+      "step": 48,
+      "direction": "D",
+      "actors": [
+        {
+          "id": 0,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 9,
+          "y": 3,
+          "z": 0,
+          "removed": true
+        },
+        {
+          "id": 1,
+          "type": "weightless_box",
+          "groupId": "M0",
+          "x": 14,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 2,
+          "type": "player",
+          "groupId": null,
+          "x": 15,
+          "y": 3,
+          "z": 0,
+          "removed": false
+        },
+        {
+          "id": 3,
+          "type": "floating_floor",
+          "groupId": null,
+          "x": 4,
+          "y": 12,
+          "z": 0,
+          "removed": true
+        }
+      ]
+    }
+  ]
+}

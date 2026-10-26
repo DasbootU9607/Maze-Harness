@@ -832,6 +832,30 @@
         "cellsSha256": "032067dc5e5ca908051606d1ee2420798c4aef4fccb34b95f24762aa748d3d1d",
         "contractSha256": "e88cf6de4b5a49a77b629fba2fbce8b7d3f9f2c8183c71f822f27e3004570bad"
       }
+    },
+    {
+      "id": "authored-bridge-convoy-4f94be93c912",
+      "kind": "authored",
+      "originalDraftId": "draft-depth-c0f6c77acf",
+      "title": "Reserve and Relay",
+      "sourceMapSha256": "4f94be93c91284f7e92ae0719b48b480c072516f698b2e39d8ac1c24da670c61",
+      "witnessSha256": "b85da52eb090c33344d595367d2df2f1a6cf619b441637c3a5e6d4e995a8f37a",
+      "source": "Agent-authored trial; verified design and saved draft matched before publication.",
+      "verification": {
+        "overall": "passed",
+        "profile": "authored-planar-gate-planning-v1",
+        "cellsSha256": "25d99a70b6056b7637e13c072a63e77ff3286a262645c9cce87e2883db9f65aa",
+        "contractSha256": "27401cb8fdfa4f2ab5f42f013d35cf10cc87641fc3709e15c1fe419a747ff2a5",
+        "reportSha256": "b5fff7e66b56569cf3e2b51347eec7817ac8cc12f3ec7656cd4b8c2ea08e3eaa"
+      },
+      "authoringRunSha256": "0e7d6425e48347e2401006fdfa440444dda46a52356efdc03c4e2428797b8abc",
+      "authoringProcess": {
+        "schemaVersion": 1,
+        "data": "data/processes/authored-bridge-convoy-4f94be93c912.json",
+        "sha256": "11c5b380150851964ca4f2514269ba3864d9a5b29df426d42bb7760f19634eac",
+        "cellsSha256": "25d99a70b6056b7637e13c072a63e77ff3286a262645c9cce87e2883db9f65aa",
+        "contractSha256": "27401cb8fdfa4f2ab5f42f013d35cf10cc87641fc3709e15c1fe419a747ff2a5"
+      }
     }
   ],
   "directEntryPolicy": "Rooms without an authored player get a temporary arrival actor only when opened directly. Entries are open, matching floor boundaries with an ordinary legal inward move. Raw maps, exported room states, and normal doorway traversal remain unchanged.",
