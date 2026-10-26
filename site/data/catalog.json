@@ -174,7 +174,8 @@
         "official-exb"
       ],
       "authoredCases": [
-        "authored-clear-ground-turning-3a7a7a80206c"
+        "authored-clear-ground-turning-3a7a7a80206c",
+        "authored-clear-ground-turning-d19a75b0e3bd"
       ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-clear-ground-turning"
     },
@@ -1869,6 +1870,65 @@
         },
         "scopeComplete": false,
         "evidenceSha256": "360bfe83ed4742641f96134aa1ec180eade41288a65999df9a7d9e05ef41bba1"
+      }
+    },
+    {
+      "id": "authored-clear-ground-turning-d19a75b0e3bd",
+      "kind": "authored",
+      "title": "Switchback Relay",
+      "skill": "clear-ground-turning",
+      "world": "authored-clear-ground-turning-d19a75b0e3bd",
+      "room": "AxA",
+      "description": "An agent-authored realization built with this skill.",
+      "thumbnail": "assets/thumbnails/authored-clear-ground-turning-d19a75b0e3bd.png",
+      "map": "data/maps/authored-clear-ground-turning-d19a75b0e3bd-world-map.txt",
+      "witness": "RRRRDRUUUULURRRRDRUUUUURULLLLLLLLDLLULL",
+      "goal": {
+        "kind": "reach",
+        "cell": [
+          0,
+          4,
+          0
+        ]
+      },
+      "process": {
+        "data": "data/processes/authored-clear-ground-turning-d19a75b0e3bd.json",
+        "schemaVersion": 1
+      },
+      "build": {
+        "schemaVersion": 1,
+        "attribution": "single-model",
+        "model": "gpt-6-astra",
+        "modelBasis": "runtime-record",
+        "reasoningEffort": "xhigh",
+        "reasoningEfforts": [
+          "xhigh"
+        ],
+        "reasoningBasis": "runtime-setting",
+        "reasoningMixed": false,
+        "attributionNote": null,
+        "attributionEvidenceSha256": null,
+        "startedAt": "2026-10-26T06:27:19.119Z",
+        "finishedAt": "2026-10-26T06:36:38.890Z",
+        "models": [
+          {
+            "model": "gpt-6-astra",
+            "provider": "openai"
+          }
+        ],
+        "runtime": "codex_exec",
+        "elapsedMs": 559771,
+        "usageStatus": "measured",
+        "tokens": {
+          "input_tokens": 1225502,
+          "cached_input_tokens": 1166848,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 9263,
+          "reasoning_output_tokens": 2424,
+          "total_tokens": 1234765
+        },
+        "scopeComplete": false,
+        "evidenceSha256": "46b6ab02dbbb7ff219f6f986398486ad6f8d34a4efdd945050a5933b248b08dd"
       }
     }
   ],

@@ -856,6 +856,30 @@
         "cellsSha256": "25d99a70b6056b7637e13c072a63e77ff3286a262645c9cce87e2883db9f65aa",
         "contractSha256": "27401cb8fdfa4f2ab5f42f013d35cf10cc87641fc3709e15c1fe419a747ff2a5"
       }
+    },
+    {
+      "id": "authored-clear-ground-turning-d19a75b0e3bd",
+      "kind": "authored",
+      "originalDraftId": "draft-depth-7fe4fbb4c1",
+      "title": "Switchback Relay",
+      "sourceMapSha256": "d19a75b0e3bdf646b1d23e312ad951b3c01547832d819208af33924c11497b53",
+      "witnessSha256": "24ea2a59ffcc4eb6d1ba2312e4a13f9dce64024dc9af625ac09b02b8e4059293",
+      "source": "Agent-authored trial; verified design and saved draft matched before publication.",
+      "verification": {
+        "overall": "passed",
+        "profile": "authored-planar-gate-planning-v1",
+        "cellsSha256": "28d32228132d2fa761113ee8a465f36b6455a8c58af3d84baf136aceaf8609b4",
+        "contractSha256": "8eeabad5d1c9ce0a59b3b91ab35a087846e4bbec6b2798ae9b16b02510f6eb32",
+        "reportSha256": "a7de1ec473a3b6181006b45aad409e3ce66b7cf3bf71d2b558f1bfdc09f1df91"
+      },
+      "authoringRunSha256": "4ef09b505427247106dd99c9032689b968c0b6ad2c2499c4e7cd9385cefae62d",
+      "authoringProcess": {
+        "schemaVersion": 1,
+        "data": "data/processes/authored-clear-ground-turning-d19a75b0e3bd.json",
+        "sha256": "2a7d57240990d66e4aa26dfbe44b11fe1af19c12a6844e291372f6050413cd48",
+        "cellsSha256": "28d32228132d2fa761113ee8a465f36b6455a8c58af3d84baf136aceaf8609b4",
+        "contractSha256": "8eeabad5d1c9ce0a59b3b91ab35a087846e4bbec6b2798ae9b16b02510f6eb32"
+      }
     }
   ],
   "directEntryPolicy": "Rooms without an authored player get a temporary arrival actor only when opened directly. Entries are open, matching floor boundaries with an ordinary legal inward move. Raw maps, exported room states, and normal doorway traversal remain unchanged.",
