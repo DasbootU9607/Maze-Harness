@@ -1,0 +1,3822 @@
+{
+  "schemaVersion": 1,
+  "caseId": "authored-block-coordination-0e24cc0f2923",
+  "title": "Three-Block Relay",
+  "skill": "block-coordination",
+  "finalCandidateId": "v001",
+  "summary": "1 recorded candidates, 2 tests, 0 failed diagnostics, and 2 agent annotations.",
+  "coverage": {
+    "mode": "observed",
+    "audit": {
+      "status": "passed",
+      "failed": 0,
+      "unknown": 0
+    },
+    "sources": {
+      "directOriginalCaseRead": "recorded",
+      "originalCaseResourceIds": [
+        "r006",
+        "r007",
+        "r010",
+        "r011"
+      ],
+      "indirect": [],
+      "scope": "Direct reading is reported only for captured read events. A source named by a skill is indirect provenance, not evidence that this run opened or used the original case."
+    },
+    "limitations": [
+      "Only recorded operations and saved snapshots are shown; transient in-memory drafts and unrecorded activity remain unknown.",
+      "Snapshot parent links show recorded version order, not proof of causal reasoning. No unrecorded branches or merges are reconstructed.",
+      "Agent annotations are concise explanations, not internal thought transcripts. Recorded resource delivery does not prove comprehension or use.",
+      "Test outcomes retain their own scope. Author self-tests do not establish independent-agent effectiveness or human difficulty.",
+      "Automatic CLI boundaries record supported build and verification commands. Other commands and resource reads require the skill observer helper.",
+      "Snapshots describe saved versions at operation boundaries, not every editor keystroke. Design notes are author statements, not internal reasoning.",
+      "A started task remains running until the author records finish. An interrupted task may therefore remain open."
+    ],
+    "events": {
+      "sourceCount": 29,
+      "representedCount": 29,
+      "sequenceSha256": "6af66ae02e3de4b00c846574ec0f675084cac0625868605f4e6096be82031380",
+      "types": [
+        {
+          "type": "artifact.saved",
+          "count": 2
+        },
+        {
+          "type": "candidate.saved",
+          "count": 1
+        },
+        {
+          "type": "collector.started",
+          "count": 1
+        },
+        {
+          "type": "command.completed",
+          "count": 3
+        },
+        {
+          "type": "command.started",
+          "count": 3
+        },
+        {
+          "type": "design.note",
+          "count": 2
+        },
+        {
+          "type": "resource.read",
+          "count": 12
+        },
+        {
+          "type": "run.created",
+          "count": 1
+        },
+        {
+          "type": "run.finished",
+          "count": 1
+        },
+        {
+          "type": "skill.attached",
+          "count": 1
+        },
+        {
+          "type": "test.completed",
+          "count": 2
+        }
+      ]
+    }
+  },
+  "nodes": [
+    {
+      "id": "event-e000001",
+      "kind": "record",
+      "label": "Start authoring run",
+      "status": "neutral",
+      "order": 1,
+      "eventId": "e000001",
+      "eventType": "run.created",
+      "summary": "The recorder opened this authoring run. This does not establish an empty prior conversation context.",
+      "details": {
+        "recordId": "event-e000001",
+        "candidateId": null,
+        "eventType": "run.created"
+      }
+    },
+    {
+      "id": "event-e000002",
+      "kind": "record",
+      "label": "Start automatic capture",
+      "status": "neutral",
+      "order": 2,
+      "eventId": "e000002",
+      "eventType": "collector.started",
+      "summary": "The automatic collector started. Recorded command boundaries, reads and saved artifacts are shown in sequence.",
+      "details": {
+        "recordId": "event-e000002",
+        "candidateId": null,
+        "eventType": "collector.started"
+      }
+    },
+    {
+      "id": "resource-snapshot-e000003",
+      "kind": "resource",
+      "label": "Skill attached: mazebench-block-coordination/SKILL.md",
+      "status": "neutral",
+      "order": 3,
+      "summary": "Skill version captured as a dependency. This event does not record a reading.",
+      "details": {
+        "resourceId": "snapshot-e000003",
+        "displayPath": "mazebench-block-coordination/SKILL.md",
+        "sha256": "97212b232d61003851a32f7ac463c87d2a6928cc71b41ba3eb043b4039198952",
+        "kind": "skill",
+        "delivery": "snapshot"
+      },
+      "eventId": "e000003",
+      "eventType": "skill.attached"
+    },
+    {
+      "id": "resource-r001",
+      "kind": "resource",
+      "label": "mechanism-logic.md",
+      "status": "neutral",
+      "order": 4,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r001",
+        "displayPath": "mazebench-block-coordination/references/mechanism-logic.md",
+        "sha256": "ec08306e851dfda530120d5a05e9682196f23dc61a506540f7211bae120e4b44",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000004",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r002",
+      "kind": "resource",
+      "label": "design.md",
+      "status": "neutral",
+      "order": 5,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r002",
+        "displayPath": "mazebench-block-coordination/references/design.md",
+        "sha256": "f819f9b541ba9b8d47819903282f20d1e6d96f4ff1f7c0cd43beeb43c09b3f87",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000005",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r003",
+      "kind": "resource",
+      "label": "reference-library.md",
+      "status": "neutral",
+      "order": 6,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r003",
+        "displayPath": "mazebench-block-coordination/references/reference-library.md",
+        "sha256": "0cf1b8660915c86754cbe7f1138cfad25ccfc02c4b2b41605936914a1ff47902",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000006",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r004",
+      "kind": "resource",
+      "label": "reference-catalog.json",
+      "status": "neutral",
+      "order": 7,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r004",
+        "displayPath": "mazebench-block-coordination/references/reference-catalog.json",
+        "sha256": "3b9a829f17a3ab989560c423e9fbdc229c7816dcab3dd12694e9abd3e70f40e2",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000007",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r005",
+      "kind": "resource",
+      "label": "difficulty.md",
+      "status": "neutral",
+      "order": 8,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r005",
+        "displayPath": "mazebench-block-coordination/references/difficulty.md",
+        "sha256": "1bbcf37a81d2ed73d26baf70201feadfc5f4a0670327e41a9742e786fa9ebda2",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000008",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r006",
+      "kind": "resource",
+      "label": "official-case.md",
+      "status": "neutral",
+      "order": 9,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r006",
+        "displayPath": "mazebench-block-coordination/references/official-case.md",
+        "sha256": "cb5f5ad4459556766717c1554743fb8a88c5b182d033868b17e366205b43df77",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000009",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r007",
+      "kind": "resource",
+      "label": "official-bxc-case.md",
+      "status": "neutral",
+      "order": 10,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r007",
+        "displayPath": "mazebench-block-coordination/references/official-bxc-case.md",
+        "sha256": "c075fca5089dbf3a0418d297550260d822ddc1c483563bc7625f1ab995173061",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000010",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r008",
+      "kind": "resource",
+      "label": "verification.md",
+      "status": "neutral",
+      "order": 11,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r008",
+        "displayPath": "mazebench-block-coordination/references/verification.md",
+        "sha256": "c8b6d3e6dd8ace4260bb177106d790b5cf44d851aefcc411212f827eed983eeb",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000011",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r009",
+      "kind": "resource",
+      "label": "SKILL.md",
+      "status": "neutral",
+      "order": 12,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r009",
+        "displayPath": "mazebench-block-coordination/SKILL.md",
+        "sha256": "97212b232d61003851a32f7ac463c87d2a6928cc71b41ba3eb043b4039198952",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000012",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r010",
+      "kind": "resource",
+      "label": "official-world-map.txt",
+      "status": "neutral",
+      "order": 13,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r010",
+        "displayPath": "mazebench-block-coordination/references/official-world-map.txt",
+        "sha256": "bd49d992a8d319fe9d8bdc704ec9bad10845e7e022c3d250965884f55c71fa90",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000013",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r011",
+      "kind": "resource",
+      "label": "official-bxc-world-map.txt",
+      "status": "neutral",
+      "order": 14,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r011",
+        "displayPath": "mazebench-block-coordination/references/official-bxc-world-map.txt",
+        "sha256": "fb514dd9d4265fabe14a15f8a081d07577915d0633f7c38e7baaa1b3100d1a06",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000014",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "resource-r012",
+      "kind": "resource",
+      "label": "design-template.json",
+      "status": "neutral",
+      "order": 15,
+      "summary": "Recorded bytes delivered; not proof of understanding or use.",
+      "details": {
+        "resourceId": "r012",
+        "displayPath": "mazebench-block-coordination/references/design-template.json",
+        "sha256": "bedc49c18e619bb297b618a1b06789d66c79dac8d3320a3fb3fb5c9453ec02ca",
+        "kind": "reference",
+        "delivery": "recorded-read"
+      },
+      "eventId": "e000015",
+      "eventType": "resource.read"
+    },
+    {
+      "id": "note-n001",
+      "kind": "note",
+      "label": "Create Three-Block Relay, a new composed room with an explicit gem-free boundary endpoint and interdependent shield operations.",
+      "status": "neutral",
+      "order": 16,
+      "summary": "Combine an entry shield handoff, independent delivery of the future exit shield, a change of pushing side, and a separate approach shield. The working shield stays parked while the player reconnects to the approach shield through clear ground.",
+      "details": {
+        "noteId": "n001",
+        "candidateId": null,
+        "origin": "agent_statement",
+        "retrospective": false
+      },
+      "eventId": "e000016",
+      "eventType": "design.note"
+    },
+    {
+      "id": "candidate-v001",
+      "kind": "candidate",
+      "label": "v001 · Three-Block Relay",
+      "status": "neutral",
+      "order": 17,
+      "summary": "0 changed cells; 256 added; 0 removed.",
+      "details": {
+        "candidateId": "v001",
+        "cellsSha256": "032067dc5e5ca908051606d1ee2420798c4aef4fccb34b95f24762aa748d3d1d",
+        "contractSha256": "e88cf6de4b5a49a77b629fba2fbce8b7d3f9f2c8183c71f822f27e3004570bad",
+        "parentBasis": "observed-snapshot-order"
+      },
+      "eventId": "e000017",
+      "eventType": "candidate.saved"
+    },
+    {
+      "id": "event-e000018",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 18,
+      "eventId": "e000018",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000018",
+        "candidateId": "v001",
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000018",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 19,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000018",
+        "candidateId": "v001",
+        "inputCandidateId": "v001",
+        "outputCandidateId": "v001",
+        "kind": "command",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000019",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "event-e000020",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 20,
+      "eventId": "e000020",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000020",
+        "candidateId": "v001",
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000020",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 21,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000020",
+        "candidateId": "v001",
+        "inputCandidateId": "v001",
+        "outputCandidateId": "v001",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000021",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "test-t001",
+      "kind": "test",
+      "label": "verification.json",
+      "status": "passed",
+      "order": 22,
+      "summary": "Ordinary official replay, directed walking SCCs, complete actor footprints, reachable branch controls and the listed finite-state exclusions. No human difficulty or unique-route claim.",
+      "details": {
+        "testId": "t001",
+        "candidateId": "v001",
+        "binding": "exact",
+        "category": "test"
+      },
+      "eventId": "e000022",
+      "eventType": "test.completed"
+    },
+    {
+      "id": "event-e000023",
+      "kind": "record",
+      "label": "Start: node",
+      "status": "neutral",
+      "order": 23,
+      "eventId": "e000023",
+      "eventType": "command.started",
+      "summary": "Command execution started. Completion and any test verdict are separate records.",
+      "details": {
+        "recordId": "event-e000023",
+        "candidateId": "v001",
+        "eventType": "command.started"
+      }
+    },
+    {
+      "id": "operation-e000023",
+      "kind": "operation",
+      "label": "node",
+      "status": "neutral",
+      "order": 24,
+      "summary": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "details": {
+        "operationId": "operation-e000023",
+        "candidateId": "v001",
+        "inputCandidateId": "v001",
+        "outputCandidateId": "v001",
+        "kind": "test",
+        "binding": "recorded-command-boundaries"
+      },
+      "eventId": "e000024",
+      "eventType": "command.completed"
+    },
+    {
+      "id": "test-t002",
+      "kind": "test",
+      "label": "verification.json",
+      "status": "passed",
+      "order": 25,
+      "summary": "Actual keyboard input in the unmodified official local 3D Play environment, in an isolated browser context; browser actor frames compared to the verified official ordinary engine after every input.",
+      "details": {
+        "testId": "t002",
+        "candidateId": "v001",
+        "binding": "exact",
+        "category": "test"
+      },
+      "eventId": "e000025",
+      "eventType": "test.completed"
+    },
+    {
+      "id": "replay-e000026",
+      "kind": "replay",
+      "label": "Saved browser playthrough",
+      "status": "neutral",
+      "order": 26,
+      "summary": "59 recorded inputs and 60 saved frames, bound to v001.",
+      "details": {
+        "replayId": "replay-e000026",
+        "candidateId": "v001",
+        "binding": "exact-artifact",
+        "sourceKind": "saved-replay"
+      },
+      "eventId": "e000026",
+      "eventType": "artifact.saved"
+    },
+    {
+      "id": "note-n002",
+      "kind": "note",
+      "label": "Deliver the verified Three-Block Relay room and its actual 3D playthrough.",
+      "status": "neutral",
+      "order": 27,
+      "summary": "Keep the first authored geometry: all five stage witnesses, eight exhaustive restrictions and the matched preparation branch passed. Save a complete browser playthrough with 59 keyboard inputs and 60 observed actor frames.",
+      "details": {
+        "noteId": "n002",
+        "candidateId": "v001",
+        "origin": "agent_statement",
+        "retrospective": false
+      },
+      "eventId": "e000027",
+      "eventType": "design.note"
+    },
+    {
+      "id": "event-e000028",
+      "kind": "record",
+      "label": "Save recorded artifact",
+      "status": "neutral",
+      "order": 28,
+      "eventId": "e000028",
+      "eventType": "artifact.saved",
+      "summary": "The recorder archived this file. Saving evidence does not itself establish a passing test.",
+      "details": {
+        "recordId": "event-e000028",
+        "candidateId": "v001",
+        "eventType": "artifact.saved"
+      }
+    },
+    {
+      "id": "event-e000029",
+      "kind": "record",
+      "label": "Finish authoring run",
+      "status": "neutral",
+      "order": 29,
+      "eventId": "e000029",
+      "eventType": "run.finished",
+      "summary": "The recorder closed the run. Test verdicts and publication are separate records.",
+      "details": {
+        "recordId": "event-e000029",
+        "candidateId": null,
+        "eventType": "run.finished"
+      }
+    },
+    {
+      "id": "delivery-final",
+      "kind": "delivery",
+      "label": "Published final candidate v001",
+      "status": "passed",
+      "order": 30,
+      "summary": "Final map and contract hashes match the published design. Earlier failed attempts remain visible.",
+      "details": {
+        "caseId": "authored-block-coordination-0e24cc0f2923",
+        "candidateId": "v001",
+        "cellsSha256": "032067dc5e5ca908051606d1ee2420798c4aef4fccb34b95f24762aa748d3d1d",
+        "contractSha256": "e88cf6de4b5a49a77b629fba2fbce8b7d3f9f2c8183c71f822f27e3004570bad"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "candidate-v001",
+      "to": "test-t001",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v001",
+      "to": "test-t002",
+      "kind": "tested",
+      "label": "exact",
+      "inferred": false
+    },
+    {
+      "from": "resource-r001",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r006",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r007",
+      "to": "note-n001",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v001",
+      "to": "note-n002",
+      "kind": "annotation",
+      "label": "Agent annotation about this candidate",
+      "inferred": false
+    },
+    {
+      "from": "resource-r001",
+      "to": "note-n002",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r006",
+      "to": "note-n002",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "resource-r007",
+      "to": "note-n002",
+      "kind": "cites",
+      "label": "Explicit note citation; not proof of use",
+      "inferred": false
+    },
+    {
+      "from": "candidate-v001",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Published cells and contract match",
+      "inferred": false
+    },
+    {
+      "from": "test-t001",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Passed within the stated test scope",
+      "inferred": false
+    },
+    {
+      "from": "test-t002",
+      "to": "delivery-final",
+      "kind": "supports",
+      "label": "Passed within the stated test scope",
+      "inferred": false
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "graphNodeId": "candidate-v001",
+      "label": "Three-Block Relay",
+      "parentId": null,
+      "parentIds": [],
+      "cells": [
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          "#",
+          "p",
+          ".",
+          "#",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          "#",
+          ".",
+          ".",
+          "#",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          "#",
+          "#",
+          "M0",
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          "#",
+          "#",
+          "g",
+          "#",
+          "#",
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          "#",
+          "#",
+          "g",
+          "M2",
+          "g",
+          "g",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          "#",
+          "#",
+          "g",
+          "#",
+          "#",
+          "#",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          ".",
+          "."
+        ],
+        [
+          "#",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "g",
+          "g",
+          "g",
+          "g",
+          "g",
+          "g",
+          ".",
+          "."
+        ],
+        [
+          "#",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "g",
+          "g",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "g",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "M1",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ]
+      ],
+      "sha256": "7f7703392c5a4c707fbf8e828c0ecece09327f210777b9f9a109de03a0ad2de5",
+      "cellsSha256": "032067dc5e5ca908051606d1ee2420798c4aef4fccb34b95f24762aa748d3d1d",
+      "contractSha256": "e88cf6de4b5a49a77b629fba2fbce8b7d3f9f2c8183c71f822f27e3004570bad",
+      "origin": "observed",
+      "parentBasis": "observed-snapshot-order",
+      "diff": {
+        "added": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 0,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 1,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 1,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 10,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 10,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 10,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 10,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 10,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 11,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 11,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 12,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 12,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 13,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 13,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 14,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 14,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 14,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 15,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 15,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 15,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 2,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 2,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 2,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 3,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 3,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "p"
+          },
+          {
+            "x": 3,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 3,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 3,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 4,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 4,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "M0"
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 4,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 4,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 4,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 5,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "M2"
+          },
+          {
+            "x": 5,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 5,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 6,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 6,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 6,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 7,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 7,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 7,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 7,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 8,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 8,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "M1"
+          },
+          {
+            "x": 8,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 8,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 8,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 9,
+            "y": 0,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 1,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 10,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          },
+          {
+            "x": 9,
+            "y": 11,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 12,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 13,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 14,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 15,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 2,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 3,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 4,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 5,
+            "z": 0,
+            "before": null,
+            "after": "#"
+          },
+          {
+            "x": 9,
+            "y": 6,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 9,
+            "y": 7,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 9,
+            "y": 8,
+            "z": 0,
+            "before": null,
+            "after": "."
+          },
+          {
+            "x": 9,
+            "y": 9,
+            "z": 0,
+            "before": null,
+            "after": "g"
+          }
+        ],
+        "removed": [],
+        "changed": []
+      },
+      "preview": {
+        "levelPath": "data/process-levels/authored-block-coordination-0e24cc0f2923/v001.json",
+        "levelSha256": "70cf3afa2210ffe77cd157122a961608c2ea5b075e3951307c9a880d7d87bc49",
+        "cellsSha256": "032067dc5e5ca908051606d1ee2420798c4aef4fccb34b95f24762aa748d3d1d",
+        "status": "iteration",
+        "thumbnailPath": "assets/process-thumbnails/authored-block-coordination-0e24cc0f2923/v001-70cf3afa2210ffe7-6ce268de9e786607.png",
+        "replays": [
+          {
+            "id": "replay-e000026",
+            "data": "data/process-replays/authored-block-coordination-0e24cc0f2923/v001-replay-e000026.json",
+            "sha256": "93a1ab23fc16b22929e4b0b8b26cc2a00d1c897283dfa1c36be6d178c55e639f",
+            "candidateId": "v001",
+            "cellsSha256": "032067dc5e5ca908051606d1ee2420798c4aef4fccb34b95f24762aa748d3d1d",
+            "contractSha256": "e88cf6de4b5a49a77b629fba2fbce8b7d3f9f2c8183c71f822f27e3004570bad",
+            "sourceSha256": "c3354b6bbc68e7150fe2c4e43d23ad9136e5327b2d9186fdffd6445009165fa1",
+            "route": "RDDDDRRRRURDDLUUULLUUUULLLLLDDDDDDDDDDDDRRRRRRRUUUURRRRRRUR",
+            "frameCount": 60,
+            "binding": "exact-artifact",
+            "sourceKind": "saved-replay"
+          }
+        ],
+        "replay": {
+          "id": "replay-e000026",
+          "data": "data/process-replays/authored-block-coordination-0e24cc0f2923/v001-replay-e000026.json",
+          "sha256": "93a1ab23fc16b22929e4b0b8b26cc2a00d1c897283dfa1c36be6d178c55e639f",
+          "candidateId": "v001",
+          "cellsSha256": "032067dc5e5ca908051606d1ee2420798c4aef4fccb34b95f24762aa748d3d1d",
+          "contractSha256": "e88cf6de4b5a49a77b629fba2fbce8b7d3f9f2c8183c71f822f27e3004570bad",
+          "sourceSha256": "c3354b6bbc68e7150fe2c4e43d23ad9136e5327b2d9186fdffd6445009165fa1",
+          "route": "RDDDDRRRRURDDLUUULLUUUULLLLLDDDDDDDDDDDDRRRRRRRUUUURRRRRRUR",
+          "frameCount": 60,
+          "binding": "exact-artifact",
+          "sourceKind": "saved-replay"
+        }
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "graphNodeId": "test-t001",
+      "candidateId": "v001",
+      "label": "verification.json",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "initial-frozen-walking",
+          "status": "passed"
+        },
+        {
+          "name": "freeze-entry-shield",
+          "status": "passed"
+        },
+        {
+          "name": "freeze-approach-shield",
+          "status": "passed"
+        },
+        {
+          "name": "freeze-working-shield",
+          "status": "passed"
+        },
+        {
+          "name": "without-southward-working-shield-preparation",
+          "status": "passed"
+        },
+        {
+          "name": "without-working-shield-delivery-preparation-and-reuse",
+          "status": "passed"
+        },
+        {
+          "name": "at-most-one-object-push",
+          "status": "passed"
+        },
+        {
+          "name": "one-pushing-direction",
+          "status": "passed"
+        }
+      ],
+      "scope": "Ordinary official replay, directed walking SCCs, complete actor footprints, reachable branch controls and the listed finite-state exclusions. No human difficulty or unique-route claim.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    },
+    {
+      "id": "t002",
+      "graphNodeId": "test-t002",
+      "candidateId": "v001",
+      "label": "verification.json",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "official-3d-renderer-loaded",
+          "status": "passed"
+        },
+        {
+          "name": "initial-state-and-all-59-keyboard-inputs-match-official-engine",
+          "status": "passed"
+        },
+        {
+          "name": "explicit-player-boundary-goal",
+          "status": "passed"
+        },
+        {
+          "name": "browser-runtime-and-resource-loading",
+          "status": "passed"
+        }
+      ],
+      "scope": "Actual keyboard input in the unmodified official local 3D Play environment, in an isolated browser context; browser actor frames compared to the verified official ordinary engine after every input.",
+      "binding": "exact",
+      "origin": "observed",
+      "category": "test",
+      "bindingBasis": "report-fingerprints-and-command-boundaries"
+    }
+  ],
+  "notes": [
+    {
+      "id": "n001",
+      "graphNodeId": "note-n001",
+      "candidateId": null,
+      "label": "Create Three-Block Relay, a new composed room with an explicit gem-free boundary endpoint and interdependent shield operations.",
+      "goal": "Create Three-Block Relay, a new composed room with an explicit gem-free boundary endpoint and interdependent shield operations.",
+      "change": "Combine an entry shield handoff, independent delivery of the future exit shield, a change of pushing side, and a separate approach shield. The working shield stays parked while the player reconnects to the approach shield through clear ground.",
+      "reason": "BxB supports independent handoffs and same-tool reuse; BxC supports preserving a prepared shield while another supplies the input stance. This room uses a new wall-bounded three-arm arrangement, with no copied case cells or route.",
+      "sources": [
+        "references/mechanism-logic.md",
+        "references/official-case.md",
+        "references/official-bxc-case.md"
+      ],
+      "expectedChecks": [
+        "Complete ordinary official replay to a free boundary door",
+        "Each of the three group-freeze exclusions",
+        "Ordered right-down-right reuse of the exit shield",
+        "Matched positive and negative preparation branches",
+        "Actual browser keyboard playthrough and saved actor frames"
+      ],
+      "origin": "agent_statement",
+      "retrospective": false
+    },
+    {
+      "id": "n002",
+      "graphNodeId": "note-n002",
+      "candidateId": "v001",
+      "label": "Deliver the verified Three-Block Relay room and its actual 3D playthrough.",
+      "goal": "Deliver the verified Three-Block Relay room and its actual 3D playthrough.",
+      "change": "Keep the first authored geometry: all five stage witnesses, eight exhaustive restrictions and the matched preparation branch passed. Save a complete browser playthrough with 59 keyboard inputs and 60 observed actor frames.",
+      "reason": "The first candidate met the declared mechanism and complete exit objective. There was no test-driven reason to revise geometry. The actual browser run matched ordinary engine states at every input and reported no browser errors or failed resources.",
+      "sources": [
+        "references/mechanism-logic.md",
+        "references/official-case.md",
+        "references/official-bxc-case.md"
+      ],
+      "expectedChecks": [
+        "The final design, first build and first mechanism verification share exact fingerprints",
+        "The replay is bound to the same candidate and contains observed browser frames",
+        "Publish only through the serialized queue after this record is sealed"
+      ],
+      "origin": "agent_statement",
+      "retrospective": false
+    }
+  ],
+  "resources": [
+    {
+      "id": "r001",
+      "graphNodeId": "resource-r001",
+      "label": "mazebench-block-coordination/references/mechanism-logic.md",
+      "displayPath": "mazebench-block-coordination/references/mechanism-logic.md",
+      "basename": "mechanism-logic.md",
+      "sha256": "ec08306e851dfda530120d5a05e9682196f23dc61a506540f7211bae120e4b44",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r002",
+      "graphNodeId": "resource-r002",
+      "label": "mazebench-block-coordination/references/design.md",
+      "displayPath": "mazebench-block-coordination/references/design.md",
+      "basename": "design.md",
+      "sha256": "f819f9b541ba9b8d47819903282f20d1e6d96f4ff1f7c0cd43beeb43c09b3f87",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r003",
+      "graphNodeId": "resource-r003",
+      "label": "mazebench-block-coordination/references/reference-library.md",
+      "displayPath": "mazebench-block-coordination/references/reference-library.md",
+      "basename": "reference-library.md",
+      "sha256": "0cf1b8660915c86754cbe7f1138cfad25ccfc02c4b2b41605936914a1ff47902",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r004",
+      "graphNodeId": "resource-r004",
+      "label": "mazebench-block-coordination/references/reference-catalog.json",
+      "displayPath": "mazebench-block-coordination/references/reference-catalog.json",
+      "basename": "reference-catalog.json",
+      "sha256": "3b9a829f17a3ab989560c423e9fbdc229c7816dcab3dd12694e9abd3e70f40e2",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r005",
+      "graphNodeId": "resource-r005",
+      "label": "mazebench-block-coordination/references/difficulty.md",
+      "displayPath": "mazebench-block-coordination/references/difficulty.md",
+      "basename": "difficulty.md",
+      "sha256": "1bbcf37a81d2ed73d26baf70201feadfc5f4a0670327e41a9742e786fa9ebda2",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r006",
+      "graphNodeId": "resource-r006",
+      "label": "mazebench-block-coordination/references/official-case.md",
+      "displayPath": "mazebench-block-coordination/references/official-case.md",
+      "basename": "official-case.md",
+      "sha256": "cb5f5ad4459556766717c1554743fb8a88c5b182d033868b17e366205b43df77",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r007",
+      "graphNodeId": "resource-r007",
+      "label": "mazebench-block-coordination/references/official-bxc-case.md",
+      "displayPath": "mazebench-block-coordination/references/official-bxc-case.md",
+      "basename": "official-bxc-case.md",
+      "sha256": "c075fca5089dbf3a0418d297550260d822ddc1c483563bc7625f1ab995173061",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r008",
+      "graphNodeId": "resource-r008",
+      "label": "mazebench-block-coordination/references/verification.md",
+      "displayPath": "mazebench-block-coordination/references/verification.md",
+      "basename": "verification.md",
+      "sha256": "c8b6d3e6dd8ace4260bb177106d790b5cf44d851aefcc411212f827eed983eeb",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r009",
+      "graphNodeId": "resource-r009",
+      "label": "mazebench-block-coordination/SKILL.md",
+      "displayPath": "mazebench-block-coordination/SKILL.md",
+      "basename": "SKILL.md",
+      "sha256": "97212b232d61003851a32f7ac463c87d2a6928cc71b41ba3eb043b4039198952",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r010",
+      "graphNodeId": "resource-r010",
+      "label": "mazebench-block-coordination/references/official-world-map.txt",
+      "displayPath": "mazebench-block-coordination/references/official-world-map.txt",
+      "basename": "official-world-map.txt",
+      "sha256": "bd49d992a8d319fe9d8bdc704ec9bad10845e7e022c3d250965884f55c71fa90",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r011",
+      "graphNodeId": "resource-r011",
+      "label": "mazebench-block-coordination/references/official-bxc-world-map.txt",
+      "displayPath": "mazebench-block-coordination/references/official-bxc-world-map.txt",
+      "basename": "official-bxc-world-map.txt",
+      "sha256": "fb514dd9d4265fabe14a15f8a081d07577915d0633f7c38e7baaa1b3100d1a06",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "r012",
+      "graphNodeId": "resource-r012",
+      "label": "mazebench-block-coordination/references/design-template.json",
+      "displayPath": "mazebench-block-coordination/references/design-template.json",
+      "basename": "design-template.json",
+      "sha256": "bedc49c18e619bb297b618a1b06789d66c79dac8d3320a3fb3fb5c9453ec02ca",
+      "kind": "reference",
+      "origin": "observed",
+      "delivery": "recorded-read"
+    },
+    {
+      "id": "snapshot-e000003",
+      "graphNodeId": "resource-snapshot-e000003",
+      "label": "Skill attached: mazebench-block-coordination/SKILL.md",
+      "displayPath": "mazebench-block-coordination/SKILL.md",
+      "basename": "SKILL.md",
+      "sha256": "97212b232d61003851a32f7ac463c87d2a6928cc71b41ba3eb043b4039198952",
+      "kind": "skill",
+      "origin": "observed",
+      "delivery": "snapshot"
+    }
+  ],
+  "operations": [
+    {
+      "id": "operation-e000018",
+      "graphNodeId": "operation-e000018",
+      "candidateId": "v001",
+      "inputCandidateId": "v001",
+      "outputCandidateId": "v001",
+      "label": "node",
+      "kind": "command",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000018",
+      "resultNodeId": null,
+      "exitCode": 0
+    },
+    {
+      "id": "operation-e000020",
+      "graphNodeId": "operation-e000020",
+      "candidateId": "v001",
+      "inputCandidateId": "v001",
+      "outputCandidateId": "v001",
+      "label": "node",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000020",
+      "resultNodeId": "test-t001",
+      "exitCode": 0
+    },
+    {
+      "id": "operation-e000023",
+      "graphNodeId": "operation-e000023",
+      "candidateId": "v001",
+      "inputCandidateId": "v001",
+      "outputCandidateId": "v001",
+      "label": "node",
+      "kind": "test",
+      "status": "completed",
+      "binding": "recorded-command-boundaries",
+      "scope": "Command execution completed normally (exit code 0). This is an execution status; gameplay and mechanism verdicts belong to the test records.",
+      "startNodeId": "event-e000023",
+      "resultNodeId": "test-t002",
+      "exitCode": 0
+    }
+  ],
+  "replays": [
+    {
+      "id": "replay-e000026",
+      "graphNodeId": "replay-e000026",
+      "candidateId": "v001",
+      "label": "Saved browser playthrough",
+      "route": "RDDDDRRRRURDDLUUULLUUUULLLLLDDDDDDDDDDDDRRRRRRRUUUURRRRRRUR",
+      "frameCount": 60,
+      "binding": "exact-artifact",
+      "sourceKind": "saved-replay",
+      "sourceSha256": "c3354b6bbc68e7150fe2c4e43d23ad9136e5327b2d9186fdffd6445009165fa1",
+      "cellsSha256": "032067dc5e5ca908051606d1ee2420798c4aef4fccb34b95f24762aa748d3d1d",
+      "contractSha256": "e88cf6de4b5a49a77b629fba2fbce8b7d3f9f2c8183c71f822f27e3004570bad",
+      "data": "data/process-replays/authored-block-coordination-0e24cc0f2923/v001-replay-e000026.json",
+      "sha256": "93a1ab23fc16b22929e4b0b8b26cc2a00d1c897283dfa1c36be6d178c55e639f"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "status": "measured",
+    "runtime": "codex_exec",
+    "elapsedMs": 370635,
+    "startedAt": "2026-10-26T05:09:15.706Z",
+    "finishedAt": "2026-10-26T05:15:26.341Z",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 1111334,
+      "cached_input_tokens": 1044096,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 10409,
+      "reasoning_output_tokens": 3317,
+      "total_tokens": 1121743
+    },
+    "models": [
+      {
+        "model": "gpt-6-astra",
+        "provider": "openai",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 1111334,
+          "cached_input_tokens": 1044096,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10409,
+          "reasoning_output_tokens": 3317,
+          "total_tokens": 1121743
+        },
+        "observations": 16
+      }
+    ],
+    "evidenceSha256": "a41163df6a13a4e462e14c878afd53ce6549f4572795d14c3d6b1c779598f2d3"
+  },
+  "records": [
+    {
+      "id": "event-e000001",
+      "graphNodeId": "event-e000001",
+      "candidateId": null,
+      "eventType": "run.created",
+      "label": "Start authoring run",
+      "status": "neutral",
+      "scope": "The recorder opened this authoring run. This does not establish an empty prior conversation context.",
+      "relatedNodeId": null,
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000002",
+      "graphNodeId": "event-e000002",
+      "candidateId": null,
+      "eventType": "collector.started",
+      "label": "Start automatic capture",
+      "status": "neutral",
+      "scope": "The automatic collector started. Recorded command boundaries, reads and saved artifacts are shown in sequence.",
+      "relatedNodeId": null,
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000018",
+      "graphNodeId": "event-e000018",
+      "candidateId": "v001",
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000018",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000020",
+      "graphNodeId": "event-e000020",
+      "candidateId": "v001",
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000020",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000023",
+      "graphNodeId": "event-e000023",
+      "candidateId": "v001",
+      "eventType": "command.started",
+      "label": "Start: node",
+      "status": "neutral",
+      "scope": "Command execution started. Completion and any test verdict are separate records.",
+      "relatedNodeId": "operation-e000023",
+      "files": [],
+      "facts": []
+    },
+    {
+      "id": "event-e000028",
+      "graphNodeId": "event-e000028",
+      "candidateId": "v001",
+      "eventType": "artifact.saved",
+      "label": "Save recorded artifact",
+      "status": "neutral",
+      "scope": "The recorder archived this file. Saving evidence does not itself establish a passing test.",
+      "relatedNodeId": null,
+      "files": [
+        {
+          "name": "README.md",
+          "sha256": "f4c8cfa32ccb3791712f82363b9a993a17bd9f68f41c364b687f2ceb0c41e8e6"
+        }
+      ],
+      "facts": []
+    },
+    {
+      "id": "event-e000029",
+      "graphNodeId": "event-e000029",
+      "candidateId": null,
+      "eventType": "run.finished",
+      "label": "Finish authoring run",
+      "status": "neutral",
+      "scope": "The recorder closed the run. Test verdicts and publication are separate records.",
+      "relatedNodeId": null,
+      "files": [],
+      "facts": []
+    }
+  ],
+  "explanations": [
+    {
+      "nodeId": "event-e000001",
+      "basis": "saved-evidence-review",
+      "headline": "Start authoring run",
+      "action": "Start authoring run.",
+      "result": "The recorder opened this authoring run. This does not establish an empty prior conversation context.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000002",
+      "basis": "saved-evidence-review",
+      "headline": "Start automatic capture",
+      "action": "Start automatic capture.",
+      "result": "The automatic collector started. Recorded command boundaries, reads and saved artifacts are shown in sequence.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-snapshot-e000003",
+      "basis": "saved-evidence-review",
+      "headline": "Skill attached: mazebench-block-coordination/SKILL.md",
+      "action": "Capture a version snapshot of mazebench-block-coordination/SKILL.md. Authoring workflow, supported mechanism and required delivery checks.",
+      "result": "The dependency version was saved. This event does not record a document read.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-snapshot-e000003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r001",
+      "basis": "saved-evidence-review",
+      "headline": "mechanism-logic.md",
+      "action": "Read mazebench-block-coordination/references/mechanism-logic.md. Extracted functional roles, contact relationships and preparation dependencies to realize in a new layout.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r001",
+        "note-n001",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r002",
+      "basis": "saved-evidence-review",
+      "headline": "design.md",
+      "action": "Read mazebench-block-coordination/references/design.md. Supporting design or reference material identified by the saved filename and fingerprint.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r003",
+      "basis": "saved-evidence-review",
+      "headline": "reference-library.md",
+      "action": "Read mazebench-block-coordination/references/reference-library.md. Supporting design or reference material identified by the saved filename and fingerprint.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r003"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r004",
+      "basis": "saved-evidence-review",
+      "headline": "reference-catalog.json",
+      "action": "Read mazebench-block-coordination/references/reference-catalog.json. Supporting design or reference material identified by the saved filename and fingerprint.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r004"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r005",
+      "basis": "saved-evidence-review",
+      "headline": "difficulty.md",
+      "action": "Read mazebench-block-coordination/references/difficulty.md. Supporting design or reference material identified by the saved filename and fingerprint.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r005"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r006",
+      "basis": "saved-evidence-review",
+      "headline": "official-case.md",
+      "action": "Read mazebench-block-coordination/references/official-case.md. The source case explanation and its scoped mechanism evidence.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r006",
+        "note-n001",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r007",
+      "basis": "saved-evidence-review",
+      "headline": "official-bxc-case.md",
+      "action": "Read mazebench-block-coordination/references/official-bxc-case.md. The source case explanation and its scoped mechanism evidence.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.",
+      "badge": "",
+      "evidence": [
+        "resource-r007",
+        "note-n001",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r008",
+      "basis": "saved-evidence-review",
+      "headline": "verification.md",
+      "action": "Read mazebench-block-coordination/references/verification.md. Verification rules or implementations defining what the checks can and cannot establish.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r008"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r009",
+      "basis": "saved-evidence-review",
+      "headline": "SKILL.md",
+      "action": "Read mazebench-block-coordination/SKILL.md. Authoring workflow, supported mechanism and required delivery checks.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r009"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r010",
+      "basis": "saved-evidence-review",
+      "headline": "official-world-map.txt",
+      "action": "Read mazebench-block-coordination/references/official-world-map.txt. Original source geometry for checking actual members, terrain and boundaries.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r010"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r011",
+      "basis": "saved-evidence-review",
+      "headline": "official-bxc-world-map.txt",
+      "action": "Read mazebench-block-coordination/references/official-bxc-world-map.txt. Original source geometry for checking actual members, terrain and boundaries.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r011"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "resource-r012",
+      "basis": "saved-evidence-review",
+      "headline": "design-template.json",
+      "action": "Read mazebench-block-coordination/references/design-template.json. The design contract scaffold; reading it does not establish that a complete reference map was copied.",
+      "result": "The recorder captured delivery of these document bytes. This establishes recorded access, not comprehension or memory.",
+      "decision": "No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.",
+      "badge": "",
+      "evidence": [
+        "resource-r012"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "note-n001",
+      "basis": "saved-evidence-review",
+      "headline": "Create Three-Block Relay, a new composed room with an explicit gem-free boundary endpoint and interdependent shield operations.",
+      "action": "Combine an entry shield handoff, independent delivery of the future exit shield, a change of pushing side, and a separate approach shield. The working shield stays parked while the player reconnects to the approach shield through clear ground.",
+      "result": "BxB supports independent handoffs and same-tool reuse; BxC supports preserving a prepared shield while another supplies the input stance. This room uses a new wall-bounded three-arm arrangement, with no copied case cells or route.",
+      "decision": "Planned checks: Complete ordinary official replay to a free boundary door; Each of the three group-freeze exclusions; Ordered right-down-right reuse of the exit shield; Matched positive and negative preparation branches; Actual browser keyboard playthrough and saved actor frames.",
+      "badge": "",
+      "evidence": [
+        "note-n001",
+        "resource-r001",
+        "resource-r006",
+        "resource-r007"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "candidate-v001",
+      "basis": "saved-evidence-review",
+      "headline": "v001 · Three-Block Relay",
+      "action": "Save the first captured map and contract for this run.",
+      "result": "Later associated results: verification.json: passed; verification.json: passed.",
+      "decision": "The subsequent author note states: The first candidate met the declared mechanism and complete exit objective. There was no test-driven reason to revise geometry. The actual browser run matched ordinary engine states at every input and reported no browser errors or failed resources.",
+      "badge": "",
+      "evidence": [
+        "candidate-v001",
+        "test-t001",
+        "test-t002",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000018",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000018",
+        "candidate-v001",
+        "operation-e000018"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000018",
+      "basis": "saved-evidence-review",
+      "headline": "node",
+      "action": "node. Saved input: v001; output: v001.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict.",
+      "decision": "The subsequent author note states: The first candidate met the declared mechanism and complete exit objective. There was no test-driven reason to revise geometry. The actual browser run matched ordinary engine states at every input and reported no browser errors or failed resources.",
+      "badge": "",
+      "evidence": [
+        "operation-e000018",
+        "candidate-v001",
+        "event-e000018",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000020",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000020",
+        "candidate-v001",
+        "operation-e000020"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000020",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; verification.json",
+      "action": "node. Saved input: v001; output: v001.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict. Report interpretation: The report is passed; 8 of 8 individual checks passed.",
+      "decision": "The subsequent author note states: The first candidate met the declared mechanism and complete exit objective. There was no test-driven reason to revise geometry. The actual browser run matched ordinary engine states at every input and reported no browser errors or failed resources.",
+      "badge": "",
+      "evidence": [
+        "operation-e000020",
+        "candidate-v001",
+        "test-t001",
+        "event-e000020",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t001",
+      "basis": "saved-evidence-review",
+      "headline": "verification.json",
+      "action": "Execute verification.json against v001.",
+      "result": "The report is passed; 8 of 8 individual checks passed.",
+      "decision": "The subsequent author note states: The first candidate met the declared mechanism and complete exit objective. There was no test-driven reason to revise geometry. The actual browser run matched ordinary engine states at every input and reported no browser errors or failed resources.",
+      "badge": "",
+      "evidence": [
+        "test-t001",
+        "candidate-v001",
+        "note-n002"
+      ],
+      "observations": [
+        {
+          "label": "Recorded ordinary replay",
+          "value": "passed"
+        }
+      ],
+      "checks": [
+        {
+          "name": "initial-frozen-walking",
+          "verdict": "passed",
+          "meaning": "Keep all objects fixed and search for a walking-only completion from the initial state.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze-entry-shield",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze-approach-shield",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "freeze-working-shield",
+          "verdict": "passed",
+          "meaning": "Freeze the named group and search for the complete objective. Expected unsolved tests whether movement of that group is necessary.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "without-southward-working-shield-preparation",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: without southward working shield preparation. Its result is limited to the saved test scope.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "without-working-shield-delivery-preparation-and-reuse",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: without working shield delivery preparation and reuse. Its result is limited to the saved test scope.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "at-most-one-object-push",
+          "verdict": "passed",
+          "meaning": "Restrict the allowed number of object-moving inputs and search for a complete goal, testing whether a simpler completion exists.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        },
+        {
+          "name": "one-pushing-direction",
+          "verdict": "passed",
+          "meaning": "Allow object movement in only one compass direction and search for completion.",
+          "expected": "unsolved",
+          "observed": "unsolved"
+        }
+      ]
+    },
+    {
+      "nodeId": "event-e000023",
+      "basis": "saved-evidence-review",
+      "headline": "Start: node",
+      "action": "Start: node.",
+      "result": "Command execution started. Completion and any test verdict are separate records.",
+      "decision": "This event records the start only. The linked completion and any separate report carry the later outcomes.",
+      "badge": "",
+      "evidence": [
+        "event-e000023",
+        "candidate-v001",
+        "operation-e000023"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "operation-e000023",
+      "basis": "saved-evidence-review",
+      "headline": "Execution ended; verification.json",
+      "action": "node. Saved input: v001; output: v001.",
+      "result": "The process completed with exit code 0. This execution status does not establish a test verdict. Report interpretation: The report is passed; 4 of 4 individual checks passed.",
+      "decision": "The subsequent author note states: The first candidate met the declared mechanism and complete exit objective. There was no test-driven reason to revise geometry. The actual browser run matched ordinary engine states at every input and reported no browser errors or failed resources.",
+      "badge": "",
+      "evidence": [
+        "operation-e000023",
+        "candidate-v001",
+        "test-t002",
+        "event-e000023",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "test-t002",
+      "basis": "saved-evidence-review",
+      "headline": "verification.json",
+      "action": "Execute verification.json against v001.",
+      "result": "The report is passed; 4 of 4 individual checks passed.",
+      "decision": "The subsequent author note states: The first candidate met the declared mechanism and complete exit objective. There was no test-driven reason to revise geometry. The actual browser run matched ordinary engine states at every input and reported no browser errors or failed resources.",
+      "badge": "",
+      "evidence": [
+        "test-t002",
+        "candidate-v001",
+        "note-n002"
+      ],
+      "observations": [
+        {
+          "label": "Recorded ordinary replay",
+          "value": "passed"
+        }
+      ],
+      "checks": [
+        {
+          "name": "official-3d-renderer-loaded",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: official 3d renderer loaded. Its result is limited to the saved test scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "initial-state-and-all-59-keyboard-inputs-match-official-engine",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: initial state and all 59 keyboard inputs match official engine. Its result is limited to the saved test scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "explicit-player-boundary-goal",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: explicit player boundary goal. Its result is limited to the saved test scope.",
+          "expected": "",
+          "observed": ""
+        },
+        {
+          "name": "browser-runtime-and-resource-loading",
+          "verdict": "passed",
+          "meaning": "Recorded assertion: browser runtime and resource loading. Its result is limited to the saved test scope.",
+          "expected": "",
+          "observed": ""
+        }
+      ]
+    },
+    {
+      "nodeId": "replay-e000026",
+      "basis": "saved-evidence-review",
+      "headline": "Saved browser playthrough",
+      "action": "Archive 59 recorded inputs and 60 actor frames for v001.",
+      "result": "These are saved browser actor observations compared with the ordinary engine, bound to this exact map and contract.",
+      "decision": "The subsequent author note states: The first candidate met the declared mechanism and complete exit objective. There was no test-driven reason to revise geometry. The actual browser run matched ordinary engine states at every input and reported no browser errors or failed resources.",
+      "badge": "",
+      "evidence": [
+        "replay-e000026",
+        "candidate-v001",
+        "note-n002"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "note-n002",
+      "basis": "saved-evidence-review",
+      "headline": "Deliver the verified Three-Block Relay room and its actual 3D playthrough.",
+      "action": "Keep the first authored geometry: all five stage witnesses, eight exhaustive restrictions and the matched preparation branch passed. Save a complete browser playthrough with 59 keyboard inputs and 60 observed actor frames.",
+      "result": "The first candidate met the declared mechanism and complete exit objective. There was no test-driven reason to revise geometry. The actual browser run matched ordinary engine states at every input and reported no browser errors or failed resources.",
+      "decision": "Planned checks: The final design, first build and first mechanism verification share exact fingerprints; The replay is bound to the same candidate and contains observed browser frames; Publish only through the serialized queue after this record is sealed.",
+      "badge": "",
+      "evidence": [
+        "note-n002",
+        "candidate-v001",
+        "resource-r001",
+        "resource-r006",
+        "resource-r007"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000028",
+      "basis": "saved-evidence-review",
+      "headline": "Save recorded artifact",
+      "action": "Save recorded artifact. Saved files: README.md.",
+      "result": "The recorder archived this file. Saving evidence does not itself establish a passing test.",
+      "decision": "Archiving preserves evidence and file identity. It does not rerun the test or establish that the map passed.",
+      "badge": "",
+      "evidence": [
+        "event-e000028",
+        "candidate-v001"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "event-e000029",
+      "basis": "saved-evidence-review",
+      "headline": "Finish authoring run",
+      "action": "Finish authoring run.",
+      "result": "The recorder closed the run. Test verdicts and publication are separate records.",
+      "decision": "Follow the linked records for the subsequent action. Unrecorded reasons remain unknown.",
+      "badge": "",
+      "evidence": [
+        "event-e000029"
+      ],
+      "observations": [],
+      "checks": []
+    },
+    {
+      "nodeId": "delivery-final",
+      "basis": "saved-evidence-review",
+      "headline": "Published final candidate v001",
+      "action": "Bind the published map and contract to the final recorded candidate.",
+      "result": "The final candidate has 2 exactly associated passed reports, retained alongside earlier failed or unknown attempts.",
+      "decision": "These reports explain the recorded basis for delivery. A fixed iteration count or an unrecorded stopping policy cannot be inferred. These are author-side checks of the declared conditions, not a human-difficulty score or a blind independent-agent evaluation.",
+      "badge": "",
+      "evidence": [
+        "delivery-final",
+        "candidate-v001",
+        "test-t001",
+        "test-t002"
+      ],
+      "observations": [],
+      "checks": []
+    }
+  ]
+}

@@ -136,7 +136,8 @@
       ],
       "authoredCases": [
         "authored-block-coordination-ed4fa93087f1",
-        "authored-block-coordination-030c8da1aa61"
+        "authored-block-coordination-030c8da1aa61",
+        "authored-block-coordination-0e24cc0f2923"
       ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-block-coordination"
     },
@@ -1748,6 +1749,66 @@
         },
         "scopeComplete": false,
         "evidenceSha256": "132bf49cb80c43cdf7acc985ee728bd267fc1dd1e29b5c1d55434bd8622894d9"
+      }
+    },
+    {
+      "id": "authored-block-coordination-0e24cc0f2923",
+      "kind": "authored",
+      "title": "Three-Block Relay",
+      "skill": "block-coordination",
+      "world": "authored-block-coordination-0e24cc0f2923",
+      "room": "AxA",
+      "description": "A separately verified authored realization of tool preparation, usable input access and release.",
+      "thumbnail": "assets/thumbnails/authored-block-coordination-0e24cc0f2923.png",
+      "map": "data/maps/authored-block-coordination-0e24cc0f2923-world-map.txt",
+      "witness": "RDDDDRRRRURDDLUUULLUUUULLLLLDDDDDDDDDDDDRRRRRRRUUUURRRRRRUR",
+      "goal": {
+        "kind": "reach",
+        "cell": [
+          15,
+          8,
+          0
+        ],
+        "description": "Reach the free east boundary doorway with the player; gem-free isSolved is not the objective."
+      },
+      "process": {
+        "data": "data/processes/authored-block-coordination-0e24cc0f2923.json",
+        "schemaVersion": 1
+      },
+      "build": {
+        "schemaVersion": 1,
+        "attribution": "single-model",
+        "model": "gpt-6-astra",
+        "modelBasis": "runtime-record",
+        "reasoningEffort": "xhigh",
+        "reasoningEfforts": [
+          "xhigh"
+        ],
+        "reasoningBasis": "runtime-setting",
+        "reasoningMixed": false,
+        "attributionNote": null,
+        "attributionEvidenceSha256": null,
+        "startedAt": "2026-10-26T05:09:15.706Z",
+        "finishedAt": "2026-10-26T05:15:26.341Z",
+        "models": [
+          {
+            "model": "gpt-6-astra",
+            "provider": "openai"
+          }
+        ],
+        "runtime": "codex_exec",
+        "elapsedMs": 370635,
+        "usageStatus": "measured",
+        "tokens": {
+          "input_tokens": 1111334,
+          "cached_input_tokens": 1044096,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10409,
+          "reasoning_output_tokens": 3317,
+          "total_tokens": 1121743
+        },
+        "scopeComplete": false,
+        "evidenceSha256": "a41163df6a13a4e462e14c878afd53ce6549f4572795d14c3d6b1c779598f2d3"
       }
     }
   ],

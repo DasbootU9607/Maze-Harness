@@ -808,6 +808,30 @@
         "cellsSha256": "3161aea37cb6bb8dacdfd133b8065dd469895f10d0b760907bb3bcd3e31a3fac",
         "contractSha256": "681b307baeaa8677251d256984c1687845c12dac0333cfd95f38c68ae683c608"
       }
+    },
+    {
+      "id": "authored-block-coordination-0e24cc0f2923",
+      "kind": "authored",
+      "originalDraftId": "draft-depth-0a8a014546",
+      "title": "Three-Block Relay",
+      "sourceMapSha256": "0e24cc0f2923189fa7d05cc7b7aebcd72e6471078861983e2b411074906747b4",
+      "witnessSha256": "15776eccf5c84e3c4b53923dc69577d4d040a25ef4e605ac9b8757c16be32053",
+      "source": "Agent-authored trial; verified design and saved draft matched before publication.",
+      "verification": {
+        "overall": "passed",
+        "profile": "authored-planar-gate-planning-v1",
+        "cellsSha256": "032067dc5e5ca908051606d1ee2420798c4aef4fccb34b95f24762aa748d3d1d",
+        "contractSha256": "e88cf6de4b5a49a77b629fba2fbce8b7d3f9f2c8183c71f822f27e3004570bad",
+        "reportSha256": "c1e690d6f7311d9e11abdabeeb1e85e3ab699d416814059ccf57f88525f6661d"
+      },
+      "authoringRunSha256": "49a6b27d7d6cadb7e9e40541edfe909c50ab41482edccfa485e86b8cd1e8a36e",
+      "authoringProcess": {
+        "schemaVersion": 1,
+        "data": "data/processes/authored-block-coordination-0e24cc0f2923.json",
+        "sha256": "c545298452aa8dccbf57204d35f7f21f62dd66a5459fcd43fac9dc7fa24e2c41",
+        "cellsSha256": "032067dc5e5ca908051606d1ee2420798c4aef4fccb34b95f24762aa748d3d1d",
+        "contractSha256": "e88cf6de4b5a49a77b629fba2fbce8b7d3f9f2c8183c71f822f27e3004570bad"
+      }
     }
   ],
   "directEntryPolicy": "Rooms without an authored player get a temporary arrival actor only when opened directly. Entries are open, matching floor boundaries with an ordinary legal inward move. Raw maps, exported room states, and normal doorway traversal remain unchanged.",
