@@ -44,7 +44,9 @@ jobs:
       - name: Verify incremental skill discovery
         run: node scripts/test-site-sync.cjs
       - name: Verify model attribution and build identity
-        run: node scripts/test-build-models.cjs
+        run: |
+          node scripts/test-build-models.cjs
+          node scripts/test-home-builds.cjs
       - name: Verify candidate screenshot bindings
         run: node scripts/test-process-thumbnails.cjs
       - name: Verify authoring recorder and public evidence projection

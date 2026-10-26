@@ -46,7 +46,7 @@ function summarizeBuild(usage, declared = {}) {
     startedAt: usage?.startedAt || declared.startedAt || null,
     finishedAt: usage?.finishedAt || declared.finishedAt || null,
     models,
-    runtime: label(usage?.runtime),
+    runtime: ['codex-tui', 'codex_exec', 'codex-exec'].includes(label(usage?.runtime)) ? 'Codex CLI' : label(usage?.runtime),
     elapsedMs: typeof usage?.elapsedMs === 'number' && Number.isFinite(usage.elapsedMs) && usage.elapsedMs >= 0 ? usage.elapsedMs : null,
     usageStatus: ['measured', 'partial', 'unavailable'].includes(usage?.status) ? usage.status : 'unavailable',
     tokens: Object.fromEntries(tokenFields.map(key => [key, count(usage?.observedTokens?.[key])])),

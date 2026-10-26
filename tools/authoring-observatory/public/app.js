@@ -1,5 +1,6 @@
 'use strict';
 const $ = id => document.getElementById(id);
+const clientLabel = value => ['codex-tui', 'codex_exec', 'codex-exec'].includes(value) ? 'Codex CLI' : value || 'Not provided';
 const state = {run: null, id: new URL(location.href).searchParams.get('run'), candidate: null, digest: null, busy: false};
 const node = (tag, text, cls) => {const el = document.createElement(tag); el.textContent = text; if (cls) el.className = cls; return el;};
 const request = async url => {const r = await fetch(url, {cache: 'no-store'}); if (!r.ok) throw new Error('Request failed: ' + r.status); return r.json();};
@@ -58,7 +59,7 @@ async function refresh() {
       $('token-status').textContent = (usage?.status || 'Not provided') + ' / observed interval only';
       const values = usage?.scopeComplete ? usage.tokens : usage?.observedTokens;
       $('token-values').replaceChildren(...[['input_tokens', 'Input'], ['cached_input_tokens', 'Cached input'], ['output_tokens', 'Output'], ['reasoning_output_tokens', 'Reasoning output'], ['total_tokens', 'Total']].map(([key, label]) => node('p', label + ': ' + (values?.[key] ?? 'Not provided'))));
-      $('token-values').prepend(node('p', 'Model / reasoning setting: ' + (usage?.models?.map(m => (m.model || 'Not provided') + ' / ' + (m.reasoningEffort || 'Not provided')).join(', ') || usage?.model || 'Not provided')), node('p', 'Client: ' + (usage?.runtime || 'Not provided')), node('p', 'Build wall time: ' + (Number.isFinite(usage?.elapsedMs) ? (usage.elapsedMs / 1000).toFixed(1) + ' s' : 'Not provided')));
+      $('token-values').prepend(node('p', 'Model / reasoning setting: ' + (usage?.models?.map(m => (m.model || 'Not provided') + ' / ' + (m.reasoningEffort || 'Not provided')).join(', ') || usage?.model || 'Not provided')), node('p', 'Client: ' + clientLabel(usage?.runtime)), node('p', 'Build wall time: ' + (Number.isFinite(usage?.elapsedMs) ? (usage.elapsedMs / 1000).toFixed(1) + ' s' : 'Not provided')));
       $('token-report').hidden = !usage;
       $('token-report').onclick = () => evidence('token-usage.json').catch(showError);
     }

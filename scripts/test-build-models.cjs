@@ -15,6 +15,9 @@ assert.equal(summarizeBuild({requestedModel: 'a-request-is-not-evidence'}).attri
 const usage = {models:[{model:'example-model',provider:'example-provider'}], elapsedMs:0, status:'partial',
   observedTokens:{input_tokens:100, cached_input_tokens:80, output_tokens:0, total_tokens:100}};
 const single = summarizeBuild(usage);
+for (const runtime of ['codex-tui', 'codex_exec', 'codex-exec']) assert.equal(summarizeBuild({...usage, runtime}).runtime, 'Codex CLI');
+assert.equal(summarizeBuild({...usage, runtime: 'Codex Desktop'}).runtime, 'Codex Desktop');
+assert.equal(summarizeBuild({...usage, runtime: null}).runtime, null);
 assert.equal(single.model, 'example-model'); assert.equal(single.attribution, 'single-model');
 assert.equal(single.tokens.total_tokens, 100, 'Do not add cached tokens to input a second time');
 assert.equal(single.tokens.output_tokens, 0); assert.equal(single.elapsedMs, 0);

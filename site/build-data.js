@@ -1,5 +1,5 @@
 export const modelLabel = value => ({'gpt-6-astra': 'ChatGPT 6 Astra', 'deepseek-v4.1-flash-1017': 'DeepSeek V4.1 Flash 1017', 'qwen3.8-max': 'Qwen3.8 Max'}[value] || value || 'Not provided');
-export const clientLabel = value => value === 'codex-tui' ? 'Codex CLI' : value || 'Not provided';
+export const clientLabel = value => ['codex-tui', 'codex_exec', 'codex-exec'].includes(value) ? 'Codex CLI' : value || 'Not provided';
 export const modelKey = build => build?.attribution === 'single-model' && build.model ? build.model : build?.attribution === 'mixed' ? '@mixed' : '@unknown';
 export const buildLabel = build => modelKey(build) === '@unknown' ? 'Not provided' : modelKey(build) === '@mixed' ? 'Mixed / partial attribution' : modelLabel(build.model);
 export const effortLabel = build => build?.reasoningMixed ? (build.reasoningEfforts || []).join(' / ') + ' · mixed' : build?.reasoningEffort || 'Not provided';
