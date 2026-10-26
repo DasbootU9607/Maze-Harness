@@ -1,5 +1,5 @@
 import { mountSkillBuilds } from './skill-builds.js';
-import { mountHomeBuilds } from './home-builds.js';
+import { mountHomeBuilds } from './home-builds.js?v=14416ef5e861';
 import { loadCatalog, shell, installCopy, atlas, caseCard, playUrl, escapeHtml, showError } from './ui.js';
 const page = document.body.dataset.page;
 shell(page);
