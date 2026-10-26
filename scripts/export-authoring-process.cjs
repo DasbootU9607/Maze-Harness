@@ -221,17 +221,32 @@ function exportProcess(runDirectory, { caseId, expectedCellsSha256, expectedCont
   const { auditRun } = require('../tools/authoring-observatory/audit-run.cjs');
   const audit = auditRun(runDir);
   const manifest = read(savedFile(runDir, 'manifest.json')), index = read(savedFile(runDir, 'index.json'));
+  const events = fs.readFileSync(savedFile(runDir, 'events.jsonl'), 'utf8').split(/\r?\n/).filter(Boolean).map(JSON.parse);
   const auditExceptions = [];
   for (const check of audit.checks.filter(item => item.status === 'unknown')) {
-    const testId = /^Test (t[0-9]+) is associated by command-boundary hashes only;/.exec(check.detail)?.[1];
+    const testId = /^Test (t[0-9]+) (?:is associated by command-boundary hashes only;|has no saved report\.$)/.exec(check.detail)?.[1];
     const test = index.tests.find(item => item.id === testId);
-    assert(check.name === 'test.bindingBasis' && test && ['failed', 'error', 'unknown'].includes(test.status) && test.bindingBasis === 'command-boundaries-only', 'Authoring run evidence audit must pass except explicitly scoped non-passed command-boundary tests');
-    auditExceptions.push({check: 'test.bindingBasis', testId, basis: 'command-boundaries-only', status: 'unknown'});
+    if (check.name === 'test.bindingBasis' && test && ['failed', 'error', 'unknown'].includes(test.status) && test.bindingBasis === 'command-boundaries-only') {
+      auditExceptions.push({check: check.name, testId, basis: 'command-boundaries-only', status: 'unknown'});
+      continue;
+    }
+    // A captured crash can legitimately produce no report. Retain it as an
+    // execution error, never as passing evidence or as a missing successful test.
+    const start = events.find(event => event.type === 'command.started' && event.id === test?.commandEventId);
+    const finish = events.find(event => event.type === 'command.completed' && event.details?.commandEventId === start?.id);
+    const failedWithoutReport = check.name === 'test.report' && manifest.mode === 'observed' && test?.origin === 'observed'
+      && test.status === 'error' && test.binding === 'exact' && test.bindingBasis === 'command-boundaries-only'
+      && !test.reportPath && !test.reportSha256 && (test.checks || []).length === 0
+      && start?.origin === 'observed' && start.details.kind === 'test' && finish?.origin === 'observed'
+      && start.candidateId === test.candidateId && start.details.inputSha256 === test.inputSha256
+      && Number.isInteger(finish.details.code) && finish.details.code !== 0 && test.processExitCode === finish.details.code
+      && ['stdoutPath', 'stderrPath'].every(key => typeof test[key] === 'string' && test[key] && test[key] === finish.details[key]);
+    assert(failedWithoutReport, 'Authoring run evidence audit must pass except explicitly scoped non-passed history: ' + check.name + ' ' + (testId || ''));
+    auditExceptions.push({check: check.name, testId, basis: 'failed-command-no-report', status: 'unknown'});
   }
   assert.equal(audit.counts.failed, 0, 'Authoring run evidence audit must pass without integrity failures');
   assert(audit.status === 'passed' || audit.status === 'unknown' && auditExceptions.length === audit.counts.unknown && auditExceptions.length > 0, 'Authoring run evidence audit must pass except explicitly scoped non-passed command-boundary tests');
   assert(['complete', 'imported'].includes(manifest.status), 'Complete the authoring run before export');
-  const events = fs.readFileSync(savedFile(runDir, 'events.jsonl'), 'utf8').split(/\r?\n/).filter(Boolean).map(JSON.parse);
   const last = index.candidates.at(-1);
   assert(last, 'Authoring run has no final candidate');
   if (manifest.finalCandidateId) assert.equal(manifest.finalCandidateId, last.id, 'Final candidate marker is stale');
@@ -262,7 +277,9 @@ function exportProcess(runDirectory, { caseId, expectedCellsSha256, expectedCont
     test.bindingBasis = ['report-fingerprints-and-command-boundaries', 'command-boundaries-only'].includes(item.bindingBasis) ? item.bindingBasis : 'unspecified';
     if (test.bindingBasis === 'command-boundaries-only') {
       test.binding = 'observed-command-association';
-      test.scope += ' Association is limited to captured command-boundary hashes; the saved report does not independently identify its map input. This result cannot support final acceptance.';
+      test.scope += auditExceptions.some(exception => exception.testId === id && exception.basis === 'failed-command-no-report')
+        ? ' The captured command exited unsuccessfully without saving a report. This is an execution error, not a mechanism verdict, and cannot support final acceptance.'
+        : ' Association is limited to captured command-boundary hashes; the saved report does not independently identify its map input. This result cannot support final acceptance.';
     }
     tests.push(test);
     nodes.push({ id: test.graphNodeId, kind: 'test', label: test.label, status: graphStatus(test.status), order: sequence('test.completed', id), summary: test.scope, details: { testId: id, candidateId, binding: test.binding, category: test.category } });
@@ -363,7 +380,9 @@ function exportProcess(runDirectory, { caseId, expectedCellsSha256, expectedCont
       'Snapshot parent links show recorded version order, not proof of causal reasoning. No unrecorded branches or merges are reconstructed.',
       'Agent annotations are concise explanations, not internal thought transcripts. Recorded resource delivery does not prove comprehension or use.',
       'Test outcomes retain their own scope. Author self-tests do not establish independent-agent effectiveness or human difficulty.',
-      ...(auditExceptions.length ? ['Non-passed tests ' + auditExceptions.map(item => item.testId).join(', ') + ' have command-boundary association only. Their report input identity remains unknown; they are retained as production history, not acceptance evidence.'] : []),
+      ...auditExceptions.map(item => item.basis === 'failed-command-no-report'
+        ? 'Test ' + item.testId + ' ended with a captured command failure and no saved report. Its execution error remains visible; no report or passing verdict is reconstructed.'
+        : 'Non-passed test ' + item.testId + ' has command-boundary association only. Its report input identity remains unknown; it is retained as production history, not acceptance evidence.'),
       ...(manifest.limitations || []).map(value => clean(value))
     ] }, nodes, edges, candidates, tests, notes, resources, operations, replays };
   const usage = require('../tools/authoring-observatory/lib/session-usage.cjs').publicSummary(runDir);

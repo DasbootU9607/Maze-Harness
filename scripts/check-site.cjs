@@ -37,7 +37,11 @@ function checkAuthoringProcess(site, entry, record) {
     assert.equal(new Set(exceptions.map(item => item.testId)).size, exceptions.length);
     for (const item of exceptions) {
       const test = process.tests.find(test => test.id === item.testId);
-      assert(item.check === 'test.bindingBasis' && item.status === 'unknown' && item.basis === 'command-boundaries-only' && test && ['failed', 'error', 'unknown'].includes(test.status) && test.bindingBasis === item.basis, 'Unapproved audit uncertainty');
+      const weakReport = item.check === 'test.bindingBasis' && item.basis === 'command-boundaries-only';
+      const missingReport = item.check === 'test.report' && item.basis === 'failed-command-no-report' && test?.status === 'error'
+        && test.origin === 'observed' && test.checks.length === 0 && process.records.some(record => record.eventType === 'command.completed'
+          && record.status === 'failed' && record.resultNodeId === test.graphNodeId && record.facts.some(fact => fact.label === 'Process exit code' && /^-?\d+$/.test(fact.value) && Number(fact.value) !== 0));
+      assert((weakReport || missingReport) && item.status === 'unknown' && test && ['failed', 'error', 'unknown'].includes(test.status) && test.bindingBasis === 'command-boundaries-only', 'Unapproved audit uncertainty');
     }
   }
   const weakTests = process.tests.filter(test => test.bindingBasis === 'command-boundaries-only');

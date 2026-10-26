@@ -104,7 +104,7 @@ function explainProcess(document, { index, events, savedFile, runDir }) {
       row.decision = citations.length ? 'The linked author notes explicitly cite this resource; consult their stated design changes for evidence of its role.' : 'No explicit note citation is linked to this read or snapshot; actual use cannot be inferred from access alone.';
       citations.forEach(edge => addEvidence(edge.to));
     } else if (node.kind === 'note') {
-      row.headline = record.goal; row.action = record.change || record.goal; row.result = record.reason || 'The author recorded the stated proposal; its tests remain separate evidence.';
+      row.headline = record.goal || record.label || 'Recorded author note'; row.action = record.change || record.goal || 'Record an author annotation.'; row.result = record.reason || 'The author recorded the stated proposal; its tests remain separate evidence.';
       row.decision = record.expectedChecks.length ? 'Planned checks: ' + record.expectedChecks.join('; ') + '.' : 'This is an author explanation, not a test result.';
       document.edges.filter(edge => edge.to === node.id && edge.kind === 'cites').forEach(edge => addEvidence(edge.from));
     } else if (node.kind === 'candidate') {
@@ -134,7 +134,11 @@ function explainProcess(document, { index, events, savedFile, runDir }) {
         const saved = report?.checks?.find(row => row.name === check.name);
         return { name: check.name, verdict: check.status, meaning: checkMeaning(check.name), expected: outcomes.has(saved?.expected) ? saved.expected : '', observed: outcomes.has(saved?.status) ? saved.status : '' };
       });
-      if (record.bindingBasis === 'command-boundaries-only') row.result += ' The report has no independent map-input fingerprint; its association is limited to captured command boundaries.';
+      if (record.bindingBasis === 'command-boundaries-only') {
+        if (document.coverage.audit.exceptions?.some(item => item.testId === record.id && item.basis === 'failed-command-no-report')) {
+          row.result = 'The captured command exited unsuccessfully before saving a report. The recorded status is error; no mechanism verdict or individual check results were produced.';
+        } else row.result += ' The report has no independent map-input fingerprint; its association is limited to captured command boundaries.';
+      }
     } else if (node.kind === 'replay') {
       row.action = `Archive ${record.route.length} recorded inputs and ${record.frameCount} actor frames for ${candidateId}.`;
       row.result = record.label.includes('browser') ? 'These are saved browser actor observations compared with the ordinary engine, bound to this exact map and contract.' : 'This artifact contains an ordinary-engine route replay. It is not by itself a recorded browser play session or a blind solving experiment.';
