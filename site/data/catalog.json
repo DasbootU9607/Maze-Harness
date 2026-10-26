@@ -195,7 +195,8 @@
         "official-dxb"
       ],
       "authoredCases": [
-        "authored-enclosure-navigation-dd1cff7d5825"
+        "authored-enclosure-navigation-dd1cff7d5825",
+        "authored-enclosure-navigation-244c0ba24d48"
       ],
       "source": "https://github.com/DasbootU9607/Maze-Harness/tree/main/skills/mazebench-enclosure-navigation"
     }
@@ -1929,6 +1930,65 @@
         },
         "scopeComplete": false,
         "evidenceSha256": "46b6ab02dbbb7ff219f6f986398486ad6f8d34a4efdd945050a5933b248b08dd"
+      }
+    },
+    {
+      "id": "authored-enclosure-navigation-244c0ba24d48",
+      "kind": "authored",
+      "title": "Crown Passage",
+      "skill": "enclosure-navigation",
+      "world": "authored-enclosure-navigation-244c0ba24d48",
+      "room": "AxA",
+      "description": "An agent-authored realization built with this skill.",
+      "thumbnail": "assets/thumbnails/authored-enclosure-navigation-244c0ba24d48.png",
+      "map": "data/maps/authored-enclosure-navigation-244c0ba24d48-world-map.txt",
+      "witness": "RRRDRRUUUUURRRRUUUULLLLLLUUUDLLLLUL",
+      "goal": {
+        "kind": "reach",
+        "cell": [
+          0,
+          2,
+          0
+        ]
+      },
+      "process": {
+        "data": "data/processes/authored-enclosure-navigation-244c0ba24d48.json",
+        "schemaVersion": 1
+      },
+      "build": {
+        "schemaVersion": 1,
+        "attribution": "single-model",
+        "model": "gpt-6-astra",
+        "modelBasis": "runtime-record",
+        "reasoningEffort": "xhigh",
+        "reasoningEfforts": [
+          "xhigh"
+        ],
+        "reasoningBasis": "runtime-setting",
+        "reasoningMixed": false,
+        "attributionNote": null,
+        "attributionEvidenceSha256": null,
+        "startedAt": "2026-10-26T06:39:47.275Z",
+        "finishedAt": "2026-10-26T06:49:10.392Z",
+        "models": [
+          {
+            "model": "gpt-6-astra",
+            "provider": "openai"
+          }
+        ],
+        "runtime": "codex_exec",
+        "elapsedMs": 563117,
+        "usageStatus": "measured",
+        "tokens": {
+          "input_tokens": 943003,
+          "cached_input_tokens": 877440,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 9061,
+          "reasoning_output_tokens": 2874,
+          "total_tokens": 952064
+        },
+        "scopeComplete": false,
+        "evidenceSha256": "41ecbee92936ab74789672a732b6c9cd441df9e47708dc4a09c453ff0e568e73"
       }
     }
   ],

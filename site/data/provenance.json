@@ -880,6 +880,30 @@
         "cellsSha256": "28d32228132d2fa761113ee8a465f36b6455a8c58af3d84baf136aceaf8609b4",
         "contractSha256": "8eeabad5d1c9ce0a59b3b91ab35a087846e4bbec6b2798ae9b16b02510f6eb32"
       }
+    },
+    {
+      "id": "authored-enclosure-navigation-244c0ba24d48",
+      "kind": "authored",
+      "originalDraftId": "draft-depth-d534775990",
+      "title": "Crown Passage",
+      "sourceMapSha256": "244c0ba24d48d17dbd7bb75f31eea1efa64b057fa9a8f1f51ed35b752f1030fc",
+      "witnessSha256": "a9ce1321feafe70fd7a4ac628ea0165006c30d43bc73d09620782c616a7c3ec7",
+      "source": "Agent-authored trial; verified design and saved draft matched before publication.",
+      "verification": {
+        "overall": "passed",
+        "profile": "authored-planar-gate-planning-v1",
+        "cellsSha256": "6aa41b4245bebd038733f2819020e96929af71fcefd0de9c6995dcf33c009730",
+        "contractSha256": "91702fdfba7ec0675d48df8d33ba547edd9380c0e90da4b7bd2dc07eb564c121",
+        "reportSha256": "a78d911dbcd949289adffbc86b3356f4219b45c2c6466e701723acbb1ddadf8e"
+      },
+      "authoringRunSha256": "ab883199ccad4bcf6e8a124a0eb8f0df1ddec3fb5605881cb12ed5ea1ed61549",
+      "authoringProcess": {
+        "schemaVersion": 1,
+        "data": "data/processes/authored-enclosure-navigation-244c0ba24d48.json",
+        "sha256": "39ec012d388c5fe17c6b7a9665786159c08ba3c52819748ec52c7f6bbcd76edd",
+        "cellsSha256": "6aa41b4245bebd038733f2819020e96929af71fcefd0de9c6995dcf33c009730",
+        "contractSha256": "91702fdfba7ec0675d48df8d33ba547edd9380c0e90da4b7bd2dc07eb564c121"
+      }
     }
   ],
   "directEntryPolicy": "Rooms without an authored player get a temporary arrival actor only when opened directly. Entries are open, matching floor boundaries with an ordinary legal inward move. Raw maps, exported room states, and normal doorway traversal remain unchanged.",
