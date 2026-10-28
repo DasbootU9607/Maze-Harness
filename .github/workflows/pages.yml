@@ -55,6 +55,7 @@ jobs:
           node scripts/test-authoring-integration.cjs
           node scripts/test-authoring-process.cjs
           node scripts/test-process-uncertain-history.cjs
+          node scripts/test-process-recovery.cjs
       - name: Upload static site
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4

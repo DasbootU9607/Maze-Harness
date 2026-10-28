@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const site = path.resolve(__dirname, '../site');
 const prefix = '/Maze-Harness/';
-const types = { '.html':'text/html', '.js':'text/javascript', '.css':'text/css', '.json':'application/json', '.svg':'image/svg+xml', '.png':'image/png', '.webp':'image/webp', '.woff2':'font/woff2', '.glb':'model/gltf-binary', '.gltf':'model/gltf+json', '.txt':'text/plain' };
+const types = { '.html':'text/html', '.js':'text/javascript', '.css':'text/css', '.json':'application/json', '.svg':'image/svg+xml', '.png':'image/png', '.webp':'image/webp', '.webm':'video/webm', '.woff2':'font/woff2', '.glb':'model/gltf-binary', '.gltf':'model/gltf+json', '.txt':'text/plain' };
 function createServer() {
   return http.createServer((req, res) => {
     let pathname;

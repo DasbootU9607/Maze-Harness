@@ -1,4 +1,5 @@
 import {loadCatalog} from './ui.js';
+import {loadHistory} from './process-history.js';
 
 const params = new URLSearchParams(location.search);
 const caseId = params.get('case'), candidateId = params.get('candidate');
@@ -282,7 +283,7 @@ try {
   $('maze-canvas').setAttribute('aria-label', replayOnly ? 'Read-only recorded maze replay. Use the replay controls to view saved actions.' : 'Interactive maze. Arrow keys move. Z undoes. R resets, including gems. A and D rotate the camera. W and S tilt it.');
   const catalog = await loadCatalog(), entry = catalog.cases.find(item => item.id === caseId);
   if (!entry?.process?.data) throw new Error('This case has no recorded authoring process.');
-  const process = await jsonAsset(entry.process.data);
+  const process = await loadHistory(await jsonAsset(entry.process.data));
   candidate = process.candidates.find(item => item.id === candidateId);
   if (!candidate?.preview?.levelPath || candidate.preview.cellsSha256 !== candidate.cellsSha256) throw new Error('This candidate has no matching playable preview.');
   if (replayOnly) {

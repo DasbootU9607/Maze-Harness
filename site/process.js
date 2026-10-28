@@ -2,6 +2,7 @@ import {buildLabel, effortLabel, attributionLabel, buildDate, clientLabel, durat
 import {downloadBuilds} from './build-downloads.js';
 import { loadCatalog, shell, playUrl, showError } from './ui.js';
 import { createOrbitTimeline } from './process-orbit.js';
+import { loadHistory } from './process-history.js';
 
 const $ = id => document.getElementById(id);
 const state = { data: null, catalog: null, entry: null, skill: null, nodes: [], selectedId: null, candidateId: null, previewCandidateId: null, previewKey: null, previewMode: null, previewUrl: null, previewLabel: null, expanded: false, returnFocus: null, previousOverflow: '', keyNodeIds: new Set() };
@@ -41,6 +42,7 @@ function nodeTitle(node) {
 }
 function nodeCategory(node) { const record = recordFor(node); if (node.kind === 'record') return ({ 'command.started': 'START', 'command.completed': 'FINISH', 'artifact.saved': 'ARTIFACT', 'build.saved': 'BUILD FILES', 'run.created': 'SESSION', 'run.finished': 'SESSION', 'collector.started': 'CAPTURE', 'capture.gap': 'CAPTURE GAP' })[node.eventType] || 'RECORD'; if (node.kind === 'resource' && (record?.delivery === 'snapshot' || record?.origin === 'historical')) return 'SOURCE SNAPSHOT'; return record?.category === 'diagnostic' ? 'DIAGNOSTIC' : kindNames[node.kind] || String(node.kind).toUpperCase(); }
 function nodeAction(node) {
+  if(node.recoveryKind) return node.label;
   const record = recordFor(node), label = node.label || '', goal = record?.goal || label;
   if (node.kind === 'record') return record?.label || label;
   if (node.kind === 'resource') {
@@ -136,6 +138,12 @@ function classifyTimeline() {
   const keyIds = new Set(), seenReadKinds = new Set(), formalTests = new Map(); let firstNote = false;
   for (const node of state.nodes) {
     const record = recordFor(node);
+    if (node.recoveryKind && ['candidate', 'playtest'].includes(node.recoveryKind)) keyIds.add(node.id);
+    if(node.recoveryKind==='read') {
+      const files=record?.recovery?.projection?.files||[];
+      const stage=files.includes('SKILL.md')?'client-skill':files.some(f=>/^official-.*\.(md|txt)$/.test(f))?'client-source':null;
+      if(stage&&!seenReadKinds.has(stage)){seenReadKinds.add(stage);keyIds.add(node.id);}
+    }
     if (['candidate', 'replay', 'delivery'].includes(node.kind)) keyIds.add(node.id);
     if (node.eventType === 'capture.gap') keyIds.add(node.id);
     if (node.kind === 'resource') {
@@ -163,7 +171,7 @@ async function start() {
   if (!entry?.process?.data) throw new Error('Choose a room with a published build process from the skill library.');
   if (!/^data\/processes\/[a-zA-Z0-9._-]+\.json$/.test(entry.process.data)) throw new Error('The process data path is invalid.');
   const response = await fetch('./' + entry.process.data); if (!response.ok) throw new Error('The published build record could not be loaded.');
-  const data = await response.json();
+  const data = await loadHistory(await response.json());
   if (data.schemaVersion !== 1 || !Array.isArray(data.nodes) || !Array.isArray(data.edges)) throw new Error('This build record uses an unsupported format.');
   state.data = { ...data, candidates: data.candidates || [], tests: data.tests || [], notes: data.notes || [], resources: data.resources || [], operations: data.operations || [], replays: data.replays || [], records: data.records || [] };
   state.catalog = catalog; state.entry = entry; state.skill = catalog.skills.find(skill => skill.id === data.skill || skill.id === entry.skill);
@@ -171,16 +179,24 @@ async function start() {
   document.title = `${entry.title} - Build process - Maze Harness`;
   $('process-title').textContent = data.title || entry.title;
   $('process-summary').textContent = data.summary || 'Follow the recorded reads, revisions, checks, and replays behind this room.';
+  if(data.recovery) $('process-summary').textContent = 'Saved evidence from the published run, earlier sessions and client tool logs. Unrecorded activity remains unknown.';
   $('play-room').href = playUrl(entry); $('process-data').href = './' + entry.process.data;
+  if (data.recovery) {
+    const download = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
+    $('process-data').href = URL.createObjectURL(download);
+    $('process-data').download = entry.id + '-complete-saved-evidence.json';
+  }
   $('skill-link').textContent = state.skill?.name || 'Skill library'; $('skill-link').href = state.skill ? './skill.html?id=' + encodeURIComponent(state.skill.id) : './index.html#skills';
   const mode = data.coverage?.mode || data.mode || 'unknown'; $('record-mode').textContent = mode === 'observed' ? 'OBSERVED RECORD' : mode === 'historical' ? 'HISTORICAL IMPORT' : 'PARTIAL RECORD'; $('record-mode').classList.toggle('historical', mode === 'historical');
   const coverage = data.coverage?.events;
   $('record-summary').textContent = `${state.data.candidates.length} versions / ${state.data.resources.length} recorded references / ${state.data.tests.length} test records${coverage ? ` / ${coverage.representedCount} of ${coverage.sourceCount} source records` : ''}`;
+  if(data.recovery) $('record-summary').textContent += ` in the selected run · ${data.recovery.sessions.reduce((n,s)=>n+s.document.coverage.events.sourceCount,0)} earlier-session events · ${data.recovery.items.length} recovered evidence records`;
   renderUsage(data.usage);
   classifyTimeline();
   $('coverage-description').textContent = data.coverage?.description || 'This view contains saved operations, references, maps, test outcomes, and public author explanations. It does not reconstruct unrecorded activity.';
   const limits = [...(data.coverage?.limitations || []), ...(data.limitations || []), data.coverage?.sources?.scope].filter(Boolean).map(text).filter((item, index, all) => all.indexOf(item) === index);
   limits.forEach(item => $('coverage-limitations').append(el('li', '', item)));
+  if(data.recovery) for(const item of [data.recovery.scope,...data.recovery.audit.unrecoverable]) $('coverage-limitations').append(el('li','',item));
   installInteractions();
   const requested = byId(query.get('node')), requestedCandidate = state.data.candidates.find(candidate => candidate.id === query.get('candidate'));
   const firstCandidate = state.data.candidates.find(candidate => candidate.preview?.levelPath) || state.data.candidates[0];
@@ -207,6 +223,7 @@ function selectNode(id, { initial = false, focus = true, fromTimeline = false } 
   else if (node.kind === 'operation') summary = 'Execution completed · exit code 0';
   else if (node.kind === 'delivery') summary = node.summary || '';
   $('operation-summary').textContent = summary; $('operation-summary').hidden = !summary;
+  if(node.recoveryKind === 'candidate') { $('operation-summary').textContent=node.summary; $('operation-summary').hidden=false; }
   renderPreview(node, record, candidate); renderSources(node, record); renderExplanation(node, record, candidate); renderChecks(node, record); renderRelations(node);
   const safeRecord = record ? Object.fromEntries(Object.entries(record).filter(([key]) => !['cells', 'diff'].includes(key))) : null;
   $('operation-evidence-body').textContent = JSON.stringify({ node: Object.fromEntries(Object.entries(node).filter(([key]) => key !== 'sourceIndex')), ...(safeRecord ? { record: safeRecord } : {}) }, null, 2); $('operation-evidence').open = false;
@@ -299,6 +316,25 @@ function explanationPart(host, title, value) {
 }
 function renderExplanation(node, record, candidate) {
   const host = clear($('operation-explanation'));
+  if(node.recoverySource) explanationPart(host, 'Evidence source', node.recoverySource);
+  const reviewed=state.data.explanations?.find(row=>row.nodeId===node.id);
+  if(reviewed?.basis==='saved-evidence-review') {
+    explanationPart(host, 'Recorded action', reviewed.action);
+    explanationPart(host, 'Result and next step', [reviewed.result,reviewed.decision]);
+  }
+  if(record?.recovery) {
+    const item = record.recovery;
+    if(candidate) explanationPart(host, 'Saved observations', item.facts.map(f=>`${f.label}: ${f.value}`));
+    for(const media of item.media || []) {
+      const video=el('video','recovery-video'); video.controls=true;video.preload='none';video.src='./'+media.path;
+      video.setAttribute('aria-label',media.label);host.append(video);
+    }
+    if(item.projection && Object.keys(item.projection).length) {
+      const detail=el('details','recovery-observations');detail.append(el('summary','','Saved report details'));
+      const pre=el('pre','',JSON.stringify(item.projection,null,2));detail.append(pre);host.append(detail);
+    }
+    explanationPart(host, 'Source fingerprint', item.source.sha256);
+  }
   if (node.kind === 'candidate' && candidate && !candidate.preview?.levelPath) explanationPart(host, 'Saved candidate', `${candidate.id} is bound to this record, but an interactive 3D preview has not been published for that snapshot.`);
   if (node.kind === 'note' && record) { explanationPart(host, 'Design goal', record.goal); explanationPart(host, 'Proposed change', record.change); explanationPart(host, 'Public explanation', record.reason); explanationPart(host, 'Checks the author intended to run', record.expectedChecks); if (record.retrospective) explanationPart(host, 'Recording context', 'This explanation was recorded retrospectively.'); }
   else if (node.kind === 'operation' && record) { explanationPart(host, 'Execution status', record.scope); if (!record.resultNodeId) explanationPart(host, 'Test result', 'No separate test verdict is attached to this command. Completing a diagnostic does not mean the map passed.'); if (record.inputCandidateId || record.outputCandidateId) explanationPart(host, 'Saved input and output', record.inputCandidateId === record.outputCandidateId ? `The saved version remains ${record.inputCandidateId}. This operation did not save a new map version.` : `Input: ${record.inputCandidateId || 'not associated'}. Output: ${record.outputCandidateId || 'not associated'}.`); }

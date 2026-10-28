@@ -53,7 +53,12 @@ async function captureProcessThumbnails({site, context, origin, missingOnly = fa
   for (const entry of catalog.cases.filter(entry => entry.process)) {
     const documentFile = inside(site,entry.process.data), original = fs.readFileSync(documentFile,'utf8');
     const document = JSON.parse(original);
-    for (const candidate of document.candidates.filter(candidate => candidate.preview)) {
+    const recoveryIndexFile = path.join(site,'data/process-recovery/index.json');
+    const recoveryIndex = fs.existsSync(recoveryIndexFile) ? JSON.parse(fs.readFileSync(recoveryIndexFile)) : null;
+    const recoveryEntry = recoveryIndex?.cases.find(row=>row.caseId===entry.id);
+    const recovery = recoveryEntry ? JSON.parse(fs.readFileSync(path.join(site,recoveryEntry.data))) : null;
+    const recovered = recovery ? [...recovery.sessions.flatMap(s=>s.document.candidates),...recovery.items.flatMap(i=>i.candidate?[i.candidate]:[])] : [];
+    for (const candidate of [...document.candidates,...recovered].filter(candidate => candidate.preview)) {
       candidate.preview.thumbnailPath = thumbnailPath(document.caseId,candidate,rendererSha256);
       if (missingOnly) {
         try { verifyThumbnail(site,document,candidate,rendererSha256); continue; }
@@ -105,6 +110,12 @@ async function captureProcessThumbnails({site, context, origin, missingOnly = fa
     if (record.sha256 !== hash(bytes)) {
       record.sha256 = hash(bytes);
       fs.writeFileSync(provenanceFile,JSON.stringify(provenance,null,2)+'\n');
+    }
+    if(recovery) {
+      const bytes=JSON.stringify(recovery,null,2)+'\n';
+      fs.writeFileSync(path.join(site,recoveryEntry.data),bytes);
+      recoveryEntry.sha256=hash(bytes);
+      fs.writeFileSync(recoveryIndexFile,JSON.stringify(recoveryIndex,null,2)+'\n');
     }
   }
   return captured;

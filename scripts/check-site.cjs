@@ -28,6 +28,16 @@ function checkAuthoringProcess(site, entry, record) {
   assert.equal(hash(bytes), evidence.sha256, 'Process bytes SHA-256 mismatch');
   const process = JSON.parse(bytes.toString('utf8'));
   assertPublicPrivacy(process); assertAcyclic(process.nodes, process.edges); assertEventCoverage(process); assertExplanations(process);
+  const recoveryIndex = path.join(site, 'data/process-recovery/index.json');
+  if (fs.existsSync(recoveryIndex)) {
+    const recovered = JSON.parse(fs.readFileSync(recoveryIndex)).cases.find(item => item.caseId === entry.id);
+    if (recovered) {
+      assert.equal(recovered.data, `data/process-recovery/${entry.id}.json`);
+      const bytes = fs.readFileSync(path.join(site, recovered.data));
+      assert.equal(hash(bytes), recovered.sha256);
+      require('./process-recovery.cjs').checkRecovery(site, process, JSON.parse(bytes));
+    }
+  }
   assert.equal(process.schemaVersion, 1); assert.equal(process.caseId, entry.id); assert.equal(process.skill, entry.skill); assert.equal(process.title, entry.title);
   assert.equal(process.coverage.audit.failed, 0);
   const audit = process.coverage.audit, exceptions = audit.exceptions || [];

@@ -1,0 +1,1654 @@
+{
+  "schemaVersion": 1,
+  "caseId": "authored-block-coordination-0e24cc0f2923",
+  "publishedCellsSha256": "032067dc5e5ca908051606d1ee2420798c4aef4fccb34b95f24762aa748d3d1d",
+  "publishedContractSha256": "e88cf6de4b5a49a77b629fba2fbce8b7d3f9f2c8183c71f822f27e3004570bad",
+  "scopeComplete": false,
+  "scope": "Supplement recovered from saved files. Original acceptance, source logs and usage totals are unchanged. Missing event times and unrecorded actions remain unknown.",
+  "sessions": [],
+  "items": [
+    {
+      "id": "recovered-b5410349c3dc4220",
+      "kind": "annotation",
+      "label": "Saved author annotation",
+      "summary": "The first candidate met the declared mechanism and complete exit objective. There was no test-driven reason to revise geometry. The actual browser run matched ordinary engine states at every input and reported no browser errors or failed resources.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Recorded time",
+          "value": "Not provided; file modification time is not used."
+        },
+        {
+          "label": "Capture coverage",
+          "value": "Saved file exists, but no matching archived-file event was found in the selected run."
+        }
+      ],
+      "source": {
+        "file": "completion-note.json",
+        "sha256": "b5410349c3dc422025df75bfaf746c907ee7fa81fa771927403141d1b1baa7f9",
+        "recordedAt": null,
+        "eventId": null
+      },
+      "afterNodeId": "delivery-final",
+      "projection": {
+        "goal": "Deliver the verified Three-Block Relay room and its actual 3D playthrough.",
+        "change": "Keep the first authored geometry: all five stage witnesses, eight exhaustive restrictions and the matched preparation branch passed. Save a complete browser playthrough with 59 keyboard inputs and 60 observed actor frames.",
+        "reason": "The first candidate met the declared mechanism and complete exit objective. There was no test-driven reason to revise geometry. The actual browser run matched ordinary engine states at every input and reported no browser errors or failed resources.",
+        "expectedChecks": [
+          "The final design, first build and first mechanism verification share exact fingerprints",
+          "The replay is bound to the same candidate and contains observed browser frames",
+          "Publish only through the serialized queue after this record is sealed"
+        ]
+      }
+    },
+    {
+      "id": "recovered-57e0bc74c22dc042",
+      "kind": "annotation",
+      "label": "Saved author annotation",
+      "summary": "BxB supports independent handoffs and same-tool reuse; BxC supports preserving a prepared shield while another supplies the input stance. This room uses a new wall-bounded three-arm arrangement, with no copied case cells or route.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Recorded time",
+          "value": "Not provided; file modification time is not used."
+        },
+        {
+          "label": "Capture coverage",
+          "value": "Saved file exists, but no matching archived-file event was found in the selected run."
+        }
+      ],
+      "source": {
+        "file": "design-note.json",
+        "sha256": "57e0bc74c22dc04257ba15bebea5c7e7f32c70056d6a57b21a3e7b59548d9b8f",
+        "recordedAt": null,
+        "eventId": null
+      },
+      "afterNodeId": "delivery-final",
+      "projection": {
+        "goal": "Create Three-Block Relay, a new composed room with an explicit gem-free boundary endpoint and interdependent shield operations.",
+        "change": "Combine an entry shield handoff, independent delivery of the future exit shield, a change of pushing side, and a separate approach shield. The working shield stays parked while the player reconnects to the approach shield through clear ground.",
+        "reason": "BxB supports independent handoffs and same-tool reuse; BxC supports preserving a prepared shield while another supplies the input stance. This room uses a new wall-bounded three-arm arrangement, with no copied case cells or route.",
+        "expectedChecks": [
+          "Complete ordinary official replay to a free boundary door",
+          "Each of the three group-freeze exclusions",
+          "Ordered right-down-right reuse of the exit shield",
+          "Matched positive and negative preparation branches",
+          "Actual browser keyboard playthrough and saved actor frames"
+        ]
+      }
+    },
+    {
+      "id": "recovered-cc89b48f8a87b413",
+      "kind": "playtest",
+      "label": "Browser attempt 1",
+      "summary": "Actual keyboard input in the unmodified official local 3D Play environment, in an isolated browser context; browser actor frames compared to the verified official ordinary engine after every input.",
+      "status": "passed",
+      "facts": [
+        {
+          "label": "Checks",
+          "value": "4"
+        },
+        {
+          "label": "Source status",
+          "value": "passed"
+        },
+        {
+          "label": "Recorded time",
+          "value": "2026-10-26T05:13:58.188Z"
+        }
+      ],
+      "source": {
+        "file": "playtest-01/verification.json",
+        "sha256": "cc89b48f8a87b413bad4f67ade40cdf9b4a3892ba0d8ae5eb5cc89339513692a",
+        "recordedAt": "2026-10-26T05:13:58.188Z",
+        "eventId": "e000025"
+      },
+      "afterNodeId": "test-t002",
+      "projection": {
+        "overall": "passed",
+        "scope": "Actual keyboard input in the unmodified official local 3D Play environment, in an isolated browser context; browser actor frames compared to the verified official ordinary engine after every input.",
+        "fingerprints": {
+          "cells": "032067dc5e5ca908051606d1ee2420798c4aef4fccb34b95f24762aa748d3d1d",
+          "contract": "e88cf6de4b5a49a77b629fba2fbce8b7d3f9f2c8183c71f822f27e3004570bad"
+        },
+        "checks": [
+          {
+            "name": "official-3d-renderer-loaded",
+            "verdict": "passed"
+          },
+          {
+            "name": "initial-state-and-all-59-keyboard-inputs-match-official-engine",
+            "verdict": "passed",
+            "inputs": 59,
+            "frames": 60
+          },
+          {
+            "name": "explicit-player-boundary-goal",
+            "verdict": "passed",
+            "player": [
+              15,
+              8,
+              0
+            ]
+          },
+          {
+            "name": "browser-runtime-and-resource-loading",
+            "verdict": "passed"
+          }
+        ],
+        "replayPassed": true
+      }
+    },
+    {
+      "id": "recovered-client-0d374e0761d8c6c3",
+      "kind": "read",
+      "label": "Read request: SKILL.md, website.md",
+      "summary": "The client recorded a file-read request. The successful delivery of each named file is not independently asserted for compound commands.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:09:06.538Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:09:07.063Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "525"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "SKILL.md, website.md"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:09:06.538Z",
+        "eventId": null,
+        "entrySha256": "ec315a447dbdb5d1c569d910a9af1e9f7ffe4a2e269c7697ac9f797bde1b2b1c",
+        "responseSha256": "7debfe9efaf8cc6fce3c1803835d54b5be857eb921c6de609d0a54cca42ca473"
+      },
+      "afterNodeId": "before-run",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "SKILL.md",
+          "website.md"
+        ],
+        "readRequested": true,
+        "editRequested": false,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-7e15afa0131a1b83",
+      "kind": "read",
+      "label": "Read request: SKILL.md",
+      "summary": "The client recorded a file-read request. The successful delivery of each named file is not independently asserted for compound commands.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:09:11.090Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:09:11.490Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "400"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "SKILL.md"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:09:11.090Z",
+        "eventId": null,
+        "entrySha256": "498511920a7a576cd34333fb32621f4ad08a69dfad2b787b5695788c6417817c",
+        "responseSha256": "60082a44464b8469f5286d6851096d08d70bdcc2ca91b4eef62ee0895ae3f24f"
+      },
+      "afterNodeId": "before-run",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "SKILL.md"
+        ],
+        "readRequested": true,
+        "editRequested": false,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-0961964adb0d900f",
+      "kind": "read",
+      "label": "Read request: design.json, .mazebench-observatory.json",
+      "summary": "The client recorded a file-read request. The successful delivery of each named file is not independently asserted for compound commands.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:09:15.276Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:09:17.155Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "1879"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "design.json, .mazebench-observatory.json"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:09:15.276Z",
+        "eventId": null,
+        "entrySha256": "8d5c6d0cce20a6984c7e084eae0e0c3baac570f2905f26ed197ee8f9a3f2c80d",
+        "responseSha256": "d61e3936e018af27f8cbb31d7a575d19960df50843c7b882f42eddb00927cfc6"
+      },
+      "afterNodeId": "before-run",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "design.json",
+          ".mazebench-observatory.json"
+        ],
+        "readRequested": true,
+        "editRequested": false,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-02955e7d930cf510",
+      "kind": "tool",
+      "label": "Tool: exec",
+      "summary": "The client recorded this tool invocation and the presence or absence of its response. A successful command is not a gameplay test verdict.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:09:21.028Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:09:21.903Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "875"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "design.json, mechanism-logic.md, design.md"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:09:21.028Z",
+        "eventId": null,
+        "entrySha256": "600aa4ac6ec414388d7be53e7b0a79ece1180a0130c81eed2cf433a945b82097",
+        "responseSha256": "a4b3e1d82e9c2aa993f59200148c22786d21ea89642af3df01faa0b67241b37f"
+      },
+      "afterNodeId": "resource-snapshot-e000003",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "design.json",
+          "mechanism-logic.md",
+          "design.md"
+        ],
+        "readRequested": false,
+        "editRequested": false,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-6013628bc7ef30dd",
+      "kind": "read",
+      "label": "Read request: reference-library.md, reference-catalog.json, difficulty.md",
+      "summary": "The client recorded a file-read request. The successful delivery of each named file is not independently asserted for compound commands.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:09:28.953Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:09:31.466Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "2513"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "reference-library.md, reference-catalog.json, difficulty.md, official-case.md, official-bxc-case.md, verification.md, design.json, website.md"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:09:28.953Z",
+        "eventId": null,
+        "entrySha256": "8431f158053bb77b1a36c4ed88fa1de81473632f495c8c124a0c838024622d07",
+        "responseSha256": "8ae5719206395c3ad850d8ae449abb499ee2758043eaddfa900616ca40ada60c"
+      },
+      "afterNodeId": "resource-r002",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "reference-library.md",
+          "reference-catalog.json",
+          "difficulty.md",
+          "official-case.md",
+          "official-bxc-case.md",
+          "verification.md",
+          "design.json",
+          "website.md"
+        ],
+        "readRequested": true,
+        "editRequested": false,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-464b77a2dd5399b1",
+      "kind": "read",
+      "label": "Read request: official-bxc-case.md, verification.md, build-planning-trial.cjs",
+      "summary": "The client recorded a file-read request. The successful delivery of each named file is not independently asserted for compound commands.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:09:40.563Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:09:41.053Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "490"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "official-bxc-case.md, verification.md, build-planning-trial.cjs, AGENTS.md, package.json"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:09:40.563Z",
+        "eventId": null,
+        "entrySha256": "fc7b901df9662a154d46a0cd7a9058b6fbdd273a8337fc351e906379e722446b",
+        "responseSha256": "0e715b9439facb3e1c97435d462e3b92d7f8fb7ff4d1e4a9450b88df62c2dae0"
+      },
+      "afterNodeId": "resource-r008",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "official-bxc-case.md",
+          "verification.md",
+          "build-planning-trial.cjs",
+          "AGENTS.md",
+          "package.json"
+        ],
+        "readRequested": true,
+        "editRequested": false,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-19594a2ba79ceaf8",
+      "kind": "read",
+      "label": "Read request: complex-draft-io.cjs, design-template.json",
+      "summary": "The client recorded a file-read request. The successful delivery of each named file is not independently asserted for compound commands.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:10:06.828Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:10:07.548Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "720"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "complex-draft-io.cjs, design-template.json"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:10:06.828Z",
+        "eventId": null,
+        "entrySha256": "c6e26bb9b402e9dcdbca836e6c083707dd2db0d92068c0a3ef703c3635fa4795",
+        "responseSha256": "87c023678ead4fb8976392cc9a00adcaac0e0f9f63acb3c254e16aa888fd5149"
+      },
+      "afterNodeId": "resource-r008",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "complex-draft-io.cjs",
+          "design-template.json"
+        ],
+        "readRequested": true,
+        "editRequested": false,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-92baa0d761d7853f",
+      "kind": "read",
+      "label": "Read request: SKILL.md, official-world-map.txt, official-bxc-world-map.txt",
+      "summary": "The client recorded a file-read request. The successful delivery of each named file is not independently asserted for compound commands.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:11:10.603Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:11:12.946Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "2343"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "SKILL.md, official-world-map.txt, official-bxc-world-map.txt, design-template.json, design.json, complex-runtime.cjs, skill-runtime.cjs"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:11:10.603Z",
+        "eventId": null,
+        "entrySha256": "9154d63300fa3e7d32496aa15269a249b0ae536b01d880060a18a980164a7e14",
+        "responseSha256": "2a0d1f78932d15a5f0819e885b9b6e92998af9332192eac1dfa00f62c6e022c8"
+      },
+      "afterNodeId": "resource-r008",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "SKILL.md",
+          "official-world-map.txt",
+          "official-bxc-world-map.txt",
+          "design-template.json",
+          "design.json",
+          "complex-runtime.cjs",
+          "skill-runtime.cjs"
+        ],
+        "readRequested": true,
+        "editRequested": false,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-913effbdf041634e",
+      "kind": "read",
+      "label": "Read request: design-note.json, mechanism-logic.md, official-case.md",
+      "summary": "The client recorded a file-read request. The successful delivery of each named file is not independently asserted for compound commands.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:11:28.359Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:11:29.621Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "1262"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "design-note.json, mechanism-logic.md, official-case.md, official-bxc-case.md, design.json, skill-runtime.cjs, cli.cjs, maze-play.js"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:11:28.359Z",
+        "eventId": null,
+        "entrySha256": "cd371a322a72715ec8f008d188c94eb8ed33fc3308442ea7e00a24db67b58e7d",
+        "responseSha256": "f307c05b23e786c950b9dafd2e3acc758856708f1dba07300f6e6b687d76dc56"
+      },
+      "afterNodeId": "resource-r012",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "design-note.json",
+          "mechanism-logic.md",
+          "official-case.md",
+          "official-bxc-case.md",
+          "design.json",
+          "skill-runtime.cjs",
+          "cli.cjs",
+          "maze-play.js"
+        ],
+        "readRequested": true,
+        "editRequested": true,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-742fa9a05f2e4a0f",
+      "kind": "read",
+      "label": "Read request: create-design.cjs, mechanism-logic.md, design.json",
+      "summary": "The client recorded a file-read request. The successful delivery of each named file is not independently asserted for compound commands.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:12:25.198Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:12:26.882Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "1684"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "create-design.cjs, mechanism-logic.md, design.json, build-planning-trial.cjs"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:12:25.198Z",
+        "eventId": null,
+        "entrySha256": "37cf40d0f3bc165096693f0e4831ec7758d34f04efbbea74eacaf62de38ee9a4",
+        "responseSha256": "b834468f1e627c2f70c6a0fef60d584839697924382bacb2982dff3770e1eeb7"
+      },
+      "afterNodeId": "note-n001",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "create-design.cjs",
+          "mechanism-logic.md",
+          "design.json",
+          "build-planning-trial.cjs"
+        ],
+        "readRequested": true,
+        "editRequested": true,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-c8514d33476c16ee",
+      "kind": "read",
+      "label": "Read request: design.json, verification.json, README.md",
+      "summary": "The client recorded a file-read request. The successful delivery of each named file is not independently asserted for compound commands.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:12:32.191Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:12:34.926Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "2735"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "design.json, verification.json, README.md, start-parallel-engine.cjs"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:12:32.191Z",
+        "eventId": null,
+        "entrySha256": "2769d910f8e955f9415f992386519b343b17c9954f5fabae8c7358b1addffd0e",
+        "responseSha256": "e1484435cf786bd0171a5e160b09914ed90c6547e411ee33e9d54392b895a1c3"
+      },
+      "afterNodeId": "operation-e000018",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "design.json",
+          "verification.json",
+          "README.md",
+          "start-parallel-engine.cjs"
+        ],
+        "readRequested": true,
+        "editRequested": false,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-6a386f05a9b4983b",
+      "kind": "edit",
+      "label": "Edit saved files",
+      "summary": "The client recorded a file-edit operation. Only separately saved snapshots establish the map version.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:12:42.585Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:12:43.309Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "724"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "play.js, play-core.js, play-gameplay.js, play-movement.js, process-previews.cjs, start-parallel-engine.cjs, engine-server.json"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:12:42.585Z",
+        "eventId": null,
+        "entrySha256": "5f32048529e8bb5cd3ad6de86b94db5e785c587ed6f78f5a5060e2abb01531bf",
+        "responseSha256": "817139355dfded1e7f4bb92e2bcfe7993d77949561618a547941df15c791e75e"
+      },
+      "afterNodeId": "test-t001",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "play.js",
+          "play-core.js",
+          "play-gameplay.js",
+          "play-movement.js",
+          "process-previews.cjs",
+          "start-parallel-engine.cjs",
+          "engine-server.json"
+        ],
+        "readRequested": false,
+        "editRequested": true,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-5a711def5e693983",
+      "kind": "read",
+      "label": "Read request: play.js, process-previews.cjs, public-process.cjs",
+      "summary": "The client recorded a file-read request. The successful delivery of each named file is not independently asserted for compound commands.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:12:54.001Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:12:54.753Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "752"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "play.js, process-previews.cjs, public-process.cjs, engine-server.json, test-site-browser.cjs, cli.cjs, play-core.js"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:12:54.001Z",
+        "eventId": null,
+        "entrySha256": "175b66917cbbe5ec104476c75f3a4207fe4a6cf4865f64208b7eb58c1cf1c37c",
+        "responseSha256": "3e9d14d174f905afbe35753ddfcbca10347a217227b259c5ec70caefd5f3aa01"
+      },
+      "afterNodeId": "test-t001",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "play.js",
+          "process-previews.cjs",
+          "public-process.cjs",
+          "engine-server.json",
+          "test-site-browser.cjs",
+          "cli.cjs",
+          "play-core.js"
+        ],
+        "readRequested": true,
+        "editRequested": false,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-1df7bd17b914e1b7",
+      "kind": "read",
+      "label": "Read request: play-gameplay.js, play.js, play-movement.js",
+      "summary": "The client recorded a file-read request. The successful delivery of each named file is not independently asserted for compound commands.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:13:07.843Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:13:08.662Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "819"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "play-gameplay.js, play.js, play-movement.js"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:13:07.843Z",
+        "eventId": null,
+        "entrySha256": "d6bad17c6ba681bf232ccbc73c97effc6806ee0587dc72a23b2470f9c4905ac4",
+        "responseSha256": "e8f5fa8e4739646ce7b5b3737b024025d94747796331bca42d841557612a9385"
+      },
+      "afterNodeId": "test-t001",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "play-gameplay.js",
+          "play.js",
+          "play-movement.js"
+        ],
+        "readRequested": true,
+        "editRequested": false,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-582cd6de1adec7c1",
+      "kind": "read",
+      "label": "Read request: browser-playtest.cjs, engine-server.json, replay.json",
+      "summary": "The client recorded a file-read request. The successful delivery of each named file is not independently asserted for compound commands.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:13:45.536Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:13:55.809Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "10273"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "browser-playtest.cjs, engine-server.json, replay.json, verification.json, design.json, manifest.json"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:13:45.536Z",
+        "eventId": null,
+        "entrySha256": "2ab43383d82b05698360e4e83c292855db79e2fdf7acbd8ae789cf9a61f3d537",
+        "responseSha256": "59f8f87b3317e04a6f6280946d2e57d05f093a5c2e214ecc659a2db79b90252d"
+      },
+      "afterNodeId": "test-t001",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "browser-playtest.cjs",
+          "engine-server.json",
+          "replay.json",
+          "verification.json",
+          "design.json",
+          "manifest.json"
+        ],
+        "readRequested": true,
+        "editRequested": true,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-9925ced5202a861c",
+      "kind": "read",
+      "label": "Read request: publish-serialized.cjs",
+      "summary": "The client recorded a file-read request. The successful delivery of each named file is not independently asserted for compound commands.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:14:02.426Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:14:03.245Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "819"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "publish-serialized.cjs"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:14:02.426Z",
+        "eventId": null,
+        "entrySha256": "d1e39be13479d6480dc9647afffe5f866db86427d963040f0992ac15827c1e7e",
+        "responseSha256": "af7c45437532834df65695c7f640be2d9c30a2093880a05c85a77f798754b9b8"
+      },
+      "afterNodeId": "test-t002",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "publish-serialized.cjs"
+        ],
+        "readRequested": true,
+        "editRequested": false,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-afe3cafaa63f9999",
+      "kind": "read",
+      "label": "Read request: website.md, verification.json",
+      "summary": "The client recorded a file-read request. The successful delivery of each named file is not independently asserted for compound commands.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:14:11.287Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:14:12.135Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "848"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "website.md, verification.json"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:14:11.287Z",
+        "eventId": null,
+        "entrySha256": "28d13002c4a805f23f977f3b267cd3593123f07e54b3feba0a0c143c7283db4f",
+        "responseSha256": "5cb96ee87c3ae3b99b8079f9868b2cb2df8117b12f963b58a10c4872c701165a"
+      },
+      "afterNodeId": "test-t002",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "website.md",
+          "verification.json"
+        ],
+        "readRequested": true,
+        "editRequested": false,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-eccd4f428ef1d731",
+      "kind": "read",
+      "label": "Read request: engine-server.json, start-parallel-engine.cjs, design.json",
+      "summary": "The client recorded a file-read request. The successful delivery of each named file is not independently asserted for compound commands.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:14:31.406Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:14:33.096Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "1690"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "engine-server.json, start-parallel-engine.cjs, design.json, replay.json"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:14:31.406Z",
+        "eventId": null,
+        "entrySha256": "336c837b32044596a2af096b4ccef30721f972e017a033d40f534ae0dfe1e32e",
+        "responseSha256": "777e5ab542be31e74877a1851a2c349da2ddc43dc652d68e46d928a3bd8c2dd1"
+      },
+      "afterNodeId": "test-t002",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "engine-server.json",
+          "start-parallel-engine.cjs",
+          "design.json",
+          "replay.json"
+        ],
+        "readRequested": true,
+        "editRequested": false,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-1f1f93072f177c69",
+      "kind": "edit",
+      "label": "Edit saved files",
+      "summary": "The client recorded a file-edit operation. Only separately saved snapshots establish the map version.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:15:24.708Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:15:26.436Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "1728"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "completion-note.json, mechanism-logic.md, official-case.md, official-bxc-case.md, README.md, design.json, level_AxA.txt, manifest.json, verification.json, replay.json, token-usage.json, token-usage.md, publication-result.json"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:15:24.708Z",
+        "eventId": null,
+        "entrySha256": "429a3683e475fab1e853b8fd3aec1259cf038668ad9f092e18d2959d3d6a65e2",
+        "responseSha256": "ebec6f1449427328ec4a7c4a751deccacd6f394d3ab44828e135f1ce98923e9d"
+      },
+      "afterNodeId": "replay-e000026",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "completion-note.json",
+          "mechanism-logic.md",
+          "official-case.md",
+          "official-bxc-case.md",
+          "README.md",
+          "design.json",
+          "level_AxA.txt",
+          "manifest.json",
+          "verification.json",
+          "replay.json",
+          "token-usage.json",
+          "token-usage.md",
+          "publication-result.json"
+        ],
+        "readRequested": false,
+        "editRequested": true,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-137e42191fd64894",
+      "kind": "read",
+      "label": "Read request: token-usage.json, token-usage.md, publish-serialized.cjs",
+      "summary": "The client recorded a file-read request. The successful delivery of each named file is not independently asserted for compound commands.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:15:32.894Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:15:43.145Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "10251"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "token-usage.json, token-usage.md, publish-serialized.cjs, design.json, manifest.json, verification.json"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:15:32.894Z",
+        "eventId": null,
+        "entrySha256": "7a9fc150f2e26f45ec699b1b168699ff20f03eb0cfbe73d541b8d7bb8c29ad37",
+        "responseSha256": "a565fbaa10076515d336a2303f04e7f81b0c862f09bee2cecd7e91c2063c35f4"
+      },
+      "afterNodeId": "event-e000029",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "token-usage.json",
+          "token-usage.md",
+          "publish-serialized.cjs",
+          "design.json",
+          "manifest.json",
+          "verification.json"
+        ],
+        "readRequested": true,
+        "editRequested": false,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-30dffcf60b9fabef",
+      "kind": "read",
+      "label": "Read request: publication-result.json, app.js, publish-site.cjs",
+      "summary": "The client recorded a file-read request. The successful delivery of each named file is not independently asserted for compound commands.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:15:53.434Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:15:59.068Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "5634"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "publication-result.json, app.js, publish-site.cjs, site-content.cjs"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:15:53.434Z",
+        "eventId": null,
+        "entrySha256": "61bbd61c438a9d4c6e050c4839986699352c13d404f8c84770505d60e87c0b44",
+        "responseSha256": "5c0b74b7b619b560a6c21ac01c9b48f7732a8165cc2ebf62d2c38bb0fa726140"
+      },
+      "afterNodeId": "event-e000029",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "publication-result.json",
+          "app.js",
+          "publish-site.cjs",
+          "site-content.cjs"
+        ],
+        "readRequested": true,
+        "editRequested": false,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-3ce86bdabcc958f6",
+      "kind": "read",
+      "label": "Read request: app.js, process.js",
+      "summary": "The client recorded a file-read request. The successful delivery of each named file is not independently asserted for compound commands.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:16:08.936Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:16:14.496Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "5560"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "app.js, process.js"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:16:08.936Z",
+        "eventId": null,
+        "entrySha256": "fc0b56e0302af154cd3783567383a6c4fa30e3beeb50f170aa357243e959fa68",
+        "responseSha256": "aad4527f4a1b247bc0bda99634badbc667282ee654d6a543bce47d5145be7fd2"
+      },
+      "afterNodeId": "event-e000029",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "app.js",
+          "process.js"
+        ],
+        "readRequested": true,
+        "editRequested": false,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-9bb8fef81a319bff",
+      "kind": "tool",
+      "label": "Tool: exec",
+      "summary": "The client recorded this tool invocation and the presence or absence of its response. A successful command is not a gameplay test verdict.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:16:21.650Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:16:27.172Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "5522"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "ui.js, process.js"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:16:21.650Z",
+        "eventId": null,
+        "entrySha256": "71ec088d18ac76bea3d29bf1ba17dfbdbe19d28d4958202643e4a5f6fb656d2c",
+        "responseSha256": "f220672fdf4938c130c0cdd04ae02ade2a21397c2ce101a60fcb4a1ab70a1a5f"
+      },
+      "afterNodeId": "event-e000029",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "ui.js",
+          "process.js"
+        ],
+        "readRequested": false,
+        "editRequested": false,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-b1174d10a2a5e42a",
+      "kind": "read",
+      "label": "Read request: player.js, process.js",
+      "summary": "The client recorded a file-read request. The successful delivery of each named file is not independently asserted for compound commands.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:16:33.703Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:16:34.180Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "477"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "player.js, process.js"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:16:33.703Z",
+        "eventId": null,
+        "entrySha256": "2738425ee7d99411741b5419cfdc1822366797417ecc76f0a48d70043ca6a325",
+        "responseSha256": "a05eb4203e5cb77fe7d1b0ac3055bad56a642f778a4c74e18e1ab95e821bd996"
+      },
+      "afterNodeId": "event-e000029",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "player.js",
+          "process.js"
+        ],
+        "readRequested": true,
+        "editRequested": false,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-0973c5285e4f99e4",
+      "kind": "read",
+      "label": "Read request: catalog.json",
+      "summary": "The client recorded a file-read request. The successful delivery of each named file is not independently asserted for compound commands.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:16:41.183Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:16:42.162Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "979"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "catalog.json"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:16:41.183Z",
+        "eventId": null,
+        "entrySha256": "b2eeda94644209fcef63ec758c6a178152bf60dadfe708471862077be623d447",
+        "responseSha256": "86ddb66db4d2e8b9d624a2b771517120bfcd10955f7320ceaf5ba9781fe4248c"
+      },
+      "afterNodeId": "event-e000029",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "catalog.json"
+        ],
+        "readRequested": true,
+        "editRequested": false,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-2bd4122e76487fbd",
+      "kind": "read",
+      "label": "Read request: catalog.json",
+      "summary": "The client recorded a file-read request. The successful delivery of each named file is not independently asserted for compound commands.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:16:47.132Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:16:47.710Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "578"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "catalog.json"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:16:47.132Z",
+        "eventId": null,
+        "entrySha256": "761a1de768a18086278ab98e53193898e180a3e3ecbba1d8f9c87391328737b7",
+        "responseSha256": "29b1e11ac6b82f29200b0da83d5bab7abf1bd23bbe324f6674ee23325c478d61"
+      },
+      "afterNodeId": "event-e000029",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "catalog.json"
+        ],
+        "readRequested": true,
+        "editRequested": false,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    },
+    {
+      "id": "recovered-client-b2d76d0c105c9978",
+      "kind": "edit",
+      "label": "Edit saved files",
+      "summary": "The client recorded a file-edit operation. Only separately saved snapshots establish the map version.",
+      "status": "neutral",
+      "facts": [
+        {
+          "label": "Tool",
+          "value": "exec"
+        },
+        {
+          "label": "Requested at",
+          "value": "2026-10-26T05:17:18.788Z"
+        },
+        {
+          "label": "Response at",
+          "value": "2026-10-26T05:17:18.893Z"
+        },
+        {
+          "label": "Tool round-trip (ms)",
+          "value": "105"
+        },
+        {
+          "label": "Process exit code",
+          "value": "Not provided"
+        },
+        {
+          "label": "Mentioned files",
+          "value": "result.json, design.json, manifest.json, level_AxA.txt, verification.json, replay.json, token-usage.json, token-usage.md, publication-result.json"
+        }
+      ],
+      "source": {
+        "file": "bound-client-session.jsonl",
+        "sha256": "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1",
+        "recordedAt": "2026-10-26T05:17:18.788Z",
+        "eventId": null,
+        "entrySha256": "4191df5f0c61b09f648f5cc985cee733b0d7409cba51afc9258f3f50a5a25a4e",
+        "responseSha256": "e806ed5dfad6241a47adba9fcdab38afe65644cadbe18473a303b2407da65bbb"
+      },
+      "afterNodeId": "event-e000029",
+      "projection": {
+        "tool": "exec",
+        "files": [
+          "result.json",
+          "design.json",
+          "manifest.json",
+          "level_AxA.txt",
+          "verification.json",
+          "replay.json",
+          "token-usage.json",
+          "token-usage.md",
+          "publication-result.json"
+        ],
+        "readRequested": false,
+        "editRequested": true,
+        "responseRecorded": true,
+        "exitCode": null
+      }
+    }
+  ],
+  "audit": {
+    "primaryEvents": 29,
+    "primaryRepresented": 29,
+    "directSkillReads": 1,
+    "archivedSkillSnapshots": 1,
+    "unrecoverable": [
+      "Uninstrumented reads, overwritten transient drafts, model-internal processing and complete per-stage time/token attribution cannot be recovered from these files."
+    ],
+    "client": {
+      "status": "Bound client tool calls recovered",
+      "toolCalls": 27,
+      "skillReadRequests": 3,
+      "sources": [
+        "d5b2d9478fae84048e697a704250717a9e95afa2ab1313f5d8713b49130a99d1"
+      ],
+      "scope": "Launch-to-exit tool records only. Messages, internal reasoning, raw command arguments and output bodies are excluded. Round-trip time includes tool transport and waiting; it is not model thinking time."
+    }
+  }
+}
