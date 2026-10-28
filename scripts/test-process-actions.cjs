@@ -17,7 +17,7 @@ async function main(){
     for(const a of view.actions){assert(a.evidenceIds.includes(a.id));for(const id of a.evidenceIds)assert(data.nodes.some(n=>n.id===id));}
     for(const c of data.candidates){const a=view.actions.find(a=>a.id===c.graphNodeId);assert.equal(a.version.playable,!!c.preview?.levelPath);versions++;if(a.version.playable)playable++;}
     for(const op of data.operations){if(!op.resultNodeId)continue;const result=view.evidence.find(e=>e.id===op.resultNodeId),execution=view.evidence.find(e=>e.id===op.graphNodeId);if(result?.actionId)assert.equal(execution.actionId,result.actionId);}
-    assert.equal(view.stats.visualReviews,0,'Existing screenshots do not establish an explicit visual review');
+    assert.equal(view.stats.visualReviews,data.nodes.filter(n=>n.eventType==='visual.review').length,'Only explicit review events establish visual review');
     if(entry.id.endsWith('46b924adfc38')){
       assert.equal(view.evidence.length,424);assert.equal(view.stats.clientToolCalls,333);assert(view.actions.length<50);
       assert.equal(view.stats.cellRevisions,1);assert.equal(view.stats.savedVersions,4);
@@ -31,7 +31,7 @@ async function main(){
     if(entry.id.endsWith('0e24cc0f2923')){assert.equal(view.stats.playtests,1);assert.equal(view.stats.verifications,1);}
     cases.push({entry,data,view});
   }
-  assert.equal(cases.length,18);assert.equal(versions,46);assert.equal(playable,45);
+  assert(cases.length>=18);assert(versions>=46);assert(playable>=45,'Existing playable snapshots remain available as new builds are published');
   // Independent tests remain separate even when they test the identical map.
   const synthetic={caseId:'synthetic',nodes:[{id:'t1',kind:'test',order:1},{id:'t2',kind:'test',order:2},{id:'v',kind:'record',eventType:'visual.review',order:3}],tests:[{graphNodeId:'t1',candidateId:'same',label:'verify'},{graphNodeId:'t2',candidateId:'same',label:'verify'}]};
   assert.equal(normalizeProcess(synthetic).stats.verifications,2);assert.equal(normalizeProcess(synthetic).stats.visualReviews,1);
