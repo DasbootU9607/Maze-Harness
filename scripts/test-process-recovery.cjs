@@ -49,8 +49,8 @@ async function main() {
     page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url());});
     for(const [id,node]of examples) {
       await page.goto(origin+'process.html?'+new URLSearchParams({case:id,node}));
-      await page.waitForFunction(()=>document.getElementById('record-summary')?.textContent.includes('recovered evidence records'));
-      assert((await page.locator('#record-summary').textContent()).includes('recovered evidence records'));
+      await page.waitForFunction(()=>document.getElementById('record-summary')?.textContent.includes('across published and recovered sources'));
+      assert((await page.locator('#record-summary').textContent()).includes('evidence records'));
       assert(await page.locator('#process-data').getAttribute('download'));
       if(await page.locator('video').count()) {
         await page.locator('video').evaluate(v=>{v.preload='metadata';v.load();});

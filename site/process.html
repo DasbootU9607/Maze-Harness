@@ -8,9 +8,9 @@
   <title>Build process - Maze Harness</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="./process.css?v=6348d739c6db">
+  <link rel="stylesheet" href="./process.css?v=69318fdc4d00">
   <link rel="stylesheet" href="./process-orbit.css">
-  <script type="module" src="./process.js?v=4b90a75a274e"></script>
+  <script type="module" src="./process.js?v=a1e2d9224850"></script>
 </head>
 <body data-page="process">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -19,18 +19,23 @@
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="./index.html">Library</a><span>/</span><a id="skill-link" href="./index.html#skills">Skill</a><span>/</span>Build process</nav>
     <header class="process-intro">
       <div><h1 id="process-title">From a skill to a room.</h1><p id="process-summary">Loading the recorded production process...</p></div>
-      <div class="process-actions"><a id="play-room" class="button primary" href="./player.html">Play final room <span aria-hidden="true">&#8599;</span></a><a id="process-data" class="text-link" href="#" download>Public record &#8595;</a></div>
+      <div class="process-actions"><a id="play-room" class="button primary" href="./player.html">Play final room <span aria-hidden="true">&#8599;</span></a><a id="process-data" class="text-link" href="#" download>Evidence JSON &#8595;</a><a id="action-data" class="text-link" href="#" download>Actions JSON &#8595;</a></div>
     </header>
     <div class="process-record-line"><span id="record-mode" class="record-mode">SAVED RECORD</span><span id="record-summary"></span></div>
     <section id="build-usage" class="build-usage" aria-label="Recorded model usage and build time"></section>
+    <details class="action-overview"><summary>Recorded activity breakdown</summary><dl id="action-stats" class="action-stats"></dl><p class="projection-note">Counts describe saved evidence, not complete activity. Missing activity is unknown. Tool calls, file reads, map versions and checks use separate units. Usage and build time retain their original measurement interval; additional evidence does not extend that interval.</p></details>
     <div class="process-workspace">
       <aside class="timeline-column" aria-label="Recorded production timeline">
+        <nav id="process-view-tabs" class="process-view-tabs" aria-label="Process view"></nav>
         <div id="process-timeline" class="process-timeline"><p class="process-empty">Loading the build timeline...</p></div>
+        <section id="process-versions" class="process-browser" hidden></section>
+        <section id="process-evidence-list" class="process-browser" hidden></section>
       </aside>
       <article id="operation-detail" class="operation-detail" tabindex="-1" aria-label="Selected operation">
         <div class="operation-heading-line"><div id="operation-meta" class="operation-meta"></div><nav class="operation-navigation" aria-label="Adjacent recorded operations"><button id="previous-operation" type="button" aria-label="Previous operation">&#8592;</button><button id="next-operation" type="button" aria-label="Next operation">&#8594;</button></nav></div>
         <h2 id="operation-title">Choose an operation</h2>
         <p id="operation-summary" class="operation-summary"></p>
+        <p id="action-association" class="projection-note action-association"></p>
         <section id="preview-shell" class="preview-shell" aria-label="Map preview" hidden>
           <img id="preview-image" class="preview-image" alt="" hidden>
           <p id="preview-placeholder" class="preview-placeholder" hidden>Map preview unavailable</p>
@@ -39,6 +44,7 @@
         <section id="source-overview" class="source-overview" hidden></section>
         <section id="operation-explanation" class="operation-explanation"></section>
         <section id="operation-checks" class="operation-checks" hidden></section>
+        <section id="action-evidence" class="action-evidence" aria-label="Associated evidence"></section>
         <section id="operation-relations" class="operation-relations" hidden></section>
         <details id="operation-evidence" class="operation-evidence"><summary>Record details and fingerprints</summary><pre id="operation-evidence-body"></pre></details>
       </article>

@@ -288,7 +288,7 @@ export function createOrbitTimeline({ container, getData, onSelect, onDetails })
   const data = getData?.() || {}, seen = new Set();
   state.all = (Array.isArray(data.events) ? data.events : []).filter(event => event && typeof event.id === 'string' && !seen.has(event.id) && seen.add(event.id));
   const keyCount = state.all.filter(event => event.isKey).length;
-  keysOption.textContent = `Key events (${keyCount})`; keysOption.disabled = !keyCount; allOption.textContent = `All records (${state.all.length})`;
+  keysOption.textContent = `Key actions (${keyCount})`; keysOption.disabled = !keyCount; allOption.textContent = `All actions (${state.all.length})`;
   const initial = state.all.find(event => event.id === data.selectedId);
   measure(); chooseMode(initial && !initial.isKey ? 'all' : 'keys', data.selectedId, false);
   return { select };

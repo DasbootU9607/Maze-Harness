@@ -1,12 +1,14 @@
 import {buildLabel, effortLabel, attributionLabel, buildDate, clientLabel, duration, tokenCount} from './build-data.js';
 import {downloadBuilds} from './build-downloads.js';
 import { loadCatalog, shell, playUrl, showError } from './ui.js';
-import { createOrbitTimeline } from './process-orbit.js';
+import { createOrbitTimeline } from './process-orbit.js?v=a8bdc9e954a1';
 import { loadHistory } from './process-history.js';
+import { normalizeProcess, actionNames } from './process-actions.js?v=aa0489e2c6cb';
+import { createActionView } from './process-action-view.js?v=b7eb001e3929';
 
 const $ = id => document.getElementById(id);
 const state = { data: null, catalog: null, entry: null, skill: null, nodes: [], selectedId: null, candidateId: null, previewCandidateId: null, previewKey: null, previewMode: null, previewUrl: null, previewLabel: null, expanded: false, returnFocus: null, previousOverflow: '', keyNodeIds: new Set() };
-let orbitTimeline;
+let orbitTimeline, actionView;
 const kindNames = { resource: 'READ', candidate: 'VERSION', test: 'TEST', note: 'DESIGN NOTE', operation: 'OPERATION', replay: 'REPLAY', delivery: 'DELIVERY', record: 'RECORD' };
 const statusNames = { passed: 'Passed', failed: 'Failed', unknown: 'Unknown', error: 'Error' };
 const resourceNames = { 'SKILL.md': 'Read skill instructions', 'mechanism-logic.md': 'Read extracted mechanism', 'planning-depth.md': 'Read planning guidance', 'complex-validation.md': 'Read verification guidance', 'design-template.json': 'Read design template', 'complex-runtime.cjs': 'Inspect mechanism runtime', 'verify-complex.cjs': 'Inspect the verifier', 'design.md': 'Read design conventions', 'browser-check.cjs': 'Inspect browser replay checks' };
@@ -15,7 +17,8 @@ function el(tag, cls, value) { const node = document.createElement(tag); if (cls
 function clear(node) { node.replaceChildren(); return node; }
 function text(value) { return typeof value === 'string' ? value : value === undefined || value === null ? '' : JSON.stringify(value, null, 2); }
 function short(value, max = 150) { const s = text(value); return s.length > max ? s.slice(0, max - 3) + '...' : s; }
-function byId(id) { return state.nodes.find(node => node.id === id); }
+function byId(id) { return state.rawNodes?.find(node => node.id === id); }
+function actionFor(node) { return state.actionById?.get(node.id); }
 function explanationFor(node) { return state.data.explanations?.find(row => row.nodeId === node.id); }
 function recordFor(node) {
   const key = { candidate: 'candidates', test: 'tests', note: 'notes', resource: 'resources', operation: 'operations', replay: 'replays', record: 'records' }[node.kind];
@@ -42,6 +45,7 @@ function nodeTitle(node) {
 }
 function nodeCategory(node) { const record = recordFor(node); if (node.kind === 'record') return ({ 'command.started': 'START', 'command.completed': 'FINISH', 'artifact.saved': 'ARTIFACT', 'build.saved': 'BUILD FILES', 'run.created': 'SESSION', 'run.finished': 'SESSION', 'collector.started': 'CAPTURE', 'capture.gap': 'CAPTURE GAP' })[node.eventType] || 'RECORD'; if (node.kind === 'resource' && (record?.delivery === 'snapshot' || record?.origin === 'historical')) return 'SOURCE SNAPSHOT'; return record?.category === 'diagnostic' ? 'DIAGNOSTIC' : kindNames[node.kind] || String(node.kind).toUpperCase(); }
 function nodeAction(node) {
+  if(actionFor(node)) return actionFor(node).label;
   if(node.recoveryKind) return node.label;
   const record = recordFor(node), label = node.label || '', goal = record?.goal || label;
   if (node.kind === 'record') return record?.label || label;
@@ -101,6 +105,7 @@ function diffText(candidate) {
   return changed || added || removed ? `${changed} changed / ${added} added / ${removed} removed vs ${parent}` : `Cells unchanged from ${parent}; declarations may differ`;
 }
 function orbitSummary(node) {
+  if(actionFor(node)) return actionFor(node).summary;
   const record = recordFor(node), candidate = candidateFor(node);
   if (node.kind === 'resource') return `${record?.basename || node.label} · ${record?.delivery === 'snapshot' || record?.origin === 'historical' ? 'Saved source snapshot' : 'Recorded file read'}`;
   if (node.kind === 'candidate' && candidate) return diffText(candidate);
@@ -120,9 +125,9 @@ function installOrbitTimeline() {
       title: state.data.title || state.entry.title,
       selectedId: state.selectedId,
       events: state.nodes.map(node => ({
-        id: node.id, kind: node.kind, category: nodeCategory(node), label: nodeAction(node),
+        id: node.id, kind: node.kind, category: actionNames[actionFor(node)?.type]?.toUpperCase() || nodeCategory(node), label: short(nodeAction(node), 75),
         summary: short(orbitSummary(node).replace(/\s+/g, ' '), 190),
-        ordinal: node.order ?? node.sourceIndex + 1, status: node.status || 'neutral',
+        ordinal: actionFor(node)?.ordinal ?? node.order, status: node.status || 'neutral',
         statusLabel: explanationFor(node)?.badge || (node.status === 'failed' && (recordFor(node)?.category === 'diagnostic' || node.eventType === 'command.completed') ? 'Process failed' : statusNames[node.status] || ''),
         isKey: state.keyNodeIds.has(node.id)
       }))
@@ -136,7 +141,10 @@ function installOrbitTimeline() {
 }
 function classifyTimeline() {
   const keyIds = new Set(), seenReadKinds = new Set(), formalTests = new Map(); let firstNote = false;
+  const seenActions = new Set();
   for (const node of state.nodes) {
+    const type=actionFor(node)?.type;
+    if(type&&!seenActions.has(type)){keyIds.add(node.id);seenActions.add(type);}
     const record = recordFor(node);
     if (node.recoveryKind && ['candidate', 'playtest'].includes(node.recoveryKind)) keyIds.add(node.id);
     if(node.recoveryKind==='read') {
@@ -175,11 +183,14 @@ async function start() {
   if (data.schemaVersion !== 1 || !Array.isArray(data.nodes) || !Array.isArray(data.edges)) throw new Error('This build record uses an unsupported format.');
   state.data = { ...data, candidates: data.candidates || [], tests: data.tests || [], notes: data.notes || [], resources: data.resources || [], operations: data.operations || [], replays: data.replays || [], records: data.records || [] };
   state.catalog = catalog; state.entry = entry; state.skill = catalog.skills.find(skill => skill.id === data.skill || skill.id === entry.skill);
-  state.nodes = data.nodes.map((node, index) => ({ ...node, sourceIndex: index })).sort((a, b) => (Number.isFinite(a.order) ? a.order : a.sourceIndex) - (Number.isFinite(b.order) ? b.order : b.sourceIndex));
+  state.rawNodes = data.nodes.map((node, index) => ({ ...node, sourceIndex: index })).sort((a, b) => (Number.isFinite(a.order) ? a.order : a.sourceIndex) - (Number.isFinite(b.order) ? b.order : b.sourceIndex));
+  state.projection=normalizeProcess(state.data);
+  state.actionById=new Map(state.projection.actions.map(a=>[a.id,a]));
+  state.evidenceById=new Map(state.projection.evidence.map(e=>[e.id,e]));
+  state.nodes=state.projection.actions.map(a=>byId(a.sourceNodeId));
   document.title = `${entry.title} - Build process - Maze Harness`;
   $('process-title').textContent = data.title || entry.title;
-  $('process-summary').textContent = data.summary || 'Follow the recorded reads, revisions, checks, and replays behind this room.';
-  if(data.recovery) $('process-summary').textContent = 'Saved evidence from the published run, earlier sessions and client tool logs. Unrecorded activity remains unknown.';
+  $('process-summary').textContent = 'Recorded file reads, design notes, saved versions, solver searches, tests and playtests. Inspect the evidence behind each action.';
   $('play-room').href = playUrl(entry); $('process-data').href = './' + entry.process.data;
   if (data.recovery) {
     const download = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
@@ -188,9 +199,9 @@ async function start() {
   }
   $('skill-link').textContent = state.skill?.name || 'Skill library'; $('skill-link').href = state.skill ? './skill.html?id=' + encodeURIComponent(state.skill.id) : './index.html#skills';
   const mode = data.coverage?.mode || data.mode || 'unknown'; $('record-mode').textContent = mode === 'observed' ? 'OBSERVED RECORD' : mode === 'historical' ? 'HISTORICAL IMPORT' : 'PARTIAL RECORD'; $('record-mode').classList.toggle('historical', mode === 'historical');
-  const coverage = data.coverage?.events;
-  $('record-summary').textContent = `${state.data.candidates.length} versions / ${state.data.resources.length} recorded references / ${state.data.tests.length} test records${coverage ? ` / ${coverage.representedCount} of ${coverage.sourceCount} source records` : ''}`;
-  if(data.recovery) $('record-summary').textContent += ` in the selected run · ${data.recovery.sessions.reduce((n,s)=>n+s.document.coverage.events.sourceCount,0)} earlier-session events · ${data.recovery.items.length} recovered evidence records`;
+  const counts=state.projection.stats;
+  $('record-summary').textContent = `${counts.actions} build actions · ${counts.savedVersions} saved map versions · ${counts.sourceRecords} evidence records${data.recovery?' across published and recovered sources':''}`;
+  actionView=createActionView({projection:state.projection,data:state.data,getNode:byId,selectNode});
   renderUsage(data.usage);
   classifyTimeline();
   $('coverage-description').textContent = data.coverage?.description || 'This view contains saved operations, references, maps, test outcomes, and public author explanations. It does not reconstruct unrecorded activity.';
@@ -207,9 +218,10 @@ async function start() {
 function selectNode(id, { initial = false, focus = true, fromTimeline = false } = {}) {
   const node = byId(id); if (!node) return;
   if (state.expanded) closePreview({ restoreFocus: false });
-  if (state.selectedId !== id) disposePreview(); state.selectedId = id;
-  const record = recordFor(node), candidate = candidateFor(node), index = state.nodes.indexOf(node);
-  $('previous-operation').disabled = index === 0; $('next-operation').disabled = index === state.nodes.length - 1;
+  if (state.selectedSourceId !== id) disposePreview(); state.selectedSourceId = id;
+  state.selectedId=state.evidenceById.get(id)?.actionId || id;
+  const record = recordFor(node), candidate = candidateFor(node), index = state.nodes.findIndex(n=>n.id===state.selectedId);
+  $('previous-operation').disabled = index <= 0; $('next-operation').disabled = index < 0 || index === state.nodes.length - 1;
   const meta = clear($('operation-meta')); meta.append(el('span', '', nodeCategory(node)), el('span', '', node.kind === 'delivery' ? '/ PUBLICATION BINDING' : `/ RECORD ${node.order ?? index + 1}`));
   if (candidate && node.kind !== 'candidate') meta.append(el('span', '', `/ ${candidate.id}`));
   if (statusNames[node.status] && node.kind !== 'test') meta.append(el('span', `status-label ${node.status}`, statusNames[node.status]));
@@ -224,12 +236,14 @@ function selectNode(id, { initial = false, focus = true, fromTimeline = false } 
   else if (node.kind === 'delivery') summary = node.summary || '';
   $('operation-summary').textContent = summary; $('operation-summary').hidden = !summary;
   if(node.recoveryKind === 'candidate') { $('operation-summary').textContent=node.summary; $('operation-summary').hidden=false; }
+  if(actionFor(node)?.version){$('operation-summary').textContent=actionFor(node).summary;$('operation-summary').hidden=false;}
   renderPreview(node, record, candidate); renderSources(node, record); renderExplanation(node, record, candidate); renderChecks(node, record); renderRelations(node);
+  actionView?.select(id);
   const safeRecord = record ? Object.fromEntries(Object.entries(record).filter(([key]) => !['cells', 'diff'].includes(key))) : null;
   $('operation-evidence-body').textContent = JSON.stringify({ node: Object.fromEntries(Object.entries(node).filter(([key]) => key !== 'sourceIndex')), ...(safeRecord ? { record: safeRecord } : {}) }, null, 2); $('operation-evidence').open = false;
   const url = new URL(location.href); url.searchParams.set('node', node.id); if (candidate) url.searchParams.set('candidate', candidate.id); else url.searchParams.delete('candidate'); history.replaceState(null, '', url);
   if (!initial) $('operation-detail').scrollTop = 0;
-  if (!fromTimeline) orbitTimeline?.select(id, { focus });
+  if (!fromTimeline && index>=0) orbitTimeline?.select(state.selectedId, { focus });
 }
 
 function exactReplayFor(node, record, candidate) {

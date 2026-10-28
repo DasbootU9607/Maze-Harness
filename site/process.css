@@ -6,6 +6,45 @@
 .process-actions{display:flex;gap:17px;align-items:center;flex:none}
 .process-actions .button{font-size:14px;gap:18px;padding:11px 15px}
 .process-actions>.text-link{font-size:14px;color:#606060;white-space:nowrap}
+.process-actions{flex-wrap:wrap;justify-content:flex-end}
+.action-overview{margin:0 0 18px;padding:14px 0;border-top:1px solid #e7e7e7;border-bottom:1px solid #e7e7e7;font-size:15px}
+.action-overview>summary{cursor:pointer;color:#444}
+.action-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin:24px 0}
+.action-stat dt{color:#666;font-size:14px}
+.action-stat dd{font-size:22px;font-weight:500;margin:6px 0;line-height:1.4}
+.action-stat>span{display:block;font-size:13px;color:#777}
+.projection-note{font-size:14px!important;line-height:1.7!important;color:#666!important;overflow-wrap:anywhere}
+.process-view-tabs{display:flex;flex-wrap:wrap;gap:5px;padding:13px 16px;border-bottom:1px solid #e8e8e8;flex:none}
+.process-view-tabs button{padding:8px 12px;border-radius:6px;color:#666;font-size:14px}
+.process-view-tabs button[aria-pressed=true]{color:#171717;background:#eee}
+.process-browser{overflow:auto;flex:1;min-height:0;padding:24px;scrollbar-width:thin}
+.process-browser h2{font-size:23px;margin:0 0 12px}
+.process-timeline[hidden],.process-browser[hidden]{display:none}
+.version-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:24px}
+.version-option{border:1px solid #ddd;border-radius:10px;overflow:hidden;text-align:left;display:flex;flex-direction:column;gap:10px;padding:0 0 16px}
+.version-option img{display:block;width:100%;aspect-ratio:1.45;object-fit:cover;background:#17191c}
+.version-option>strong,.version-option>span,.version-option>small{margin:0 16px}
+.version-option>strong{font-size:16px;margin-top:12px;font-weight:500}
+.version-option>span,.version-option>small{font-size:13px;line-height:1.6;color:#666}
+.version-option>small{margin-top:auto;padding-top:5px;color:#222}
+.version-option[aria-pressed=true]{outline:2px solid #222;outline-offset:1px}
+.evidence-search{display:flex;gap:10px;margin:22px 0 14px}
+.evidence-search input{min-width:0;flex:1}
+.evidence-search input,.evidence-search select{border:1px solid #d8d8d8;border-radius:7px;padding:10px;background:#fff;color:#333;font:14px var(--sans, sans-serif)}
+.evidence-count{font-size:13px;color:#777;margin:10px 0}
+.evidence-option{display:block;text-align:left;width:100%;padding:13px 0;border-bottom:1px solid #e8e8e8;font-size:15px;line-height:1.6;overflow-wrap:anywhere}
+.evidence-option small{display:block;font-size:12px;color:#777;margin-top:4px}
+.evidence-option:hover,.evidence-option[aria-current=true]{background:#f5f5f5}
+.evidence-pagination{display:flex;justify-content:space-between;gap:16px;margin-top:18px}
+.evidence-pagination button,.action-evidence>button,.action-evidence details>button{font-size:14px;padding:8px 0;text-decoration:underline;text-underline-offset:4px}
+.evidence-pagination button:disabled{opacity:.35;cursor:default}
+.action-association{margin:8px 0 24px!important;font-size:12px!important}
+.action-evidence details{border-top:1px solid #e8e8e8;padding:17px 0;margin-top:12px}
+.action-evidence summary{cursor:pointer;font-size:14px;color:#444}
+.action-evidence .projection-note{margin:12px 0}
+.linked-evidence{max-height:330px;overflow:auto;scrollbar-width:thin}
+@media(max-width:900px){.action-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.process-actions{justify-content:flex-start}.evidence-search{flex-direction:column}.process-browser{max-height:650px}}
+@media(max-width:500px){.version-grid{grid-template-columns:1fr}.process-browser{padding:16px}}
 .process-record-line{display:flex;align-items:center;gap:12px;font-size:13px;color:#666;padding:16px 0 17px}
 .record-mode{font:13px var(--mono);color:#555;letter-spacing:.025em}
 .record-mode:before{content:'';display:inline-block;width:5px;height:5px;background:#555;border-radius:50%;margin-right:7px;vertical-align:1px}
@@ -143,3 +182,4 @@ body[data-page=process] .header-nav{font-size:14px}
 .recovery-observations { margin:16px 0; border:1px solid #ddd; border-radius:8px; padding:14px; }
 .recovery-observations summary { cursor:pointer; font-size:16px; }
 .recovery-observations pre { max-height:440px; overflow:auto; white-space:pre-wrap; overflow-wrap:anywhere; font-size:13px; line-height:1.6; }
+.process-actions>.text-link { display:inline-flex; }
